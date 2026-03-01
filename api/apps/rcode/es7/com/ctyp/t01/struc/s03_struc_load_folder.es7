@@ -1,0 +1,422 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Struc Class  [V.0.1.0]  (2020-02-06)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar struc para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Process:
+//-------------------------------------------------------------------------------------
+// @content_file --> contents[] --> arr[] 
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:
+//-------------------------------------------------------------------------------------
+// c-struc-                          : Main Struc Class
+//-------------------------------------------------------------------------------------
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-load_folder_information-         : Load from file and save in contents array
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Struc > Struc_gen > Struc_attrib > scomm_defs
+// @Struc > @String > @Cache > @log
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const { struc_pho }        =   require(  cons.JS_TYP7  + 'struc/s04_struc_pho.es7'),
+      empty                =   require(  cons.NODE_MOD + 'is-empty'                        ),
+      { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
+      readdirp             =   require( cons.NODE_MOD + 'readdirp'),
+      ffi                  =   require(cons.JS_LIB7 + 'file/file_load.es7'),
+      fs                   =   require('fs');
+
+class struc_load_folder extends struc_pho {
+  constructor()  
+  {
+    super()
+    this.n                        = "struc_load_folder::"
+  }
+
+  // Load contents with information of folder
+  // folder_contents --> Folder list
+  // file_contents   --> File list
+  //---------------------------------------------------------------------------------------------  
+  load_folder_information(folder = '')
+  {
+    this.m         = 'load_folder_information'
+
+  	if ( fs.existsSync(	folder ) )
+    {
+      var  files = fs.readdirSync(folder)   // No Recursive
+      // Valta vaciar el array
+
+      this.folder_contents = []
+      this.file_contents   = []
+
+      for (var elemento of Object.values(files)) 
+      {
+        if ((elemento != "RESOLUTION") && ( elemento != "gen_folders.x" ))
+        {
+          // a00_bride - SOLO MANEJAMOS CARPETAS - Entendemos los links como carpetas
+          // j09_zaragoza
+          let full_element = folder + '/' + elemento
+
+	      if (!fs.lstatSync(full_element).isFile() )
+	      {
+            // this.p('s03_foder_load ' + elemento)
+            this.folder_contents.push(elemento)
+
+          }
+          else
+           this.file_contents.push(elemento)
+         
+	   }
+      }
+      
+      // 24
+      // this.p('s03_stru_Num ' + this.folder_contents.length)
+     // Hay carpetas que iterar
+     this.b.rest_result = true        
+
+    }
+
+  }
+  
+  //---------------------------------------------------------------------------------------------
+  // Generate array with contents information
+  // Basado en this.contents
+  generate_folder(lang       ='en'      , 
+                  index      = '060'    ,
+                  breadcrumb = 'fs'     )
+  {
+
+    // Generate Meta information
+    this.generate(lang)
+
+    var idx = new idx_pointers(index)    
+
+    let cats              = this.gethash_arr(this.s.ms.main_lang , idx.jindex)  
+    let info              = this.gethash_arr(this.s.ms.main_lang , idx.iindex)  
+    let ahover            = this.gethash_arr(this.s.ms.main_lang , idx.hindex)  
+    let alink             = this.gethash_arr(this.s.ms.main_lang , idx.lindex)  
+
+        
+    var iterations        = Object.keys(cats).length - 1
+
+    // this.p('s03_stru_num ' + iterations)
+
+    // this.parr(this.folder_contents)
+
+    var hover = ''
+    var value = ''
+    var link  = ''
+    var type  = 'bclink'
+    var local_breadcrumb = ''
+    var child = 'yes'
+
+	for (var pos in cats)
+  	{
+
+      this.arroba_attribs(idx, pos)       
+
+      // this.p('stru_load_dats ' + this.value)
+    
+      if ( (!this.folder_contents.includes(this.value)) &&
+           (!this.folder_contents.includes(this.link )) )
+      {
+        // this.p('stru_load_fold del ' + this.value)
+      	// Hay que eliminar los arrays
+      	delete cats[pos]
+      	delete info[pos]
+
+      }
+    
+    
+    }
+
+    cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+    iterations        = Object.keys(cats).length - 1
+
+    this.p('s03_stru_num after ' + iterations)
+
+    // ahora tenemos que iterar folder contents insertando
+
+    var arr_name_j = 'j' + index
+    var arr_name_i = 'i' + index
+
+    for (var pos in this.folder_contents)
+    {
+
+      var elem = this.folder_contents[pos]
+
+    
+
+      var arr_pos = pos
+      let curr_pos = arr_pos + lang
+ 
+      // var current_index = index + 'v' + this.get_next_level(pos)
+      // var current_index = this.get_next_level(index)
+ 
+      value = this.get_next_level(pos)
+
+      this.sethash_lang_arr_pos(lang , idx.jindex , arr_pos , value)
+
+      // NOFILE i020v050   P  10
+      // this.p('s02_stru_NOFILE ' + arr_name + '   P  ' + arr_pos)
+      // this.p('s03_stru_NOFILE ' + arr_name_j + '   P  ' + arr_pos)
+
+		  this.sethash_lang_arr_pos('all' , idx.jindex , curr_pos , value)
+
+
+    	if ( (info.includes(elem)) || (alink.includes(elem)) )
+    	{
+          this.arroba_attribs_main_lang(idx, pos)
+          // Cogemos la informacion del elemento
+          // this.p('stru_load_elem inc ' + elem)
+          
+          value = info[pos]
+          
+          hover = ahover[pos]
+
+          link  = alink[pos]
+          
+        }
+        else    	
+        {
+          // No tenemos informacion
+          // this.p('stru_load_elem not ' + elem)    	
+          value = elem
+          hover = elem
+
+          // breadcrumb + '/' + elem
+          link  = elem
+          
+          local_breadcrumb = breadcrumb + '/' + elem
+        }          
+
+        // this.p('s03_stru_FOLDER ' + arr_name_i + '  P ' + elem)
+        	    
+	    this.sethash_lang_arr_pos(lang , idx.iindex , arr_pos , value)
+		  this.sethash_lang_arr_pos('all' , idx.iindex , curr_pos , value)
+
+	    this.sethash_lang_arr_pos(lang , idx.hindex , arr_pos , hover)
+		  this.sethash_lang_arr_pos('all' , idx.hindex , curr_pos , hover)
+
+	    this.sethash_lang_arr_pos(lang , idx.lindex , arr_pos , link)
+		  this.sethash_lang_arr_pos('all' , idx.lindex , curr_pos , link)
+
+	    this.sethash_lang_arr_pos(lang , idx.tindex , arr_pos , type)
+		  this.sethash_lang_arr_pos('all' , idx.tindex , curr_pos , type)
+
+	    this.sethash_lang_arr_pos(lang , idx.bindex , arr_pos , local_breadcrumb)
+		  this.sethash_lang_arr_pos('all' , idx.bindex , curr_pos , local_breadcrumb)
+
+	    this.sethash_lang_arr_pos(lang , idx.cindex , arr_pos , child)
+		  this.sethash_lang_arr_pos('all' , idx.cindex , curr_pos , child)
+    	
+    }
+
+    // "index": "0","type": "bclink","otype": "object","value": "a00_bride","hover": "",
+    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" } 
+
+    cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+    iterations        = Object.keys(cats).length - 1    
+
+    // this.p('s03_stru_num ajust ' + iterations + ' I ' + idx.jindex )
+    
+
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Generate array with contents information
+  // Basado en this.contents
+  generate_folder_lang(lang       ='en'      , 
+                  index      = '060'    ,
+                  breadcrumb = 'fs'     )
+  {
+
+    // Generate Meta information
+    
+    this.generate(lang)
+
+    var idx = new idx_pointers(index)    
+
+    let info              = this.gethash_arr(lang , idx.iindex)  
+    let ahover            = this.gethash_arr(lang , idx.hindex)  
+    let alink             = this.gethash_arr(lang , idx.lindex)  
+
+       
+
+    // this.p('s03_stru_num ' + iterations)
+
+    // this.parr(this.folder_contents)
+
+    var hover = ''
+    var value = ''
+    var link  = ''
+    var type  = 'bclink'
+    var local_breadcrumb = ''
+    var child = 'yes'
+
+
+    // ahora tenemos que iterar folder contents insertando
+
+    var arr_name_j = 'j' + index
+    var arr_name_i = 'i' + index
+
+    for (var pos in this.folder_contents)
+    {
+
+        var elem = this.folder_contents[pos]
+
+        var arr_pos = pos
+        let curr_pos = arr_pos + lang
+ 
+
+
+    	if ( (info.includes(elem)) || (alink.includes(elem)) )
+    	{
+          this.arroba_attribs_main_lang(idx, pos)
+          // Cogemos la informacion del elemento
+          // this.p('stru_load_elem inc ' + elem)
+          
+          value = info[pos]
+          
+          hover = ahover[pos]
+
+          link  = alink[pos]
+          
+
+        // this.p('s03_stru_FOLDER ' + arr_name_i + '  P ' + elem)
+        	    
+	    this.sethash_lang_arr_pos(lang , idx.iindex , arr_pos , value)
+		  this.sethash_lang_arr_pos('all' , idx.iindex , curr_pos , value)
+
+	    this.sethash_lang_arr_pos(lang , idx.hindex , arr_pos , hover)
+		  this.sethash_lang_arr_pos('all' , idx.hindex , curr_pos , hover)
+
+	    this.sethash_lang_arr_pos(lang , idx.lindex , arr_pos , link)
+		  this.sethash_lang_arr_pos('all' , idx.lindex , curr_pos , link)
+
+	    this.sethash_lang_arr_pos(lang , idx.tindex , arr_pos , type)
+		  this.sethash_lang_arr_pos('all' , idx.tindex , curr_pos , type)
+
+	    this.sethash_lang_arr_pos(lang , idx.bindex , arr_pos , local_breadcrumb)
+		  this.sethash_lang_arr_pos('all' , idx.bindex , curr_pos , local_breadcrumb)
+
+	    this.sethash_lang_arr_pos(lang , idx.cindex , arr_pos , child)
+		  this.sethash_lang_arr_pos('all' , idx.cindex , curr_pos , child)
+
+	    }    	
+    }
+
+    // "index": "0","type": "bclink","otype": "object","value": "a00_bride","hover": "",
+    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" } 
+
+    let cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+    let iterations        = Object.keys(cats).length - 1    
+
+    this.p('s03_stru_num ajust ES ' + iterations + ' I ' + idx.jindex )
+
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Generate array with contents information
+  // Basado en this.contents
+  generate_files(lang       ='en'      , 
+                  index      = '060'    ,
+                  breadcrumb = 'fs'     )
+  {
+
+
+    var idx = new idx_pointers(index)    
+
+    // this.p('s03_stru_num ' + iterations)
+
+    // this.parr(this.folder_contents)
+
+    var hover = ''
+    var value = ''
+    var link  = ''
+    var type  = 'bclink'
+    var local_breadcrumb = ''
+    var child = 'yes'
+
+    // ahora tenemos que iterar folder contents insertando
+
+    var arr_name_j = 'j' + index
+    var arr_name_i = 'i' + index
+
+    for (var pos in this.file_contents)
+    {
+
+      var elem = this.file_contents[pos]
+
+      var arr_pos = pos
+      let curr_pos = arr_pos + lang
+ 
+      // var current_index = index + 'v' + this.get_next_level(pos)
+      // var current_index = this.get_next_level(index)
+ 
+      value = this.get_next_level(pos)
+
+      this.sethash_lang_arr_pos(this.s.ms.main_lang , idx.jindex , arr_pos , value)
+
+      // NOFILE i020v050   P  10
+      // this.p('s02_stru_NOFILE ' + arr_name + '   P  ' + arr_pos)
+      // this.p('s03_stru_NOFILE ' + arr_name_j + '   P  ' + arr_pos)
+
+		  this.sethash_lang_arr_pos('all' , idx.jindex , curr_pos , value)
+
+
+      value = elem
+      hover = elem
+
+      // breadcrumb + '/' + elem
+      link  = elem
+
+      local_breadcrumb = breadcrumb + '/' + elem
+        
+      this.p('s03_stru_FILE ' + arr_name_i + '   E  ' + elem)
+	    
+	    this.sethash_lang_arr_pos(lang , idx.iindex , arr_pos , value)
+		  this.sethash_lang_arr_pos('all' , idx.iindex , curr_pos , value)
+
+	    this.sethash_lang_arr_pos(lang , idx.hindex , arr_pos , hover)
+		  this.sethash_lang_arr_pos('all' , idx.hindex , curr_pos , hover)
+
+	    this.sethash_lang_arr_pos(lang , idx.lindex , arr_pos , link)
+		  this.sethash_lang_arr_pos('all' , idx.lindex , curr_pos , link)
+
+	    this.sethash_lang_arr_pos(lang , idx.tindex , arr_pos , type)
+		  this.sethash_lang_arr_pos('all' , idx.tindex , curr_pos , type)
+
+	    this.sethash_lang_arr_pos(lang , idx.bindex , arr_pos , local_breadcrumb)
+		  this.sethash_lang_arr_pos('all' , idx.bindex , curr_pos , local_breadcrumb)
+
+	    this.sethash_lang_arr_pos(lang , idx.cindex , arr_pos , child)
+		  this.sethash_lang_arr_pos('all' , idx.cindex , curr_pos , child)
+    	
+    }
+
+    // "index": "0","type": "bclink","otype": "object","value": "a00_bride","hover": "",
+    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" } 
+
+    let cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+    let iterations        = Object.keys(cats).length - 1    
+
+    //  12 - j060v014v000v001
+    // this.p('s03_stru_num ajust_FI ' + iterations + ' I ' + idx.jindex )
+
+  }
+
+}
+
+exports.struc_load_folder = struc_load_folder

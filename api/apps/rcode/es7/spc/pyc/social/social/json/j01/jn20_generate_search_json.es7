@@ -1,0 +1,48 @@
+// [DOCHANGED_NODE ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node Site Process and Generate Common Json Class  [V.0.0.1]  (2019-06-14)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+
+const   { jn03_search_site }   =   require(  cons.JS_PYC7  + 'social/social/json/j02/jn03_jnode_search_site.es7'   );
+
+class jn20_search_json extends jn03_search_site {
+           
+  constructor (arroba = '' ) 
+  {   
+    super(arroba)
+    
+    this.n                  =   'search_json::'
+  }
+
+  //---------------------------------------------------------------------------------------------
+  process_array_and_generate_json_file()
+  {
+    this.m                  =   'process_json'
+
+    // this.p('jn20-Generating Search NO LLEGA  ' + this.j.full_path )
+    // this.p('jn20-Generating Search  ' + this.u.bars_sub_query )
+
+
+    this.j.save_top()      
+
+    this.generate_common_search()
+
+    this.j.save_end()
+
+  }
+
+  
+}
+
+exports.jn20_search_json = jn20_search_json

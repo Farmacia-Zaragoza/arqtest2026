@@ -1,0 +1,51 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Site Definition Common Class  [V.0.0.2]  (2019-07-03)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:
+//-------------------------------------------------------------------------------------
+// c-site_defs-
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"    )
+
+const   { strings }       =   require(  cons.JS_TYP7  + 'string/s01_strings.es7'      )
+
+
+class site_defs extends strings {
+  constructor() {
+    super()
+    this.n                          =   "site_defs::"
+
+    // Objects	
+    this.b                          =  ''
+    this.c                          =  ''
+    this.pmt                        =  ''
+    this.pg                         =  ''
+
+    this.arr['allowed_langs']                    =   Array()
+    this.arr['allowed_commands']          =   Array()
+
+    this.arr['metatags']                            =   Array()
+    this.arr['anchors']                              =   Array()
+
+    // Ojo estos dos ben ir con el idioma
+//    this.arr['en']['pagesep']                     =   Array()
+//    this.arr['en']['pagesep_name']         =   Array()
+
+    this.arr['pagesep']                     =   Array()
+    this.arr['pagesep_name']         =   Array()
+
+    this.arr['pagesep_sep']             =   Array()
+    
+  }
+
+}
+
+exports.site_defs = site_defs

@@ -1,0 +1,198 @@
+// [DOCHANGED ES6_SPACES]
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Architecture Functionality : Uri - v0.0.0.4 - [2020-02-13]
+//-------------------------------------------------------------------------------------
+// Node Js - URI Class  [V.0.1.8]  (2019-11-21)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Uri Class
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class: 
+//-------------------------------------------------------------------------------------
+// - c-uri-
+//-------------------------------------------------------------------------------------
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-gen_url_structure-            : Generate URL structure
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Uri > Ports > Cache > Anchor  > Front > Commands (Proces,Manage,Methods) > Sort > String > Normalize
+// @Uri > @Array > @String > @Log
+//-------------------------------------------------------------------------------------
+// Call Line : 
+//-------------------------------------------------------------------------------------
+// Uri > Ports >  Cache > Anchor > Normalize | Front > Commands(Manage > Process)> Sort > 
+//     > Create_Uri
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+
+const   { uri_ports }   =   require(  cons.JS_TYP7   + 'uri/u02_ports.es7'           ),
+        path            =   require(  'path'                                               );
+
+
+class uri extends uri_ports {
+  constructor(  site                        =   ""  ,
+                ir                          =  ''   ) 
+  {
+    super()
+  
+    this.n                =  "uri::"
+    this.m                =  "cons"
+
+    this.s                =  site
+    this.ir               =  ir    // Index request
+  
+    this.pg               =  this.s.pg
+
+    this.b                =  this.s.b
+
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  gen_url_structure()
+  {
+    this.manage_ports()
+
+    // fr/hola
+    // en
+    // this.p('u01_obj_CURRENT_URI ' + this.uri)
+
+    // Arroba Reload management
+    this.manage_cache()
+
+    // Anchor management
+    this.manage_anchor()
+  
+    if (this.uri.substr(0, 1) != "/") this.uri = '/' + this.uri
+
+    // Text Replace Php Idea
+  
+    this.rslash(    this.uri  )
+    this.dash_uri    =  this.result      
+  
+    // this.p('u01_dash ' + this.dash_uri )
+
+    if (this.dash_uri == "_" || 
+      this.dash_uri == "") 
+    {
+    // A. ------------------------  FRONT PAGE ---------------------
+      this.manage_front()
+    } 
+    else 
+    {
+      this.normalize_uris()        ;
+    // B. ------------------------  NORMAL PAGE ---------------------
+
+      if (this.b.lang      && 
+          this.b.lang_uri  ) 
+      {
+    // C. -------------------------- MULTI LANG ---------------------
+
+      this.count_lang_uri_arr  =  this.count_uri_arr      
+  
+      // this.p('u01_langs ' + this.s.ms.allowed_langs)
+
+      this.s.arr['allowed_langs']       = this.s.ms.allowed_langs.split(" ")
+      this.s.arr['allowed_commands']    = this.s.ms.allowed_commands.split(" ")
+    
+
+      this.lang_site   = this.uri_arr[0]          
+
+      // this.p('u01_obj_LANG_SITE '+ this.lang_site)
+
+      // this.parr(this.s.arr['allowed_langs'])
+
+      if (this.s.arr['allowed_langs'].includes(this.lang_site)) 
+      {
+        // this.p('u01_obj_ALLOWED_LANG_SITE '+ this.lang_site)      
+        this.b.page_multi_language   =  true
+        this.s.ms.lang               =  this.lang_site    
+        this.start_position_array    =  this.start_position_array + 1         
+        this.count_lang_uri_arr      =  this.count_lang_uri_arr - 1      
+        
+        this.s.arr['strange_langs'] =  this.s.ms.strange_langs.split(" ")        
+        if (this.s.arr['strange_langs'].includes(this.lang_site))       
+        {
+           this.uri = decodeURI(this.uri)
+           this.b.is_strange_lang      = true
+        }
+      } 
+      else 
+      {
+        this.s.ms.lang  =  this.s.ms.default_lang          
+      }
+
+      // To manage cached pages
+      this.s.cs.lang               =  this.s.ms.lang
+
+
+      // No idioma - No comando : 1....
+
+      // this.p('u01_Contador_arr: ' + this.count_lang_uri_arr)
+      // this.p('u01_Start_arr: '    + this.start_position_array)
+
+
+      if (this.count_lang_uri_arr > 0 ) 
+      {
+        // Tenemos comandos
+    
+    
+        this.page_command  =   this.uri_arr[this.start_position_array]    
+
+        // this.p('u01_Command-' +  this.page_command + '- POS ' + this.start_position_array )      
+
+      }
+      else
+      {
+        // Uri sin comando
+        //this.p('u01_palabra unica ' + this.start_position_array)
+
+        if (this.start_position_array == 0 )
+          this.page_command  =   this.uri         
+        else
+        {
+          //this.p('Segundo caso - Aqui uri ARR vale 1 ' + this.uri_arr.length  ) 
+          //this.parr(this.uri_arr)     
+        
+          if (this.uri_arr.length > this.start_position_array )
+            this.page_command  =   this.uri_arr[this.start_position_array]    
+          else
+            this.page_command  =   'blanc'
+        }
+      }
+
+      if (this.page_command == "" )
+        this.p('u01_PAge command pasadoB ' + this.page_command)
+
+      // blanc
+      // this.p('Before_Manage_Commands ' + this.page_command)
+
+      // this method depends of site
+      // debe ser un metodo del padre de la Url
+      this.manage_commands()
+      }
+      // --------------------- [C END] MULTI LANGUAGE CHECK --------------------- 
+
+    } // END B
+
+
+    this.generate_start_dash()          
+
+    this.generate_page_string()          
+
+  // Este metodo tengo dudas si se lanzaria aqui o en un tipo superior  
+    this.create_cache_urls()
+  
+    
+  }
+
+}
+
+exports.uri = uri

@@ -1,0 +1,223 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Proces Class  [V.0.0.3]  (2020-01-15)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-current_process-       : Process current array information to generate site fields
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  { anode_run_full } =   require(  cons.JS_TYP7  + 'arroba/anode/a01_full/an12_run.es7'    );
+
+class anode_term_process extends anode_run_full {
+  constructor()  
+  {
+
+    super()
+    this.n                        = "anode_term_process::"
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Will process all pages
+  // MAIN/position/page --> @FORMAT
+  // Se ejecuta en la entidad SITE
+  term_process()
+  {
+
+    // s02_site_PROCESSING sg_site_name
+    //this.p('an11_tp ' + this.item )
+    switch(this.item)
+    {
+      // case "sc_default_lang" Must to be managed as parameters to allow cached sites with different main lang
+      // case "sc_allowed_langs":
+
+      case "sg_site_title":
+        // this.p('s02_sit-Site Title ' + this.item )
+        this.s.ms.site_title         =   this.value        ;  break        ;
+      case "sg_site_name":
+        this.s.ms.site                =   this.value        ;  break        ;
+      // absolute - relative - composed 
+      case "sg_img_generation_type":
+        this.s.os.img_generation_type     =   this.value        ;  break        ;
+      // composed - specified
+      case "sg_lnk_generation_type":
+        this.s.ms.lnk_generation_type     =   this.value        ;  break        ;
+      case "sg_site_language_type":
+        this.s.os.site_language_type     =   this.value        ;  break        ;
+      
+      // Engine
+
+      case "sg_frontend_engine":
+        this.s.cs.frontend_engine      =   this.value        ;  break        ;
+
+      case "sg_style_engine":
+        this.s.cs.style_engine         =   this.value        ;  break        ;
+
+      case "sg_page_format":
+        this.p('a11_term_EqualEnabled')
+        this.s.cs.page_format         =   this.value        ;  break        ;
+      
+      // Metas
+
+      case "sf_firm_name":
+        this.s.os.firm_name            =  this.value        ;  break        ;      
+
+      case "stl_title_hover":
+        this.s.ms.title_hover          =  this.value        ;  break        ;  
+        //// this.p('s02-sit Title Hover ' + this.value )      
+      // Metas 
+      
+      case "sm_meta_author":
+        this.s.os.meta_author          =  this.value        ;  break        ;      
+      case "sm_meta_desc":
+        this.s.os.meta_desc            =  this.value        ;  break        ;      
+
+      // Page Type
+
+//      case "sg_page_type":
+        // this.p('an11_LOADING_PAGE_TYPE: ' + this.item)
+//        this.s.cs.founded_type            =  this.value        ;  break        ;      
+      // Icon - Logo
+
+      case "stl_mobile_logo":
+        // this.p('a11_term_Getting Mobile Logo ' + this.photo )
+        this.s.ms.logo_mobile          =  this.photo        ;  break        ;      
+
+      case "stl_tablet_logo":
+        //this.p('a11_term_Loading Icon ' + this.value )
+        this.s.ms.logo_tablet          =  this.photo        ;  break        ;      
+
+      case "stl_desktop_logo":
+        //this.p('a11_term_Loading Icon ' + this.value )
+        this.s.ms.logo_desktop          =  this.photo        ;  break        ;      
+
+      case "stl_4k_logo":
+        //this.p('a11_term_Loading Icon ' + this.value )
+        this.s.ms.logo_4k          =  this.photo        ;  break        ;      
+
+
+      case "stl_site_icon":
+        //this.p('a11_term_Loading Icon ' + this.value )
+        this.s.ms.icon          =  this.photo        ;  break        ;      
+
+      case "stl_site_logo":
+        // this.p('a11_term_sitepc_Loading LOGO ' + this.value )
+        this.s.ms.logo          =  this.photo        ;  break        ;      
+
+      case "stl_logo_alt":
+        this.s.ms.logo_alt            =  this.value        ;  break        ;      
+
+      case "stl_desktop_logo":
+        this.s.ms.logo_desktop          =  this.photo        ;  break        ;      
+
+      case "stl_tablet_logo":
+        this.s.ms.logo_tablet          =  this.photo        ;  break        ;      
+
+      case "stl_mobile_logo":
+        this.s.ms.logo_mobile          =  this.photo        ;  break        ;      
+
+
+      // Bottom Menu
+      case "sn_mnu_hide":
+        this.s.os.mnu_hide            =  this.value        ;  break        ;  ;
+
+      // Information Section
+
+      case "nfo_in":
+        this.s.os.nfo_in            =  this.value        ;  break        ;  
+      case "nfo_out":
+        this.s.os.nfo_out            =  this.value        ;  break        ;  
+      case "nfo_font_size":
+        this.s.os.nfo_font_size          =  this.value        ;  break        ;  
+      case "nfo_font_resize":
+        this.s.os.nfo_font_resize        =  this.value        ;  break        ;  
+
+      // -Titles
+      case "nfo_text_dev_live":
+        this.s.os.nfo_text_dev_live        =  this.value        ;  break        ;  
+      case "nfo_text_html_php":
+        this.s.os.nfo_text_html_php        =  this.value        ;  break        ;  
+      case "nfo_text_http_https":
+        this.s.os.nfo_text_http_https      =  this.value        ;  break        ;    
+      case "nfo_text_anon_auth":
+        this.s.os.nfo_text_anon_auth      =  this.value        ;  break        ;    
+      case "nfo_text_robot_user":
+        this.s.os.nfo_text_robot_user      =  this.value        ;  break        ;    
+
+      // -Descriptions
+      case "nfo_desc_dev_live":
+        this.s.os.nfo_desc_dev_live        =  this.value        ;  break        ;    
+      case "nfo_desc_html_php":
+        this.s.os.nfo_desc_html_php        =  this.value        ;  break        ;    
+      case "nfo_desc_http_https":
+        this.s.os.nfo_desc_http_https      =  this.value        ;  break        ;    
+      case "nfo_desc_anon_auth":
+        this.s.os.nfo_desc_anon_auth      =  this.value        ;  break        ;    
+      case "nfo_desc_robot_user":
+        this.s.os.nfo_desc_robot_user      =  this.value        ;  break        ;    
+
+      // -Page Action
+      case "nfo_desc_font_size":
+        this.s.os.nfo_desc_font_size      =  this.value        ;  break        ;    
+      case "nfo_desc_keyboard":
+        this.s.os.nfo_desc_keyboard        =  this.value        ;  break        ;    
+      case "nfo_desc_scrolling":
+        this.s.os.nfo_desc_scrolling      =  this.value        ;  break        ;    
+
+      //- Text
+      case "nfo_text_general_title":
+        this.s.os.nfo_text_general_title    =  this.value        ;  break        ;    
+      case "nfo_text_general_information":
+        this.s.os.nfo_text_general_information  =  this.value        ;  break        ;    
+
+      case "si_img_base_folder":
+        this.s.ms.photos_path              =  this.value        ;  break        ;    
+
+      case "si_fs_base_folder":
+        this.s.ms.fs_path                  =  this.value        ;  break        ;    
+
+      case "si_current_photo_path":
+        // this.p('an11_CURR_PHOPA' )
+        this.s.ms.current_photo_path        =  this.value        ;  break        ;    
+
+      case "sg_metatags":
+        // this.p('an11_CURR_PHOPA' )
+        this.s.add_metatag(this.value)                          ;  break        ;    
+      
+      // OG Properties
+
+      case "sm_meta_og_title":
+        this.s.os.meta_og_title          =  this.value        ;  break        ;      
+      case "sm_meta_og_description":
+        this.s.os.meta_og_description      =  this.value        ;  break        ;      
+      case "sm_meta_og_image":
+        this.s.os.meta_og_image          =  this.value        ;  break        ;    
+
+      // Versions
+      
+      case "sg_data_content_version":
+        this.s.cs.data_content_version    =  this.value        ;  break        ;    
+
+      case "sg_data_list_version":
+        this.s.cs.data_list_version       =  this.value        ;  break        ;    
+
+      case "sg_data_comm_version":
+        this.s.cs.data_comm_version       =  this.value        ;  break        ;    
+
+      case "sg_data_spec_version":
+        this.s.cs.data_spec_version       =  this.value        ;  break        ;    
+
+    }
+
+  }
+
+}
+
+exports.anode_term_process = anode_term_process

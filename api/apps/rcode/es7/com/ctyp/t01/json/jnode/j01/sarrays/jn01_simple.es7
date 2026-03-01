@@ -1,0 +1,36 @@
+// [DOCHANGED_NODE ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Generate Array Json Simple Class  [V.0.0.3]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_simple_array_to_file-          : Generate Json Simple
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  fs                        =   require(  'fs'                                                   ),
+       empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
+       accents                   =   require(  cons.NODE_MOD + 'remove-accents'                       ),
+       { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
+       { jn02_comma_json_doble } =   require(  cons.JS_TYP7  + 'json/jnode/j01/arrays/jn02_doble.es7' );
+
+// Pendiente de cambiar
+class jn01_comma_json_simple extends jn02_comma_json_doble {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                         =  'jn01_comma_json_a_simple::'      
+  }
+
+  
+}
+
+exports.jn01_comma_json_simple = jn01_comma_json_simple

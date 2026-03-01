@@ -1,0 +1,211 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js Lib Savelog  [V.0.0.5]  (2019-11-29)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [COMMON_ES6]
+//-------------------------------------------------------------------------------------
+// Node Js ES6 - Server with express - http/2
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+
+const echo                 =   require(  cons.NODE_MOD + 'node-echo'                ),
+      fs                   =   require(  'fs'                          );  
+
+class savelog
+{
+  constructor() 
+  {
+    // Atributos
+    this.n               =   ''               // class name
+    this.m               =   ''               // method name
+  
+    this.type            =   ''               // type name
+  
+    this.lr              =   '\n\r'             // br
+
+    // Web_debug_change
+    //  this.br              =   '</br>'  
+    this.br              =   '\n\r'  
+
+
+    this.lf              =  ':</br>'
+
+    this.content         =   ''                  
+    this.code            =   ''                  
+
+      // Common objects
+
+    this.thm             =  ''
+    this.fnode           =  ''             
+    this.jnode           =  ''             
+
+      // Search Engine
+      //  We save all terms and main terms
+
+    // Position Indicator to manage arrays
+    this.pos             =   0
+  
+    this.arr             =   Array()
+  
+    this.terms           =   Array()
+    this.mainterms       =   Array()
+
+    // Terminos para toda la pagina
+    this.allowedterms    =   Array()
+
+
+    // Terms strings
+    this.chain_terms     =   ''
+    this.chain_mainterms =   ''
+    
+    this.local_current_level      = ''
+    this.local_current_breadcrumb = ''
+    
+  }
+
+  push_unique_array(term , name)
+  {
+  if ( typeof this.arr[name] !== 'undefined' )
+    {
+      if (!this.arr[name].includes(term) )
+        this.arr[name].push(term)
+    }
+    else
+    this.p('savelog_NO DEFINIDO ' + name)
+    
+  }
+
+  // Terminos para la query actual
+  // Solo insertamos terminos que no existan ya
+  push_unique(term = '')
+  {
+    if (!this.terms.includes(term) )
+      this.terms.push(term)
+  }
+
+  push_unique_main(term = '')
+  {
+    if (!this.mainterms.includes(term) )
+      this.mainterms.push(term)
+  }
+
+  //---------------------------------------------------------------------------------------------  
+
+  // Definimos codigos de 3 posiciones para los padres y de 5 para los hijos
+  get_next_level(pos)
+  {
+    let next = ''                                        
+
+    let newpos = pos + ''                                    
+    let lenpos = newpos.length                                                                                                                                                                                                              
+
+    // $this->p('getting level from: ' . $pos . ' len : ' . $lenpos)                
+
+    if      (lenpos == 1 )  next =  '00' + newpos                      
+    else if (lenpos == 2 )  next =  '0'  + newpos                     
+    else if (lenpos == 3 )  next =   newpos                         
+    else if (lenpos == 4 )  next =   newpos                         
+    else if (lenpos == 5 )  next =   newpos                         
+
+    return next                                        
+  }
+
+  get_next_level_four(pos)
+  {
+    let next = ''                                        
+
+    let newpos = pos + ''                                    
+    let lenpos = newpos.length                                                                                                                                                                                                              
+
+    // $this->p('getting level from: ' . $pos . ' len : ' . $lenpos)                
+
+    if      (lenpos == 1 )  next =  '000' + newpos                      
+    else if (lenpos == 2 )  next =  '00' + newpos                      
+    else if (lenpos == 3 )  next =  '0'  + newpos                     
+    else if (lenpos == 4 )  next =   newpos                         
+
+    return next                                        
+  }
+
+
+  // Define arrays para indices no definidos
+  //---------------------------------------------------------------------------------------------  
+  set_multi_arr_2d(arr , index1 , index2)
+  {
+    if ( !Array.isArray(arr) ) 
+    {	
+      arr = Array()
+    }
+    else 
+    {
+      if ( !Array.isArray(arr[index1]) ) 
+      {
+        // this.p('Setting Array 01 ' + index1)
+        arr[index1]              = Array()                    
+        arr[index1][index2]      = Array()                          
+      }
+      else
+      {
+      // Notice: Undefined index: i000v001v004v000v001 
+        if ( !Array.isArray(arr[index1][index2]) )     
+        {
+          arr[index1][index2]      = Array()                                
+        }
+      }
+    }     
+    
+    return arr   
+  }
+
+  //---------------------------------------------------------------------------------------------
+  dd(msg)
+  {
+    // Agile debug method. To load with deb - brqx alias
+      let puting_contents          =  this.n + msg  + '>'   
+        global.GLOBALS['putcont']      +=  puting_contents
+
+    let file = 'brqx_debug.ddt'
+
+    if (!fs.existsSync(file) ) 
+      this.d_start ( msg )
+    else
+    {
+      // this.p('ADDING_CONTENT')
+        //fs.writeFile('brqx_debug.ddt', GLOBALS['putcont'], function (err) {
+        fs.appendFileSync('brqx_debug.ddt', global.GLOBALS['putcont'])
+
+    }
+    global.GLOBALS['putcont']= ''                      
+  }
+
+  //---------------------------------------------------------------------------------------------
+  d(msg)
+  {
+    // Agile debug method. To load with deb - brqx alias
+      puting_contents=this.n + msg  + '>'   
+        global.GLOBALS['putcont']+=puting_contents
+  }
+
+  //---------------------------------------------------------------------------------------------
+  d_start(msg , letter = 't')
+  {
+    // Debug adding content only
+      let puting_contents  =  this.n + this.m +  '-' + msg  + '>'   
+        global.GLOBALS['putcont']  =  puting_contents
+
+    let file           =  'brqx_debug.dd' + letter   
+
+    if (!fs.existsSync(file) ) 
+    {
+      fs.appendFileSync(file , global.GLOBALS['putcont'])
+       fs.chmodSync(file, parseInt('0775',8))  //changed to add the zero
+    }
+    else
+      fs.appendFileSync(file , global.GLOBALS['putcont'])
+  }
+
+}  // End Class
+
+exports.savelog          = savelog;

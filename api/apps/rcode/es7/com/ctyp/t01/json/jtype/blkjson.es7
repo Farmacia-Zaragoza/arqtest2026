@@ -1,0 +1,214 @@
+// [DOCHANGED_ES6_NODE_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php+
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//BlkJson  Block Json Style Class  [V.0.0.5]  (2019-04-17)
+//------------------------------------------------------------------------------------
+//Methods:
+//- d-add_pull             : Add pull level to json structure
+//- d-end_pull             : End pull level to json structure
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const   echo           =   require(  cons.NODE_MOD   + 'node-echo'                          ),
+        sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
+        { manage_json }       =   require(  cons.JS_TYP7     + 'json/jtype/manage_json.es7' );
+
+
+class blkjson extends manage_json {
+  constructor(file_name = '') 
+  {
+
+    super()
+    this.n         =   "blkjson::"
+    this.deb       =   ""
+    this.tame       =   ""
+    this.code       =   ""
+    this.content     =   ""
+    this.pull_content  =  ''
+    
+    this.full_path    =  file_name
+
+    // this.p('blkjson - Gen ' + this.full_path)
+    sctf.create_new_empty_file(this.full_path)    
+  }
+
+  add_pull(level , separator = '[')
+  {
+    // igual puede ser pull01
+    
+    // this.p('LevelPull: ' + level)
+    var constant = "pull02"
+    
+    if     ( level == "1" )  constant = "pull03"
+    else if ( level == "2" )  constant = "pull04"    
+    else if ( level == "3" )  constant = "pull05"    
+    else if ( level == "4" )  constant = "pull05"    
+
+    this.content += "\"" + constant + "\": " 
+    this.content += separator
+
+    sctf.create_update_full_filename(this.full_path, this.content)
+    this.clean()    
+
+  }
+
+  end_pull(object_type)
+  {
+    if (object_type == 'array')
+      this.end_corch()
+    else    
+      this.end_key()
+
+      this.end_key()      
+  }
+
+
+
+  save_top()
+  {
+    this.add_key()
+    this.clean()    
+  }
+
+  save_end()
+  {
+    this.end_key()
+    this.clean()    
+    
+  }
+
+
+  add_separator()
+  {
+
+    this.code   =  ','
+    sctf.create_update_full_filename(this.full_path, this.code)
+
+    this.clean()    
+    
+  }
+
+
+  add_index(index_passed)
+  {
+    let constant = 'index'
+    this.add_element( constant , index_passed)
+  }
+
+  add_item(item_passed)
+  {
+    let constant = 'item'
+    this.add_element( constant , item_passed)
+  }
+
+  add_id(item_passed)
+  {
+    let constant = 'id'
+    this.add_element( constant , item_passed)
+  }
+
+  add_name(item_passed)
+  {
+    let constant = 'name'
+    this.add_element( constant , item_passed)
+  }
+
+  add_lastname(item_passed)
+  {
+    let constant = 'name'
+    this.add_lastelement( constant , item_passed)
+  }
+
+  add_link(link_passed)
+  {
+    let constant = 'link'
+    this.add_element( constant , link_passed)
+  }
+
+  add_linklast(link_passed)
+  {
+    let constant = 'link'
+    this.add_lastelement( constant , link_passed)
+  }
+
+  add_type(type_passed)
+  {
+    let constant = 'type'
+    this.add_element( constant , type_passed)
+  }
+
+  add_typelast(type_passed)
+  {
+    let constant = 'type'
+    this.add_lastelement( constant , type_passed)
+  }
+
+
+  add_clink(clink_passed)
+  {
+    let constant = 'common-link'
+    this.add_element( constant , clink_passed)
+  }
+
+  add_clinklast(clink_passed)
+  {
+    let constant = 'common-link'
+    this.add_lastelement( constant , clink_passed)
+  }
+
+
+  add_lastchildrens(childrens_passed_str)
+  {
+    let constant = 'childrens'
+    var childrens_passed = 'false'
+    
+    if ( childrens_passed_str == 'yes' ) 
+      childrens_passed = 'true'
+    
+    this.add_lastboolean( constant , childrens_passed)
+  }
+
+  add_childrens(childrens_passed_str)
+  {
+    let constant = 'childrens'
+    var childrens_passed = 'false'
+    
+    if ( childrens_passed_str == 'yes' ) 
+      childrens_passed = 'true'
+    
+    this.add_boolean( constant , childrens_passed)
+  }
+
+  // CONTENT - FOR PART OBJECTS
+  add_key()
+  {
+    let content = "{"
+    sctf.create_update_full_filename(this.full_path, content)
+    this.clean()    
+  }
+
+  end_key()
+  {
+    let content = "}"
+    sctf.create_update_full_filename(this.full_path, content)
+    this.clean()    
+  }
+
+  add_corch()
+  {
+    let content = "["
+    sctf.create_update_full_filename(this.full_path, content)
+    this.clean()    
+  }
+
+  end_corch()
+  {
+    let content = "]"
+    sctf.create_update_full_filename(this.full_path, content)
+    this.clean()    
+  }
+
+}
+
+exports.blkjson = blkjson

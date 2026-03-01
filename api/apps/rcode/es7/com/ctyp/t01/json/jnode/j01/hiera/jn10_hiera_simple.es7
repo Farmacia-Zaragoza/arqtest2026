@@ -1,0 +1,186 @@
+// [DOCHANGED_NODE ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Generate Array Json Simple Class  [V.0.0.3]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_simple_array_to_file-          : Generate Json Simple
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  fs                 =   require(  'fs'                                                   ),
+       empty              =   require(  cons.NODE_MOD + 'is-empty'                             ),
+       accents            =   require(  cons.NODE_MOD + 'remove-accents'                       ),
+       path               =   require(  'path'                                                 ),
+       { idx_pointers }   =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
+       { jn14_hiera_json_list }   =   require(  cons.JS_TYP7  + 'json/jnode/j01/hiera/jn14_hiera_list.es7'   );
+
+class jn10_hiera_json_simple extends jn14_hiera_json_list {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                         =  'jn10_hiera_json_simple::'      
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Garland Main - Top - Bottom - One Dimension
+  save_json_hiera_simple_array_to_file(  
+            index                      ,   // P01. Indice
+            enbreadcrumb    =   ''     ,   // P02. Breadcrumb
+            file_structure = ''        ,   // P03. File Structure
+            cat             = ''       ,   // P04. Cat
+            title           = ''       ,   // P05. Title
+            depth          = ''        ,   // P05. Depth
+            parent_otype    = 'object' ,   // P06. Object Type
+            concat_to_links = ''      )    // P07. ConcatBreadcrumb en ingles
+  {
+    // top - bottom
+
+    var  idx = new idx_pointers(index)
+
+    // this.p('jn10_breadcrumb ' + enbreadcrumb )
+
+    // en
+    // this.p('j22_com_simple ' + 'Before_run_bucle ' + this.s.ms.main_lang +   ' J ' +  index  )    
+	let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)															;
+
+    var iterations           = Object.keys(cats).length - 1
+
+    // this.p('jn10_simpl-Num_' + iterations )
+
+    var parent_breadcrumb = this.s.cs.lang_url +  path.dirname(enbreadcrumb)
+
+    // this.p ('jn10_link ' + parent_breadcrumb )
+
+    for (var pos in cats)
+    {
+
+      // Se pone a false siempre pues hay casos que no queremos generar
+      this.b.type_generated = false
+      // Set Json attribs
+      this.attribs(idx, pos , index , depth)
+  
+      let current_level            = this.j.index
+      let current_enbreadcrumb     = enbreadcrumb + '/' + accents.remove (this.j.item ).toLowerCase()
+      
+      this.rvlash_inner(current_level)
+      this.index                   =  this.result   
+
+      // Aqui no entra
+      // this.p ('j22_simple ' + current_level + ' Ind ' + this.index)
+              
+      this.links_management(idx , pos)
+
+      this.j.index    =   this.index
+      
+      if (this.j.link != "" )
+        this.j.link     =   parent_breadcrumb + '/' + this.j.link  + concat_to_links
+
+ 
+      //---------------------------------------------------------------------------------------------  
+
+      if (this.j.item == 'anchor') 
+      {
+         // Estamos manejando un anchor		  
+		 // this.p('jn06_Anchor ' + this.j.value + ' Allowed ' + this.s.b.anchor_allowed )
+		 
+		 if (!this.s.b.anchor_allowed) this.j.value = ''
+      }
+
+      //---------------------------------------------------------------------------------------------  
+
+      if (this.j.item == 'anchor_list') 
+      {
+      
+         // Estamos manejando un anchor		  
+		 // this.p('jn06_Anchor ' + this.j.value + ' Allowed ' + this.s.b.anchor_allowed )
+         
+         // this.p('jn06_time_to_generate_anchors '+ this.anchor_list)
+         
+         if (this.b.robot_page)
+         {
+           //this.p('jn06_time_to_geanchors_brob '+ this.anchor_list)
+         
+           this.j.type = 'link'
+           var anchor_domain = this.j.uri_site + '#' 
+         
+           var arr_lnk = this.anchor_list.split(' ')
+         
+           var int_lnk = ''
+           let current_otype = this.j.otype                     
+           
+           
+           for (var pos in arr_lnk)
+           {
+			 this.j.item  = arr_lnk[pos]
+             this.j.link  = anchor_domain + arr_lnk[pos] 
+
+             this.j.value = this.j.site_title + ' # ' + this.j.item
+			 // this.p ('jn06_poslnkA ' + this.j.item)
+             
+             if (this.j.item != "")
+             {
+               this.j.createspecifictype(current_otype)
+			   // this.p ('jn06_poslnkB ' + this.j.item)
+			 }
+		   }
+
+         
+         // Vamos a iterarlo para generar las urls con estos links
+           // Desactivamos el tipo para ficheros robot
+           this.j.type = 'unlink'
+         
+	     }
+	     else
+	     {
+			// JSon 
+           this.j.value = this.anchor_list
+	 			 
+	     }
+
+           // Igual hay que volver a dejar las cosas como antes de poner el link
+      }
+
+      //---------------------------------------------------------------------------------------------  
+
+
+      // Este metodo lo vamos a tener que ajustar pues hay atributos que siempre se copian
+      this.k.copyvalues(this.j)
+
+      let current_otype = this.j.otype            
+      
+      this.p('jn10_hiera_simple_ ' +  this.k.type  + ' TS ' + this.k.item)
+
+      let pf_to_load = ''
+
+      if ( (this.k.type == "parragraph"  ) ||  (this.k.type == "iparragraph" ) )
+      {
+      //   let folder_to_load = this.s.ms.contents_path + '/' + file_structure 
+      //   pf_to_load     = folder_to_load       + '/' + this.k.value
+         
+      // this.p ('jn10_hiera_manage_pf  ' + this.k.index ) 
+
+         this.manage_array_parragraphs(current_otype, this.k.index)
+         this.b.type_generated = false
+      }
+      
+      //this.manage_parragraphs('object', pf_to_load)
+
+      if ( (--iterations  >= 0) && (this.b.type_generated) )
+        this.j.add_separator()
+
+     }  // End For
+  
+  }
+  
+}
+
+exports.jn10_hiera_json_simple = jn10_hiera_json_simple

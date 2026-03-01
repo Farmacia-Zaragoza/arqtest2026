@@ -1,0 +1,102 @@
+// [DOCHANGED_NODE_ES6_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - URI Commands Class  [V.0.0.6]  (2019-11-25)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-manage_general_commands-       : Call to manage commands
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+
+const   { uri_commands_methods }    =   require(  cons.JS_TYP7  + 'uri/u09_commands_methods.es7'        )
+
+class uri_manage_commands extends uri_commands_methods {
+
+  constructor()
+  {
+    super()    
+    this.n               =   'uri_manage_commands::'        
+  }
+
+
+  // Se llamara desde manage_commands
+  manage_general_commands()
+  {
+    this.m                    =   'manage_general_commands'
+
+     // articulo
+    // this.p('u05_Comando para analizar: ' + this.page_command)
+
+    switch(this.page_command)
+    {
+
+      case "rest":
+      // REst pages
+        this.url_page_set_rest()
+        break;
+
+      case "rbt":
+      // Robot pages
+        this.b.robot_page           =   true
+        break;
+
+
+      case "jsons":
+        // Nunca hay cache si se ejecuta la pagina de jsons
+        // Switch para las paginas del chequeo de los jsons
+        this.b.only_json_page     =   true
+        this.b.cache              =   false
+        this.manage_front()
+
+        break;
+
+      case "product":        this.url_page_set_product() ;         break;
+
+      // Dejamos photo para  los alias
+      case "image":        this.url_page_set_photo()   ;        break;
+        
+      case "list":        this.url_page_set_list()    ;         break;
+
+      case "itable":      this.url_page_set_gallery()    ;         break;
+
+      case "diapo":       this.url_page_set_slide()  ;        break;
+
+      case "blanc":
+        // con un idioma llega blanc /it
+        // this.manage_front()
+        this.s.cs.page_name       =  'front'
+        this.s.cs.loadtype        =  'page'
+        this.s.cs.position        =  '20'    
+        this.s.cs.page            =  '0'    
+        break;
+
+      default:
+        // Text
+        // this.p('Caso_por_Defecto - Hay que cargar el front')
+		// Podra ser pagina de busqueda por defecto
+        // Activamos el caso de que sea un alias
+        // this.p('u06_Puede_ser_Un_Alias')
+        this.b.page_could_be_alias = true
+        this.s.cs.page_name       =  'product'
+        this.s.cs.page_type       =  'content'
+
+        // this.s.cs.page_command    =  this.uri
+        this.s.cs.dash_sub_query  =  this.dash_uri
+        // this.manage_front()
+        
+    }
+ 
+
+  }
+
+  
+}
+
+exports.uri_manage_commands = uri_manage_commands

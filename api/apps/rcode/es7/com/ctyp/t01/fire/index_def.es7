@@ -1,0 +1,42 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js Lib Fire  [V.0.0.1]  (2017-07-07)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Node Js ES6 - Server with express - http/2
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   );
+
+const   { strings_defs }     =   require(  cons.JS_TYP7 + 'string/s02_defs.es7'      );    
+
+class index_def extends strings_defs
+{
+  
+  constructor() 
+  {
+    super()
+  
+  // Atributos
+    this.n           =   'index_def::'               
+
+    this.starttimer     = ''
+
+    // Objects
+    this.d           = ''
+    this.b           = ''
+    this.s           = ''
+    this.u           = ''
+
+    this.req         =  ''  // Original request
+    this.ir          =  ''  // Index Request
+
+    //Param object
+    this.pmt        =  ''
+
+  }  
+
+}  // End Class
+
+exports.index_def = index_def
+

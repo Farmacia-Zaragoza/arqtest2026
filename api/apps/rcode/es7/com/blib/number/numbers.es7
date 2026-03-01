@@ -1,0 +1,33 @@
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+// Agile Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2019 )
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// ---------------------------------------------------------------------------
+// Brqx 2019 - 19/05/28				Depth:[0N]
+// Version : 0.0.1                  Type :[FUNCTION]
+// ---------------------------------------------------------------------------
+// - Notas
+// ---------------------------------------------------------------------------
+//  + Functions
+// ---------------------------------------------------------------------------
+// -  hasNumber
+// -  endswithNumber
+// ---------------------------------------------------------------------------
+//--  
+// ---------------------------------------------------------------------------
+// - Requiere 
+// ---------------------------------------------------------------------------
+//-- Math
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+// Devuelve verdadero si la cadena contiene numeros
+function hasNumber(myString) {
+  return /\d/.test(myString);
+}
+
+// Devuelve verdadero si la cadena termina en numero Ej: b009
+function endswithNumber(myString) {
+  return  /[0-9]$/.test(myString);
+}
+
+module.exports.hasNumber           = hasNumber
+module.exports.endswithNumber      = endswithNumber

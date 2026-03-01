@@ -1,0 +1,65 @@
+// [DOCHANGED_ES7_SPACES]
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+// Agile Node Js - File Operations - ( BRQX NG Arquitectura 2019 )
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// ---------------------------------------------------------------------------
+// Brqx 2019 - 13/06/19             Depth:[0N]
+// Version : 0.0.1                  Type :[FUNCTION]
+// ---------------------------------------------------------------------------
+// - Notas
+// ---------------------------------------------------------------------------
+//  + Almacena codigo en ficheros
+// ---------------------------------------------------------------------------
+// - Funciones 
+// ---------------------------------------------------------------------------
+//-- d-delete_full_filename-      : Create a new file without code
+//-- d-delete_full_filename-      : Generate a new file with passed code
+// ---------------------------------------------------------------------------
+//-- 
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+var     cons         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const   fs           =   require(  'fs'                                                  ),
+        path         =   require(  'path'                                                ),
+        os           =   require(  'os'                                                  ),
+        util         =   require(  'util'                                                ),        
+        empty        =   require(  cons.NODE_MOD + 'is-empty'                            ),
+        trim         =   require(  cons.NODE_MOD + 'trim'                                ),
+        mkdirp       =   require(  cons.NODE_MOD + 'mkdirp'                     ),
+        del          =   require(  cons.NODE_MOD + 'del'                        );
+
+//---------------------------------------------------------------------------------------------  
+
+
+// Delete only files
+function delete_file_pattern(full_file_pattern_int)
+{
+//del.sync(['public/assets/**', '!public/assets/goat.png']);	
+   var json_pattern = '/brqx/cache/arq/issues/issues/uritype/content/front/nohuman/nouser/nocode/notrans/nosync/de_page_20_0_*'
+   json_pattern =  full_file_pattern_int + '*'
+   
+   del.sync(json_pattern,{force: true})
+	
+}
+
+
+// Delete only files
+function delete_full_filename(full_file_name_int)
+{
+	if ( fs.existsSync(full_file_name_int) &&   
+		 fs.lstatSync(full_file_name_int).isFile() )
+		     fs.unlinkSync(full_file_name_int)    
+}
+
+// Delete both links and files
+function delete_if_exist_full_filename(full_file_name_int)
+{
+	if (fs.existsSync(full_file_name_int))	
+    	fs.unlinkSync(full_file_name_int)    
+}
+
+//---------------------------------------------------------------------------------------------  
+module.exports.delete_full_filename  = delete_full_filename
+module.exports.delete_if_exist_full_filename  = delete_if_exist_full_filename
+module.exports.delete_file_pattern = delete_file_pattern   

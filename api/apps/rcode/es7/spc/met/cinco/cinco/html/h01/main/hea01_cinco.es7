@@ -1,0 +1,59 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Browser Head Class  [V.0.0.1]  (2018-01-28)
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Browser Structure Header
+//-------------------------------------------------------------------------------------
+// <head>
+//    <meta charset="utf-8">
+//    <title>NgPharmacy</title>
+//    <base href="http://cinco.vbrqx.com/dev/">
+//    <meta name="viewport" content="width=device-width, initial-scale=1">
+//    <link rel="icon" type="image/x-icon" href="favicon.ico">
+//    <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
+// ------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+// ------------------------------------------------------------------------------------
+// - build_data     : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  { common_head } 			= 	require(	cons.JS_ACO7 + 'html/h01/main/common_head.es7'			      ),		
+        { lnk01_link_cinco }    =   require(  cons.JS_MET7 + 'cinco/cinco/html/h01/main/lnk01_link_cinco.es7'    ),
+        { met01_meta_cinco }    =   require(  cons.JS_MET7 + 'cinco/cinco/html/h01/main/met01_meta_cinco.es7'    );
+
+
+class hea01_head_cinco extends common_head  {
+
+  constructor (     arroba                )
+  {   
+    super(          arroba  )              
+
+    this.n              =  'hea01_head::'                    
+  }
+
+
+  //   <div id="logo">
+  create_metas()
+  {
+    // External Metas
+
+    this.meta_01          =  new met01_meta_cinco( this.arroba  ) 
+    
+    this.content          +=  this.meta_01.code                      
+  }
+
+  create_links()
+  {
+    // External links
+      this.link_01          =  new lnk01_link_cinco(this.arroba)            
+  
+    this.content          +=  this.link_01.code                      
+  }
+
+}
+
+exports.hea01_head_cinco = hea01_head_cinco

@@ -1,0 +1,268 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Cache Site Definition Common Class  [V.0.0.3]  (2020-02-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"    )
+
+const   { printlog }     =   require(  cons.JS_TYP7  + 'logs/printlog.es7'              )
+
+class cache_site extends printlog {
+  constructor() {
+    super()
+    this.n               =   "cache_site::"
+
+    // Objects	
+
+    this.page_name       =   'nodef'
+    this.http_domainbar  =    'nouridef'
+
+    this.lang_url        =    'nourldef'
+
+    this.position        =   ''
+    this.position_norm   =   ''
+
+    this.multi_positions =   ''
+
+    this.page            =   ''
+    this.page_norm       =   ''
+
+    // NEW IN VERSION 7
+    // string names for type
+    
+    // 1. Need Uri
+    // nouri| uritype | uany
+    
+    this.uri             =   'nouri'
+
+    // 2. Common page | specific page
+    // nocomm | comm | spec
+
+    this.comm            =   'nocomm'
+
+    // 3. Edited by humans
+	// nohuman | human | robot 
+    
+    this.human           =   'nohuman'
+
+    // 4. User (anonymous | authenticated | uany )
+	// nouser | anon | auth 
+	
+	this.user            =   'nouser'
+	
+	// 5. Have code
+	// nocode | havecode
+	
+	this.code            =    'nocode'
+	// 6. Translated type
+	// notrans | trans
+	
+	this.trans           =   'notrans'
+	// 7. SyncedType
+	// nosync | sync
+	
+	this.sync            =   'nosync'
+
+    this.lang            =  'en'    
+
+    // Load Type : page | position | nodef
+    this.loadtype        =  'nodef'    
+
+    // Tipo de listado : full | slim | detailed
+    this.teaser_type     =  'full'    
+
+    // Tipo de Pagina
+    this.page_type       =  'comm'    
+
+    this.page_name       =  'nodef'    
+
+    // Common Subtype
+    this.sub             =  'jnode'    
+    
+    // Extension
+    this.ext             =   ''
+
+    // Paths for Json files
+
+    this.cache_path      =  ''
+    this.cache_subpath   =  ''
+
+    this.cache_url       =  '' 
+
+    // Url Jerarquicas
+    this.slash_hierarchi         = ''
+    this.dash_hierarchi         = ''
+
+
+    this.data_comm_version  =  '' 
+    this.data_spec_version  =  '' 
+    this.data_content_version  =  '' 
+    this.data_list_version  =  '' 
+
+    // Hierarchical Method
+	this.founded_index     = ''
+
+    this.founded_type     = ''
+
+	this.founded_file_structure  = ''
+
+	this.founded_dash_breadcrumb = ''
+	this.founded_slash_breadcrumb = ''
+
+	this.founded_category   = ''
+	
+	// Anchor
+	
+	this.anchor            = ''             // Anchor Real name
+	this.anchor_name       = ''             // Anchor File Name
+
+	this.anchor_list       = ''             // Anchor List
+	
+	// Engine
+	
+	this.frontend_engine   = ''	
+	this.style_engine      = ''	
+
+	this.page_format              = ''	
+
+    // Index
+
+    // informacion for index
+	this.idx                      = Array()
+
+    // informacion for content
+	this.list                     = Array()	
+
+    // informacion for content
+	this.product                  = Array()	
+
+	
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  copy(cs)
+  {
+
+
+    this.page_type       =   cs.page_type
+    this.page_name       =   cs.page_name
+
+    this.http_domainbar  =   cs.http_domainbar
+    this.lang_url        =   cs.lang_url
+
+    this.position        =   cs.position
+    this.position_norm   =   cs.position_norm
+
+    this.multi_positions =   cs.multi_positions
+
+    this.page            =   cs.page
+    this.page_norm       =   cs.page_norm
+
+    // NEW IN VERSION 7
+    // string names for type
+    
+    // 1. Need Uri
+    // nouri| uritype | uany
+    
+    this.uri             =   cs.uri
+
+    // 2. Common page | specific page
+    // nocomm | comm | spec
+
+    this.comm            =   cs.comm
+
+    // 3. Edited by humans
+	// nohuman | human | robot 
+    
+    this.human           =   cs.human
+    // 4. User (anonymous | authenticated | uany )
+	// nouser | anon | auth 
+	
+	this.user            =   cs.user
+	
+	// 5. Have code
+	// nocode | havecode
+	
+	this.code            =   cs.code
+	// 6. Translated type
+	// notrans | trans
+	
+	this.trans           =   cs.trans
+	// 7. SyncedType
+	// nosync | sync
+	
+	this.sync            =   cs.sync
+
+    this.lang            =   cs.lang
+
+    // Load Type : full - position
+    this.loadtype        =   cs.loadtype  
+
+    // Tipo de listado : full | slim
+    this.teaser_type     =  cs.teaser_type
+
+
+
+    // Common Subtype
+    this.sub                =  cs.sub
+    
+    // Extension
+    this.ext                      =   cs.ext
+
+    // Paths for Json files
+
+    this.cache_path               =  cs.cache_path
+    this.cache_subpath            =  cs.cache_subpath
+
+    this.cache_url                =  cs.cache_url
+
+    this.slash_hierarchi          =  cs.slash_hierarchi
+    this.dash_hierarchi           =  cs.dash_hierarchi
+    
+    // Versions
+    this.data_comm_version        =  cs.data_comm_version 
+    this.data_spec_version        =  cs.data_spec_version 
+    this.data_content_version     =  cs.data_content_version
+    this.data_list_version        =  cs.data_list_version
+
+    // Hierarchical Method
+	this.founded_index            =  cs.founded_index
+	this.founded_file_structure   =  cs.founded_file_structure
+
+	this.founded_type             =  cs.founded_type
+	
+	this.founded_dash_breadcrumb  =  cs.founded_dash_breadcrumb
+	this.founded_slash_breadcrumb =  cs.founded_slash_breadcrumb
+	this.founded_category         =  cs.founded_category
+
+	// Anchor
+	
+	this.anchor            = cs.anchor
+	this.anchor_name       = cs.anchor_name
+
+	this.anchor_list       = cs.anchor_list
+
+
+	// Engine
+	
+	this.frontend_engine          =  cs.frontend_engine
+	this.style_engine             =  cs.style_engine
+
+	this.page_format             =  cs.page_format
+	
+	// Index ( direct files to get rest implementation)
+	
+	this.idx                      =  cs.idx
+	this.list                     =  cs.list
+  	
+  }
+
+}
+
+exports.cache_site = cache_site

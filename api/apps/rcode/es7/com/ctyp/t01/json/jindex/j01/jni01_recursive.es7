@@ -1,0 +1,146 @@
+// [DOCHANGED_NODE ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node Json Array Recursive Class  [V.0.0.1]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_search_recursive_array_to_file-          : Generate Json Recursive
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+
+const  fs                 =   require(  'fs'                                                                      ),
+       empty              =   require(  cons.NODE_MOD + 'is-empty'                                                ),
+       accents            =   require(  cons.NODE_MOD + 'remove-accents'                                          ),
+       { idx_pointers }                =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                     ),       
+       { jni02_json_recursive_call } =   require(  cons.JS_TYP7  + 'json/jindex/j01/jni02_recursive_call.es7'  );
+
+// Common Array
+class jni01_json_recursive extends jni02_json_recursive_call {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                =  'jni01_json_recursive::'      
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Recursive structure
+  save_json_index_recursive_array_to_file(  
+            index                 ,  // Indice
+            enbreadcrumb  =   ''  ,  // Breadcrumb en ingles
+            depth         =  0    ) 
+  {
+
+    this.m          = 'save_json_search_rcsv'
+
+    var idx = new idx_pointers(index)
+    
+    let cats         = this.getarr(this.s.ms.main_lang, idx.jindex)                              ;
+
+    var last_element           = Object.keys(cats).length - 1
+
+    // 30
+    // this.p('jni_INDEXXXX ' + last_element)
+
+    // Necesito una varible global para saber cuando poner mas comas
+    this.separator             = false
+
+    for (var pos in cats)
+    {
+
+      // a0001 .. a0050
+      this.cat                 = cats[pos]
+
+    
+      // this.p('jni_INDEXXXX ' + this.cat)
+    
+      let next_level           = this.get_next_level(pos)
+
+      let current_level        = index     + 'v' + next_level
+      let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.cat ).toLowerCase()
+
+      // add_json block
+      this.rvlash_inner(current_level)
+      this.index               = this.result   
+        
+      this.clink               = this.getkeylang( idx.lindex , pos)
+      
+      // Esto esta pendiente
+      
+      if ( (empty(this.clink)) || (this.s.ms.lnk_generation_type === "composed"    ) )
+        this.clink             = current_enbreadcrumb
+
+      // end add_json block
+
+      this.j.clean()
+      
+      this.j.index    =   this.index
+      
+      // Set Json attribs
+      this.attribs(idx, pos)
+      
+      
+      this.j.item     =   this.cat
+      this.j.link     =   this.clink
+      this.j.level    =   depth    
+
+      // 01 - (ASHM ) Auto Scroll for Horizontal Marquee
+      // Este titulo habria que indexarlo tambien
+      // this.p('jni_INDEXXXX ' + this.j.value)
+
+      this.k.copyvalues(this.j)
+
+      // this.p ("jns01_no_rcsv : " + this.j.item +  ' T '  + this.j.otype )    
+      
+      if ( this.j.child == "yes" )
+      {
+
+        // Array u Objeto
+          let object_type     =  this.k.otype
+
+
+          this.review_childrens_index_recursive(  
+            current_level          ,
+            enbreadcrumb       ,  // Breadcrumb en ingles
+            depth + 1            ,
+            this.j.otype         )
+          
+          this.j.clean()
+          this.k.clean()          
+  
+      } 
+      else
+      {
+        // Solo se va a generar cuerpo si es full el tipo de teaser 
+        if ( this.s.cs.teaser_type	   ==  'full')   // 
+        {
+          let pf_to_load = ''
+
+          if ( (this.k.type == "parragraph"  ) ||  (this.k.type == "iparragraph" ) )
+          {
+
+            this.rvtoslash(index)
+            let folder_to_load = this.s.ms.contents_path + 'l' +  this.result
+            pf_to_load     = folder_to_load       + '/' + this.j.value 
+
+            this.index_json_parragraph_from_file(pf_to_load )
+
+          }
+
+        }
+      }
+    
+     }  // End For
+
+  }
+  
+}
+
+exports.jni01_json_recursive = jni01_json_recursive

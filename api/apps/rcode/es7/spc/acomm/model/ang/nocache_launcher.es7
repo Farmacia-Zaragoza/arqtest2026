@@ -1,0 +1,168 @@
+// [DOCHANGED_ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Model Arqdru  [V.0.0.5]  (2019-11-18)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Objects : 
+// comm - spec - content
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Angular_NoCache > Angular_Model > Comm_Model > Index_fast > Index
+// @Model > @Index > @Log
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// d-run_method-
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// e-site_mcomm-   : Multi position site to load arrobas
+// e-site_uri-     : Url for non cached
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+// cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
+
+// Must to be unique
+
+var   cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const { angular_model }         =   require(  cons.JS_ACO7  + 'model/ang/model.es7'      ),
+      { site_uri }              =   require(  cons.JS_ACO7  + 'uri/n02/u01_site_uri.es7'      ),
+      { arroba_rest }           =   require(  cons.JS_TYF7  + 'a01_load/lindex/i03_arroba_rest.es7' ),
+      { rs01_object_search_main } =   require(  cons.JS_TYP7  + 'arroba/rest/rs01_search_main.es7' ),
+      { r02_main }                =   require(  cons.JS_TYP7  + 'rest/r01_main/r02_main.es7' ),
+      { site_mcomm }              =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m02_site_comm.es7' );
+
+class angular_no_cache extends angular_model
+{
+  //---------------------------------------------------------------------------------------------  
+  constructor(pmt = '' )
+  {
+
+    super(  pmt )
+
+    this.n                =  'angular_no_cache::'
+
+
+    // callen/search/wysiwyg/regex/management
+    // this.p('nocache_launcher - rest call' + this.ir.uri)
+    
+    var pos = this.strpos(this.ir.uri, "rest")
+
+    if (pos !== false)
+    { 
+      this.p('nocache_launcher - rest call')
+      this.run_rest()
+    }
+    else
+      this.run_method()
+  } 
+
+  //---------------------------------------------------------------------------------------------  
+
+  run_method()
+  {
+    this.m                = 'run_method'
+
+    // Necesito saber si es robot antes de nada
+    // Entonces actuar en consecuencia ajustando uris y parametros
+
+    // aqui llega bien
+    // this.p('arqdru_noche_robot A ' + this.s.b.robot_page )     
+
+    //1. Multi Position EN - Por defecto 0 2 5
+    // Specific final comm - '0 2 4 5 15 16'
+    this.comm              =  new site_mcomm(this.s, 
+                                             this.s.ms.comm_positions)
+
+    this.copy_model()
+
+    // this.p('arqdru_noche_robot A ' + this.comm.s.b.robot_page )     
+    // this.p('arqdru_noche_domain  ' + this.comm.s.cs.http_domainbar )
+
+    // Aqui ya lo conoce
+    // this.p('arq_model_page X0an22 ' + this.comm.s.cs.page +  ' Lang ' + this.comm.s.cs.lang )
+   
+    //2. URI SPECIFIC VERSION FOR ARQDRU - WILL MANAGE REAL COMMANDS
+    // Usando fast uri no funciona
+    this.uspc             =   new site_uri( this.comm.s   , 
+                                              this.ir       )
+ 
+    // o14_waterfalls
+    // this.p('nche_launcher_uri_test  HH ' + this.uspc.uri_args_sorted[0])
+
+    // Conoce lang
+    // this.p('arq_model_uspc X1an22 ' + this.uspc.s.cs.page +  ' Lang ' + this.uspc.s.cs.lang )
+
+    // this.p('arqdru_noche_robot B ' + this.comm.s.b.robot_page )     
+    // this.p('arqdru_noche_domain  ' + this.comm.s.cs.http_domainbar )
+
+    // Copiamos el dominio para generar los robot
+    // No copiamos nada más para mantener intacta la estructura comun
+    this.acomm.s.cs.http_domainbar = this.comm.s.cs.http_domainbar
+
+    // this.p('arq_model_uspc X2an22 ' + this.uspc.s.cs.page +  ' Lang ' + this.uspc.s.cs.lang )
+    
+    this.run_site()
+  	
+  }
+
+  // en/rest/search/architecture/method
+  run_rest()
+  {
+    this.uspc             =   new site_uri( this.s   , 
+                                            this.ir       )
+
+    // habra que poner esto en arroba rest
+    this.s.cs.uri         =   "uritype"
+    
+    this.arroba.copy_uri(this.uspc)
+  	
+  	this.acontent     =  new arroba_rest(this.arroba)
+
+
+    // TESTING
+    this.arroba.arr          =  this.acontent.a.arr
+
+    this.arroba.s            =  this.acontent.a.s
+
+    // For product
+    // let longi = Object.keys(this.arroba.arr['en']['j020v001']).length -1
+    // this.p('cache_arrlen  ' + longi)
+
+
+    // ESTO ES PARA UNA LISTA
+
+    // Tipo rest a devolver
+    this.rest         =  new r02_main(this.s.b.page_search)
+  	
+  	this.restgen      =  new rs01_object_search_main(this.arroba , this.rest)
+
+    this.restgen.gen_rest_search_main()      
+
+    // content - page
+    this.p('nocacheload ' + this.s.cs.loadtype)
+
+    let longi = Object.keys(this.rest.arr).length -1
+
+    this.parr(this.rest.arr[1])
+
+    this.p('cache_arrlen  ' + longi)
+
+    this.rest         = this.restgen.rest
+
+    this.p('rest output  ' + this.rest.count)
+
+  	// Ahora toca generar la respuesta rest
+
+  	
+  }
+
+} // end Class
+
+exports.angular_no_cache = angular_no_cache
+

@@ -1,0 +1,109 @@
+// [DOCHANGED_NODE_ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - URI Page String Class  [V.0.1.5]  (2019-11-19)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-generate_page_string-           : Generate page string unique line
+// - d-generate_start_dash-            : Create start dashes
+// - d-manage_uri_page_number-         : Generate right page number argument
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+
+const   { uri_normalize }     =   require(  cons.JS_TYP7 + 'uri/u13_normalize.es7'    );
+
+class uri_page_string extends uri_normalize {
+
+  constructor()
+  {
+    super()    
+    this.n               =   'uri_page_string::'        
+  }
+
+//-------------------------------------------------------------------------------------
+
+  manage_uri_page_number()
+  {
+	  
+    // Todo esto tiene sentido siempre que no conozcamos ya la pagina
+    // Si es una url ya concida (cookies) o un alias (rct) entonces ya conoemos la pagina de antemano
+    
+    var pagina = 0
+    
+    if (this.s.cs.page == '')
+    {  
+      // this.p('p01_prod_paiarg ' + this.u.page_iargs)
+
+        if ((isNaN(this.page_iargs)) )
+          pagina = Number(this.page_iargs.substr(1))
+        else
+          pagina = Number(this.page_iargs)
+
+        // this.p('p01_prod_pagina ' + pagina)
+
+        this.s.cs.page         =   pagina.toString()
+    }    
+  }  
+
+//-------------------------------------------------------------------------------------
+
+  generate_page_string()
+  {
+    // String page
+    var sep = '-'
+
+    this.page_string =   ''                                      
+
+    //Ej : truck-y-node_dbrqx_com-fr-ssl-human-product-list
+    
+    this.page_string += this.s.ms.site        + sep  // 01 site (truck)
+    this.page_string += this.s.ms.slan        + sep  // 02 this.s.slan (y|n)
+    this.page_string += this.dash_domain      + sep  // 03 this.dash_domain
+    this.page_string += this.s.ms.lang        + sep  // 04 this.s.lang
+    this.page_string += this.s.ms.ssl_page    + sep  // 05 this.u.ssl_page [ssl|nnn]
+    this.page_string += this.s.ms.live_opt    + sep  // 06 Live Site opt [script|minimized|inline]
+    this.page_string += this.s.ms.robot       + sep  // 07 this.s.robot
+    this.page_string += this.page_command     + sep  // 08 this.u.page_command
+    this.page_string += this.page_name        // 09 page name
+
+    // this.p('u07_ps Names : ' + 'site-slan-domain-lang-ssl-opt-robot-command-name')
+    // this.p('u07_ps String: ' + this.page_string )
+                
+  }
+
+//-------------------------------------------------------------------------------------
+
+  generate_start_dash()
+  {
+    this.start_dash         = this.dash_uri.substr(0, 5)
+    this.start_dash_03      = this.dash_uri.substr(0, 3)
+
+    this.url                = this.http_domain + "/" + this.uri
+
+    this.dash_url           = this.dash_domain + "_" + this.dash_uri
+    this.dash_url_port      = this.dash_domain + this.dash_port + this.dash_uri
+    this.site_url           = this.s.cs.http_domainbar 
+    this.lang_url           = this.s.cs.http_domainbar + this.s.ms.lang + "/"
+
+    // Prepare in s.cs
+    this.s.cs.lang_url      = this.lang_url    
+
+
+    // uri:: - site_url https://node.dbrqx.com/  - L https://node.dbrqx.com/fr/
+
+    // this.p('site_url ' + this.site_url + '  - L ' + this.lang_url)
+    
+    // Array de urls para CDN img01.domain img02.domain 
+    this.arr['url'].push(this.site_url)
+                
+  }
+  
+}
+
+exports.uri_page_string = uri_page_string

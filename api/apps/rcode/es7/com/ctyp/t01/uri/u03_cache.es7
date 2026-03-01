@@ -1,0 +1,99 @@
+// [DOCHANGED_NODE_ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - URI Class  [V.0.1.5]  (2019-11-21)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class: 
+//-------------------------------------------------------------------------------------
+// - c-uri_cache-
+//-------------------------------------------------------------------------------------
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-manage_cache-       : Manage cache for sites 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+
+const   { uri_anchor }     =   require(  cons.JS_TYP7 + 'uri/u04_anchor.es7'    );
+
+class uri_cache extends uri_anchor {
+
+  constructor()
+  {
+    super()    
+    this.n               =   'uri_cache::'        
+  }
+
+  // Gestion de comandos de cache @reload 
+  manage_cache()
+  {
+                
+    var pos = this.strpos(this.uri, "@")
+
+    if (pos !== false) 
+    {
+      
+      let uri_arr_pre          =   this.uri.split('@')
+
+      let count_positions      =  uri_arr_pre.length -1            
+
+      // this.p('Numero_positions-:' + count_positions)                
+
+      switch (count_positions)
+      {
+        case 0:
+          // Es front
+          this.url_method      =  ''                      
+          break ;                                  
+
+        case 1:
+          // No hay comandos de cache o busqueda
+          // this.p('HAY COMANDO_CACHE')                    
+          this.url_method      =  uri_arr_pre[1]                
+          this.uri             =  uri_arr_pre[0]                
+          break                                  
+        default:
+          // Wrong page
+          this.p('HAY MULTIPLES COMANDOS - NO PREPARADO')                    
+          this.manage_front()                          
+      }
+
+    }
+    else
+    {
+      this.url_method    =  ''                              
+    }
+    
+    // this.p ('u03_cache Url Method ' +  this.url_method + ' Uri ' + this.uri)
+    
+    // Gestionando el metodo de la uri
+    switch (this.url_method)
+      {
+        case 'reload':
+          // Se pide reload. Desactivamos la cache
+          this.b.cache =  false                      
+          break ;                                  
+
+        case 'jsons':
+           // Siempre mostrara los jsons de la pagina actual
+          this.p('JSONS DEBE MOSTRAR JSONS SIN CACHE' )
+          this.b.cache              =   false
+
+          // Switch para las paginas del chequeo de los jsons
+          this.b.only_json_page     =   true
+          
+          // Debemos mostrar los jsons en lugar del codigo
+          // No hay comandos de cache o busqueda
+          break ;                                   
+      }
+
+                
+  }
+  
+}
+
+exports.uri_cache = uri_cache

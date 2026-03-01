@@ -1,0 +1,84 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS - Links Html Class  [V.0.0.3]  (2019-11-25)
+// Brqx Group - Agile Farmacia Zaragoza Methodology - Browser [ES6]
+//-------------------------------------------------------------------------------------
+// Flat Structure Links
+//-------------------------------------------------------------------------------------
+//L[01]  <link rel="icon" type="image/svg" href="img/favicon/arqdru_icon_edu_2017.svg">
+//L[02]  <link rel="apple-touch-icon" href="img/favicon/arqdru_icon_edu_2017.svg">
+//L[03]  <link rel="shortcut icon" href="img/favicon/arqdru_icon_edu_2017.png" type="image/png">
+// CSS
+//L[07]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css" as="style" onload="this.rel='stylesheet'">
+//L[07]  <link rel="preload" href="fassets/libs/bootstrap4/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
+//L[07]  <link rel="preload" href="assets/css/style_dynamic_dev.css" as="style" onload="this.rel='stylesheet'">
+//L[07]  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css" as="style" onload="this.rel='stylesheet'"/>
+
+// DEFER SCRIPT
+//S[01] <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+
+// ------------------------------------------------------------------------------------
+//* LINK *
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class: lnk01_link_arqdru
+// ------------------------------------------------------------------------------------
+// Methods:
+// ------------------------------------------------------------------------------------
+// - create_favicon     : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                        =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const { html_style } 	= 	require(	cons.JS_TYP7 + 'html/style/html_style.es7'			  ),
+      { getset } 		= 	require(	cons.JS_TYP7 + 'html/style/getset.es7'	);
+
+class common_link extends getset  {
+ 
+  constructor (     thm                    )
+  {   
+
+    super()                              
+
+    this.n              =  'common_link::'          
+
+    this.thm            =  thm                
+
+    // External object
+    this.script_to_load        =  ''
+    this.link_to_load        =  ''
+
+    // tag object
+    this.linktag          =   ''                 
+  
+    this.link_favicon        =  new html_style('link')     
+  
+    this.build_data()                        
+
+  }
+
+  //L[01]  <link rel="icon" type="image/svg" href="img/favicon/arqdru_icon_edu_2017.svg">
+  create_favicon()
+  {
+            
+    this.link_favicon.rel          =  'icon'                        
+    this.link_favicon.type          =  'image/x-icon'                      
+
+    // DomainBAr http://arqdru.vbrqx.com/ang/vx/favicon.ico
+    
+    // Hay que revisar por que no llega
+    // lnk02_ICON r_img/logos/brqx_icon_arquitectrura_drupal_2010_50x50.gif
+    // this.p('lnk02_ICON ' + this.thm.s.ms.icon )
+
+    this.link_favicon.href          =    
+        this.thm.s.cs.http_domainbar +  this.thm.s.ms.icon        
+  
+    // this.p('DomainBAr ' +  this.link_favicon.href)
+
+    this.link_favicon.pcreate()                            
+    
+    this.code            +=  this.link_favicon.code            
+  }    
+
+}
+
+exports.common_link = common_link

@@ -1,0 +1,107 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Proces Class  [V.0.0.2]  (2019-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:
+//-------------------------------------------------------------------------------------
+// c-anode_process-
+//-------------------------------------------------------------------------------------
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-current_hsheet_process-       : Process current sheet for main lang for hierarchical method
+//- d-current_hsheet_process_es-    : Process current sheet for spec lang for hierarchical method
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// AnoProcess > AnoTermProcess >
+// @Anode >  ...
+//-------------------------------------------------------------------------------------
+// Execution Line : 
+//-------------------------------------------------------------------------------------
+// CurrProces > CurrLoad > RECURSIVE
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  { anode_run_search }  =   require(  cons.JS_TYP7  + 'arroba/anode/a08_search/an82_run.es7'   ),
+       { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
+
+class anode_fssheet_process extends anode_run_search {
+  constructor()  
+  {
+    super()
+    this.n                        = "anode_fssheet_process::"
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Will process all pages
+  // MAIN/position/page --> @FORMAT
+  current_fssheet_process(    lang                  ,
+                              array_index_string  = ''    ,
+                              file_structure_path = ''    ,
+                              current_subpath     = ''    ,
+                              breadcrumb          = 'kb'  ,
+                              title               = ''    ,
+                              folder_to_load      = ''    )
+  {
+  
+    this.m          = 'current_process'
+
+    // Load folder in folder_content_array
+
+    this.p('an79_Folder Load  ' + folder_to_load)
+    
+    this.load_folder_information(folder_to_load)
+
+    this.p('an79_Num_files  ' + this.file_contents.length)
+    this.p('an79_Num_folder ' + this.folder_contents.length)
+  
+    let num_folders = this.folder_contents.length
+    let num_files   = this.file_contents.length
+
+    // Ajustamos la salida para que sea una hoja
+    this.arr[lang]['r' + array_index_string] = "sheet"
+
+
+    // Le insertamos v001 porque es el valor para las imagenes cuando hay parrafadas  
+    array_index_string += 'v001'
+    
+    // hay que falsear el valor del tipo de hoja
+  
+    if ( num_folders == 0 )
+    {
+      this.p('an79 generating files '  + array_index_string)
+      this.generate_files( lang               ,  
+    	                   array_index_string ) 
+
+      // En ficheros requiere actualizar el indice
+      this.s.cs.founded_index      = array_index_string    	                   
+    }
+    else
+    {
+      this.p('an79 generating folders '  + array_index_string)
+      if (lang == "en")
+        this.generate_folder(lang                 ,
+                             array_index_string   ,
+                             breadcrumb           )
+      else                           
+        this.generate_folder_lang(lang                 ,
+                                  array_index_string   ,
+                                  breadcrumb           )
+
+    }
+    
+    
+    
+  }
+
+}
+
+exports.anode_fssheet_process = anode_fssheet_process

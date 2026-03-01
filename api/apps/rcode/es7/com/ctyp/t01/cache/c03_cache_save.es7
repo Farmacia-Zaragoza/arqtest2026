@@ -1,0 +1,63 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Cache Save Class  [V.0.1.5]  (2019-05-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-main_full_file_cache_save-       : Save cache file names
+//- d-main_full_content_cache_save-    : Save cache content
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"     )
+
+const	fs 				= 	require(  'fs'												),
+	    shtf  			= 	require(  cons.JS_LIB7  + 'file/save_hash_to_file.es7' 	),
+	    satf  			= 	require(  cons.JS_LIB7  + 'file/save_array_to_file.es7' 	),
+        { cache_del }   =   require(  cons.JS_TYP7  + 'cache/c04_cache_del.es7'         );
+
+class cache_save extends cache_del {
+  constructor() 
+  {
+    super()
+    this.n                          =   "cache_save::"
+  }
+
+  
+  // Save the cache files in disk ( pending)
+  //---------------------------------------------------------------------------------------------  
+  main_full_file_cache_save()
+  {
+  	// this.p('cach_sv03_Vamos a generar el fichero cache ' + this.cache_path)
+  	
+    // Es un HASH of HASH -- this.content_arr[content_index][lang]
+  	// this.p('jn06_Longitud del array ' + Object.entries(this.content_arr).length)
+
+    // for (var pos_lang in this.content_arr )
+    //   this.p('Pos ' + pos_lang)
+
+	satf.save_hash2d_to_file(	this.s.cs.cache_path				, 
+								this.content_arr						)
+  	
+  }
+  // Save contents in file - Save Hash To File
+  //---------------------------------------------------------------------------------------------  
+  main_full_content_cache_save()
+  {
+    // Aqui se genera la estructtura cache
+  	// this.p('cach_sv03_Vamos a generar el fichero cache ' + this.s.cs.cache_path)
+
+	shtf.save_hash_to_file(	    this.s.cs.cache_path				, 
+								this.tsb						)
+
+  }
+
+
+}
+
+exports.cache_save = cache_save

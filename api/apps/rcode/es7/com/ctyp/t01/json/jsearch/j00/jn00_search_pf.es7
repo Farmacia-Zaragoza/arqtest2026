@@ -1,0 +1,99 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Fast Node Parragraph Common Class  [V.0.0.2]  (2019-05-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-search_manage_term-          : Get object or array method fro common management 
+// - d-save_json_parragraph_from_file-   : Generate parragraphs
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+//const   { cache }             =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'                    ),
+const   { jn01_general_common_json } =   require(  cons.JS_ACO7  + 'json/j01/n01/jn01_general_common_json.es7' ), 
+        empty                 =   require(  cons.NODE_MOD   + 'is_empty'                             );
+
+
+class jn00_search_pf extends jn01_general_common_json {
+           
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'jn00_search_pf::'      
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  search_manage_term(articles_arr , word)
+  {
+    this.m                    =   'search_manage_term'
+    // ALGORITMO
+    
+    // Tenemos una lista de articulos
+    
+    // Caso 01 : El array no tiene argumentos
+
+    // this.parr(this.info)
+
+    // No encuentra nada Zaleman
+    this.p('j00_processSTR ' + word)
+
+    let articles_pos = this.info[word].split(' ')
+
+    this.p('j00_processSTR ' + word + ' Pos ' + articles_pos )  	
+    if (!this.start_include)
+  	{
+      this.start_include = true
+      
+      for (var idx in articles_pos)
+      {
+         let article = articles_pos[idx]
+         this.p('j00_processSTR_Article ' + article )
+         if (!(articles_arr.includes(article)) )
+           articles_arr.push(article)
+      }    	
+  	}
+  	else
+  	{
+  	// Caso 02 : El array tiene argumentos, priorizan los argumentos
+  	// Se iteran y si no estan se sacan
+
+      // Primera Iteracion LINEA ARTICULOS
+      // Tenemos en array 10 12 25 42
+
+      // Iiteramos 05 10 25
+      
+      // Resultado AND -> 25
+      for (var line_idx in articles_pos)
+      {
+         let article = articles_pos[line_idx]
+         if (!articles_arr.includes(article) )
+             delete articles_pos[article]
+      }    	
+      
+      // Iteramos 10 25
+
+      for (var line_idx in articles_arr)
+      {
+         let article = articles_arr[line_idx]
+         if (!articles_pos.includes(article) )
+             delete articles_arr[article]
+      }    	
+      
+      // Finalmente : 10 25
+      // Aqui entra solo si hay varios articulos que lo tienen
+      this.parr(articles_arr)
+    }  	
+  }
+
+   
+}
+
+exports.jn00_search_pf = jn00_search_pf

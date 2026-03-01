@@ -1,0 +1,134 @@
+// [DOCHANGED_ES6]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS - Farma Links Tag Class  [V.0.0.3]  (2018-05-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Farma Structure Scripts - Version 01 - Js as link
+//-------------------------------------------------------------------------------------
+// <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
+
+// Style attributes example
+//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css" 
+//        as="style" onload="this.rel='stylesheet'">
+
+// ------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:c-scr01_js_vitolas-
+// ------------------------------------------------------------------------------------
+// Methods:
+// ------------------------------------------------------------------------------------
+// - build_data  	 		: Build html final code for object
+// - d-create_link_0N-
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"          )
+
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),		
+		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									);
+
+
+class lnk03_css_minimized_vitolas extends getset  {
+
+    constructor (     thm	              						)
+    {   
+
+		super()
+
+		this.n							=	'lnk03_css_minimized_vitolas::'						
+		this.m							=	'constructor'
+
+		this.thm						=	thm							
+	
+		this.link_01					=	new html_style('link')
+
+		this.build_data()													
+
+    }
+
+	// <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
+
+    create_style()
+    {
+
+		// this.link_jquery.rel			 	=  'preload'
+
+		this.link_01.onload		 		=  	"this.rel='stylesheet'"
+
+		this.link_01.type				=	'text/css'
+		this.link_01.as					=	'style'
+		this.link_01.rel				=	'stylesheet'
+
+
+		let css_name 						=	'styles_min.css' 
+
+		this.link_01.href			 	=    								
+			this.thm.u.http_domainbar + 'dev/' + css_name 									
+		
+		this.link_01.pcreate()																		
+	
+		this.code							+=	this.link_01.code
+	}		
+
+	// <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
+
+    create_fontawesome()
+    {
+
+		// this.link_jquery.rel			 	=  'preload'
+
+		this.link_01.onload		 		=  	"this.rel='stylesheet'"
+
+		this.link_01.type				=	'text/css'
+		this.link_01.as					=	'style'
+		this.link_01.rel				=	'stylesheet'
+
+
+		let css_name 					=	'fontawesome_v57_min.css' 
+
+		this.link_01.href			 	=    								
+			this.thm.u.http_domainbar + 'fassets/css/' + css_name 									
+		
+		this.link_01.pcreate()																		
+	
+		this.code							+=	this.link_01.code
+	}		
+
+    create_bootstrap()
+    {
+
+		// this.link_jquery.rel			 	=  'preload'
+
+		this.link_01.onload		 		=  	"this.rel='stylesheet'"
+
+		this.link_01.type				=	'text/css'
+		this.link_01.as					=	'style'
+		this.link_01.rel				=	'stylesheet'
+
+
+		let css_name 					=	'bootstrap_v413_min.css' 
+
+		this.link_01.href			 	=    								
+			this.thm.u.http_domainbar + 'fassets/css/' + css_name 									
+		
+		this.link_01.pcreate()																		
+	
+		this.code							+=	this.link_01.code
+	}		
+
+
+    build_data()
+    {
+
+		this.create_bootstrap()
+		this.create_fontawesome()
+		this.create_style()
+
+
+		// Pending [17-11-02]
+		this.p('Code : >' + this.code ) 											
+
+    }
+
+}
+
+exports.lnk03_css_minimized_vitolas = lnk03_css_minimized_vitolas

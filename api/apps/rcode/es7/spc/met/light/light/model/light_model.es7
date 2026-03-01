@@ -1,0 +1,49 @@
+// [DOCHANGED_ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Model Social  [V.0.0.6]  (2019-11-19)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Objects : 
+// light_cache- light_nocache
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Site_Model > Comm_Model > Index_fast > Index
+// @Model > @Index > @Log
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// e-light_no_cache-  : Social no cache launcher
+// e-light_cache-     : Social cache launcher
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+// cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
+
+// Must to be unique
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const   { light_no_cache } =   require(  cons.JS_MET7  + 'light/light/model/light_nocache_launcher.es7' ),
+        { light_cache }    =   require(  cons.JS_MET7  + 'light/light/model/light_cache_launcher.es7'),
+        { printlog }        =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                       );
+
+class light extends printlog
+{
+  constructor(pmt = '' )
+  {
+
+    super()
+
+    this.n                =  'light::'
+
+    if (pmt.cache)      this.model          = new light_cache(    pmt  )
+    else                this.model          = new light_no_cache( pmt  )
+  } 
+
+} // end Class
+
+exports.light = light

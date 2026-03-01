@@ -1,0 +1,59 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Broser  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+// -------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// -------------------------------------------------------------------------------------
+// Inheritance Line : 
+// -------------------------------------------------------------------------------------
+// Theme_Json (spc) > Printlog
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+// -------------------------------------------------------------------------------------
+// - d-generate_content_json-            : Generate content json structure
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const   { printlog }        =   require(  cons.JS_TYP7  + 'logs/printlog.es7'             ),
+        { container }       =   require(  cons.JS_TYP7  + 'container/c01_cont.es7'        );
+
+class tjson_comm extends printlog
+{
+  constructor(arroba = '')
+  {
+    super()
+    this.n                  =   "theme_json::"
+
+
+    this.arroba             =   arroba
+    
+    this.jcontent           =   ''        
+    this.u                  =   this.arroba.u
+    this.s                  =   this.arroba.s
+  }
+
+//---------------------------------------------------------------------------------------------
+  
+  generate_content_json()
+  {
+
+    // 01 CONTENT TYPE - GENERIC FOR ANY PAGE 
+
+    // Con content siempre se genera el fichero pues se supone que nunca sera comun a otras paginas        
+    this.jcontent.rungen_content()
+    
+
+    this.jcontent.s.ms.j_cont_path        =  this.jcontent.s.cs.cache_path
+    this.jcontent.s.ms.j_cont_url         =  this.jcontent.s.cs.http_domainbar + this.jcontent.s.cs.cache_url
+   
+
+    this.arroba.copy ( this.jcontent)
+
+  } 
+
+} // end Class
+
+exports.tjson_comm = tjson_comm

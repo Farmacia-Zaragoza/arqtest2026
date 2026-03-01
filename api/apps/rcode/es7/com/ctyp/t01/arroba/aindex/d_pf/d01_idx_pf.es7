@@ -1,0 +1,97 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Fast Node Parragraph Common Class  [V.0.0.2]  (2019-05-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-index_arroba_parragraph_from_file-          : Get object or array method fro common management 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+const   { d02_idx_arr }     =   require(  cons.JS_TYP7  + 'arroba/aindex/d_pf/d02_idx_arr.es7' ),
+	    shtf  			= 	require(  cons.JS_LIB7  + 'file/save_hash_to_file.es7' 	),
+	    satf  			= 	require(  cons.JS_LIB7  + 'file/save_hash1d_to_file.es7' 	),
+        empty                 =   require(  cons.NODE_MOD   + 'is_empty'                        );
+
+
+class d01_idx_pf extends d02_idx_arr {
+           
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'd01_idx_pf::'      
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Page Properties - Only Data - Parragraphs
+  index_arroba_parragraph_from_file( file_to_load    )   // Indice
+  {
+ 
+    // We have the lines in this.contents
+    // Hay que limpiar el array
+    // this.p('j00_comm_pf_Loading File ' + file_to_load)
+    
+
+    this.word_arr         =   Array()
+    var str_aux           =   ''
+    
+    this.load_file_information(file_to_load)
+
+
+    // this.p('jn10idx_LEngth_Array_Pf ' + last_element  )
+
+
+    for (var pos in this.contents)
+    {
+      // Son lineas de texto e igual vacias
+      // Hay que escapar las comillas dobles
+      
+      let phrase = this.contents[pos]
+
+      // this.p('Ahrase ' + phrase)
+      // ALGORITMO
+      // Cada frase debe procesarse y generarse informacion por cada palabra relativa a ser buscada
+      this.process_phrase(phrase)
+          
+      // INDEX (word) VALUE (count)
+      
+      
+    }  // End For
+  
+      // SEGUNDO FOR - CHECK IDEAL WORDS FOR INDEXING
+
+    // for (var pos in this.word_arr)
+    // {
+    //   str_aux = this.word_arr[pos]
+    //   this.p ('jn10_Word ' + pos + ' => ' + str_aux )
+    // }
+
+    // pf_result = false
+    
+    // Tenemos las palabras relacionadas con el articulo
+    // Ahora estas palabras hay que indexarlas en la estructura de busqueda
+    // arr_palabra_@ 1 2 3 4 5 --> articulos donde existe la palabra
+
+    // Hay que preparar el hash
+
+    this.p('jn10_saving_HASH PF ' + this.s.cs.cache_path )
+
+// aqui pasabamos la pagina
+//	satf.save_hash1d_to_file(	    this.s.cs.cache_path 		        , 
+//								this.word_arr						    ,
+//								this.s.cs.position						, // 0020
+//								this.s.cs.page							) // 1
+  
+  
+  }
+    
+}
+
+exports.d01_idx_pf = d01_idx_pf

@@ -1,0 +1,81 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Fast Node Parragraph Common Class  [V.0.0.2]  (2019-05-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-index_arroba_parragraph_from_array-          : Get object or array method fro common management 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+const  { d03_idx_fn } =   require(  cons.JS_TYP7  + 'arroba/aindex/d_pf/d03_idx_fn.es7' ),
+       { idx_pointers }  =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                     ),       
+        empty                 =   require(  cons.NODE_MOD   + 'is_empty'                        );
+
+
+class d02_idx_arr extends d03_idx_fn {
+           
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'd02_idx_arr::'      
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Page Properties - Only Data - Parragraphs
+  index_arroba_parragraph_from_array( index    )  
+  {
+ 
+    // We have the lines in this.contents
+    // Hay que limpiar el array
+    // 020v001
+    // this.p('an20_Loading Array DEBUG ' + index)
+    
+    // 020v001v001
+    //j020v001v000
+    
+    var idx = new idx_pointers(index)
+    this.arroba_attribs_cats(idx)
+    
+
+    var str_aux           =   ''
+
+    // 020v001v001 - -1
+    // this.p('an20idx_ ' + index +  ' N ' + last_element  )
+    
+    
+    for (var pos in this.cats)
+    {
+
+      this.arroba_attribs(idx, pos)
+
+      // Son lineas de texto e igual vacias
+      // Hay que escapar las comillas dobles
+
+      let phrase = this.value
+
+      // d01_idx_Ahrase DEBUG_ Info  : $:L[kb.vbrqx.com/en/cfre@Code Fragment Regular Expression]
+      this.p('d01_idx_Ahrase DEBUG_ ' + phrase)
+       
+      // ALGORITMO
+      // Cada frase debe procesarse y generarse informacion por cada palabra relativa a ser buscada
+      this.process_phrase(phrase)
+          
+      // INDEX (word) VALUE (count)
+      
+      
+    }  // End For
+ 
+  
+  }
+    
+}
+
+exports.d02_idx_arr = d02_idx_arr

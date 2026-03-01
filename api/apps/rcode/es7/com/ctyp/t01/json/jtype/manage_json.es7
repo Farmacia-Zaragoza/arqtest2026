@@ -1,0 +1,505 @@
+// Updated_Langs:NodeJs+,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//TypeJson Json Types Class  [V.0.0.5]  (2019-04-28)
+//------------------------------------------------------------------------------------
+
+//Methods:
+
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const    { json }        =   require(  cons.JS_TYP7   + 'json/jtype/json.es7'                        )
+
+
+class manage_json extends json {
+  constructor(file_name = '')
+  {
+    super()
+    this.n         =   "typejson::"
+  }
+
+  managebranchelem(part)
+  {
+	this.add_index(			   this.index			)
+    this.add_element( 'otype' ,   this.otype    )
+	if (part)
+			this.add_type(					this.type			)
+	else
+			this.add_typelast(				this.type			)
+  }
+
+
+  // Common method both if is array or if is object
+  managecommontype(part = false)
+  {
+     switch(this.type){
+      case "theme":
+        this.managethemeelem(part)
+        break;
+      case "doublemenu":
+        this.managethemeelem(part)
+        break;
+      case "menu":
+        this.managethemeelem(part)
+        break;
+      case "zone":
+        this.managethemeelem(part)
+        break;
+
+
+      case "parragraph":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element(     'title' , this.hover  )
+        this.add_element( 'otype' ,   this.otype    )
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+      case "iparragraph":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element(     'title' , this.hover  )
+        this.add_element( 'otype' ,   this.otype    )
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+        break;
+
+      // Tenemos opcion para gestionar hovering
+      case "flag":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element(     'id'   , this.item    )
+        this.add_element(     'name'   , this.value    )
+        this.add_element(     'hover'   , this.hover    )
+        this.add_element(     'flag'   , this.photo  )
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+      case "symbol":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'name'     , this.item  )
+        if (part)
+          this.add_element(     'img'     , this.photo  )
+        else
+          this.add_lastelement(     'img'     , this.photo  )
+
+        break;
+
+      case "hovlink":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'img'     , this.photo  )
+        this.add_element(     'hov'     , this.hover  )
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      case "idlink":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'id'     , this.id    )
+
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      case "menulink":
+        this.add_index(                    this.index    )
+        this.add_type(                     this.type    )
+        this.add_element(     'name'     , this.value    )
+        this.add_element(     'value'     , this.value    )
+
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+        case "menulinkid":
+        // ITEM --> J - VALUE --> I
+          this.add_index(                    this.index    )
+          this.add_type(                     this.type    )
+          this.add_element(     'name'     , this.item    )
+          this.add_element(     'value'     , this.value    )
+          this.add_element(     'hover'     , this.hover    )
+  
+          if (part)
+            this.add_element(   'clink'    , this.link    )
+          else
+            this.add_lastelement(   'clink'    , this.link    )
+  
+          break;
+  
+      case "bgitem":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'id'     , this.id    )
+        this.add_element(     'bgcolor'   , this.bgcolor  )
+
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      case "bglink":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'bgcolor'   , this.bgcolor  )
+
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      // Alias
+      case "alias":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element( 'value' ,   this.value    )
+        this.add_element( 'dtype' ,   this.dtype    )
+
+        if (part)
+          this.add_element(   'number'  , this.hover    )
+        else
+          this.add_lastelement(   'number'  , this.hover    )
+
+        break;
+
+      // Anchor Link
+      case "anchor":
+        this.add_index(          this.index    )
+        this.add_element( 'item'  ,     this.item    )
+        this.add_element( 'value'  ,     this.value    )
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+
+      // Normal Link
+      case "link":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        this.add_element( 'name'  ,   this.value    )
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+      // Hovering Menu link - 2020 Updated
+      case "mlink":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        this.add_element( 'name'  ,   this.value    )
+        this.add_element( 'hover'  ,   this.hover    )
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+      // Breadcrumb Link [UPDATED_2020]
+      case "bclink":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        // Link Name
+        this.add_element( 'value'  ,   this.value    )
+        // Hover Information
+        this.add_element( 'hover'  ,   this.hover    )
+        // Breadcrumb Information
+        this.add_element( 'sg_breadcrumb'  ,   this.breadcrumb    )
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+
+      // Simple Link
+      case "slink":
+        this.add_index(          this.index    )
+        this.add_type(           this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+
+      // Inner image link
+      case "innerimglink":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        this.add_element( 'name'  ,   this.value    )
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+      // Image Link
+      case "ilink":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        this.add_element(     'img'     , this.photo  )
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      case "policy":
+        this.add_index(            this.index      )
+        this.add_type(            this.type      )
+        this.add_element( 'item'  ,     this.value    )
+        if (part)
+          this.add_element( 'html-type'   , this.id  )
+        else
+          this.add_lastelement( 'html-type'   , this.id  )
+
+        break;
+
+      case "policy_link":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element( 'item'  ,     this.value    )
+        this.add_element(   'html-type' , this.id)
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+      case "hovitem":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'value'   , this.value    )
+        this.add_element(     'img'     , this.photo  )
+
+        if (part)
+          this.add_element(     'hov'     , this.hover  )
+        else
+          this.add_lastelement(     'hov'     , this.hover  )
+
+        break;
+
+      case "topimage":
+        this.add_index(              this.index    )
+        this.add_type(              this.type    )
+        this.add_element(     'height'     , this.hover  )
+
+        if (part)
+          this.add_element(     'img'     , this.photo  )
+        else
+          this.add_lastelement(     'img'   , this.photo  )
+
+        break
+
+
+      case "bgimage":
+        this.add_index(              this.index    )
+        this.add_type(              this.type    )
+
+        if (part)
+          this.add_element(     'img'     , this.photo  )
+        else
+          this.add_lastelement(     'img'   , this.photo  )
+
+        break
+
+      case "image":
+        this.add_index(              this.index    )
+        this.add_type(              this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+
+        if (part)
+          this.add_element(     'img'     , this.photo  )
+        else
+          this.add_lastelement(     'img'   , this.photo  )
+
+        break
+
+      case "logotype":
+        this.add_index(              this.index    )
+        this.add_type(              this.type    )
+        this.add_element(   'clink'  , this.link    )
+        if (part)
+          this.add_element(     'img'     , this.photo  )
+        else
+          this.add_lastelement(     'img'   , this.photo  )
+
+        break
+
+      case "breakpoint":
+        this.add_index(              this.index    )
+        this.add_type(              this.type    )
+        this.add_element( 'name' ,   this.value    )
+        this.add_element( 'break' ,   this.value    )
+
+        if (part)
+          this.add_element(     'resolution'     , this.hover  )
+        else
+          this.add_lastelement(     'resolution'   , this.hover  )
+
+        break
+
+      // Common - Multi language Items
+      case "menuitem":
+        this.add_index(               this.index    )
+        this.add_type(                this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        if (part)
+          this.add_element(   'value' , this.value  )
+        else
+          this.add_lastelement(   'value' , this.value  )
+
+        break
+
+      case "title":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        // Que pasa aqui pues que no hemos definido el link
+        this.add_element(   'clink'  , this.link    )
+        if (part)
+          this.add_element(   'value' , this.value  )
+        else
+          this.add_lastelement(   'value' , this.value  )
+
+        break
+
+
+      case "item":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        if (part)
+          this.add_element(   'value' , this.value  )
+        else
+          this.add_lastelement(   'value' , this.value  )
+
+        break
+
+      case "responsiveimage":
+        this.managebranchelem(part)
+        break
+
+      case "simplemenu":
+        this.managebranchelem(part)
+        break
+
+      case "doublemenu":
+        this.managebranchelem(part)
+        break
+
+      case "slide":
+        this.managebranchelem(part)
+        break
+
+      case "randomgallery":
+        this.managebranchelem(part)
+        break
+
+      case "branch":
+        this.managebranchelem(part)
+        break
+
+      case "blancbranch":
+        if (part)
+			this.add_type(					this.type			)
+	    else
+			this.add_typelast(				this.type			)
+
+        break
+
+      case "breadcrumb":
+
+
+		this.add_index(						this.index			)
+        this.add_element( 'clink'          , this.link  )
+        this.add_element( 'sg_breadcrumb'  ,   this.hover    )
+        this.add_element( 'otype'          ,   this.otype    )
+		if (part)
+			this.add_type(					this.type			)
+		else
+			this.add_typelast(				this.type			)
+
+      break
+
+      // [UPDATED_2020]
+      case "photo":
+
+
+		this.add_index(						this.index			)
+        this.add_element( 'clink'          , this.link  )
+        // Ruta
+        this.add_element( 'img'            , this.value    )
+        // Categorias
+        this.add_element( 'categories'     , this.tags    )
+		if (part)
+			this.add_type(					this.type			)
+		else
+			this.add_typelast(				this.type			)
+
+      break
+
+      default:
+        // Text
+        this.type    =    'text'
+        this.add_index(          this.index    )
+        this.add_type(           this.type    )
+        if (part)
+          this.add_element(   'value'  , this.value      )
+        else
+          this.add_lastelement(   'value'  , this.value    )
+
+    }
+  }
+}
+
+exports.manage_json = manage_json

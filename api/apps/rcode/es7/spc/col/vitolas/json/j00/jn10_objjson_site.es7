@@ -1,0 +1,206 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//BlkJson  Block Json Style Class  [V.0.0.3]  (2019-02-09)
+//------------------------------------------------------------------------------------
+//Methods:
+//- event_create             : Create event jquery method
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"         )
+
+const 	echo 				= 	require(	cons.NODE_MOD   + 'node-echo'										),
+		sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
+		{ typejson_object }	= 	require(	cons.JS_OBJ     + 'json/typejson_object.es6'						);
+
+class objjson_site extends typejson_object {
+	constructor(file_name = '') 
+	{
+		super(file_name)
+		
+		this.n 				= 	"objjson_site::"
+	}
+
+	managebganimal(part = false)
+	{
+				this.add_index(					this.index		)
+				this.add_type(					this.type		)
+				this.add_element( 		'name' , this.item	)		
+				this.add_element( 		'img' 	, this.photo	)		
+				if (part)
+					this.add_element( 	'clink'	, this.link		)
+				else
+					this.add_lastelement( 	'clink'	, this.link		)
+	}
+
+
+	managespecifictype(part = false)
+	{
+
+	   switch(this.type){
+
+			case "animal":
+				this.add_index(					this.index		)
+				this.add_type(					this.type		)
+				this.add_element( 		'name' , this.item	)		
+				this.add_element( 		'sound' , this.sound	)		
+				this.add_element( 		'value' , this.value	)		
+				if (part)
+					this.add_element( 	'clink'	, this.link		)
+				else
+					this.add_lastelement( 	'clink'	, this.link		)
+				
+				break;
+			case "aligator":
+				this.managebganimal(part)
+				break;
+			case "antelope":
+				this.managebganimal(part)
+				break;
+			case "bear":
+				this.managebganimal(part)
+				break;
+			case "buffalo":
+				this.managebganimal(part)
+				break;
+			case "butterfly":
+				this.managebganimal(part)
+				break;
+			case "calao":
+				this.managebganimal(part)
+				break;
+			case "cammel":
+				this.managebganimal(part)
+				break;
+			case "cheetah":
+				this.managebganimal(part)
+				break;
+			case "coati":
+				this.managebganimal(part)
+				break;
+			case "deer":
+				this.managebganimal(part)
+				break;
+			case "elephant":
+				this.managebganimal(part)
+				break;
+			case "flamingo":
+				this.managebganimal(part)
+				break;
+			case "giraffe":
+				this.managebganimal(part)
+				break;
+			case "gorilla":
+				this.managebganimal(part)
+				break;
+			case "hippo":
+				this.managebganimal(part)
+				break;
+			case "hippopotamus":
+				this.managebganimal(part)
+				break;
+			case "hummingbird":
+				this.managebganimal(part)
+				break;
+			case "iguana":
+				this.managebganimal(part)
+				break;
+			case "impala":
+				this.managebganimal(part)
+				break;
+			case "kudu":
+				this.managebganimal(part)
+				break;
+			case "lynx":
+				this.managebganimal(part)
+				break;
+
+			case "lion":
+				this.managebganimal(part)
+				break;
+			case "monkey":
+				this.managebganimal(part)
+				break;
+			case "muflon":
+				this.managebganimal(part)
+				break;
+			case "ostrich":
+				this.managebganimal(part)
+				break;
+			case "peacock":
+				this.managebganimal(part)
+				break;
+			case "penguin":
+				this.managebganimal(part)
+				break;
+
+			case "panda":
+				this.managebganimal(part)
+				break;
+			case "parrot":
+				this.managebganimal(part)
+				break;
+			case "raccoon":
+				this.managebganimal(part)
+				break;
+
+			case "rhino":
+				this.managebganimal(part)
+				break;
+			case "sable":
+				this.managebganimal(part)
+				break;
+
+			case "snake":
+				this.managebganimal(part)
+				break;
+			case "swan":
+				this.managebganimal(part)
+				break;
+
+			case "tiger":
+				this.managebganimal(part)
+				break;
+			case "toucan":
+				this.managebganimal(part)
+				break;
+			case "warthog":
+				this.managebganimal(part)
+				break;
+
+			case "wildebeest":
+				this.managebganimal(part)
+				break;
+
+			case "zebra":
+				this.managebganimal(part)
+				break;
+			case "square":
+				this.managebganimal(part)
+				break;
+			case "mouse_icon":
+				this.managebganimal(part)
+				break;
+			case "plant":
+				this.managebganimal(part)
+				break;
+			case "bullet":
+				this.managebganimal(part)
+				break;
+			case "shape":
+				this.managebganimal(part)
+				break;
+			case "screen":
+				this.managebganimal(part)
+				break;
+			case "symbol":
+				this.managebganimal(part)
+				break;
+
+			default:
+				this.managecommontype(part)
+		}
+	}
+
+}
+
+
+exports.objjson_site = objjson_site

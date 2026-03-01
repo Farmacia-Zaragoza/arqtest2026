@@ -1,0 +1,46 @@
+// [DOCHANGED_NODE ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node Site Process and Generate Common Json Class  [V.0.0.1]  (2019-06-14)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+
+const { an03_general_index_arroba } =   require(  cons.JS_ACO7  + 'arroba/n01/an03_general_index_arroba.es7' ) 
+
+class jn10_index_site extends an03_general_index_arroba {
+           
+  constructor (arroba = '' ) 
+  {   
+    super(arroba)
+    this.n                  =   'jn10_index_site::'
+    this.m                  =   "cons"
+
+    this.arroba             =  arroba
+
+    // ARROBA JNODE
+
+    this.s                  =  this.arroba.s
+    this.u                  =  this.arroba.u
+    this.b                  =  this.arroba.b
+
+    this.a                  =  this.arroba.a
+
+    this.arr                =  this.arroba.a.arr
+
+    let index               = 'main'
+    let jindex              = 'j' + index
+   
+
+	let cats                =  this.gethash_arr(this.s.ms.main_lang, jindex)															;
+    
+    
+  }
+  
+}
+
+exports.jn10_index_site = jn10_index_site

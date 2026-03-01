@@ -1,0 +1,79 @@
+// [DOCHANGED_NODE ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node Json Simple Object Class  [V.0.0.2]  (2019-06-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_simple_object_to_file-          : Generate Simple Json
+// - d-save_json_product_array_to_file-          : Pending
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  fs                            =   require(  'fs'                                  ),
+       empty                         =   require(  cons.NODE_MOD + 'is-empty'                        ),
+       accents                       =   require(  cons.NODE_MOD + 'remove-accents'                    ),
+       { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                     ),
+       { jn02_commo_json_doble }   =   require(  cons.JS_TYP7  + 'json/jnode/j01/objects/jn02_doble.es7');
+
+
+class jn01_commo_json_simple extends jn02_commo_json_doble {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'jn01_commo_json_simple::'      
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Garland Main - Top - Bottom - One Dimension
+  save_json_simple_object_to_file(  
+            index           ,   // Indice
+            enbreadcrumb   =   ''  , depth = 0)  // Breadcrumb en ingles
+  {
+    // top - bottom
+
+    var idx = new idx_pointers(index)
+
+    
+    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                              ;
+
+
+    var iterations           = Object.keys(cats).length - 1
+
+    this.p('jn01_simple_' + index + '  ' + iterations )
+
+    //this.p('jn01_simple_bef_For ' + this.s.ms.lang + '  ' + index  +  '  ' + this.gethash_keylang('i040' , 0 ) )
+
+    // this.p('jn01_simple_bef_For ' + this.s.ms.lang + '  ' + index  +  ' IT:  ' + this.getkey( 'it' , 'i040' , 0 ) )
+
+
+    for (var pos in cats)
+    {
+
+      // Se pone a false siempre pues hay casos que no queremos generar
+      this.b.type_generated = false
+      // Set Json attribs
+      this.attribs(idx, pos , index)
+
+      this.p('jn01_simple_idx ' + pos  + '  ' + this.j.index + '  ' + this.j.type + '  k '  + this.k.type)
+      // jn01_simple_idx 1  018v001
+
+      this.manage_array_parragraphs('object', this.j.index)
+
+      if ( (--iterations  >= 0) && (this.b.type_generated) )
+        this.j.add_separator()
+
+     }  // End For
+  
+  }
+  
+}
+
+exports.jn01_commo_json_simple = jn01_commo_json_simple

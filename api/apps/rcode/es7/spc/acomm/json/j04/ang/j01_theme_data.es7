@@ -1,0 +1,53 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Broser  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Theme_Data > Tdata_Comm >  Printlog
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:
+//-------------------------------------------------------------------------------------
+// c-theme_data-
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// Theme Json     : Generic type to create json files
+//-------------------------------------------------------------------------------------
+// FEATURE-SEARCH_LOAD - FEATURE-INDEX_LOAD
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+
+const  { tdata_comm }       =   require(  cons.JS_ACO7  + 'json/j04/comm/j01_tdata_comm.es7'  ),
+       { theme_json }       =   require(  cons.JS_ACO7  + 'json/j04/ang/j02_theme_json.es7'  ) ;
+
+
+class theme_data extends tdata_comm
+{
+  constructor(arroba = '')
+  {
+    super(arroba)
+    this.n                  =   "theme_data::"
+
+    // this.p ('J01_thm_data SET_CONTENT ' + '  ' + this.arroba.s.cs.page_name)
+
+    // Hay que gestionar aparte los indices
+    
+    // MANAGE_CONTENT
+    
+    this.manage_index_data_page()
+      
+    this.thmjson            =  new theme_json(this.acontent.arroba)
+
+    this.code               =  this.thmjson.code
+
+  } 
+
+} // end Class
+
+exports.theme_data = theme_data

@@ -1,0 +1,133 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS - Links Html Class  [V.0.0.3]  (2019-11-25)
+// Brqx Group - Agile Farmacia Zaragoza Methodology - Browser [ES6]
+//-------------------------------------------------------------------------------------
+// Flat Structure Links
+//-------------------------------------------------------------------------------------
+//L[01]  <link rel="icon" type="image/svg" href="img/favicon/social_icon_edu_2017.svg">
+//L[02]  <link rel="apple-touch-icon" href="img/favicon/social_icon_edu_2017.svg">
+//L[03]  <link rel="shortcut icon" href="img/favicon/social_icon_edu_2017.png" type="image/png">
+// CSS
+//L[07]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css" as="style" onload="this.rel='stylesheet'">
+//L[07]  <link rel="preload" href="fassets/libs/bootstrap4/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
+//L[07]  <link rel="preload" href="assets/css/style_dynamic_dev.css" as="style" onload="this.rel='stylesheet'">
+//L[07]  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css" as="style" onload="this.rel='stylesheet'"/>
+
+// DEFER SCRIPT
+//S[01] <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+
+// ------------------------------------------------------------------------------------
+//* LINK *
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class: lnk01_link_social
+// ------------------------------------------------------------------------------------
+// Methods:
+// ------------------------------------------------------------------------------------
+// - build_data     : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const   { getset }             =   require(  cons.JS_BASE + 'com/objects/html/getset.es6'                    ),    
+    { lnk02_css_link_social }      =   require(  cons.JS_PYC7 + 'social/social/html/h01/deep/styles/lnk02_css_link_social.es7'        ),
+    { lnk03_css_minimized_social }    =   require(  cons.JS_PYC7 + 'social/social/html/h01/deep/styles/lnk03_css_minimized_social.es7'      ),
+    { lnk04_css_inline_social }    =   require(  cons.JS_PYC7 + 'social/social/html/h01/deep/styles/lnk04_css_inline_social.es7'      ),
+    { lnk05_css_inline_social }    =   require(  cons.JS_PYC7 + 'social/social/html/h01/deep/styles/lnk05_css_inline_multiple_social.es7'  ),
+    { html_style }           =   require(  cons.JS_BASE + 'com/objects/html/html_style.es6'                  );    
+
+class lnk01_link_social extends getset  {
+ 
+  constructor (     thm                    )
+  {   
+
+    super()                              
+
+    this.n              =  'lnk01_link_social::'          
+
+    this.thm            =  thm                
+
+    // External object
+    this.script_to_load        =  ''
+    this.link_to_load        =  ''
+
+    // tag object
+       this.linktag          =   ''                 
+  
+    this.link_favicon        =  new html_style('link')     
+  
+    this.build_data()                        
+
+  }
+
+  //L[01]  <link rel="icon" type="image/svg" href="img/favicon/social_icon_edu_2017.svg">
+  create_favicon()
+  {
+            
+    this.link_favicon.rel          =  'icon'                        
+    this.link_favicon.type          =  'image/x-icon'                      
+
+    // DomainBAr http://social.vbrqx.com/ang/vx/favicon.ico
+    
+    // Hay que revisar por que no llega
+    // lnk02_ICON r_img/logos/brqx_icon_arquitectrura_drupal_2010_50x50.gif
+    // this.p('lnk02_ICON ' + this.thm.s.ms.icon )
+
+    this.link_favicon.href          =    
+        this.thm.s.cs.http_domainbar +  this.thm.s.ms.icon        
+  
+    // this.p('DomainBAr ' +  this.link_favicon.href)
+
+    this.link_favicon.pcreate()                            
+    
+    this.code            +=  this.link_favicon.code            
+  }    
+
+
+  build_data()
+  {
+    
+    this.create_favicon()                      
+
+    // Esta parte puede generarse de muchas formas
+    // 1.como script
+    // 2.como script minimizado
+    // 3.inline
+
+    // LIVE
+    // Esta parte esta pendiente p ues se unificaran css y js en un unico fichero
+
+    switch (this.thm.s.ms.live_opt )
+    {
+      case "script":
+        this.link_to_load     =   new lnk02_css_link_social(this.thm)
+        break;
+      case "minimized":
+        this.link_to_load     =   new lnk03_css_minimized_social(this.thm)
+        break;
+      case "inline":
+        this.link_to_load     =   new lnk05_css_inline_social(this.thm)
+        break;
+      case "inline_and_save":
+        this.link_to_load     =   new lnk05_css_inline_social(this.thm)
+        break;
+    
+      default:
+        this.p('wrong_parameter ' + this.thm.s.ms.live_opt )
+      }
+
+
+    this.code                +=   this.link_to_load.code
+
+    // this.p('CHECKING_OPTIONS [' +  this.thm.s.env + '] ' + this.thm.s.live_opt)
+
+
+    // ok link [18-05-05]
+    // this.p('lnk01_Code : >' + this.code )                       
+    // this.dd('Code >'  + this.code)                 
+
+    }
+
+}
+
+exports.lnk01_link_social = lnk01_link_social

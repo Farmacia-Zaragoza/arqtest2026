@@ -1,0 +1,53 @@
+// [DOCHANGED_NODE ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node Site Process and Generate Common Json Class  [V.0.0.1]  (2019-06-14)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+
+const  { jn02_general_search_json } =   require(  cons.JS_ACO7  + 'json/j01/jn02_general_search_json.es7' ), 
+        { objjson_site }            =   require(  cons.JS_PER7  + 'wedding/wedding/json/j00/jn10_objjson_site.es7'  ),
+        { arrjson_site }            =   require(  cons.JS_PER7  + 'wedding/wedding/json/j00/jn11_arrjson_site.es7'  );
+
+class jn03_search_site extends jn02_general_search_json {
+           
+  constructor (arroba = '' ) 
+  {   
+    super(arroba)
+    this.n                  =   'jn03_search_site::'
+    this.m                  =   "cons"
+
+    this.arroba             =  arroba
+
+    // ARROBA JNODE
+
+    this.s                  =  this.arroba.s
+    this.u                  =  this.arroba.u
+    this.b                  =  this.arroba.b
+
+    this.a                  =  this.arroba.a
+
+    this.arr                =  this.arroba.a.arr
+
+
+    // Common for Any Json - Debe/Puede ser especifico del site
+    this.j                  =  new objjson_site(this.s.cs.cache_path)
+    this.k                  =  new arrjson_site(this.s.cs.cache_path)
+
+    let index               = 'main'
+    let jindex              = 'j' + index
+   
+
+	let cats                =  this.getarr(this.s.ms.main_lang, jindex)															;
+    
+    
+  }
+  
+}
+
+exports.jn03_search_site = jn03_search_site

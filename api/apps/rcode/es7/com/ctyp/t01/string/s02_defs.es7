@@ -1,0 +1,65 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// [DOCHANGED_ES7_SPACES]
+// Agile Node JS String Class  [V.0.0.5]  (2020-02-12)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-strpos-      : Replace all occurences of characer in string
+
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   );
+
+const   { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'        )
+
+
+class strings_defs extends printlog 
+{
+  constructor() 
+  {
+    super()
+    this.n                   =  "strings_defs::"
+
+    this.result              =  ''
+
+    this.replace_source      =  ''
+    this.replace_target      =  ''
+
+    this.dot                 =  '.'
+    this.dash                =  '_'
+    this.slash               =  '/'
+    this.space               =  ' '
+    this.hyphen              =  '-'
+
+    this.openkeys            =  '{'
+    this.closekeys           =  '}'
+
+    this.doublequote         =  '"'
+    this.escaped_doublequote =  '\\"'
+
+    this.triplebar           =  '\\\\\\"'
+    this.zzz                 =  'ZZZ'
+
+    this.simplebar           =  '\\"'
+
+
+
+    this.escaped_openkeys    =  '\\{'
+    this.escaped_closekeys   =  '\\}'
+
+
+
+    this.windows_bar         =  '\\'
+    this.escaped_bar         =  '&#92;'
+
+  }
+  
+
+}
+
+exports.strings_defs = strings_defs

@@ -1,0 +1,46 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//BlkJson  Block Json Style Class  [V.0.0.3]  (2019-02-09)
+//------------------------------------------------------------------------------------
+//Methods:
+//- event_create             : Create event jquery method
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const 	{ typejson_array }	= 	require(	cons.JS_TYP7     + 'json/jtype/typejson_array.es7'    )
+
+class arrjson_site extends typejson_array {
+	constructor(file_name = '') 
+	{
+		super(file_name)
+		
+		this.n 				= 	"arrjson_site ::"
+	}
+
+
+	managespecifictype(part = false)
+	{
+
+	   switch(this.type){
+
+			case "search":
+				this.add_index(					this.index		)
+				this.add_type(					this.type		)
+				this.add_element( 		'name' , this.hover	)		
+				// this.add_element( 		'hover' , this.hover	)		
+				if (part)
+					this.add_element( 	'clink'	, this.link		)
+				else
+					this.add_lastelement( 	'clink'	, this.link		)
+				
+				break;
+
+			default:
+				this.managecommontype(part)
+		}
+	}
+
+}
+
+
+exports.arrjson_site  = arrjson_site 

@@ -1,0 +1,62 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Main Load Class  [V.0.0.1]  (2019-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar anode para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-main_index_page_load-       : Load from main file only specific position
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                   =   require( "/brqx/rcode/es7/com/agen/constants.es7"       )
+
+const   { anode_main_index_page_process } =   require( cons.JS_TYP7  + 'arroba/anode/a11_index_page/an116_main_process.es7'  );
+
+
+class anode_main_index_page_load extends anode_main_index_page_process {
+  constructor()  
+  {
+    super()
+    this.n                        = "anode_main_index_page_load::"
+  }
+
+
+  // Main Position Load --> Load only main position or 1 position of @ file
+  main_index_page_load(index  = 'main' )
+  {
+
+	// this.p('j74_jno_Loading File_' + this.content_arr['en']['main'])
+
+    let file_to_load = this.content_arr[this.s.ms.main_lang][index]
+
+    // /brqx/struc/arq/kb/arqkb/en_cat
+    //this.p('j74_jno ' + file_to_load +  ' =+= ' + this.s.cs.cache_path)
+
+
+    // El fichero principal para todos los idiomas es vacio menos para el ingles    
+    if (this.s.ms.lang === this.s.main_lang ) // Generate Array structure from @content
+    {
+      // this.p('j74_jno EN ' + file_to_load )      
+  	  this.generate_array_from_file( this.s.ms.main_lang,  file_to_load )
+  	  // bb_no_esta_entrando
+  	}  
+    else
+      this.set_lang_arr(this.s.ms.lang)    
+
+    // 51 - main
+	//this.p('j74_jnmain_Leng ' + this.arr['en']['jmain'].length + ' Idx ' + index)
+    
+    this.main_index_page_process(index )
+
+  }
+
+
+}
+
+exports.anode_main_index_page_load = anode_main_index_page_load

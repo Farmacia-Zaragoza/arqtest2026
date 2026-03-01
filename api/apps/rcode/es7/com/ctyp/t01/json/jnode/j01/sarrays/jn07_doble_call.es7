@@ -1,0 +1,39 @@
+// [DOCHANGED_NODE ES6_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Fast Node Site Json Doble Array Class  [V.0.0.2]  (2019-06-29)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-review_childrens_doble_array-                   : 2nd level function 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  fs                 =   require(  'fs'                                                    ),
+       empty              =   require(  cons.NODE_MOD + 'is-empty'                              ),
+       accents            =   require(  cons.NODE_MOD + 'remove-accents'                        ),
+       { idx_pointers }   =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 ),
+       { jn00_comm_pf }   =   require(  cons.JS_TYP7  + 'json/jnode/j00/jn00_comm_pf.es7'   );
+
+
+class jn07_comma_json_doble_call extends jn00_comm_pf {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'jn07_comma_json_doble_call::'      
+  }
+
+  
+  }
+  
+}
+
+exports.jn07_comma_json_doble_call = jn07_comma_json_doble_call

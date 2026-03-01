@@ -1,0 +1,51 @@
+// [DOCHANGED_ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Model Arqkb  [V.0.0.1]  (2019-11-27)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Objects : 
+// arqsoc_cache- arqsoc_nocache
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Site_Model > Printlog
+// @Forker > @Log
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// e-arqsoc_no_cache-  : Arqsoc no cache launcher
+// e-arqsoc_cache-     : Arqsoc cache launcher
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+// cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
+
+// Must to be unique
+
+var    cons                =  require(  "/brqx/rcode/es7/com/agen/constants.es7"                         )
+
+const  { arqsoc_no_cache } =  require(  cons.JS_PYC7  + 'social/arqsoc/model/arqsoc_nocache_launcher.es7'),
+        { arqsoc_cache }   =  require(  cons.JS_PYC7  + 'social/arqsoc/model/arqsoc_cache_launcher.es7'  ),
+        { printlog }       =  require(  cons.JS_TYP7  + 'logs/printlog.es7'                              );
+
+class arqsoc extends printlog
+{
+  constructor(pmt = '' )
+  {
+
+    super()
+
+    this.n                 =  'arqsoc::'
+
+    if (pmt.cache)
+      this.model           = new arqsoc_cache(    pmt  )
+    else
+      this.model           = new arqsoc_no_cache( pmt  )
+  } 
+
+} // end Class
+
+exports.arqsoc = arqsoc

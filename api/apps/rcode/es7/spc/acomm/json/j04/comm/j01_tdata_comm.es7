@@ -1,0 +1,169 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Broser  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Theme_Json (spc) > Printlog
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// arroba_scomm     : Common files
+// arroba_sprod     : Common files
+
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-manage_content_page_name-     : Manage page name for content type
+//-------------------------------------------------------------------------------------
+// FEATURE-METATAGS_GENERATION - FEATURE_ANCHOR_GENERATION - FEATURE-LOAD_ARROBA_CONTENT
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+
+const  { tindex_comm }               =   require(  cons.JS_ACO7  + 'json/j04/comm/j10_dindex_comm.es7'  ),
+      { jn01_checking_search_words } =   require(  cons.JS_TYP7  + 'json/jsearch/j02/jn01_check_words.es7' ),
+      { idx_pointers }               =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
+      { arroba_mcomm }               =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m01_arroba_comm.es7' ),
+      { arroba_scomm }               =   require(  cons.JS_TYF7  + 'a01_load/scomm/s01_arroba_comm.es7' ),
+      { arroba_sprod }               =   require(  cons.JS_TYF7  + 'a01_load/sprod/p01_arroba_prod.es7' ),
+      { arroba_search }              =   require(  cons.JS_TYF7  + 'a01_load/lindex/i02_arroba_search.es7' ),
+      { arroba_hiera }               =   require(  cons.JS_TYF7  + 'a01_load/hiera/h01_arroba_hiera.es7'),
+      { arroba_fs }                  =   require(  cons.JS_TYF7  + 'a01_load/fs/h01_arroba_fs.es7');
+
+class tdata_comm extends tindex_comm
+{
+  constructor(arroba = '')
+  {
+    super()
+    this.n                  =   "theme_data::"
+
+    this.arroba             =   arroba
+    this.acontent           =   arroba
+    this.u                  =   this.arroba.u
+
+    // this.p('tdatacomm_url_test  HH ' + this.arroba.u.uri_args_sorted[0])    
+
+    this.s                  =   this.arroba.s
+  }
+
+  //-------------------------------------------------------------------------------------
+  manage_index_data_page()
+  {
+    if (this.s.b.index_page)    
+    {
+        // No conoce la pagina
+        // this.p ('j01_thmd ' + ' N  ' + this.arroba.s.cs.page)
+
+       // INDEXING_CONTENT
+       this.s.b.index_ready = true
+       this.s.cs.ext        = 'idx'   	
+       this.s.cs.sub        = 'arroba'   	
+       this.manage_index_page_name()
+
+       this.s.b.index_ready = false       
+    }
+    else 
+    {
+        if (this.s.b.page_search)
+        {
+          // SEARCH_CONTENT
+          this.u.url_page_set_list()
+        
+    	  this.manage_content_page_name()
+
+          this.arr          =  this.acontent.arroba.arr
+          this.s            =  this.acontent.arroba.s
+          this.u            =  this.acontent.arroba.u
+
+          // this.parr(this.arr['en']['j020'])
+
+          let count = '' + Object.keys(this.arr['en']['j020']).length -1
+          this.p('jn1th_SEARCHING-NUM ' + count )
+
+          this.u.url_page_set_search()
+          
+          // Enable index to enter in search
+          this.s.b.index_ready = true
+        }
+        
+        // this.p ('j01_thmf_ ' + '  ' + this.arroba.s.cs.page_name)
+
+    	this.manage_content_page_name()
+    }
+  	
+  }
+
+
+  //-------------------------------------------------------------------------------------
+  manage_content_page_name()
+  {
+
+    this.m              = 'manage_content_page_name'
+
+    // Desde aqui el tipo de pagina es content
+    
+    // METATAGS_GENERATION
+    this.s.cs.page_type = 'content'
+        
+    // if (!this.jck.are_words_right_for_search(this.index,this.u.bars_sub_query) )
+    //   this.u.manage_front()
+    //   this.arroba.u   = this.u
+    //   this.arroba.s   = this.s
+           
+    // Manage ARROBA DATA - Common values
+
+    // Llega product (list | search)
+    // this.p ('J01_tdata_comm SELECT_TYPE ' + this.s.cs.page_name  + ' ' + this.s.cs.position)    
+    // this.p ('J01_tdata_comm BEFORE_LOAD LANG' + '  ' + this.s.cs.lang)    
+
+    // aui no lo conoce
+    // this.p ('J01_tdata_comm BEFORE_WRONG' + '  ' + this.s.cs.founded_type)    
+    // this.p ('J01_tdata_comm BEFORE_WRONG' + '  ' + this.s.cs.founded_type)    
+     
+    // AQUI DEBEMOS PREPARAR LA BUSQUEDA
+
+    // this.p('j01_tdatacomm__uri_test  HH ' + this.arroba.u.uri_args_sorted[0])
+
+    
+    switch(this.s.cs.page_name)
+    {
+      // Caso Todo en Uno - Para paginas totalmente generadas
+      case "allinone":  this.acontent  =  new arroba_scomm(this.arroba) ; break;
+
+      case "list":      this.acontent  =  new arroba_scomm(this.arroba) ;  break;
+
+      case "rand":      this.acontent  =  new arroba_scomm(this.arroba) ; break;
+
+      case "product":   this.acontent  =  new arroba_sprod(this.arroba) ; break;
+
+      case "photo":     this.acontent  =  new arroba_sprod(this.arroba)  ;  break;
+
+      case "kb":        this.acontent  =  new arroba_hiera(this.arroba)  ;  break;
+
+      case "fs":        this.acontent  =  new arroba_fs(this.arroba)  ;  break;
+
+      case "search":    this.acontent  =  new arroba_search(this.arroba) ; break;
+        
+      case "front":     this.acontent  =  new arroba_sprod(this.arroba) ; break;
+
+      case "rest":      this.acontent  =  new arroba_rest(this.arroba) ; break;
+
+    }
+    
+    this.s = this.arroba.s
+    
+    this.s.gen_anchors_and_metatags()
+        
+    // this.p('j01_tdatacomm : ' + this.s.cs.founded_type)
+
+  } 
+
+} // end Class
+
+exports.tdata_comm = tdata_comm

@@ -1,0 +1,108 @@
+// [DOCHANGED_NODE ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Generate Array Json Simple Class  [V.0.0.2]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_fs_list_array_to_file-          : Generate Json Simple
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  fs                        =   require(  'fs'                                                   ),
+       empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
+       accents                   =   require(  cons.NODE_MOD + 'remove-accents'                       ),
+       path               =   require(  'path'                                                 ),
+       { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
+       { jn15_array_fs_product }   =   require(  cons.JS_TYP7  + 'json/jnode/j01/fs/jn15_fs_product.es7'   );
+
+
+class jn14_fs_json_list extends jn15_array_fs_product {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                         =  'jn14_fs_json_list::'      
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  save_json_fs_list_array_to_file(  
+            index                      ,   // jn11_idx 040v002v009v000
+            enbreadcrumb    =   ''     ,   // brc en/kb/systems/containers/docker
+            file_structure = ''        ,   // fis l040/a_systems/a_containers/a_docker
+            category        = ''       ,   // cat docker
+            title           = ''       ,   // cat Parent Title  - docker
+            depth         =  0          )
+  {
+    // top - bottom
+    // "articles": {"index": "020","sg_breadcrumb": "en/articles","otype": "object",
+    // "type": "breadcrumb","childrens": true,
+    // "pull02": [
+      
+    this.j.index    =   index
+ 
+    // 008
+    var parent_pos   = parseInt(index.substr(-3))
+    var parent_index = index.substr(0,index.length -4)
+
+    // 040v002v008
+    // this.p('jn14_Getting Parent Position ' + parent_index)
+    var idx = new idx_pointers(parent_index)
+
+    // Set Json attribs
+    this.attribs(idx, parent_pos , index, depth)
+   
+     // Supuestos valores del padre
+     // En Link Name es value
+     
+    this.j.item        =  "articles"
+    this.j.type        =  "bclink"
+    this.j.otype        =  "object"
+
+    this.j.link        =  this.s.cs.lang_url  +  enbreadcrumb
+
+    this.j.breadcrumb  =  enbreadcrumb
+
+    this.j.hover       =  title
+
+      
+    this.j.value        =  category
+
+      // Procesa atributos del site ( se hace en arroba - aqui habria que eliminarlo)
+    // this.process_site_values()                          ;
+
+    this.k.copyvalues(this.j)
+
+    let object_type = "array"
+    
+      
+    // this.p ("jn15_fs_product_Procesando Hijo Nivel Inicial " + this.j.otype  )
+        // Array u Objeto
+
+          // this.p ("jn05_ircsv : Generating ARray")
+    this.j.createspecificpart(object_type)        
+
+    // Category no la usa
+    this.save_json_fs_list_base_array_to_file(  
+          index                  ,  // 01. Index
+          enbreadcrumb           ,  // 02. Breadcrumb
+          file_structure         ,  // 03. File Structure
+          category               ,  // 04. Cat
+          title                  ,
+          depth + 1              ,  // 05. Depth
+          object_type            )
+
+    this.j.end_corch(object_type)
+  
+  }
+  
+}
+
+exports.jn14_fs_json_list = jn14_fs_json_list

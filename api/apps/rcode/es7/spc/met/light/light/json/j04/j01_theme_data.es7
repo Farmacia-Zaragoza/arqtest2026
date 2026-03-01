@@ -1,0 +1,128 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Broser  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Theme_Json (spc) > Printlog
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// Arroba_JType     : Generic type to create json files
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+
+const  { tdata_asign }                =   require(  cons.JS_MET7  + 'light/light/json/j04/j11_tdata_asign.es7'               ),
+       { arroba_mcomm }               =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m01_arroba_comm.es7' ),
+       { jn01_checking_search_words } =   require(  cons.JS_TYP7  + 'json/jsearch/j02/jn01_check_words.es7' ),
+       { theme_json }                 =   require(  cons.JS_MET7  + 'light/light/json/j04/j02_theme_json.es7'  ) ;
+
+class theme_data extends tdata_asign
+{
+  constructor(arroba = '')
+  {
+    super(arroba)
+    this.n                  =   "theme_data::"
+
+    // this.p ('J01_thm_data SET_CONTENT ' + '  ' + this.arroba.s.cs.page_name)
+
+    // Desde aqui el tipo de pagina es content
+    this.s.cs.page_type = 'content'
+
+    // Llega nodef
+    // Manage ARROBA DATA - Specific changes to load
+    switch(this.s.cs.page_name)
+    {
+      case "specific":
+        // Hay que cargar el 6 de policy
+        // Esto no pasa nunca de momento
+
+        break;
+
+      case "search":
+        // Hay que cargar todos los articulos y filtrar las palabras de busqueda
+        // Idea de drupal. Aqui los cargamos
+        // Searching IT
+        // this.p('j01_thmdat_SEARCHING  ' + this.s.ms.lang)
+        this.arroba.s.cs.loadtype = 'full'
+
+        // este es especial porque debe cargar el idioma actual e ingles
+        this.acontent     =  new arroba_mcomm(this.arroba, '18')       
+        
+        this.arr          =  this.arroba.arr
+        this.s            =  this.arroba.s
+        this.u            =  this.arroba.u
+        this.arroba.s.cs.loadtype = 'full'
+
+
+        this.acontent     =  new arroba_mcomm(this.arroba, '20')       
+
+        this.arr          =  this.arroba.arr
+        this.s            =  this.arroba.s
+        this.u            =  this.arroba.u
+
+        this.jck          =  new jn01_checking_search_words(this.arroba)
+        
+        let pos           =  18
+        this.index        =  this.arr[this.s.ms.main_lang]['dmain'][pos]
+        
+        // clienti_ ( llega con el dash )
+        // this.p('jn01_theme_data_  ' +  this.u.bars_sub_query)        
+
+         //this.p('jn01_theme_data_busqueda permitida')
+        
+        if (!this.jck.are_words_right_for_search(this.index,this.u.bars_sub_query) )
+        {
+           this.p('jn01_theme_hay_que_cargar_el_front')        
+           // Esta parte hay que revisarla y entenderla bien
+           this.u.manage_front()
+
+           this.arroba.u   = this.u
+           this.arroba.s   = this.s
+           
+        }
+        // sino hay que enviar a home
+         
+         
+        break;;
+
+      default:
+        //this.p('jn01_thmdat_Generating_content' +     this.arroba.s.cs.page )
+
+        // this.p('j01_PHERE_Page_type ' + this.arroba.s.cs.page_type )
+        // this.p('j01_PHERE_Page_numb ' + this.arroba.s.cs.position )
+        // this.p('j01_PHERE_Page_numb ' + this.arroba.s.cs.page )
+
+
+        // this.p('arq_model_lang D ' + this.arroba.s.cs.lang )
+
+        this.load_page_content()
+
+        // this.p('arq_model_lang E ' + this.arroba.s.cs.lang )
+        break;;
+    }
+
+    // /brqx/pers/cache/light/uritype/comm/product/nohuman/nouser/nocode/notrans/nosync/
+    // es_page_20_0_arroba
+    // this.p('thm_data_struc ' + this.acontent.arr['en']['i006v000'][0])
+
+    // this.p('j01_PHERE_Page_type B ' + this.arroba.s.cs.page_type )
+    // this.p('j01_PHERE_Page_numb B ' + this.arroba.s.cs.page )
+
+    // this.p('j01_THERE_Page_type ' + this.acontent.arroba.s.cs.page_type )
+     
+    this.thmjson            =  new theme_json(this.acontent.arroba)
+
+    this.code               =  this.thmjson.code
+
+  } 
+
+} // end Class
+
+exports.theme_data = theme_data

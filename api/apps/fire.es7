@@ -1,0 +1,5 @@
+// Al final de fire.es7 necesitamos esto:
+module.exports = (req, res) => {
+   // Aquí irá la lógica que recuperaremos de tu código original
+   res.json({ estado: "Lógica de fire.es7 recuperada" });
+};

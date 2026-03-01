@@ -1,0 +1,192 @@
+// [DOCHANGED_NODE_ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - URI Class  [V.0.1.5]  (2019-10-01)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-set_anonymous_cacheable-       : Set urls to be cacheable for anonymous user 
+// - d-create_drupal_paths-        : Create path for drupal bootstrap
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  );
+
+const   { uri_create } =   require(  cons.JS_TYP7  + 'uri/u10_create.es7'           ),
+        numbers        =   require(  cons.JS_LIB7  + 'number/numbers.es7'             ),
+        empty          =   require(  cons.NODE_MOD + 'is_empty'                     );
+
+
+class uri_normalize extends uri_create {
+
+  constructor()
+  {
+    super()    
+    this.n               =   'uri_normalize::'        
+  }
+
+
+  normalize_uris()
+  {
+    // TODAS LAS URIS VAN SI BARRAS - NI DELANTERAS NI TRASERAS
+    
+    var uri_arr_pre          =  Array()
+
+
+    uri_arr_pre           =   this.uri.split('/')                    
+
+    let new_dash_uri        =  ''                        
+    let new_sash_uri        =  ''                        
+    let new_bars_uri        =  ''                        
+
+    let lower_str          =  ''
+
+
+    // this.p('u10_Before while ' + uri_arr_pre.length  )            
+    // Dos pasadas, en la primera normalizamos
+
+    // A. LIMPIEZA - CLEANNING
+
+    for (var pos in uri_arr_pre)  
+    {
+      var str_to_manage = uri_arr_pre[pos]
+
+      this.rmultispace_debug(str_to_manage)
+      str_to_manage      =    this.result
+            
+      if (!empty(str_to_manage) )
+      {
+        if (!isNaN(str_to_manage))
+        {
+        // Aqui nunca entra
+
+          lower_str      =    str_to_manage
+          
+          // Podemos gestionar los espacios
+          
+          
+          this.p('u09_without_space_NUNCA_ENTRA ' + this.result)
+
+          // Metodo correcto - Falla Iconv al instalarse en ubuntu
+          // var iconv = new Iconv('UTF-8', 'ASCII//TRANSLIT')
+          // var dasclean = iconv.convert (this.dash_uri)
+
+          // Esto no esta funcionando - QUEDA PENDIENTE
+          // var dasclean = iconv.decode(Buffer(this.dash_uri), "utf-8")
+        }
+        else
+        {
+
+          // Aqui tenemos que repasar si tiene numeros porque sabemos que tiene letras
+          // this.p('u09_Managinnnggg ' + str_to_manage  )
+
+          if ( numbers.hasNumber(str_to_manage) )
+          {
+
+             if ( numbers.endswithNumber(str_to_manage) )
+             {
+
+          	  // This means have numbers and letters  art10
+          	  // convert arti0004 --> a4
+          	  let firstDigit = str_to_manage.search(/\d/) // will give you the first digit in the string
+          	  
+          	  let letter  = str_to_manage.substr(0,1)
+          	  let numbers = Number( str_to_manage.substr(firstDigit) ) + ''
+          	  
+          	  str_to_manage = letter + numbers
+          	
+          	  // Ahora tenemnos a10
+              // this.p('u08_Managinnnggg ' + str_to_manage )
+              
+              
+             }
+             else
+             {
+          	// Se trata de un mal argumento, vamos a la home
+          	// bb10aa
+          	this.manage_front()
+          	return
+          	
+             }
+          }
+
+          lower_str      =   str_to_manage.toLowerCase()
+
+          //  setlocale(LC_ALL, "en_US.utf8")
+      
+          // utf_urldecode     = utf8_decode(urldecode(args))  
+
+          // lower_str       =   iconv("utf-8", "ascii//TRANSLIT", lower_str_noutf)
+        }
+
+        this.uri_arr.push(      lower_str    )                  
+
+      }
+    }  
+
+
+    // this.p('u10_AFeter while ' + this.uri_arr.length  )            
+    
+    this.count_uri_arr      =  this.uri_arr.length  - 1                
+    let cont           =   0                         
+  
+    // B. ALMACENAMIENTO - STORAGE
+  
+  
+    for (var pos in this.uri_arr)
+    {
+      var pretrim_str_to_manage   =   this.uri_arr[pos]
+        
+      var str_to_manage = pretrim_str_to_manage.trim()
+
+      new_dash_uri  +=   str_to_manage                  
+      new_sash_uri  +=   str_to_manage                       
+      new_bars_uri  +=   str_to_manage                       
+
+      // Prepare for intelligent queries
+      if ( cont > 0  )
+      {
+        // this.p('Addding_Elements')                      
+        this.uri_arr_lang.push(       str_to_manage  )        
+      }
+
+      if ( cont > 1  )
+        this.uri_arr_lang_command.push(    str_to_manage  )        
+    
+
+      if  ((cont   >=  0           )  && 
+         (cont   <   this.count_uri_arr )  )
+      {
+        new_dash_uri+=  '_'                          
+        new_sash_uri+=  '/'                          
+        new_bars_uri+=  '|'                          
+
+      }
+
+      cont++                                  
+        
+    }
+    
+    // Array limpio
+    // Dash (guiones) - Bars ( barras | )
+    
+    this.dash_uri        =  new_dash_uri                     
+    this.bars_uri        =  new_bars_uri                     
+
+    this.uri             =  new_sash_uri                    
+   
+    // Con slash
+    this.slash_uri       =  this.uri
+     
+
+    // Works : El bucle de dos pasadas funcions en/enciclopedia
+    this.p('Generated_Clean_Uri  : ' + this.uri)                    
+
+  }
+  
+}
+
+exports.uri_normalize = uri_normalize

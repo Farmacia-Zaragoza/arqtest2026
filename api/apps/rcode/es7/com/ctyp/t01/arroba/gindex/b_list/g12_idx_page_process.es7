@@ -1,0 +1,113 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Proces Class  [V.0.0.2]  (2019-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-current_index_list_process-       : Process current array information to generate site fields
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// AnoProcess > AnoTermProcess >
+// @Anode >  ...
+//-------------------------------------------------------------------------------------
+// Execution Line : 
+//-------------------------------------------------------------------------------------
+// CurrProces > CurrLoad > RECURSIVE
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                        =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  { anode_gindex_sheet_load } =   require(  cons.JS_TYP7  + 'arroba/gindex/c_sheet/g01_idx_load.es7'),
+       { idx_pointers }            =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'               );
+
+class anode_gindex_page_process extends anode_gindex_sheet_load {
+  constructor()  
+  {
+    super()
+    this.n                        = "anode_gindex_page_process::"
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Will process all pages
+  // MAIN/position/page --> @FORMAT
+  current_index_page_process(lang                    ,
+                  current_subpath                    , 
+                  pos                                )  // Page position
+  {
+  
+    this.m          = 'current_index_list_process'
+  
+    this.rvlash( current_subpath )
+    let index         = this.result
+
+    // 020 - 001 
+    var idx = new idx_pointers(index)    
+
+    //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
+  // this.p('j06 Proc Lang : ' + lang + ' Path ' +  current_subpath + ' Ind ' + index)
+
+    // Los bucles tienen que ser con el idioma ingles
+
+    // j020v001    
+    // this.p('an09_jindex ' + idx.jindex)
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
+  
+    // this.p('j06_Before-pos-bucle1 ' + lang + '  ' + cats.length )
+
+    // PROCESAMOS TODA LA LISTA
+  
+
+    this.arroba_attribs(idx,pos)
+
+      // this.p('an09 cat  Ind ' + this.cat  + ' Cin ' + this.child )        
+      
+        // this.p('an09 cat ' + index + ' P ' + pos + ' Chi ' + this.child + ' C ' + this.s.cat)
+
+        // if ( lang == "es" )
+        //    this.p ('Processing Lang ES ' + this.s.item )
+
+    let next_level    = this.get_next_level(pos)
+    let new_level     = index + next_level 
+    let new_subpath   = current_subpath + '/' + 'l' +  next_level      
+
+    if ( (this.item  != "" ) || (this.photo != "")  )         this.term_process()
+
+      // Estos ya estan metidos en el array asi que hay que iterar los hijos
+      //this.p('LEVEL : ' + index + ' pos ' + pos + ' value: '  + cats[pos] + ' childrens: ' + chld[pos]  )
+
+      // this.p('g02_:Pos ' + pos +  ' T ' + this.ntype  + ' Cat ' + this.cat )
+
+    if ( this.child == "yes" )
+    {
+       switch (this.ntype) 
+       {
+         case "branch":
+           this.current_index_list_load(  lang                   ,
+                                          new_subpath            )
+           break;            
+         case "sheet":
+           // this.p('an09 cat  Ind ' + this.cat  + ' Cin ' + this.child )      
+           this.current_index_sheet_load(  lang                 ,
+                                        new_subpath               )
+           break;
+       }
+     
+      // /brqx/pers/fromfile/farma/fnode/json_lang_structure/l000/fr_cat
+              
+    } // End If
+		  
+      
+
+  }
+
+}
+
+exports.anode_gindex_page_process = anode_gindex_page_process

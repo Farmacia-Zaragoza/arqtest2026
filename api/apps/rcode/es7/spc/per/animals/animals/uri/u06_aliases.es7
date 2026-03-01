@@ -1,0 +1,308 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Url Alias Class  [V.0.0.3]  (2019-11-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-manage_aliases-            : Check aliases for site 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const { site_common_commands } =   require( cons.JS_ACO7 + 'uri/u01_site_commands.es7' )
+
+
+class uri_aliases extends site_common_commands
+{
+  constructor(site = '' , ir = '' )
+  {
+    super(  site, ir )
+    this.n                  =   "site_uri::"
+  } 
+
+//---------------------------------------------------------------------------------------------  
+
+  manage_aliases()
+  {
+
+     this.m                    = 'manage_commands'
+
+     // this.start_position_array       =   this.start_position_array + 1        
+
+     this.p('u01_site_uri_SITEALIAS: ' + this.slash_ideal_uri)           
+
+     switch(this.slash_ideal_uri)
+     {
+      // Multi Lang article
+      // Alias for page
+          
+      // Esto hay que revisarlo y mejorarlo    
+      case "architect/ricardocabellotorres/":
+
+        this.url_page_load_drupal_node('19')
+        break;
+
+      case "architecte/ricardocabellotorres/":
+
+        this.url_page_load_drupal_node('19')
+        break;
+
+      case "contenido_articulo/a0001/a_enfoque_arquitectonico/p01/":
+        this.url_page_load_drupal_node('0')
+        break;
+
+      case "contenido_articulo/a2/a_enclaves_arquitectonicos_la_definicion_de_la_estructura_del_producto_es_arquitectura/p1/":
+        this.url_page_load_drupal_node('1')
+        break;
+
+      // Article 11 Shorted
+      case "contenido_articulo/a2/b_enclaves_arquitectonicos_la_relacion_con_otros_productos_que_permitan_un_mejor_despliegue_es_arqu/p2/":
+        this.url_page_load_drupal_node('2')
+        break;
+      // Article 11 Full
+      case "contenido_articulo/a2/b_enclaves_arquitectonicos_la_relacion_con_otros_productos_que_permitan_un_mejor_despliegue_es_arquitectura/p2/":
+        this.url_page_load_drupal_node('2')
+        break;
+
+      case "contenido_articulo/a2/c_enclaves_arquitectonicos_la_correcta_definicion_de_necesidades_a_nivel_de_sistema_es_arquitectura/p3/":
+        this.url_page_load_drupal_node('3')
+        break;
+      case "contenido_articulo/a2/d_enclaves_arquitectonicos_la_interrelacion_entre_distintos_sistemas_es_arquitectura/p4/":
+        this.url_page_load_drupal_node('4')
+        break;
+      case "contenido_articulo/a2/e_enclaves_arquitectonicos_la_eleccion_de_los_componentes_es_arquitectura/p5/":
+        this.url_page_load_drupal_node('5')
+        break;
+      case "contenido_articulo/a2/f_enclaves_arquitectonicos_la_definicion_de_los_nombres_de_los_componentes_es_arquitectura/p6/":
+        this.url_page_load_drupal_node('6')
+        break;
+
+      // Article 11 Shorted
+      case "contenido_articulo/a2/g_enclaves_arquitectonicos_la_presentacion_y_composicion_de_dichos_componentes_tambien_es_arquitect/p7/":
+        this.url_page_load_drupal_node('7')
+        break;
+      case "contenido_articulo/a2/g_enclaves_arquitectonicos_la_presentacion_y_composicion_de_dichos_componentes_tambien_es_arquitectura/p7/":
+        this.url_page_load_drupal_node('7')
+        break;
+
+
+      case "contenido_articulo/a2/h_enclaves_arquitectonicos_la_categorizacion_de_la_ruta_de_los_componentes_es_arquitectura/p8/":
+        this.url_page_load_drupal_node('8')
+        break;
+
+      case "contenido_articulo/a2/i_enclaves_arquitectonicos_la_relacion_entre_componentes_comunes_para_los_portales_es_arquitectura/p9/":
+        this.url_page_load_drupal_node('9')
+        break;
+
+      case "contenido_articulo/a2/j_enclaves_arquitectonicos_la_decision_de_reutilizacion_de_componentes_es_arquitectura/p10/":
+        this.url_page_load_drupal_node('10')
+        break;
+
+      // Article 11 Shorted
+      case "contenido_articulo/a2/k_enclaves_arquitectonicos_la_gestion_de_los_componentes_y_el_control_de_los_portales_es_arquitectu/p11/":
+        this.url_page_load_drupal_node('11')
+        break;
+      // Article 11 Full
+      case "contenido_articulo/a2/k_enclaves_arquitectonicos_la_gestion_de_los_componentes_y_el_control_de_los_portales_es_arquitectura/p11/":
+        this.url_page_load_drupal_node('11')
+        break;
+
+      // Article 12 Shorted
+      case "contenido_articulo/a2/l_enclaves_arquitectonicos_la_necesidad_de_conocimiento_de_los_componentes_disponibles_es_arquitect/p12/":
+        this.url_page_load_drupal_node('12')
+        break;
+      case "contenido_articulo/a2/l_enclaves_arquitectonicos_la_necesidad_de_conocimiento_de_los_componentes_disponibles_es_arquitectura/p12/":
+        this.url_page_load_drupal_node('12')
+        break;
+
+
+      // Article 13 Shorted
+      case "contenido_articulo/a2/m_enclaves_arquitectonicos_los_parametros_de_usabilidad_y_seguridad_aplicados_a_los_componentes_ele/p13/":
+        this.url_page_load_drupal_node('13')
+        break;
+      // Article 13 Full
+      case "contenido_articulo/a2/m_enclaves_arquitectonicos_los_parametros_de_usabilidad_y_seguridad_aplicados_a_los_componentes_elegidos_son_arquitectura/p13/":
+        this.url_page_load_drupal_node('13')
+        break;
+
+
+      // Article 14 Shorted
+      case "contenido_articulo/a2/n_enclaves_arquitectonicos_la_capacidad_para_prevenir_los_cambios_y_la_adaptacion_del_sistema_al_fu/p14/":
+        this.url_page_load_drupal_node('14')
+        break;
+      // Article 14 Full
+      case "contenido_articulo/a2/n_enclaves_arquitectonicos_la_capacidad_para_prevenir_los_cambios_y_la_adaptacion_a_la_futura_arquitectura_del_sistema/p14/":
+        this.url_page_load_drupal_node('14')
+        break;
+
+
+      // Article 15 Shorted
+      case "contenido_articulo/a2/o_enclaves_arquitectonicos_la_capacicidad_de_abstraccion_que_permite_interpretar_un_sistema_complej/p15/":
+        this.url_page_load_drupal_node('15')
+        break;
+      // Article 15 Full
+      case "contenido_articulo/a2/o_enclaves_arquitectonicos_la_capacicidad_de_abstraccion_que_permite_interpretar_un_sistema complejo_o_simple_es_arquitectura/p15/":
+        this.url_page_load_drupal_node('15')
+        break;
+
+      // Article 16 Shorted
+      case "contenido_articulo/a2/p_enclaves_arquitectonicos_la_decision_de_minimizar_la_documentacion_y_agrupar_las_necesidades_comu/p16/":
+        this.url_page_load_drupal_node('16')
+        break;
+      // Article 16 Full
+      case "contenido_articulo/a2/p_enclaves_arquitectonicos_la_decision_de_minimizar_la_documentacion_y_agrupar_las_necesidades comunes_del_grupo_es_arquitectura/p16/":
+        this.url_page_load_drupal_node('16')
+        break;
+
+      // Article 17 Shorted
+      case "contenido_articulo/a2/q_enclaves_arquitectonicos_la_relacion_de_dichas_necesidades_con_la_de_los_componentes_a_utilizar_e/p17/":
+        this.url_page_load_drupal_node('17')
+        break;
+      // Article 17 Full
+      case "contenido_articulo/a2/q_enclaves_arquitectonicos_la_relacion_de_dichas_necesidades_con_la_de_los_componentes_a_utilizar_es_arquitectura/p17/":
+        this.url_page_load_drupal_node('17')
+        break;
+      
+      // Codigos
+      
+      case "category/a0/codigo_articulo/":
+        this.url_page_load_drupal_node('0')
+        break;
+      case "category/a1/codigo_articulo/":
+        this.url_page_load_drupal_node('1')
+        break;
+      case "category/a2/codigo_articulo/":
+        this.url_page_load_drupal_node('2')
+        break;
+      case "category/a3/codigo_articulo/":
+        this.url_page_load_drupal_node('3')
+        break;
+      case "category/a4/codigo_articulo/":
+        this.url_page_load_drupal_node('4')
+        break;
+      case "category/a5/codigo_articulo/":
+        this.url_page_load_drupal_node('5')
+        break;
+      case "category/a6/codigo_articulo/":
+        this.url_page_load_drupal_node('6')
+        break;
+      case "category/a7/codigo_articulo/":
+        this.url_page_load_drupal_node('7')
+        break;
+      case "category/a8/codigo_articulo/":
+        this.url_page_load_drupal_node('8')
+        break;
+      case "category/a9/codigo_articulo/":
+        this.url_page_load_drupal_node('9')
+        break;
+      case "category/a10/codigo_articulo/":
+        this.url_page_load_drupal_node('10')
+        break;
+      case "category/a11/codigo_articulo/":
+        this.url_page_load_drupal_node('11')
+        break;
+      case "category/a12/codigo_articulo/":
+        this.url_page_load_drupal_node('12')
+        break;
+      case "category/a13/codigo_articulo/":
+        this.url_page_load_drupal_node('13')
+        break;
+      case "category/a14/codigo_articulo/":
+        this.url_page_load_drupal_node('14')
+        break;
+      case "category/a15/codigo_articulo/":
+        this.url_page_load_drupal_node('15')
+        break;
+      case "category/a16/codigo_articulo/":
+        this.url_page_load_drupal_node('16')
+        break;
+      case "category/a17/codigo_articulo/":
+        this.url_page_load_drupal_node('17')
+        break;
+
+      // Paginas
+
+      case "category/a0/pagina_articulo/":
+        this.url_page_load_drupal_node('0')
+        break;
+      case "category/a1/pagina_articulo/":
+        this.url_page_load_drupal_node('1')
+        break;
+      case "category/a2/pagina_articulo/":
+        this.url_page_load_drupal_node('2')
+        break;
+      case "category/a3/pagina_articulo/":
+        this.url_page_load_drupal_node('3')
+        break;
+      case "category/a4/pagina_articulo/":
+        this.url_page_load_drupal_node('4')
+        break;
+      case "category/a5/pagina_articulo/":
+        this.url_page_load_drupal_node('5')
+        break;
+      case "category/a6/pagina_articulo/":
+        this.url_page_load_drupal_node('6')
+        break;
+      case "category/a7/pagina_articulo/":
+        this.url_page_load_drupal_node('7')
+        break;
+      case "category/a8/pagina_articulo/":
+        this.url_page_load_drupal_node('8')
+        break;
+      case "category/a9/pagina_articulo/":
+        this.url_page_load_drupal_node('9')
+        break;
+      case "category/a10/pagina_articulo/":
+        this.url_page_load_drupal_node('10')
+        break;
+      case "category/a11/pagina_articulo/":
+        this.url_page_load_drupal_node('11')
+        break;
+      case "category/a12/pagina_articulo/":
+        this.url_page_load_drupal_node('12')
+        break;
+      case "category/a13/pagina_articulo/":
+        this.url_page_load_drupal_node('13')
+        break;
+      case "category/a14/pagina_articulo/":
+        this.url_page_load_drupal_node('14')
+        break;
+      case "category/a15/pagina_articulo/":
+        this.url_page_load_drupal_node('15')
+        break;
+      case "category/a16/pagina_articulo/":
+        this.url_page_load_drupal_node('16')
+        break;
+      case "category/a17/pagina_articulo/":
+        this.url_page_load_drupal_node('17')
+        break;
+      
+
+      // Lists 
+      case "vis/articles/":
+        this.url_page_set_list()
+        break;
+
+      case "vis/articulos/":
+        this.url_page_set_list()
+        break;
+
+      case "vis/secciones/":
+        this.url_page_set_list()
+        break;
+
+      default:
+        this.p('u06_aliases_manage_front')
+        this.manage_front()
+
+    }
+
+  }  
+
+} // end Class
+
+exports.uri_aliases = uri_aliases
+

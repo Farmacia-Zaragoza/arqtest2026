@@ -1,0 +1,63 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated_Langs:NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// AgileNode Js - Anode Class  [V.0.0.1]  (2020-02-12)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar anode para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:
+//- c-anode-
+//-------------------------------------------------------------------------------------
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-get_child_properties-       : Method to overload. Old structure 
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+//   01       02              04                06                07              08
+// Anode > Anode_Run > Anode_main_load > Anode_main_process > Anode_load > Anode_process > Anode_defs > 
+// Anode > Cache > Struc
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const  { anode_load }       =   require(  cons.JS_TYP7  + 'arroba/anode/a00_comm/an07_load.es7'      )
+
+class anode extends anode_load {
+  constructor(    site   , u = ''            )  
+  {
+    super()
+
+    this.n                          =   "anode::"
+       
+    this.s					        =   site
+    this.b                          =   this.s.b
+    this.u                          =   u
+
+    this.content_arr['en']          = Array()
+    this.content_arr['en']['main']	         = this.s.ms.contents_path + 'en_cat'   
+
+    // llega es
+    this.p('an01_Anode_cons_lNG ' + this.s.cs.lang + ' DD ' + this.s.ms.lang )
+
+    this.reload_lang()
+    
+  }
+
+  reload_lang()
+  {
+    if (this.s.cs.lang != 'en' )
+    {    
+      this.content_arr[this.s.cs.lang] = Array()          
+      this.content_arr[this.s.cs.lang]['main'] = this.s.ms.contents_path + this.s.cs.lang + '_cat'   
+    }
+
+  }
+}
+
+exports.anode = anode

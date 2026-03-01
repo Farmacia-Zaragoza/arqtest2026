@@ -1,0 +1,81 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Node Js - If No JS Class  [V.0.0.1]  (2017-10-26)
+//------------------------------------------------------------------------------------
+//Methods:
+//- ifno_oneline             : Add If no JS method
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class ifnojs {
+  constructor(tame = "") 
+  {
+    this.n 			= "ifnojs::"
+    this.deb 		= ""
+    this.tame 		= ""
+    this.code 		= ""
+    this.tame 		= "" + tame
+  }
+
+  ifno_oneline(	version_ie 	= '7', 
+  				op 			= 'lt', 
+  				class_name 	= 'no-js lt-ie9 lt-ie8 lt-ie7') 
+  {
+    this.code = ''
+    this.code += "<!--[if " + op + " IE " + version_ie + "]>"
+    this.code += ' <html class="' + class_name + '" lang=""> <![endif]-->'
+  }
+
+  ifno_complex(	version_ie = "7", 
+  				op = "lt", 
+  				content = '<html class="no-js" lang="">') 
+  	{
+    this.ifno_simple(version_ie, op);
+    this.code += content;
+    this.ifno_simple_end()
+  }
+
+  ifno_complex_mode_02(version_ie = "7", op = "lt", content = '<html class="no-js" lang="">') {
+    this.ifno_simple_mode_02(version_ie, op)
+    this.code 		+= content
+    this.ifno_simple_end_mode_02()
+  }
+
+  ifno_simple(version_ie = "7", op = "lt") {
+    this.code = ""
+    this.code += "<!--[if " + op + " IE " + version_ie + "]><!-->"
+  }
+
+  ifno_simple_mode_02(version_ie = "7", op = "lt") {
+    this.code 			 = 	""
+    this.code 			+= 	"<!--[if " + op + " IE " + version_ie + "]>"
+  }
+
+  ifno_simple_end() 
+  {
+    this.code += "<!--<![endif]-->"
+  }
+
+  ifno_simple_end_mode_02() {
+    this.code += "<![endif]-->"
+  }
+
+  __get(property) 
+  {
+      return this[property]
+  }
+
+  __set(var_passed, valor) 
+  {
+      this[var_passed] = valor
+  }
+
+  show() {
+    echo(this.code)
+  }
+
+  shon() {
+    echo(this.code + "\n")
+  }
+
+}
+
+exports.ifnojs = ifnojs

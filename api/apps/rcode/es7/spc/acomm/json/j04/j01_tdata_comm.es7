@@ -1,0 +1,115 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Broser  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Theme_Json (spc) > Printlog
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// arroba_scomm     : Common files
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-load_page_content-            : Check command type based on uri and site 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+
+const  { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                  ),
+       { arroba_scomm }     =   require(  cons.JS_TYF7  + 'a01_load/scomm/s01_arroba_comm.es7' ),
+       { arroba_sprod }     =   require(  cons.JS_TYF7  + 'a01_load/sprod/p01_arroba_prod.es7' ),
+       { arroba_hiera }     =   require(  cons.JS_TYF7  + 'a01_load/hiera/h01_arroba_hiera.es7');
+
+class tdata_comm extends printlog
+{
+  constructor(arroba = '')
+  {
+    super()
+    this.n                  =   "theme_data::"
+
+    this.arroba             =   arroba
+    this.acontent           =   arroba
+    this.u                  =   this.arroba.u
+    this.s                  =   this.arroba.s
+  }
+
+  load_page_content()
+  {
+    // Manage ARROBA DATA - Common values
+
+    this.p ('J01_tdata_comm BEFORE_WRONG' + '  ' + this.s.cs.page_name)    
+    
+    switch(this.s.cs.page_name)
+    {
+      case "teasers":
+        // Hay que cargar los articulos
+        // Idea de drupal. Aqui los cargamos
+        // this.p('j01_thmdat_Loading_Long Teasers')
+        this.acontent     =  new arroba_scomm(this.arroba)        
+        break;
+
+      case "list":
+        // Hay que cargar los articulos
+        // Idea de drupal. Aqui los cargamos
+        // this.p('j01_thmdat_Loading_Teasers')
+        this.acontent     =  new arroba_scomm(this.arroba)        
+        break;
+
+      case "rand":
+        // Hay que cargar los articulos. Habra que cargarlos todos y hacer rand
+        this.acontent     =  new arroba_scomm(this.arroba)        
+        break;
+
+      case "product":
+        // Hay que cargar el producto N
+        // Policy ahora es un product
+        // this.p('j01_tdata_commm_PASO_04_Es un producto ')   
+        this.acontent     =  new arroba_sprod(this.arroba)        
+        break;
+
+      case "photo":
+        // Hay que cargar el producto N
+        // Se carga el objeto / lista de fotos
+        // this.p('j01_tdata_commm__Es una lista de fotos ')
+
+        // church_
+        // this.p('j01_tdata_commm_PASO_04_Es una lista de fotos ')           
+        this.acontent     =  new arroba_sprod(this.arroba)        
+        break;
+
+      case "kb":
+        // Necesito otro tipo de estructura
+        // 
+
+        this.p('j01_tdata_commm__Managing Kb ')
+
+        this.acontent     =  new arroba_hiera(this.arroba)        
+        break;
+        
+      case "front":
+        // ¿ Que tenemos en el front ? Todo los articulos ?  Es un producto ? 
+        this.p('thm_dat_Es HOME - Hay que ver si ya existe el fichero ' + this.arroba.s.cs.page)   
+        
+        // this.acontent     =  new arroba_ecomm(this.arroba)    
+        
+        this.acontent     =  new arroba_sprod(this.arroba)        
+        break;
+    }
+    
+
+    this.s = this.arroba.s
+    
+    // this.p('j01_tdatacomm : ' + this.s.cs.founded_type)
+
+  } 
+
+} // end Class
+
+exports.tdata_comm = tdata_comm

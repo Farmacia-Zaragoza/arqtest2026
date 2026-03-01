@@ -1,0 +1,48 @@
+// [DOCHANGED_ES6_NODE]
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//BlkJson  Block Json Style Class  [V.0.0.4]  (2019-03-17)
+//------------------------------------------------------------------------------------
+//Methods:
+//- d-save_keyheader            : Add key header to json structure
+//- d-save_header               : Add key header to json structure
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const 	echo 				= 	require(	cons.NODE_MOD   + 'node-echo'													),
+        sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
+		{ blkjson } 		= 	require(	cons.JS_TYP7    + 'json/jtype/blkjson.es7'							);
+
+
+class blkjson_object extends blkjson {
+	constructor(file_name = '') 
+	{
+		super(file_name)
+		this.n 				= 	"blkjson_object::"
+	}
+
+	save_keyheader(header)
+	{
+		let code 	=	'"' +  header + '" : {'
+		sctf.create_update_full_filename(this.full_path, code)
+
+		this.clean()		
+	}
+
+	save_nokeyheader(header)
+	{
+		let code 	=	'"' +  header + '" : '
+		sctf.create_update_full_filename(this.full_path, code)
+
+		this.clean()		
+		
+	}
+
+	save_header(header) {  	
+		this.save_keyheader(header) 
+	}
+
+}
+
+
+exports.blkjson_object = blkjson_object

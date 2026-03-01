@@ -1,0 +1,159 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Struc Class  [V.0.1.0]  (2020-02-06)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar struc para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Process:
+//-------------------------------------------------------------------------------------
+// @content_file --> contents[] --> arr[] 
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:
+//-------------------------------------------------------------------------------------
+// c-struc-                          : Main Struc Class
+//-------------------------------------------------------------------------------------
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-check_photo_exist_in_systems-   : Check photos exist in systems
+//- d-generate_array_from_photo_file- : Generate array from photo file
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Struc_Pho  > Struc_gen > Struc_attrib > scomm_defs
+// @Struc_pho > @String > @Cache > @log
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const { struc_gen_arroba } =   require(  cons.JS_TYP7  + 'struc/s03_struc_gen_arroba.es7'),
+	  rand	               =   require(  cons.JS_LIB7 + 'rand/rand.es7' 	           ),
+      fs 				   =   require(	'fs'												);
+
+class struc_pho extends struc_gen_arroba {
+  constructor()  
+  {
+    super()
+    this.n                        = "struc_pho::"
+  }
+
+  // Load contents with information of file
+  //---------------------------------------------------------------------------------------------  
+  check_photo_exist_in_systems()
+  {
+      var photo_path = ''
+
+      for (var pos in this.contents)
+      {
+      	 value = this.contents[pos]
+
+         photo_path  =   this.s.ms.photos_path +  this.s.ms.current_photo_path + '/RESOLUTION/' + value 
+
+         // brqx_sma11bra_pers_-_Brasil_-_Rio_de_Janeiro_-_PN_Tijuca_-_Mirador_Santa_Marta_0002493_RESOLUTION.jpg         
+         // this.p ('s01_struc ARRPHO ' + photo_path)
+         if (!fs.existsSync(photo_path) )
+           delete this.constents[pos]
+         else
+         {
+         	// Existe la foto ... a ver que mas hacemos
+           this.manage_photo(value)	
+         	         	
+         } 
+      }
+  }
+
+  manage_photo(value)
+  {
+  	    // Esto hay que hacerlo al obtener las fotos
+
+    // brqx_pla09mau_pers_-_La_Playa_-_Isla_de_los_Ciervos_-_Ile_aux_cerfs_-_Mauricio_-_DSCN0443_RESOLUTION.jpg
+    
+    // this.p ('jn01_pho MAnaging ' + this.k.value )
+    //0 brqx_pas09bod_pers_-_
+    //1 Boda_Maribel_y_Ricardo_-_
+    //2 Palacio_Aldea_Santillana_-_
+    //3 Paseo_-_
+    //4 01_de_Mayo_de_2009_-_
+    //5 DSCN1553_RESOLUTION.jpg    
+
+    var str_to_manage = ''
+
+    // let pos_re = this.strpos(value, "RESOLUTION")
+    
+    // let before_resolution   =   value.substr(0,pos_re)
+
+    // this.p('s02_stru_pho_RE ' + before_resolution)
+
+    let pho_arr_pre          =   value.split('-')
+  
+    var last_element = pho_arr_pre.length - 1
+        
+    // Todo son categorias
+    // brqx_rol09bod_pers_-_boda_maribel_y_ricardo_-_palacio_aldea_santillana_-_01_de_mayo_de_2009_
+    // Tengo que pensarlo mejor
+    
+    for (var pos in pho_arr_pre)
+    {
+      // Solo tiene sentido insertar separador si lo hemos solucionado primero
+      if (last_element != pos)
+      {
+        str_to_manage = pho_arr_pre[pos] 
+        // if (!isNaN(str_to_manage) )
+        // s02_stru_pho_RE _Boda_Maribel_y_Ricardo_
+        // s02_stru_pho_RE _Iglesia_de_Pedrezuela_
+        // s02_stru_pho_RE _01_de_Mayo_de_2009_               
+               
+        // this.p('s02_stru_pho_RE ' + str_to_manage)
+        
+        //  this.manage_meta_tag()
+        // else
+        //  this.manage_photo_name()
+          //this.p ('jn01_pho MAnaging ' + this.term )
+      }           
+    }
+
+
+  	
+  	
+  }
+
+  manage_photo_name()
+  {
+    let pho_arr          =   this.result.split('_')
+    //this.k.item = pho_arr[0]
+  
+  }
+
+
+
+  //---------------------------------------------------------------------------------------------  
+
+  // Ficheros de texto normales
+  // Falta revisar las fotos
+  generate_array_from_photo_file(lang = 'en' , file = '' , index = "")
+  {
+    this.m        = 'generate_array_from_file' 
+    // this.p('s01_Stru LOAD IDX ' + file)
+
+    this.b.rest_result = true
+    
+  	this.load_file_information(file)
+
+    // Hacemos un shuffle a las fotos  	
+  	this.check_photo_exist_in_systems()
+
+    // Hacemos un shuffle a las fotos  	
+    rand.shuffle(this.contents)  	
+  	
+  	if (this.b.rest_result) this.generate_text_file(lang, index)
+  }
+
+
+}
+
+exports.struc_pho = struc_pho

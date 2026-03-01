@@ -1,0 +1,95 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated_Langs:NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Main Process Class  [V.0.0.1]  (2019-05-31)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar anode para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-main_index_list_process-       : Process from main file only specific position
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// AnoMainPositionProcess > AnoMainPageProcess
+// @Anode >  ...
+//-------------------------------------------------------------------------------------
+// Execution Line : 
+//-------------------------------------------------------------------------------------
+// main_position_process > current_load >
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+
+var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+
+const  { anode_gindex_list_load } =   require( cons.JS_TYP7  + 'arroba/gindex/b_list/g01_idx_load.es7'),
+       { idx_pointers }           =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                );
+
+class anode_gindex_main_process extends anode_gindex_list_load {
+  constructor()  
+  {
+    super()
+    this.n                        = "anode_gindex_main_process::"
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Procesa Solo la primera posicion o la pasada
+  main_index_list_process(   index           = 'main'    , 
+                             current_subpath = ''        )
+  {
+
+    // Set Arroba attribs
+    var idx     = new idx_pointers(index)
+
+    this.arroba_attribs(idx, this.s.cs.position)
+  
+    current_subpath  = 'l' +  this.dhild
+
+    // l020
+    // this.p('g02_path ' + current_subpath ) 
+    // this.p('j04_jnod_Pos: ' + this.s.position + ' Cat : ' + this.cat + ' Child: ' + this.child)
+
+    if ( this.child == "yes" )
+    {
+      // this.p('an66_Cat Lang : ' + this.s.ms.lang + ' Cat '  + this.cat + ' Pat: ' + current_subpath)
+      // l20
+      this.current_index_list_load(this.s.ms.lang , current_subpath)
+    }
+
+  }
+
+  // Procesa Solo la primera posicion o la pasada
+  main_index_page_process(   index           = 'main'    , 
+                             current_subpath = ''        )
+  {
+
+    // Set Arroba attribs
+    var idx     = new idx_pointers(index)
+
+    this.arroba_attribs(idx, this.s.cs.position)
+  
+    current_subpath  = 'l' +  this.dhild
+
+    // l020
+    // this.p('g02_path ' + current_subpath ) 
+    // this.p('j04_jnod_Pos: ' + this.s.position + ' Cat : ' + this.cat + ' Child: ' + this.child)
+
+    if ( this.child == "yes" )
+    {
+      // this.p('an66_Cat Lang : ' + this.s.ms.lang + ' Cat '  + this.cat + ' Pat: ' + current_subpath)
+      // l20
+      this.current_index_page_load(this.s.ms.lang , current_subpath , this.s.cs.page)
+    }
+
+  }
+
+}
+
+exports.anode_gindex_main_process = anode_gindex_main_process

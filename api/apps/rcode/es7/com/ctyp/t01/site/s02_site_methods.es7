@@ -1,0 +1,155 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Site Definition Common Class  [V.0.0.2]  (2019-07-03)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:
+//-------------------------------------------------------------------------------------
+// - c-site_methods-
+//-------------------------------------------------------------------------------------
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-check_anchor-             : Check anchor is allowed
+// - d-add_anchor-               : add anchor to metatag array
+// - d-add_metatag-              : add tag to meta tag array
+// - d-add_anchors_to_metatags-  : Add anchors to metatag array
+// - d-gen_anchors_and_metatags- : Generate strings for anchors and metatags
+
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+
+const   { site_defs }    =   require(  cons.JS_TYP7  + 'site/s03_site_defs.es7'  ),
+        sort		     =   require(  cons.JS_LIB7  + 'sort/sort_unique.es7'	 );
+
+
+class site_methods extends site_defs {
+  constructor() {
+    super()
+    this.n                          =   "site_methods::"
+
+    // Objects
+
+  }
+
+  // Comprueba que el anchor pasado es un anchor existente en la pagina
+  // Check what argument anchor is allowed in current page
+  //-------------------------------------------------------------------------------------
+  check_anchor(anchor)
+  {
+     var arr_anchors = this.arr['anchors']
+
+     if (!arr_anchors.includes(anchor))  this.b.anchor_allowed = true
+  }
+
+  // Add no repeated anchor to anchors array
+  // Los anchors son exactos
+  //-------------------------------------------------------------------------------------
+  add_anchor(anchor = '' , tag = 'anchors')
+  {
+     var arr_meta = this.arr[tag]
+
+     var arr_news = anchor.split(' ')
+
+     var meta_str = ''
+     var elem     = ''
+
+     for (pos in arr_news)
+     {
+     	elem = arr_news[pos]
+     	// this.p('s02_site__anchors ' + elem )
+        if ((elem != "") && (!arr_meta.includes(elem)) )       	arr_meta.push(elem)
+     }
+
+  }
+
+  //-------------------------------------------------------------------------------------
+  add_pagesep(anchor = '' , tag = 'pagesep') {this.add_anchor(anchor,tag) }
+
+    //-------------------------------------------------------------------------------------
+  add_pagesep_name(anchor = '' , value = '', tag = 'pagesep_name')
+  {
+     var arr_meta = this.arr[tag]
+     arr_meta[anchor] = value
+
+  }
+
+  //-------------------------------------------------------------------------------------
+  add_metatag(meta = '', tag = 'metatags'){this.add_anchor(meta,tag) }
+
+  //-------------------------------------------------------------------------------------
+  // Los metatags no son exactos y son en singular
+  add_anchors_to_metatags()
+  {
+     var arr_anchors = this.arr['anchors']
+     var arr_meta    = this.arr['metatags']
+
+     var meta_str     = ''
+     var elem         = ''
+     var elem_complex = ''
+
+     for (var pos in arr_anchors)
+     {
+        elem_complex = arr_anchors[pos]
+        this.ruri(elem_complex)
+
+        let inner_elem_arr = this.result.split(' ')
+
+        for (var posi in inner_elem_arr)
+        {
+     	  // elem = pluralize.singular(inner_elem_arr[posi])
+     	  elem = inner_elem_arr[posi]
+
+     	  //this.p('s02_mth ' + elem )
+
+          if ((elem != "") && (!arr_meta.includes(elem)))      	arr_meta.push(elem)
+	    }
+     }
+
+  }
+
+  //-------------------------------------------------------------------------------------
+  gen_string_from_array(term = "anchors" )
+  {
+    var str                = ""
+
+    var arr_anchors        = this.arr[term]
+
+    // No los ordenamos puesto que ahora son parte de las paginas
+    // sort.sort_unique(arr_anchors)
+
+    for (pos in arr_anchors) str += " " + arr_anchors[pos]
+
+    this.result = str.trim()
+  }
+
+  // Genera las cadenas de los anchors y metatags
+  //-------------------------------------------------------------------------------------
+  gen_anchors_and_metatags()
+  {
+
+     // Generate Anchors
+     this.gen_string_from_array()
+     this.cs.anchor_list = this.result
+
+     // Generate Metatags
+     this.gen_string_from_array('metatags')
+     this.ms.metatags    = this.result
+
+     this.gen_string_from_array('pagesep')
+     this.cs.pagesep_list = this.result
+
+     // this.p('s02_mth_TAGS ' + this.ms.metatags)
+     // this.p('s02_mth_ANCH ' + this.cs.anchor_list)
+
+  }
+
+
+}
+
+exports.site_methods = site_methods

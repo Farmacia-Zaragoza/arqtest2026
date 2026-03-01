@@ -1,0 +1,80 @@
+// [DOCHANGED_NODE ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Json Generate Object Recursive  [V.0.0.2]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_object_anchor_main-          : Generate List Json Main side
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  fs                         =   require(  'fs'                                                   ),
+       empty                      =   require(  cons.NODE_MOD + 'is-empty'                             ),
+       accents                    =   require(  cons.NODE_MOD + 'remove-accents'                       ),
+       { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 ),
+       { jn02_array_anchor_inner } =   require(  cons.JS_TYP7  + 'json/jnode/j01/anchors/jn02_anchor_inner.es7'  );
+
+// Comm Object
+class jn01_array_anchor_main extends jn02_array_anchor_inner {
+
+          
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'jn01_array_anchor_main::'      
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Recursive structure
+  save_json_object_anchor_main(depth = 0 , position = 20 , index = "main" ) 
+  {
+
+    // 020
+
+    var index = 'main'
+    var idx = new idx_pointers(index)
+
+    // h020
+    // this.p('jn01_anchor_main_LIST_IPAGE ' + idx.iindex + ' ' + idx.hindex )
+                 
+    // this.p('LIST_MAIN_BREADC ' + position)
+
+    this.attribs(idx,position,index,depth)
+
+    // ESTO ES LO QUE USA PARA EL NOMBRE DE LOS OBJETOS
+    this.jj.item        = "anchors_menu"
+    this.jj.type        = "blancbranch"
+    this.jj.child       = "yes"
+
+    this.jj.level       = depth
+
+    // this.p ('j01_anchor_main ' + idx.hindex + '  ' + this.j.hover)
+
+
+    this.jj.index   = this.get_next_level(position)
+
+    let object_type = "array"
+      
+
+    this.jj.createspecificpart(object_type)
+
+    // Escribir la parte
+
+    this.save_json_array_anchor_inner(depth)
+
+    // To close part
+    this.jj.end_corch(object_type)          
+    this.jj.end_key(object_type)          
+
+    // this.jj.add_separator()  
+  }
+  
+}
+
+exports.jn01_array_anchor_main = jn01_array_anchor_main

@@ -1,0 +1,98 @@
+// [DOCHANGED_NODE ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Json Generate Object Recursive  [V.0.0.1]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_sidebar_recursive_object_to_file-          : Generate Recursive JSon
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 ),
+       { jn04_commo_json_doble_call } =   require(  cons.JS_TYP7  + 'json/jnode/j01/objects/jn04_doble_call.es7'  );
+
+// Comm Object
+class jn03_commo_json_recursive extends jn04_commo_json_doble_call {
+
+          
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'jn03_commo_json_recursive::'      
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Recursive structure
+  save_json_sidebar_recursive_object_to_file(  
+            index           ,   // Indice
+            enbreadcrumb   =   ''  ,  // Breadcrumb en ingles
+            depth      =  0  ) 
+  {
+
+    var idx = new idx_pointers(index)
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                              ;
+
+    var iterations           = Object.keys(cats).length - 1
+
+    for (var pos in cats)
+    {
+      // Se pone a false siempre pues hay casos que no queremos generar
+      this.b.type_generated = false
+
+      this.attribs(idx, pos , index, depth)
+
+      this.links_management(idx, pos)
+            
+      // Child index
+      let current_level        = this.j.index
+
+      // let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.j.index ).toLowerCase()
+
+      // this.p('j03_object_callobj ' + this.j.item)            
+      
+      let object_type = this.j.otype
+      
+      if ( this.j.child == "yes" )
+      {
+          // theme - meta ...
+          // this.p ("jn03_r " + index + ' p ' + pos + ' i ' + this.j.item   )
+
+          this.j.createspecificpart(object_type)
+
+          // Gestionar los alias vacios
+
+          if (this.j.item == "aliases" )
+            this.clean_empty_values(current_level)
+
+          this.review_childrens_recursive(  
+            current_level          ,
+            enbreadcrumb       ,  // Breadcrumb en ingles
+            depth + 1              ,
+            this.j.otype            )
+
+          this.j.end_pull(object_type)          
+
+          // Si ha llamado a algun hijo es un tipo ya generado
+        this.b.type_generated = true
+      } 
+      else
+          this.manage_array_parragraphs('object', this.j.index)
+
+
+      if ( (--iterations  >= 0) && (this.b.type_generated) )
+        this.j.add_separator()
+
+    
+     }  // End For
+  
+  }
+  
+}
+
+exports.jn03_commo_json_recursive = jn03_commo_json_recursive

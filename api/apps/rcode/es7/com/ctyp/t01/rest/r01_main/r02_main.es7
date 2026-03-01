@@ -1,0 +1,38 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Node Js - Site Definition Common Class  [V.0.0.2]  (2019-06-26)
+//Brqx Group - Agile Farmacia Zaragoza Methodology
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+//Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Struc_defs
+//
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons           =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+
+//const { printlog }   =   require(  cons.JS_TYP7  + 'logs/printlog.es7'        ),
+
+class r02_main  {
+  constructor() {
+    // super()
+
+    this.arr              =   Array()
+    this.result           =   false
+    this.count            =   30
+  }
+  
+  add(sheet){
+  	this.arr.push(sheet)
+  }
+  
+}
+
+exports.r02_main = r02_main

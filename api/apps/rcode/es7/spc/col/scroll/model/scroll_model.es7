@@ -1,0 +1,60 @@
+// [DOCHANGED_ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Broser  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Objects : 
+// comm::SCOMM     --> Simple object to manage any uri
+// spec::SITE_URI  --> Specific URL Object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+// cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
+
+// Must to be unique
+
+var     cons              =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"                   )
+
+const   { common_model }  =   require(  cons.JS_SPC7  + 'acomm/model/common_model.es7'              ),
+        { site_mcomm }    =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m02_site_comm.es7'          ),
+        { arroba_jtype }  =   require(  cons.JS_SPC7  + 'scroll/json/j03/j01_arroba_type.es7' ),
+        { site_uri }      =   require(  cons.JS_SPC7  + 'scroll/uri/u01_site_uri.es7'               ),
+        { theme_data }    =   require(  cons.JS_SPC7  + 'scroll/json/j04/j01_theme_data.es7'        );
+
+class scroll extends common_model
+{
+  constructor(pmt = '' )
+  {
+    // Debe generar la estructura sin basarse en la URL
+    // PENDIENTE DE DEPURAR
+
+    super(  pmt )
+
+    this.n                =  'scroll::'
+
+    //1. Multi Position EN - 
+    // Specific final comm
+    this.comm             =   new site_mcomm(this.s, '0 1')
+    this.copy_model()
+
+    //2. URI SPECIFIC VERSION FOR ARQDRU - WILL MANAGE REAL COMMANDS
+    this.uspc             =   new site_uri( this.comm.s   , 
+                                            this.ir       )
+
+    // Generate common json file - Forced type so we knew is another page
+    this.commjson         =   new arroba_jtype(this.acomm   ,'comm')
+    this.run_comm_model()
+      
+    // Generate common json file - Forced type so we knew is another page
+    this.specjson         =   new arroba_jtype(this.arroba , 'spec')
+    this.run_spec_model()
+
+    this.thmdata          =   new theme_data(this.arroba)
+
+
+  } 
+
+} // end Class
+
+exports.scroll = scroll
+

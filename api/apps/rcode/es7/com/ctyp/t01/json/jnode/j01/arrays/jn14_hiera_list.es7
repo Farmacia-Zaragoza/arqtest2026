@@ -1,0 +1,98 @@
+// [DOCHANGED_NODE ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Generate Array Json Simple Class  [V.0.0.2]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_simple_array_to_file-          : Generate Json Simple
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  fs                        =   require(  'fs'                                                   ),
+       empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
+       accents                   =   require(  cons.NODE_MOD + 'remove-accents'                       ),
+       path               =   require(  'path'                                                 ),
+       { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
+       { jn00_comm_pf }   =   require(  cons.JS_TYP7  + 'json/jnode/j00/jn00_comm_pf.es7'   );
+
+
+class jn14_hiera_json_list extends jn00_comm_pf {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                         =  'jn14_hiera_json_list::'      
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  save_json_hiera_list_array_to_file(  
+            index                      ,   // Indice
+            enbreadcrumb    =   ''     ,
+            file_structure = ''        )
+  {
+    // top - bottom
+
+    var idx = new idx_pointers(index)
+    
+    let cats         = this.getarr(this.s.ms.main_lang, idx.jindex)  
+
+    var iterations           = Object.keys(cats).length - 1
+
+    var parent_breadcrumb = this.s.cs.lang_url + enbreadcrumb + '/'
+    
+    // this.p('Num_elem_22_simple_' + last_element )
+
+    for (var pos in cats)
+    {
+
+      // Para cada uno hay que gestionar hijos
+
+      this.cat                 = cats[pos]
+      
+
+      let next_level           = this.get_next_level(pos)
+
+      let current_level        = index     + 'v' + next_level
+      let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.cat ).toLowerCase()
+
+      // add_json block - replace any occurences
+      this.rvlash_inner(current_level)
+      this.index               =  this.result   
+        
+      this.clink               =  this.getkeylang( idx.lindex , pos)
+
+      // end add_json block
+
+      this.k.clean()
+
+      this.k.index    =   pos
+      
+      // Set Json attribs
+      this.attribs(idx, pos)
+      
+      this.k.item     =   this.cat
+      
+      if (this.clink != "" )
+        this.k.link     =   parent_breadcrumb + this.clink
+
+      // Creating lists
+      this.k.createspecifictype(this.k.otype)
+
+      if (--iterations  >= 0)
+        this.j.add_separator()
+
+     }  // End For
+  
+  }
+  
+}
+
+exports.jn14_hiera_json_list = jn14_hiera_json_list

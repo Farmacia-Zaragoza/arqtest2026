@@ -1,0 +1,151 @@
+// [DOCHANGED_NODE_ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - URI Class  [V.0.1.4]  (2019-01-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-sort_url-       : Set urls to be cacheable for anonymous user 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+
+const   { uri_page_string }     =   require(  cons.JS_TYP7 + 'uri/u08_page_string.es7'    )
+		sort		       =   require(  cons.JS_LIB  + 'sort/sort_unique.es6'		  );
+
+
+class uri_sorts extends uri_page_string {
+
+  constructor()
+  {
+    super()    
+    this.n               =   'uri_sorts::'        
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  sort_url()
+  {
+
+    // Aqui tenemos la url ordenada
+    // HAY QUE REVISARLO. CREO QUE HABLAR AQUI DE URI YA NO TIENE SENTIDO YA QUE SON LOS ARGUMENTOS
+  
+    this.uri_args_sorted      =  sort.sort_unique(this.uri_args_sorted)
+
+    let count_no_repe        =  this.uri_args_sorted.length                
+    let new_dash_uri         =  ''                        
+    let new_sash_uri         =  ''                        
+    let new_bars_uri         =  ''                        
+
+    
+    let new_dash_args        =  ''
+    let new_sash_args        =  ''
+    
+    
+    let cont             =  0                          
+
+    //this.p('u06-sort_lenen : ' + this.uri_args_sorted.length )
+
+
+    // article/a01    --> [1]
+    // es/article/a01 --> [2]
+    // this.p('u06_sort_checking_format: ' + this.start_position_array )
+
+    for (var pos in this.uri_args_sorted)
+    {
+      var str_to_manage = this.uri_args_sorted[pos]
+  
+      /// this.p('u06_sort_managing ' + str_to_manage)
+
+      new_dash_uri  +=   str_to_manage                      
+      new_sash_uri  +=   str_to_manage                       
+      new_bars_uri  +=   str_to_manage                       
+
+
+      if ((pos   >=  0           )  && 
+         (pos   <   count_no_repe )  )
+      {
+        new_dash_uri+=  '_'                          
+        new_sash_uri+=  '/'                          
+        new_bars_uri+=  '|'                          
+
+      }
+
+      if  (pos   >=  0 )        
+        {
+          new_dash_args  +=   str_to_manage                      
+          new_sash_args  +=   str_to_manage                       
+
+        }
+
+        if  ((pos   >=  2           )  && 
+           (pos   <   count_no_repe )  )
+        {
+          new_dash_args+=  '_'                          
+          new_sash_args+=  '/'                          
+        }
+
+        cont++                                  
+    
+    }
+
+
+    this.slash_sub_query         =   new_sash_uri                       
+    this.dash_sub_query          =   new_dash_uri                       
+    this.bars_sub_query          =   new_bars_uri.slice(0,-1)                       
+
+
+    this.page_args          =  new_sash_args
+    this.page_iargs          =  new_sash_args
+
+    let slash_ideal_uri       =   this.slash_sub_query
+    let dash_ideal_uri        =   this.dash_sub_query
+    
+    // this.p('u06_currdash: ' + this.page_iargs + ' ' + this.start_position_array )
+
+    switch(this.start_position_array)
+    {
+      case 0:
+        // No hay idiomas ni comandos
+        // this.p('NO HAY IDIOMA NI COMANDO')                
+        break;
+      case 1:
+        // this.p('HAY IDIOMA O COMANDO ')    
+            slash_ideal_uri           =   this.page_command + '/' + this.slash_sub_query     
+            dash_ideal_uri             =   this.page_command + '_' + this.dash_sub_query     
+        
+        break;
+      case 2:
+        // Hay idioma y comando
+        // this.p('U06-iDIOMA Y comandO ' + this.count_lang_uri_arr )
+          let con_idioma_slash    =   this.s.lang + '/' + this.page_command
+          let con_idioma_dash      =   this.s.lang + '_' + this.page_command
+
+          let sin_idioma        =  this.page_command
+          slash_ideal_uri         =   sin_idioma + '/' + this.slash_sub_query     
+          dash_ideal_uri           =   sin_idioma + '_' + this.dash_sub_query     
+        break;
+      default:
+        this.p('u06_nuevo_caso ' + this.start_position_array)
+        
+    }
+
+
+    this.slash_ideal_uri        =   slash_ideal_uri     
+    this.dash_ideal_uri         =   dash_ideal_uri     
+
+    this.bar_slash_ideal_uri    =  "/" +  slash_ideal_uri     
+
+
+    // this.p('u05_idioma   : ' + this.s.lang )                    
+    // this.p('u05_comando  : ' + this.page_command )                    
+    // this.p('u06_sorts_ideal uri: ' + this.dash_sub_query )                    
+                
+  }
+  
+}
+
+exports.uri_sorts = uri_sorts

@@ -1,0 +1,161 @@
+// [DOCHANGED_NODE ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node General Common Json Class  [V.0.0.1]  (2019-06-14)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-generate_and_enable_common_site_sep : Generate Site and Enable Live/Dev parameters
+// - d-generate_common_site-          : Generate Site 
+// - d-generate_common_regions-       : Generate Regions
+// - d-generate_common_symbols-       : Generate Symbols
+// - d-generate_common_langs-         : Generate Langs
+// - d-generate_common_langs_uri-     : Generate Langs respecting URI
+// - d-generate_common_cookies-       : Generate Cookies Warning
+// - d-generate_common_list-          : Generate Lists
+// - d-generate_noanchor_product-     : Generate Product for No anchor content
+
+// - d-generate_common_simple_object- : Generate Simple object
+
+// - d-generate_common_simple_object_sep- 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                                        =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+const   { jn11_general_common_simple_methods_json } =   require(  cons.JS_ACO7  + 'json/j01/n01/jn11_general_common_simple_methods_json.es7' )
+
+class jn01_general_common_json extends jn11_general_common_simple_methods_json {
+           
+  constructor (arroba = '' ) 
+  {   
+    super(arroba)
+    this.n                  =   'jn01_general_common_json::'
+  }
+
+  //---------------------------------------------------------------------------------------------
+  generate_and_enable_common_site_sep(pos = 0)
+  {
+    this.m                  =   'generate_common_site'
+
+    if (this.pos == 0 ) 
+    {
+      // A.PRODUCT CONTENT
+    
+      var ipage         =   'i000v000' 
+      // this.p ('jn11_comm_LIVE ' + this.s.ms.main_lang + ' - env '  + this.s.ms.env  )    
+    
+      this.sethash_lang_arr_pos(this.s.ms.main_lang , ipage , 8 , this.s.ms.env)
+      
+      // this.arr[this.s.ms.main_lang][ipage][8] = this.s.ms.env
+    }
+
+    this.generate_common_sidebar_recursive(pos)
+    this.j.add_separator()
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  generate_common_site_sep(pos = 0)
+  {
+    this.m                  =   'generate_common_site'
+    this.generate_common_sidebar_recursive(pos)
+    this.j.add_separator()
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_regions_sep(pos = 2)
+  {
+
+    this.m                =   'generate_common_regions'
+    this.generate_common_sidebar_recursive(pos)
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_symbols_sep(pos = 4)
+  {
+
+    this.m                =   'generate_common_symbols'
+    this.generate_common_simple_array(pos)
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_langs_sep(pos = 5)
+  {
+    this.m                =   'generate_common_langs'
+    this.generate_common_simple_array(pos)
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_langs_uri_sep(pos = 15)
+  {
+
+    this.m                =   'generate_common_langs'
+    this.generate_common_langs_uri(pos)
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_simple_object_sep(pos = 4)
+  {
+    this.m                =   'generate_common_sidebar_recursive_sep'
+    this.generate_common_simple_object(pos)
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_simple_array_sep(pos = 4)
+  {
+    this.m                =   'generate_common_sidebar_recursive_sep'
+    this.generate_common_simple_array(pos)
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+  
+  generate_common_sidebar_recursive_array_sep(pos = 20)
+  {
+    this.m                =   'generate_common_sidebar_recursive_sep'
+    this.generate_common_sidebar_recursive_array(pos)
+  	
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  // For Regions
+  generate_common_sidebar_recursive_sep(pos = 0)
+  {
+    this.m                =   'generate_common_sidebar_recursive_sep'
+    this.generate_common_sidebar_recursive(pos)
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_list_sep(num_rands = 5)
+  {
+    this.m                =   'generate_common_list'
+    this.generate_common_list(num_rands)
+    this.j.add_separator()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+
+}
+
+exports.jn01_general_common_json = jn01_general_common_json

@@ -1,0 +1,126 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Main Load Class  [V.0.0.2]  (2020-03-18)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar anode para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-main_multi_position_load-       : Load from main file only specific position
+//- d-main_multi_page_load-           : Load only an article and only one page
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// AnoMultiLoad > AnoMultiProcess
+// @Anode >  ...
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+var     cons                   =   require( "/brqx/rcode/es7/com/agen/constants.es7"       )
+
+const   { anode_multi_process } =   require( cons.JS_TYP7  + 'arroba/anode/a02_multi/an26_multi_process.es7'  );
+
+
+class anode_multi_load extends anode_multi_process {
+  constructor()  
+  {
+    super()
+    this.n                        = "anode_multi_load::"
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Main Multi Position Load --> Load only main position or 1 position of @ file
+  main_multi_position_load(positions     = '' , 
+                           index         = 'main' )
+  {
+	// this.p('a03_ano_Loading Multi File_' + this.content_arr['en'][index])
+	// this.p('a03_ano_Loading Multi Positions' + positions)
+
+
+    let file_to_load    = this.content_arr[this.s.ms.main_lang][index]
+
+   
+    this.p('an24_jno HERE ' + file_to_load +  ' =+= ' + this.s.cs.cache_path)
+
+    // El fichero principal para todos los idiomas es vacio menos para el ingles    
+    // FALSO
+    if (this.s.ms.lang === this.s.ms.main_lang ) // Generate Array structure from @content
+    {
+      // this.p('a03_ano Generate from FileEN ' + file_to_load )      
+  	  this.generate_array_from_file( this.s.ms.main_lang,  file_to_load )
+
+
+  	}  
+    else
+    {
+      this.p('an24_Generationg_Arr_Lang ' + this.s.ms.lang)
+      this.set_lang_arr(this.s.ms.lang)    
+    }
+
+    if (this.s.cs.lang != "en" )
+    {
+      this.set_lang_arr(this.s.cs.lang)
+      this.reload_lang()
+    }
+
+    let file_to_load_es = this.content_arr[this.s.cs.lang][index]
+    
+    if (this.s.cs.lang != this.s.ms.main_lang )
+  	    this.generate_array_from_file( this.s.cs.lang,  file_to_load_es )
+
+
+
+	// this.p('j03_jnmain_Leng ' + this.arr['en']['jmain'].length)
+    
+    this.main_multi_position_process(positions , index )
+
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Main Multi Position Load --> Load only one page of one article 
+  main_multi_page_load(index         = 'main' )
+  {
+
+    let file_to_load = this.content_arr[this.s.ms.main_lang][index]
+   
+   
+    // this.p('j03_jno ' + file_to_load +  ' =+= ' + this.s.cs.cache_path)
+
+    // El fichero principal para todos los idiomas es vacio menos para el ingles    
+    if (this.s.ms.lang === this.s.ms.main_lang ) // Generate Array structure from @content
+    {
+      // this.p('a03_ano Generate from FileEN ' + file_to_load )      
+  	  this.generate_array_from_file( this.s.ms.main_lang,  file_to_load )
+  	}  
+    else
+      this.set_lang_arr(this.s.ms.lang)    
+
+
+    if (this.s.cs.lang != "en" )
+    {
+      this.set_lang_arr(this.s.cs.lang)
+      this.reload_lang()
+    }
+
+    let file_to_load_es = this.content_arr[this.s.cs.lang][index]
+
+
+    if (this.s.cs.lang != this.s.ms.main_lang )
+  	    this.generate_array_from_file( this.s.cs.lang,  file_to_load_es )
+
+	// this.p('j03_jnmain_Leng ' + this.arr['en']['jmain'].length)
+    
+    this.main_page_process()
+
+  }
+
+}
+
+exports.anode_multi_load = anode_multi_load

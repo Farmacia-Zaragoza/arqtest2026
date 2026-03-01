@@ -1,0 +1,99 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Node Js - Page Structure Class  [V.0.1.7]  (2017-10-28)
+//Brqx Group - Agile Farmacia Zaragoza Methodology [PHP_COMMON]
+//-------------------------------------------------------------------------------------
+//Page Structure
+//-------------------------------------------------------------------------------------
+//Store structure of page - time - memory
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 	cons 				= 	require("/brqx/rcode/es7/com/agen/constants.es7" )
+
+const	{ getset } 		= 	require(	cons.JS_TYP7 + 'html/style/getset.es7'	 ),
+		moment	 				= 	require(	cons.NODE_MOD + 'moment'		 ),
+		util					=	require(	'util'							 );	
+
+class page_structure extends getset {
+	constructor() {
+		super()
+		
+		this.n						=	'page_structure'
+		this.start_time 			= ""
+		this.stop_time 				= ""
+		this.total_time 			= ""
+		this.mem_usage 				= ""
+		this.mem_limit 				= ""
+		this.today 					= ""
+		this.server_info 			= ""
+
+		this.update_start_time()
+		this.memory_usage()
+		this.get_server_date()
+		this.get_date()
+	}
+
+	update_start_time() {
+		this.start_time = Date.now() / 1000
+	}
+
+	update_end_time() //si existe usar el Globals que seran todos los casos pues no hay ventaja en ejecutar un index independiente
+	{
+		this.m = 'update_end_time' 
+	
+		this.stop_time = Date.now() / 1000
+		this.start_time = global.GLOBALS.start_time
+		this.total_time = Math.round(this.stop_time - this.start_time, 4)
+	}
+
+	memory_usage() //Maybe is drupal or php function
+	{
+		let mem = util.inspect(process.memoryUsage())
+		// O : { rss: 4935680,  vsize: 41893888,  heapTotal: 1826816,  heapUsed: 650472 }
+
+		this.mem_usage = mem.heapUsed
+		
+		if (this.mem_usage < 1024) 
+			this.mem_usage = this.mem_usage + " b"
+		else if (this.mem_usage < 1048576) 
+			this.mem_usage = Math.round(this.mem_usage / 1024, 2) + " Kb"
+		else 
+			this.mem_usage = Math.round(this.mem_usage / 1048576, 2) + " Mb"
+		
+		this.mem_limit = mem.heapTotal
+	}
+
+	get_date() 
+	{
+		this.m	= 'get_date'
+		// moment().format("MMM Do YY");
+		
+		// moment("20111031", "YYYYMMDD").fromNow(); // 6 years ago
+		// this.today = date("D-M-Y - H:i:s")
+		this.today = moment().format("D/MMM/YY - H:mm:ss")
+		// this.p('Moment' + this.today)
+
+	}
+
+	get_server_date() //Must to load server info
+	{
+		this.server_info = "[ZD 24C 128G SSD_4-SATA_1] - (CDN:XX) [SP:PM]"
+	}
+
+	create_div() 
+	{
+		this.update_end_time()
+		this.code = ""
+		this.code = "<div align=\"center\" style=\"color:#461A42background-color:#A8A79C\">"
+		this.code += this.server_info + this.today + " * - - - * Carga: "
+		this.code += this.total_time + " ==> segundos - Mem:" + this.mem_usage + "/" + this.mem_limit + "</div>"
+	}
+
+	build_contents() {
+		this.update_end_time()
+		this.create_div()
+		this.show()
+	}
+
+}
+
+exports.page_structure = page_structure

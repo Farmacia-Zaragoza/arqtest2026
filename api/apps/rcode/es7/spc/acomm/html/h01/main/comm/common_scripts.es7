@@ -1,0 +1,50 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS - Farma Scripts Class  [V.0.0.1]  (2018-02-01)
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Farma Structure Scripts
+//-------------------------------------------------------------------------------------
+
+//[S_01] <script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script>
+//[S_02] <script type="text/javascript" src="polyfills.f80b7e6581d9215d226e.js"></script>
+//[S_03] <script type="text/javascript" src="scripts.24cc8b20c3f290309576.js"></script>
+//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
+
+// ------------------------------------------------------------------------------------
+//* SCRIPT *
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:c-scr01_js_dog-
+// ------------------------------------------------------------------------------------
+// Methods:
+// ------------------------------------------------------------------------------------
+// - build_data         : Build html final code for object
+// - d-create_marquee-    : Create marquee script
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const   { getset } 		= 	require(	cons.JS_TYP7 + 'html/style/getset.es7'	)
+
+
+
+class common_scripts extends getset  {
+
+  constructor (     thm                            )
+  {   
+    super()
+
+    this.n              =  'common_scripts::'            
+    this.m              =  'constructor'
+
+    this.thm            =  thm              
+
+    // External object
+    this.script_to_load        =  ''
+    
+    this.build_data()                          
+    }
+
+}
+
+exports.common_scripts = common_scripts

@@ -1,0 +1,579 @@
+// [DOCHANGED_NODE ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node General Common Json Class  [V.0.0.2]  (2020-02-21)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+
+// - d-generate_common_sidebar_recursive-     : Common method to generate recursive objects
+// - d-generate_common_sidebar_recursive_array
+// - d-generate_common_simple_array-          : Commom method to generate simple array
+// - d-generate_common_simple_object-         : Commom method to generate simple object
+//-------------------------------------------------------------------------------------
+// - d-generate_common_langs_uri-             : Generate Langs respecting URI
+// - d-generate_common_cookies-               : Generate Cookies Warning
+// - d-generate_common_list-                  : Generate Lists
+// - d-generate_common_product-               : Generate Product for No anchor content
+// - d-generate_common_kb                     : Generate Hierarchical Structure
+// - d-generate_noanchor_product
+// - d-generate_common_teasers
+// - d-generate_common_rands
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+
+const   { jn01_commo_json_simple }   =   require(  cons.JS_TYP7  + 'json/jnode/j01/objects/jn01_simple.es7' )
+
+class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
+           
+  constructor (arroba = '' ) 
+  {   
+    // el super no entiende de arroba
+    super()
+    
+/*    this.arroba             =    arroba
+    this.a                  =    this.arroba.a
+    this.s                  =    this.a.s
+  */  
+    this.n                  =   'jn11_general_common_simple_methods_json::'
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  // For Regions
+  generate_common_sidebar_recursive(pos = 0)
+  {
+    this.pos          =   pos
+  
+    this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+    this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
+
+    this.j.save_header(this.cat)      
+
+    this.save_json_sidebar_recursive_object_to_file(  
+                this.index                , // Index of array
+                this.arroba.a.categories  ) // Categories lang/ES Name
+
+    this.j.end_key()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_sidebar_recursive_array(pos = 20)
+  {
+    this.pos          = pos
+  
+    this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+    this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
+
+    this.k.save_header(this.cat)      
+
+    this.save_json_sidebar_recursive_array_to_file(  
+                this.index                , // Index of array
+                this.arroba.a.categories  ) // Categories lang/ES Name
+
+    this.k.end_corch()
+
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_simple_array(pos = 4)
+  {
+
+    this.m                =   'generate_common_symbols'
+
+    this.pos          = pos
+
+    // C.Symbols
+
+    this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+    this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
+
+    this.k.save_header(this.cat)      
+
+    this.save_json_simple_array_to_file(  
+                this.index                , // Index of array
+                this.arroba.a.categories  ) // Categories lang/ES Name
+
+    this.k.end_corch()
+  }
+
+
+  generate_common_simple_object(pos = 4)
+  {
+    this.pos          =   pos
+    this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+    this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
+
+    this.j.save_header(this.cat)      
+
+    this.save_json_simple_object_to_file(  
+                this.index         ) // Categories lang/ES Name
+
+      // Inserta final de llave
+    this.j.end_key()
+
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+
+  // Generate Langs respecting current uri
+  generate_common_langs_uri(pos = 15)
+  {
+
+    this.m                =   'generate_common_langs_uri'
+
+    this.pos          = pos
+
+    // E.Languages
+
+    this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+    this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
+
+    this.k.save_header(this.cat)      
+
+    let string_to_pase = this.u.bar_slash_ideal_uri
+
+    // Esto con kb no tiene sentido
+    // this.p ('jn11_printing SLASH_' + this.u.bar_slash_ideal_uri)
+
+    if ( (this.u.bar_slash_ideal_uri == 'blanc'   )  || 
+         (this.u.bar_slash_ideal_uri == '/blanc/' )   )
+       string_to_pase = ''
+
+
+    this.save_json_simple_array_to_file(  
+                this.index         ,
+                this.arroba.a.categories  ,
+                string_to_pase            )  // Concat to langs/links 
+
+      // Inserta final de llave
+    this.k.end_corch()
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_cookies(pos = 16)
+  {
+
+    this.m                =   'generate_common_cookies'
+
+    this.pos          = pos
+
+    // E.Cookies Warning
+    this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+    this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
+
+    this.j.save_header(this.cat)      
+
+    this.save_json_sidebar_doble_object_to_file(  
+                this.index         ,
+                this.arroba.a.categories  ) // Categories lang/ES Name
+
+      // Inserta final de llave
+    this.j.end_key()
+
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Kb
+
+  generate_common_kb()
+  {
+
+    this.m                =   'generate_common_kb'
+
+    // A.PRODUCT CONTENT
+    
+    // Llega esto : 
+    // il040_l000_l008_l000
+    
+
+    this.cat          =   'articles'
+
+    var ipage         =   'i' + this.s.cs.founded_index
+    var jpage         =   'j' + this.s.cs.founded_index
+    var dpage         =   'd' + this.s.cs.founded_index
+
+
+    if (this.s.cs.founded_type == 'sheet')
+    {
+      // Anchor has position 09. Pero 
+    
+      // this.p ('jn11_prod_lang ' + this.s.ms.lang + ' - ipage '  + ipage )    
+    
+      this.sethash_lang_arr_pos(this.s.ms.main_lang , ipage , 9 , this.s.cs.anchor)
+      // this.arr[this.s.ms.main_lang][ipage][9]  = this.s.cs.anchor
+      
+      // this.arr[this.s.ms.main_lang][ipage][100] = this.s.cs.founded_slash_breadcrumb
+
+      this.k.save_header(this.cat)      
+
+    // Ok jn40_kb_json::generate_common_product - jn11_idx 040v000v008v000
+    // OK jn40_kb_json::generate_common_product - jn11_brc kb/architecture/cloud/why
+    // OK jn40_kb_json::generate_common_product - jn11_fis l040/a_architecture/a_cloud/a_why
+
+      // this.p('jn11_idx ' + this.s.cs.founded_index            )
+      // this.p('jn11_brc ' + this.s.cs.founded_slash_breadcrumb )
+      // this.p('jn11_fis ' + this.s.cs.founded_file_structure   )
+      // this.p('jn11_cat ' + this.s.cs.founded_category         )
+
+    // Categories esta pendiente
+    // Aqui no es recursivo es simple
+    
+      // Es una hoja 
+      this.save_json_hiera_product_array_to_file(  
+                    this.s.cs.founded_index      , // Index of array
+                    this.s.cs.founded_slash_breadcrumb ,
+                    this.s.cs.founded_file_structure   ,
+                    this.s.cs.founded_category         ,
+                    this.s.cs.founded_title            )
+                    
+      this.s.cs.page_name = 'product'
+
+      this.k.end_corch()
+      
+    }
+    else
+    {
+      // Es una lista
+      // this.k.save_header(this.cat)      
+
+      // jn40_kb_json::generate_common_product - jn11_idx 040v002v009v000
+      // jn40_kb_json::generate_common_product - jn11_brc en/kb/systems/containers/docker
+      // jn40_kb_json::generate_common_product - jn11_fis l040/a_systems/a_containers/a_docker
+      // jn40_kb_json::generate_common_product - jn11_cat docker
+      // jn40_kb_json::generate_common_product - jn11_cat Parent Title  - docker
+
+      this.p('jn11_idx ' + this.s.cs.founded_index            )
+      this.p('jn11_brc ' + this.s.cs.founded_slash_breadcrumb )
+      this.p('jn11_fis ' + this.s.cs.founded_file_structure   )
+      this.p('jn11_cat ' + this.s.cs.founded_category         )
+      this.p('jn11_cat ' + this.s.cs.founded_title         )
+
+      // is.arr[this.s.ms.main_lang][ipage][100] = this.s.cs.founded_slash_breadcrumb
+
+
+      this.save_json_hiera_list_array_to_file(
+                    this.s.cs.founded_index            , // Index of array
+                    this.s.cs.founded_slash_breadcrumb ,
+                    this.s.cs.founded_file_structure   , 
+                    this.s.cs.founded_category         ,
+                    this.s.cs.founded_title            )
+
+
+      this.s.cs.page_name = 'list'    	
+
+      this.j.end_key()
+
+    } 
+     
+
+  
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  // Fs
+
+  generate_common_fs()
+  {
+
+    this.m                =   'generate_common_fs'
+
+    // A.PRODUCT CONTENT
+    
+    // Llega esto : 
+    // il040_l000_l008_l000
+    
+
+    this.cat          =   'articles'
+
+    var ipage         =   'i' + this.s.cs.founded_index
+    var jpage         =   'j' + this.s.cs.founded_index
+    var dpage         =   'd' + this.s.cs.founded_index
+
+
+    if (this.s.cs.founded_type == 'sheet')
+    {
+      // Anchor has position 09. Pero 
+    
+      // this.p ('jn11_prod_lang ' + this.s.ms.lang + ' - ipage '  + ipage )    
+
+      this.sethash_lang_arr_pos(this.s.ms.main_lang , ipage , 9 , this.s.cs.anchor)      
+      
+      // this.arr[this.s.ms.main_lang][ipage][100] = this.s.cs.founded_slash_breadcrumb
+
+      this.k.save_header(this.cat)      
+
+    // Ok jn40_kb_json::generate_common_product - jn11_idx 040v000v008v000
+    // OK jn40_kb_json::generate_common_product - jn11_brc kb/architecture/cloud/why
+    // OK jn40_kb_json::generate_common_product - jn11_fis l040/a_architecture/a_cloud/a_why
+
+      // this.p('jn11_idx ' + this.s.cs.founded_index            )
+      // this.p('jn11_brc ' + this.s.cs.founded_slash_breadcrumb )
+      // this.p('jn11_fis ' + this.s.cs.founded_file_structure   )
+      // this.p('jn11_cat ' + this.s.cs.founded_category         )
+
+    // Categories esta pendiente
+    // Aqui no es recursivo es simple
+    
+      // Es una hoja 
+      this.save_json_fs_product_array_to_file(  
+                    this.s.cs.founded_index      , // Index of array
+                    this.s.cs.founded_slash_breadcrumb ,
+                    this.s.cs.founded_file_structure   ,
+                    this.s.cs.founded_category         ,
+                    this.s.cs.founded_title            )
+                    
+      this.s.cs.page_name = 'product'
+
+      this.k.end_corch()
+      
+    }
+    else
+    {
+      // Es una lista
+      // this.k.save_header(this.cat)      
+
+      // jn40_kb_json::generate_common_product - jn11_idx 040v002v009v000
+      // jn40_kb_json::generate_common_product - jn11_brc en/kb/systems/containers/docker
+      // jn40_kb_json::generate_common_product - jn11_fis l040/a_systems/a_containers/a_docker
+      // jn40_kb_json::generate_common_product - jn11_cat docker
+      // jn40_kb_json::generate_common_product - jn11_cat Parent Title  - docker
+
+      this.p('jn11_idx ' + this.s.cs.founded_index            )
+      this.p('jn11_brc ' + this.s.cs.founded_slash_breadcrumb )
+      this.p('jn11_fis ' + this.s.cs.founded_file_structure   )
+      this.p('jn11_cat ' + this.s.cs.founded_category         )
+      this.p('jn11_cat ' + this.s.cs.founded_title         )
+
+      // is.arr[this.s.ms.main_lang][ipage][100] = this.s.cs.founded_slash_breadcrumb
+
+
+      this.save_json_fs_list_array_to_file(
+                    this.s.cs.founded_index            , // Index of array
+                    this.s.cs.founded_slash_breadcrumb ,
+                    this.s.cs.founded_file_structure   , 
+                    this.s.cs.founded_category         ,
+                    this.s.cs.founded_title            )
+
+
+      this.s.cs.page_name = 'list'    	
+
+      this.j.end_key()
+
+    } 
+     
+
+  
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  // Product
+
+  generate_common_product()
+  {
+
+    this.m                =   'generate_common_product'
+
+    // A.PRODUCT CONTENT LLEGA VACIO
+
+    // this.p('jn11_TYPE_CONTENT FOUNDED  :' + this.s.cs.founded_type)
+
+    if (this.s.cs.founded_type == 'sheet')
+    {   
+
+      // i020v023
+
+      var ipage         =   'i' + this.get_next_level(this.s.cs.position) + 'v' +  this.get_next_level(this.s.cs.page)
+     
+      
+      this.pos = this.s.cs.position
+
+      // Anchor has position 09
+    
+      // lang en - ipage i030v000
+      this.p ('jn11_prod_lang ' + this.s.cs.lang + ' - ipage '  + ipage )    
+
+      var localpos = this.pos
+
+      this.sethash_lang_arr_pos(this.s.cs.lang , ipage , 9 , this.s.cs.anchor)
+      // this.arr[this.s.cs.lang][ipage][9] = this.s.cs.anchor
+
+      this.pos          =   localpos
+
+      this.cat          =   this.getkeymain('jmain' , this.pos)
+      this.index        =   this.getkeymain('dmain' , this.pos)
+
+      // we must to get : jn11_Ca  20 Cat articles Idx  020
+      // articles - 
+      this.p('jn11_Cat ' + this.pos + ' Cat ' + this.cat + ' Idx  ' + this.index)      
+      
+//      this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+//      this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
+
+     
+      // console.info(this.cat)
+    
+      //this.p ('jn03_prod_Anchorint ' + ipage + ' - '  +this.get_next_level(pos) ) 
+    
+      // jn03_cat articles
+      // this.p('jn03_cat ' + this.cat)
+
+      this.k.save_header(this.cat)      
+
+      this.save_json_recursive_product_array_to_file(  
+                this.index                , // Index of array
+                this.arroba.j.categories  ) // Categories lang/ES Name
+
+      this.k.end_corch()
+    }
+    else
+    {
+      // this.p('PROBLEEEM ' + this.s.cs.founded_type)
+
+      
+      this.generate_common_list()
+    	
+    }
+      
+  
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  // Product for No anchor contents ( photos )
+
+  generate_noanchor_product()
+  {
+
+    this.m                =   'generate_common_product'
+
+    // A.PRODUCT CONTENT
+   
+    this.pos = this.s.cs.position
+
+    this.cat          =   this.getkeymain('jmain' , this.pos)
+    this.index        =   this.getkeymain('dmain' , this.pos)
+
+
+    this.k.save_header(this.cat)      
+
+    this.save_json_recursive_product_array_to_file(  
+                this.index                , // Index of array
+                this.arroba.j.categories  ) // Categories lang/ES Name
+
+    this.k.end_corch()
+  
+  }
+
+  
+  //---------------------------------------------------------------------------------------------
+  // Teasers - Nodos completos
+  // Nodos completos con cabecera de lista
+  generate_common_teasers(pos = 20)
+  {
+    this.m                =   'generate_common_teasers'
+
+    this.pos          = pos
+  
+    // A.PRODUCT CONTENT
+
+    this.cat          =   this.getkeymain('jmain' , this.pos)
+    this.index        =   this.getkeymain('dmain' , this.pos)
+
+    // jn03_cat articles
+    // this.p('jn03_cat ' + this.cat)
+
+    // Se le pasaria el breadcrumb
+    this.save_json_object_allinone_main(  
+                this.pos)
+  
+    this.j.end_key()  
+
+
+////    this.k.save_header(this.cat)      
+
+////    this.save_json_sidebar_recursive_array_to_file(  
+////                this.index                , // Index of array
+////                this.arroba.j.categories  ) // Categories lang/ES Name
+
+////    this.k.end_corch()
+  }  
+
+  //---------------------------------------------------------------------------------------------
+ 
+  // Rands - Nodos aletorios completos
+  // No se esta usando - realmente seria una adaptacion de allinone
+  // pudiera ser randonfive - pero esta pendiente de implementar
+  generate_common_rands(num_rands = 5)
+  {
+    this.m                =   'generate_common_teasers'
+  
+    this.pos               =   this.s.cs.position
+    // pos               =   20
+    
+    // this.p ('jn05_loading_position ' + pos)
+
+    this.cat          =   this.getkeymain('jmain' , this.pos)
+    this.index        =   this.getkeymain('dmain' , this.pos)
+
+    // jn03_cat articles
+    // this.p('jn03_cat ' + this.cat)
+
+    this.k.save_header(this.cat)      
+
+    this.save_json_sidebar_rand_array_to_file(  
+                this.index                , // Index of array
+                this.arroba.j.categories  ,
+                num_rands                    ) // Rand items to generate
+
+    this.k.end_corch()
+  
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Lists 
+  generate_common_list(num_rands = 5)
+  {
+    this.m                =   'generate_common_list'
+
+    this.pos               =   this.s.cs.position
+    // pos               =   20
+
+    this.cat          =   this.getkeymain('jmain' , this.pos)
+    this.index        =   this.getkeymain('dmain' , this.pos)
+
+      // console.info(this.cat)
+    
+      //this.p ('jn03_prod_Anchorint ' + ipage + ' - '  +this.get_next_level(pos) ) 
+    
+      // jn03_cat articles
+      // this.p('jn03_cat ' + this.cat)
+    
+    this.p ('jn03_loading_position CK  ' + this.pos)
+
+    // Generaria list
+    // this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+
+
+    // Se le pasaria el breadcrumb
+    this.save_json_object_list_main(  
+                this.pos)
+  
+    this.j.end_key()  
+  }
+
+
+}
+
+exports.jn11_general_common_simple_methods_json = jn11_general_common_simple_methods_json

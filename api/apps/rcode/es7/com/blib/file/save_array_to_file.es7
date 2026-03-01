@@ -1,0 +1,78 @@
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+// Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2018 )
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// ---------------------------------------------------------------------------
+// Brqx 2017 - 22/10/17        Depth:[0N]
+// Version : 0.0.1                  Type :[FUNCTION]
+// ---------------------------------------------------------------------------
+// - Notas
+// ---------------------------------------------------------------------------
+//  + Almacena codigo y arrays en ficheros
+// ---------------------------------------------------------------------------
+// - Funciones 
+// ---------------------------------------------------------------------------
+//-- save_properties|code_to_file - file_get_code
+// ---------------------------------------------------------------------------
+// - Requiere 
+// ---------------------------------------------------------------------------
+//-- 
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+
+const  fs           =   require(  'fs'                                    ),
+       path         =   require(  'path'                                    ),
+       os           =   require(  'os'                                    ),
+       util         =   require(  'util'                            ),        
+       empty        =   require(  cons.NODE_MOD + 'is-empty'                          ),
+       trim         =   require(  cons.NODE_MOD + 'trim'                            ),
+       mkdirp       =   require(  cons.NODE_MOD + 'mkdirp'                          ),
+    { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'   );
+
+
+function save_array_to_file(full_file_name_int = '' , arr_data)
+{
+    // Lo estamos creando. El fichero no puede existir aun
+
+    if ( !empty(full_file_name_int ) )
+    {
+    
+      // echo ( "Creando Fichero " + full_file_name_int )
+      dir =  path.dirname(full_file_name_int)
+      if ( fs.existsSync(dir)         &&   
+         fs.lstatSync(dir).isDirectory()    &&
+          util.isArray(arr_data)        ) 
+        {
+        // Y si no existe
+        if ( fs.existsSync(full_file_name_int) )
+          // Truncamos uno existente
+          fs.closeSync(fs.openSync(full_file_name_int, 'w'))
+        else
+        {
+          // Creamos uno
+          fs.openSync(full_file_name_int, 'w')
+		  fs.chmodSync(full_file_name_int, parseInt('0674',8))
+		}					        
+
+        for (var DATA of Object.values(arr_data))
+        { 
+          // Aqui tenemos que evitar los ctrl M
+          // Est correcto pues hace un reemplazo global con la g
+          if (DATA != "")
+          {
+            // echo ('Data_To_Save ' + DATA)
+            input = DATA.replace('/\r\n/g', "")    // DOS style newlines
+            input = input.replace('/\r/g', "")      
+            LNDATA= input + os.EOL 
+            fs.appendFileSync(full_file_name_int, LNDATA)
+          }
+        }
+        
+
+      }
+  }    
+}
+
+
+module.exports.save_array_to_file           = save_array_to_file

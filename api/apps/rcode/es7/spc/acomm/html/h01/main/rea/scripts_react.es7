@@ -1,0 +1,51 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS - Farma Scripts Class  [V.0.0.1]  (2018-02-01)
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Farma Structure Scripts
+//-------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------------
+//* SCRIPT *
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:c-scr01_js_dog-
+// ------------------------------------------------------------------------------------
+// Methods:
+// ------------------------------------------------------------------------------------
+// - build_data         : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const   { deep_scripts_react } =   require(  cons.JS_ACO7 + 'html/h01/deep/scripts/deep_scripts_react.es7'    ),
+        { common_scripts}      =   require(  cons.JS_ACO7 + 'html/h01/main/comm/common_scripts.es7'    );
+
+
+class scripts_react extends common_scripts  {
+
+  constructor (     thm                            )
+  {   
+    super(thm)
+
+    this.n              =  'scripts_react::'            
+    }
+
+
+  build_data()
+  {
+
+    // DEV - requiere primero los otro scripts
+
+    this.script_to_load     =   new deep_scripts_react(this.thm)
+
+    // MAIN - PRODUCT
+    this.code               +=  this.script_to_load.code  
+
+    // this.p('jsarqdruCode : >' + this.code )                       
+
+  }
+
+}
+
+exports.scripts_react = scripts_react

@@ -1,0 +1,91 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Broser  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Fast_Uri > ... > Site_Common_Commands
+// @Site_Uri_> @Common_Uri > @Uri > @String > @ PrintLog
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-manage_uri_commands-            : Generate cache url
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const { site_uri_manage_commands } =   require( cons.JS_PER7 + 'dog/dog/uri/u02_manage_commands.es7' ),
+      { cache }                    =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'         ) ;
+
+class fast_uri extends site_uri_manage_commands
+{
+  constructor(site = '' , ir = '' )
+  {
+    super(  site, ir )
+    this.n                         =   "fast_uri::"
+    
+    this.manage_uri_commands()
+  } 
+  
+  //---------------------------------------------------------------------------------------------  
+  // This method depends of site
+  manage_uri_commands()
+  {
+
+    this.m                        =   'manage_uri_commands'
+
+    // Generate html path
+    this.s.cs.uri                  =  'uritype'
+
+    // this.s.cs.comm              =  'comm'
+
+    this.s.cs.page_type            =  'content'
+
+    // Ahora vemos de donde puede salir
+    // this.s.cs.loadtype          =  'page'
+
+    // this.p('u10fast_bef_Mangment ' + this.s.cs.page )
+
+    this.manage_uri_page_number()
+
+    // Are html auto generated
+    this.s.cs.sub                  =  'hdata'
+    this.s.cs.ext                  =  'hdata'
+
+    // Usamos una instancia de cache que no recibe parametros pues normalmente los pasa una entidad superior
+    this.c                         =  new cache()
+    this.c.s                       =  this.s
+    this.c.b                       =  this.b
+
+    this.c.b.type_ssl              =  true
+
+    // Generate Cache path
+    this.c.gen()
+
+    // Debemos ponerlo a false por si se ejecuta la parte sin cache
+    this.c.b.type_ssl              =  false
+
+    this.p('Fast_uri_uri Path Sum  ' + this.c.s.cs.cache_sum)
+    // Tenemos
+    // brqx/pers/cache/dog/
+    // uritype/comm/nodef/nohuman/nouser/nocode/notrans/nosync/en_position_hdata.hdata
+
+    // /brqx/pers/cache/dog/
+    // uritype/content/front/nohuman/nouser/nocode/notrans/nosync/fr_position_20_hdata.hdata
+
+    // Queremos 
+    
+    // brqx/pers/cache/dog/
+    // uritype/content/front/nohuman/nouser/nocode/notrans/nosync/fr_page_20_0_hdata.hdata
+  }  
+
+//---------------------------------------------------------------------------------------------  
+
+
+} // end Class
+
+exports.fast_uri = fast_uri
+

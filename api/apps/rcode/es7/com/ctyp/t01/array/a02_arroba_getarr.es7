@@ -1,0 +1,143 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Struc GetArr Class  [V.0.0.3]  (2019-06-26)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-gethash_keylang-          : Get key for current lang
+// - d-gethash_keymain-          : Get key for main lang
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Arroba_GetArr
+// @Array > @String > @Cache > @log
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+const   { arroba_mixarr }    =   require(  cons.JS_TYP7  + 'array/a03_arroba_mixarr.es7'    )
+
+
+class arroba_getarr extends arroba_mixarr {
+  constructor() {
+    super()
+    this.n                          =   "arroba_getarr::"
+	    
+  }
+
+  gethash_keylang(index , key)  {   return this.getkeylang(index , key)   }
+
+  gethash_keymain(index , key)  {   return this.getkeymain(index , key)   }
+
+
+  // Obtiene el valor con el idioma indicado en la uri del site
+  //---------------------------------------------------------------------------------------------
+  getkeylang(index , key)
+  {
+    let value     = this.getkey(this.s.ms.lang      , index, key )
+
+    if ( value == '' )
+		value     = this.getkey(this.s.ms.main_lang , index, key )
+
+	return value
+  }
+
+  // Obtiene el valor con el idioma por defecto del site
+  //---------------------------------------------------------------------------------------------
+  getkeydef(index , key)
+  {
+    let value     = this.getkey(this.s.ms.default_lang , index, key )
+
+    if ( value == '' )
+		value     = this.getkey(this.s.ms.main_lang , index, key )
+
+	return value
+  }
+
+  //---------------------------------------------------------------------------------------------
+  getkeymain(index , key)
+  {
+	let value = this.getkey(this.s.ms.main_lang,index,key)
+	return value
+  }
+
+
+  // Necesaria para evitar indices vacios. 
+  // a.Devolvera una cadena vacia si no existe el indice
+
+  //---------------------------------------------------------------------------------------------
+  getkey(lang, index , key)
+  {
+    // Notice: Undefined index: i000v001v004v000v001 
+    let current_arr = this.gethash_arr(lang , index)
+
+      // solution for array_key_exist de php
+    if(key in current_arr)
+        return current_arr[key]                        
+    else 
+        return ''                                
+  }
+
+  gethash_arr(lang , index)
+  {
+    this.manage_right_index(index)
+
+    return this.getarr(lang, this.rightindex2)
+
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Nueva version 3 argumentos
+  getarr(lang, index)
+  {
+
+    let empty_arr = Array()
+
+    if ( Array.isArray(this.arr) ) 
+	  if ( Array.isArray(this.arr[lang]) ) 
+        if ( Array.isArray(this.arr[lang][index]) ) 
+    // Notice: Undefined index: i000v001v004v000v001 
+          return this.arr[lang][index] 
+        else
+          return empty_arr
+      else
+        return empty_arr
+    else
+      return empty_arr
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Nueva version 1 argumento
+  getarrmain(index)   {      return this.gethash_arr(this.s.main_lang)    }
+
+  //---------------------------------------------------------------------------------------------
+  // Nueva version 1 argumento
+  getarrlang(index)   {      return this.gethash_arr(this.s.lang)    }
+
+
+  //---------------------------------------------------------------------------------------------
+  array_to_string(name, sep = ' ')
+  {
+    var result = ''
+    var term = ''
+
+    for (var pos in this.arr[name] )
+    {
+     term = this.arr[name][pos]
+     result += term + sep
+    } 
+    return result.trim()
+  }
+
+
+}
+
+exports.arroba_getarr = arroba_getarr

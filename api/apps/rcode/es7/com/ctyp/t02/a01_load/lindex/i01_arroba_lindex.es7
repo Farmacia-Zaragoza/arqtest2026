@@ -1,0 +1,113 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// AgileNode Js - Arroba Sprod Class  [V.0.0.1]  (2019-10-11)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// arroba_lindex > scomm_struc > scomm_defs
+// Scomm > Cache > Printlog
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+
+const  { scomm_struc }        =   require(  cons.JS_TYF7  + 'a01_load/scomm/s03_struc.es7'   )
+
+// Simple Common - Will Load only product information of article passed
+class arroba_lindex extends scomm_struc {
+  constructor(arroba)  
+  {
+
+    super()
+ 
+    this.n                  =   "arroba_lindex::"
+    this.m                  =   "cons"
+
+    this.arroba             =   arroba
+    this.arr                =   this.arroba.arr
+
+    this.u					=   this.arroba.u
+
+    this.a                  =   this.arroba.a
+       
+    this.s					=   this.arroba.s
+    this.b					=   this.s.b    
+
+    // this.p('p01_arroba_prod DEPURACION ' + this.u.page_iargs  + ' Posi ' +  position)
+    // llega a03
+
+    // @FORMAT : Site > articles > pages
+    
+    // NO LLEGA LA PAGINA
+    this.p('i01_arlindex_LOAD Page:' + this.s.cs.page + ' Lang ' + this.s.cs.lang)
+
+    // this.p('p01_arr_LoadPos ' + position +  ' ARgs ' + this.u.page_iargs )
+      
+    // si no es numerico debe ser formato aN
+
+    // Todo esto tiene sentido siempre que no conozcamos ya la pagina
+    // Si es una url ya concida (cookies) o un alias (rct) entonces ya conoemos la pagina de antemano
+
+    
+   // this.p('p01_prod_paiarg ' + this.u.page_iargs + ' Comm ' + this.s.cs.loadtype )
+
+    // Esta parte debe usarla de un metodo comun pero antes debo definir las herencias
+
+    // managing a00001 == a1 
+    if (this.s.cs.page == '')
+    {
+      // Esto tiene sentido si no es jerarquico
+      if (this.s.cs.loadtype != "hierarchical" )        
+        this.u.manage_uri_page_number()
+
+    }
+
+    // /brqx/cache/emp/shop/arqshop/
+    // uritype/idx/nodef/nohuman/nouser/nocode/notrans/nosync/ru_idx_20_1_arroba_ssl.idx
+
+    this.gen_idx_path()
+
+    this.m                  =   'cons'
+
+    // this.p('i01_arlindex_LOADIDX ' + this.s.cs.page + ' Lang ' + this.s.cs.lang)
+
+        // this.p('i01_arrindex Page ' + pagina )
+
+    
+        // this.p('i01_arrindex Page ' + pagina )
+      
+    this.s.b.language_already_loaded = false
+
+    // Prepare arroba type
+
+    this.s.cs.sub            =   'arroba'
+    
+    if (!this.s.b.index_page)
+      this.s.cs.ext            =   ''
+
+    // this.p('i01_arrindex_pge ' +  this.s.cs.position +   ' Pg ' +  this.s.cs.page)
+
+    // Llama a generar el anode. Pero cuando se ha generado la ruta de cache
+    this.use_current_cache()
+    // Call to gen() - rundef() [asocial el site]  - a.run() [page - position - multiposition - hierarchical ] 
+
+    this.m                  =   "cons"
+    
+    // this.p('i01_arrindex_found :'   +  this.s.cs.founded_type)
+    // this.p('i01_arrindex_LOADING  :'   +  this.s.cs.page     + '  Pth ' + this.s.cs.cache_path)
+    // this.p('i01_arrindex_load ' +  this.s.cs.loadtype + '  Pty ' + this.s.cs.page_type)
+
+    // /brqx/pers/cache/arqdru/
+    // uritype/comm/product/nohuman/nouser/nocode/notrans/nosync/
+    // es_page_20_a1_arroba
+  }
+
+}
+
+exports.arroba_lindex = arroba_lindex

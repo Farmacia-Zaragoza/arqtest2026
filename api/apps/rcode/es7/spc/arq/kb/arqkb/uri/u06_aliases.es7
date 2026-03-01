@@ -1,0 +1,127 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Url Alias Class  [V.0.0.3]  (2019-11-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-manage_aliases-            : Check aliases for site 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const { site_common_commands } =   require( cons.JS_ACO7 + 'uri/u01_site_commands.es7' )
+
+
+class uri_aliases extends site_common_commands
+{
+  constructor(site = '' , ir = '' )
+  {
+    super(  site, ir )
+    this.n                  =   "site_uri::"
+  } 
+
+//---------------------------------------------------------------------------------------------  
+
+  manage_aliases()
+  {
+
+     this.m                    = 'manage_commands'
+
+     // this.start_position_array       =   this.start_position_array + 1        
+     
+     // Piensa que aqui no se ha procesado la Uri pero slash no tiene el idioma ya
+     // /en/intelligent_scroll
+
+    //  this.p('u01_site_uri_SITEALIAS KB A : ' + this.slash_ideal_uri )
+    
+
+     switch(this.slash_ideal_uri)
+     {
+          
+      // KB 000      
+      case "knowledge/":                this.url_page_load_drupal_node('0')  ;  break;
+      case "kb/":                       this.url_page_load_drupal_node('0')  ;  break;
+      case "knowledge_information/":    this.url_page_load_drupal_node('0')  ;  break;
+      // KB 001
+      case "auto_scroll/":              this.url_page_load_drupal_node('1')  ;  break;
+      case "ashm/":                     this.url_page_load_drupal_node('1')  ;  break;
+      // KB 002
+      case "multiple_resolutions/":     this.url_page_load_drupal_node('2')  ;  break;
+      case "mrif/":                     this.url_page_load_drupal_node('2')  ;  break;
+      // KB 003
+      case "list_implementation/":      this.url_page_load_drupal_node('3')  ;  break;
+      case "li/":                       this.url_page_load_drupal_node('3')  ;  break;
+      // KB 004
+      case "regular_expresions/":       this.url_page_load_drupal_node('4')  ;  break;
+      case "rem/":                      this.url_page_load_drupal_node('4')  ;  break;
+      // KB 005
+      case "marquee_text/":             this.url_page_load_drupal_node('5')  ;  break;
+      case "mtlt/":                     this.url_page_load_drupal_node('5')  ;  break;
+      // KB 006
+      case "fast_movement_arrows/":     this.url_page_load_drupal_node('6')  ;  break;
+      case "fma/":                      this.url_page_load_drupal_node('6')  ;  break;
+      // KB 007
+      case "anchors/":                  this.url_page_load_drupal_node('7')  ;  break;
+      case "aar/":                      this.url_page_load_drupal_node('7')  ;  break;
+      // KB 008
+      case "intelligent_scroll/":          this.url_page_load_drupal_node('8')  ;  break;
+      case "ishvm/":                       this.url_page_load_drupal_node('8')  ;  break;
+      // KB 009
+      case "secure_navigation/":           this.url_page_load_drupal_node('9')  ;  break;
+      case "snb/":                         this.url_page_load_drupal_node('9')  ;  break;
+      // KB 010
+      case "pretty_print_pages/":          this.url_page_load_drupal_node('10')  ;  break;
+      case "ppp/":                         this.url_page_load_drupal_node('10')  ;  break;
+      // KB 011
+      case "responsive_design/":           this.url_page_load_drupal_node('11')  ;  break;
+      case "rd/":                          this.url_page_load_drupal_node('11')  ;  break;
+      // KB 012
+      case "logo_device_adaptation/":      this.url_page_load_drupal_node('12')  ;  break;
+      case "lda/":                         this.url_page_load_drupal_node('12')  ;  break;
+      // KB 013
+      case "social_networks/":             this.url_page_load_drupal_node('13')  ;  break;
+      case "sni/":                         this.url_page_load_drupal_node('13')  ;  break;
+      // KB 014
+      case "cookies_warning/":             this.url_page_load_drupal_node('14')  ;  break;
+      case "cuw/":                         this.url_page_load_drupal_node('14')  ;  break;
+      // KB 015
+      case "hovering_menu_display/":       this.url_page_load_drupal_node('15')  ;  break;
+      case "hmd/":                         this.url_page_load_drupal_node('15')  ;  break;
+      // KB 016
+      case "responsive_horizontal_lines/": this.url_page_load_drupal_node('16')  ;  break;
+      case "rhl/":                         this.url_page_load_drupal_node('16')  ;  break;
+      // KB 017
+      case "big_movement_arrows/":         this.url_page_load_drupal_node('17')()  ;  break;
+      case "bma/":                         this.url_page_load_drupal_node('17')  ;  break;
+      // KB 018
+      case "related_node_translation/":    this.url_page_load_drupal_node('18')  ;  break;
+      case "rntl/":                        this.url_page_load_drupal_node('18')  ;  break;
+      // KB 019
+      case "robots_pages/":                this.url_page_load_drupal_node('19')  ;  break;
+      case "rp/":                          this.url_page_load_drupal_node('19')  ;  break;
+      // KB 020
+      case "current_user_secret_content/": this.url_page_load_drupal_node('20')  ;  break;
+      case "cuvsc/":                       this.url_page_load_drupal_node('20')  ;  break;
+      // KB 021
+      case "search_url_integration/":      this.url_page_load_drupal_node('21')  ;  break;
+      case "sui/":                         this.url_page_load_drupal_node('21')  ;  break;
+
+      // KB 050
+      case "common_funcs/":               this.url_page_load_drupal_node('50')  ;  break;
+      case "cfi/":                        this.url_page_load_drupal_node('50')  ;  break;
+
+      default:
+        this.p('u06_aliases_manage_front')
+        this.manage_front()
+
+    }
+
+  }  
+
+} // end Class
+
+exports.uri_aliases = uri_aliases
+

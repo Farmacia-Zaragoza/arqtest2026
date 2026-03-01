@@ -1,0 +1,130 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Agile Node Js - Struc Attribs Class  [V.0.0.2]  (2020-01-30)
+//Brqx Group - Agile Farmacia Zaragoza Methodology
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+//Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar struc para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Methods:
+//-------------------------------------------------------------------------------------
+//- d-attribs-        : Set common attributes for Json Object
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Struc_attrib > scomm_defs
+// @Struc > @Array > @String > @Cache > @log
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+
+const   { struc_defs }    =   require(  cons.JS_TYP7  + 'struc/s10_struc_defs.es7'    )
+
+
+class struc_attrib extends struc_defs {
+  constructor()  
+  {
+    super()
+    this.n                        = "struc_attrib::"
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  // Generate array with contents information
+  // Basado en this.contents
+  attribs(idx , pos , index = '' , depth = '')
+  {
+    // Managed : C - T - B - P - G - H - I - S - O - R
+    // ME voy a cargar this.j.cat y this.j.item
+
+    //  item                 index
+    // "general": {"index": "v000","otype": "object","type": "branch","childrens": true,"pull02": {
+
+    this.j.clean()
+
+    // this.p('s05_sa ' + idx.jindex)
+
+    this.j.item              =   this.gethash_keylang( idx.jindex , pos )
+
+    // El index no se obtiene de la estructura. Se genera
+    this.j.parent_index      =   index
+    
+    // Indice de los hijos - No se obtiene - se pasa
+    this.j.index             =   index  + 'v' + this.get_next_level(pos)
+    
+    this.j.child             =   this.gethash_keymain( idx.cindex , pos )
+    this.j.type              =   this.gethash_keymain( idx.tindex , pos )
+    this.j.breadcrumb        =   this.gethash_keylang( idx.bindex , pos )
+    this.j.photo             =   this.gethash_keylang( idx.pindex , pos )
+    this.j.rtype             =   this.gethash_keymain( idx.rindex , pos )
+    this.j.dtype             =   this.gethash_keymain( idx.dindex , pos )
+
+    this.j.ntype             =   this.gethash_keymain( idx.ndindex , pos )
+
+    this.j.tags              =   this.gethash_keymain( idx.gindex , pos )
+
+    let prehover             =   this.gethash_keylang( idx.hindex , pos )
+    this.quotescape(prehover )
+    this.j.hover             =  this.result
+
+
+    this.j.id                =   this.gethash_keymain( idx.sindex , pos )      // S - Subject Id
+
+    this.j.sound             =   this.j.id
+
+    let prevalue             =   this.gethash_keylang( idx.iindex , pos )    // I - Information - Value
+    this.quotescape(prevalue )
+    this.j.value   =  this.result
+
+
+    this.j.otype             =   this.gethash_keymain( idx.oindex , pos )    
+
+    this.j.link              =   this.gethash_keylang( idx.lindex , pos )    
+    
+    if (depth != "" ) 
+      this.j.level = depth
+    else
+      this.j.level = 0
+
+    // Both for Objects and arrays
+
+    this.k.index             =   this.j.index
+
+    this.k.child             =   this.j.child
+    this.k.type              =   this.j.type
+    this.k.breadcrumb        =   this.j.breadcrumb
+    this.k.photo             =   this.j.photo
+    this.k.rtype             =   this.j.rtype
+    this.k.dtype             =   this.j.dtype
+
+    this.k.ntype             =   this.j.ntype
+
+    this.k.tags              =   this.j.tags
+
+    this.k.hover             =   this.j.hover
+
+    this.k.id                =   this.j.id
+
+    this.k.sound             =   this.j.id
+    
+    this.k.value             =   this.j.value
+    this.k.item              =   this.j.item
+    
+    this.k.otype             =   this.j.otype
+
+    this.k.link              =   this.j.link
+
+    this.k.level             =   this.j.level
+
+
+  }
+
+}
+
+exports.struc_attrib = struc_attrib

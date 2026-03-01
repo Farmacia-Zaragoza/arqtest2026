@@ -1,0 +1,85 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Proces Class  [V.0.0.2]  (2019-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-page_process-          : Process only one page of current array
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+
+const  { cache }              =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'   ),
+       { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
+
+class anode_index_page_process extends cache {
+  constructor()  
+  {
+    super()
+    this.n                        = "anode_index_page_process::"
+    
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Will process only one page 
+  // MAIN/position/page --> @FORMAT
+  current_index_page_process(lang                  ,
+               current_subpath       )
+  {
+    
+    this.m               =    'current_index_page_process'
+  
+  
+    this.rvlash( current_subpath )
+	let index         = this.result
+
+    // j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
+	// this.p('an10_Proc Lang : ' + lang + ' Path ' +  current_subpath + ' Ind ' + index)
+ 
+    var idx = new idx_pointers(index)     
+
+
+    this.arroba_attribs(idx, this.s.cs.page)
+    
+    this.s.cs.founded_type    = this.ntype
+
+
+    // a0001 - yes
+    // this.p('an10_BEFORE CHILD  ' + this.cat + ' + ' + this.child )
+
+    if (this.item != "")
+    {
+        this.term_process()
+    }
+
+	if ( this.child == "yes" )
+	{
+
+		let next_level = this.get_next_level(this.s.cs.page)
+		let new_subpath  = current_subpath + '/' + 'l' +  next_level
+		
+		// l020/l000
+
+        // l020/l001
+		// this.p('an79_New subpath: ' + this.item +  'P ' + new_subpath)
+
+        
+
+        // Hay que iterar todos los atributos de la pagina			
+		this.current_index_list_process(	lang                        ,
+				            new_subpath				    )
+			
+			// /brqx/pers/fromfile/farma/fnode/json_lang_structure/l000/fr_cat
+							
+	} // End If
+
+  }
+}
+
+exports.anode_index_page_process = anode_index_page_process

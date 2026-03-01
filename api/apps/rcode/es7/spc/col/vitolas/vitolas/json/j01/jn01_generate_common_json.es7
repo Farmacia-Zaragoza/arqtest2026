@@ -1,0 +1,70 @@
+// [DOCHANGED_NODE ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node Site Process and Generate Common Json Class  [V.0.0.1]  (2019-06-14)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                         =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"            );
+
+const   { jn02_process_site }   =   require(  cons.JS_SPC7  + 'vitolas/json/j02/jn02_jnode_process_site.es7'   );
+
+class jn01_common_json extends jn02_process_site {
+           
+  constructor (arroba = '' ) 
+  {   
+    super(arroba)
+    
+    this.n                  =   'common_json::'
+  }
+
+  //---------------------------------------------------------------------------------------------
+  process_array_and_generate_json_file()
+  {
+    this.m                  =   'process_json'
+
+    // this.p('jn01-Generating' + this.j.full_path )
+
+    this.j.save_top()      
+
+    // A.SITE            -- > 0  
+
+    this.generate_common_site_sep()
+
+    // B.REGIONS         -- > 2
+
+    this.generate_common_regions_sep)
+
+    // C.SYMBOLS         -- > 4
+
+    this.generate_common_symbols_sep()
+
+    // D.LANGS           -- > 5
+
+    this.generate_common_langs_sep()
+
+    // E.DIAMOND LANGS   -- > 15
+    // Is a simple diamond 
+
+    this.generate_common_langs_sep(15)
+
+    // F.COOKIES         -- > 16
+
+    this.generate_common_cookies()
+
+    this.j.save_end()
+
+  
+  }
+
+  
+}
+
+exports.jn01_common_json = jn01_common_json

@@ -1,0 +1,88 @@
+// [DOCHANGED_NODE ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Generate Array Json Simple Class  [V.0.0.2]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_array_anchor_inner-          : Generate Json Simple
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  fs                        =   require(  'fs'                                                   ),
+       empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
+       accents                   =   require(  cons.NODE_MOD + 'remove-accents'                       ),
+       { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
+       { jn00_comm_pf }   =   require(  cons.JS_TYP7  + 'json/jnode/j00/jn00_comm_pf.es7'   );
+
+
+// Pendiente de cambiar
+class jn02_array_anchor_inner extends jn00_comm_pf {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                         =  'jn02_array_anchor_inner::'      
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  save_json_array_anchor_inner(depth)
+  {
+    // top - bottom
+
+    this.kk.type = 'anchor'
+    var anchor_domain = this.s.cs.lang_url + '#'
+           
+    // https://dog.vbrqx.com/ca/#
+    //this.p('jn06_rcsv_anchor_dom ' + anchor_domain) 
+
+     // let current_otype = "this.j.otype"array                     
+
+    let current_otype = "array"                     
+           
+    var arr_anchors = this.s.arr["pagesep"]
+
+    var arr_anchors_name = this.s.arr["pagesep_name"]
+    
+    // "": { "index": "common_features","type": "link","otype": "",
+    // "name": "undefined # anchor_list","clink": "undefined#common_features" }           
+    
+    var iterations           = Object.keys(arr_anchors).length - 1
+
+    this.p('jn02_anchors - iter  ' + iterations )
+    this.parr(arr_anchors)
+    
+    for (var pos in arr_anchors)
+    {
+	  this.kk.index   = this.get_next_level(pos)
+	  this.kk.item     = arr_anchors[pos]
+	  this.kk.value   = arr_anchors_name[this.kk.item]
+	  this.kk.link       = anchor_domain + arr_anchors[pos]
+       
+      // this.kk.value  = this.jj.site_title + ' # ' + this.jj.item
+			 // this.p ('jn06_poslnkA ' + this.j.item)
+             
+      if (this.kk.item != "")
+      {
+        this.kk.createspecifictype(current_otype)
+			   // this.p ('jn06_poslnkB ' + this.j.item)
+
+        if (--iterations  >= 0)
+          this.kk.add_separator()
+	  }
+      else
+        --iterations			 
+	}
+  
+  }
+  
+}
+
+exports.jn02_array_anchor_inner = jn02_array_anchor_inner

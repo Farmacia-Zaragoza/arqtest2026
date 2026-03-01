@@ -1,0 +1,45 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Theme Html Class  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Theme_Json (spc) > Printlog
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// Arroba_HType     : Generic html type
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+
+const  { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                  ),
+       { arroba_htype }     =   require(  cons.JS_AQD7  + 'arqdru/html/h03/hcomm/h01_arroba_htype.es7' );
+
+class theme_html extends printlog
+{
+  constructor(container = '')
+  {
+    super()
+    this.n                  =   "theme_data::"
+
+    this.container          =   container
+
+    // Generate common html file
+    // Lo mismo hay que ver si existe el fichero
+    // si existe hay que obtenerlo y devolverlo
+    this.hcontent           =   new arroba_htype(this.container)
+
+    this.code               =   this.hcontent.htype.hobject.code
+
+  } 
+
+
+} // end Class
+
+exports.theme_html = theme_html

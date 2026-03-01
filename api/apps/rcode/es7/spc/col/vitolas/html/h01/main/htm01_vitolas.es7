@@ -1,0 +1,69 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Html Div Class  [V.0.0.1]  (2018-08-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+//-------------------------------------------------------------------------------------
+// Node Js ES6 - Server with express - http/2
+// ------------------------------------------------------------------------------------
+// Peloncita Structure Header
+//-------------------------------------------------------------------------------------
+//<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+//<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="bb print language  lang="bb print language ">
+// ------------------------------------------------------------------------------------
+//<!DOCTYPE html>
+//<html lang="en">
+//<head>
+//<body> 
+// ------------------------------------------------------------------------------------
+//* DOCTYPE
+//  HTML
+//   HEAD 
+//	 BODY
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+// ------------------------------------------------------------------------------------
+// - reload_contents : Update value for local attributes
+// - build_data  	 : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"          )
+
+const  { common_html } 			= 	require(	cons.JS_ACO7 + 'html/h01/main/common_html.es7'			      ),		
+	   { hea01_head_vitolas }	= 	require(	cons.JS_SPC7 + 'vitolas/html/h01/main/hea01_vitolas.es7'		),					
+	   { bdy01_body_vitolas }	= 	require(	cons.JS_SPC7 + 'vitolas/html/h01/main/bdy01_vitolas.es7'		);					
+
+
+class htm01_html_vitolas extends common_html  {
+
+    constructor (     container						)
+	{
+    	super(				container	)			
+
+        this.n                  =   "htm01_html_vitolas::"
+       
+    }
+
+    
+	//<head>
+    create_head()
+    {
+		// External Head
+		this.head_01	=	
+				new hea01_head_vitolas(this.container)	// Drupal theme structure
+
+//		this.content			+=  '<HEAD>HOLA</HEAD>' //this.head_01.code					
+		this.code			+=  this.head_01.code					
+			}		
+
+    create_body()
+    {
+		// External Div
+		this.body_01	=	
+				new bdy01_body_vitolas( this.container )	// Drupal theme structure
+
+//		this.content			+=  '<BODY>HOLA</BODY>'  //this.body_01.code					
+		this.code				+=  this.body_01.code					
+	}		
+
+}
+
+exports.htm01_html_vitolas = htm01_html_vitolas

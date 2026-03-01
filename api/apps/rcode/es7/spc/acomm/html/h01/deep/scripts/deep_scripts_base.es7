@@ -1,0 +1,67 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS - arqdru Scripts Tag Class  [V.0.0.2]  (2019-03-31)
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Truck Structure Scripts - Version 01 - Js as scripts
+//-------------------------------------------------------------------------------------
+//[S_01]<script src="https://code.jquery.com/jquery-3.3.11.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+//    crossorigin="anonymous"></script>
+//[S_01]<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+
+//[S_01] <script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script>
+//[S_02] <script type="text/javascript" src="polyfills.f80b7e6581d9215d226e.js"></script>
+//[S_03] <script type="text/javascript" src="scripts.24cc8b20c3f290309576.js"></script>
+//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
+
+// ------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:c-scr01_js_truck-
+// ------------------------------------------------------------------------------------
+// Methods:
+// ------------------------------------------------------------------------------------
+// - create_common  	 		: Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons             =  require(  "/brqx/rcode/es7/com/agen/constants.es7"     )
+
+const { html_style } 	=  require(	cons.JS_TYP7 + 'html/style/html_style.es7'	  ),
+      { getset }        =  require( cons.JS_TYP7 + 'html/style/getset.es7'        );
+
+class deep_scripts_base extends getset {
+
+	constructor(thm) {
+
+		super()
+
+		this.n = 'deep_scripts_base::'
+		this.m = 'constructor'
+
+		this.thm = thm
+
+		this.script_01 = new html_style('script')
+
+		this.build_data()
+
+	}
+
+	create_common( path_pmt = 'dev/' , 
+	               js_name = 'scripts.js') {
+		this.script_01.async = ''
+
+		this.script_01.integrity = ''
+
+		this.script_01.crossorigin = ''
+
+		this.script_01.defer = ''
+
+		this.script_01.src =
+			this.thm.s.cs.http_domainbar + path_pmt + js_name
+
+		this.script_01.pcreate()
+
+		this.code += this.script_01.code
+	}
+
+}
+
+exports.deep_scripts_base = deep_scripts_base

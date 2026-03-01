@@ -1,0 +1,266 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Proces Class  [V.0.0.2]  (2019-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-current_fsbranch_process-       : File system sheet load for en lagn 
+//- d-current_hierarchical_process_es-    : Hierarchical Process for non english langs 
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// AnoProcess > AnoTermProcess >
+// @Anode >  ...
+//-------------------------------------------------------------------------------------
+// Execution Line : 
+//-------------------------------------------------------------------------------------
+// CurrProces > CurrLoad > RECURSIVE
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  { anode_fssheet_process }  =   require(  cons.JS_TYP7  + 'arroba/anode/a07_fssheet/an79_process.es7'   ),
+       { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
+
+class anode_fsbranch_process extends anode_fssheet_process {
+  constructor()  
+  {
+
+    super()
+    this.n                        = "anode_fsbranch_process::"
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Will process all pages
+  // MAIN/position/page --> @FORMAT
+  current_fsbranch_process(    lang                     , // 1. en
+                               array_index_string       , // 060
+                               file_structure_path      ,
+                               current_subpath          ,
+                               breadcrumb               ,
+                               title                    ,
+                               folder_to_load           ,
+                               uri_depth                 )
+  {
+  
+    this.m          = 'current_fsbranch_process'
+
+    var idx = new idx_pointers(array_index_string)    
+    
+    //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
+    // this.p('j69_proc_Index : ' + array_index_string)
+  
+    // Los bucles tienen que ser con el idioma ingles
+    
+    // this.p('an49_jindex ' + idx.jindex)
+    // this.p('an49_main_lang ' + this.s.ms.main_lang + ' '+ lang + '    ' + breadcrumb)
+ 
+    // Procesamos el idioma ingles
+    // Pero si el idioma es el castellano, igual tambien interesa procesarlo
+    
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
+
+    // this.parr(cats)
+    // Tenemos que ir comparando la url que vamos gestionando con la url real 
+    // para ello usaremos el array de uri
+
+    var right_argument = false
+  
+  // this.p('j06_Before-pos-bucle1 ' + lang + '  ' + cats.length )
+    for (var pos in cats)
+    {
+      if (!this.b.found_breadcrumb == true)
+      {
+    // Para cada uno hay que gestionar hijos
+
+
+        this.arroba_attribs(idx, pos)
+        this.arroba_attribs_main_lang(idx, pos)
+    
+         // Vamos a ir avanzando por la estructura y esta sera la base
+         // Item es la el indice
+         
+        var new_breadcrumb = breadcrumb + '/' + this.value
+
+        // this.p('an49 p_cat ' + pos + ' Breadcrumb ' + new_breadcrumb + ' FOUND ' + this.b.found_breadcrumb )
+
+        // if ( lang == "es" )
+        //    this.p ('Processing Lang ES ' + this.s.item )
+
+
+        if ( (this.value  != "" ) ||(this.photo != "")  )this.term_process()
+
+      // Estos ya estan metidos en el array asi que hay que iterar los hijos
+      //this.p('LEVEL : ' + index + ' pos ' + pos + ' value: '  + cats[pos] + ' childrens: ' + chld[pos]  )
+
+      // this.p('Pos ' + pos )
+      // Si es no termina y se cierra la recursividad
+        if ( this.child == "yes" )
+        {
+
+          let new_index_string         = array_index_string  + 'v'  +  this.level
+
+          // File Structure
+          let new_file_structure_path  = file_structure_path + '/'  + this.value
+
+          // fs/a000_bride - real file system link
+          let new_subpath              = current_subpath     + '/'  + this.link
+    
+          let new_title                = title               + ' '  + this.value
+          
+          let new_folder_to_load       = folder_to_load      + '/'  + this.link
+         
+          this.p('an69_procc_New subpath: ' + new_folder_to_load)
+           // Aqui igual necesitamos el titulo del padre
+           //
+        
+          let uri_value                = this.u.uri_args_sorted[uri_depth]
+          
+          this.p('an69_proce_uri UU ' + uri_value + ' --=-- ' + this.value)
+          
+          // si son iguales seguimos cargando
+          // Esto hay que pensarlo bien
+          
+          if (uri_value == this.value)
+          {
+            this.current_fsbranch_load(    lang                        , // 1. es|it
+                                           new_index_string            , // 2. 060v001
+                                           new_file_structure_path     , // 3. l060/waterfalls
+                                           new_subpath                 , // 4. fs/o14_waterfalls
+                                           new_breadcrumb              , // 5. fs/waterfalls
+                                           new_title                   , // 6. waterfalls
+                                           new_folder_to_load          , // 7. ssd../o14_waterfalls
+                                           uri_depth + 1               )
+          
+            right_argument = true	
+          	
+          	
+          }
+          
+              
+        } // End If
+
+      }  // End If 
+    } // End For
+
+    // Hay que ver que no tenga el argumento correcto y que el idioma se ingles
+    if ( (!right_argument) && 
+         (this.u.lang_site == "en") )
+    {
+       // sino es un front
+       this.p('an69_MANAGING_FRONT '+ this.u.lang_site)
+       this.b.cache              =   false
+       this.u.manage_front()
+    } 
+     
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  current_fsbranch_process_es(   lang                     , // 1. es|it
+                                 array_index_string       , // 2. 060v001
+                                 file_structure_path      , // 3. l060/waterfalls
+                                 current_subpath          , // 4. fs/o14_waterfalls
+                                 breadcrumb               , // 5. fs/waterfalls
+                                 title                    , // 6. waterfalls
+                                 folder_to_load           ,
+                                 uri_depth                    )
+  {
+
+    this.m          = 'current_process'
+
+    var idx = new idx_pointers(array_index_string)    
+    
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
+	
+      // PROCESAMIENTO OTRO IDIOMA
+
+    // let cats_es = this.gethash_arr(lang, idx.jindex)  
+
+    var right_argument = false     
+  
+    for (var pos in cats)
+    {
+      if (!this.b.found_breadcrumb == true)
+      {
+         this.arroba_attribs(idx, pos)
+         this.arroba_attribs_main_lang(idx, pos)
+
+          // this.breadcrumb = this.gethash_keylang(idx.bindex, pos)
+
+          // this.hover      = this.gethash_keylang(idx.hindex, pos)
+    
+         // Vamos a ir avanzando por la estructura y esta sera la base
+          var new_breadcrumb = breadcrumb + '/' + this.value
+        
+          // this.p('an49 BREADCRUMB_ES ' + new_breadcrumb)
+
+        // this.p('an49 cat ' + index + ' Breadcrumb ' + new_breadcrumb + ' FOUND ' + this.b.found_breadcrumb )
+
+        // if ( lang == "es" )
+        //    this.p ('Processing Lang ES ' + this.s.item )
+
+      // Estos ya estan metidos en el array asi que hay que iterar los hijos
+      //this.p('LEVEL : ' + index + ' pos ' + pos + ' value: '  + cats[pos] + ' childrens: ' + chld[pos]  )
+
+      // this.p('Pos ' + pos )
+      // Si es no termina y se cierra la recursividad
+        if ( this.child == "yes" )
+        {
+          // devolvera la cadena acorde an nivel pero no el nivel actual
+
+          let new_index_string         = array_index_string  + 'v'  +  this.level
+
+          // File Structure ( tiene sentido )
+          let new_file_structure_path  = file_structure_path + '/_' + this.value
+
+          // kb/architecture
+          let new_subpath              = current_subpath     + '/'   + this.link_en
+    
+          let new_title                = title  + ' ' + this.value 
+
+          let new_folder_to_load       = folder_to_load      + '/' + this.link_en          
+        // this.p('an09_procc_New subpath: ' + new_subpath)
+           // Aqui igual necesitamos el titulo del padre
+           //
+          let uri_value                = this.u.uri_args_sorted[uri_depth]
+
+          this.p('an69_proce_uri UUES ' + uri_value + ' --=-- ' + this.value)
+          
+          if (uri_value == this.value)
+          {        
+            this.current_fsbranch_load_es( lang                        , // 1. es|it
+                                         new_index_string            , // 2. 060v001
+                                         new_file_structure_path     , // 3. l060/waterfalls
+                                         new_subpath                 , // 4. fs/o14_waterfalls
+                                         new_breadcrumb              , // 5. fs/waterfalls
+                                         new_title                   , // 6. waterfalls
+                                         new_folder_to_load          , // 7. ssd../o14_waterfalls
+                                         uri_depth + 1               )
+              
+            right_argument = true
+          }	              
+        } // End If
+
+      } // End If  
+    } // End For 
+
+    if (!right_argument)
+    {
+       this.p('an69_MANAGING_ES FRONT '+ this.u.lang_site)
+       // sino es un front
+       this.b.cache              =   false
+       this.u.manage_front()
+    } 
+
+  }
+
+}
+
+exports.anode_fsbranch_process = anode_fsbranch_process

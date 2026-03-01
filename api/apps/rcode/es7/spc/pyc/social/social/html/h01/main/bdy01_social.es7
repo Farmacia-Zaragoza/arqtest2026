@@ -1,0 +1,50 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Pharmacy Body Class  [V.0.0.4]  (2019-01-22)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Browser - Home - Index_06 - v0_0_2
+//-------------------------------------------------------------------------------------
+// Peloncita Structure Header
+//-------------------------------------------------------------------------------------
+// <body 
+//  <app-root></app-root>
+//  </script>
+
+// ------------------------------------------------------------------------------------
+//* BODY
+//    PENDING
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+// ------------------------------------------------------------------------------------
+// - build_data  	 : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                 =  require( "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const   { common_react }    =  require( cons.JS_ACO7 + 'html/h01/main/common_react.es7' )          ,		
+		{ scr01_js_social }	= 	require( cons.JS_PYC7 + 	'social/social/html/h01/main/scr01_js_social.es7');					
+
+
+class bdy01_body_social extends common_react  {
+
+    constructor (     container						)
+    {   
+		super(container)
+
+		this.n				=	'bdy_social::'		
+		
+    }
+
+  	create_scripts()
+    {
+		// Here we have two options
+		// Scripts links for dev environment
+		// Script tag for live environment
+
+  		this.scripts_01		= 	new scr01_js_social(	this.container	)			
+		
+		this.content		+=	this.scripts_01.code							
+	}
+
+}
+
+exports.bdy01_body_social = bdy01_body_social

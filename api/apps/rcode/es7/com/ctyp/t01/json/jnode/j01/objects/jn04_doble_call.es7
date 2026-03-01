@@ -1,0 +1,79 @@
+// [DOCHANGED_NODE ES7_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Json Doble Objects Class  [V.0.0.1]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-review_childrens_doble_object-                   : 2nd level method
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  fs                                 =   require(  'fs'                                  ),
+       empty                              =   require(  cons.NODE_MOD + 'is-empty'                                      ),
+       accents                            =   require(  cons.NODE_MOD + 'remove-accents'                                ),
+       { idx_pointers }                   =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                         ),
+       { jn05_commo_json_recursive_call } =   require(  cons.JS_TYP7  + 'json/jnode/j01/objects/jn05_recursive_call.es7');
+
+// Common Objects
+class jn04_commo_json_doble_call extends jn05_commo_json_recursive_call {
+
+           
+    constructor ()   
+    {   
+    super()
+    this.n                   =  'jn04_commo_json_doble_call::'      
+    }
+
+  //---------------------------------------------------------------------------------------------  
+  review_childrens_doble_object(  
+            index                    ,   // Indice
+            enbreadcrumb   =   ''    ,  // Breadcrumb en ingles
+            depth          =  0      ,  
+            parent_otype   = 'object') 
+  {
+
+    var idx = new idx_pointers(index)
+
+    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                                 
+
+    // this.p('Before pos bucle ' + cats.length )
+
+    var iterations           = Object.keys(cats).length - 1
+
+    for (var pos in cats)
+    {
+      // Se pone a false siempre pues hay casos que no queremos generar
+      this.b.type_generated = false
+      // Set Json attribs
+      this.attribs(idx, pos , index , depth)
+
+
+      let current_level        = this.j.index
+      let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.j.item).toLowerCase()
+
+
+      // this.rvlash_inner(current_level)
+      // this.index               =  this.result   
+
+        // this.p('Parrafete a cargar ' + pf_to_load )
+
+      this.manage_array_parragraphs(parent_otype , this.j.index )
+
+
+      if ( (--iterations  >= 0) && (this.b.type_generated) )
+        this.j.add_separator()
+    
+     }  // End For
+
+  }
+  
+}
+
+exports.jn04_commo_json_doble_call = jn04_commo_json_doble_call

@@ -1,0 +1,449 @@
+// Updated_Langs:NodeJs+,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//TypeJson Json Types Class  [V.0.0.4]  (2019-04-28)
+//------------------------------------------------------------------------------------
+
+//Methods:
+
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+
+const    { robot }     =   require(  cons.JS_TYP7   + 'robot/robot.es7'               ),
+         { strings }   =   require(  cons.JS_TYP7   + 'string/s01_strings.es7'        ) ;
+
+class manage_robot extends robot {
+  constructor(file_name = '') 
+  {
+    super()
+    this.n         =   "manage_robot::"
+    
+    this.s         =   new strings()
+  }
+  
+  // Common method both if is array or if is object
+  managecommontype(part = false)
+  {
+     // this.p('Itype ' + this.item  + ' T ' + this.type )
+     switch(this.type){
+      case "theme":
+        this.managethemeelem(part)
+        break;
+      case "doublemenu":
+        this.managethemeelem(part)
+        break;
+      case "menu":
+        this.managethemeelem(part)
+        break;
+      case "zone":
+        this.managethemeelem(part)
+        break;
+
+
+      case "parragraph":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element(     'title' , this.hover  )
+        this.add_element( 'otype' ,   this.otype    )       
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+        
+        break;
+
+      case "iparragraph":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element(     'title' , this.hover  )
+        this.add_element( 'otype' ,   this.otype    )
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+        break;
+
+      case "flag":
+        this.link       =  this.domain_site + this.photo
+        this.type       =  'link'
+
+        this.l.content         = this.site_title + ' - ' + this.value
+        this.l.href            = this.link
+        this.l.title           = this.site_title + ' - ' + this.item + ' - ' + this.hover
+
+
+        break;
+
+      case "symbol":
+        // this.p('ILINK ' + this.item )
+
+        this.link              = this.domain_site + this.photo
+        this.type              = 'link'
+       
+        //  Managing value
+        // this.p('manage_robot_replacing ' + this.photo )
+        this.s.ruri(this.photo)
+        this.l.content         = this.site_title + '-' + this.s.result
+
+        // this.p('manage_robot_replaced ' + this.s.result )
+
+        this.l.href            = this.link
+        this.l.title           = this.item
+
+        this.type = 'link'
+
+        break;
+
+      case "hovlink":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'img'     , this.photo  )
+        this.add_element(     'hov'     , this.hover  )
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      case "idlink":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'id'     , this.id    )
+
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      case "menulink":
+        if (this.link.substr(0,4) == 'http')
+           this.link            =  this.link
+        else
+           this.link            =  this.domain_site + this.link
+
+        this.l.href            = this.link
+        
+        this.l.content         = this.item + ' - ' + this.value
+        this.l.title           = this.item
+
+        this.type              = 'link'
+        
+
+        break;
+
+      case "bgitem":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'id'     , this.id    )
+        this.add_element(     'bgcolor'   , this.bgcolor  )
+
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      case "bglink":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'bgcolor'   , this.bgcolor  )
+
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      // Alias
+      case "alias":
+        // Managed to generate link
+        this.link            =  this.domain_site + this.value
+
+        this.s.ruri(this.value)
+        this.l.content         = this.site_title + '-' + this.s.result
+
+        this.l.href            = this.link
+        this.l.title           = this.site_title + ' - ' + this.item + ' - ' + this.s.result
+
+        this.type            = 'link'
+
+        break;
+
+      // Anchor
+      case "alias":
+        // Managed to generate link
+        this.link            =  this.domain_site + this.link
+
+        this.s.ruri(this.value)
+        this.l.content         = this.s.result
+
+        this.l.href            = this.link
+        this.l.title           = this.item
+
+        this.type            = 'link'
+
+        break;
+
+      // Normal Link
+      case "link":
+        // Managed to generate link
+        // Tenemos link - value - hover - item
+        
+        if (this.link.substr(0,4) == 'http')
+           this.link            =  this.link
+        else
+           this.link            =  this.domain_site + this.link
+
+        this.l.content         = this.value
+        this.l.href            = this.link
+        this.l.title           = this.item
+
+        this.type            = 'link'
+
+        // Es correcto en principio no hay que hacer nada        
+        break;
+
+      // Normal Link
+      case "bclink":
+        // Managed to generate link
+        // Tenemos link - value - hover - item
+        
+        if (this.link.substr(0,4) == 'http')
+           this.link            =  this.link
+        else
+           this.link            =  this.domain_site + this.link
+
+        this.l.content         = this.value
+        this.l.href            = this.link
+        this.l.title           = this.item
+
+
+        this.type            = 'link'
+        // Es correcto en principio no hay que hacer nada        
+        break;
+
+      // Simple Link
+      case "slink":
+        if (this.link.substr(0,4) == 'http')
+           this.link            =  this.link
+        else
+           this.link            =  this.domain_site + this.link
+
+        this.l.content         = this.site_title + '-' + this.item
+        this.l.href            = this.link
+        this.l.title           = this.item
+
+        this.type            = 'link'
+        break;
+
+
+      // Inner image link
+      case "innerimglink":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        this.add_element( 'name'  ,   this.value    )
+
+        if (part)
+          this.add_element(   'clink'  , this.link    )
+        else
+          this.add_lastelement(   'clink'  , this.link    )
+
+        break;
+
+      // Image Link
+      case "ilink":
+        // this.p('ILINK ' + this.item )
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        this.add_element(     'img'     , this.photo  )
+        if (part)
+          this.add_element(   'clink'    , this.link    )
+        else
+          this.add_lastelement(   'clink'    , this.link    )
+
+        break;
+
+      case "policy":
+        this.add_index(            this.index      )
+        this.add_type(            this.type      )
+        this.add_element( 'item'  ,     this.value    )
+        if (part)
+          this.add_element( 'html-type'   , this.id  )
+        else
+          this.add_lastelement( 'html-type'   , this.id  )
+
+        break;
+
+      case "policy_link":
+
+        this.l.content         = this.value
+        this.l.href            = this.link
+        this.l.title           = this.item
+
+        this.type            = 'link'
+
+        break;
+
+      case "hovitem":
+        this.add_index(            this.index    )
+        this.add_type(            this.type    )
+        this.add_element(     'value'   , this.value    )
+        this.add_element(     'img'     , this.photo  )
+
+        if (part)
+          this.add_element(     'hov'     , this.hover  )
+        else
+          this.add_lastelement(     'hov'     , this.hover  )
+
+        break;
+
+      case "topimage":
+        this.add_index(              this.index    )  
+        this.add_type(              this.type    )  
+        this.add_element(     'height'     , this.hover  )
+
+        if (part)
+          this.add_element(     'img'     , this.photo  )  
+        else
+          this.add_lastelement(     'img'   , this.photo  )  
+
+        break                              
+
+
+      case "bgimage":
+        this.add_index(              this.index    )  
+        this.add_type(              this.type    )  
+
+        if (part)
+          this.add_element(     'img'     , this.photo  )  
+        else
+          this.add_lastelement(     'img'   , this.photo  )  
+
+        break ;                              
+
+      // <a href="https://dog.vbrqx.com/r_img/logos/brqx_icon_arquitectrura_drupal_2010_50x50.gif" 
+      // title="stl_site_icon"></a>
+      case "image":
+        // RESOLUTIONS MANAGED
+        // this.p('Image ' + this.photo)
+        // if (this.id = 'j020v020' )
+        //  this.p('manage_robot ' + this.resolutions_line )
+
+        this.pos = this.s.strpos(this.photo, "RESOLUTION")
+
+        if (this.pos !== false)
+        { 
+          //this.p('manage_robot_HAY_RESOLUTION')
+          // this.p('Image ' + this.photo)          
+          this.resolution = 'RESOLUTION' 
+        }
+        else 
+        {
+          this.link              = this.domain_site + this.photo
+          //  Managing value
+          // this.p('manage_robot_replacing ' + this.photo )
+          this.s.ruri(this.photo)
+          this.l.content         = this.site_title + ' - ' + this.s.result
+
+          // this.p('manage_robot_replaced ' + this.s.result )
+          this.l.href            = this.link
+        }
+        
+        this.type              = 'link'
+        this.l.title           = this.site_title + ' - ' + this.item
+
+        break ;                              
+
+      case "logotype":
+          this.link              = this.domain_site + this.photo
+          //  Managing value
+          // this.p('manage_robot_replacing ' + this.photo )
+          this.s.ruri(this.photo)
+          this.l.content         = this.s.result
+
+          // this.p('manage_robot_replaced ' + this.s.result )
+          this.l.href            = this.link
+
+        break ;
+
+
+      case "breakpoint":
+        this.add_index(              this.index    )  
+        this.add_type(              this.type    )  
+        this.add_element( 'name' ,   this.item    )       
+        this.add_element( 'break' ,   this.value    )       
+
+        if (part)
+          this.add_element(     'resolution'     , this.hover  )  
+        else
+          this.add_lastelement(     'resolution'   , this.hover  )  
+
+        break;                              
+
+      // Common - Multi language Items
+      case "menuitem":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        this.add_element( 'otype' ,   this.otype    )
+        if (part)
+          this.add_element(   'value' , this.item  )    
+        else
+          this.add_lastelement(   'value' , this.item  )    
+    
+        break
+
+      case "item":
+        this.add_index(          this.index    )
+        this.add_type(          this.type    )
+        if (part)
+          this.add_element(   'value' , this.value  )    
+        else
+          this.add_lastelement(   'value' , this.value  )    
+    
+        break
+
+      case "responsiveimage":
+        this.managebranchelem(part)
+        break                              
+
+      case "simplemenu":
+        this.managebranchelem(part)
+        break                              
+
+      case "doublemenu":
+        this.managebranchelem(part)
+        break                              
+
+      case "slide":
+        this.managebranchelem(part)
+        break                              
+
+      case "randomgallery":
+        this.managebranchelem(part)
+        break                              
+
+      case "branch":
+        this.managebranchelem(part)
+        break                              
+
+      default:
+        // Text
+        // this.p('mng_rbt_Type Text ' +  this.value)
+
+        var anchor_pos = this.strpos(this.value, "#")
+        
+        if (anchor_pos != false)          this.manage_rbt_anchors()
+        
+      
+    }
+  }
+}
+
+exports.manage_robot = manage_robot

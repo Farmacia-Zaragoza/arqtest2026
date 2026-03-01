@@ -1,0 +1,43 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS - Links Html Class  [V.0.0.3]  (2019-11-25)
+// Brqx Group - Agile Farmacia Zaragoza Methodology - Browser [ES6]
+//-------------------------------------------------------------------------------------
+// Flat Structure Links
+//-------------------------------------------------------------------------------------
+//* LINK *
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class: lnk01_link_arqdru
+// ------------------------------------------------------------------------------------
+// Methods:
+// ------------------------------------------------------------------------------------
+// - build_data     : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  { common_link }       =   require(  cons.JS_ACO7 + 'html/h01/main/comm/common_link.es7'        ),
+       { deep_link_angular } =   require(  cons.JS_ACO7 + 'html/h01/deep/styles/deep_link_angular.es7'        );
+
+class links_angular extends common_link  {
+ 
+  constructor (     thm                    )
+  {   
+
+    super(thm)                              
+
+    this.n              =  'lnk01_link_arqdru::'          
+  }
+
+  build_data()
+  {
+    this.create_favicon()                      
+
+    this.link_to_load     =   new deep_link_angular(this.thm)
+
+    this.code             +=   this.link_to_load.code
+  }
+
+}
+
+exports.links_angular = links_angular

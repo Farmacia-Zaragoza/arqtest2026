@@ -1,0 +1,97 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Cache Common Class  [V.0.0.4]  (2020-01-12)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-gen-       : Generate cache path
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Cache > Cache_gen > Cache_save > Cacle_del
+// Cache > Struc
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+var     cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"     )
+
+const  { cache_run }   =   require(  cons.JS_TYP7  + 'cache/c02_cache_run.es7'         )
+
+class cache extends cache_run {
+  constructor() 
+  {
+    super()
+    this.n                          =   "cache::"
+
+    // Objects  
+    this.b                         =  ''
+    this.u                         =  ''
+    this.s                         =  ''
+          
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  gen()
+  {
+    this.b          =   this.s.b    
+    // Array para gestionar los contenidos por idioma  
+    // Vamos a guardar todas las rutas en todos los idiomas mas tarde
+    
+    this.content_arr['en']          = Array()
+    
+    this.content_arr['en']['main']  = this.s.ms.contents_path + 'en_cat'   
+
+
+    this.p('c01_cache_gen_content ' + this.s.cs.lang)
+    if (this.s.cs.lang != "en" )
+    {
+      this.content_arr[this.s.cs.lang]          = Array()
+    
+      this.content_arr[this.s.cs.lang]['main']  = this.s.ms.contents_path + this.s.cs.lang + '_cat'   
+    }
+    
+
+    // From : 
+    // /brqx/pers/fromfile/arqdru/fnode/json_lang_structure/
+    // To : 
+    // /brqx/pers/cache/arqdru/json_lang_structure/ 
+    // /brqx/pers/struc/arqdru/fnode/json_lang_structure/ 
+    
+    // /brqx/pers/struc/arqdru/fnode/json_lang_structure/
+    // this.p('c01_Cache_content_path ' + this.s.ms.contents_path )  
+    // allowed_lang es de it fr pt ja zh hi sp in ca ru uk bn
+
+    // Tenemos esta informacion : 
+    // arr_j050v005_0@050823   --> arr[en][j050v005][0]
+    //                         --> arr[en][j][050v005][0]
+    
+    // Es un fichero cache pare el jnode
+    // Que contenido tiene ? --> Igual todas los valores que hay que importar
+    this.generate_cache_path()
+    
+    // Esto solo tiene sentido sin o es jerarquico
+    
+    // PENDIENTE_REVISAR
+    // porque si no tenemno
+    // coche_y coche_ferrari y siempre borrara todo
+    // que hacer cuando es jerarquico... igual forzarlo
+    // Aqui tengo dudas
+    
+    if ( (this.s.cs.loadtype != "hierarchical" ) && 
+         !this.b.index_page && !this.b.page_search )
+        this.clean_old_files()
+   
+  }
+
+  //---------------------------------------------------------------------------------------------  
+
+}
+
+exports.cache = cache

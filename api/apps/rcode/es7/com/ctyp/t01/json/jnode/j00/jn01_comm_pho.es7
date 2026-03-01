@@ -1,0 +1,172 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Fast Node Parragraph Common Class  [V.0.0.2]  (2019-05-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-manage_photo-          : Get object or array method fro common management 
+// - d-manage_meta_tag-               : Generate parragraphs
+// - d-manage_photo_name-   : Generate parragraphs
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+const fs                    =   require(  'fs'                                        ),
+      { cache }             =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'      ),
+      { idx_pointers }  =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                     ),
+	  rand	                 = 	 require(  cons.JS_LIB7 + 'rand/rand.es7' 	           ),
+      empty                 =   require(  cons.NODE_MOD   + 'is_empty'                );
+
+class jn01_comm_pho extends cache {
+           
+    constructor ()   
+    {   
+    super()
+    this.n                   =  'jn01_comm_pho::'      
+    }
+
+
+  //---------------------------------------------------------------------------------------------
+  manage_photo( )  
+  {
+    // Esto hay que hacerlo al obtener las fotos
+    
+    // Limpiamos los terminos para cada foto
+    this.s.ms.current_terms = ''
+    // this.p ('jn01_pho MAnaging ' + this.k.value )
+    //0 brqx_pas09bod_pers_-_
+    //1 Boda_Maribel_y_Ricardo_-_
+    //2 Palacio_Aldea_Santillana_-_
+    //3 Paseo_-_
+    //4 01_de_Mayo_de_2009_-_
+    //5 DSCN1553_RESOLUTION.jpg    
+    let pho_arr_pre          =   this.k.value.split('-')
+  
+    var last_element = pho_arr_pre.length - 1
+    
+    for (var pos in pho_arr_pre)
+    {
+
+        this.term = pho_arr_pre[pos]
+        // Solo tiene sentido insertar separador si lo hemos solucionado primero
+        if (last_element != pos)
+          this.manage_meta_tag()
+        else
+        {
+          this.manage_photo_name()
+          //this.p ('jn01_pho MAnaging ' + this.term )
+        }
+                    
+    }
+
+    this.k.item                =   this.s.ms.photos_link + '/' +  this.s.ms.current_photo_path + '/RESOLUTION/' + this.k.value
+
+    this.k.photo               =   this.s.ms.photos_path +  this.s.ms.current_photo_path + '/RESOLUTION/' + this.k.value
+
+    this.k.link                =   this.s.cs.http_domainbar +  this.k.item
+
+    // Meta Tags  
+    this.k.tags                =   this.s.ms.metatags + this.s.ms.current_terms.trim()
+    
+  }
+
+  //    Esto ha cambiado - hay que pensar como se hace ahora
+  manage_meta_tag()
+  {
+    this.replace( this.term  , this.dash, this.space)  	 
+  	
+  	let no_dash = this.result.trim()
+    this.replace( no_dash  , this.space, this.dash)  	
+  	// this.p('jn01_Managed ' + this.result)
+  	
+  	// Meta tags
+  	this.s.ms.current_terms += this.result.toLowerCase() + ' '
+  	
+  }
+
+  manage_photo_name()
+  {
+    let pho_arr          =   this.result.split('_')
+    this.k.item = pho_arr[0]
+  
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Page Properties - Only Data - Parragraphs
+  // Ya lo ha cargado
+  save_json_photo_from_file( index    ) 
+  {
+     
+    // this.load_file_information(file_to_load)
+
+    var idx = new idx_pointers(index)
+
+    let cats                   = this.gethash_arr(this.s.ms.main_lang , idx.jindex)
+    var last_element           = cats.length - 1
+
+
+    // this.p('LEngth_Array_Pf ' + index + ' N ' + last_element  )
+    let cont = 0
+    let pf_anchor = ''
+
+    // Vaciamos la lista de anchors
+    this.anchor_list = ''
+
+    // Esto hay que hacerlo en la lectura de las fotos
+    // rand.shuffle(this.contents)
+
+    for (var pos in cats)
+    {
+      
+      this.k.value   =  cats[pos]
+
+      this.attribs(idx, pos)
+            
+      if (!empty(this.k.value) )
+      {
+
+        // this.p('jn00_comm_pf_PAGE ' + this.s.cs.page_name)
+
+           // brqx_ban09bod_pers_-_Boda_Maribel_y_Ricardo_-_Palacio_Aldea_Santillana_-_Banquete_-_01_de_Mayo_de_2009_-_DSCN0989_RESOLUTION.jpg
+        this.manage_photo()
+
+           // Solo lo vamos a crear si la foto  existe
+           // Para ello se generara un link RESOLUTION a la resolucion por defecto del site
+        this.k.type = 'photo'        
+
+        this.k.index = cont
+
+           // this.p('j00_comm_pf_PHO ' +  this.k.photo)
+            
+////        if (fs.existsSync(this.k.photo) ) 
+////       {
+       
+             // Creamos tipos siendo anchor
+          this.k.createspecifictype()
+          cont++
+
+          // Solo tiene sentido insertar separador si lo hemos solucionado primero
+          if (last_element != pos)
+               this.k.add_separator()
+////        }
+////        else
+////              this.p('j00_comm_pf_WARNING_DONT_EXIST ' +  this.k.photo)           
+
+      }
+
+
+     }  // End For
+  
+  }
+
+
+    
+}
+
+exports.jn01_comm_pho = jn01_comm_pho

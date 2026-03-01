@@ -1,0 +1,221 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Fast Node Parragraph Common Class  [V.0.0.2]  (2019-05-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-process_phrase-          : Process phrase 
+// - d-process_word-            : Process word
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+
+const   { cache }             =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'     ),
+        empty                 =   require(  cons.NODE_MOD   + 'is_empty'              );
+
+class d03_idx_fn extends cache {
+           
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'd03_idx_fn::'      
+  }
+
+  //---------------------------------------------------------------------------------------------  
+
+  process_article(aword = "")
+  {          
+    // Si el articulo no esta en la lista de articulos por cada palabra
+    // Lo insertamos
+
+    // this.p('d03_managing_IDX ' + aword  + ' P ' + this.current_page)
+
+  
+    // CHECK_ARRAY_EXIST
+    if ( typeof this.articles_arr[aword] === 'undefined' )
+    { 
+      this.articles_arr[aword] = this.current_page
+    }
+    else
+    {
+      // no queremos mirar el indice queremos ver si existe la cadena
+      //
+      // this.pos = this.strpos(this.articles_arr[aword], this.current_page)
+ 
+      let str_arr = this.articles_arr[aword].split(' ')
+
+      if (!str_arr.includes(this.current_page)) 
+      {
+        // 1 2 25
+        
+        let article_string = this.articles_arr[aword] + ' ' + this.current_page  
+
+        // this.p('d03_IDX_Acontent '  + aword  + ' ' + article_string + ' P ' + this.pos)      
+
+        this.articles_arr[aword] = article_string  
+        // this.p('d03_IDX_Acontent '  + aword  + ' - ' + article_string)
+      }
+    }
+    
+    
+  }
+
+
+  //---------------------------------------------------------------------------------------------  
+
+  process_word(word)
+  {
+    this.word = word
+
+    // this.p('jn11_Word ' + word + ' L ' + word.length)
+
+    // Habra un minimo de longitud para ordenar palabras
+    // Vamos a poner una w delante de cada palabra para evitar palbras claves como some en Node JS
+    
+    // Words
+    var aword = 'Z' + this.word
+    
+
+    // Ojo con el error
+    // jn50_idx_json::review_childrens_search_rcsv - jn10_Word some => function some() { [native code] }1
+    
+    
+    // Este es el minimo que se leera como argumento de Arroba Dat
+    if (word.length > 3)
+    {
+       // this.p('jn11_Word ' + word + ' L ' + word.length)
+
+        // Miramos el indice a ver si exsite
+        if(aword in this.word_arr )    
+        this.word_arr[aword] += 1
+      else 
+        this.word_arr[aword] =  0
+
+        this.process_article(aword)
+
+    }
+
+  }
+
+  //---------------------------------------------------------------------------------------------  
+
+  process_phrase(phrase)
+  {
+    this.phrase = phrase
+
+    var uri_arr_pre       =   Array()
+    var uri_arr_int       =   Array()
+
+
+    uri_arr_pre           =   this.phrase.split(' ')
+  
+    var str_aux           =   ''
+    var word              =   ''
+    var normalized_word   =   ''
+  
+    // Separamos por espacios
+    // Debemos evitar expresiones regulares
+    // PRMER FOR - CLEAN PHRASES AND REVIE WORDS
+
+    for (var pos in uri_arr_pre)
+    {
+       // Palabras
+       str_aux = uri_arr_pre[pos].toLowerCase()
+       // Ahrase $:L[https://drupalarchitecture.com/en/article/a000@Example en paragraph with regular expresions]
+       // jn50_idx_json::review_childrens_search_rcsv - jn11_CLEAN   L https   drupalarchitecture.com en article a000 Example
+
+
+     this.replace(str_aux , "/\r|\n/|:|\\$|\\[|\\]|@|\\/|\\|-|=|_|\\(|\\)|\\.|\'|\#|\"|,|!|\\?|\\+|\\*|<|>|-|%" , " "  )
+
+     this.replace(this.result , "/\r|\n/|:|\\$|\\[|\\]|@|\\/|\\|-|=|_|\\(|\\)|\\.|\'|\#|\"|,|!|\\?|\\+|\\*|<|>|-|%" , " "  )
+       
+       //this.p('jn11_CLEAN '+ this.result )
+       uri_arr_int         =   this.result.split(' ')       
+
+       for (var pos2 in uri_arr_int)
+       {
+          // Palabras
+          word = uri_arr_int[pos2].trim()
+
+          // ELIMINAR_ACENTOS
+          normalized_word = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+
+
+          // CHECK vacio y No Numerico
+          // Aqui igual hay que ver otros idiomas
+          if (!empty(normalized_word) && isNaN(normalized_word) )
+          {
+             // Tenemos que eliminar acentos
+             this.p('jn11_Processing ' + normalized_word)
+             this.process_word(normalized_word)
+      
+        }
+       }
+    }
+
+  }
+  
+  // Determina las categorias para procesarlas
+  //---------------------------------------------------------------------------------------------  
+  // Lang ru
+  process_cat()
+  {
+    switch (this.item) 
+    {
+       case "metatags":  
+         this.process_phrase(this.value)  ;  break;
+         
+       case "sm_meta_og_description": 
+         this.process_phrase(this.value)  ;  break;
+
+       case "parragraph":  
+         this.process_phrase(this.hover)  ;  
+         this.process_phrase(this.link)  ;  break;
+
+       case "image":  
+         this.process_phrase(this.link)  ;  break;
+
+    }
+    
+    // Esto creo que esta pendiente
+    if (this.s.cs.lang != this.s.ms.main_lang)  
+    {
+      this.process_main_cat()
+      if (this.s.ms.main_lang != 'en' )  this.process_en_cat()
+    }
+  }    
+
+  //---------------------------------------------------------------------------------------------  
+  // Lang en
+  process_main_cat()
+  {
+    switch (this.item) 
+    {
+       case "metatags":  
+         this.process_phrase(this.value_en)  ;  break;
+
+       case "sm_meta_og_description": 
+         this.process_phrase(this.value_en)  ;  break;
+
+       case "parragraph":  
+         this.process_phrase(this.hover_en)  ;  
+         this.process_phrase(this.link_en)  ;  break;
+
+       case "image":  
+         this.process_phrase(this.link_en)  ;  break;
+
+    }
+ 
+	  
+
+  }	  
+  
+}
+
+exports.d03_idx_fn = d03_idx_fn

@@ -1,0 +1,75 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Html Div Class  [V.0.0.1]  (2018-08-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+//-------------------------------------------------------------------------------------
+// Node Js ES6 - Server with express - http/2
+// ------------------------------------------------------------------------------------
+// Peloncita Structure Header
+//-------------------------------------------------------------------------------------
+//<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+//<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="bb print language  lang="bb print language ">
+// ------------------------------------------------------------------------------------
+//<!DOCTYPE html>
+//<html lang="en">
+//<head>
+//<body> 
+// ------------------------------------------------------------------------------------
+//* DOCTYPE
+//  HTML
+//   HEAD 
+//	 BODY
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+// ------------------------------------------------------------------------------------
+// - reload_contents : Update value for local attributes
+// - build_data  	 : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  { printlog }          =  require(  cons.JS_TYP7  + 'logs/printlog.es7'                )
+
+class common_hnode extends printlog  {
+
+    constructor (     container						)
+	{
+    	super()			
+
+        this.n                  =   "common_hnode::"
+       
+        this.container          =   container
+       
+        this.s					=   this.container.s
+    
+        this.b                  =   this.container.b
+
+		// Common Json
+		this.line_comm			=	this.container.s.ms.j_comm_line
+		this.line_spec			=	this.container.s.ms.j_spec_line
+		this.line_cont 			=	this.container.s.ms.j_cont_line
+
+        // Switch para las paginas del chequeo de los jsons
+        this.only_json_page     =   this.container.s.b.only_json_page
+
+		this.jurl_comm	   	    =	this.container.s.ms.j_comm_url
+		this.jurl_spec			=	this.container.s.ms.j_spec_url
+		this.jurl_cont 			=	this.container.s.ms.j_cont_url
+
+		this.jpath_comm	   	    =	this.container.s.ms.j_comm_path
+		this.jpath_spec			=	this.container.s.ms.j_spec_path
+		this.jpath_cont 		=	this.container.s.ms.j_cont_path
+
+
+        this.result_comm        =  this.container.s.ms.j_comm_ck
+        this.result_spec        =  this.container.s.ms.j_spec_ck
+        this.result_cont        =  this.container.s.ms.j_cont_ck
+
+        this.p('chnode_results ' + this.result_comm  + '  ' +  this.result_spec + '  ' +  this.result_cont )
+
+        var jsons_ok            =  this.result_comm && this.result_spec && this.result_cont
+
+        this.jsons_ok            = jsons_ok && !this.only_json_page
+    }
+}
+
+exports.common_hnode = common_hnode

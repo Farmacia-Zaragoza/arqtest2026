@@ -1,0 +1,99 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Container Class  [V.0.0.3]  (2019-07-04)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// Site     : Site Object
+// Url      : Url Object
+// Boolean  : Boolean Object
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-copyall-       : Copy any entities
+//- d-copy_uri-       : Copy uri entity
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+
+const   { printlog }     =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                  ),
+        { cbool }        =   require(  cons.JS_TYP7  + 'bool/b01_bool.es7'                  ),
+        { site }         =   require(  cons.JS_TYP7  + 'site/s01_site.es7'                  ),
+        { uri }          =   require(  cons.JS_TYP7  + 'uri/u01_obj.es7'                    ),
+        { index_req }    =   require(  cons.JS_TYP7  + 'fire/index_req.es7'                 );  
+
+
+class container extends printlog {
+  constructor(b = "" )  
+  {
+    super()
+
+    this.n               = "container::"
+    this.b               = new cbool()
+    this.s               = new site(this.b)
+    this.ir              = new index_req()
+    this.u               = new uri(this.s , this.ir)
+
+    // Anode type
+    this.a               = ''
+    
+    // Pendiente
+    this.j               = ''
+  }
+
+  copyall(arrobatype)
+  {
+  	this.copy(arrobatype)
+  	this.copy_uri(arrobatype.u)
+  }
+
+  copy(arrobatype)
+  {
+  
+     this.b.copy(                           arrobatype.b        )	
+     this.s.copy(                           arrobatype.s        )	
+     this.copy_arr(                         arrobatype.arr      )
+
+     // Guardamos el Anode
+  	 this.a        = arrobatype.a 
+	
+  }
+
+  // PENDIENTE - NO SE SI ES CORRECTO
+  copyj(arrobatype)
+  {
+  
+     this.copy(arrobatype)	
+     // Ojito que genera nuevos ficheros
+     this.j             =   new jnode_type( arrobatype)
+	
+  }
+
+
+  copy_uri(uritype)
+  {
+     this.u.copy(uritype)
+     this.s             = uritype.s
+  }
+  
+  copy_arr(arr)
+  {
+     var elem = ''
+  	 for (var pos in arr)
+     {
+       elem = arr[pos]
+  	   this.arr[pos] = elem
+  	 }
+  	
+  }	
+  	
+}
+
+exports.container = container

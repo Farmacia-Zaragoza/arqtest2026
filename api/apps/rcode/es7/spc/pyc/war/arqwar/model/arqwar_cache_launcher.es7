@@ -1,0 +1,80 @@
+// [DOCHANGED_ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Model Arqdru  [V.0.0.5]  (2019-11-18)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Objects : 
+// comm - spec - content
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Site_Model > Comm_Model > Index_fast > Index
+// @Model > @Index > @Log
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// e-fast_uri-     : Uri for Cached site
+// e-site_mcomm-   : Multi position site to load arrobas
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-no_cache_launcher_code-  : Ejecuta el codigo para sites sin cache 
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const   { site_model }      =   require(  cons.JS_PYC7  + 'war/arqwar/model/site_model.es7' ),
+        { fast_uri }        =   require(  cons.JS_PYC7  + 'war/arqwar/uri/u10_fast_uri.es7' ),
+        { site_mcomm }      =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m02_site_comm.es7');
+
+class arqwar_cache extends site_model
+{
+  constructor(pmt = '' )
+  {
+    super(  pmt )
+
+    // this.pmt = new params()
+    // this.pmt.copy (pmt)
+    
+    this.pmt = pmt
+
+    this.n                =  'arqwar_cache::'
+
+	// Necesito mejorar el modelo. El sistema de cache no es optimo
+	// Necesito crear un sistema que sea capaz de encontrar el tipo de pagina
+
+    if (this.b.cache)    
+      this.uspc         = new fast_uri(this.s, this.ir)
+
+    // this.p('arqdru_cache_Ready to choose : ' + this.b.cache )
+
+    // Common Cache method
+    this.cache_model()
+  } 
+
+  // NO CACHE CODE
+  no_cache_launcher_code()
+  {
+      // NO CACHE CODE
+      //-------------------------------------------------------------------------------------
+      // Para mañana --> hay que saber los jsons que esta usando cada pagina
+      // Si son accesibles y que contenido tiene
+
+      // this.p('arq_che_page PASO_A01 ' + this.s.cs.page_type +  ' nAM ' + this.s.cs.page_name )      
+
+      this.comm              =  new site_mcomm(this.s, this.s.ms.comm_positions)
+
+      //this.p('arq_che_page X02 ' + this.comm.s.cs.page_type +  ' nAM ' + this.comm.s.cs.page_name )
+      this.copy_model()
+
+      this.run_site()
+  	
+  }
+
+} // end Class
+
+exports.arqwar_cache = arqwar_cache

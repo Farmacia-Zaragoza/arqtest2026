@@ -1,0 +1,48 @@
+// [DOCHECKED_NODE_ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Uri Paths Class  [V.0.1.8]  (2018-01-12)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6-EA6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-create_cache_urls-               : Create cache urls  
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+
+const   { uri_defs }     =   require(  cons.JS_TYP7  + 'uri/u11_defs.es7'    )
+
+class uri_create extends uri_defs {
+
+  constructor()
+  {
+    super()    
+    this.n               =   'uri_create::'        
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  create_cache_urls()      
+  {
+    
+    let base_string      =  this.s.cs.http_domainbar   + 'cache/'   
+
+    // common
+    // this.p('u09_crea CAche Subtipo ' + this.s.t_sub )
+    
+    // nouri/nocomm/blanc/nohuman/nouser/nocode/notrans/nosync/en_full_common
+    // this.p('u09_crea CAche Subpath ' + this.s.cache_subpath )
+
+    this.s.cs.cache_url     = this.s.cs.http_domainbar + this.s.cs.cache_subpath
+
+    // http://dog.vbrqx.com/nouri/nocomm/blanc/nohuman/nouser/nocode/notrans/nosync/en_full_common
+    // this.p('u09_crea Url ' + this.s.cache_url )
+
+  }
+  
+}
+
+exports.uri_create = uri_create

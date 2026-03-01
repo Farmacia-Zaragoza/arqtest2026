@@ -1,0 +1,56 @@
+// [DOCHANGED_NODE_ES6_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Site Post Process Commands Common URi Class  [V.0.0.1]  (2019-10-04)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-post_process_common_commands-            : Command post process for any site 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                   =   require( "/brqx/rcode/es7/com/agen/constants.es7"       )
+
+const { site_common_sure_commands } =   require( cons.JS_ACO7 + 'uri/n01/u04_sure_commands.es7' )
+
+class common_post_process_commands extends site_common_sure_commands {
+
+  constructor(site = '' , ir = '' )
+  {
+    super(  site, ir )
+    this.n               =   'common_post_process_commands::'        
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Procesamiento y ajuste de comandos una vez analizada la Uri para todos los portales
+  post_process_common_commands()
+  {
+
+     this.m                    = 'manage_commands'
+
+     // this.p('u02_sc_Comando para analizar: ' + this.page_command)
+     // this.p('u02_cpp_ideal uri: ' + this.dash_sub_query )                    
+
+
+     switch(this.page_command)
+     {
+
+      case "search":
+        // La busqueda que va a generar una pagina debe tener el json completo
+        
+        this.s.cs.dash_sub_query   =  this.dash_sub_query                    
+        // this.p('u02_cpp_ideal uri: ' + this.dash_sub_query )                    
+
+        
+        break;
+
+    }
+
+  }  
+  
+}
+
+exports.common_post_process_commands = common_post_process_commands

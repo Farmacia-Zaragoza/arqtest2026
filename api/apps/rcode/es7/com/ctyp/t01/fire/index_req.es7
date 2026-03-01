@@ -1,0 +1,403 @@
+// [DOCHECKED_NODE_ES6_PHP_P56]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Indes Request Class  [V.0.0.1]  (2019-07-12)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Node Js ES6 - Server with express - http/2
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+const   { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'   )
+    path         = require( 'path' )                            ;    
+
+class index_req extends printlog
+{
+  
+  constructor() 
+  {
+  super()
+  
+  // Atributos
+    this.startTime         =  ''   //    =   ''   //    Date, 
+    this.app                =   ''   //    function(req,res){},
+    this.body               =   ''   //    {},
+    this.client             =   ''   //    Socket,
+    this.complete           =   ''   //    Boolean,
+    this.connection         =   ''   //    Socket,
+    this.cookies            =   ''   //     {},
+    this.files              =   ''   //     {},
+    this.headers            =   ''   //    {},
+    this.httpVersion        =   ''   //    String,
+    this.httpVersionMajor      =   ''   //    Number,
+    this.httpVersionMinor      =   ''   //     Number,
+    this.method             =   ''   //    String,  // e.g. GET POST PUT DELETE
+    this.next               =   ''   //    function next(err){},
+    this.originalUrl        =   ''   //    String,     /* e.g. /erer?param1=23¶m2=45 */
+    this.params             =   ''   //    [],
+    this.query              =   ''   //    {},
+    this.readable           =   ''   //    Boolean,
+    this.res                =   ''   //    ServerResponse,
+    this.route              =   ''   //    Route,
+    this.signedCookies      =   ''   //    {},
+    this.socket             =   ''   //    Socket,
+    this.url                =   ''   //    String /*e.g. /erer?param1=23¶m2=45 */
+     
+     
+     //Brqx
+    this.protocol           =  'http'
+    this.domain             =  ''
+    this.server_ip          =  ''
+    this.port               =  ''
+    this.uri                =  ''
+    this.method             =  'GET'
+
+  } // End Constructor
+
+  //---------------------------------------------------------------------------------------------  
+  load(req = '')
+  {
+    this.method    =  req.method    // GET
+    this.url    =  req.url      // uri
+    
+    // dont contain protocol nor domain /
+    this.uri    =  req.url      // uri
+    
+    this.method   =  req.method
+    
+    // Here is the uri - not th url
+    // Esta llegando esto Url_Passed: /bn/%E0%A6%A4%E0%A6%BE%E0%A6%B2%E0%A6%BF%E0%A6%95%E0%A6%BE
+    
+    this.url_encoded = this.uri
+    this.uri_decoded = decodeURIComponent(this.uri)
+    
+    if ( this.url_encoded != this.url_decoded)
+      this.uri = this.uri_decoded 
+
+    this.p('ir_Url_Passed: ' + this.uri)
+    // this.p('ir_Url_PassedDecoded : ' + decodeURIComponent(this.uri))
+    
+    
+    
+    // Only works if we pass https
+    // this.p('Protocol Passed ' + req.protocol )
+    // this.p('Protocol Headers ' + req.headers['x-forwarded-proto'] )
+    
+    if (req.secure)   this.protocol = 'https'   // http | https
+    // subdomain or domain
+    this.domain    =  req.hostname      
+    this.server_ip  =  req.socket.remoteAddress
+
+    // Falta recargar el site
+
+  }
+  
+  //---------------------------------------------------------------------------------------------  
+  simul()
+  {
+//  this.uri    =  '/cars'
+    this.uri    =  'fr/policy'                     // Ok Cache
+//    this.uri    =  'fr/product/art0000024'              // OK Cache
+    this.uri    =  'fr/'                           // Ok Cache
+    this.uri    =  'pt/'                           // Ok
+
+    this.uri    =  'fr/list/'                      // Ok Cache
+    this.uri    =  'fr/articles/'                  // Ok
+
+    this.uri    =  'fr/architecte/ricardocabellotorres/'   // Ok
+
+    this.uri    =  'fr/knowledge_information/'   // Ok
+
+    this.uri    =  'en/product/a00#angular_react'
+
+    // Hay que pensar como se debe comportar Animals con la actual estructura
+    this.uri    =  'en/policy'
+
+    this.uri    =  'category/pagina_articulo/p01'
+    this.uri    =  'zh/reglas_de_oro@reload'
+
+    this.uri    =  'zh/gold_rules@reload'
+
+    this.uri    =  'zh/黄金法则'                   // Reglas de oro en chino
+
+//    this.uri    =  'vis/articles'
+
+//    this.uri    =  '/en/gold%20%20%20rules'
+
+    this.uri    =  'de/rbt/salsa'
+    this.uri    =  'de/salsa'
+
+    this.uri    =  'de/rbt'
+
+    this.uri    =  'es/rbt/articulo/a0005'
+
+    this.uri    =  'de/list'
+
+//    this.uri    =  'de/article/a03'
+
+
+//    this.uri    =  '/it/regole_d_oro'
+    
+//    this.uri    =  '/ja/%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89%E3%83%AB%E3%83%BC%E3%83%AB'
+    // this.uri    =  '/en/gold   rules'
+
+//    this.uri    =  '/en/gold%20rules'
+
+//    this.uri    =  '黄金法则'                   // Reglas de oro en chino
+
+    // this.uri    =  'bn/সোনার নিয়ম'                  // Reglas de oro en bengali
+    
+    // this.uri    =  'uk/золоті правила'          // Reglas de oro en ucraniano
+
+    // this.uri    =  'es/Reglas   de oro@reload'
+    
+//    this.uri    =  'en/intelligent_scroll'
+
+//  this.uri    =  'fr/slide'
+//  this.uri    =  'fr/espana/dog/avion/4'
+    
+//  this.uri    =  'fr@reload'
+//  this.uri    =  'en@reload'    
+    // Show full content
+//    this.uri    =  'it/articles'  
+    // Show list content
+    //this.uri    =  'it/list'  
+
+//    this.uri    =  '/'  
+
+
+    this.uri    =  'en/article/a03'  
+
+    this.uri    =  'en/fs'
+
+    this.uri    =  'en/fs/o14_waterfalls'
+
+     this.uri    =  'en/fs/o14_waterfalls/0160x0200'
+
+     this.uri    =  'en/fs/waterfalls/0160x0200'
+
+     this.uri    =  'es/fs/cascadas'      
+
+     this.uri    =  'es/fs/cascadas/0160x0200'      
+
+//    this.uri    =  'list'  
+
+     this.uri    =   'en/photo/a00'
+
+     this.uri    =   'es/articulo/a00'
+     
+//     this.uri    =   'pt/policy'     
+     this.uri    =   'it/article/a0029/rbt'     
+
+     this.uri    =   'en/sections'     
+
+     this.uri    =   'en/photo/a00'
+
+     this.uri    =   'en/policy'     
+
+     this.uri    =   'es/article/a023'     
+
+     this.uri    =   'en/article/a0'          
+
+     this.uri    =  'en/kb/systems/containers/docker/reviews/mysql'       // OK Hierarchical Kb list
+
+     this.uri    =  'en/kb/systems/containers/kubernetes/minikube/reviews/nginx_example'
+
+     this.uri    =  'es/kb/systems/containers/information'
+
+     this.uri    =  'es/kb/sistemas/contenedores/docker/ficherodocker'
+
+     this.uri    =  'en/kb/systems/containers/docker/dockerfile'
+
+//     this.uri    =  'es/kb/systems/containers'
+
+//     this.uri    =   'en'          
+
+     
+     //     this.uri    =   'es/politica'
+
+     // this.uri    =   'ru/статьи/a02'   // Working ( 20-04-09 )
+     
+//    this.uri    =  'it/search/cliente/capo'
+//      this.uri    =  'it/search/clienti'
+//     this.uri    =  'it/search/clienti@reload'
+      // Aqui igual es un problema de parametros tambien
+    // this.uri    =  'contenido_articulo/a0002/p10/j_enclaves_arquitectonicos_la_decision_de_reutilizacion_de_componentes_es_arquitectura/'
+    // Nunca debe cachearse
+//    this.uri    =  'jsons'
+
+//     this.uri    =  'en/@jsons'                           // Ck
+
+//    this.uri    =  'pt/@reload'                           // Ok
+
+    //this.uri    =  'es/articulo/a01@jsons'                // Ck - A ver lo que genera
+//    this.uri    =  'es/articulo/a01@reload'                // Ck - A ver lo que genera
+    
+    
+//    this.uri    =  'es/photo/a01'        // List Photos of church| aldea
+
+//    this.uri    =  'es/slide/church'        // Slide Photos of church| aldea
+//    this.uri    =  'es/galery/church'        // Slide Photos of church| aldea
+
+    
+//      this.uri    =  'es/photo/church'        // List Photos of church| aldea    
+//      this.uri    =  'es/photo/a01'        // List Photos of church| aldea    
+
+//      this.uri    =  'es/foto/a00'        // List Photos of church| aldea    
+
+//      this.uri    =  'en/photo/a00'        // List Photos of church| aldea    
+
+//      this.uri    =  'es/photo/novia'        // List Photos of church| aldea    
+
+//      this.uri    =  'en/slide/novia'        // List Photos of church| aldea    
+
+//      this.uri    =  'es/kb/architecture/cloud/why'                 // Hierarchical Kb product
+
+//      this.uri    =  'es/kb/development'                 // Hierarchical Kb list
+
+//      this.uri    =  'es/kb/systems/databases'       // Hierarchical Kb list
+//      this.uri    =  'en/kb/systems/databases'       // Hierarchical Kb list
+
+//      this.uri    =  'es/kb/sistemas/'       // Hierarchical Kb list
+
+
+//      this.uri    =  'en/kb/architecture/unix/agile/diagrams/httpd'       // Ok Hierarchical Kb list
+
+//      this.uri    =  'en/kb/architecture/unix/agile/diagrams'       // KO Hierarchical Kb list
+
+//    this.uri    =  'en/kb/systems/webservers/apache/whitelist'       // OK Hierarchical Kb list
+
+//    this.uri    =  'en/kb/systems/systems/unix/centos/versions/centos8/packages/yarn'       // OK Hierarchical Kb list
+
+//    this.uri    =  'en/kb/systems/exim/install'       // OK Hierarchical Kb list
+
+//    this.uri    =  'en/kb/systems/databases/couchbase'       // OK Hierarchical Kb list
+
+//    this.uri    =  'en/kb/systems/drupal/general/settings/multidrush'       // OK Hierarchical Kb list
+
+    // this.uri    =  'en/kb/systems/webservers'       // OK Hierarchical Kb list
+
+
+//      this.uri    =  'en/kb/architecture/unix/agile/diagrams/httpd'       // Ok Hierarchical Kb list
+
+//      this.uri    =  'en/product/a01/idx'       // Indexing Uri
+
+//      this.uri    =  'article/a01/idx'       // Indexing Uri
+
+
+//      this.uri    =  'en/search/wysiwyg/regex/management'       // Indexing Uri
+
+//      this.uri    =  'es/rest/search/rapido'       // Indexing Uri
+
+//      this.uri    =  'es/search/rapido'       // Indexing Uri
+
+//      this.uri    =  'es/search/aleman'       // Indexing Uri
+  
+//      this.uri    =  'zh/articles/idx'       // Indexing Uri
+
+//      this.uri    =  'en/article/idx'       // Indexing Uri PENDIENTE REVISION TOTAL
+
+//      this.uri    =  'article/idx'       // Indexing Uri PENDIENTE REVISION TOTAL
+
+//     this.uri    =  'en/full/idx'       // Indexing Full Site Content
+
+  
+//       this.uri    =  'en/rest/list'       // Indexing Uri  
+
+
+//      this.uri    =  'ru/article/a01/idx'       // Not Indexing Uri
+
+      // FALTA VER QUE PASA SI PONEMOS REST E IDX
+//      this.uri    =  'ru/rest/article/a01'       // Working
+
+//      this.uri    =  'es/kb/architecture'                 // Hierarchical Kb list Ok
+//      this.uri    =  'es/kb/architecture/cloud'                 // Hierarchical Kb list
+
+
+//    this.uri    =  'architect/ricardocabellotorres'
+
+//    this.uri    =  'it/articolo/art000'               // OK
+//    this.uri    =  'es/article/a0000'               // OK
+
+//  this.uri    =  'en/fivearticles'               //  OK
+
+//    this.uri    =  'en/sections'               //  OK [2020-02-36]
+
+//    this.uri    =  'en/article/a0014#drupalarchitecture@jsons'
+//    this.uri    =  'en/article/a0014#drupalarchitecture'
+
+//    this.uri    =  'en/articles/a0002'           // OK [2020-02-26]
+//    this.uri    =  'en/articles/'                  // OK [2020-02-26]
+
+    // this.uri    =  'en/allinone'                   // OK [2020-02-26]
+
+    // this.uri    =  'es/kb'                   // OK [2020-02-26]
+
+//    this.uri    =  'en/kb/systems/exim/general/keysgeneration'
+
+//    this.uri    =  'ca/article/a03'                   // OK [2020-02-26]
+
+//    this.uri    =  'en/photo/a01'                   // OK [2020-02-26]
+
+
+  // CODIFICACION DE URIS
+  // Regex to text decode
+  // this.uri       =  'bn/%E0%A6%A4%E0%A6%BE%E0%A6%B2%E0%A6%BF%E0%A6%95%E0%A6%BE'
+
+  // BUSQUEDA MULTILANG 
+  // Revisar rutas de archivos con formato langen en su lugar
+
+   // Zजैगुआर@3  
+//  this.uri       =  'it/search/जैगुआर'
+
+//  this.uri       =  'it/search/veloce'
+
+//  this.uri       =  'en/search/mamun'
+
+  // Hay que tener un metodo para generar los indices
+  // this.uri       =  'in/list/idx'
+//  this.uri       =  'it/list/idx'
+//  this.uri       =  'en/list/idx'
+
+  // this.uri       =  'bn/তালিকা'                  // List en bengali
+  
+//  this.uri       =  'fr/regles_d_or'            // OK [2020-02-23]
+
+//   this.uri    =  'en/contenido_articulo/a0010/p10/logo'
+//  this.uri    =  'en/list'               //  OK
+
+//    this.uri    =  'en/article/a01'               //  OK
+
+//  this.uri    =  'es/articles'               //  OK
+
+//    this.uri    =  'es'               //  OK
+
+
+//  this.uri    =  'destiny'    
+//  this.uri    =  'ca/product/truck/4'
+//  this.uri    =  'restfastfull/tunez'
+//  this.uri    =  'searchapi/tunez'
+
+
+//  this.uri    =  'fr/product/truck/6'
+//  this.uri    =  '/hola/amigos'
+//  this.uri    =  'fr/list/categories'
+
+
+    this.p('SIMUL_PAGE ' + this.uri)
+
+    this.protocol   =   'https'   // http | https
+
+    this.method    =   'GET'
+//  this.method    =   'POST'
+//  this.domain    =  'node.dbrqx.com'
+//  this.domain    =  'truck.vbrqx.com'
+    this.domain    =  'dog.vbrqx.com'
+    this.port    =  '80'
+
+  }  
+        
+}  // End Class
+
+exports.index_req = index_req

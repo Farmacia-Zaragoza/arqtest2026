@@ -1,0 +1,92 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Proces Class  [V.0.0.2]  (2019-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-page_process-          : Process only one page of current array
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+
+const  { anode_run_index_list } =   require(  cons.JS_TYP7  + 'arroba/anode/a06_index_list/an62_run.es7'   ),
+       { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
+
+class anode_page_process extends anode_run_index_list {
+  constructor()  
+  {
+    super()
+    this.n                        = "anode_page_process::"
+    
+  }
+
+
+  //---------------------------------------------------------------------------------------------  
+  // Will process only one page 
+  // MAIN/position/page --> @FORMAT
+  page_process(lang                  ,
+               current_subpath       )
+  {
+    
+    this.m               =    'page_process'
+  
+  
+    this.rvlash( current_subpath )
+	let index         = this.result
+
+    //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
+	// this.p('an10_Proc Lang : ' + lang + ' Path ' +  current_subpath + ' Ind ' + index)
+ 
+    var idx = new idx_pointers(index)     
+
+
+    pos = this.s.cs.page
+    
+    // this.p('a10_page_to_load ' + pos)
+    
+    this.arroba_attribs(idx, this.s.cs.page)
+
+    // page_process - an09 cat  Ind a0001 Cin articles/a01
+    // sheet
+    // this.p('an09 cat  Ind ' + this.cat  + ' Ntype ' + this.ntype )        
+
+    // Load page type for non hierarchical
+    
+    // DEFINING_PAGE_TYPE
+    
+    this.s.cs.founded_type    = this.ntype
+
+    // this.p('an10_BEFORE CHILD' + this.cat + ' + ' + this.child )
+
+
+    if (this.item != "")
+    {
+        this.term_process()
+    }
+
+	if ( this.child == "yes" )
+	{
+
+		let next_level = this.get_next_level(pos)
+		let new_subpath  = current_subpath + '/' + 'l' +  next_level
+		
+		// l020/l000
+		// this.p('an10_New subpath: ' + new_subpath)
+			
+		this.current_load(	lang                        ,
+				            new_subpath				    )
+			
+			// /brqx/pers/fromfile/farma/fnode/json_lang_structure/l000/fr_cat
+							
+	} // End If
+
+  }
+}
+
+exports.anode_page_process = anode_page_process

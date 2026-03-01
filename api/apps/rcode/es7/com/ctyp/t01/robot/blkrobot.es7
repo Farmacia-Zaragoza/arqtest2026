@@ -1,0 +1,74 @@
+// [DOCHANGED_ES6_NODE_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php+
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//BlkJson  Block Json Style Class  [V.0.0.5]  (2019-04-17)
+//------------------------------------------------------------------------------------
+//Methods:
+//- d-add_pull             : Add pull level to json structure
+//- d-end_pull             : End pull level to json structure
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+const   sctf  			 = 	require(  cons.JS_LIB7  + 'file/save_code_to_file.es7' 	     ),
+        { manage_robot } =  require(  cons.JS_TYP7     + 'robot/manage_robot.es7'     );
+
+
+class blkrobot extends manage_robot {
+  constructor(file_name = '') 
+  {
+
+    super()
+    this.n         =   "blkrobot::"
+    this.deb       =   ""
+    this.tame       =   ""
+    this.code       =   ""
+    this.content     =   ""
+    this.pull_content  =  ''
+    
+    this.full_path    =  file_name
+
+    this.p('blkjson - Gen_FILEROBOT ' + this.full_path)
+    sctf.create_new_empty_file(this.full_path)
+  }
+
+  save_keyheader(header)   {  }
+  save_nokeyheader(header)   {  }
+  save_header(header)   {  	  }
+
+  add_pull(level , separator = '[')   { }
+  end_pull(object_type)  {  }
+
+  save_top()  {  }
+  save_end()  {  }
+
+  add_separator() { }
+  add_index(index_passed)    {  }
+  add_item(item_passed)   {  }
+  add_id(item_passed)   {  }
+
+  add_name(item_passed)   {   }
+  add_lastname(item_passed)   {   }
+
+  add_link(link_passed)   {   }
+  add_linklast(link_passed)   {   }
+
+  add_type(type_passed)   {   }
+  add_typelast(type_passed)   {   }
+
+  add_clink(clink_passed)   {  }
+  add_clinklast(clink_passed)   {   }
+
+  add_lastchildrens(childrens_passed_str)   {   }
+  add_childrens(childrens_passed_str)   {   }
+
+  // CONTENT - FOR PART OBJECTS
+  add_key()   {   }
+  end_key()   {   }
+
+  add_corch()   {   }
+  end_corch()   {   }
+
+}
+
+exports.blkrobot = blkrobot

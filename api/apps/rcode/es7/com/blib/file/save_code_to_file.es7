@@ -1,0 +1,301 @@
+// [DOCHANGED_ES7_SPACES]
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+// Agile Node Js - Farma AQR - ( BRQX NG Arquitectura 2020 )
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// ---------------------------------------------------------------------------
+// Brqx 2020 - 09/01/20             Depth:[0N]
+// Version : 0.0.2                  Type :[FUNCTION]
+// ---------------------------------------------------------------------------
+// - Notas
+// ---------------------------------------------------------------------------
+//  + Almacena codigo en ficheros
+// ---------------------------------------------------------------------------
+// - Funciones 
+// ---------------------------------------------------------------------------
+//-- d-create_new_empty_file-      : Create a new file without code
+//-- d-create_file_with_code-      : Generate a new file with passed code
+//-- d-update_file_with_code-      : Update a new or an existent file with passed code
+// ---------------------------------------------------------------------------
+//-- 
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+var     cons         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const   fs           =   require(  'fs'                                                  ),
+        path         =   require(  'path'                                                ),
+        os           =   require(  'os'                                                  ),
+        util         =   require(  'util'                                                ),        
+        empty        =   require(  cons.NODE_MOD + 'is-empty'                            ),
+        trim         =   require(  cons.NODE_MOD + 'trim'                                ),
+        mkdirp       =   require(  cons.NODE_MOD + 'mkdirp'                              );
+
+//---------------------------------------------------------------------------------------------  
+function create_new_empty_file(full_file_name_int = '')
+{
+  var dir = path.dirname (full_file_name_int)      
+
+  // Si no existe la carpeta - la creamos
+  if (!fs.existsSync(dir) ) 
+  {  
+    mkdirp.sync(dir)
+    fs.chmodSync(dir, 0775)          
+    let user = os.userInfo().username          
+
+    // if (user == 'apache' || user == 'composer')    
+    if (user == 'root')
+      fs.chownSync(dir, 48 , 48 )            
+
+  }
+  
+  // Lo estamos creando nunca va a existir. Solo podemos verificar que exista la ruta
+  if (!empty(full_file_name_int) && fs.lstatSync(dir).isDirectory()   )
+  {
+    // Truncamos uno existente
+    fs.closeSync(fs.openSync(full_file_name_int, 'w'))
+    fs.chmodSync(full_file_name_int, parseInt('0674',8))					
+  }      
+}
+
+//---------------------------------------------------------------------------------------------  
+function create_file_with_code(full_file_name_int = '' , DATA)
+{
+    // Lo estamos creando. El fichero no puede existir aun
+
+  if ( !empty(full_file_name_int ) && !empty(DATA) )
+  {
+    
+    // echo ( "Creando Fichero " + full_file_name_int )
+    dir =  path.dirname(full_file_name_int)
+
+    if ( !fs.existsSync(dir)       ||   
+         !fs.lstatSync(dir).isDirectory()     )
+    {
+        // No Existe el padre --> Lo creamos
+      mkdirp.sync(dir)
+      fs.chmodSync(dir, 0775)          
+      let user = os.userInfo().username          
+   
+        // Solo lo podemos hacer si somos apache
+      if (user == 'root' )
+        fs.chownSync(dir, 48 , 48 )            
+    }
+      
+
+    // Y si no existe
+    if ( fs.existsSync(full_file_name_int) )
+      // Truncamos uno existente
+      fs.closeSync(fs.openSync(full_file_name_int, 'w'))
+    else
+    {
+      // Creamos uno
+      fs.openSync(full_file_name_int, 'w')
+      fs.chmodSync(full_file_name_int, parseInt('0674',8))					     
+    }   
+    // echo ('Data_To_Save ' + DATA)
+    LNDATA= DATA + os.EOL 
+    fs.appendFileSync(full_file_name_int, LNDATA)
+
+  }    
+}
+
+// Crea y actualiza ficheros basado en fullpath
+function create_update_full_filename(full_file_name_int = '', DATA)
+{
+    if ( !empty(full_file_name_int) && !empty(DATA) )
+    {
+    	dir =  path.dirname(full_file_name_int)
+		if ( fs.existsSync(dir) 				&&   
+			 fs.lstatSync(dir).isDirectory()  	)
+		{    
+		    LNDATA= DATA + os.EOL ; 
+			fs.appendFileSync(full_file_name_int,LNDATA)
+
+
+			let user = os.userInfo().username				
+			if ( user == 'root ')
+			{	
+				fs.chmodSync(full_file_name_int, parseInt('0755',8))					
+				fs.chownSync(full_file_name_int, 48 , 48 )
+			}						
+
+		}
+	}    
+}
+
+// Crea y actualiza ficheros basado en fullpath
+function create_update_full_filename_no_break_line(full_file_name_int = '', DATA)
+{
+    if ( !empty(full_file_name_int) && !empty(DATA) )
+    {
+    	dir =  path.dirname(full_file_name_int)
+		if ( fs.existsSync(dir) 				&&   
+			 fs.lstatSync(dir).isDirectory()  	)
+		{    
+		    // LNDATA= DATA + os.EOL 
+			fs.appendFileSync(full_file_name_int,DATA)
+
+
+			let user = os.userInfo().username				
+			if ( user == 'root ')
+			{	
+				fs.chmodSync(full_file_name_int, parseInt('0755',8))					
+				fs.chownSync(full_file_name_int, 48 , 48 )
+			}						
+
+		}
+	}    
+}
+
+
+//---------------------------------------------------------------------------------------------  
+function update_file_with_code(full_file_name_int = '' , DATA)
+{
+  if ( !empty(full_file_name_int ) && !empty(DATA) )
+  {
+    
+    // echo ( "Creando Fichero " + full_file_name_int )
+    dir =  path.dirname(full_file_name_int)
+
+    if ( !fs.existsSync(dir)       ||   
+         !fs.lstatSync(dir).isDirectory()     )
+    {
+      // No Existe el padre --> Lo creamos
+      mkdirp.sync(dir)
+      fs.chmodSync(dir, 0775)          
+      let user = os.userInfo().username          
+   
+      // Solo lo podemos hacer si somos apache
+    if (user == 'root' )
+          fs.chownSync(dir, 48 , 48 )            
+    }
+
+    if ( !fs.existsSync(full_file_name_int) )
+    {
+        // Creamos uno
+        fs.openSync(full_file_name_int, 'w')
+		fs.chmodSync(full_file_name_int, parseInt('0674',8))					
+    }
+        
+      // echo ('Data_To_Save ' + DATA)
+    LNDATA= DATA + os.EOL 
+    fs.appendFileSync(full_file_name_int, LNDATA)
+
+  }    
+}
+
+//---------------------------------------------------------------------------------------------  
+function update_file_with_code_no_break_line(full_file_name_int = '' , DATA)
+{
+  if ( !empty(full_file_name_int ) && !empty(DATA) )
+  {
+    
+    // echo ( "Creando Fichero " + full_file_name_int )
+    dir =  path.dirname(full_file_name_int)
+
+    if ( !fs.existsSync(dir)       ||   
+         !fs.lstatSync(dir).isDirectory()     )
+    {
+      // No Existe el padre --> Lo creamos
+      mkdirp.sync(dir)
+      fs.chmodSync(dir, 0775)          
+      let user = os.userInfo().username          
+   
+      // Solo lo podemos hacer si somos apache
+    if (user == 'root' )
+          fs.chownSync(dir, 48 , 48 )            
+    }
+
+    if ( !fs.existsSync(full_file_name_int) )
+    {
+        // Creamos uno
+        fs.openSync(full_file_name_int, 'w')
+		fs.chmodSync(full_file_name_int, parseInt('0674',8))					
+    }
+        
+      // echo ('Data_To_Save ' + DATA)
+    fs.appendFileSync(full_file_name_int, DATA)
+
+  }    
+}
+
+
+// Vamos a insertar aliases
+
+// Ok [19-12-12]
+function link_full_filename(abs_source , abs_target)
+{
+	if ( fs.existsSync(abs_source) &&  fs.lstatSync(abs_source).isFile() )
+	{
+        // Si existe el alias lo borramos
+
+		dir = path.dirname (abs_target)			
+
+  		if (!fs.existsSync(dir)) 
+  		{
+			mkdirp.sync(dir)
+			fs.chmodSync(dir, 0775)					
+			fs.chownSync(dir, 48,48)						
+		}
+
+        // Si existe el alias lo borramos
+        // Si no existe que puede ser un link falso tambien lo borramos pues es un link
+         
+        if (fs.existsSync(abs_target)  )
+          fs.unlinkSync(abs_target)
+        else
+        {
+          try 
+          {
+            fs.unlinkSync(abs_target)        	
+          } catch (err) 
+          { 
+		   console.info('sctf_link '  + abs_target) 
+	      }    
+        }
+		
+		// Revisar
+		fs.symlinkSync(abs_source,abs_target)					
+	}
+	else
+        console.log("lff::The file dont exist or is not a file : " + abs_source  + " - T " + abs_target)
+
+}
+
+function file_get_code_clean(full_path_file = '')
+{
+	let br		=	'</br>'														
+	let code = 	''														
+
+	if (  !empty(full_path_file)   				&&	 
+		  fs.existsSync(full_path_file) 		&&   
+		( fs.lstatSync(full_path_file).isFile() || fs.lstatSync(full_path_file).isSymbolicLink() ) 
+		)
+	{
+		code = fs.readFileSync(full_path_file).toString()
+		
+	}
+	return code
+}
+
+function file_get_code(full_path_file = '')
+{
+	// For live environments
+	return file_get_code_clean (full_path_file) 														
+
+	// For Dev environments
+
+	// return file_get_code_with_name (full_path_file) 														
+
+}
+
+
+
+//---------------------------------------------------------------------------------------------  
+module.exports.create_new_empty_file  = create_new_empty_file
+module.exports.create_file_with_code  = create_file_with_code  
+module.exports.update_file_with_code  = update_file_with_code
+module.exports.link_full_filename     = link_full_filename
+module.exports.update_file_with_code_no_break_line       = update_file_with_code_no_break_line
+module.exports.create_update_full_filename_no_break_line = create_update_full_filename_no_break_line
+module.exports.create_update_full_filename = create_update_full_filename
+module.exports.file_get_code 					= file_get_code 

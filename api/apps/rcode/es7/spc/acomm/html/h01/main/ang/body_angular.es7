@@ -1,0 +1,60 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Pharmacy Body Class  [V.0.0.4]  (2019-01-22)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Browser - Home - Index_06 - v0_0_2
+//-------------------------------------------------------------------------------------
+// Peloncita Structure Header
+//-------------------------------------------------------------------------------------
+// <body 
+//  <app-root></app-root>
+//  <script>
+
+// ------------------------------------------------------------------------------------
+//* BODY
+//    PENDING
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Bdy01 > Common_Angular > Common_Body... >  Html_Style
+// @Body > @Angular > @ABody > @Html
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+// ------------------------------------------------------------------------------------
+// - create_scripts  	 : Build html final code for object
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                 =   require( "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const   { common_angular }  =   require( cons.JS_ACO7  + 'html/h01/main/ang/common_angular.es7' )          ,		
+		{ scripts_angular }	=	require( cons.JS_ACO7  + 'html/h01/main/ang/scripts_angular.es7');					
+
+
+class body_angular extends common_angular  {
+
+  constructor (     container						)
+  {   
+		super(container)
+
+        // this.p('bdy_ang_COMMON_URL ' + this.container.jurl_comm)
+
+		this.n							=	'bdy_arqdru::'		
+  }
+
+  //-------------------------------------------------------------------------------------
+
+  create_scripts()
+  {
+		// Here we have two options
+		// Scripts links for dev environment
+		// Script tag for live environment
+
+  		this.scripts_01		     =  new scripts_angular(	this.container	)			
+		
+		this.content			+=	this.scripts_01.code							
+  }
+
+}
+
+exports.body_angular = body_angular

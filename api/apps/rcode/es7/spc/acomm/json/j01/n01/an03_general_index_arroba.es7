@@ -1,0 +1,59 @@
+// [DOCHANGED_NODE ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node General Common Json Class  [V.0.0.1]  (2019-06-14)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-generate_common_index-      : Common method to index articles 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"               )
+
+const  { ani01_arroba_recursive } =   require(  cons.JS_TYP7  + 'arroba/aindex/a01/ani01_recursive.es7' )
+
+class an03_general_index_arroba extends ani01_arroba_recursive {
+           
+  constructor (arroba = '' ) 
+  {   
+    super(arroba)
+    
+    this.n                  =   'an03_general_index_arroba::'
+  }
+
+  //---------------------------------------------------------------------------------------------
+
+  generate_common_index(pos = 20)
+  {
+
+    this.pos = pos
+
+    // this.p('jn20-Generating Search  ' + pos )
+    
+    this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
+    this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
+
+    // jn20_cat articles
+    // this.p('jn20_cat ' + this.cat)
+
+
+    // Esta ya generandose el fichero. Aqui habria que igual filtrar las palabras de busqueda primero
+
+    
+    // De momento no es un JSON
+
+    this.save_arroba_index_recursive_array_to_file(  
+                this.index                , // Index of array
+                this.arroba.j.categories  ) // Categories lang/ES Name
+
+	  
+	  
+  }
+
+}
+
+exports.an03_general_index_arroba = an03_general_index_arroba

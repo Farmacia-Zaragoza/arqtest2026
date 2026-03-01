@@ -1,0 +1,31 @@
+// [DOCHANGED_ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Site Uri Class  [V.0.0.2]  (2019-05-13)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Hierachy structure and Class
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Site_Uri > Site_Uri_Mng_Commands > Post_Process_Commands > Sure_Commands > Aliases > Site_Common_Commands
+// @Site_Uri_> @Common_Uri > @Uri > @Strings > @Printlog
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const { site_uri_manage_commands } =   require( cons.JS_PYC7 + 'social/arqsoc/uri/u02_manage_commands.es7' )
+
+
+class site_uri extends site_uri_manage_commands
+{
+  constructor(site = '' , ir = '' )
+  {
+    super(  site, ir )
+    this.n                  =   "site_uri::"
+  } 
+
+} // end Class
+
+exports.site_uri = site_uri
+

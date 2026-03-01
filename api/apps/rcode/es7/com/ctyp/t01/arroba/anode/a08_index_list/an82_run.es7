@@ -1,0 +1,65 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// AgileNode Js - Jnode Run Class  [V.0.0.1]  (2019-06-07)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar anode para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-run_index_load-         : Load from main only specific position
+//- d-run_index_list_load-    : Load full list articles
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                        =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+
+const  { anode_run_index_page }  =   require(  cons.JS_TYP7  + 'arroba/anode/a09_index_page/an92_run.es7'      )
+
+class anode_run_index_list extends anode_run_index_page {
+  constructor()  
+  {
+    super()
+
+    this.n                  =   "anode_run_index_list::"
+  }
+
+
+  //---------------------------------------------------------------------------------------------  
+  run_index_list_load()
+  {
+    // ESTE METODO VALDRIA PARA UNA BUSQUEDA
+    // this.generate_array_from_file( this.s.ms.main_lang,  this.s.cs.cache_path )    
+    // this.p('an22_GENERATING_CACHE IDX ' + this.s.cs.lang + ' ' + this.s.cs.cache_path)
+    // this.generate_array_from_file( this.s.ms.main_lang,  this.s.cs.cache_path )    
+    
+    // 1. Cargamos la informacion del idioma principal (ingles)
+    let before_lang = this.s.ms.lang
+
+    if ( !this.b.language_already_loaded  )
+    {
+      this.s.ms.lang           =   'en'
+      this.s.cs.lang         =   this.s.ms.lang    
+    
+      this.main_index_list_load()    
+    }
+
+    this.s.ms.lang           =   before_lang
+    this.s.cs.lang         =   this.s.ms.lang    
+    
+    if ( this.s.ms.lang != 'en' )
+    {
+      // this.p('j02_jnod_Loading ES')
+      this.main_index_list_load()    
+    }
+  }
+ 
+
+  
+}
+
+exports.anode_run_index_list = anode_run_index_list

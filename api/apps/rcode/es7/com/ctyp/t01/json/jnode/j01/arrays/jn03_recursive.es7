@@ -1,0 +1,116 @@
+// [DOCHANGED_NODE ES7_SPACES]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS Fast Node Json Array Recursive Class  [V.0.0.1]  (2019-06-13)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-save_json_sidebar_recursive_array_to_file-          : Generate Json Recursive
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+
+const  fs                 =   require(  'fs'                                                                       ),
+       empty              =   require(  cons.NODE_MOD + 'is-empty'                                                 ),
+       accents            =   require(  cons.NODE_MOD + 'remove-accents'                                           ),
+       { idx_pointers }                 =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                      ),       
+       { jn04_comma_json_simple_list } =   require(  cons.JS_TYP7  + 'json/jnode/j01/arrays/jn04_simple_list.es7'  );
+
+// Common Array
+class jn03_comma_json_recursive extends jn04_comma_json_simple_list {
+
+           
+  constructor ()   
+  {   
+    super()
+    this.n                =  'jn03_comma_json_recursive::'      
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Recursive structure
+  save_json_sidebar_recursive_array_to_file(  
+            index                 ,  // Indice
+            enbreadcrumb  =   ''  ,  // Breadcrumb en ingles
+            depth         =  0    ) 
+  {
+
+    var idx = new idx_pointers(index)
+    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                              ;
+    var iterations           = Object.keys(cats).length - 2
+    // Igual son uno menos
+
+    for (var pos in cats)
+    {
+      // Se pone a false siempre pues hay casos que no queremos generar
+      this.b.type_generated = false
+
+      // Set Json attribs
+      this.attribs(idx, pos , index, depth)
+
+      if (this.j.item != 'sm_meta_og_description')
+      {
+
+      let current_level        = this.j.index
+      let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.j.item ).toLowerCase()
+
+      // add_json block
+      this.rvlash_inner(current_level)
+      this.index               = this.result   
+
+      this.links_management(idx , pos)
+   
+      // this.p('jn03_recursive HOVER ' + this.j.hover)
+
+      // this.p('j03_array_callobj ' + this.j.item)            
+          
+      this.j.index    =   this.index
+
+      // this.p ("jn03_no_rcsv : " + this.j.item +  ' T '  + this.j.otype )    
+      
+      if ( this.j.child == "yes" )
+      {
+
+        // Array u Objeto
+          let object_type     =  this.k.otype
+
+          this.k.createspecificpart(object_type)
+
+          this.review_childrens_recursive(  
+            current_level          ,
+            enbreadcrumb       ,  // Breadcrumb en ingles
+            depth + 1            ,
+            this.j.otype         )
+          
+          this.k.end_pull(object_type)          
+  
+          // Si ha llamado a algun hijo es un tipo ya generado
+        this.b.type_generated = true
+
+      } 
+      else
+      {
+
+            // this.rvtoslash(index) --> YA NO TIENE SENTIDO EN JSONS
+                    // FINAL RECURSIVIDAD - OBJETOS COMPLETOS
+        // this.p('jn05_rc ' +  this.j.index + ' ' + this.j.type)
+        this.manage_array_parragraphs("array", this.j.index)
+            
+      }
+
+
+      if ( (--iterations  >= 0) && (this.b.type_generated) )
+        this.j.add_separator()
+
+    
+     }  // End For
+
+    } // End If
+  }
+  
+}
+
+exports.jn03_comma_json_recursive = jn03_comma_json_recursive

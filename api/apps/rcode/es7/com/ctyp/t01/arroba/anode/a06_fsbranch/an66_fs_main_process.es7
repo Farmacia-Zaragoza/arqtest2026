@@ -1,0 +1,134 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated_Langs:NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Main Process Class  [V.0.0.1]  (2019-05-31)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar anode para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-main_hierarchical_process-       : Process from main file only specific position
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// AnoMultiLoad > AnoMultiProcess > AnoRunPosition
+// @Anode >  ...
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+var    cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  { anode_fsbranch_load }  =   require(  cons.JS_TYP7  + 'arroba/anode/a06_fsbranch/an67_load.es7'   ),
+       { idx_pointers }           =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'        );
+
+class anode_fs_main_process extends anode_fsbranch_load {
+  constructor()  
+  {
+    super()
+
+    this.n                        = "anode_fs_main_process::"
+  }
+
+
+  //---------------------------------------------------------------------------------------------  
+  // Procesa Solo la primera posicion o la pasada
+  main_fs_process(   index               = 'main'    , 
+                               array_index_string  = ''        ,
+                               file_structure_path = ''        ,
+                               current_subpath     = ''        ,
+                               title               = ''        ,
+                               uri_depth          = 0         )
+  {
+
+    this.m      = 'main_fs_process'
+
+    var idx     = new idx_pointers(index)
+
+    this.arroba_attribs(idx, this.s.cs.position)
+
+    
+    // Vamos a ir avanzando por la estructura y esta sera la base
+    // kb
+    var breadcrumb      = this.breadcrumb
+
+    // fs
+    this.p('an66_mainp_bre ' + breadcrumb)
+
+    // El indice inicial es sin la v o sea 040
+   
+    array_index_string  = this.dhild
+
+    // l060
+    current_subpath     = 'l' +  this.dhild
+
+    file_structure_path = current_subpath
+    
+    
+    // this.p('an46_jnod_Pos: ' + this.s.cs.position + ' Item : ' + this.item + ' Child: ' + this.child)
+
+    if ( this.child == "yes" )
+    {
+      // this.p('an46_Cat Lang : ' + this.s.ms.lang + ' Item '  + this.item + ' Pat: ' + current_subpath)
+      // cache::main_hierarchical_process - an36_Cat Lang : en Cat hierarchical_kb Pat: l040
+      // cache::main_hierarchical_process - an36_Cat Lang : es Cat hierarchical_kb Pat: l040
+  
+  
+      // this.p('an46_call_to_hierarchical_structure ' + this.s.cs.slash_hierarchi)
+      // this.p('an46_init_path ' + init_subpath)
+
+      // en l040 kb
+      // English Breadcrumbs
+      // kb/systems/databases
+      
+      let saved_array_index_string  = array_index_string   
+      let saved_file_structure_path = file_structure_path  
+      let saved_current_subpath     = current_subpath      
+      let saved_breadcrumb          = breadcrumb       
+      let saved_uri_depth           = uri_depth    
+
+
+      this.p('an66_main_p I ' + array_index_string)      
+      this.p('an66_main_p F ' + file_structure_path)      
+      this.p('an66_main_p S ' + current_subpath)      
+      this.p('an66_main_p C ' + breadcrumb)      
+
+
+      if ( this.s.ms.lang == "en" )
+      {
+        this.current_fsbranch_load(    this.s.ms.lang      , // 1. en
+                                     array_index_string  , // 2. 060
+                                     file_structure_path , // 3. l060
+                                     current_subpath     , // 4. l060
+                                     breadcrumb          , // 5. fs
+                                     title               , // 6. 
+                                     this.s.ms.fs_path   ,
+                                     uri_depth           ) // 7. file system path
+      }
+      else
+      {
+        
+        this.p ('an46_Entering in LANG BREADCRUMB')
+        this.current_fsbranch_load_es(this.s.ms.lang            ,  // 1
+                                      saved_array_index_string  ,  // 2
+                                      saved_file_structure_path ,  // 3
+                                      saved_current_subpath     ,  // 4
+                                      saved_breadcrumb          ,  // 5
+                                      title                     ,  // 6
+                                      this.s.ms.fs_path         ,
+                                      saved_uri_depth               )
+      }                              
+                                     
+    }
+
+  }
+
+  
+}
+
+exports.anode_fs_main_process = anode_fs_main_process

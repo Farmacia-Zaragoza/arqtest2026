@@ -1,0 +1,444 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Site Definition Common Class  [V.0.0.2]  (2019-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"    )
+
+const   { printlog }  =   require(  cons.JS_TYP7  + 'logs/printlog.es7'              )
+
+class old_site extends printlog {
+  constructor() {
+    super()
+    this.n                          =   "old_site::"
+
+    this.server_caption              =  ""
+    this.load_caption                =  ""
+    this.mem_caption                 =  ""
+    this.env_caption                 =  ""
+    this.heap_caption                =  ""
+    this.max_caption                 =  ""
+    this.liveop_caption              =  ""
+    this.cache_caption               =  ""
+    this.lang_caption                =  ""
+
+    this.version_lang_caption        =  ""
+
+    this.page_information_caption    =  ""
+    this.cookies_information_caption =  ""
+
+    //  Site - Firm fields    
+    
+
+    this.bg_images_path              =  "r_img"    // Link to background images
+    this.bg_images_ext               =  ".svg"
+    
+    // Uri for fnode
+    this.fnode_uri                   =  ''
+
+    //EMAIL - PHONE
+  
+    this.email_contact               = ''              
+    
+    this.email_num                   = ''              
+    this.email_alt                   = ''              
+    this.phone_num                   = ''              
+    
+  
+    //  Pendiente de revisar
+    this.phone_alt                   = ''              
+    this.alt_phone_icon              = ''            
+  
+    this.phone_adv                   = 'Contactar de 10am a 10pm'              
+    this.email_adv                   = 'Quitar _no_spam parar responder'         
+  
+    this.font_name                   = ''             // Only the name 
+    this.font_name_clean             = ''             // Only the name 
+
+    this.font_size                   = ''            
+    this.color                       = ''     // green - gray - orange - is a text not a color like Hex Format 
+    this.text                        = ''     // For image text generation
+    this.class_name                  = ''     // Clase para Svg
+      
+    this.original_color              = ''     // green - gray - orange - is a text not a color like Hex Format 
+    this.target_color                = ''     // green - gray - orange - is a text not a color like Hex Format 
+
+    // FILE STRUCTURE PROPERTIES
+  
+    this.cookies_msg_01              = ''              
+    this.cookies_msg_02              = ''              
+    this.cookies_msg_uri             = ''              
+    this.cookies_msg_uritext         = ''              
+  
+    this.cookies_text                = ''            
+    this.cookies_description         = ''            
+    this.cookies_page_title          = ''              
+  
+    this.header_msg                  = ''              
+    this.extended_msg                = ''              
+    
+    this.folder_dat                  =   ""
+    this.live_folder_name            =   "live_img"
+
+    // Default extension
+    this.img_extension          =   "jpg"
+
+    // Resolution for desktop
+    this.img_resDesktop          =   "0935x0700"
+
+
+    this.max_elems_limit        =   2
+
+    // Information Section
+
+    this.nfo_in              =  ""
+    this.nfo_out            =  ""
+    this.nfo_font_size          =  ""
+    this.nfo_font_resize        =  ""
+
+    // - Titles
+    this.nfo_text_dev_live        =  ""
+    this.nfo_text_html_php        =  ""
+    this.nfo_text_http_https      =  ""
+    this.nfo_text_anon_auth        =  ""
+    this.nfo_text_robot_user      =  ""
+
+    // - Descriptions
+    this.nfo_desc_dev_live        =  ""
+    this.nfo_desc_html_php        =  ""
+    this.nfo_desc_http_https      =  ""
+    this.nfo_desc_anon_auth        =  ""
+    this.nfo_desc_robot_user      =  ""
+
+    // - Page Action
+    this.nfo_desc_font_size        =  ""
+    this.nfo_desc_keyboard        =  ""
+    this.nfo_desc_scrolling        =  ""
+
+    // - Text
+    this.nfo_text_general_title      =  ""
+    this.nfo_text_general_information  =  ""
+
+
+    this.font_size            =  ""
+
+    // Menu
+    
+    this.mnu_hide            =  ''
+
+    // Drift Code
+    
+    this.drift_code               = ''          
+
+    // Social Networks
+
+    this.facebook            =  ""
+    this.twitter            =  ""
+
+    this.linkedin_id                  =  ""
+    this.linkedin_name                =  ""
+    this.linkedin_thm                 =  ""
+
+    this.google_api_key            =  ''
+    this.latitude              =  ''
+    this.longitude              =  ''
+
+    this.social_close            =  ''    // Social Close Msg
+
+    // Hiddens
+
+    this.facebook_popover          =  ""
+    this.linkedin_popover          =  ""
+    this.twitter_popover          =  ""
+    this.brightness_popover        =  ""
+    this.cookies_popover          =  ""
+
+    this.facebook_warning          =  ""
+    this.follow_word            =  ""
+    this.info_page_description        =  ""
+    this.close_word            =  ""
+    this.back_word              =  ""
+
+    this.first_swuare_button_popover    =  ""
+    this.first_square_button_title      =  ""
+    this.second_swuare_button_popover    =  ""
+    this.second_square_button_title    =  ""
+    this.cookies_warning_text        =  ""
+    this.marquee_text_text          =  ""
+    this.font_size_text          =  ""
+    this.font_size_title          =  ""
+    this.navigation_text          =  ""
+    this.navigation_title          =  ""
+    this.scroll_text            =  ""
+    this.scroll_title            =  ""
+
+    // Captcha
+  
+    this.captcha_check                = ''     
+    this.captcha_why                  = ''             
+    this.captcha_wrong                = ''           
+    this.captcha_redirect             = ''           
+    this.captcha_load                 = ''             
+    this.captcha_text                 = ''             
+
+    this.captcha_letters              = ''
+  
+    // Metas
+
+    this.meta_desc            =  ""
+    this.meta_author          =  ""
+    
+    
+    // Meta Og
+
+    this.meta_og_url          =  ""
+    this.meta_og_title          =  ""
+    this.meta_og_type          =  ""
+    this.meta_og_description      =  ""
+    this.meta_og_image          =  ""
+    
+    this.img_base_resolution       =   ""
+    this.img_folder           =   ""
+    this.img_url_folder         =   ""
+    this.img_url_word           =   ""
+    this.img_relative_url_folder     =   ""
+
+    this.sync_to             =   "ebrqx.com"
+    this.sync_from             =   "dbrqx.com"
+    
+    // Search Engine
+    
+    // Indica la posicion a partir de la cual se va a interpretar la ruta de busqueda
+    // aaaa/bbbbbb/cccc/dddd/resolution/year.....
+
+    // Depende del tipo de engine de busqueda pues puede ser que devuelve el path absoluto o relativo
+    // Y que admita symblinks o no
+    this.search_path_initial     = 0    
+
+    // Search Path - Ruta de busqueda
+    this.search_path                  = ''
+
+	// Search Type : full | simple
+	// indica si en los resultados de la busqueda vamos a devolver los filtros o no
+	this.search_type = ''
+	    
+  }
+
+
+  copy(os) {
+
+    this.server_caption              =  os.server_caption
+    this.load_caption                =  os.load_caption
+    this.mem_caption                 =  os.mem_caption
+    this.env_caption                 =  os.env_caption
+    this.heap_caption                =  os.heap_caption
+    this.max_caption                 =  os.max_caption
+    this.liveop_caption              =  os.liveop_caption
+    this.cache_caption               =  os.cache_caption
+    this.lang_caption                =  os.lang_caption
+
+    this.version_lang_caption        =  os.version_lang_caption
+
+    this.page_information_caption    =  os.page_information_caption
+    this.cookies_information_caption =  os.cookies_information_caption
+
+    //  Site - Firm fields    
+    
+
+    this.bg_images_path              =  os.bg_images_path
+    this.bg_images_ext               =  os.bg_images_ext
+   
+
+    //EMAIL - PHONE
+  
+    this.email_contact               =  os.email_contact              
+    
+    this.email_num                   =  os.email_num              
+    this.email_alt                   =  os.email_alt             
+    this.phone_num                   =  os.phone_num              
+    
+  
+    //  Pendiente de revisar
+    this.phone_alt                   =  os.phone_alt              
+    this.alt_phone_icon              =  os.alt_phone_icon            
+  
+    this.phone_adv                   =  os.phone_adv              
+    this.email_adv                   =  os.email_adv         
+  
+    this.font_name                   =  os.font_name 
+    this.font_name_clean             =  os.font_name_clean 
+
+    this.font_size                   =  os.font_size            
+    this.color                       =  os.color 
+    this.text                        =  os.text
+    this.class_name                  =  os.class_name
+      
+    this.original_color              =  os.original_color 
+    this.target_color                =  os.target_color 
+
+    // FILE STRUCTURE PROPERTIES
+  
+    this.cookies_msg_01              =  os.cookies_msg_01              
+    this.cookies_msg_02              =  os.cookies_msg_02              
+    this.cookies_msg_uri             =  os.cookies_msg_uri            
+    this.cookies_msg_uritext         =  os.cookies_msg_uritext           
+  
+    this.cookies_text                =  os.cookies_text     
+    this.cookies_description         =  os.cookies_description
+    this.cookies_page_title          =  os.cookies_page_title       
+  
+    this.header_msg                  =  os.header_msg        
+    this.extended_msg                =  os.extended_msg              
+
+    
+    this.folder_dat                  =   os.folder_dat
+    this.live_folder_name            =   os.live_folder_name
+
+    // Default extension
+    this.img_extension               =   os.img_extension
+
+    // Resolution for desktop
+    this.img_resDesktop              =   os.img_resDesktop
+
+
+    this.max_elems_limit             =   os.max_elems_limit
+
+    // Information Section
+
+    this.nfo_in                      =  os.nfo_in
+    this.nfo_out                     =  os.nfo_out
+    this.nfo_font_size               =  os.nfo_font_size
+    this.nfo_font_resize             =  os.nfo_font_resize
+
+    // - Titles
+    this.nfo_text_dev_live           =  os.nfo_text_dev_live
+    this.nfo_text_html_php           =  os.nfo_text_html_php
+    this.nfo_text_http_https         =  os.nfo_text_http_https
+    this.nfo_text_anon_auth          =  os.nfo_text_anon_auth
+    this.nfo_text_robot_user         =  os.nfo_text_robot_user
+
+    // - Descriptions
+    this.nfo_desc_dev_live            =  os.nfo_desc_dev_live
+    this.nfo_desc_html_php            =  os.nfo_desc_html_php
+    this.nfo_desc_http_https          =  os.nfo_desc_http_https
+    this.nfo_desc_anon_auth           =  os.nfo_desc_anon_auth
+    this.nfo_desc_robot_user          =  os.nfo_desc_robot_user
+
+    // - Page Action
+    this.nfo_desc_font_size           =  os.nfo_desc_font_size
+    this.nfo_desc_keyboard            =  os.nfo_desc_keyboard
+    this.nfo_desc_scrolling           =  os.nfo_desc_scrolling
+
+    // - Text
+    this.nfo_text_general_title       =  os.nfo_text_general_title
+    this.nfo_text_general_information =  os.nfo_text_general_information
+
+
+    this.font_size                    =  os.font_size
+
+    // Menu
+    
+    this.mnu_hide                     =  os.mnu_hide
+
+    // Drift Code
+    
+    this.drift_code                   =  os.drift_code          
+
+    // Social Networks
+
+    this.facebook                     =  os.facebook
+    this.twitter                      =  os.twitter
+
+    this.linkedin_id                  =  os.linkedin_id
+    this.linkedin_name                =  os.linkedin_name
+    this.linkedin_thm                 =  os.linkedin_thm
+
+    this.google_api_key               =  os.google_api_key
+    this.latitude                     =  os.latitude
+    this.longitude                    =  os.longitude
+
+    this.social_close                 =  os.social_close    // Social Close Msg
+
+    // Hiddens
+
+    this.facebook_popover             =  os.facebook_popover
+    this.linkedin_popover             =  os.linkedin_popover
+    this.twitter_popover              =  os.twitter_popover
+    this.brightness_popover           =  os.brightness_popover
+    this.cookies_popover              =  os.cookies_popover
+
+    this.facebook_warning             =  os.facebook_warning
+    this.follow_word                  =  os.follow_word
+    this.info_page_description        =  os.info_page_description
+    this.close_word                   =  os.close_word
+    this.back_word                    =  os.back_word
+
+    this.first_square_button_popover  =  os.first_square_button_popover
+    this.first_square_button_title    =  os.first_square_button_title
+    this.second_square_button_popover =  os.second_square_button_popover
+    this.second_square_button_title   =  os.second_square_button_title
+    this.cookies_warning_text         =  os.cookies_warning_text
+    this.marquee_text_text            =  os.marquee_text_text
+    this.font_size_text               =  os.font_size_text
+    this.font_size_title              =  os.font_size_title
+    this.navigation_text              =  os.navigation_text
+    this.navigation_title             =  os.navigation_title
+    this.scroll_text                  =  os.scroll_text
+    this.scroll_title                 =  os.scroll_title
+
+    // Captcha
+  
+    this.captcha_check                =   os.captcha_check     
+    this.captcha_why                  =   os.captcha_why             
+    this.captcha_wrong                =   os.captcha_wrong           
+    this.captcha_redirect             =   os.captcha_redirect           
+    this.captcha_load                 =   os.captcha_load             
+    this.captcha_text                 =   os.captcha_text             
+
+    this.captcha_letters              =   os.captcha_letters
+  
+    // Metas
+
+    this.meta_desc                    =  os.meta_desc
+    this.meta_author                  =  os.meta_author
+    
+    
+    // Meta Og
+
+    this.meta_og_url                  =  os.meta_og_url
+    this.meta_og_title                =  os.meta_og_title
+    this.meta_og_type                 =  os.meta_og_type
+    this.meta_og_description          =  os.meta_og_description
+    this.meta_og_image                =  os.meta_og_image
+    
+    this.img_base_resolution          =  os.img_base_resolution
+    this.img_folder                   =  os.img_folder
+    this.img_url_folder               =  os.img_url_folder
+    this.img_url_word                 =  os.img_url_word
+    this.img_relative_url_folder      =  os.img_relative_url_folder
+
+    this.sync_to                      =  os.sync_to
+    this.sync_from                    =  os.sync_from
+    
+    // Search Engine
+    
+    this.search_path_initial          =  os.search_path_initial    
+
+    // Search Path - Ruta de busqueda
+    this.search_path                  =  os.search_path
+
+	// Search Type : full | simple
+	// indica si en los resultados de la busqueda vamos a devolver los filtros o no
+	this.search_type                  =  os.search_type
+	    
+  }
+
+}
+
+exports.old_site = old_site

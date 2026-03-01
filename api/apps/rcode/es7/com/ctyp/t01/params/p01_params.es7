@@ -1,0 +1,101 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Agile Node JS Params Class  [V.0.0.5]  (2019-12-18)
+//Brqx Group - Agile Farmacia Zaragoza Methodology
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+//Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Methods:
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                  =  require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+
+const 	{ params_def } 		  =  require(	cons.JS_TYP7 + 'params/p02_params_def.es7')
+
+class params extends params_def {
+	constructor(	req 			= 	''								, 	// 01. Request
+					cache    		= 	false							, 	// 02. Cache
+					lang			=	false							, 	// 03. Multi lang
+					trans 			= 	false							, 	// 04. Tranlation enabled
+					sync 			= 	false							, 	// 05. Syncing
+					live 			= 	false							, 	// 06. Live site
+					lang_uri		=	false							, 	// 07. Lang Uri
+					is_robot		=	false							, 	// 08. Robot
+					live_opt		=	'' 								,	// 09. Live Options
+					nocode			=	false							,	// 10. No code
+					max_elems		=	false							,	// 11. Max Elems Limit
+					branch		    =	'arq'							,	// 12. Architecture Branch
+					prod		    =	'drupal'						,	// 13. Arquitecture Product
+					site		    =	'truck'							,	// 14. Site name
+					cached_site	    =	'truck'							,	// 15. Site cache
+					images_site	    =	'truck'							,	// 16. Images site folder name
+					base_path		=	'/brqx/'   			            ,   // 17. Info Path
+					page            =   ''                              ,   // 18. Base Path
+					default_lang    =   ''                              ,   // 19. Default Lang
+					allowed_langs   =   ''                              ,   // 20. Allowed langs
+					max_articles    =   ''                              ,   // 21. Max Articles
+					comm_positions  =   ''                              ,   // 22. Comm Positions
+					spec_positions  =   ''                              ,   // 23. Spec Positions
+					run_path        =   ''                              )   // 24. Run path
+	{
+		super()
+		this.n 					= 	"params::"
+
+		this.req				= 	req							// 01
+		
+		this.cache		 		= 	cache						// 03
+		this.lang 				= 	lang						// 04
+		this.trans 				= 	trans						// 05
+		this.sync 				= 	sync						// 06
+		this.live 				= 	live						// 07
+		this.lang_uri 			= 	lang_uri					// 08
+		this.is_robot 			= 	is_robot					// 09
+
+		this.nocode 			= 	nocode						// 11
+		this.max_elems 			= 	max_elems					// 12
+
+		this.default_lang		= 	default_lang				// 15
+		this.allowed_langs		= 	allowed_langs				// 15
+
+		this.max_articles       = 	max_articles				// 16
+
+		if (this.live)
+			this.env			=	'liv'
+
+		if (this.is_robot)
+			this.robot			=	'robot'
+
+		if (this.lang)
+			this.slan			=	'l'
+
+		// String site parameters
+		this.pg 			    =  	page					// 13
+
+		this.branch 		    =  	branch					// 13
+		this.prod 			    =  	prod					// 13
+
+
+		this.comm_positions     =  	comm_positions					// 13
+		this.spec_positions     =  	spec_positions					// 13
+
+        // this.p('params_spec an22 ' + this.spec_positions)
+
+		this.site 			    =  	site					// 13
+
+		this.cached_site	    =  	cached_site					// 13
+		this.images_site	    =  	images_site					// 13
+
+		this.base_path 			= 	base_path					// 15
+		this.run_path 			= 	run_path					// 15
+
+
+        // Ok
+		// this.p('Loaded Es7 ' + this.site + ' ' + this.base_path)
+
+		this.live_opt			=	live_opt
+	}
+}
+
+exports.params = params

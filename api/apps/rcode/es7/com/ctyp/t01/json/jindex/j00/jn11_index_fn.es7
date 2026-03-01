@@ -1,0 +1,117 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Fast Node Parragraph Common Class  [V.0.0.2]  (2019-05-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-process_phrase-          : Process phrase 
+// - d-process_word-            : Process word
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+
+const   { cache }             =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'     ),
+        empty                 =   require(  cons.NODE_MOD   + 'is_empty'              );
+
+class jn11_index_fn extends cache {
+           
+  constructor ()   
+  {   
+    super()
+    this.n                   =  'jn11_index_fn::'      
+  }
+
+  //---------------------------------------------------------------------------------------------  
+
+  process_word(word)
+  {
+    this.word = word
+
+    // this.p('jn11_Word ' + word + ' L ' + word.length)
+
+    // Habra un minimo de longitud para ordenar palabras
+    // Vamos a poner una w delante de cada palabra para evitar palbras claves como some en Node JS
+    var aword = 'w_' + this.word
+
+    // Ojo con el error
+    // jn50_idx_json::review_childrens_search_rcsv - jn10_Word some => function some() { [native code] }1
+    
+    
+    // Este es el minimo que se leera como argumento de Arroba Dat
+    if (word.length >= 3)
+    {
+       // this.p('jn11_Word ' + word + ' L ' + word.length)
+
+        if(aword in this.word_arr )    
+        {    
+          // this.p('jn11_In_Word ' + word + ' L ' + word.length)
+    	  this.word_arr[aword] += 1
+    	}
+    	else 
+    	{
+          // this.p('jn11_New_Word ' + word + ' L ' + word.length)
+    	  this.word_arr[aword] =  0
+    	  
+    	}
+    }
+
+  }
+
+  process_phrase(phrase)
+  {
+    this.phrase = phrase
+
+    var uri_arr_pre       =   Array()
+    var uri_arr_int       =   Array()
+
+
+    uri_arr_pre           =   this.phrase.split(' ')
+  
+    var str_aux           =   ''
+    var word              =   ''
+  
+    // Separamos por espacios
+    // Debemos evitar expresiones regulares
+    // PRMER FOR - CLEAN PHRASES AND REVIE WORDS
+
+    for (var pos in uri_arr_pre)
+    {
+       // Palabras
+       str_aux = uri_arr_pre[pos].toLowerCase()
+       // Ahrase $:L[https://drupalarchitecture.com/en/article/a000@Example en paragraph with regular expresions]
+       // jn50_idx_json::review_childrens_search_rcsv - jn11_CLEAN   L https   drupalarchitecture.com en article a000 Example
+
+
+	   this.replace(str_aux , "/\r|\n/|:|\\$|\\[|\\]|@|\\/|-|=|_|\\(|\\)|\\.|\'|\#" , " "	)
+       
+       //this.p('jn11_CLEAN '+ this.result )
+       uri_arr_int         =   this.result.split(' ')       
+
+       for (var pos2 in uri_arr_int)
+       {
+          // Palabras
+          word = uri_arr_int[pos2].trim()
+
+          // CHECK vacio y No Numerico
+          // Aqui igual hay que ver otros idiomas
+          if (!empty(word) && isNaN(word) )
+          {
+             // this.p('jn11_Processing ' + word)
+             this.process_word(word)
+    	
+    	  }
+       }
+    }
+
+  }
+  //---------------------------------------------------------------------------------------------  
+    
+}
+
+exports.jn11_index_fn = jn11_index_fn

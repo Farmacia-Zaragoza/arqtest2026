@@ -1,0 +1,100 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Agile Node Js - Struc Attribs Class  [V.0.0.2]  (2020-01-30)
+//Brqx Group - Agile Farmacia Zaragoza Methodology
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
+//-------------------------------------------------------------------------------------
+//Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+// Cada tipo de archivo debe heredar struc para ser capaz de manejar ficheros de propiedades
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Methods:
+//-------------------------------------------------------------------------------------
+//- d-attribs-        : Set common attributes for Json Object
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Struc_attrib > scomm_defs
+// @Struc > @Array > @String > @Cache > @log
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+
+const   { struc_defs }    =   require(  cons.JS_TYP7  + 'struc/s06_struc_defs.es7'    )
+
+
+class struc_attrib extends struc_defs {
+  constructor()  
+  {
+    super()
+    this.n                        = "struc_attrib::"
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  // Generate array with contents information
+  // Basado en this.contents
+  attribs(idx , pos)
+  {
+    // Managed : C - T - B - P - G - H - I - S - O - R
+
+    this.j.cat               =   this.getkeymain( idx.jindex , pos )
+    
+    this.j.child             =   this.getkeymain( idx.cindex , pos )
+    this.j.type              =   this.getkeymain( idx.tindex , pos )
+    this.j.breadcrumb        =   this.getkeymain( idx.bindex , pos )
+    this.j.photo             =   this.getkeymain( idx.pindex , pos )
+    this.j.rtype             =   this.getkeymain( idx.rindex , pos )
+
+    this.j.tags              =   this.getkeymain( idx.gindex , pos )
+
+    let prehover             =   this.getkeylang( idx.hindex , pos )
+    this.quotescape(prehover )
+    this.j.hover             =  this.result
+
+
+    this.j.id                =   this.getkeymain( idx.sindex , pos )      // S - Subject Id
+
+    this.j.sound             =   this.j.id
+
+    let prevalue             =   this.getkeylang( idx.iindex , pos )    // I - Information - Value
+    this.quotescape(prevalue )
+    this.j.value   =  this.result
+
+
+    this.j.otype             =   this.getkeymain( idx.oindex , pos )    
+
+    this.j.link              =   this.getkeylang( idx.lindex , pos )    
+
+    // Both for Objects and arrays
+
+    this.k.cat               =   this.j.cat
+    this.k.child             =   this.j.child
+    this.k.type              =   this.j.type
+    this.k.breadcrumb        =   this.j.breadcrumb
+    this.k.photo             =   this.j.photo
+    this.k.rtype             =   this.j.rtype
+
+    this.k.tags              =   this.j.tags
+
+    this.k.hover             =   this.j.hover
+
+    this.k.id                =   this.j.id
+
+    this.k.sound             =   this.j.id
+    
+    this.k.value             =   this.j.value
+    this.k.otype             =   this.j.otype
+
+    this.k.link              =   this.j.link
+
+
+  }
+
+}
+
+exports.struc_attrib = struc_attrib

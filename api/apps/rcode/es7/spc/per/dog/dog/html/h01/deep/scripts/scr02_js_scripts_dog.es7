@@ -1,0 +1,252 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS - dog Scripts Tag Class  [V.0.0.2]  (2019-03-31)
+// Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
+//-------------------------------------------------------------------------------------
+// Truck Structure Scripts - Version 01 - Js as scripts
+//-------------------------------------------------------------------------------------
+//[S_01]<script src="https://code.jquery.com/jquery-3.3.11.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+//    crossorigin="anonymous"></script>
+//[S_01]<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+
+//[S_01] <script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script>
+//[S_02] <script type="text/javascript" src="polyfills.f80b7e6581d9215d226e.js"></script>
+//[S_03] <script type="text/javascript" src="scripts.24cc8b20c3f290309576.js"></script>
+//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
+
+// ------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Class:c-scr01_js_truck-
+// ------------------------------------------------------------------------------------
+// Methods:
+// ------------------------------------------------------------------------------------
+// - build_data  	 		: Build html final code for object
+// - d-create_script_0N-
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const { getset } = require(cons.JS_BASE + 'com/objects/html/getset.es6'),
+	{ html_style } = require(cons.JS_BASE + 'com/objects/html/html_style.es6');
+
+
+class scr02_js_scripts_dog extends getset {
+
+	constructor(thm) {
+
+		super()
+
+		this.n = 'scr02_js_scripts_dog::'
+		this.m = 'constructor'
+
+		this.thm = thm
+
+		this.script_01 = new html_style('script')
+
+		this.script_02 = new html_style('script')
+
+		this.script_03 = new html_style('script')
+
+		this.build_data()
+
+	}
+
+
+	//[S_01] <script src="http://dog.vbrqx.com/dev/cassets/js/jquery-3.3.11.min.js"></script>
+	//[S_01]<script src="https://code.jquery.com/jquery-3.3.11.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	//    crossorigin="anonymous"></script>
+
+	create_jquery() {
+		let js_name = 'jquery.min.js'
+
+		// this.script_01.defer = 'defer'
+
+		this.script_01.integrity	= 	"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		this.script_01.crossorigin	=	'anonymous'
+		
+		this.script_01.src =
+			"https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+
+		this.script_01.pcreate()
+
+		this.code += this.script_01.code
+	}
+
+	create_bootstrap() {
+		let js_name = 'bootstrap.min.js'
+
+		// this.script_01.defer = 'defer'
+
+		this.script_01.integrity	= 	"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		this.script_01.crossorigin	=	'anonymous'
+		
+		this.script_01.src =
+			"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/" + js_name
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+
+		this.script_01.pcreate()
+
+		this.code += this.script_01.code
+	}
+
+	create_popper() {
+		let js_name = 'popper.min.js'
+
+		// this.script_01.defer = 'defer'
+
+		this.script_01.integrity	= 	"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		this.script_01.crossorigin	=	'anonymous'
+		
+		this.script_01.src =
+			"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/" + js_name
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+
+		this.script_01.pcreate()
+
+		this.code += this.script_01.code
+	}
+
+	//[S_01]<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+	create_slick() {
+		let js_name = 'slick.min.js'
+
+		// this.script_01.defer = 'defer'
+
+
+		this.script_01.integrity	= 	""
+		this.script_01.src =
+			"https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/slick/' + js_name
+
+		this.script_01.pcreate()
+
+		this.code += this.script_01.code
+	}
+
+
+	//[S_01] <script type="text/javascript" src="runtime.js"></script>
+	create_runtime() {
+		this.script_02.defer = ''
+
+		// this.script_01.async				=  	'async'	
+
+		let js_name = 'runtime.js'
+
+		let path_pmt = 'dev/'
+		// let	path_pmt							=	'ang/vx/'
+
+		this.script_02.src =
+			this.thm.s.cs.http_domainbar + path_pmt + js_name
+
+
+		this.script_02.pcreate()
+
+		this.code += this.script_02.code
+	}
+
+
+	//[S_02] <script type="text/javascript" src="polyfills.js"></script>
+	create_polyfills() {
+		this.script_02.async = ''
+
+		this.script_02.defer = ''
+
+		let js_name = 'polyfills.js'
+
+		let path_pmt = 'dev/'
+		// let	path_pmt							=	'ang/vx/'
+
+		// DomainBAr http://dog.vbrqx.com/ang/vx/favicon.ico
+
+
+		this.script_02.src =
+			this.thm.s.cs.http_domainbar + path_pmt + js_name
+
+		this.script_02.pcreate()
+
+		this.code += this.script_02.code
+	}
+
+
+	//[S_02] <script type="text/javascript" src="polyfills.js"></script>
+	create_scripts() {
+		this.script_02.async = ''
+
+		this.script_02.defer = ''
+
+		let js_name = 'scripts.js'
+
+		let path_pmt = 'dev/'
+		// let	path_pmt							=	'ang/vx/'
+
+		// DomainBAr http://dog.vbrqx.com/ang/vx/favicon.ico
+
+
+		this.script_02.src =
+			this.thm.s.cs.http_domainbar + path_pmt + js_name
+
+		this.script_02.pcreate()
+
+		this.code += this.script_02.code
+	}
+
+
+	//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
+	create_main() {
+		this.script_02.async = ''
+
+		this.script_02.defer = ''
+
+		let js_name = 'main.js'
+
+		let path_pmt = 'dev/static/js/'
+		// let	path_pmt							=	'ang/vx/'
+
+
+		this.script_02.src =
+			this.thm.s.cs.http_domainbar + path_pmt + js_name
+
+		this.script_02.pcreate()
+
+		this.code += this.script_02.code
+	}
+
+	//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
+	create_chunk() {
+		this.script_02.async = ''
+
+		this.script_02.defer = ''
+
+		let js_name = 'chunk.js'
+
+		let path_pmt = 'dev/static/js/'
+		// let	path_pmt							=	'ang/vx/'
+
+
+		this.script_02.src =
+			this.thm.s.cs.http_domainbar + path_pmt + js_name
+
+		this.script_02.pcreate()
+
+		this.code += this.script_02.code
+	}
+
+
+	build_data() {
+		this.create_jquery()
+		this.create_popper()
+		this.create_bootstrap()
+
+		this.create_chunk()
+
+		this.create_main()
+
+
+		// Ok [18-06-17]
+		// this.p('js_scripts_Code : >' + this.code ) 											
+
+	}
+
+}
+
+exports.scr02_js_scripts_dog = scr02_js_scripts_dog

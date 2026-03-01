@@ -1,0 +1,295 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// [DOCHANGED_ES7_SPACES]
+// Agile Node JS String Class  [V.0.0.5]  (2019-11-21)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-replace-      : Replace all occurences of characer in string
+// - d-inreplace-    : Replace all occurences of characer in string result
+// - d-rslash-       : Replace slash by dash
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Strings > Strings_def > 
+// @String > 
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons                     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+
+const   { strings_defs }       =   require(  cons.JS_TYP7  + 'string/s02_defs.es7'      ),
+       accents            =   require(  cons.NODE_MOD + 'remove-accents'                );
+
+
+class strings extends strings_defs
+{
+  constructor() 
+  {
+    super()
+    this.n                   =  "strings::"
+
+  }
+  //---------------------------------------------------------------------------------------------
+
+  // Replace interno - Continuas operaciones
+  //---------------------------------------------------------------------------------------------
+  inreplace(source, target)
+  {
+    this.result = this.result.replace(new RegExp(source, "g"), target)
+  }
+
+
+  // Replace with the same parameters
+  //---------------------------------------------------------------------------------------------
+  autoreplace(string_passed)
+  {
+    this.result = string_passed.replace(new RegExp(this.replace_source, "g"), this.replace_target)
+  }
+
+  //---------------------------------------------------------------------------------------------
+  replace(string_pased, source, target)
+  {
+    this.replace_source = source
+    this.replace_target = target
+    
+    if (source === '.')
+    {
+      // console.log('es un punto')
+      this.result = string_pased.replace(new RegExp("\\.", "g"), target)
+    }
+    else
+
+      this.result = string_pased.replace(new RegExp(source, "g"), target)
+  }
+
+  // Generate strings type 000_000_000
+  //---------------------------------------------------------------------------------------------
+  rdot(string_pased = '')
+  {
+      this.replace( string_pased  , this.dot, this.dash)
+  }
+
+  //---------------------------------------------------------------------------------------------
+  rspace(string_pased = '')
+  {
+      this.replace( string_pased  , this.space, this.dash)
+  }
+
+  rhyphen(string_pased = '')
+  {
+      this.replace( string_pased  , this.hyphen, this.dash)
+  }
+
+  // Genera una cadena de espacios sin puntos y sin barras
+  // Ideal para categorias
+  ruri(string_pased = '')
+  {
+      this.replace( string_pased  , this.slash, this.space)
+
+      this.replace( this.result  , this.dot, this.space)
+
+      this.replace( this.result  , this.dash, this.space)
+
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Quito todos los espacios y luego lo convierte a dash
+  rmultispace(string_pased = '')
+  {
+     
+      var string_managed = string_pased.trim()
+
+      // Reemplazamos espacios por guiones si es una uri
+      this.result = string_managed.replace(/%20/g, this.hyphen );
+
+      // Reemplazamos espacios por guiones si son espacios
+      this.result = this.result.replace(/ /g, this.hyphen );
+
+      // Minimizamos los hyphens
+      this.result = this.result.replace(/-+/g, this.hyphen)
+
+      // this.p('s01_sin_20 B s : ' + this.result)
+
+      // Pending to check : decodeURI(str)
+
+      // Cambia guiones por espacios
+      this.rhyphen(this.result)
+
+      // this.p('s01_sin_20 C s : ' + this.result)
+      
+  }
+
+  // Quito todos los espacios y luego lo convierte a dash
+  // Y normaliza acentos
+  rmultispace_debug(string_pased = '')
+  {
+
+      // if (!isNaN(string_pased))
+      //   this.p('s01_aqui_no entra ' + string_pased )
+      
+
+      var string_managed = string_pased.trim()
+
+      // Reemplazamos espacios por guiones si es una uri
+      this.result = string_managed.replace(/%20/g, this.hyphen );
+
+      // Reemplazamos espacios por guiones si son espacios
+      this.result = this.result.replace(/ /g, this.hyphen );
+
+      // this.p('s01_sin_20 A s : ' + this.result)
+
+      // Minimizamos los hyphens
+      this.result = this.result.replace(/-+/g, this.hyphen)
+
+      // this.p('s01_sin_20 B s : ' + this.result)
+
+      // Pending to check : decodeURI(str)
+
+      // Cambia guiones por espacios
+      this.rhyphen(this.result)
+      // Esto se tendria que hacer solo con los idiomas raros
+
+      if ( this.b.is_strange_lang )
+        this.result     = decodeURI(this.result)
+      else
+      {
+        this.result     = accents.remove (this.result).toLowerCase()
+      
+      }
+      // this.p('s01_sin_20 C s : ' + decodeURI(this.result) )
+      
+  }
+
+
+  //---------------------------------------------------------------------------------------------
+  quotescape(string_pased = '')
+  {
+      // Reemplazamos las barras si las hubiere. Debe ser el primer reemplazo
+      string_pased = string_pased.replace(/\\/g, '\\\\')
+
+      // Replace dobles comillas
+      this.replace( string_pased  , this.doublequote, this.escaped_doublequote)
+
+
+
+      this.replace (this.result   , '<' , '\<')
+
+      this.replace (this.result   , '>' , '\>')
+            
+      // this.result.replace(/\\"([^]+)\\"/g , 
+
+      // this.result = this.result.replace(/\\\\/g, '\\')
+
+      //// this.result = this.fixTriSlash (this.result)
+      
+      // this.p('s01_str-fixtri ' + this.result)
+      // Es necesario para quitar las barras triples
+      // this.replace( this.result  , this.triplebar, this.zzz)
+
+      // Es necesario para quitar las barras triples
+      // this.replace( this.result  , this.zzz, this.simplebar)
+
+      // Replace Llaves- No es necesario en los jsons
+
+      //this.replace( this.result  , this.openkeys  , this.escaped_openkeys)
+      //this.replace( this.result  , this.closekeys , this.escaped_closekeys)
+
+  }
+
+  //---------------------------------------------------------------------------------------------
+  // Get normal string
+  fixTriSlash(str) {
+    const expression = /\\"([^]+)\\"/g;
+    let groups;
+
+    while ((groups = expression.exec(str)))
+      str = str.replace(groups[0], `"${groups[1]}"`);
+
+    return str;
+  }
+
+
+  // Generate strings type 000_000_000
+  //---------------------------------------------------------------------------------------------
+  rslash(string_pased = '')
+  {
+      this.replace( string_pased  , this.slash, this.dash)
+  }
+
+  // Generate strings type 000v000v000
+  //---------------------------------------------------------------------------------------------
+  rvlash(string_pased = '')
+  {
+      // Le vamos a quitar el primer caracter para generar los indices	
+      this.replace( string_pased  , '/l' , 'v')
+      this.result = this.result.substr(1)
+  }
+
+  // Generate strings type 000v000v000
+  //---------------------------------------------------------------------------------------------
+  rvlash_inner(string_pased = '')
+  {
+      // Le vamos a quitar el primer caracter para generar los indices	
+      this.replace( string_pased  , this.slash , 'v')
+  }
+
+
+  // From  000v000v000  To  000/l000/l000
+  //---------------------------------------------------------------------------------------------
+  rvtoslash(string_pased = '')
+  {
+      // Le vamos a quitar el primer caracter para generar los indices	
+      this.replace( string_pased  , 'v' , '/l')
+  }
+
+
+  // Recibe una cadena de underscores la pasa a minusculas y le quita los espacios finales
+  //---------------------------------------------------------------------------------------------
+  cleanstr(string_pased)
+  {
+    if ((typeof string_pased !== 'undefined' ) && 
+        (string_pased != "") )
+    {
+      let space = " "
+      let dash = "_"
+
+      this.replace( string_pased , dash, space)
+    
+      this.replace( this.result.trim()         , space, dash)
+      
+    }
+    // Lo devolvemos para que pueda ser usado como funcion o procedimiento
+    // return this.result
+
+  }
+
+
+  // Recibe una cadena de underscores la pasa a minusculas y le quita los espacios finales
+  //---------------------------------------------------------------------------------------------
+  cleanstrlow(string_pased)
+  {
+    if ((typeof string_pased !== 'undefined' ) && 
+        (string_pased != "") )
+    {
+      let space = " "
+      let dash = "_"
+
+      this.replace( string_pased.toLowerCase() , dash, space)
+    
+      this.replace( this.result.trim()         , space, dash)
+      
+    }
+    // Lo devolvemos para que pueda ser usado como funcion o procedimiento
+    // return this.result
+
+  }
+
+  
+}
+
+exports.strings = strings

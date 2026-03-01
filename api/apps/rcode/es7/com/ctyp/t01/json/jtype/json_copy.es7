@@ -1,0 +1,71 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated_Langs:NodeJs+,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Json Style Class  [V.0.0.7]  (2020-01-30)
+//------------------------------------------------------------------------------------
+//- d-copyvalues             : Copy json values
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const   { json_def }     =   require(  cons.JS_TYP7 + 'json/jtype/json_def.es7'      );
+
+
+class json_copy  extends json_def {
+  constructor() 
+  {
+    super()
+    this.n         = "json_copy::"
+  }
+  copyvalues(k)
+  {
+    this.cat              =  k.cat
+
+    this.index            =  k.index
+    this.id               =  k.id
+    this.type             =  k.type
+    this.item             =  k.item
+    this.photo            =  k.photo
+    this.hover            =  k.hover
+
+    this.breadcrumb       =  k.breadcrumb
+    this.tags             =  k.tags
+
+    this.link             =  k.link
+
+    // Relative Link Type
+    this.rtype            =  k.rtype
+    
+    this.child            =  k.child
+    this.flag             =  k.flag
+    this.sound            =  k.sound
+    this.value            =  k.value
+
+    this.ratio            =  k.ratio
+    this.cart             =  k.cart
+
+    this.html_type        =  k.html_type
+
+    this.level            =  k.level
+
+    this.categories       =  k.categories
+
+    // Terms y MainTems son arrays ya definidos
+    
+    this.country          =  k.country
+    this.city             =  k.city
+    this.location         =  k.location
+
+    this.place            =  k.place
+    this.year             =  k.year
+    this.date             =  k.date
+    this.resolution       =  k.resolution
+
+    this.chain_terms      =  k.chain_terms
+    this.chain_mainterms  =  k.chain_mainterms
+
+  }
+
+}
+
+exports.json_copy = json_copy

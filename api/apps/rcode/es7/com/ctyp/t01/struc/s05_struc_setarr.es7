@@ -1,0 +1,101 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Node Js - Site Definition Common Class  [V.0.0.1]  (2019-06-04)
+//Brqx Group - Agile Farmacia Zaragoza Methodology
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+//Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Methods:
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+
+const   { struc_defs }    =   require(  cons.JS_TYP7  + 'struc/s06_struc_defs.es7'    )
+
+class struc_setarr extends struc_defs {
+  constructor() {
+    super()
+    this.n                          =   "struc_setarr::"
+	    
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Crea un hast lang - code
+  // Example : en - jmain - value
+  set_lang_arr_pos(index1 , index2 , arr_pos , value)
+  {
+    if ( !Array.isArray(this.arr) ) 
+    {	
+      this.arr = Array()
+    }
+
+    if ( !Array.isArray(this.arr[index1]) ) 
+    {
+        // this.p('Setting Array 01 ' + index1)
+        this.arr[index1]              = Array()                    
+		if (index2 != "")
+          this.arr[index1][index2]      = Array()                          
+    }
+    else
+    {
+      // Notice: Undefined index: i000v001v004v000v001 
+        if ( !Array.isArray(this.arr[index1][index2]) )     
+        {
+          this.arr[index1][index2]      = Array()                                
+        }
+    }
+    
+    // en - j000 - 0 - value
+	this.arr[index1][index2][arr_pos]		= 	value
+	
+	this.set_tsb_arr_pos(index2 , arr_pos , value)    
+  }
+
+  // To save Array B version
+  // Try to avoid repeated content
+  //---------------------------------------------------------------------------------------------  
+  set_tsb_arr_pos(index1 , arr_pos , value)
+  {
+    if ( !Array.isArray(this.tsb) ) 
+    {	
+      this.tsb = Array()
+    }
+
+    if ( !Array.isArray(this.tsb[index1]) ) 
+    {
+        // this.p('Setting Array 01 ' + index1)
+        this.tsb[index1]              = Array()                    
+    }
+    
+    // this.p('s04_Stru_Adding ' + value )
+    // en - j000 - 0 - value
+	this.tsb[index1][arr_pos]		= 	value    
+  }
+
+
+
+  // pendiente
+  //---------------------------------------------------------------------------------------------  
+  set_lang_content_arr_pos(index1)
+  {
+    if ( !Array.isArray(this.content_arr) ) 
+    {	
+      this.content_arr = Array()
+    }
+
+    if ( !Array.isArray(this.content_arr[index1]) ) 
+    {
+        // this.p('Setting Array 01 ' + index1)
+        this.content_arr[index1]              = Array()                    
+    }
+  }
+
+
+
+}
+
+exports.struc_setarr = struc_setarr

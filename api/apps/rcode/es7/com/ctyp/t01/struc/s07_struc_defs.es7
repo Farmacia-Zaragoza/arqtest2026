@@ -1,0 +1,47 @@
+// [DOCHANGED_ES6_SPACES]
+// Updated Langs: +NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Node Js - Site Definition Common Class  [V.0.0.2]  (2019-06-26)
+//Brqx Group - Agile Farmacia Zaragoza Methodology
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+//Fast node load - Manage page cache
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Struc_defs
+// @Struc > @Array > @String > @Cache > @log
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+
+const   { arroba_setarr }     =   require(  cons.JS_TYP7  + 'array/a01_arroba_setarr.es7'        );
+
+class struc_defs extends arroba_setarr {
+  constructor() {
+    super()
+    this.n                          =   "struc_defs::"
+
+    // Objects	
+    this.b                          =  ''
+
+    // Array to save files to manage
+    this.content_arr                =   Array()
+
+	// Array to save file
+    this.contents                   =   Array()
+    
+    // to save array. Only for structures
+    this.tsa                        =   Array()
+
+    // to save array. Only for structures
+    this.tsb                        =   Array()
+	    
+  }
+  
+}
+
+exports.struc_defs = struc_defs

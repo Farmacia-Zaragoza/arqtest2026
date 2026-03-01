@@ -1,0 +1,51 @@
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+// Agile Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2019 )
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// ---------------------------------------------------------------------------
+// Brqx 2019 - 19/05/28				Depth:[0N]
+// Version : 0.0.1                  Type :[FUNCTION]
+// ---------------------------------------------------------------------------
+// - Notas
+// ---------------------------------------------------------------------------
+//  + Functions
+// ---------------------------------------------------------------------------
+// -  d-Rand-          : Generate Random number
+// -  d-shuffle        : Shuffle an array making random
+// ---------------------------------------------------------------------------
+//--  
+// ---------------------------------------------------------------------------
+// - Requiere 
+// ---------------------------------------------------------------------------
+//-- Math
+// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
+
+
+function Rand(min, max) 
+{
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+function shuffle(array) {
+    var i = array.length -1,
+        j = 0,
+        temp;
+
+    for (var pos in array){
+
+        j = Math.floor(Math.random() * (i+1));
+
+        // swap randomly chosen element with current element
+        temp = array[pos];
+        array[pos] = array[j];
+        array[j] = temp;
+    }
+
+    return array;
+}
+
+
+module.exports.Rand           = Rand
+module.exports.shuffle        = shuffle

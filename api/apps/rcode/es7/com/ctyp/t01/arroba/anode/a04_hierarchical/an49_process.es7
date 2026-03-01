@@ -1,0 +1,205 @@
+// [DOCHANGED_ES7_SPACES]
+// Updated_Langs:+NodeJs,Ruby,Php
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node Js - Jnode Proces Class  [V.0.0.2]  (2019-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-ES6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Taxonomy Class
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-current_hierarchical_process-       : Hierarchical Process for english langs 
+//- d-current_hierarchical_process_es-    : Hierarchical Process for non english langs 
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// AnoProcess > AnoTermProcess >
+// @Anode >  ...
+//-------------------------------------------------------------------------------------
+// Execution Line : 
+//-------------------------------------------------------------------------------------
+// CurrProces > CurrLoad > RECURSIVE
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var    cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+
+const  { anode_run_search }  =   require(  cons.JS_TYP7  + 'arroba/anode/a05_search/an52_run.es7'   ),
+       { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
+
+class anode_hierarchical_process extends anode_run_search {
+  constructor()  
+  {
+
+    super()
+    this.n                        = "anode_hierarchical_process::"
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  // Will process all pages
+  // MAIN/position/page --> @FORMAT
+  current_hierarchical_process(lang                     ,
+                               array_index_string       ,
+                               file_structure_path      ,
+                               current_subpath          ,
+                               breadcrumb               )
+  {
+  
+    this.m          = 'current_process'
+
+    var idx = new idx_pointers(array_index_string)    
+    
+    //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
+    // this.p('j49_proc_Index : ' + array_index_string)
+  
+    // Los bucles tienen que ser con el idioma ingles
+    
+    // this.p('an49_jindex ' + idx.jindex)
+    // this.p('an49_main_lang ' + this.s.ms.main_lang + ' '+ lang + '    ' + breadcrumb)
+ 
+    // Procesamos el idioma ingles
+    // Pero si el idioma es el castellano, igual tambien interesa procesarlo
+    
+    let cats = this.getarr(this.s.ms.main_lang, idx.jindex)  
+
+  
+  // this.p('j06_Before-pos-bucle1 ' + lang + '  ' + cats.length )
+    for (var pos in cats)
+    {
+      if (!this.b.found_breadcrumb == true)
+      {
+    // Para cada uno hay que gestionar hijos
+
+
+        this.arroba_attribs(idx, pos)
+    
+         // Vamos a ir avanzando por la estructura y esta sera la base
+         // Item es la el indice
+         
+        var new_breadcrumb = breadcrumb + '/' + this.item
+
+        // this.p('an49 p_cat ' + pos + ' Breadcrumb ' + new_breadcrumb + ' FOUND ' + this.b.found_breadcrumb )
+
+        // if ( lang == "es" )
+        //    this.p ('Processing Lang ES ' + this.s.item )
+
+
+        if ( (this.value  != "" ) ||(this.photo != "")  )this.term_process()
+
+      // Estos ya estan metidos en el array asi que hay que iterar los hijos
+      //this.p('LEVEL : ' + index + ' pos ' + pos + ' value: '  + cats[pos] + ' childrens: ' + chld[pos]  )
+
+      // this.p('Pos ' + pos )
+      // Si es no termina y se cierra la recursividad
+        if ( this.child == "yes" )
+        {
+
+          let new_index_string         = array_index_string  + 'v'  +  this.level
+
+          // File Structure
+          let new_file_structure_path  = file_structure_path + '/a_' + this.item
+
+          // kb/architecture
+          let new_subpath              = current_subpath     + '/'   + this.item
+    
+          let new_title                = 'Parent Title ' 
+        // this.p('an09_procc_New subpath: ' + new_subpath)
+           // Aqui igual necesitamos el titulo del padre
+           //
+        
+          this.current_hierarchical_load(  lang                        ,
+                                           new_index_string            ,
+                                           new_file_structure_path     , 
+                                           new_subpath                 ,
+                                           new_breadcrumb              ,
+                                           new_title                   )
+     
+              
+        } // End If
+
+      }   
+    } // End For 
+  }
+
+  //---------------------------------------------------------------------------------------------  
+  current_hierarchical_process_es(lang                     ,
+                                 array_index_string       ,
+                                 file_structure_path      ,
+                                 current_subpath          ,
+                                 breadcrumb               )
+  {
+
+    this.m          = 'current_process'
+
+    var idx = new idx_pointers(array_index_string)    
+    
+    let cats = this.getarr(this.s.ms.main_lang, idx.jindex)  
+	
+      // PROCEAMIENTO OTRO IDIOMA
+
+    let cats_es = this.getarr(lang, idx.jindex)  
+     
+  
+    for (var pos in cats_es)
+    {
+      if (!this.b.found_breadcrumb == true)
+      {
+         this.item_es       = cats_es[pos]
+
+         this.arroba_attribs(idx, pos)
+
+          // this.breadcrumb = this.getkeylang(idx.bindex, pos)
+
+          // this.hover      = this.getkeylang(idx.hindex, pos)
+    
+         // Vamos a ir avanzando por la estructura y esta sera la base
+          var new_breadcrumb = breadcrumb + '/' + this.item_es
+        
+          // this.p('an49 BREADCRUMB_ES ' + new_breadcrumb)
+
+        // this.p('an49 cat ' + index + ' Breadcrumb ' + new_breadcrumb + ' FOUND ' + this.b.found_breadcrumb )
+
+        // if ( lang == "es" )
+        //    this.p ('Processing Lang ES ' + this.s.item )
+
+      // Estos ya estan metidos en el array asi que hay que iterar los hijos
+      //this.p('LEVEL : ' + index + ' pos ' + pos + ' value: '  + cats[pos] + ' childrens: ' + chld[pos]  )
+
+      // this.p('Pos ' + pos )
+      // Si es no termina y se cierra la recursividad
+        if ( this.child == "yes" )
+        {
+          // devolvera la cadena acorde an nivel pero no el nivel actual
+
+          let new_index_string         = array_index_string  + 'v'  +  this.level
+
+          // File Structure
+          let new_file_structure_path  = file_structure_path + '/a_' + this.item
+
+          // kb/architecture
+          let new_subpath              = current_subpath     + '/'   + this.item
+    
+          let new_title                = 'Parent Title ' 
+        // this.p('an09_procc_New subpath: ' + new_subpath)
+           // Aqui igual necesitamos el titulo del padre
+           //
+        
+          this.current_hierarchical_load_es( lang                        ,
+                                             new_index_string            ,
+                                             new_file_structure_path     , 
+                                             new_subpath                 ,
+                                             new_breadcrumb              ,
+                                             new_title                   )
+              
+        } // End If
+
+      }   
+    } // End For 
+
+  }
+
+}
+
+exports.anode_hierarchical_process = anode_hierarchical_process

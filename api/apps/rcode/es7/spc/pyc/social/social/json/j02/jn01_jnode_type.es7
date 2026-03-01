@@ -1,0 +1,86 @@
+// [DOCHANGED_NODE ES7]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Agile Node JS JNode_Type Class  [V.0.0.2]  (2019-06-14)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Inheritance Line : 
+//-------------------------------------------------------------------------------------
+// Jnode_type > PrintLog
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//-------------------------------------------------------------------------------------
+// Used Entities : 
+//-------------------------------------------------------------------------------------
+// Json_function     : Generate Json Functions
+//-------------------------------------------------------------------------------------
+// jn01_common_json - jn11_spec_json - jn03_product_json
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+//- d-rungen_json-       : Generate Json
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+
+const  { jnode_type_comm }   =   require(  cons.JS_ACO7  + 'json/j02/jn01_jnode_type_comm.es7'                              ),
+       { jn01_common_json }  =   require(  cons.JS_ACO7  + 'json/j01/n02_social/jn01_generate_common_json.es7'  ),
+       { jn11_spec_json }    =   require(  cons.JS_ACO7  + 'json/j01/n02_social/jn11_generate_spec_json.es7'    ),
+       { jn03_product_social_json } =   require(  cons.JS_ACO7  + 'json/j01/n02_social/jn03_generate_product_json.es7' );
+
+
+class jnode_type extends jnode_type_comm {
+           
+  constructor (arroba = '') 
+  {   
+    super(arroba)
+    this.n                  =   'jn01_jnode_type::'
+   
+    
+    // Print PATH for JSONS ( Comm - Spec ) 
+    // this.p('jn01_type_Page ' + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
+  }
+
+  manage_switch_page_type()
+  {
+    
+    // Print PATH for JSONS ( Comm - Spec ) 
+    this.p('jn01_type_Page ' + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
+    this.p('jn01_type_PageName ' + this.s.cs.page_name)
+
+    switch(this.s.cs.page_type)
+    {
+      case "spec"   : this.jobject          =   new jn11_spec_json(this.arroba)   ;      break;
+      case "comm"   : this.jobject          =   new jn01_common_json(this.arroba) ;      break;   		
+      case "content": this.manage_switch_page_name() ;          break;
+    }   		
+  }
+
+  manage_switch_page_name()
+  {
+  	
+    this.p('jn01_jnosocial name DBG ' + this.s.cs.page_name)
+    switch(this.s.cs.page_name)
+    {
+      case "product":  this.jobject   =   new jn03_product_social_json(this.arroba) ;  break;   		
+
+      case "front":    this.jobject   =   new jn03_product_social_json(this.arroba) ;  break;   		
+
+      // case "list":     this.jobject   =   new jn06_list_json(this.arroba) ;  break;   		 
+
+      default:  
+        this.manage_switch_page_name_common()
+         		
+    }  	
+  	
+  	
+  }
+
+
+}
+
+exports.jnode_type = jnode_type
