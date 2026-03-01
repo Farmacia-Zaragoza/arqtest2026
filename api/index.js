@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // 5. El "Puente": Redirigimos todo el tráfico a tu lógica fire.es7
-app.all('/api/(.*)', (req, res) => {
+app.all('*', (req, res) => {
     // Aquí es donde fire.es7 toma el control
     // Asumiendo que fire.es7 es un router de express o una función (req, res)
     return fireApp(req, res);
