@@ -2,9 +2,9 @@
   "name": "proyecto-arquitectura-pro",
   "version": "1.0.0",
   "description": "MVP profesional en Vercel 1.00",
-  "main": "api/hola.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node api/hola.js",
+    "start": "node api/index.js",
     "build": "echo 'No build step needed for now'"
   },
   "dependencies": {
