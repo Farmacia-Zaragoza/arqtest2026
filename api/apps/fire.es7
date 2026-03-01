@@ -1,5 +1,8 @@
-// Al final de fire.es7 necesitamos esto:
-module.exports = (req, res) => {
-   // Aquí irá la lógica que recuperaremos de tu código original
-   res.json({ estado: "Lógica de fire.es7 recuperada" });
-};
+// Dentro de tu lógica de Express/Node
+app.get('/', (req, res) => {
+  // Aquí es donde tu lógica genera el HTML
+  const htmlGenerado = "<html><body>El HTML de mi proyecto 2020</body></html>";
+  res.send(htmlGenerado);
+});
+
+module.exports = app;
