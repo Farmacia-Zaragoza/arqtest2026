@@ -1,0 +1,188 @@
+// [DOCHANGED_ES6]
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js App Fire Browser ArqKb  [V.0.0.2]  (2019-11-27)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [Express 5]
+//-------------------------------------------------------------------------------------
+// Node Js - Server with express - http/2
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var     cons                =   require(  "./apps/es7/com/agen/constants.es7"        );
+const   path                =   require(  'path'                                             );
+//-------------------------------------------------------------------------------------
+let run_path                =   path.resolve(".")
+let a_ruta                  =   run_path.split('/')
+let a_len                   =   a_ruta.length -1
+//-------------------------------------------------------------------------------------
+// /brqx/run/react/arq/garldru/garldru   -  /brqx/run/react/pyc/social/garlsoc
+//-------------------------------------------------------------------------------------
+var branch                  =   a_ruta[a_len - 2 ]        // Architecture Branch  (arq)
+var prod                    =   a_ruta[a_len - 1 ]            // Architecture product (garldru)
+var site                    =   a_ruta[a_len ]            // Architecture product (garldru)
+
+// Indica el numero maximo de articulos creados - Si es mas se debe cargar la home
+var max_articles            =   '3890'                   // Limit parameter
+
+// Site/cache site -- social - garlsoc
+var cached_site             =  'garldru'
+//-------------------------------------------------------------------------------------
+
+const
+    application_root   =   __dirname,
+    express       =   require( 'express'       ), //Web framework
+    logger         =   require( 'morgan'      ),
+    fs           =   require( 'fs'        ),
+    favicon       =   require( 'serve-favicon'  ),
+    cookieParser     =   require( 'cookie-parser'  ),
+    bodyParser       =   require( 'body-parser'    ),
+    compression     =   require( 'compression'    ),
+    qs           =   require( 'querystring'    ),
+    helmet         =   require( 'helmet'                       ),
+    useragent       =   require( 'express-useragent'                 ),
+  // Iteracion ES6 - EA6
+    { params }          =   require(  cons.JS_TYP7  + 'params/p01_params.es7'  ),
+    { angular}          =   require(  cons.JS_ACO7  + 'model/ang/angular.es7'  ),
+    { page_structure }  =   require(  cons.JS_TYP7  + 'page/page_structure.es7'),
+    echo                =   require(  cons.NODE_MOD + 'node-echo'              );
+
+
+// Create server
+var sureapp = express()
+
+sureapp.enable('trust proxy')
+sureapp.disable('x-powered-by')
+
+// Var definition
+head_html  ='"Content-Type": "text/html"'
+head_plain  ='"Content-Type": "text/html"'
+
+// Secure helmet headers
+sureapp.use(helmet.hsts({
+      maxAge: 31536000000,
+      includeSubDomains: true,
+      force: true
+}));
+
+sureapp.use(express.static(__dirname + '/'));
+
+sureapp.use(compression());
+
+sureapp.use(useragent.express());
+
+// load file
+sureapp.use(function(req, res ,  next)
+{
+  // Check for domains ready for node
+  var allowedDomains = ['thisisthewar.com', 'www.thisisthewar.com','dev.thisisthewar.com']
+
+  // node.dbrqx.com
+  // console.log ('ABC')
+  console.log (req.hostname)
+
+  if(!allowedDomains.includes(req.hostname))
+  {
+    res.end("Brqx 404 Garldru error! Wrong " + site + "  - File not found - Last page.");
+  }
+  else
+  {
+    // Any page
+    var code =''
+    var htmlScheme = ''
+
+
+    var obj_server              =    ''                    // _SERVER
+//    var cache                   =   true                  // Cache
+    var cache                   =   false                  // Cache
+    var lang                    =   true                   // Site Multi Language
+    var trans                   =   false                  // Auto Translation
+    var sync                    =   false                  // Syncing
+//    var live                    =   true                  // Live site
+    var live                    =   false                  // Live site
+    var lang_uri                =   true                   // Site Multi Language Uri based (domain/es)
+    var robot                   =   false                  // Human page by default
+    var nocode                  =   false                   // Debug parameter
+    var max_elems               =   true                   // Limit parameter
+
+
+    // EN (English) estara siempre
+    var default_lang            =  'es'
+    var langs                   =  'en es de it fr pt ja zh hi sp in ca ru uk bn'
+
+    var comm_positions          =  '0 2 4 5 15 16'
+    var spec_positions          =  '0 2 5 15 16'
+
+    // EN (English) estara siempre
+
+    // Path to manage user data
+    var base_path               =  '/brqx/'
+
+    // Tenemos tres opciones : script | minimized | inline | inline_and_save
+    var live_opt    =  'script'
+
+    var page = new page_structure()
+
+    page.update_start_time()
+
+    var pmt = new params(
+                     req              ,  // 01.Request
+                     cache            ,  // 02.Cache
+                     lang             ,  // 03.Multi Language
+                     trans            ,  // 04.Enabled Auto Translation
+                     sync             ,  // 05.Enabled Syncing
+                     live             ,  // 06.Live Site
+                     lang_uri         ,  // 07.Lang Uri
+                     robot            ,  // 08.Robot
+                     live_opt         ,  // 09.Live Options
+                     nocode           ,  // 10.NoCode
+                     max_elems        ,  // 11.Limit parameter
+                     branch           ,  // 12.Architecture Branch
+                     prod             ,  // 13.Architecture Product
+                     site             ,  // 14.Site
+                     cached_site      ,  // 15.Cached Site
+                     cached_site      ,  // 16.Images Site
+                     base_path        ,  // 17.Info Path
+                     page             ,  // 18.Page Structure
+                     default_lang     ,  // 19.Allowed langs
+                     langs            ,  // 20.Allowed langs
+                     max_articles     ,  // 21.Allowed commands
+                     comm_positions   ,  // 22.Comm Positions
+                     spec_positions   ,  // 23.Spec Positions
+                     run_path         )  // 24.Run path
+
+    // Debe llamarlo y esperar a que haya una respuesta
+    var t = new angular(pmt)
+    // console.log('end running_truck')
+
+    // Si no hay codigo no hay pagina
+    if (!nocode )
+    {
+      code   =   '<!doctype html>'
+        code  +=  t.model.code
+    }
+
+    if (req.method == "POST" )
+    {
+      // Rest Response
+      // a.No results
+      // b.Json information
+      // c.Json content
+
+      // Solo existe si es full rest
+      //t.p('thm_SEARCHING_REST ' + t.pnode.rest.main.mainterms )
+
+      res.send({ result: t.model.rest })
+
+    }
+    else
+    {
+      // Normal response
+      // t.p('L ' + t.model.code.length)
+      // Send to garldru
+      res.send(t.model.code )
+    }
+
+   }
+})
+
+
+module.exports = sureapp;
