@@ -1,0 +1,288 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Page Node FastClass MongoDB  [V.0.0.2]  (2017-12-06)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [EA6]
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections - Improve Disk connections
+//-------------------------------------------------------------------------------------
+// - 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
+
+const 	{ anode } 			= 	require(	cons.JS_BASE + 'com/objects/drupal/anode/an0/an01_obj.es6'								),
+		{ cbool } 			= 	require(	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'									),					
+		{ pn02_fast } 		= 	require(	cons.JS_BASE + 'spc/theme/common/fast_node/pnode/pn02_fast.es6'							),
+		{ pn01_simple } 	= 	require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'						),
+ 		{ idSchema }		= 	require(	cons.JS_BASE + 'com/libs/mongo/schemes/html.sch'										),
+		run					= 	require(	cons.JS_BASE + 'com/pms/mongo/save_code_mongo_promise.ea6'								),
+		fs 					= 	require(	'fs'																					),
+		mongoose 			= 	require(	'/brqx/base/react/zcommon/node_modules/mongoose'										),
+		echo 				= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'										),
+		empty 				= 	require(	'/brqx/base/react/zcommon/node_modules/is_empty'										);
+
+
+// Para poder extender debe haberse incluido antes
+class pn04_mongo extends anode {
+
+	// ------------------------- CONSTRUCTOR [STA] ------------------------- 
+    constructor (	u							= 	''			) 	// Url object
+    {   
+
+		super()
+		this.n									=	'pn04_mongo::'			
+		this.m									=	'constructor'			
+
+		this.start_time							=   global.GLOBALS['start_time']		 
+
+		this.u 									=	u 													
+		
+		this.s 									=	this.u.s								 // site
+		this.c 									=	this.u.c 										
+		
+		this.b									=	new cbool()								
+		this.b.copy(this.s.b )												 // boolean
+
+		this.type_name							=	this.stype 							
+
+		// Esto esta pendiente
+		this.b.type_cache						=	true					
+		this.b.type_generated					=	false						// No se copia de momento
+
+		// RUN --> MANAGE_STATUS --> MANAGE_PN02 (disk)  [ --> SAVE_TO_MONGO ]
+
+		this.p('READY_TO_LOAD ' + true + '  ' + this.b.ready_to_load )		
+		
+	}
+	// --------------------------- [00] CONSTRUCTOR [END] ------------------------- 
+
+	// --------------------------- [01] ASYNC_RUN [STA] ---------------------------
+	async run()	
+	{
+			// Cacheable for all users - anonymous and authenticated		
+//   		if ( this.b.type_cache										&& 
+//   			 this.b.ready_to_load									)
+	//		node_add
+//		{
+
+			// A1. MONGO F A S T    P A G E    L O A D 
+			this.p('Pn04Mongo_checking  ' + this.s.name  + '  ' + this.u.dash_uri			)
+	
+			// Vamos a insertar un nuevo nivel de busqueda
+
+			// sch is the Mongo Db Scheme
+			// const pages = await this.u.sch.find().byPage(this.s.name , this.u.dash_uri)
+			// await console.log(pages)
+
+			// Esto busca pasando todos los argumentos
+
+//			this.pages = await this.u.sch.find().byPage(this.s.name 		, 
+//									 	   				this.s.slan   		,
+//									 	   				this.dash_domain   	,
+//									 	   				this.s.lang   		,
+//									 	   				this.ssl_page   	,
+//									 	   				this.s.robot   		,
+//									 	   				this.page_command  	,
+//									 	   				this.page_name   	)
+
+			this.pages = await this.u.sch.find().byPageId(this.u.page_string ) 
+
+
+			// Gestionamos el estado de la consulta
+			await this.manage_status()		   		  									
+
+			// await this.disconnect()
+			// 	this.u.b.site_cache		=	false
+//		} // End if 		
+    }
+	// --------------------------- [01] ASYNC_RUN [END] -----------------------------
+
+
+	// --------------------------- [02] MANAGE_STATUS [STA] ------------------------- 
+	async manage_status()
+	{
+		this.n									=	'pn04_mongo::'			
+		this.m									=	'async_manage_status'			
+
+	  	this.status 			= 	0	 // No loaded from Mongo
+		this.b.type_generated	=	false		
+
+		if (!empty(this.pages) ) 
+		{
+			console.log (this.pages.code.length)
+
+//			this.pnn('CACHEMONGO ' + this.s.name  			+ '  ' + this.u.dash_domain + '  ' + this.s.lang  +  '  ' +
+//									 this.u.page_command 	+ '  ' +
+//			 						 this.u.dash_uri  + ' LEN ' + this.pages.code.length)		
+
+	
+			this.b.type_generated	=	true		
+			
+			this.code = this.pages.code
+
+			// Se supone que ya lo ha leido
+			// SI ESTA EN MONGO NO HACEMOS NADA MAS
+	 		// mongoose.disconnect()
+														
+		}
+		else if ( this.b.ready_to_load )
+		{
+			// No esta en mongo. Miramos en disco (sincrono)
+			this.p('Needed to get page for ' + this.s.name  + '  ' + this.u.dash_uri )
+		
+			this.pnode = await new pn02_fast(this.u)					
+
+			await this.manage_pn02()			
+		}		
+	}
+
+	// ------------------------- [03] MANAGE_PN02 [DISK] ------------------------- 
+	manage_pn02()
+	{
+
+		// this.p("CACHEDISK_" + ' ' + true + ' ' + this.b.site_cache )
+
+		// this.p("PNO_STATUS_" + this.pnode.status)
+
+
+		if ( !empty(this.pnode)					&& 
+			 this.pnode.b.type_generated			)		
+		{
+
+			// DEVOLVER EL CODIGO Y EN BACKGROUND GRABAR LA PAGINA EN NODE
+
+			// echo("FPC" )
+
+			this.code = this.pnode.code
+
+
+			this.p("CACHEDISK_" + this.pnode.code.length)
+
+			// llamar a promise para guardar el codigo
+			
+			var t = this
+			var data_and_error = ''
+
+			// Seria preguntar si tenemos mongo funcionando
+			//	if (this.b.site_have_mongo)
+			run.save_code_mongo_promise(data_and_error,t)
+			.then(function () {} ) 
+				
+		} 
+		else 
+		{
+			// No esta en disco - hay que generarla
+			// this.p("NO_CACHEDISK_" )
+
+			var supermnu_dats = this.supermnu_libs + "dats/" + this.theme_name + "/"
+
+			this.pnode = new pn01_simple(this.u)
+
+			this.code = this.pnode.code
+
+			// this.p('SITE_LIVE : ' + this.b.site_live + ' = ' +  false)
+
+			if ( this.pnode.status) 
+			{
+				echo("NOCACHE_" + this.pnode.code.length)
+				// echo("NOCACHE_" + this.pnode.code)
+				// echo(this.pnode.code)
+
+
+				var t = this
+				var data_and_error = ''
+	
+				// Seria preguntar si tenemos mongo funcionando
+				//	if (this.b.site_have_mongo)
+				run.save_code_mongo_promise(data_and_error,t)
+				.then(function () {} ) 
+
+			}
+		}
+		
+		
+	}
+
+	// --------------------------- SAVE_CODE_TO_MONGO ---------------------------
+	async check_dont_exist_to_save_code()
+	{ 
+		// Cannot overwrite `pages` model once compiled.
+			// No existe el registro. Lo insertamos ( Que tarde lo que quiera)
+
+		this.pnn('0N. Saving to Mongo '+  this.s.name  + ' LEN ' + this.code.length)
+			
+		var dont_exist = await this.u.sch.find().byDontExist(this.u.page_string ) 
+
+		// console.log('nUMDOCS '+ count)
+
+		await this.save_code_to_mongo(dont_exist)
+	}
+	
+	// --------------------------- SAVE_CODE_TO_MONGO ---------------------------
+	save_code_to_mongo(dont_exist)
+	{ 
+		// Cannot overwrite `pages` model once compiled.
+			// No existe el registro. Lo insertamos ( Que tarde lo que quiera)
+
+		this.pnn('0N. Saving to Mongo '+  true  + '  ' + dont_exist)
+
+		if (dont_exist === 0 )			
+		{
+			var htmlScheme = mongoose.model('pages', idSchema);
+
+			// this.p('SITE ' + this.s.name			)		
+			// this.p('ISLANG ' + this.s.slan 			)
+			// this.p('DOMAIN ' + this.u.dash_domain 		)
+			// this.p('LANG ' + this.s.lang			)
+			// this.p('SSL ' + this.u.ssl_page			)
+			// this.p('ROBOT ' + this.s.robot			)
+			// this.p('COMMAND ' + this.u.page_command		)
+			// this.p('PAGE ' + this.u.page_name			)
+			// this.p('ID ' + this.u.page_string			)
+
+
+			//  01   02        03     04     05      06      07      08       09
+			// _id  site - is_lang - domain - lang - ssl - robot - command - page
+		
+			var htmPage = new this.u.sch({ 
+//			var htmPage = new htmlScheme({ 
+							 	   		   _id: this.u.page_string			,	// 01
+										   site : this.s.name 				, 	// 02
+									 	   is_lang : this.s.slan   			,	// 03
+									 	   domain : this.u.dash_domain  	,	// 04
+									 	   lang : this.s.lang   			,	// 05
+									 	   ssl : this.u.ssl_page   			,	// 06
+									 	   live_opt : this.s.live_opt		,	// 06
+									 	   robot : this.s.robot   			,	// 07
+									 	   command : this.u.page_command  	,	// 08
+									 	   page : this.u.page_name   		,	// 09
+									 	   code : this.code 				});
+
+			
+			htmPage.save(function (err) {
+		  	if (!err) console.log('Success!');
+		  	else
+		  	{
+		  		console.log('WRONG_NO_SAVED ' + err + '  ' + err.code)
+		  	  	 if (err.code === 11000)
+		  	  	 	console.log('Duplicate record! ' + err.message);
+		  	  	 // Duplicate record!E11000 duplicate key error index: truck.kittens.$name_1 dup key: { : "fluffyto_a03" }
+			}
+		
+		 	})
+
+		}		 	
+	}
+
+
+	// ------------------------- ASYNC DISCONNECT [STA] ------------------------- 	
+	async disconnect() 
+	{
+	  	await new Promise(resolve => setTimeout(() => resolve(), 2000));
+ 		mongoose.disconnect()
+	}
+
+  
+}
+
+exports.pn04_mongo = pn04_mongo

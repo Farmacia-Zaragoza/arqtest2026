@@ -1,0 +1,78 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Line Prepare Class  [V.0.1.8]  (2017-05-18)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases  [Level 0 ]
+//-------------------------------------------------------------------------------------
+// Engine de busqueda y actualizacion de expresiones en castellano o en el idioma que se defina como base
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 06]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (langreadline) < (langlinees) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - [prepare]   	  	: Define Lang object path and full name 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_prepare extends tr_read {
+
+	public 		$n						=	'tr_prepare::'												;
+
+	
+	protected function prepare()
+	{
+		// Define folder y fichero a utilizar
+		$old_m = $this->m ;	$this->m 	= 	'prepare:'													;
+		$old_n = $this->n ;	$this->n	=	'tr_prepare::'											;
+
+		// Ya tenemos la carpeta donde debe ir
+		// Estructura de idiomas LANGS/de/a/aa/words_de.aab
+	
+		// Esta mal pues no actualiza el path
+		// $this->p('Folder_prep_path: -' . $this->folder_db_path )												;
+		// /brqx/lnk/lang/four_words		
+		
+		if (substr($this->folder_db_path, -1) != '/' )   $this->folder_db_path .= '/'					;
+		
+		
+		$this->lang_folder_path			= 	
+					$this->folder_db_path .   'LANGS' . $this->sep . $this->lang 						; 
+
+		$this->lang_folder_path			.= 	
+					$this->sep .  $this->one_letter . $this->sep .  $this->two_letters 					;	
+
+		$this->lang_folder_path_es		= 	
+					$this->folder_db_path .   'LANGS' . $this->sep . $this->base_lang 					; 
+
+		$this->lang_folder_path_es		.= 	
+					$this->sep .  $this->one_letter . $this->sep .  $this->two_letters 					;	
+
+		// $this->p('Folder_path:' . $this->lang_folder_path );
+//		print 'ES Folder path: -' . $this->folder_db_path . '-' . $this->lr 							;
+
+		// words_es.esp
+		$this->lang_file				= 	$this->three_letters . 		  '.' . $this->db_file_name		;
+		$this->lang_file_es				= 	$this->three_letters . 'es' . '.' . $this->db_file_name		;
+
+
+		$this->full_lang_file 			=	
+					$this->lang_folder_path 	. $this->sep . $this->lang_file							;
+		$this->full_lang_file_es		=	
+					$this->lang_folder_path_es  . $this->sep . $this->lang_file_es						;
+
+		// langlinebase::prepare:Line_en La casa de lucia File /brqx/lnk/lang/four_words/LANGS/en/l/la/la_.word
+		// langlinebase::prepare:Line_es La casa de lucia File /brqx/lnk/lang/four_words/LANGS/es/l/la/la_es.word
+
+		// $this->p('Line_en ' . $this->line . ' File '. $this->full_lang_file 			);
+		// $this->p('Line_es ' . $this->line . ' File '. $this->full_lang_file_es			);
+
+		$this->m = $old_m ; $this->n = $old_n 															;
+	}		
+
+};
+
+?>

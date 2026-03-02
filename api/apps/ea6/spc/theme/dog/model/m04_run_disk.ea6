@@ -1,0 +1,80 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Truck  [V.0.0.2]  (2017-11-22)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [EA6]
+//-------------------------------------------------------------------------------------
+// - d-run_disk-			: 	Run disk saved page
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+// Must to be unique
+
+var 		cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"					);
+
+const 		{ model_process } 	= 	require(	cons.JS_BASE 	+ 'com/objects/fire/f01_model/m05_process.ea6'		),
+			{ pn01_simple } 	= 	require(	cons.JS_BASE 	+ 'spc/theme/dog/fast_node/pnode/pn01_simple.ea6'	),
+			{ pn02_fast } 		= 	require(	cons.JS_BASE 	+ 'spc/theme/common/fast_node/pnode/pn02_fast.es6'	),
+			empty 				= 	require(	cons.NODE_MOD 	+ 'is_empty'										),
+			echo 				= 	require(	cons.NODE_MOD 	+ 'node-echo'										);
+
+
+class model_run_disk extends model_process
+{
+	constructor( pmt = '' )
+	{
+		// Pasamos la request
+		super(pmt)
+	
+		// RUN --> PROCESS
+	}
+
+	// FROM --> run_options
+	// TO   --> pn02_fast ( try FPC) - (try psimple ) - return code
+
+
+	// ------------------------- RUN_DISK [STA] ------------------------- 	
+	run_disk()
+	{
+		// SYNCHRONOUS
+		if (this.b.ready_to_load)
+		{
+			// this.p('Entering fast')
+			this.pnode = new pn02_fast(this.u)
+		}
+
+		if ( this.b.ready_to_load				&& 
+			!empty(this.pnode)					&& 
+			this.pnode.b.type_generated			)		
+		{
+
+			// echo("FPC" )
+
+			this.p("DISKCACHE_" + this.pnode.code.length)
+
+			var stop_time = Date.now() / 1000 + Date.now() / 1000
+			var start_time = global.GLOBALS.start_time
+			var total_time = Math.round(stop_time - start_time, 4)
+			var time_str = total_time + " segundos "
+		} 
+		else  
+		{
+			var supermnu_dats = this.supermnu_libs + "dats/" + this.theme_name + "/"
+
+			// Depending of every project
+			this.pnode = new pn01_simple(this.u)
+
+			// this.p('SITE_LIVE : ' + this.b.site_live + ' = ' +  false)
+
+			if (this.pnode.status) 
+			{
+				echo("NOCACHE_" + this.pnode.code.length)
+				// echo("NOCACHE_" + this.pnode.code)
+				// echo(this.pnode.code)
+			}
+		}
+	
+	}
+
+} // end Class
+
+exports.model_run_disk = model_run_disk
+

@@ -1,0 +1,128 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// MultiSearch Class  [V.0.1.8]  (2017-01-29)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Read / Search multi strings  
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 03]
+//-------------------------------------------------------------------------------------
+// (multiline) < (multilineitf) < (multicomplex) < (multisearch) < (linesyntaxreview) < (symbolsreview) < (multiupdate) < (multibase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - -d-line_review-   				: Read/search an expresion in multi line and in inner lines
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class tr_line_review extends tr_guion_review {
+
+	public 		$n							=	'tr_line_review::'										;
+	
+
+	// [PHP_56]
+	protected function line_review(		$es_line 				= ''								, // Linea a procesar o a buscar 
+										$type					= 	'read'							, // Modo de accion : read | write
+										&$arr_out				= ''								) // Array de salida para mode write
+	{
+		// Tiene dos modos de funcionamiento, dependiendo del tipo, o lee o actualiza
+
+		$old_m = $this->m ; $this->m 				= 'line_review:'								;
+		$old_n = $this->n ; $this->n 				= 'tr_line_review::' 							;
+
+		$is_translated = true ; 
+		
+		$arr_str = array()																	;
+
+		// READ / SEARCH MODE
+
+		for ($c = 0 ; $c < strlen($es_line) ; $c++)	$arr_str[] = $es_line[$c] 				; // [STRING_TO_ARRAY]  
+		
+		$this->word_started = false																; 				
+		$this->word = ''																			;
+
+		// Frase traducica - translated line
+		$this->translated_phrase = '' 																		;
+
+		// Usados en la frase
+		$this->chars_before_words 	= 	''														;
+		
+		// Usados en la palabra
+		$this->chars_between_words	=	''														;
+		
+		// Usados en la frase
+		$this->chars_after_words		=	''														;
+
+		$pos = 0 ; 
+
+		$len_es = strlen($es_line) ;  
+
+		while ( $pos < $len_es 			)  
+		{
+			$crc = $arr_str[$pos]							;
+			// $this->p(' que sera - ' . $pos . ' crc ' . $crc . $this->lr) ; // [PR_DISABLED]
+
+			$curr_last_chars = substr($es_line, $pos)												;
+			$curr_last_spec  = preg_replace($this->sep_multi_preg_end_phrase,'', $curr_last_chars)	;
+
+			$len_curr_last_spec  = strlen($curr_last_spec) 											;
+
+			$this->end_of_word = ( $len_curr_last_spec === 0)												;
+
+
+			if (	preg_match(		$this->sep_guion_preg, $crc) )
+			{
+			//--==--==--==--==--==--==--  A- ES UN GUION. PUEDE SER PARTE DE UNA PALABRA --==--==--==--==--==--==--
+				$this->guion_review($crc) 		; 
+			}
+			elseif (preg_match(		$this->sep_numbers_preg, $crc) )
+			{
+			//--==--==--==--==--==--==--  A- ES UN NUMERO. PUEDE SER PARTE DE UNA PALABRA --==--==--==--==--==--==--
+				$this->number_review($crc) 		; 
+			}
+            elseif (preg_match(		$this->sep_multi_preg, $crc) )
+			{
+			//--==--==--==--==--==--==--  B- ES UN SYMBOLO. SIEMPRE SERA FIN DE PALABRA  --==--==--==--==--==--==--
+				$this->symbol_review($crc) 		;	 
+			}		
+			elseif (preg_match(		$this->sep_spaces_preg, $crc) )
+			{ 
+			//--==--==--==--==--==--==--  C- ES UN ESPACIO. PUEDE SER PARTE DE UNA PALABRA ==--==--==--==--==--==--
+				$this->space_review($crc) 		;
+			}
+			else 
+			{
+			//--==--==--==--==--==--==--  D- ES UN CARACTER. SIEMPRE SERA PARTE DE PALABRA ==--==--==--==--==--==--
+				$this->caracter_review($crc) 	;
+			}
+
+			$pos++ ; 
+		} // End while
+
+//					$this->p('Arans result ' . $this->is_translated . $this->lr )							; // [PR_DISABLED]			
+
+		// Hemos terminado la frase							
+		if ( $this->word_started )
+		{
+			$this->process_word() ;
+		}
+
+		if ($type == 'read ')
+		{
+			//$this->p('R ' . $this->translated_phrase .  $this->lr ) 	; // [PR_DISABLED]
+
+			$is_translated		= 	$this->is_translated 													;
+		}
+		else 
+		{
+			$arr_out	= $this->arr_aux																;
+		}
+		$this->m = $old_m; $this->n = $old_n 															;
+		return $is_translated 																			; 
+	}
+
+};
+
+
+?>

@@ -1,0 +1,72 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Update Current Multi Class  [V.0.1.9]  (2017-01-30)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 04]
+//-------------------------------------------------------------------------------------
+// (multiline) < (multilineitf) < (multicomplex) < (multisearch) < (multiupdate) < (multibase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - -d-update_current_multi-	   	: Process multi line as line
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_update_current_multi extends tr_prepare_arrays {
+
+	public 		$n						=	'tr_update_current_multi::'						;
+	
+	// Linea ya en formato con arrobas
+	protected function update_current_multi()
+	{
+		$old_m = $this->m ; $this->m	=	'update_current_multi:'														;
+		$old_n = $this->n ; $this->n	=	'tr_update_current_multi::'																;
+
+		//		$this->p('Multi LAN ' 	. $this->multi_line_lan . $this->lr)								; // [PR_DISABLED]
+//		$this->p('Multi ES ' 	. $this->multi_line_es . $this->lr)									; // [PR_DISABLED]
+
+		// Algoritmo Multi line
+		// 1. Actualizar multine en BD multiline
+
+		$this->line 				=	$this->multi_line_es 						;
+		$this->store_or_search_multi_line		=	true 										;
+		
+		$this->load()							;
+
+//		$this->p('Multi LAN ' . $this->multi_line_lan . $this->lr)									;
+//		$this->p('Multi ES '  . $this->dash_line_for_line . $this->lr)									;
+
+		// Never must to store blanc lines		
+		if (($this->dash_line_for_line != '') and ($this->multi_line_lan != '' ))
+		{
+			// Make folder - check file and create it
+			
+			// FULL PHRASE UPDATE | SEARCH
+			$this->process_multi_complex($this->multi_line_lan) 		; $this->multi_line_lan 	= $this->processed_complex_word ;  
+
+
+
+			$this->dual_line 	=	$this->dash_line_for_line . $this->sep_lang . $this->multi_line_lan 	;
+
+//			$this->p('Dual ' . $this->dual_line    .  ' en idioma -' . $this->lang 		 . $this->lr)									;
+//			$this->p('Dual ' . $this->dual_line_es .  ' en  -' . $this->base_lang 		 . $this->lr)									;
+
+			$this->update_check_es();
+			
+			$this->update_check_lan();
+
+		}
+
+		$this->store_or_search_multi_line		=	false 										;
+		$this->m = $old_m ;$this->n = $old_n 													; 
+		
+	}
+	
+
+};
+
+
+?>

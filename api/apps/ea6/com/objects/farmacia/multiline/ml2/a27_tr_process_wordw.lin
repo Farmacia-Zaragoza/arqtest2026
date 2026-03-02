@@ -1,0 +1,85 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Process Word Class  [V.0.1.8]  (2017-01-29)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Read / Search multi strings  
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 03]
+//-------------------------------------------------------------------------------------
+// (multiline) < (multilineitf) < (multicomplex) < (multisearch) < (linesyntaxreview) < (symbolsreview) < (multiupdate) < (multibase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-process_word-   				: Process a word
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class tr_process_word extends tr_update_multiline_with_one_line {
+
+	public 		$n							=	'tr_process_word::'										;
+	
+	protected function process_word ($type = 'read')
+	{
+		$old_m = $this->m ; $this->m 				= 'process_word:'										;
+		$old_n = $this->n ; $this->n 				= 'tr_process_word::' 									;
+
+		// El tipo lo tengo por si es posible indicar si leemos o escribimos en la BD
+		// Como para actualizar (write) necesitamos las dos frases aqui solo podemos guadarlo en el array
+
+		// Caso :  Se recomienda (29) 
+		// _____________________*
+		// La frase termina con palabra
+		$this->word_started 		= 	false 																	;
+
+		// $this->p('W: ' . $this->word . $this->lr)																;
+
+		$trimmed_line				=	dash_clean_with_feed($this->word) 										;	 
+
+		if ($type == 'read')
+		{
+			$this->l 					= 	new transline($this->lang)											;
+			// Aqui creo que deberia ser simple
+			$this->l->read_simple_line($trimmed_line)															;
+			// $this->p('R ' . $this->word . ' # T ' . $this->l->translated_line . $this->lr ) 	; // [PR_DISABLED]
+
+			// Conservar la frase solo tiene sentido si leemos
+			$this->translated_phrase 				.= $this->chars_before_words								;
+			$this->translated_phrase 				.= $this->chars_between_words								;
+
+			if ($this->l->is_translated)
+			{
+				$this->translated_phrase 				.= same_as($this->l->translated_line , $trimmed_line) 	; //  
+			}
+			else
+				$this->translated_phrase 				.= '[' . $trimmed_line . ']'							;
+
+			// Include current char
+			$this->translated_phrase 				.= $this->chars_after_words;
+			
+			$this->chars_after_words 		= '' ; 
+			$this->chars_before_words 		= '' ; 
+			$this->chars_between_words 		= '' ; 
+
+//			$this->p('F ' . $this->translated_phrase . $this->lr ) 	; // [PR_DISABLED]
+
+			$this->is_translated		= 	($this->is_translated and $this->l->is_translated) 				;
+
+			// Search messages
+			$this->full_search_msg	.=	$this->search_msg											;
+		}		
+		else 
+		{
+			// Write mode
+			$this->arr_aux[] 		= 	$trimmed_line		;  // Array for ES - LAN - AUX
+		}
+
+		$this->word 				= ''															;
+		
+	}
+
+};
+
+
+?>

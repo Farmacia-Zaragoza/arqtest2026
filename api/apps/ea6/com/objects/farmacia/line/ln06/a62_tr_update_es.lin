@@ -1,0 +1,58 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// LangUpdateLine Class  [V.0.1.8]  (2016-01-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 04]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (langreadline) < (updatecheck) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-update_es-				  	: Update a file for ES
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_update_es extends tr_create_update_lan {
+
+	public 		$n						=	'tr_update_es::'							;
+
+            
+
+	// Actualiza el diccionario con la cadena indicada si no existe previamente
+	protected function update_es()
+	{
+		$old_n = $this->n ; $this->n = 'tr_update_es::'								;
+		$old_m = $this->m ; $this->m = 'update_es:'										;
+
+
+		update_full_filename($this->full_lang_file_es,$this->dual_line_es)				;
+		
+		//3. Si se ha actualizado el fichero hay que ordenarlo
+
+//		$this->p('Fichero' . $this->full_lang_file_es . $this->lr )		; // [PR_DISABLED]			
+				
+		$this->arr_vlineas = file($this->full_lang_file_es)								; 
+//	    usort($this->arr_vlineas, "strcasecmp");	
+
+//		trans_sort(&$this->arr_vlineas)	; // For [Php_52]
+		trans_sort($this->arr_vlineas)	; // For [Php_56]
+		
+		// Aqui igual hay que diferenciar entre php 5.2 y php 5.6
+				
+		//Save the serialized array to a text file.
+		file_put_contents($this->full_lang_file_es, $this->arr_vlineas)					;
+
+		$this->updated = true 															; 
+
+		$this->m = $old_m; $this->n = $old_n 											;
+	}
+
+
+};
+
+
+?>

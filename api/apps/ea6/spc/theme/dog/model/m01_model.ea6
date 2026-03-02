@@ -1,0 +1,45 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Model App General  [V.0.0.1]  (2017-12-07)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [EA6]
+//-------------------------------------------------------------------------------------
+// d-run-options-			: 	Run mongo options
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 		cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
+
+const 		{ model_run_mongo } 	= 	require(	cons.JS_BASE 	+ 'spc/theme/dog/model/m02_run_mongo.ea6'		),
+			echo 					= 	require(	cons.NODE_MOD 	+ 'node-echo'									);
+
+
+class model extends model_run_mongo
+{
+	constructor( pmt = '' )
+	{
+		// Pasamos la request
+		super(pmt)
+	
+		// RUN --> PROCESS
+	}
+
+	async run_options()
+	{
+		if ( this.b.ready_to_load )
+		{
+			if (this.b.mongo_cache)
+			// Async method
+				await this.run_mongo()
+			else
+				await this.run_disk()
+		}
+		else
+			await this.run_psimple()
+			
+// 		return await this.code 
+	}
+	
+
+} // end Class
+
+exports.model = model
+

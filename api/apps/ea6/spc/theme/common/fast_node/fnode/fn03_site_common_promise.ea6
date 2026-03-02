@@ -1,0 +1,41 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js Fast Node Recuerdo Class  [V.0.1.7]  (2016-11-24)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-fnode_promise-  				: Fnode promise function 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+function fn03_site_common_promise(data_and_error = '' , t = '' ) {
+  const promise = new Promise(function (resolve, reject) {
+
+	if (t.s.load == 'drupal')
+	{
+		t.run_from_drupal()															
+	}
+	else 
+	{
+		// t.p('RUNNING_EXTERNAL ' + t.type + ' L ' + t.s.load)
+		t.run_from_disk()
+	}
+	  // Caso de exito
+    resolve(t)
+    t.name ='Gugugugu'
+    
+    if (!t) 
+    {
+		// Aqui igual hay que gestionar datos del objeto		
+	    reject(new Error('Problema con el objeto fnode pasado '))
+    }
+  })
+  
+  return promise
+          
+}
+
+module.exports.fn03_site_common_promise = fn03_site_common_promise

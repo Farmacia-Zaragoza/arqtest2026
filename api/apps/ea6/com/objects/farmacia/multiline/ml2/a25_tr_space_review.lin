@@ -1,0 +1,63 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// SymbolsReview Class  [V.0.1.8]  (2017-01-29)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Read / Search multi strings  
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 03]
+//-------------------------------------------------------------------------------------
+// (multiline) < (multilineitf) < (multicomplex) < (multisearch) < (linesyntaxreview) < (symbolsreview) < (multiupdate) < (multibase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - -d-guion_review-   				: Review if is a guion
+// - -d-number_review-   				: Review if is a guion
+// - -d-character_review-   				: Review if is a guion
+// - -d-space_review-   				: Review if is a guion
+// - -d-process_word-   				: Process a word
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class tr_space_review extends tr_crc_review {
+
+	public 		$n							=	'tr_space_review::'										;
+	
+
+	protected function space_review($crc = '')
+	{
+		$old_m = $this->m ; $this->m 				= 'space_review:'								;
+		$old_n = $this->n ; $this->n 				= 'tr_space_review::' 							;
+
+		// --==--==--==--==--==--==--  C- ES UN ESPACIO. PUEDE SER PARTE DE UNA PALABRA --==--==--==--==--==--==-- 
+		// Caso :  Se recomienda (29) 
+		// __________*
+		if ($this->word_started )
+		{
+		// ES UN SPACIO CON PALABRA INICIADA
+		// El espacio puede ser parte de la palabra y de la frase
+//					print 'pos -es palabra - ' . $pos . ' crc ' . $word . $lr ;
+			$this->chars_between_words   .= $crc												;
+			// Pueden ser tambien el final de la frase
+			$this->chars_after_words			= ''											;
+			
+		}
+		else 
+		{
+		// ES UN ESPACIO SIN PALABRA INICIADA
+		// Caso :  Se recomienda (29) - Podra ser un espacio o un dash
+		// ______*
+			$this->chars_before_words		.= $crc																;
+			$this->chars_between_words		= ''																;
+			$this->chars_after_words		= ''																;
+											
+		}
+
+	}
+	
+
+};
+
+
+?>

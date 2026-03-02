@@ -1,0 +1,228 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node JS Fast Node Site Common Class  [V.0.0.2]  (2018-02-10)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-get_child_properties-  				: Get specific child properties 
+// - d-prepare_specific_child_properties- 	: Prepare properties to save in array
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
+
+
+const 	{ fnode } 			= require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.es6'					),
+		{ cbool } 			= require(	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'					);					
+
+
+class fn03_site_common extends fnode {
+
+           
+    constructor (   u							=	''						, // 02. U object
+					stype						=	'site_common'			) // 08. Node Type  
+    {   
+
+		super()
+		this.n 									=	'fn03_site_common::'			
+
+		this.u 									=	u 						  // Url
+		
+		this.s									=	this.u.s				  // Site
+		this.c									=	this.u.c				  // Cache
+
+
+		this.b									= 	new cbool()
+		this.b.copy (this.s.b)												  // Boolean
+		
+
+    	this.type								=	'site_structure'		  // Type for structures
+    	this.short_type							=	'SITE'						
+    				
+
+		// String fnode / node / cica_recuerdo
+		this.ftype 								=	'fnode'					  // Fast node type
+		this.stype 								=	stype					  // Node subtype			
+		this.type_name							=	this.stype 													
+		
+
+		this.b.type_user						= 	false 										 
+		this.b.type_human						= 	true 					  // if is dat file never will be erased on disk
+		this.b.type_common						=	true										
+		this.b.type_translation					= 	false										
+		this.b.type_translated					= 	false										
+
+		this.b.type_have_taxonomy				=	false 										
+		this.b.type_have_code					=	false										
+		this.b.type_have_properties				=	true										
+		this.b.type_have_specific_properties	=	true										
+		this.b.type_synced						=	true										
+		
+
+		// Type path adjustment
+
+		// fnode / file_structure
+		this.change							=	
+						'/' + this.ftype + '/' + this.type + '/' 	
+
+
+		// LANG_URI_SSL_INDEPENDENT - El contenido sera el mismo para cualquier URL o IDIOMA o SEGURIDAD 
+
+   		this.suffix								= 	this.stype														
+
+   		this.suffix_lang						= 	this.suffix														
+
+   		this.suffix_disk					 	= 	this.suffix														
+
+
+		// Method for disk load and to generate and save content
+		this.generate_load_from_disk_path()														
+
+		// /brqx/pers/drupal/v50/fnode/truck/fnode/site_structure/site_common
+		// this.p('DIS_SiteCom ' + this.load_from_disk_path)								
+		// this.p('DIS_LhoneCo ' + this.load_from_disk_lang)								
+
+		//  /brqx/pers/drupal/v50/fnode/dog/fnode/site_structure/site_common
+
+		// Botones comunes ... esta pendiente de pensarlo
+		let arrays_line = 'btn'   
+
+		this.arr['types'] = arrays_line.split(' ') 								
+
+		if (this.s.load == 'drupal')
+		{
+			this.run_from_drupal()															
+		}
+		else 
+		{
+			this.run_from_disk()																		
+		}
+		//this.p('RAM_SiteCommon ' + this.ram_alias_path	)												
+
+		// /ram/home/ser/zd/main/es/zdom/emp/flat/zd_main_flat/es/cache/ssl/flat.dbrqx.com/anonymous/flat/fnode/phone_structure/human/common/common_phone_email
+
+    }
+
+    get_child_properties(prop, value) 
+    {   
+			
+			if ( 	 prop 	== "img_base_resolution"	)		this.s.img_base_resolution		=	value										
+			
+			else if ( prop 	== "img_folder"				)		this.s.img_folder				=	value + 	this.s.img_base_resolution	
+
+			else if ( prop 	== "img_url_folder"			)		
+			{
+				this.s.img_relative_url_folder 	=	value																	
+
+  			    if (this.s.img_relative_url_folder.substr(-1) != '/' )   this.s.img_relative_url_folder += '/'			
+				
+				this.s.img_relative_url_folder	+=	this.s.img_base_resolution											
+
+				this.s.img_url_folder			= 	this.u.site_url + this.s.img_relative_url_folder	
+		
+				 if (this.s.img_url_folder.substr(-1) != '/' )   this.s.img_url_folder += '/'			
+				 
+				 // /ssd/truck/1600x1200 -- https://truck.dbrqx.com/photos1600x1200/
+				 // this.pt('IFOLDER_I ' + this.s.img_folder )													
+				 // this.pt('IFOLDER_U ' + this.s.img_url_folder )												
+			}
+
+			// photos
+			else if ( prop 	== "img_url_word"			)		this.s.img_url_word		=	value 
+
+			//0935x0700
+			else if ( prop 	== "img_resDesktop"			)		this.s.img_resDesktop		=	value 
+
+			// jpg
+			else if ( prop 	== "img_extension"			)		this.s.img_extension		=	value 
+
+			// Social Networks
+			
+			else if ( prop 	== "facebook"				)		this.s.facebook					=	value 
+			else if ( prop 	== "twitter"				)		this.s.twitter					=	value 
+			else if ( prop 	== "googleplus"				)		this.s.googleplus				=	value 
+			else if ( prop 	== "linkedin"				)		this.s.linkedin					=	value 
+			
+			// Font Size
+			else if ( prop 	== "font_size"				)		this.s.font_size				=	value 
+
+			// Site Information
+			else if ( prop 	== "site_name"				)		this.s.name						=	value										
+			else if ( prop 	== "theme_name"				)		this.s.theme					=	value										
+
+			// Language Information
+			else if ( prop 	== "default_lang"			)		this.s.default_lang				=	value										
+			else if ( prop 	== "allowed_langs"			)
+			{		
+																this.s.allowed_langs			=	value										
+
+																// Array Idiomas permitidos
+																this.s.arr['allowed_langs']		= 	this.s.allowed_langs.split (' ')		
+			}
+			else if ( prop 	== "allowed_commands"		)
+			{		
+																this.s.allowed_commands			=	value										
+
+																// Array Idiomas permitidos
+																this.s.arr['allowed_commands']	= 	this.s.allowed_commands.split (' ')	
+			}
+
+			// Drift - OJO CAMBIO
+			else if ( prop 	== "drift_code"				)		this.s.drift					=	value										
+
+			else if ( prop 	== "live_folder_name"		)		this.s.live_folder_name			=	value										
+
+			// Meta OG
+
+			else if ( prop 	== "meta_og_url"			)		this.s.meta_og_url			=	value										
+			else if ( prop 	== "meta_og_type"			)		this.s.meta_og_type			=	value										
+
+    }
+
+	prepare_specific_child_properties()
+	{
+
+		this.arr['properties'].push( 			"img_base_resolution" 	 + this.sep  + this.s.img_base_resolution	)			
+
+		this.arr['properties'].push( 			"img_folder" 			 + this.sep  + this.s.img_folder			)			
+
+		this.arr['properties'].push( 			"img_url_folder" 		 + this.sep  + this.s.img_url_folder		)			
+
+		this.arr['properties'].push( 			"img_resDesktop" 		 + this.sep  + this.s.img_resDesktop		)			
+		this.arr['properties'].push( 			"img_extension" 		 + this.sep  + this.s.img_extension			)			
+
+		this.arr['properties'].push( 			"site_name"				 + this.sep  + this.s.name					)		
+		this.arr['properties'].push( 			"theme_name"			 + this.sep  + this.s.theme					)		
+		
+		// Font Size
+		
+		this.arr['properties'].push( 			"font_size"				 + this.sep  + this.s.font_size				)		
+		
+		// Social Networks
+
+		this.arr['properties'].push( 			"facebook"				 + this.sep  + this.s.facebook				)		
+		this.arr['properties'].push( 			"twitter"				 + this.sep  + this.s.twitter				)		
+		this.arr['properties'].push( 			"googleplus"			 + this.sep  + this.s.googleplus			)		
+		this.arr['properties'].push( 			"linkedin"				 + this.sep  + this.s.linkedin				)		
+
+		this.arr['properties'].push( 			"default_lang"			 + this.sep  + this.s.default_lang			)		
+		this.arr['properties'].push( 			"allowed_langs"			 + this.sep  + this.s.allowed_langs			)		
+
+		this.arr['properties'].push( 			"allowed_commands"		 + this.sep  + this.s.allowed_commands		)		
+
+
+		this.arr['properties'].push( 			"drift_code"			 + this.sep  + this.s.drift					)		
+
+		this.arr['properties'].push( 			"live_folder_name"		 + this.sep  + this.s.live_folder_name		)			
+
+		this.arr['properties'].push( 			"meta_og_url"			 + this.sep  + this.s.meta_og_url			)			
+		this.arr['properties'].push( 			"meta_og_type"			 + this.sep  + this.s.meta_og_type			)			
+				
+	}
+  
+}
+
+exports.fn03_site_common = fn03_site_common

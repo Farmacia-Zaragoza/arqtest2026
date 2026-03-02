@@ -1,0 +1,57 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Multicomplex Read Class  [V.0.1.8]  (2017-01-28)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 02]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (multicomplex) < (langreadline) < (langlinees) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// -d-process_multi_complex-		: 	Process multi complex line
+// -d-process_multi_complex_read- 	: 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class tr_multicomplex_read extends tr_search {
+
+	public 		$n						=	'tr_multicomplex_read::'						;
+
+
+	public function process_multi_complex_read(	$es_line 	= ''								, 
+													$lang 		= ''								)
+	{
+		$old_m = $this->m ; $this->m 			= 'process_multi_complex_read:'						;
+		$old_n = $this->n ; $this->n 			= 'tr_multicomplex_read::'								;
+
+		$this->process_multi_complex($es_line);		
+
+		if ($this->word != '')
+		{									
+			// $this->p('WordB [' . $this->word 		. ']' . $this->lr )	; // [PR_DISABLED]				
+
+			$this->read_simple_line($this->word)													;
+
+			// $this->p('Tran [' . $this->translated_line . ']' . $this->lr ) ; // [PR_DISABLED]
+
+			$search_msg			=	$this->search_msg										;
+			$full_search_msg	=	$this->search_msg										;
+
+			$this->phrase 			= $this->chars_before_word . $this->translated_line . $this->chars_after_word		;
+
+		}
+
+		$this->translated_line 	= 	$this->phrase													;
+		$this->m = $old_m ; $this->n = $old_n 														;
+	}
+
+};
+
+
+
+?>

@@ -1,0 +1,55 @@
+//Node Js Theme Truck Class  [V.0.1.3]  (2017-07-07)
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//Brqx Group - Agile Farmacia Zaragoza Methodology [PHP_52]
+//-------------------------------------------------------------------------------------
+//Theme Structure
+//-------------------------------------------------------------------------------------
+//Store structure of nodes and files needed in theme
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
+
+const	echo 					= require(	'/brqx/base/react/zcommon/node_modules/node-echo'										),
+		{ theme_structure }		= require( 	cons.JS_BASE + 'com/objects/drupal/theme/t01_structure.es6'						),
+		// Promises
+		run 					= require(	cons.JS_BASE + 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'			),
+		{ cbool }				= require( 	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'								),
+		{ categories }			= require( 	cons.JS_BASE + 'com/objects/categories/categories.es6'							),
+		{ contents }			= require( 	cons.JS_BASE + 'com/objects/categories/contents.es6'								);
+
+
+function theme_truck (t)
+{
+	// Modelo de promesas
+	
+	var data_and_error	=	''
+
+	t.p("ZZZ_promises_starting")
+/*
+	run.fnode_promise(data_and_error,t.arr['fnode']['file_list'])
+	.then(function () 
+	{
+	
+		run.fnode_promise(data_and_error,t.arr['fnode']['image_list'])			.then(function() {} )
+/*
+		run.fnode_promise(data_and_error,t.arr['fnode']['link_list_common'])	.then(function() {} )
+
+		run.fnode_promise(data_and_error,t.arr['fnode']['link_list_lang'])		.then(function() {} )
+
+		run.fnode_promise(data_and_error,t.arr['fnode']['flag_list'])			.then(function() {} )
+
+		run.fnode_promise(data_and_error,t.arr['fnode']['email_phone_common'])	.then(function() {} )
+
+		run.fnode_promise(data_and_error,t.arr['fnode']['email_phone_lang'])	.then(function() {} )
+
+		run.fnode_promise(data_and_error,t.arr['fnode']['site_info_lang'])		.then(function() {} )
+		t.p("promises running")
+
+	}) // End promise
+*/
+
+
+}
+
+exports.theme_truck = theme_truck
+

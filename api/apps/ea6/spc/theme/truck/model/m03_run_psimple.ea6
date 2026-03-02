@@ -1,0 +1,69 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Model Run Psimple - App Dog  [V.0.0.2]  (2018-02-12)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [EA6]
+//-------------------------------------------------------------------------------------
+// d-run_psimple-		: Fire simple page (no cache)
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+var 		cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"					);
+
+const 		{ model_run_disk } 	= 	require(	cons.JS_BASE 	+ 	'spc/theme/truck/model/m04_run_disk.ea6'		),
+			{ pn01_simple } 	= 	require(	cons.JS_BASE 	+ 	'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'	),
+			run					= 	require(	cons.JS_BASE 	+ 	'com/pms/mongo/save_code_mongo_promise.ea6'			),
+			echo 				= 	require(	cons.NODE_MOD 	+	'node-echo'											);
+
+
+// QUIERO HACER UN ENFOQUE DE PROMESAS GENERADORES Y SINCRONIAS
+
+class model_run_psimple extends model_run_disk
+{
+	constructor( pmt = '' )
+	{
+		// Pasamos la request
+		super(pmt)
+	
+		// RUN --> PROCESS
+	}
+	// FROM --> run_options (no cache | reload )
+	// TO   --> save_code_to_mongo (async)
+
+	run_psimple()
+	{
+		// No esta en disco - hay que generarla
+		// this.p("NO_CACHEDISK_" )
+
+		var supermnu_dats = this.supermnu_libs + "dats/" + this.theme_name + "/"
+
+		// pn01 will change with every project
+		this.pnode = new pn01_simple(this.u)
+
+		this.code = this.pnode.code
+
+		// this.p('SITE_LIVE : ' + this.b.site_live + ' = ' +  false)
+
+		if ( this.pnode.status) 
+		{
+			echo("NOCACHE_" + this.pnode.code.length)
+			// echo("NOCACHE_" + this.pnode.code)
+			// echo(this.pnode.code)
+
+
+			var t = this
+			var data_and_error = ''
+
+			// Seria preguntar si tenemos mongo funcionando
+			//	if (this.b.site_have_mongo)
+			run.save_code_mongo_promise(data_and_error,t)
+			.then(function () {} ) 
+
+		}
+		
+	}
+
+
+} // end Class
+
+exports.model_run_psimple = model_run_psimple
+

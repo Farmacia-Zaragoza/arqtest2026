@@ -1,0 +1,70 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// LangFile Class  [V.0.1.7]  (2016-11-24)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage files 
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-updateforce-   	  			: Update DB lang from file
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_file_updateforce extends tr_file_updateforce_from_two_files {
+
+	public 		$n						=	'tr_file_updateforce::'						;
+
+
+	public function updateforce(		$dual_lang_file = '' , 
+										$lang 			= '' , 
+										$base_lang 		= ''							)
+	{
+		$old_m = $this->m ; $this->m = 'updateforce:'											;
+		$old_n = $this->n ; $this->n = 'langfile::'											;
+		// Load file in structure to update or to translate (soon)
+
+		$this->update_lang_type ( $lang )  													;
+		if ($base_lang 	!= '' ) $this->base_lang 	= $base_lang							;
+
+		if ( ( $dual_lang_file != '' ) and ( $this->lang != '' )) 
+		{
+			if (!is_file($dual_lang_file))
+				$this->dual_lang_file	=	$this->folder_current_path . $dual_lang_file	;  
+			else
+				$this->dual_lang_file	=	$dual_lang_file 								;
+			
+			if (is_file($this->dual_lang_file))
+			{	
+				$this->arr_vlineas 		= 	file($this->dual_lang_file); 
+
+				// $this->l 				=	new transline($this->lang)						;		
+				// $this->ml 				=	new multiline($this->lang)						;		
+
+
+				foreach ($this->arr_vlineas as $linea )
+				{
+					$trim_line	= trim($linea) 												;
+					if ($this->ml->is_multiline($trim_line) )
+					{					
+//						print $this->n . " MLinea " . $trim_line . $this->lr 				;
+						$this->ml->updateforce_full_line($trim_line)								;
+					}
+					else
+					{
+//						print $this->n . " Linea " . $trim_line . $this->lr 				;
+						$this->l->updateforce_full_line($trim_line)								;
+					}			
+				}
+
+				$this->updated = $this->l->updated 											;
+			}
+		}
+	}
+
+
+};
+
+
+?>

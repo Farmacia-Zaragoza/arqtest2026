@@ -1,0 +1,50 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Examples [V.0.1.7]  (2016-11-24)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+$PHP_VER = 'v56'																				;										
+$GLOBALS['supermenu']	= '/brqx/base/rcode/v56/gen/v0_0_1/'									;
+
+include_once '/brqx/base/rcode/' . $PHP_VER . '/spc/cica_d05/home/index06/v0_0_1/rphp/inc/flat/z_translate.lib' ;
+
+
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/libs/z_string.lib'				; 											
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/libs/z_file.lib'				; 											
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/libs/z_array.lib'				; 											
+
+
+$p	=	'/brqx/base/lang/phrases/LANGS'							;
+
+$l	= 	new multiline('zh')				;
+//$s	=	'Página de Cookies'				;
+
+$s[]='20 Farmacias'; 
+//$s[]='La Peñota y Montón de Trigo';
+
+//$e  = 	'クッキーのページ'													;
+
+$e[]='药店'; 
+//$e[]='La Peñota and Montón de Trigo';
+
+// foreach ($s as $pos => $val) $l->update($s[$pos],$e[$pos])						;   // Correct
+// Un metodo para actualizar si ya existe
+//
+
+// Read - Translate a line 
+$l->p('Before to read - '.  $s[0] ) 			;
+
+foreach ($s as $pos => $val)
+{
+$l->read($s[$pos])					;
+// call : read_simple_line - multi_read ==> load
+$l->show() ; 
+}
+
+?>
+

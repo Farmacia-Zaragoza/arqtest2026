@@ -1,0 +1,81 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// MultilineItf Class  [V.0.1.9]  (2017-02-02)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 01]
+//-------------------------------------------------------------------------------------
+// (multiline) < (multilineitf) < < (multisearch) < (multiupdate) < (multibase)
+//             < (storebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-update_multi_line_with_two_lines-		: Make update for full multi lines (ES@@LA)
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_update_ml_with_two_lines extends transline {
+
+	public 		$n						=	'tr_update_ml_with_two_lines::'								;
+	
+
+	// Linea ya en formato con arrobas
+	protected function update_multi_line_with_two_lines(	
+											$multi_line_es  = '' 					, 
+											$multi_line_lan = '' 					, 
+											$force 			= false  				,
+											$lang 			= ''					)
+	{
+		$old_m = $this->m ; $this->m = 'update_multi_line_with_two_lines:'							;
+		$old_n = $this->n ; $this->n = 'tr_update_ml_with_two_lines::'								;
+
+		$this->update_lang_type ($lang )											;
+		if ($force 			  ) $this->force_update	= $force						;
+	
+		$this->multi_line_es		= 	$multi_line_es								;
+		$this->multi_line_lan		= 	$multi_line_lan								;
+		$this->line 				=	$this->multi_line_es 						;
+
+		// if is multi generate array and createbooleans
+
+		$this->check_multi(		$this->multi_line_es	)   						;
+		$this->check_multi_lan(	$this->multi_line_lan	)   						;
+
+		if ( $this->is_multi_line and $this->is_multi_line_lan )  
+		{
+			// Algoritmo Multi line
+			// 1. Actualizar multine en BD multiline
+			
+				$this->prepare_arrays() 											;
+	
+				$this->process_arrays()												;			
+
+		}
+						
+		// 2. Para cada linea en la multi line actualizar dicha line en BD line
+		// Tengo que pensar bien lo de multi line - igual tenemos que tener dos switch : multi_line and complex_phrases
+		
+		$this->is_multi_line 		= $this->is_multiline($this->multi_line_es)		;
+				
+		$this->both_are_multi_line = ( $this->is_multi_line  ) 						;
+
+		// Como en la busqueda no conocemos LAN solo podemos contar con multiline ES
+		if ( $this->both_are_multi_line )
+		{  
+//			$this->p('Ojo Multiline' . $this->lr)	; // [PR_DISABLED]		
+			$this->folder_db_path = '/brqx/lnk/lang/complex_phrases'				;
+		}
+	
+		$this->update_current_multi()												;
+
+		$this->folder_db_path = '/brqx/lnk/lang/phrases'							;
+
+		$this->m = $old_m; $this->n = $old_n 										;
+	}
+
+};
+
+
+?>

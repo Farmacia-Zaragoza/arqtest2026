@@ -1,0 +1,173 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Html Div Class  [V.0.1.8]  (2017-01-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE:
+//-------------------------------------------------------------------------------------
+// (farmupdate) < (farmfolder) < (farmarray) < (farmfile) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - [process_folder_files]	: Generate independent subfiles for prospect 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class farmfolder extends farmprocess {
+
+	public 		$n						=	'farmfolder::'										;
+
+            
+    public function __construct ()	  
+    {   
+        parent::__construct()																	;
+    }
+
+	public function process_folder_files()
+	{
+		$old_n = $this->n ; $this->n = 'farmfolder::'											;
+		$old_m = $this->m ; $this->m = 'process_folder_files:'									;
+
+		// Para todas las carpetas generadas hay que revisarlas
+		// 1-Procesa saltos de linea en ficheros tanto por dos puntos como por punto (tambien entendido) 
+		// 2-Elimina dobles espacios ( se supone que no debe haber)
+		// 3-Analiza entidades delicadas creando versiones agiles y pretty (bonitas)
+		// 4-Procesa nombre comercial y principios activos capitalizandolos
+		
+
+		$this->full_es_name					=	
+					$this->folder_es_path  	. $this->sep 	. $this->file_name				;
+
+		$slang_es = 'es'																							;
+
+		if ( $this->folder_full_path	== '')
+			$this->folder_full_path	=	
+				$this->folder_base . $this->parent . $this->sep .  $slang . $this->sep . $this->input_code_div;
+
+			$this->folder_es_path	=	
+				$this->folder_base . $this->parent . $this->sep .  $slang_es . $this->sep . $this->input_code_div;
+
+
+		// Folder  /brqx/base/farm/PROSPECTOS/de/712/786
+//		$this->p('Folder' . $this->folder_full_path . $this->lr) 				; // [PR_DISABLED]
+
+				 			// Best method for recursive
+		$di = new RecursiveDirectoryIterator(		$this->folder_es_path										,
+													RecursiveDirectoryIterator::SKIP_DOTS		)				;
+		$it = new RecursiveIteratorIterator($di)																;
+
+		$sep_ext_blank=""																						;
+
+		foreach($it as $es_path_file) 
+		{
+			$this->es_file_name = $es_path_file 																;
+
+			if ( (!is_dir($this->es_file_name)) and  (is_file($this->es_file_name)) )
+			{
+				// File /brqx/base/farm/PROSPECTOS/de/712/786/22-composicion_unidad.txt
+				if (strtolower(substr($this->es_file_name, -4)) == ".txt" )
+				{
+					$elemento 			= 	basename(	$this->es_file_name)											;
+
+					
+			        $this->arr_vlineas 	= 	file(		$this->es_file_name)											;
+
+				// /brqx/base/farm/PROSPECTOS/es/712/786/17-sobredosis.txt
+//					$this->p('F ' . $this->es_file_name  . ' E ' . $elemento . $this->lr) 						; // [PR_DISABLED]
+				//	$this->p('A ' . count($this->arr_vlineas) . $this->lr) 				; // [PR_DISABLED]
+
+					$num_elem = count($this->arr_vlineas) 															;
+					
+					if ($num_elem > 0 )
+					{
+						$full_string	= 	$this->arr_vlineas[0]													;
+						
+						// Primera linea del archivo  - elmina saltos de linea
+				        $this->clean_str	=	process_str_feeds($full_string)										;
+	
+//						$this->p('S ' . $this->clean_str . $this->lr) 						; // [PR_DISABLED]
+
+	//					$this->p('File ' . $elemento . $this->lr) 				; // [PR_DISABLED]
+			
+						// Si es un fichero
+						// Procesar fichero multi_colon
+						//echo "Procesando:" .  $full_path . "\n";
+					    if (($elemento != "00-nombre_comercial.txt"  			)	and 
+					        ($elemento != "21-laboratorio_farmaceutico.txt" 	)	and
+					        ($elemento != "22-composicion_unidad.txt" 			)	and
+					        ($elemento != "24-forma_farmaceutica.txt" 			)	and
+					        ($elemento != "23-composicion_por_ml.txt"			)					    )
+			    		{
+					        // Caso generico donde no hay que procesar puntos
+					        // Aqui hay que tener en cuenta que puede ser 10.23 y no debe separarse
+					        $this->process_separator_file(); 
+					    }
+					    elseif  ($elemento == "00-nombre_comercial.txt")
+					    {
+			      
+					        // mm_term --> Nombre comercial
+					        // cc_raw  --> Concentracion
+					        // uc_term --> Unidad concentracion
+					        $this->set_nombre_comercial();  			// OK
+	
+							
+					    }
+					    elseif  ($elemento == "21-laboratorio_farmaceutico.txt")
+					    {
+				
+					            
+					        $this->set_laboratorio_farmaceutico();    	// OK    
+					    			   
+				
+					    }    
+					    elseif  ($elemento == "22-composicion_unidad.txt")
+					    {
+					
+					            
+					        $this->set_principio_activo_solido();        // KO
+					
+					    }    
+					    elseif  ($elemento == "23-composicion_por_ml.txt")
+					    {
+					            
+					        $this->set_principio_activo_liquido();        
+					
+					    }    
+				
+						 // Process Tags
+					    if (($elemento == "01-accion_y_mecanismo.txt"  )      or 
+					        ($elemento == "02-analisis_clinicos.txt"   )      or
+					        ($elemento == "05-contraindicaciones.txt"  )      or
+					        ($elemento == "08-indicaciones.txt"        )      or
+					        ($elemento == "16-reacciones_adversas.txt" )      or
+					        ($elemento == "14-precauciones.txt"        )	  or
+					        ($elemento == "17-sobredosis.txt"          )
+					    )
+					    {
+					        // Caso generico donde no hay que procesar puntos
+					        // Aqui hay que tener en cuenta que puede ser 10.23 y no debe separarse
+//					        $this->process_farma_tags(); 
+					    }
+						 
+					}		
+				}
+			}
+		}								 
+		
+		uniq_sort($this->arr_properties) 															; // [PHP_56]
+
+		// Create empty filename		
+		create_full_filename($this->full_categories_file_name	)												;
+		if (is_file($this->full_categories_file_name))
+			save_properties_to_file(	$this->full_categories_file_name										, 
+										$this->arr_properties										);
+				
+		$this->m = $old_m ; $this->n = $old_n 														;
+	}
+
+};
+
+?>

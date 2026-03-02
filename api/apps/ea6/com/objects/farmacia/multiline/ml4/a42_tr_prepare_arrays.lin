@@ -1,0 +1,51 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Prepare Arrays Class  [V.0.1.9]  (2017-01-30)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 04]
+//-------------------------------------------------------------------------------------
+// (multiline) < (multilineitf) < (multicomplex) < (multisearch) < (multiupdate) < (multibase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-prepare_arrays-				: Prepare arrays to process every line
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_prepare_arrays extends tr_process_arrays {
+
+	public 		$n						=	'tr_prepare_arrays::'						;
+	
+            
+
+	protected function prepare_arrays()
+	{
+		// Review arrays removing empty values
+		$old_m = $this->m ; $this->m = 'prepare_arrays:'										;
+		$old_n = $this->n ; $this->n = 'tr_prepare_arrays::'											;
+	
+		$es_array 	= 	array() 																;
+		$lan_array 	=	array()																	;
+
+		// Cambiamos el modo de actuar
+		$trans_line		= 	'' 	; // solo es valido cuando buscamos
+		$type			= 	'write'	; // Modo de accion read| write
+
+		// Actualizamos el array de salida					
+		$this->line_review ($this->multi_line_es, $trans_line, $type , $this->arr_multi ) ; 
+		
+		// Actualizamos el array de salida					
+		$this->line_review ($this->multi_line_lan, $trans_line, $type , $this->arr_multi_lan ) ; 
+
+		// Aqui tenemos dos arrays con las expresiones a traducir / actualizar en BD
+
+		$this->m = $old_m ; $this->n = $old_n 												;
+	}
+
+};
+
+
+?>

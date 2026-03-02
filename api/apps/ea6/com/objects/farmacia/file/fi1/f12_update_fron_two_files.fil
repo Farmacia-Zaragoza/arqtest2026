@@ -1,0 +1,81 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// LangFile Class  [V.0.1.7]  (2016-11-24)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage files 
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - [update]   	  			: Update DB lang from file
+// - [update_from_two_files]   	: Update DB lang from two files
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_file_update_from_two_files extends tr_file_updateforce {
+
+	public 		$n						=	'tr_file_update_from_two_files::'						;
+	
+
+	public function update_from_two_files(	$es_file 		= '' 							, 
+											$lang_file 		= '' 							, 
+											$lang 			= '' 							, 
+											$base_lang 		= ''							)
+	{
+		$old_m = $this->m ; $this->m = 'update_from_two_files:'								;
+		$old_n = $this->n ; $this->n = 'langfile::'											;
+		// Load file in structure to update or to translate (soon)
+
+		$this->update_lang_type ( $lang )  													;
+		if ($base_lang 	!= '' ) $this->base_lang 	= $base_lang							;
+
+		if ( ( $es_file != '' ) and ( $lang_file != '' ) and ( $this->lang != '' )) 
+		{
+			if (!is_file($es_file))
+				$this->es_file	=	$this->folder_current_path . $es_file					;  
+			else
+				$this->es_file	=	$es_file 												;
+
+			if (!is_file($lang_file))
+				$this->lang_file	=	$this->folder_current_path . $lang_file				;  
+			else
+				$this->lang_file	=	$lang_file 											;
+			
+			if (is_file($this->lang_file) and (is_file($this->es_file)))
+			{	
+				$this->arr_vlineas_es 	= 	file($this->es_file)							; 
+				$this->arr_vlineas_lan	= 	file($this->lang_file)							; 
+
+				foreach ($this->arr_vlineas_es as $pos => $linea )
+				{
+					// $this->l 				=	new langline($this->lang)						;		
+					// $this->l 				=	new multiline($this->lang)						;		
+					
+					// $this->ml 				=	new multiline($this->lang)						;		
+
+					$trim_line_es		= dash_clean_with_feed($linea)										; 				
+					$trim_line_lan		= dash_clean_with_feed($this->arr_vlineas_lan[$pos])				;	
+
+					if ($this->ml->is_multiline($trim_line_es) )					
+					{
+						// $this->p("MLinea " . $trim_line_es . '@@' . $trim_line_lan . $this->lr 	); // [PR_DISABLED]
+						$this->ml->update($trim_line_es	, $trim_line_lan)					;
+						$this->updated = $this->ml->updated 											;
+					}
+					else
+					{ 
+//						print $this->n . "Linea " . $trim_line_es . '@@' . $trim_line_lan . $this->lr 						;
+						$this->l->update($trim_line_es	, $trim_line_lan)					;
+						$this->updated = $this->l->updated 											;
+					}			
+				}
+
+			}
+		}
+	}
+
+};
+
+
+?>

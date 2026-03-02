@@ -1,0 +1,66 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - App Truck  [V.0.0.2]  (2017-11-22)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [EA6]
+//-------------------------------------------------------------------------------------
+// d-disconnect- 			: Disconnect from mongo if would be needed to use
+// d-process- 				: Log or process something after mongo
+
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 		cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
+
+const 		{ model_save } 		= 	require(	cons.JS_BASE + 'com/objects/fire/f01_model/m06_save.ea6'	),
+			mongoose 			= 	require(	cons.NODE_MOD + 'mongoose'									),
+			empty 				= 	require(	cons.NODE_MOD 	+ 'is_empty'								),
+			echo 				= 	require(	cons.NODE_MOD + 'node-echo'									);
+
+
+class model_process extends model_save
+{
+	constructor( pmt = '' )
+	{
+		// Pasamos la request
+		super(pmt)
+	
+		// RUN --> PROCESS
+	}
+
+	// ------------------------- ASYNC DISCONNECT [STA] ------------------------- 	
+	async disconnect() 
+	{
+	  	await new Promise(resolve => setTimeout(() => resolve(), 2000));
+ 		mongoose.disconnect()
+	}
+
+	// ------------------------- PROCESS [STA] ------------------------- 	
+	process()
+	{
+		if ( this.b.ready_to_load				&& 
+			!empty(this.pnode)					&& 
+			this.pnode.b.type_generated			)		
+		{
+
+			// echo("FPC" )
+
+
+			// console.log("MONGOCACHE_" + this.pnode.code.length)
+
+			this.code = this.pnode.code
+
+			console.log("MONGOCACHE2_" + this.code.length)
+			
+			var stop_time = Date.now() / 1000 + Date.now() / 1000
+			var start_time = global.GLOBALS.start_time
+			var total_time = Math.round(stop_time - start_time, 4)
+			var time_str = total_time + " segundos "
+			
+		} 
+
+	
+	} 
+
+} // end Class
+
+exports.model_process = model_process
+

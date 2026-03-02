@@ -1,0 +1,254 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Multicomplex Process Class  [V.0.1.8]  (2017-01-28)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 02]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (multicomplex) < (langreadline) < (langlinees) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// -d-process_multi_complex-		: 	Process multi complex line
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class tr_multicomplex extends tr_multicomplex_read {
+
+	public 		$n						=	'tr_multicomplex::'						;
+	
+	// Processine ES Langs
+	
+	public	$phrase						= 	''			;
+	public 	$word						= 	''			;
+
+	protected	$chars_after_words			= 	''			;
+	protected	$chars_between_words			= 	''			;
+	protected	$chars_before_words			= 	''			;
+            
+
+	public function process_multi_complex(	$es_line 	= ''								, 
+												$lang 		= ''								)
+	{
+		$old_m = $this->m ; $this->m 			= 'process_multi_complex:'						;
+		$old_n = $this->n ; $this->n 			= 'tr_multicomplex::'								;
+
+		// 1. Recorre la cadena buscando el inicio
+		// 2. Genera palabra desde el inicio al final. Es valido para cualquier palabra ya sea o no multi
+		// 3. No Traduce/Carga esa palabra. Hay otro metodo para hacerlo
+		
+		if ($es_line != '')
+		{
+			$is_translated 		= true															;
+			$search_msg			=	''															;
+			$full_search_msg	= 	''															;
+
+			// Replace multiple spaces - dashes - external - internal
+
+			// $this->p('Entrando1: ' . $es_line . $this->lr ) ; // [PR_DISABLED]
+			
+			$es_line	=	dash_clean_with_feed($es_line)										;
+
+			$this->translated_line = ''															;
+
+			// $this->p('Entr2: ' . $es_line . $this->lr ) ; // [PR_DISABLED]
+
+ 			$this->update_lang_type ($lang )												;
+
+			$arr_str = array();
+
+			for ($c = 0 ; $c < strlen($es_line) ; $c++)	$arr_str[] = $es_line[$c] ;  
+			
+			$word_started = false															; 				
+
+			// Frase traducica - translated line
+			// Frases: [ADD_CHARS](WORD)[ADD_CHARS]											;
+			
+			$this->phrase 			= ''														; // Frase completa
+			$this->word 				= ''														; // Palabra a traducir
+
+			$this->chars_before_word  = ''														;
+			$this->chars_between_words = '' 														;
+			$this->chars_after_word   = ''														;
+
+			// PHRASE = CHARS_BEFORE (WORD) CHARS_AFTER				
+			
+			$is_first_time		= 0 ; 				
+			$len_string			= strlen($es_line)											;
+						
+			foreach ($arr_str as $pos => $crc) 
+			{
+				// Tenemos que saber en todo momento si quedan caracteres especiales entre el inicio y el final
+				$curr_last_chars = substr($es_line, $pos)												;
+				$curr_last_spec  = preg_replace($this->sep_multi_preg_end_phrase,'', $curr_last_chars)				;
+
+				// Cuando la longitud de la cadena que queda quitando los caracteres raros sea 0 es el final de la cadena
+//					$len_curr_last_chars = strlen($curr_last_chars) 											;
+				$len_curr_last_spec  = strlen($curr_last_spec) 											;
+
+//					$this->p('PP - ' . $pos . ' pend -' . $len_curr_last_chars . '-' . $this->lr );
+//					$this->p('XX - ' . $pos . ' pend -' . $len_curr_last_spec . '-' . $this->lr );
+
+				$end_of_word = ( $len_curr_last_spec === 0)													;
+				
+				// FALTA INSERTAR NUMEROS Y GUIONES
+
+				if (	preg_match(		$this->sep_guion_preg, $crc) )
+				{
+				//--==--==--==--==--==--==--  A- ES UN GUION. PUEDE SER PARTE DE UNA PALABRA --==--==--==--==--==--==--
+					if ($end_of_word)
+					{
+						// A1-GUION - FINAL DE PALABRA
+						$word_started 					= false														;
+						$this->chars_after_word 		.= $crc												;	
+						$this->chars_between_words	 	= ''												;
+					}
+					else
+					{	
+						// A2-GUION - NO ES FINAL DE PALABRA - PALABRA INICIADA
+						if ( $word_started )
+						{
+							$this->word 					.=	$crc									;
+						}
+						else		
+						{
+						// A3-GUION - NO ES FINAL DE PALABRA - PALABRA NO INICIADA
+	
+							$this->chars_before_word .= $crc 														;
+				
+//							$this->p('SEP - ' . $pos . ' crc -' . $crc . '-' . $this->lr ) ; // PR_DISABLED 
+						}			
+					}
+				}
+				elseif (preg_match(		$this->sep_numbers_preg, $crc) )
+				{
+				//--==--==--==--==--==--==--  A- ES UN NUMERO. PUEDE SER PARTE DE UNA PALABRA --==--==--==--==--==--==--
+					if ($end_of_word)
+					{
+						// A1-NUMERO - FINAL DE PALABRA
+						$word_started 					= false														;
+						$this->chars_after_word 		.= $crc												;	
+						$this->chars_between_words	 	= ''												;
+					}
+					else
+					{	
+						// A2-NUMERO - NO ES FINAL DE PALABRA - PALABRA INICIADA
+						if ( $word_started )
+						{
+							$this->word 					.=	$crc									;
+						}
+						else		
+						{
+						// A3-NUMERO - NO ES FINAL DE PALABRA - PALABRA NO INICIADA
+	
+							$this->chars_before_word .= $crc 														;
+				
+//							$this->p('SEP - ' . $pos . ' crc -' . $crc . '-' . $this->lr ) ; // PR_DISABLED 
+						}			
+					}
+				}
+				// [CIRUGIA]. Se recomienda suspender la administración de AAS al menos 5-7 días antes de una intervención quirúrgica - 
+                elseif (preg_match($this->sep_multi_preg, $crc) )
+				{
+					//A- ES UN CARACTER RARO
+					// Ojo aqui son separadored de inicio de frase pero el separador debe insertarse en la cadena tambien
+//						$this->p('SYM - ' . $pos . ' crc ' . $crc . $this->lr ); // [PR_DISABLED]
+
+					if ($end_of_word)
+					{
+						// A1-CARACTER RARO - FINAL DE PALABRA
+						$word_started 					= false														;
+						$this->chars_after_word 		.= $crc												;	
+						$this->chars_between_words	 = ''												;
+					}
+					else
+					{	
+						// A2-CARACTER RARO - NO ES FINAL DE PALABRA - PALABRA INICIADA
+						if ( $word_started )
+						{
+							$this->chars_between_words 	.=	$crc															; 
+						}
+						else		
+						{
+						// A3-CARACTER RARO - NO ES FINAL DE PALABRA - PALABRA NO INICIADA
+	
+							$this->chars_before_word .= $crc 														;
+				
+//							$this->p('SEP - ' . $pos . ' crc -' . $crc . '-' . $this->lr ) ; // PR_DISABLED 
+						}			
+					}
+				}		
+				elseif (preg_match($this->sep_spaces_preg, $crc) )
+				{ 
+					// ES UN SPACIO
+					if ($end_of_word)
+					{
+						$word_started = false													;
+						$this->chars_after_word 		.= $crc												;	
+					}
+					else
+					// ESPACIO - NO ES FINAL DE PALABRA
+						if ( $word_started )
+						{
+							$this->chars_between_words 		.=	$crc										; 
+						}
+						else
+						{
+							$this->chars_before_word		.=	$crc 										; 
+						}		
+				}
+				else 
+				{
+					// CARACTER - PARTE DE UNA PALABRA
+					if ($end_of_word)
+					{
+						// Aqui no deberia entrar
+						$word_started 	= false													;
+
+					}
+					else
+					{
+						if ( $word_started )
+						{
+						// CARACTER - NO FIN DE FRASE - PALABRA INICIADA
+							//$this->word 					.= $this->chars_before_words 					; 
+							$this->word 					.= $this->chars_between_words 					; 
+							$this->word 					.=	$crc									;
+							$this->chars_between_words		= ''										; 
+						}
+						else
+						{
+						// CARACTER - NO FIN DE FRASE - PALABRA NO INICIADA
+							$word_started 					= 	true 									;
+							$this->word 					.=	$crc									;
+						}		
+
+					}						
+//					print 'pos -es caracter - ' . $pos . ' crc ' . $crc . $this->lr ;
+				}
+			} // End foreach
+
+
+//					$phrase = $chars_before_word . $word . $chars_after_word						;
+			
+			// $this->p('WordA [ ' . $this->word 		. ']' . $this->lr )					; // [PR_ENABLED]				
+
+			$this->processed_complex_word	= 	$this->word													;
+
+		
+				
+		}
+		$this->m = $old_m ; $this->n = $old_n 														;
+	}
+
+
+};
+
+
+
+
+?>

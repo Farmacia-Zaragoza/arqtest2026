@@ -1,0 +1,60 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// LangFile Class  [V.0.1.7]  (2016-11-24)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage files 
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - [update]   	  			: Update DB lang from file
+// - [update_from_two_files]   	: Update DB lang from two files
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+
+
+$PHP_VER = 'v56'																				;										
+$GLOBALS['supermenu']	= '/brqx/base/rcode/v56/gen/v0_0_1/'									;
+
+include_once '/brqx/base/rcode/' . $PHP_VER . '/spc/cica_d05/home/index06/v0_0_1/rphp/inc/flat/z_translate.lib' ;
+
+
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/libs/z_string.lib'				; 											
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/libs/z_file.lib'				; 											
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/libs/z_array.lib'				; 											
+
+
+$lang =	'ja' 																				;
+$f	= 	new langfile($lang)																	;
+
+$n='categories'																				;
+
+$f_es 	= $n 	. '_es.dat'																		;
+$f_lan 	= $n	. '_' . $lang . '.dat'													;
+
+// $f->p('Before Updating ' . $f_es . ' EN ' . $f_lan)											;
+
+// $f->updateforce_from_two_files($f_es,$f_lan)														;
+
+$es = 'Polvos compactos'																		;
+
+// Si falla algo no puede hacer el read
+$f->l->read($es)																			;	// Get LAN line in translated_line
+
+$l = $f->l																					; 
+
+
+if ($l->is_translated ) 
+	print 'OK-' . $l->n . 'es -' . $es . ' tran [' . $l->lang . '] -' .  $l->translated_line . $l->lr  	;
+else
+{	
+	print 'KO-' . $l->search_msg 		. $l->lr 														;
+	print 'KO-' . $l->translated_line 	. $l->lr 														;
+}
+
+
+
+?>

@@ -1,0 +1,43 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// LangUpdateLine Class  [V.0.1.8]  (2016-01-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 04]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (langreadline) < (updatecheck) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-create_update_lan-		  	: Create and update a file for LAN
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_create_update_lan extends tr_create_update_es {
+
+	public 		$n						=	'tr_create_update_lan::'							;
+
+            
+
+	protected function create_update_lan()
+	{
+		$old_m = $this->m ; $this->m = 'create_update_lan:'								;
+		$old_n = $this->n ; $this->n = 'tr_create_update_lan::'								;
+	
+//		$this->p('Html: ' . $html_string . ' Unicode : ' . $this->dual_line . $this->lr)		; // [PR_ENABLED]
+
+		create_update_full_filename($this->full_lang_file,$this->dual_line)				;
+
+		$this->updated = true 															; 
+
+		$this->m = $old_m ; $this->n = $old_n 											;
+	}
+
+
+};
+
+
+?>

@@ -1,0 +1,40 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// LangUpdateLine Class  [V.0.1.8]  (2016-01-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 04]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (langreadline) < (updatecheck) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-create_update_es-   	  		: Create and update a file for ES 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_create_update_es extends tr_update_check {
+
+	public 		$n						=	'tr_create_update_es::'							;
+
+            
+	protected function create_update_es()
+	{
+		$old_m = $this->m ; $this->m = 'create_update_es:'								;
+		$old_n = $this->n ; $this->n = 'tr_create_update_es::'								;
+
+		create_update_full_filename($this->full_lang_file_es,$this->dual_line_es)		;
+
+		$this->updated = true 															; 
+
+		$this->m = $old_m ; $this->n = $old_n 											;
+	}
+
+
+};
+
+
+?>

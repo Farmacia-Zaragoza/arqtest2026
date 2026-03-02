@@ -1,0 +1,203 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Node Js - Inode Fast Node Class  [V.0.1.7]  (2017-11-03)
+//Brqx Group - Agile Farmacia Zaragoza Methodology
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1 [EA6]
+//-------------------------------------------------------------------------------------
+//Fast image load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Class: c-inode-
+//-------------------------------------------------------------------------------------
+//Methods:
+//-------------------------------------------------------------------------------------
+//- d-create_image_name-				: Build html final code for object
+//- d-create_resolution_img-			: Load all drupal node details
+//- d-create_array_img_resolutions-    : Create div_NN   dhtml object
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 	cons 					= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
+
+const	{ anode } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/anode/an0/an01_obj.es6'						),
+		url 					= 	require( 	cons.JS_BASE + 'com/libs/string/url.es6'										),
+		run						= 	require(	cons.JS_BASE + 'com/pms/arrays/save_array_img_resolutions_in_ram_promise.ea6'	),
+		fs						=	require(	'fs'																			),		
+		path					=	require(	'path'																			);		
+
+class inode extends anode {
+	constructor() {
+		super()
+		this.n = "inode::"
+	}
+
+// -------------------------------- CREATE_IMAGE_NAME -------------------------------- 
+	create_image_name() 
+	{
+		this.m		= 'create_image_name'
+		this.n 		= "inode::"
+
+		// https://node.dbrqx.com/photos/1600x1200/transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0138_1600x1200.jpg
+		// this.p('Image_url_path ' + this.original_image_url_path )
+
+		this.only_image_with_resolution = path.basename(this.original_image_url_path)
+
+		// transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0139_1600x1200.jpg
+		// this.p('Image_resolution ' + this.only_image_with_resolution )
+		
+		//   /ssd/truck/1600x1200/
+		// this.p('Image_folder  ' + this.s.img_folder )
+
+		
+		if (this.s.img_folder.substr(-1) != "/") this.s.img_folder += "/"
+
+		this.img_path = this.s.img_folder + path.basename(this.original_image_url_path)
+
+		var num_points = url.points_count(this.only_image_with_resolution)
+
+		switch (num_points) {
+			case 0:
+				this.image_name_with_resolution = this.only_image_with_resolution
+				break
+
+			case 1:
+				this.image_name_with_resolution = path.dirname(this.only_image_with_resolution.replace(".", "/"))
+				break
+
+			case 2:
+				this.image_name_with_resolution = path.dirname(path.dirname(this.only_image_with_resolution.replace(".", "/")))
+				break
+
+			case 3:
+				this.image_name_with_resolution = path.dirname(path.dirname(path.dirname(this.only_image_with_resolution.replace(".", "/"))))
+				break
+		}
+
+		// this.p('Image_name_without_ext ' + this.image_name_with_resolution )
+
+
+		let image_without_res =  this.image_name_with_resolution.length - 10
+
+		// transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0139
+		this.image_name = this.image_name_with_resolution.substr(0,image_without_res)
+
+		// this.p('Image_name ' + this.image_name )
+
+	}
+
+	// ------------------------------ CREATE_RESOLUTION_IMG_NO_GLOB ------------------------------ 
+	create_resolution_img_no_glob() 
+	{
+		// this.p('ENTERING_NOGLOB' + this.s.img_folder )
+		// pendiente
+
+		if ( fs.existsSync(this.s.img_folder) &&   fs.lstatSync(this.s.img_folder).isDirectory() ) 
+		{
+			if ( fs.existsSync(this.img_path) &&   fs.lstatSync(this.img_path).isFile() ) 
+			{
+				var img_to_use 					= this.only_image_with_resolution.replace(".", "/")
+				
+				this.extension 					= path.basename(img_to_use)
+				this.img_name_with_resolution 	= path.dirname(img_to_use)
+				this.img_name_clean = this.image_name + "." + this.extension
+
+				// this.p('Image_name ' + this.img_name_clean)
+
+				//// this.build_dimensions()
+
+				this.img_url_path = this.s.img_url_folder + this.only_image_with_resolution
+
+				// https://node.dbrqx.com/photos/1600x1200/transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0139_1600x1200.jpg
+				// this.p('Image_PATH ' + this.img_url_path)
+
+				// 1600x1200
+				// this.p('Img_base_resolution ' + this.s.img_base_resolution)
+				
+				this.arr['sim'][this.s.img_base_resolution] = this.img_path
+				this.arr['sko'][this.s.img_base_resolution] = this.s.img_folder
+				this.arr['sfu'][this.s.img_base_resolution] = this.s.img_url_folder
+				this.arr['sur'][this.s.img_base_resolution] = this.img_url_path
+
+				this.replace ( 		this.img_path , 	"ssd", "ram" )			
+				this.ram_img_path 							= this.result
+
+				this.autoreplace( 	this.s.img_folder )
+				this.ram_img_folder 						= this.result
+
+				this.replace( 		this.img_url_path	,"photos", "phoram"	)
+				this.ram_img_url_path 						= this.result
+
+				this.autoreplace(	this.s.img_url_folder )
+				this.ram_img_url_folder 					= this.result
+				
+				this.arr['rim'][this.s.img_base_resolution] = this.ram_img_path
+				this.arr['rko'][this.s.img_base_resolution] = this.ram_img_folder
+				this.arr['rfu'][this.s.img_base_resolution] = this.ram_img_url_folder
+				this.arr['rur'][this.s.img_base_resolution] = this.ram_img_url_path
+
+				// this.p('creating_array')
+			
+				// Esta es la clave - Tarda mucho en generar estos reemplazos
+				this.create_array_img_resolutions()
+
+				// Save images from ssd to ram (0,3s)
+				// HERE review
+				// Vamos a paralelizarlo, pues realmente no necesitamos las imagenes  hasta el final
+
+				var t = this
+				var data_and_error = ''
+		
+				// PROMESAS EN PARALELO
+				
+				run.save_array_img_resolutions_in_ram(data_and_error,t)
+				.then(function () {} ) 
+				
+// 				this.save_array_img_resolutions_in_ram()
+			}
+		}
+	}
+
+
+	// -------------------------------- CREATE_ARRAY_IMG_RESOLUTIONS --------------------------------
+	create_array_img_resolutions()
+	{
+		// 16
+		// this.p('Num_resolutions ' + this.arr['resolutions_to_generate'].length )
+		
+		var str_aux 		= ''
+		for (var resolution of Object.values(this.arr['resolutions_to_generate']))
+		{
+			// this.p('R ' + resolution + ' BASE ' + this.s.img_base_resolution)
+			
+			this.replace(this.img_path			, 	this.s.img_base_resolution, resolution)
+			this.arr['sim'][resolution] =  this.result
+
+			// this.p ('ori: ' + this.img_path + '  ' + '  dest ' + this.result )
+			// ori: /ssd/truck/1600x1200/transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0139_1600x1200.jpg    
+			// dest /ssd/truck/0184x0245/transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0139_0184x0245.jpg
+
+
+			this.autoreplace(		this.img_url_path		)
+			this.arr['sur'][resolution] =  this.result
+
+			this.autoreplace(		this.s.img_folder		)
+			this.arr['sko'][resolution] =  this.result
+
+			this.autoreplace(		this.s.img_url_folder		)
+			this.arr['sfu'][resolution] =  this.result
+
+			this.autoreplace(		this.ram_img_path		)
+			this.arr['rim'][resolution] =  this.result
+
+			this.autoreplace(		this.ram_img_url_path		)
+			this.arr['rur'][resolution] =  this.result
+
+			this.autoreplace(		this.ram_img_folder 				)
+			this.arr['rko'][resolution] =  this.result
+
+			this.autoreplace(		this.ram_img_url_folder		)
+			this.arr['rfu'][resolution] =  this.result
+		}
+	}
+
+}
+
+exports.inode = inode

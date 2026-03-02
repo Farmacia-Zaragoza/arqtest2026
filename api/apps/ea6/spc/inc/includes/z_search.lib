@@ -1,0 +1,29 @@
+<?php 
+// Library for Php Objects
+
+$supermnu_sea   = $supermnu_libs . '/objects/search/solr/'     ;
+
+// solr Library
+require_once  '/brqx/lnk/drupal/v50/libraries/SolrPhpClient/Apache/Solr/Service.php'				;
+
+include_once  $supermnu_funcs . 'search/solr/queries.sea' ;
+
+
+include_once  $supermnu_sea . 'search_structure.sea'			;
+
+include_once  $supermnu_sea . 'entity/search_entity.sea'				;
+include_once  $supermnu_sea . 'entity/search_entity_letter.sea'		;
+
+include_once  $supermnu_sea . 'search.sea'						;
+
+include_once  $supermnu_sea . 'foto_search.sea'					;
+
+// First idea solr
+include_once  $supermnu_sea . 'solr.sea'					;
+
+// Second idea structure
+
+// File for categories to have all posible entities to convert
+include_once  $supermnu_sea . 'full_entities_search.sea'		;
+
+?>

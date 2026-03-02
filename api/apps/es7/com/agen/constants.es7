@@ -1,6 +1,6 @@
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Agile Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2019 )
-// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia
 // ---------------------------------------------------------------------------
 // Brqx 2019 - 19/12/01				Depth:[0N]
 // Version : 0.0.2                  Type :[FUNCTION]
@@ -11,11 +11,11 @@
 // ---------------------------------------------------------------------------
 // -  JS_BASE7 - JS_TYP7 - JS_SPC7
 // ---------------------------------------------------------------------------
-//--  
+//--
 // ---------------------------------------------------------------------------
-// - Requiere 
+// - Requiere
 // ---------------------------------------------------------------------------
-//-- 
+//--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
 
@@ -44,12 +44,12 @@ Object.defineProperty(String.prototype, 'bCode', {
     var hash = '';
     var i, chr, part= '' ,partconv= '';
     // echo ("entering " + this ) ;
-    for (i = 0; i < this.length; i++) 
+    for (i = 0; i < this.length; i++)
     {
       // el 0 es el 48  como charCodeAt
       chr   = this[i]
       // echo ("converting " + chr ) ;
-      if ( chr == "v" ) 
+      if ( chr == "v" )
       {
           partconv = parseInt(part).toString(36) ;   // Convert to alphanumeric
           if (partconv.length <2)  partconv = "0" + partconv;
@@ -61,56 +61,55 @@ Object.defineProperty(String.prototype, 'bCode', {
       else
         part += chr ;
     }
-    if (part != "") 
+    if (part != "")
     {
           partconv = parseInt(part).toString(36) ;   // Convert to alphanumeric
           if (partconv.length <2)  partconv = "0" + partconv;
           hash += partconv
-    }    
-    
+    }
+
     if (hash.length <2)  hash = "0" + hash;
-    
+
     return hash ;
   }
 });
 
 
 //Constantes GLOBALES
-define("JS_MODEL", 	'es7'										)						
-define("JS_BASE" ,	'/brqx/rcode/es6/'						)						
-define("JS_OBJ" , 	'/brqx/rcode/es6/com/objects/'			)						
-define("JS_LIB" , 	'/brqx/rcode/es6/com/libs/'			)						
+define("JS_MODEL", 	'./es7'										)
+define("JS_BASE" ,	'./es6/'						)
+define("JS_OBJ" , 	'./es6/com/objects/'			)
+define("JS_LIB" , 	'./es6/com/libs/'			)
 
-define("NODE_MOD", 	'/brqx/run/node_modules/'	)						
+define("NODE_MOD", 	'/brqx/run/node_modules/'	)
 
-define("JS_THM" , 	'/brqx/rcode/es6/spc/theme/'			)						
-define("JS_THC" ,   '/brqx/rcode/es6/spc/theme/common/'	)						
+define("JS_THM" , 	'./es6/spc/theme/'			)
+define("JS_THC" ,   './es6/spc/theme/common/'	)
 
 // ES7 constants
-define("JS_BASE7" ,	'/brqx/rcode/es7/'						)						
-define("JS_COM7" , 	'/brqx/rcode/es7/com/'			)						
-define("JS_SPC7" , 	'/brqx/rcode/es7/spc/'			)						
+define("JS_BASE7" ,	'./es7/'						)
+define("JS_COM7" , 	'./es7/com/'			)
+define("JS_SPC7" , 	'./es7/spc/'			)
 
-define("JS_ARQ7" , 	'/brqx/rcode/es7/spc/arq/'			)						
-define("JS_COL7" , 	'/brqx/rcode/es7/spc/col/'			)						
-define("JS_EMP7" , 	'/brqx/rcode/es7/spc/emp/'			)						
-define("JS_MET7" , 	'/brqx/rcode/es7/spc/met/'			)						
-define("JS_PDT7" , 	'/brqx/rcode/es7/spc/pdt/'			)						
-define("JS_PER7" , 	'/brqx/rcode/es7/spc/per/'			)						
-define("JS_PRO7" , 	'/brqx/rcode/es7/spc/pro/'			)						
-define("JS_PYC7" , 	'/brqx/rcode/es7/spc/pyc/'			)						
-define("JS_SRV7" , 	'/brqx/rcode/es7/spc/srv/'			)						
-define("JS_TST7" , 	'/brqx/rcode/es7/spc/tst/'			)						
+define("JS_ARQ7" , 	'./es7/spc/arq/'			)
+define("JS_COL7" , 	'./es7/spc/col/'			)
+define("JS_EMP7" , 	'./es7/spc/emp/'			)
+define("JS_MET7" , 	'./es7/spc/met/'			)
+define("JS_PDT7" , 	'./es7/spc/pdt/'			)
+define("JS_PER7" , 	'./es7/spc/per/'			)
+define("JS_PRO7" , 	'./es7/spc/pro/'			)
+define("JS_PYC7" , 	'./es7/spc/pyc/'			)
+define("JS_SRV7" , 	'./es7/spc/srv/'			)
+define("JS_TST7" , 	'./es7/spc/tst/'			)
 
-define("JS_ACO7" , 	'/brqx/rcode/es7/spc/acomm/'			)						
-define("JS_AQD7" , 	'/brqx/rcode/es7/spc/arq/drupal/'   )						
+define("JS_ACO7" , 	'./es7/spc/acomm/'			)
+define("JS_AQD7" , 	'./es7/spc/arq/drupal/'   )
 
 
-define("JS_LIB7" , 	'/brqx/rcode/es7/com/blib/'			)						
+define("JS_LIB7" , 	'./es7/com/blib/'			)
 
 // Structured Types
-define("JS_TYP7" , 	'/brqx/rcode/es7/com/ctyp/t01/'			)						
+define("JS_TYP7" , 	'./es7/com/ctyp/t01/'			)
 
-// Functional Types - 
-define("JS_TYF7" , 	'/brqx/rcode/es7/com/ctyp/t02/'			)						
-
+// Functional Types -
+define("JS_TYF7" , 	'./es7/com/ctyp/t02/'			)

@@ -1,0 +1,97 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Search Class  [V.0.1.9]  (2017-01-28)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 04]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (langreadline) < (langlinees) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-search-   	  		: Search string in a file
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_search extends tr_search_es {
+
+	public 		$n						=	'tr_search::'						;
+
+            
+	public function search($file_to_search = '')
+	{
+		$old_m = $this->m ; $this->m = 'search:'									;	 
+		$old_n = $this->n ; $this->n = 'tr_search::'							;
+	// Debe buscar la cadena en el archivo - recibe ruta absoluta
+	// Hablamos de unos ficheros especiales con caracter divisor ARROBA ARROBA
+
+		$this->is_translated	=	false											;
+			
+		// Solo tiene sentido buscar si existe el archivo y la linea a buscar no es vacia
+	
+		if ($file_to_search != '') $this->full_lang_file = $file_to_search 			;
+	
+		// /brqx/lnk/lang/four_words/LANGS/en/l/la/la_.word
+		// $this->p('En_plena_Busqueda ' . $this->full_lang_file)				;	// [PR_DISABLED]
+	
+		if (is_file($this->full_lang_file))	
+		{
+				
+			$this->arr_vlineas = file($this->full_lang_file)						; 
+		
+	//		$this->p('B1 ' . $this->dash_line_for_line . ' en ' . $this->full_lang_file  . $this->lr ) ; // [PR_DISABLED]
+			
+			foreach ($this->arr_vlineas as $sLinea)
+			{ 
+				// Reemplazamos los saltos de elinea
+				$LINE_UCASE = 	eregi_replace("[\n|\r|\n\r]", '', $sLinea)			; 
+				
+				// Son lineas con el formato esp@@idioma
+			
+				$split_arr = preg_split($this->sep_lang_expr, $LINE_UCASE)			; 
+		
+				$arr_len=count($split_arr)-1										;
+				
+				$LINE_ES=strtolower_utf8_clean_for_line($split_arr[0])				;
+				$LINE_LAN="";
+	
+	//			$this->p('B2 ' . $LINE_ES .  $this->lr ) ; // [PR_ENABLED]
+				
+				if ($arr_len > 0 )
+				{
+					// exist translated expresion
+					$LINE_LAN	=  html_entity_decode($split_arr[1])					;
+				
+				
+					if ( $LINE_ES == $this->dash_line_for_line )
+					{
+					    // $this->p("Bingo_Linea_Encontrada " . $LINE_ES . " ## " . $LINE_LAN); // [PR_ENABLED]
+						$this->is_translated 	= 	true							;
+						$this->translated_line	=	$LINE_LAN						;
+						
+						
+						return $this->is_translated 								;	
+					}
+				}
+			
+			} // End Foreach
+		}
+		else
+		{	
+			$this->p('File not found: ' . $this->full_lang_file )					; // Adding search message
+
+			$this->s('File not found: ' . $this->full_lang_file )					; // Adding search message
+			$this->is_translated = false 											;	 
+		}
+
+		$this->m = $old_m ; $this->n = $old_n ; 
+		return $this->is_translated													;
+	}
+
+
+};
+
+?>

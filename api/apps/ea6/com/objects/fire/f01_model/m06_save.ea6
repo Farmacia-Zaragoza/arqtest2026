@@ -1,0 +1,108 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js - Model Save - App Truck  [V.0.0.1]  (2017-12-07)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [EA6]
+//-------------------------------------------------------------------------------------
+// - d-check_dont_exist_to_save_code- 		: Async Check and save code
+// - d-save_code_to_mongo- 					: Async method to save code to mongo
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 		cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
+
+const 		{ index } 			= 	require(	cons.JS_BASE + 'com/objects/fire/f02_index/index.es6'		),
+			mongoose 			= 	require(	cons.NODE_MOD + 'mongoose'									),
+ 	 		{ idSchema }		= 	require(	cons.JS_BASE + 'com/libs/mongo/schemes/html.sch'									);
+			echo 				= 	require(	cons.NODE_MOD + 'node-echo'									);
+
+class model_save extends index
+{
+	constructor( pmt = '' )
+	{
+		super(pmt)
+		
+		// RUN --> PROCESS
+	}
+
+	// FROM --> run_mongo
+	// TO   --> nothing (async task)
+
+	// --------------------------- SAVE_CODE_TO_MONGO ---------------------------
+	async check_dont_exist_to_save_code()
+	{ 
+		// Cannot overwrite `pages` model once compiled.
+			// No existe el registro. Lo insertamos ( Que tarde lo que quiera)
+
+		// this.p('0N. Saving to Mongo '+  this.s.name  + ' LEN ' + this.code.length)
+		
+		// this.p('Type sch ' + typeof this.u.sch + ' value ' +  this.u.sch)
+			
+		var dont_exist = await this.u.sch.find().byDontExist(this.u.page_string ) 
+
+		// console.log('nUMDOCS '+ count)
+
+		await this.save_code_to_mongo(dont_exist)
+	}
+
+
+	// --------------------------- SAVE_CODE_TO_MONGO ---------------------------
+	async save_code_to_mongo(dont_exist)
+	{ 
+		// Cannot overwrite `pages` model once compiled.
+			// No existe el registro. Lo insertamos ( Que tarde lo que quiera)
+
+		// this.pnn('0N. Saving to Mongo '+  true  + '  ' + dont_exist)
+
+		if (dont_exist === 0 )			
+		{
+			// var htmlScheme = mongoose.model('pages', idSchema);
+
+			// this.p('SITE ' + this.s.name			)		
+			// this.p('ISLANG ' + this.s.slan 			)
+			// this.p('DOMAIN ' + this.u.dash_domain 		)
+			// this.p('LANG ' + this.s.lang			)
+			// this.p('SSL ' + this.u.ssl_page			)
+			// this.p('ROBOT ' + this.s.robot			)
+			// this.p('COMMAND ' + this.u.page_command		)
+			// this.p('PAGE ' + this.u.page_name			)
+			// this.p('ID ' + this.u.page_string			)
+
+
+			//  01   02        03     04     05      06      07         08        09      10
+			// _id  site - is_lang - domain - lang - ssl - live_opt -  robot - command - page
+		
+			var htmPage = new this.u.sch({ 
+//			var htmPage = new htmlScheme({ 
+							 	   		   _id: this.u.page_string			,	// 01
+										   site : this.s.name 				, 	// 02
+									 	   is_lang : this.s.slan   			,	// 03
+									 	   domain : this.u.dash_domain  	,	// 04
+									 	   lang : this.s.lang   			,	// 05
+									 	   ssl : this.u.ssl_page   			,	// 06
+									 	   live_opt : this.s.live_opt		,	// 07
+									 	   robot : this.s.robot   			,	// 08
+									 	   command : this.u.page_command  	,	// 09
+									 	   page : this.u.page_name   		,	// 10
+									 	   code : this.code 				});
+
+			
+			htmPage.save(function (err) {
+		  	if (!err) console.log('Success!');
+		  	else
+		  	{
+		  		console.log('WRONG_NO_SAVED ' + err + '  ' + err.code)
+		  	  	 if (err.code === 11000)
+		  	  	 	console.log('Duplicate record! ' + err.message);
+		  	  	 // Duplicate record!E11000 duplicate key error index: truck.kittens.$name_1 dup key: { : "fluffyto_a03" }
+			}
+		
+		 	})
+
+		}		 	
+	}
+
+
+
+} // end Class
+
+exports.model_save = model_save
+

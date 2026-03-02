@@ -1,0 +1,126 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Node Js App Truck  [V.0.0.1]  (2017-10-19)
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+// Brqx Group - Agile Farmacia Zaragoza Methodology [Express 5]
+//-------------------------------------------------------------------------------------
+// Node Js - Server with express - http/2
+// Howto test : curl -vso /dev/null --http2 https://truck.dbrqx.com:40080
+// Howto use  : http.createServer(app).listen(1337);
+// Howto start: npm init -y
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+// cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
+
+// Must to be unique
+
+var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
+
+const 	{ pn01_simple } 	= require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'					),
+		run  				= require(	cons.JS_BASE + 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'					),	
+		def  				= require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple_def.ea6'				),	
+		{ pn02_fast } 		= require(	cons.JS_BASE + 'spc/theme/common/fast_node/pnode/pn02_fast.es6'						),
+		empty 				= require(	'/brqx/base/react/zcommon/node_modules/is_empty'									),
+		trim 				= require(	'/brqx/base/react/zcommon/node_modules/trim'										),
+		echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
+
+
+// QUIERO HACER UN ENFOQUE DE PROMESAS
+// PRIMERO NECESITO UN SISTEMA NO OOP
+
+function truck(t	= '' )	
+{
+		
+	if (t.b.site_cache && 
+		(t.b.page_download || 
+			(t.c.ram == "noreload" ) && 
+			!(t.c.arr['ram'].includes("FPC"))
+		)
+	   ) 
+	{
+		// t.p('Entering fast')
+		t.pnode = new pn02_fast(t.u)
+	}
+
+	if ("A" === "A") 
+		if ( t.b.site_cache 									&& 
+			(t.c.ram 		== 	"noreload"	) 				&& 
+			!(t.c.arr['ram'].includes("FPC")	)	  			&& 
+			(!empty(t.pnode)					)				&& 
+			(t.pnode.status == 1				)			    ) 
+		{
+
+			// echo("FPC" )
+
+			echo("CACHE_" + t.pnode.code.length)
+
+			var stop_time = Date.now() / 1000 + Date.now() / 1000
+			var start_time = global.GLOBALS.start_time
+			var total_time = Math.round(stop_time - start_time, 4)
+			var time_str = total_time + " segundos "
+		} 
+		else if (t.s.load != "drupal") 
+		{
+			var supermnu_dats = t.supermnu_libs + "dats/" + t.theme_name + "/"
+
+			var data_and_error	=	''
+
+			// Create structure
+
+			t.pnode = new pn01_simple(t.u)
+
+			if (this.s.load == "drupal") 
+				{
+					this.run_from_drupal()
+				} else 
+				{
+					// 
+				// 1.Crea las rutas para la consulta
+					this.check_common_and_create_paths()					
+			
+				// 2. Si existe el fichero recupera las propiedades ( methodo del hijo )
+			
+					this.generate_object_info() 												 
+				
+					// Si hay codigo sale exitoso. Sino entra
+			
+					let we_dont_have_code_ready_to_use = true  
+			
+					// 1. Intentamos obtener el codigo si no han dicho reload
+					if (this.b.type_have_code)
+					{ 
+						we_dont_have_code_ready_to_use = this.dont_exist_and_get_ram_code()  				
+					}
+			
+					if (('A' == 'A') && 
+						we_dont_have_code_ready_to_use		)
+					{
+						this.if_is_correct_get_ram_properties()  
+
+						// Call RAM - SSD - DISK - SAVE ( get_current_properties_disk... ) 
+			
+						// this.p('Abc_GET_RAM_PROPERTIES')	
+						
+					}	
+
+
+					this.run_from_disk()
+				}
+	
+			this.status = true
+
+
+				// this.p('SITE_LIVE : ' + this.b.site_live + ' = ' +  false)
+
+			if ( ("A" === "A") && t.pnode.status) 
+			{
+				echo("NOCACHE_" + t.pnode.code.length)
+
+			}
+
+		}
+
+} // End Constructor
+
+
+module.exports.truck = truck
+

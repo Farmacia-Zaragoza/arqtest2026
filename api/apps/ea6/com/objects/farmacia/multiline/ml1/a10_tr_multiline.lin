@@ -1,0 +1,47 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// MultiLine Class  [V.0.1.8]  (2017-01-28)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 00]
+//-------------------------------------------------------------------------------------
+// (multiline) < (multilineitf) < (multicomplex) < (multisearch) < (multiupdate) < (multibase)
+//             < (storebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+	
+
+class multiline extends tr_multi_read {
+
+	public 		$n						=	'multiline::'							;
+            
+    public function __construct (	$lang			=	'en' 						,
+    								$folder_path 	= 	'/brqx/lnk/lang/phrases'	, 
+    								$db_file_name 	= 	'word'						)	  
+    {   
+
+		$this->db_file_name			=	$db_file_name 									;
+		$this->update_lang_type	( $lang )												;
+		
+		if ($this->folder_db_path == '')	$this->folder_db_path	= $folder_path 		;
+
+	    $this->folder_current_path	=	getcwd()										;
+
+		$this->sep_lang_expr =	"/[" . $this->sep_lang . "]+/"							;
+	
+		// $this->update_lang_type()														;
+
+		// Get php version 5.2 (52) - 5.6 (56)		
+		$this->php_version = str_replace(".","",substr(phpversion(), 1,3))				; 			
+
+    }
+
+};
+
+
+?>

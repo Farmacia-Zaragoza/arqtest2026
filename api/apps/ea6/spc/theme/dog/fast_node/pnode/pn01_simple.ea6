@@ -1,0 +1,130 @@
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Node Js - Dog Page Node Simple Class  [V.0.0.1]  (2017-11-29)
+//Brqx Group - Agile Farmacia Zaragoza Methodology - Dog
+//Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES6]
+//-------------------------------------------------------------------------------------
+//Fast node load - Replace Mysql connections
+//-------------------------------------------------------------------------------------
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+//Methods:
+//-------------------------------------------------------------------------------------
+//- d-load_child_details-   	  : Load details from disk
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 	cons 					= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"					)
+
+const 	{ psimple } 			= 	require(	cons.JS_BASE + 'com/objects/drupal/node/psimple.es6'					),					
+		{ cbool } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'					),					
+		{ page_structure } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/node/page_structure.es6'				),					
+		{ theme_dog }			= 	require(	cons.JS_BASE + 'spc/theme/dog/structure/theme_dog.es6'					),					
+		{ fn03_site_common }	= 	require(	cons.JS_BASE + 'spc/theme/common/fast_node/fnode/fn03_site_common.es6'	),					
+		{ fn41_hiddens_lang }	= 	require(	cons.JS_BASE + 'spc/theme/dog/fast_node/fnode/fn41_hiddens_lang.es6'	),					
+		{ htm01_html_dog }		= 	require(	cons.JS_BASE + 'spc/theme/dog/main_html/htm01_html_dog.es6'					),					
+		minify 					= 	require(	cons.NODE_MOD +	'html-minifier'											).minify;
+
+
+class pn01_simple extends psimple {
+
+	constructor(u = "", stype = "page") 
+	{
+		super()
+		this.n 									= 	"pn01_simple::"
+		this.m									=	'constructor'
+
+		this.u 									= u
+		this.s 									= this.u.s
+		this.b 									= new cbool()
+		this.b.copy(this.s.b)
+		this.c 									= this.s.c
+
+		// Lo usabamos para gestionar valores pero lo vamos a cambiar
+
+		this.fnode								= new fn03_site_common(this.u)
+
+		this.type 								= "page"
+		this.short_type 						= "NP"
+		this.ptype 								= "human"
+		this.stype 								= stype
+		this.type_name 							= this.stype
+
+		this.b.type_user 						= false
+		this.b.type_human 						= false
+		this.b.type_common 						= false
+		this.b.type_url 						= true
+		this.b.type_translation 				= false
+		this.b.type_translated 					= true
+		this.b.type_have_taxonomy 				= false
+		this.b.type_have_code 					= true
+		this.b.type_have_properties 			= true
+		this.b.type_have_specific_properties 	= false
+
+		this.change_disk 						= "/" + this.type + "/"
+		this.change 							= "/" + this.type + "/"
+
+		var uri_to_use = this.u.slash_ideal_uri
+
+		if (this.u.slash_ideal_uri.substr(0, 1) == "/") 
+			uri_to_use 							= this.u.slash_ideal_uri.substr(1)
+
+		// Nuevo cambio: El codigo live no va a ser el mismo que el codigo normal
+
+		this.suffix 							= uri_to_use + "_" + this.stype + "_" + this.s.env	+ "_" + this.s.live_opt	
+		this.suffix_disk 						= this.suffix 
+
+		this.suffix_lang 						= this.suffix + '_' + this.s.slan + "_" + this.s.lang 
+		this.suffix_code 						= this.suffix_lang + "." + this.u.ssl_page + "page"
+		
+		this.generate_load_from_disk_path()
+
+		// this.p('pn01_Path ' + this.load_from_disk_path)
+		// this.p('pn01_Lang ' + this.load_from_disk_lang)
+
+		// NOuser - site - type_page - human - file - page_name (simple - command - is_lang - lang - liv )
+		// /.../nsu/node.dbrqx.com/nouser/dog/page/human/a/simple_front_page_l_es_liv.nnnpage
+
+		this.run_from_disk()
+
+ 		// this.p('Pn01_Pram ' + this.ram_alias_code_path			)
+
+		this.status = true
+	}
+
+	load_child_details() 
+	{
+		this.m					=	'load_child_details'
+		this.n 					= 	"pn01_simple::"
+
+		// this.p('pn01_Before_Page_Structure')
+
+		this.pg = new page_structure()
+
+		this.thm = new theme_dog(		this.pg		, 
+		   								this.u		)
+
+		// Cambio importante. Usabamos fnode solo para gestionar valores. Ahora los vamos a poder utilizar mas tarde
+		
+		this.thm.arr['fnode']['site_info_common'] = this.fnode
+
+		this.thm.arr['fnode']['site_hiddens_lang'] = 
+			new fn41_hiddens_lang(this.fnode)
+
+		this.htm = new htm01_html_dog(this.thm)
+
+		// this.code =	''
+		// this.code =	'DISCODE>'
+
+		// This have sense on live sites
+		
+		if ( this.thm.b.site_live )
+			this.code = minify(this.htm.code, this.minimize_options)
+		else
+			this.code = this.htm.code
+		
+		// this.p('pn01_End_LoadDetails')
+		
+	}
+
+}
+
+
+exports.pn01_simple = pn01_simple

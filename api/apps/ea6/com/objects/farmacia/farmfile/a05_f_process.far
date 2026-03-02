@@ -1,0 +1,104 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Farm Process Class  [V.0.1.8]  (2017-01-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE:
+//-------------------------------------------------------------------------------------
+// (farmupdate) < (farmfolder) < (farmprocess) < (farmarray) < (farmfile) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-set_nombre_comercial-			: Generate independent subfiles for prospect
+// - d-set_laboratorio_farmaceutico-	:
+// - d-set_principio_activo_solido-		: 
+// - d-set_principio_activo_liquido-	:
+// - d-process_separator_file-			:
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class farmprocess extends farmtags {
+
+	public 		$n						=	'farmprocess::'										;
+
+            
+
+	protected function set_nombre_comercial()
+	{
+		
+		$split_arr = preg_split($this->space_sep_preg, $this->clean_str); 
+		
+		$mm_term = locale_str_ucase($split_arr[0]); 
+		$cc_raw  = $split_arr[1];
+		$uc_term = strtolower($split_arr[2]); 
+  
+// Creamos ademas el fichero agil
+
+		$this->arr_properties[]			=	"nombre_comercial" 		. $this->sep_lines  . $mm_term;
+		$this->arr_properties[]			=	"concentracion" 		. $this->sep_lines  . $cc_raw;
+		$this->arr_properties[]			=	"u_concentracion" 		. $this->sep_lines  . $uc_term;
+
+	}
+	
+	// Devuelve 
+	// lf_term --> Laboratorio farmaceutico
+	
+	protected function set_laboratorio_farmaceutico()
+	{
+	    
+		$trim_str=trim($this->clean_str);
+	
+		$point_str=str_replace($this->sep_point, $this->sep_space, $trim_str );
+		$ucase_str=locale_str_ucase($point_str);
+		$lf_term=str_replace($this->sep_space, $this->sep_underscore, $ucase_str );
+	
+		$this->arr_properties[]			=	"laboratorio" 		. $this->sep_lines  . $lf_term;
+		    
+	}
+	
+	
+	
+	// Establece los principios activos y los excipientes
+	protected function set_principio_activo_solido()
+	{
+
+		foreach ($this->arr_vlineas as $sLinea) 
+		{
+			process_farma_str($sLinea,$pa, $ccpa, $line_pretty);
+		
+			//pa is principio_activo
+			$this->arr_properties[]			=	"principio_activo" 		. $this->sep_lines  . $pa;
+					    
+		}
+	   
+	}	
+	protected function set_principio_activo_liquido()
+	{
+	
+	set_principio_activo_solido();
+	}
+
+	protected function process_separator_file($sep_ext_blank	=	"")
+	{
+	// Sabemos que son lineas limpias. Sin lineas en blanco
+	// Primero iteramos los puntos
+	// Luego los dos puntos
+	// Finalment los punto y coma
+	
+	process_intelligent_colon($this->es_file_name ,$this->sep_colon);
+	
+	
+	process_intelligent_point($this->es_file_name ,$this->sep_point , $this->sep_space);
+	
+	
+	process_line_feeds($this->es_file_name);     
+	     
+	}
+
+
+};
+
+?>

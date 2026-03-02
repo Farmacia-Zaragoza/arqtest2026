@@ -1,0 +1,81 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// LangLineItf Class  [V.0.1.8]  (2016-11-24)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 01]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (multicomplex) < (langreadline) < (langlinees) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-read-                   			: Read / Search an expresion
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_read extends tr_read_simple_line {
+
+	// Lang Line Interface to Inheritance
+	public 		$n						=	'tr_read::'						;
+
+            
+	// 
+	public function read(	$es_line 	= '' 									, 
+							$lang 		= ''									)
+	{
+		// Read a line - Call to read_simple_line - read_multi_line
+
+		$old_m = $this->m ; $this->m 			=	'read:'						;
+		$old_n = $this->n ; $this->n			=	'tr_read::'				;
+
+		// Tipo de Idioma
+		$this->update_lang_type($lang) 											;
+
+		$this->translated_line 			= 	''									;
+		$this->search_msg				=	''									;
+
+		// $this->p('Enter_In_Read' . $es_line); // [PR_DISABLED]
+		 
+		if ( ($this->is_not_multiline($es_line)) )
+		{
+		    // $this->p('Read_Is_Not_Multi_Line - ' . $es_line); //[PR_DISABLED]
+
+			$this->read_simple_line($es_line) 									;
+		}
+		else 
+		{
+			// al ser multi linea debemos ponerlo a true sino nunca sera correcta la busqueda
+			// $this->p(' Mrd1 [' . $es_line . ']' .  $this->lr							); //[PR_DISABLED]
+			$this->is_translated			= true 									; // Tell us if found LAN
+			$this->es_translated			= true 									; // Report if is found ES
+
+			$this->translated_line 			= 	''									;
+			$this->search_msg				=	''									;
+
+			// $this->p(' MTra1 ' . $this->is_translated . $this->lr							); //[PR_DISABLED]
+
+			$this->ml = new multiline($this->lang)									;
+			$this->ml->multi_read($es_line) 										;
+
+			// $this->p(' Mrd2 [' . $es_line . ']' .  $this->lr							); //[PR_DISABLED]
+
+			$this->is_translated 			 =  
+					($this->is_translated and $this->ml->is_translated) 			;
+
+//			$this->p(' MTra2 ' . $this->is_translated . $this->lr							); //[PR_DISABLED]
+
+			$this->search_msg 				 =  $this->ml->search_msg 				;
+			$this->translated_line 			.=  $this->ml->translated_line 			;
+		}
+		$this->m	= $old_m ;	$this->n	= $old_n 								;
+	}
+
+
+};
+
+
+
+?>

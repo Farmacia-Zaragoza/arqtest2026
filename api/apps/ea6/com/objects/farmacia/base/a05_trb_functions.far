@@ -1,0 +1,92 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// StoreBase Functions Class  [V.0.1.8]  (2017-01-30)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases  [Level 0 ]
+//-------------------------------------------------------------------------------------
+// Engine de busqueda y actualizacion de expresiones en castellano o en el idioma que se defina como base
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-update_lang_type-   	  	: Update lang variable and lang type
+// - d-is_multiline-			 	: Check if line is multi line
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class trb_functions {
+
+	public 		$n						=	'trb_functions::'			; // Class
+
+	public function update_lang_type($lang	= '')
+	{
+
+		if ($lang != '' ) 		$this->lang = $lang 									;
+
+		// $this->p ( 'Updating LAng '.  $lang . ' ==> ' . $this->lang)												;
+
+		if ($this->lang == '') 	$this->lang = 'en'										;
+
+		if ( (strpos($this->langs_type_01, $this->lang)) !== false)
+			$this->lang_type = '01'														;
+		else
+			$this->lang_type = '02'														;
+	}
+
+
+	public function is_updated()
+	{
+		if ($this->updated)
+		{
+			if ($this->n == 'langfile::' )
+				print 'Sistema actualizado:  ' . $this->dual_lang_file 			. $this->lr					;
+		}
+	}
+	
+	public function is_multiline($multi_line	= '')
+	{
+		$this->is_multi_line =  preg_match($this->sep_multi_preg, $multi_line)			;
+		$this->is_not_multi_line = ! $this->is_multi_line 								;
+		
+		return $this->is_multi_line 													;		
+	}
+
+	public function is_not_multiline($multi_line	= '')
+	{
+		$this->is_multiline($multi_line)													;
+		return $this->is_not_multi_line 													;		
+				
+	}
+
+	public function show()
+	{
+		$this->p($this->translated_line)												;
+		
+	}
+
+
+	// Puclic functions to print
+	public function p($msg)
+	{
+		if ($msg != '')	$this->msg = $msg ; 
+		print $this->n . $this->m . $this->msg 	. $this->br;
+	}	
+
+	// Puclic functions to store msg
+	public function m($msg)
+	{
+		if ($msg != '')	 
+			$this->msg = $this->n . $this->m . $msg 	;
+	}	
+
+	// Puclic functions to store search msg
+	public function s($msg)
+	{
+		if ($msg != '')	 
+			$this->search_msg = $this->n . $this->m . $msg 	;
+	}	
+
+};
+
+?>

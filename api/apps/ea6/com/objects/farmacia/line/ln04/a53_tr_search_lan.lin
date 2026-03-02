@@ -1,0 +1,73 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Search LAN Class  [V.0.1.9]  (2017-01-28)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 04]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (langreadline) < (langlinees) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-search_lan- 	  		: Is not implemmented yet. Searching directly in LAN side
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_search_lan extends tr_update_full_simple_line {
+
+	public 		$n						=	'tr_search_lan::'						;
+
+            
+
+	public function search_lan()
+	{
+	// De momento este metodo no se puede usar puesto que la estructura esta preparada solo para el idioma base
+		$old_m = $this->m ; $this->m 				= 'search_lan:'					;
+		$old_n = $this->n ; $this->n 				= 'tr_search_lan::'			;
+	
+		$this->is_translated	=	false											;
+		
+		// Solo tiene sentido buscar si existe el archivo y la linea a buscar no es vacia
+		
+		$this->arr_vlineas = file($this->full_lang_file)							; 
+		
+		foreach ($this->arr_vlineas as $sLinea)
+		{ 
+			// Reemplazamos los saltos de elinea
+			$LINE_UCASE 	= 	eregi_replace("[\n|\r|\n\r]", '', $sLinea)			; 
+			$LINE_DUAL		=	strtolower_utf8_clean($LINE_UCASE)					;
+			
+			// Son lineas con el formato esp@@idioma
+			
+			$string_sep		=	"/[" . $this->sep_lang . "]+/"						;
+			
+			$split_arr 		= 	preg_split($string_sep, $LINE_DUAL)					; 
+			$arr_len		=	count($split_arr)-1									;
+			
+			$LINE_ES		=	$split_arr[0]										;
+			$LINE_LAN		=	""													;
+			
+			if ($arr_len > 0 )
+			{
+				$LINE_LAN = utf32_decode($split_arr[1])								;
+			}
+			
+			if ( $LINE_LAN === $this->dash_line_for_line )
+			{
+			//echo "Linea Buscada" . $LINE_ES . "##" . $LINE_LAN . $lf;
+				$this->is_translated=true											;
+			}
+		
+		} // Enf Foreach
+	
+		
+		$this->m = $old_m ; $this->n = $old_n 										; 
+		return $this->is_translated													;    
+	}
+
+};
+
+?>

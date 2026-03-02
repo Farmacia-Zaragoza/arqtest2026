@@ -1,0 +1,36 @@
+<?php 
+// Magento Node Inlude [V.0.0.2]  (2017-05-11)
+// Spc - Pharmacy
+
+// for future
+$theme_name		  =  'pharmacy'											;
+
+// In a future will take site dir instead
+$base_dir		  = 	'/brqx/base/rcode/v56/gen/v0_0_1/rphp/objects/magento/'	;
+
+$m_ext			  = 	$base_dir . 'external/'	;
+$m_int			  = 	$base_dir . 'internal/'	;
+$m_deb			  = 	$base_dir . 'print/'	;
+
+
+//$supermnu_libs    = $base_dir . '/rphp/';
+
+include_once   $m_deb . 'mg_print.mag'  ;
+
+// Magento External Includes Zone
+include_once   $m_int . 'mgi_categories.mag'  ;
+include_once   $m_int . 'mgi_category.mag'  ;
+include_once   $m_int . 'mgi_products.mag'  ;
+
+
+
+// Magento Internal Includes Zone
+include_once   $m_ext . 'mge_categories.mag'  ;
+include_once   $m_ext . 'mge_category.mag'  ;
+include_once   $m_ext . 'mge_products.mag'  ;
+//include_once   $m_ent . '/mge_orders.mag'  ;
+//include_once   $m_ent . '/mge_users.mag'  ;
+//include_once   $m_ent . '/mge_newsletters.mag'  ;
+
+
+// Process Pharmacy files and prospect files 

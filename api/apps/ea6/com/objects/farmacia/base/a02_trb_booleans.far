@@ -1,0 +1,47 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// StoreBase Class  [V.0.1.8]  (2017-01-30)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases  [Level 0 ]
+//-------------------------------------------------------------------------------------
+// Engine de busqueda y actualizacion de expresiones en castellano o en el idioma que se defina como base
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class trb_booleans extends trb_arrays {
+
+	public 		$n						=	'trb_booleans::'			; // Class
+
+	// Switchs
+	
+	protected	$line_check				= 	false								; // Informa si la linea es correcta para analizar y procesar
+	
+	protected   $force_update			=	false								; // Check to force update even if exist strucutre
+
+	public   	$is_translated			= 	true 								; // Translated switch - Search Switch for LAN
+	public   	$es_translated			= 	true 								; // Search Switch for ES 
+
+	// Multi line switchs
+	public 		$is_multi_line			=	false 								;
+	public 		$is_not_multi_line		=	true 								;
+
+	public 		$is_multi_line_lan		=	false 								;
+	public 		$some_is_multi_line		= 	false								;
+	public 		$none_is_multi_line		=	true								;
+	public 		$both_are_multi_line	=	false								;
+	
+	public 		$store_or_search_multi_line		= 	false						; // Only enable to store multi lines
+
+	public		$is_there_pending				=	false 						; // Indicamos que hay items pendientes de traducir. Se genera fichero pen
+
+	// Processine ES Langs
+	protected	$word_started				= 	false 		;
+	
+};
+
+?>

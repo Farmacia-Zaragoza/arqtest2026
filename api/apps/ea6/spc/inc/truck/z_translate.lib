@@ -1,0 +1,63 @@
+<?php 
+// Library for Php Objects - Translate Truck v0.0.2
+
+
+// Pendiente de preparar
+
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/base/a05_trb_functions.far' 		;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/base/a04_trb_separators.far' 		;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/base/a03_trb_arrays.far' 		;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/base/a02_trb_booleans.far' 		;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/base/a01_trb_objects.far' 		;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/base/a00_trb_strings.far' 		;
+
+
+// LINE
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln06/a66_tr_check_multi.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln06/a65_tr_update_check.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln06/a64_tr_create_update_es.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln06/a63_tr_create_update_lan.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln06/a62_tr_update_es.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln06/a61_tr_update_lan.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln05/a54_tr_update.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln05/a53_tr_update_full_line.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln05/a52_tr_update_simple_line.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln05/a51_tr_update_full_simple_line.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln04/a53_tr_search_lan.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln04/a52_tr_search_es.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln04/a51_tr_search.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln03/a32_tr_process_multi_complex_read.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln03/a31_tr_process_multi_complex.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln02/a23_tr_read_simple_line_lan.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln02/a22_tr_read_simple_es_line.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln02/a21_tr_read_simple_line.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln01/a04_tr_read.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln01/a03_tr_prepare.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln01/a02_tr_load.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln01/a01_tr_check.lin' 	;
+
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/line/ln01/a00_transline.lin' 	;
+
+// Multi LINE
+
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml5/a52_tr_update_ml_with_two_lines.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml5/a51_tr_update_ml_with_one_line.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml4/a43_tr_process_arrays.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml4/a42_tr_prepare_arrays.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml4/a41_tr_update_current_multi.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml3/a32_tr_update_multiline_with_two_lines.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml3/a31_tr_update_multiline_with_one_line.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml2/a27_tr_process_wordw.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml2/a26_tr_crc_review.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml2/a25_tr_space_review.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml2/a24_tr_symbol_review.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml2/a23_tr_number_review.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml2/a22_tr_guion_review.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml2/a21_tr_line_review.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml1/a11_tr_multi_read.lin' 	;
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/multiline/ml1/a10_tr_multiline.lin' 	;
+
+include_once '/brqx/base/rcode/' . $PHP_VER . '/gen/v0_0_1/rphp/objects/farmacia/file/langfile.far' 			;
+
+
+?>

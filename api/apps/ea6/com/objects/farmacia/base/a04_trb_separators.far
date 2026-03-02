@@ -1,0 +1,74 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// StoreBase Class  [V.0.1.8]  (2017-01-30)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases  [Level 0 ]
+//-------------------------------------------------------------------------------------
+// Engine de busqueda y actualizacion de expresiones en castellano o en el idioma que se defina como base
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class trb_separators extends trb_functions {
+
+	public 		$n						=	'str_separators::'			; // Class
+
+			
+	public $sep							=	"/"									; // Separador de rutas
+
+	protected	$sep_end_line			=	';|:|.'								; // Indicador fin de linea
+
+	protected 	$sep_space				= 	" "									;    
+	protected 	$sep_point				= 	"."									;    
+	protected 	$sep_colon				= 	":"									;    
+	protected 	$sep_underscore			= 	"_"									;    
+	protected 	$sep_dash				= 	"_"									;    
+	
+	
+	// Multi line posible separators
+	protected 	$sep_multi				= 	
+		"/([0-9]|\'|\"|\@|\<|\>|\{|\}|\[|\]|\(|\)|\,|\.|\:|\;|\*|\-|\+|\¡|\!|\||\#)/"	;
+
+	// Separadores de frases
+	protected 	$sep_multi_preg			= 	
+		"([0-9]|\'|\"|\{|\}|\<|\>|\[|\]|\(|\)|,|\.|\:|\;|\*|\-|\+|\¡|\!|\||\#)"			;
+
+	// Separadores finales de frases - incluimos el espacio
+	protected 	$sep_multi_preg_end_phrase		= 	
+		"([0-9]|\'|\"|\{|\}|\<|\>|\[|\]|\(|\)|,|\.|\:|\;|\*|\-|\+|\¡|\!|\ |\||\#)"			;
+
+	protected 	$sep_numbers_preg		= 	
+		"([0-9]+)"			;
+
+	protected 	$sep_spaces_preg		= 	"(\ |_)"							;
+
+	protected 	$sep_guion_preg			= 	"(\-)"								;
+	
+	protected   $letters_preg			= 	"([a-z]|[A-Z]+)"					;
+
+	protected   $space_sep_preg			=	"/[ ]+/"							;
+
+	protected   $linefeed_sep_preg		=	"[\n|\r|\n\r]"						;
+
+	
+	// Separators
+	
+	public		$sep_lang				=	'@@'					; // Separador expresiones multi idioma
+	
+	public 		$sep_lang_expr			=	'\[@@\]+'				; // Expresion ya creada para filtrar lineas
+		
+	public 		$lf						=	':</br>'				;
+	public 		$lr						=	"\n\r" 					;
+	
+	// Change for web		
+	public 		$br						= 	"\n\r"					;
+            
+
+
+};
+
+?>

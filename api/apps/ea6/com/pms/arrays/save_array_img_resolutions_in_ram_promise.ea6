@@ -1,0 +1,38 @@
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// [ 01 - 0n - 0n ] Node Js Anode Load Class  [V.0.1.1]  (2017-02-20)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1 [NODE_JS_ASYNC]
+//-------------------------------------------------------------------------------------
+// Fast node load - Common class - Replace Mysql connections - Async
+//-------------------------------------------------------------------------------------
+// Inheritance Line [Inner Level 19]
+// *anode_load > Anodes > Definitions 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-generate_directory_promise- 				: 	Generate current path information
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
+
+
+function save_array_img_resolutions_in_ram(data_and_error = '' , t = '' )
+{
+  const promise = new Promise(function (resolve, reject) {
+
+	t.save_array_img_resolutions_in_ram()
+	  // Caso de exito
+    resolve(t)
+    if (!t) 
+    {
+	    reject(new Error('Problema con el objeto properties pasado '))
+    }
+  })
+  
+  return promise
+	  
+} // End function
+
+
+
+module.exports.save_array_img_resolutions_in_ram = save_array_img_resolutions_in_ram

@@ -1,0 +1,95 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Html Div Class  [V.0.1.8]  (2017-01-29)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE:
+//-------------------------------------------------------------------------------------
+// (farmupdate) < (farmtranslate) < (farmarray) < (farmfile) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - [translate]   	  : Review bd lang checking if is translated. If not, update pending files 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class farmtranslate extends farmarray {
+
+	public 		$n						=	'farmtranslate::'				;
+
+            
+    public function __construct ()	  
+    {   
+        parent::__construct()												;
+    }
+
+	public function translate($lang = 'en')
+	{
+		$old_m = $this->m ; $this->m 	= 'translate:'										;
+		$old_n = $this->n ; $this->n	= 'farmtranslate::'									;
+	
+		// Al no tener la parte de google translate la funcion solo hace : 
+		// 1. Revisa si ya esta traducido en 1 idioma pasado como parametro
+		// 2. Si no esta, actualiza el fichero de pendientes
+		//
+		// NOTA: No traduce ni actualiza BD de idiomas
+
+		// - Sangre:  Aumento biológico de: Transaminasas (ALT y AST), Fosfatasa  
+		// Debe ser inteligente a la hora de traducir e interpretar lineas
+	
+
+		// $this->p('T ' . $this->LINE . $this->lr )	; // [PR_DISABLED]
+		// Get LAN line in translated_line
+		// ASPIRINA 500 MG 20 COMPRIMIDOS
+		$this->ml[$lang]->read($this->LINE)													;	
+
+		$this->arr_pending_to_trans_file_name[$lang]	= 
+				$this->pending_to_trans_base_name . '_' . $lang . '.pen'   	;  
+
+		if ($this->ml[$lang]->is_translated)
+		{
+			$this->TRANS_LINE		=	$this->ml[$lang]->translated_line							;
+			
+			// L ANALISIS CLINICOS-T[en]-CLINICAL ANALYSIS							;
+			// $this->p ("L ". $this->LINE . '-T[' . $lang . ']-' .  $this->TRANS_LINE  . $this->lr		)	; // [PR_DISABLED]
+			$this->is_translated	=	$this->ml[$lang]->is_translated								;  
+		}
+		else
+		{
+		// 2. Si no esta, actualiza el fichero de pendientes ( son textos en ESP)
+			$this->is_translated	=	false 																;
+		
+			$this->p('ALERT WRONG TRANSLATION' . $this->LINE . $this->lr )												;
+			  
+			$arr_lines = array ()																			;
+
+			// Sorting array- Orina: Reducción biológica de estriol.  File /brqx/base/farm/PROSPECTOS/es/712/786/02-analisis_clinicos_de.pen
+//			$this->p('Sorting array' . $this->LINE . ' File ' . $this->arr_pending_to_trans_file_name[$lang] . $this->lr )	; //[PR_DISABLED]
+
+			if ( is_file($this->arr_pending_to_trans_file_name[$lang])) 
+			{
+				$arr_lines = file($this->arr_pending_to_trans_file_name[$lang])									;
+	
+				uniq_sort_add_line ($arr_lines , $this->LINE) 													;
+				
+				create_full_filename_with_array(	$this->arr_pending_to_trans_file_name[$lang]				, 
+													$arr_lines)													;
+			}
+			else {
+				create_update_full_filename($this->arr_pending_to_trans_file_name[$lang] , $this->LINE)			;
+			}
+						
+			// Indicamos que hay pendiente - Igual es redundante con el nuevo switch arr_file_translated
+			$this->is_there_pending = true																	;
+		}	
+
+		$this->m = $old_m ; $this->n = $old_n 																;
+	}
+
+
+};
+
+?>

@@ -1,0 +1,159 @@
+<?php
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Categories Magento Class  [V.0.0.2]  (2017-05-30)
+// Brqx Group - Agile Farmacia Zaragoza Methodology- Brqx model
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Manage Magento object - Abstraction for Magento version - - Internal - Multiple items
+//-------------------------------------------------------------------------------------
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods: ( Mohit : add here method name and description /like get example ) 
+//-------------------------------------------------------------------------------------
+// - create_parent		: Create a parent ( Level 0 category )
+
+
+//-------------------------------------------------------------------------------------
+// To create : 
+// - get_parent
+
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+
+class bri_categories extends mg_print	
+{
+	public		$n 			=	'bri_categories::'									;
+
+	// Magento objects to reuse
+	protected 	$category															;
+
+	protected 	$parent_category													;
+
+	protected 	$catcol																;
+
+	// Arrays
+	protected	$collection 														;
+
+	// Category to use
+	
+ // Recover categories tree from an store
+
+public function __construct ()
+{   
+	    // El constructor debe cargar las propiedade
+		
+    $this->category 	= 	Mage::getModel('catalog/category')						;
+    $this->catcol 		=	Mage::getResourceModel('catalog/category_collection')	;				
+
+	$this->collection	=	$this->category->getCollection()						;
+}
+ 
+
+// Will create a parent ( level 1 - category ) - Parents on this level are unique
+// $categories->create_parent('Cosmetics and Beauty');
+public function create_parent($cname, $parentId = 2){
+
+    $this->category->setName($cname);
+    //$category->setUrlKey('your-cat-url-key');
+    $this->category->setIsActive(1);
+    $this->category->setDisplayMode('PRODUCTS');
+    $this->category->setIsAnchor(1); //for active anchor
+    $this->category->setStoreId(Mage::app()->getStore()->getId());
+
+    $this->parentcategory = $this->category->load($parentId);
+
+    $category->setPath($this->parentcategory->getPath());
+    $category->save();
+}
+// $categories->delete_parent('Cosmetics and Beauty');
+// Here option to remove recursive, or remove by default ? 
+public function delete_parent($cname, $level = 2){
+		$this->catcol
+        ->addFieldToFilter('name', $cname)
+		->addAttributeToFilter('level',$level)
+        ->getFirstItem();
+
+		if($this->catcol->getLevel()==2)
+		{
+		 $category_id = $category->getId(); //category id
+         $this->category->load($category_id)->delete();  
+		}
+}
+// Add here a real example call 
+public function getCategoryIdbyName($cname, $level = 2)
+{
+    $this->catcol
+        ->addFieldToFilter('name', $cname)
+		->addAttributeToFilter('level',$level)
+        ->getFirstItem();
+
+	if($this->catcol->getLevel()==2){
+		 return $category_id = $_category->getId(); //category id
+	}
+}
+
+// $categories->create_children('Cosmetics and Beauty','Sun');
+public function create_children($parent	,	$child){
+    $pid=$this->getCategoryIdbyName($parent);	
+	$parentId=$pid;
+    $this->category->setName($child);
+    //$category->setUrlKey('your-cat-url-key');
+    $this->category->setIsActive(1);
+    $this->category->setDisplayMode('PRODUCTS');
+    $this->category->setIsAnchor(1); //for active anchor
+    $this->category->setStoreId(Mage::app()->getStore()->getId());
+    $this->parentcategory = $this->category->load($parentId);
+    $this->category->setPath($this->parentcategory->getPath());
+    $category->save();
+}
+
+// $categories->delete_children('Cosmetics and Beauty','Sun');
+public function delete_children($parent,$child){
+	    $parent_id=$this->getCategoryIdbyName($parent);
+        $this->catcol
+        ->addFieldToFilter('name', $child)
+		->addAttributeToFilter('parent_id',$parent_id)
+        ->getFirstItem();
+		//if($_category->getLevel()==2){
+		 $category_id = $_category->getId(); //category id
+         $this->category->load($category_id)->delete();  
+		//}
+	 
+}
+//get parent level category child
+public function get_children($parent){
+    $pid=$this->getCategoryIdbyName($parent);	
+	$parentId=$pid;
+    //$category = Mage::getModel('catalog/category');
+    /*$recursionLevel = 3;
+    $category = Mage::getModel('catalog/category');
+    $storeCategories = $category->getCategories($parentId, $recursionLevel);*/
+	
+
+    $this->category->load($parentId);    
+    $this->collection = $this->category
+                    ->getCollection()
+                    ->addAttributeToSelect(array('name'))
+                    ->addIdFilter($_category->getChildren());
+    $child=array();
+    foreach ($this->collection as $_category){
+       $child[]=$_category->getName();
+    }
+	return $child;
+
+
+}
+
+public function getcategorylist($storeId){
+    $this->collection->setStoreId($storeId);
+	return $this->collection;
+}
+
+public function getCategoryById($id	,	$storeId = 0){
+    $this->collection = $this->category->load($id)->setStoreId($storeId);
+	return $this->collection;
+}
+
+
+}
+ 

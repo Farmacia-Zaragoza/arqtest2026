@@ -1,0 +1,160 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Html Div Class  [V.0.1.8]  (2017-01-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage prospectos 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE:
+//-------------------------------------------------------------------------------------
+// (farmupdate) < (farmfolder) < (farmarray) < (farmfile) > (storebase)
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - [load]   	  : Load prospecto and generate sub-sections
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class farmfile extends multiline  {
+
+	public 		$n						=	'farmfile::'			;
+
+	// String entities
+	
+	protected 	$parent					=	'PROSPECTOS'			;
+	protected 	$product_file			=	''						;
+	protected 	$full_file_name			=	''						;
+	protected 	$full_file_name_file	=	''						;
+	
+	protected   $full_categories_path   =   ''						; // Tags path
+	protected   $full_categories_section_file   =   ''				; // Tags path for every section
+	
+
+	protected 	$full_es_file_name		=	''						;	// 
+	protected 	$full_lang_file_name	=	''						;	//
+
+	protected 	$full_categories_file_name   =   ''					; // Tags for specific file / prospect
+	
+	// Pending to translate
+	
+	protected 	$pending_to_trans_base_name	=	''					; 
+	
+	// Folders 	
+	protected 	$folder_base			=	''						;	// 
+	protected 	$folder_full_path		=	''						;	// Folder for lang path 
+	protected 	$folder_es_path			=	''						;	// Folder for Es path 
+	
+		
+	protected	$input_code				=	''						;	// Ej. 760017
+	protected	$input_code_div			=	''						;	// Ej. 760/017
+	
+	protected 	$file_name				=	''						;	// Bucle file name
+	protected 	$folder_name			=	''						;	// Bucle file name
+		
+	// Lines - names
+	
+	protected 	$clean_str				=	''						;	
+		
+	// ARRAY ZONE
+
+	protected 	$arr_vlineas			= 	array()					;	// File Array
+	protected	$arr_langs				=	array() 				;
+
+	protected 	$arr_is_translated_file	=  	array()					; 	// Array for full file translated
+
+	protected 	$arr_pending_to_trans_file_name	=	array()			;	// Array de ficheros pendientes 
+		
+	// Switch zone
+
+	protected 	$SW_TRANSLATE_LINE		=	false					;
+	protected 	$SW_MAIN_TRANSLATE		=	false					;
+
+
+	// SUBCODE
+	
+	protected	$SUBCODE				=	''						;
+	protected	$OLD_SUBCODE			=	''						;
+	protected	$NUM_CODE				= 	''						;
+	
+	// DATA
+	
+	protected 	$DATA					=	''						; // Datos a procesar
+
+	protected 	$LINE					=	''						; // Linea traducida
+	protected 	$LANG_LINE				=	''						; // Linea traducida
+	
+	// Objects
+	
+	protected 	$ml						=  array()					; // Multi line object
+		
+	public		$sep					=	'/'						;
+	
+	public 		$sep_lines				=	'@@'					;
+            
+    public function __construct ()	  
+    {   
+		// Pending
+		$this->arr_langs 	= 	explode(' ', $this->langs)			;
+//		$this->update_folder()										;
+
+		foreach ($this->arr_langs as $lang)	
+		{
+			$this->ml[$lang]					= new multiline($lang)				;
+			$this->arr_traslated_file[$lang]	= false								;
+		}		
+		
+	}
+
+	public function update_folder()
+	{
+		if ($this->folder_base == "")		$this->folder_base=getcwd();
+	}
+
+	public function load(	$product_file 	= '712786.txt', 
+							$parent 		= 'PROSPECTOS')
+	{
+		// Load file in structure	
+		
+		$this->product_file			=	$product_file 						;
+		$this->parent				=	$parent 							;		
+
+		$array_CN = explode(".", $product_file);
+		
+		$this->input_code 	=	$array_CN[0];   // Obtiene el CN
+		
+		// Para evitar tener 600000 directorios vamos a dividirlo en dos partes
+		
+		$this->input_code_div = substr($this->input_code, 0,3) . $this->sep . substr($this->input_code, 3,6)	;
+
+//		print $this->n .  "Input code Div : " . $this->input_code_div  . $this->lr;
+		 
+		
+		
+		#- El codido del producto se va a usar como la carpeta contendora. Para buscar un sistema multi lang debemos insertar el idioma
+		
+		#-Fichero principal de prospecto a iterar
+		# RUTA ACTUAL / PROSPECTOS / FICHERO CON EXTENSION
+		$three_chars = substr($this->product_file, 0 ,3) ; 
+	
+		$this->full_file_name_file	=	$this->folder_base . $this->parent .  "/" . $three_chars . '/' . $this->product_file 		; 
+		$this->full_categories_path	=	$this->folder_base . 'TAGS'	.  "/"  									; 
+
+		if (!is_dir($this->full_categories_path))	mkdir($this->full_categories_path)		 					;
+		
+		// /brqx/base/farm/PROSPECTOS/712/712786.txt
+		// $this->p("Fichero : " . $this->full_file_name_file  . $this->lr ); // [PR_DISABLED]
+		
+		$this->vlineas 			= 	file($this->full_file_name_file); 
+
+		// Folder variables ( se basan en el padre que podria ser parte de la ruta)
+
+		$this->folder_es_path	=	$this->folder_base 		. $this->parent . $this->sep .  'es' . $this->sep . $this->input_code_div	;
+
+		// /brqx/base/farm/PROSPECTOS/es/712/786
+		// $this->p("Path : " . $this->folder_es_path  . $this->lr ); // [PR_DISABLED]
+		
+	}
+
+};
+
+?>

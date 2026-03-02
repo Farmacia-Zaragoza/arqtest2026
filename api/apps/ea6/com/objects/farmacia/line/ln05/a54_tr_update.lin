@@ -1,0 +1,59 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Update Class  [V.0.1.9]  (2017-06-05)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 00]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (langreadline) < (langlinees) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// -d-update- 				: Update from two lines 
+// -d-updateforce- 			: Update from two lines forced. If exist or not 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+class tr_update extends tr_update_lan {
+
+	public 		$n						=	'tr_update::'								;
+
+
+	public function updateforce(	$es_line 					= '' 					, 
+									$lang_line 					= '' 					, 
+									$force 						= true					,  
+									$lang 						= '' 					)
+	{
+		$this->m 		=	'updateforce:'												;
+
+		// $this->p('Lang : ' . $this->lang . ' LL ' . $lang)								;
+
+		$this->update(	$es_line, 
+						$lang_line	, 
+						$force		,  
+						$lang		)													;
+	}
+
+	// Actualiza el diccionario con la cadena indicada si no existe previamente
+	public function update(	$es_line 					= '' 							, 
+							$lang_line 					= '' 							, 
+							$force 						= false 						,  
+							$lang 						= '' 							)
+	{
+		$this->m 		=	'update:'													;
+
+		// en line never store multi lines
+		if ($this->is_not_multiline($es_line))
+		{
+			// $this->p('Updating ' . $lang_line)											;
+			if ( $force ) $this->force_update 			= 	$force 						; 
+			
+			$this->update_simple_line($es_line, $lang_line , $lang) 					;
+			// Call to 
+		}
+	}
+};
+
+?>

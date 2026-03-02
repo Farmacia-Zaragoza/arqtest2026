@@ -1,0 +1,54 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Symbols Review Class  [V.0.1.8]  (2017-01-29)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Read / Search multi strings  
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 03]
+//-------------------------------------------------------------------------------------
+// (multiline) < (multilineitf) < (multicomplex) < (multisearch) < (linesyntaxreview) < (symbolsreview) < (multiupdate) < (multibase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-symbol_review-   				: Review if is a guion
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class tr_symbol_review extends tr_space_review {
+
+	public 		$n							=	'tr_symbol_review::'										;
+	
+
+	protected function symbol_review ($crc = '', $type = 'read')
+	{
+		$old_m = $this->m ; $this->m 				= 'symbol_review:'								;
+		$old_n = $this->n ; $this->n 				= 'tr_symbol_review::' 							;
+	//--==--==--==--==--==--==--  B- ES UN SIMBOLO INDICA FINAL DE PALABRA --==--==--==--==--==--==-- 
+	// [CIRUGIA]. Se recomienda suspender la administración de AAS al menos 5-7 días antes de una intervención quirúrgica
+	// Interferencia analítica: Reducción: ácido 5-hidroxi indolacético'
+																; 	
+		if ( $this->word_started )
+		{
+			// $this->p($crc .' :-:Bef-' . $this->chars_before_words . ':-:Btw-' . $this->chars_between_words . $this->lr ) ; 
+
+			$this->chars_after_words		.= $crc					;
+			$this->process_word($type) 								;
+		}
+		else		
+		{
+			// A2.CARACTER RARO CON PALABRA NO INICIADA
+			// Caso : ; Se recomienda; (29) 
+			// _______*____________________
+			$this->chars_before_words 			.= 	$crc 										;
+			$this->chars_after_words			= 	''											;
+			$this->chars_between_words			= 	''											;	 
+		}			
+
+	}
+
+};
+
+
+?>

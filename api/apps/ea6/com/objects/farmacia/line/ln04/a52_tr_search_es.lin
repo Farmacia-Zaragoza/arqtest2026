@@ -1,0 +1,81 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Translation Search ES Class  [V.0.1.9]  (2017-01-28)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE: [DEEP LEVEL : 04]
+//-------------------------------------------------------------------------------------
+// (langline) < (langlineitf) < (langreadline) < (langlinees) < (langupdateline) < (langsearchline)
+//            < (langlinebase) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - d-search_es- 	  		: Search string in a file for ES
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+class tr_search_es extends tr_search_lan {
+
+	public 		$n						=	'tr_search_es::'						;
+
+            
+
+	public function search_es()
+	{
+		$old_m = $this->m ; $this->m 				= 'search_es:'					;
+		$old_n = $this->n ; $this->n 				= 'tr_search_es::'			;
+	
+		$this->es_translated	=	false											;
+		
+		// Solo tiene sentido buscar si existe el archivo y la linea a buscar no es vacia
+	
+		if (is_file($this->full_lang_file_es))	
+		{
+	
+			$this->arr_vlineas = file($this->full_lang_file_es)						; 
+			
+			foreach ($this->arr_vlineas as $sLinea)
+			{ 
+				// Reemplazamos los saltos de elinea
+				$LINE_UCASE = 	eregi_replace("[\n|\r|\n\r]", '', $sLinea)			; 
+				
+				// Son lineas con el formato esp@@idioma
+				
+				$split_arr = preg_split($this->sep_lang_expr, $LINE_UCASE)			; 
+				$arr_len=count($split_arr)-1										;
+				
+				$LINE_ES	= 	strtolower_utf8_clean_for_line($split_arr[0])		;
+				$LINE_LAN	=	""													;
+				
+				if ($arr_len > 0 )
+				{
+					// exist translated expresion
+					$LINE_LAN	=	html_entity_decode($split_arr[1])				;
+				
+					if ( $LINE_ES === $this->dash_line_for_line )
+					{
+					//echo "Linea Buscada" . $LINE_ES . "##" . $LINE_LAN . $lf;
+						$this->es_translated 	= 	true							;
+						$this->line_es			=	$LINE_LAN						;
+						return $this->es_translated									;	
+					}
+				}
+			
+			} // End Foreach
+		}
+		else 
+		{
+			$this->s('ES File not found: ' . $this->full_lang_file_es 				);
+			$this->es_translated 	= false 										; 
+		}
+			
+		$this->m = $old_m ; $this->n = $old_n 										; 
+		return $this->es_translated													;    
+	}
+
+
+};
+
+?>

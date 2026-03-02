@@ -1,0 +1,177 @@
+<?php 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Html Div Class  [V.0.1.8]  (2017-01-27)
+// Brqx Group - Agile Farmacia Zaragoza Methodology
+// Spc - Cica_d05 - Home - Index_06 - v0_0_1
+//-------------------------------------------------------------------------------------
+// Lang Store - Manage phrases 
+//-------------------------------------------------------------------------------------
+// INHERITANCE LINE:
+//-------------------------------------------------------------------------------------
+// (farmupdate) < (farmarray) < (farmfile) 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+// Methods:
+//-------------------------------------------------------------------------------------
+// - [generate_sub_files]	: Generate independent subfiles for prospect 
+// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+class farmarray extends farmfile {
+
+	public 		$n						=	'farmarray::'										;
+
+            
+    public function __construct ()	  
+    {   
+        parent::__construct()																	;
+    }
+
+	public function generate_sub_files()
+	{
+		$old_n = $this->n ; $this->n = 'farmaarray::'											;
+		$old_m = $this->m ; $this->m = 'generate_sub_files:'									;
+
+		$num_lines				=	0 															;
+
+		// Division del prospecto - Codigo inicial
+		$this->SUBCODE				=	"nombre_comercial"											;
+
+		// NUmero de division del prospecto
+		$this->NUM_CODE				=	"00"														;
+
+		$this->SW_MAIN_TRANS	=	false ; // control traducciones especiales - frecuentes - indices
+
+		// Variable para comprobar si es la primera vez que se inserta crear fichero
+		$check_insert			=	0															;
+		$MEDICAMENTO			=	""															;
+
+		$arr_old_pending_file 	= 	array () 													;
+
+		// Categories tags related to product / prospect
+		$this->full_categories_file_name					=	
+				$this->folder_es_path  	. $this->sep 	. 'categories.dat';
+		
+		
+		if (!is_file($this->full_categories_file_name))
+			create_full_filename($this->full_categories_file_name)										;
+		
+		// File /brqx/base/farm/PROSPECTOS/es/712/786/categories.dat
+//		$this->p('File' . $this->categories_name . $this->lr ) ; // [PR_ENABLED]
+
+    
+		foreach ($this->vlineas as $pos => $sLinea)
+		{ 
+			// Reemplazamos los saltos de elinea
+			$this->LINE = eregi_replace("[\n|\r|\n\r]", '', $sLinea)							; 
+
+			// Evitamos lineas vaias y con espacios
+			if ( $this->LINE != "" &&  $this->LINE != " " )
+			{
+			    // Ha llegado un texto. Cambiamos a Fase Parrafos   
+			    $num_lines++;
+			    // Guardamos el codigo actual
+			    $this->OLD_SUBCODE					=	$this->SUBCODE												;      
+
+				$arr_OLD_pending_file				=	$this->arr_pending_to_trans_file_name	;	
+
+				// No debe tradudir los apartados. Igual porque se usan como nombres de archivo ?  
+			    $this->process_line()				;        
+			    // Mientras el codigo sea igual escribimos
+			    
+//			    $this->process_line_tags($this->LINE); 
+			    
+
+				// Se debe traducir una linea siempre que no sea el nombre comercial u otro apartado
+			    $this->SW_TRANSLATE_LINE			=	
+			    		check_translated_line($this->LINE, $this->SUBCODE , $this->SW_MAIN_TRANS)		;
+
+				// $this->p('Cod' . $this->NUM_CODE . $this->lr); // [PR_DISABLED]
+				
+				if ( $this->NUM_CODE == '' )
+				{
+					//$this->p($this->LINE  . " +SUBCODE: " . $this->SUBCODE . '[' . $this->SW_TRANSLATE_LINE . '] - [' . $this->SW_MAIN_TRANS . ']'   . $this->lr); // [PR_ENABLED]  
+				}
+				else 
+				{
+					// Relative file
+					$base_file_name 					= 	$this->NUM_CODE . "-" . $this->SUBCODE						; 
+					
+				    $this->file_name					=	$base_file_name . ".txt"									;
+	
+					$this->full_es_name					=	
+							$this->folder_es_path  	. $this->sep 	. $this->file_name									;
+							
+					// Fichero donde vamos a actualizar los tags
+					$this->full_categories_section_file		= 	$this->full_categories_path . $base_file_name . ".cat"	;
+	
+	//				$this->p("Cat : " . $this->full_categories_section_file. $this->lr ); // [PR_DISABLED]
+	
+	
+					// farmaarray::generate_sub_files:File/brqx/base/farm/PROSPECTOS/es/712/786/14-precauciones.txt		
+	//				$this->p('SUBC ' . $this->SUBCODE . ' OLD ' . $this->OLD_SUBCODE . ' File' . $this->full_es_name . $this->lr ) ; // [PR_DISABLED]
+					
+					$this->pending_to_trans_base_name 	=	
+							$this->folder_es_path  	. $this->sep 	. $base_file_name  									;      
+	
+	//				$this->p("Es name ". $this->full_es_name   				. $this->lr)	;	// [PR_DISABLED]  
+					// $this->p("Pending ". $this->pending_to_trans_base_name 	. $this->lr)	;  	// [PR_DISABLED]
+	
+					//	echo "File to update: " . $file_name . $lf;   
+	
+				    if ( ($this->SUBCODE == "nombre_comercial"  ) and ($check_insert == 0 ) )
+				    {
+						// Si es nombre comercial, no debe traducirlo
+	        
+				        $MEDICAMENTO = strtolower ( substr($this->LINE, 0, strpos($this->LINE, ' ')) )					;
+	
+						// El medicamento debemos guardarlo en el fichero de caracteristicas en formato TAG
+	
+								// Fast node type
+						$this->arr_properties[]			=	"medicamento" 		. $this->sep_lines  . $MEDICAMENTO		;
+						
+						// Folder - File - Line - padre  --> padre - Folder - File
+						// PROSPECTOS / es / fichero
+			
+						$this->create_update()															;
+			
+	        			$check_insert++																					;
+	    			}   
+	    			else
+	    				if ($this->SUBCODE != "")
+					    {        
+					        // Si devolvemos un valor vacio no deseamos guardar esa cadena
+					        if ($this->OLD_SUBCODE == $this->SUBCODE)
+					        {
+					        // En el momento en que no es igual es que ha habido un cambio de codigo
+						        	
+					        	$this->update() 															;
+	        	
+	        				}
+	        				else
+					        {
+					            // Hay un codigo nuevo - Creamos archivo pero no escribimos - Pero debemos traducirlo
+					            // Aqui deberiamos procesar el archivo actual
+	
+								// Que hacer con los ficheros pendientes. Si estan vacios borrarlos
+										                		
+	        					$this->create()															;
+								
+								make_false ($this->arr_is_translated_file	)							;
+	        					
+	  					        $check_insert++															;    
+				        	}
+				    } // End Subcode       
+
+				}
+			    			    
+			} // End Empty Line
+			
+		} // End Foreach
+
+				
+		$this->m = $old_m ; $this->n = $old_n 														;
+	}
+
+};
+
+?>
