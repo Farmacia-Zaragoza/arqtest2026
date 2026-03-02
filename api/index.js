@@ -36,8 +36,8 @@ var
 	  yargs 		= require('yargs'),
 	  constants	= require('constants'),
 
-global.GLOBALS 			= 	Array()
-
+    // Manera segura de inicializarla en Node 24
+    globalThis.GLOBALS = globalThis.GLOBALS || [];
 
 // 4. Configuramos el middleware que ya tenías
 app.use(morgan('dev'));
