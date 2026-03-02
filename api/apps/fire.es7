@@ -18,7 +18,7 @@ let a_len                   =   a_ruta.length -1
 //-------------------------------------------------------------------------------------
 var branch                  =   a_ruta[a_len - 2 ]        // Architecture Branch  (arq)
 var prod                    =   a_ruta[a_len - 1 ]            // Architecture product (garldru)
-var site                    =   a_ruta[a_len ]            // Architecture product (garldru)
+var sote                    =   a_ruta[a_len ]            // Architecture product (garldru)
 
 // Indica el numero maximo de articulos creados - Si es mas se debe cargar la home
 var max_articles            =   '3890'                   // Limit parameter
@@ -137,7 +137,7 @@ sureapp.use(function(req, res ,  next)
                      max_elems        ,  // 11.Limit parameter
                      branch           ,  // 12.Architecture Branch
                      prod             ,  // 13.Architecture Product
-                     site             ,  // 14.Site
+                     sote             ,  // 14.Site
                      cached_site      ,  // 15.Cached Site
                      cached_site      ,  // 16.Images Site
                      base_path        ,  // 17.Info Path
