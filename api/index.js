@@ -23,7 +23,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.all('*', (req, res) => {
     // Aquí es donde fire.es7 toma el control
     // Asumiendo que fire.es7 es un router de express o una función (req, res)
-    return fireApp(req, res);
+      res.json({ estado: "Inicio lanzamiento" });
+//    return fireApp(req, res);
 });
 
 // 6. Exportamos la app (Vercel se encarga de "levantarla")
