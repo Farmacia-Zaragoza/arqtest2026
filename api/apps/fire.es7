@@ -7,8 +7,8 @@
 // Node Js - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/var/task/api/apps/es7/com/agen/constants.es7"        );
-const   path                =   require(  'path'                                             );
+var     cons                =   require('./apps/es7/com/agen/constants.es7');
+const   path                =   require('path'                                             );
 //-------------------------------------------------------------------------------------
 let run_path                =   path.resolve(".")
 let a_ruta                  =   run_path.split('/')
