@@ -34,10 +34,10 @@ var
     logger 		= require('morgan'),
     fs 			= require('fs'),
 	  yargs 		= require('yargs'),
-	  constants	= require('constants'),
+	  constants	= require('constants');
 
     // Manera segura de inicializarla en Node 24
-    globalThis.GLOBALS = globalThis.GLOBALS || [];
+var globalThis.GLOBALS = globalThis.GLOBALS || [];
 
 // 4. Configuramos el middleware que ya tenías
 app.use(morgan('dev'));
