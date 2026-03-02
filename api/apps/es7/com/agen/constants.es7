@@ -81,7 +81,7 @@ define("JS_BASE" ,	'./es6/'						)
 define("JS_OBJ" , 	'./es6/com/objects/'			)
 define("JS_LIB" , 	'./es6/com/libs/'			)
 
-define("NODE_MOD", 	'/brqx/run/node_modules/'	)
+define("NODE_MOD", 	'./node_modules/'	)
 
 define("JS_THM" , 	'./es6/spc/theme/'			)
 define("JS_THC" ,   './es6/spc/theme/common/'	)
