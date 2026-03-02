@@ -1,13 +1,6 @@
 // [DOCHANGED_ES6]
-// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Node Js App Fire Browser ArqKb  [V.0.0.2]  (2019-11-27)
-// Spc - Cica_d05 - Home - Index_06 - v0_0_1
-// Brqx Group - Agile Farmacia Zaragoza Methodology [Express 5]
-//-------------------------------------------------------------------------------------
-// Node Js - Server with express - http/2
-// ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require('./apps/es7/com/agen/constants.es7');
+const   cons                =   require('./apps/es7/com/agen/constants.es7') ;
 const   path                =   require('path'                                             );
 //-------------------------------------------------------------------------------------
 let run_path                =   path.resolve(".")
