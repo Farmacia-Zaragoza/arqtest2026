@@ -14,6 +14,31 @@ const sureapp = require('./apps/fire.es7');
 
 const app = express();
 
+//-------------------------------------------------------------------------------------
+let run_path                =   path.resolve(".")
+let a_ruta                  =   run_path.split('/')
+let a_len                   =   a_ruta.length -1
+//-------------------------------------------------------------------------------------
+var branch                  =   a_ruta[a_len - 2 ]        // Architecture Branch  (arq)
+var prod                    =   a_ruta[a_len - 1 ]        // Architecture product (garldru)
+var site                    =   a_ruta[a_len ]            // Architecture product (garldru)
+
+var prodbranch              =   branch + '/' + prod + '/'
+
+var
+    application_root = __dirname,
+    http 		= require('http'),
+    https 		= require('https'),
+    http2 		= require('http2'),
+  	tls 		= require('tls'),
+    logger 		= require('morgan'),
+    fs 			= require('fs'),
+	  yargs 		= require('yargs'),
+	  constants	= require('constants'),
+
+global.GLOBALS 			= 	Array()
+
+
 // 4. Configuramos el middleware que ya tenías
 app.use(morgan('dev'));
 app.use(bodyParser.json());
