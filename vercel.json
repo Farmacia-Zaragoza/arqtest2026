@@ -1,4 +1,9 @@
 {
+  "functions": {
+      "api/*.js": {
+        "includeFiles": "apps/es7/com/agen/**"
+      }
+  },
   "routes": [
      {
        "src": "/api/(.*)",
