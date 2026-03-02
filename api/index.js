@@ -6,7 +6,7 @@ const path = require('path');
 
 // 2. Simulamos las variables de entorno que calculabas con path.split
 // En Vercel las rutas son fijas, así que forzamos los valores
-const site = process.env.SITE_NAME || 'mi-sitio-pro';
+// const site = process.env.SITE_NAME || 'mi-sitio-pro';
 
 // 3. IMPORTANTE: Cargamos tu lógica compleja (fire.es7)
 // Ajusta la ruta para que apunte a donde hayas subido el archivo en GitHub
