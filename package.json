@@ -14,7 +14,8 @@
     "serve-favicon": "^2.5.0",
     "cookie-parser": "^1.4.7",
     "compression": "^1.7.4",
-    "helmet": "^8.1.0"  
+    "helmet": "^8.1.0",
+    "express-useragent": "^1.0.15"
   },
   "engines": {
     "node": "24.x"
