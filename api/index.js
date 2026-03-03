@@ -6,6 +6,18 @@ const path = require('path');
 
 const ROOT = process.cwd();
 
+if (typeof global.define !== 'function') {
+    global.define = function(name, value) {
+        Object.defineProperty(global, name, {
+            value: value,
+            enumerable: true,
+            writable: false,
+            configurable: true
+        });
+    };
+}
+
+
 //Constantes GLOBALES
 define("JS_MODEL", 	path.join(global.ROOT_PATH, 'api/apps/es7'										))
 define("JS_BASE" ,	path.join(global.ROOT_PATH, 'api/apps/es6/'						))
