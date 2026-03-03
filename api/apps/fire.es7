@@ -27,18 +27,18 @@ const
     express       =   require( 'express'       ), //Web framework
     logger         =   require( 'morgan'      ),
     fs           =   require( 'fs'        ),
-    favicon       =   require( 'serve-favicon'  ),
-    cookieParser     =   require( 'cookie-parser'  ),
-    bodyParser       =   require( 'body-parser'    ),
-    compression     =   require( 'compression'    ),
-    qs           =   require( 'querystring'    ),
-    helmet         =   require( 'helmet'                       ),
-    useragent       =   require( 'express-useragent'                 ),
+    favicon             =   require( 'serve-favicon'  ),
+    cookieParser        =   require( 'cookie-parser'  ),
+    bodyParser          =   require( 'body-parser'    ),
+    compression         =   require( 'compression'    ),
+    qs                  =   require( 'querystring'    ),
+    helmet              =   require( 'helmet'                       ),
+    useragent           =   require( 'express-useragent'                 ),
   // Iteracion ES6 - EA6
-    { params }          =   require(  cons.JS_TYP7  + 'params/p01_params.es7'  ),
-    { angular}          =   require(  cons.JS_ACO7  + 'model/ang/angular.es7'  ),
-    { page_structure }  =   require(  cons.JS_TYP7  + 'page/page_structure.es7'),
-    echo                =   require(  cons.NODE_MOD + 'node-echo'              );
+    { params }          =   require(  JS_TYP7  + 'params/p01_params.es7'  ),
+    { angular}          =   require(  JS_ACO7  + 'model/ang/angular.es7'  ),
+    { page_structure }  =   require(  JS_TYP7  + 'page/page_structure.es7'),
+    echo                =   require(  'node-echo'              );
 
 
 // Create server
@@ -109,7 +109,7 @@ sureapp.use(function(req, res ,  next)
     // EN (English) estara siempre
 
     // Path to manage user data
-    var base_path               =  global.ROOT_PATH 
+    var base_path               =  global.ROOT_PATH
 
     // Tenemos tres opciones : script | minimized | inline | inline_and_save
     var live_opt    =  'script'
