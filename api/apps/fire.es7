@@ -109,7 +109,7 @@ sureapp.use(function(req, res ,  next)
     // EN (English) estara siempre
 
     // Path to manage user data
-    var base_path               =  '/brqx/'
+    var base_path               =  global.ROOT_PATH 
 
     // Tenemos tres opciones : script | minimized | inline | inline_and_save
     var live_opt    =  'script'

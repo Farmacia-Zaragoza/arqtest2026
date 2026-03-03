@@ -14,6 +14,8 @@ const sureapp = require('./apps/fire.es7');
 
 const app = express();
 
+const ROOT = process.cwd();
+
 //-------------------------------------------------------------------------------------
 let run_path                =   path.resolve(".")
 let a_ruta                  =   run_path.split('/')
