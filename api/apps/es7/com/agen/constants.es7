@@ -26,17 +26,22 @@ function define(name, value) {
     });
 }
 
-Object.defineProperty(String.prototype, 'hCode', {
-  value: function() {
-    var hash = 0, i, chr;
-    for (i = 0; i < this.length; i++) {
-      chr   = this.charCodeAt(i);
-      hash  = ((hash << 5) - hash) + chr;
-      hash |= 0; // Convert to 32bit integer
-    }
-    return hash;
-  }
-});
+if (!String.prototype.hasOwnProperty('hCode')) {
+  Object.defineProperty(String.prototype, 'hCode', {
+    value: function() {
+      var hash = 0, i, chr;
+      for (i = 0; i < this.length; i++) {
+        chr   = this.charCodeAt(i);
+        hash  = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    },
+    writable: true,      // Permite cambiar el valor si fuera necesario
+    configurable: true,  // ¡CLAVE! Permite que Node no explote si se intenta redefinir
+    enumerable: false    // Las funciones de prototipo no deben aparecer en los bucles for-in
+  });
+}
 
 // Brqx Alphanumeric Code - Related to Human index
 Object.defineProperty(String.prototype, 'bCode', {

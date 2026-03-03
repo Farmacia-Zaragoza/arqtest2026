@@ -1,8 +1,6 @@
 // [DOCHANGED_ES6]
 
-//const   cons                =   require('./apps/es7/com/agen/constants.es7') ;
 const   path                =   require('path'                                             );
-
 
 const cons = require(path.join(process.cwd(), 'api/apps/es7/com/agen/constants.es7'));
 // const   cons                =   require('./es7_com_agen/constants.es7') ;
