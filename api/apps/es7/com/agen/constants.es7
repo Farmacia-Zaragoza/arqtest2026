@@ -44,40 +44,35 @@ if (!String.prototype.hasOwnProperty('hCode')) {
 }
 
 // Brqx Alphanumeric Code - Related to Human index
-Object.defineProperty(String.prototype, 'bCode', {
-  value: function() {
-    var hash = '';
-    var i, chr, part= '' ,partconv= '';
-    // echo ("entering " + this ) ;
-    for (i = 0; i < this.length; i++)
-    {
-      // el 0 es el 48  como charCodeAt
-      chr   = this[i]
-      // echo ("converting " + chr ) ;
-      if ( chr == "v" )
-      {
-          partconv = parseInt(part).toString(36) ;   // Convert to alphanumeric
-          if (partconv.length <2)  partconv = "0" + partconv;
-          hash += partconv
-
-        // echo ("converting " + part ) ;
-        part = ""
+if (!String.prototype.hasOwnProperty('bCode')) {
+  Object.defineProperty(String.prototype, 'bCode', {
+    value: function() {
+      var hash = '';
+      var i, chr, part = '', partconv = '';
+      for (i = 0; i < this.length; i++) {
+        chr = this[i];
+        if (chr == "v") {
+          partconv = parseInt(part).toString(36);
+          if (partconv.length < 2) partconv = "0" + partconv;
+          hash += partconv;
+          part = "";
+        } else {
+          part += chr;
+        }
       }
-      else
-        part += chr ;
-    }
-    if (part != "")
-    {
-          partconv = parseInt(part).toString(36) ;   // Convert to alphanumeric
-          if (partconv.length <2)  partconv = "0" + partconv;
-          hash += partconv
-    }
-
-    if (hash.length <2)  hash = "0" + hash;
-
-    return hash ;
-  }
-});
+      if (part != "") {
+        partconv = parseInt(part).toString(36);
+        if (partconv.length < 2) partconv = "0" + partconv;
+        hash += partconv;
+      }
+      if (hash.length < 2) hash = "0" + hash;
+      return hash;
+    },
+    writable: true,      // Permite cambios
+    configurable: true,  // ¡VITAL! Permite que Vercel no explote al re-ejecutar
+    enumerable: false    // No aparecerá en bucles for...in
+  });
+}
 
 
 //Constantes GLOBALES
