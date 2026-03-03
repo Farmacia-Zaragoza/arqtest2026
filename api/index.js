@@ -4,6 +4,47 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 
+const ROOT = process.cwd();
+
+//Constantes GLOBALES
+define("JS_MODEL", 	path.join(global.ROOT_PATH, 'api/apps/es7'										))
+define("JS_BASE" ,	path.join(global.ROOT_PATH, 'api/apps/es6/'						))
+define("JS_OBJ" , 	path.join(global.ROOT_PATH, 'api/apps/es6/com/objects/'			))
+define("JS_LIB" , 	path.join(global.ROOT_PATH, 'api/apps/es6/com/libs/'			))
+
+define("NODE_MOD", 	'/brqx/run/node_modules/'	)
+
+define("JS_THM" , 	path.join(global.ROOT_PATH, 'api/apps/es6/spc/theme/'			))
+define("JS_THC" ,   path.join(global.ROOT_PATH, 'api/apps/es6/spc/theme/common/'	))
+
+// ES7 constants
+define("JS_BASE7" ,	path.join(global.ROOT_PATH, 'api/apps/es7/'						))
+define("JS_COM7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/com/'			))
+define("JS_SPC7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/'			))
+
+define("JS_ARQ7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/arq/'			))
+define("JS_COL7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/col/'			))
+define("JS_EMP7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/emp/'			))
+define("JS_MET7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/met/'			))
+define("JS_PDT7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/pdt/'			))
+define("JS_PER7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/per/'			))
+define("JS_PRO7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/pro/'			))
+define("JS_PYC7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/pyc/'			))
+define("JS_SRV7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/srv/'			))
+define("JS_TST7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/tst/'			))
+
+define("JS_ACO7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/acomm/'			))
+define("JS_AQD7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/spc/arq/drupal/'   ))
+
+
+define("JS_LIB7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/com/blib/'			))
+
+// Structured Types
+define("JS_TYP7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/com/ctyp/t01/'			))
+
+// Functional Types -
+define("JS_TYF7" , 	path.join(global.ROOT_PATH, 'api/apps/es7/com/ctyp/t02/'			))
+
 // 2. Simulamos las variables de entorno que calculabas con path.split
 // En Vercel las rutas son fijas, así que forzamos los valores
 // const site = process.env.SITE_NAME || 'mi-sitio-pro';
@@ -13,8 +54,6 @@ const path = require('path');
 const sureapp = require('./apps/fire.es7');
 
 const app = express();
-
-const ROOT = process.cwd();
 
 //-------------------------------------------------------------------------------------
 let run_path                =   path.resolve(".")
