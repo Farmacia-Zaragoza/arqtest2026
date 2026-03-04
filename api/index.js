@@ -18,7 +18,8 @@ if (typeof global.define !== 'function') {
     };
 }
 
-const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
+// Checking long paths
+// const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
 
 
 //Constantes GLOBALES
