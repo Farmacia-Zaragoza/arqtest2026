@@ -34,12 +34,12 @@ const
     qs                  =   require( 'querystring'    ),
     helmet              =   require( 'helmet'                       ),
     useragent           =   require( 'express-useragent'                 ),
-  // Iteracion ES6 - EA6
-
-    { params }          =   require(path.join(JS_TYP7 , 'params/p01_params.es7')  ),
+    { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  ),
     { angular}          =   require(path.join(JS_ACO7 , 'model/ang/angular.es7')  ),
     { page_structure }  =   require(path.join(JS_TYP7 , 'page/page_structure.es7') ),
     echo                =   require(  'node-echo'              );
+
+//    { params }          =   require(path.join(JS_TYP7 , 'params/p01_params.es7')  ),
 
 
 // Create server
