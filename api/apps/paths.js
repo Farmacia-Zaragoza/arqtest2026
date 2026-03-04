@@ -26,5 +26,5 @@ module.exports = {
     JS_AQD7: path.join(ROOT, 'api/apps/es7/spc/arq/drupal/'),
     JS_LIB7: path.join(ROOT, 'api/apps/es7/com/blib/'			),
     JS_TYP7: path.join(ROOT, 'api/apps/es7/com/ctyp/t01/'	),
-    JS_TYF7: path.join(ROOT, 'api/apps/es7/com/ctyp/t02/'	))
+    JS_TYF7: path.join(ROOT, 'api/apps/es7/com/ctyp/t02/'	)
 };
