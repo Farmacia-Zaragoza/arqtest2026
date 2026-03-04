@@ -12,11 +12,7 @@
 
 const   path                =   require('path'                                             );
 
-//const { params_def }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p02_params_def.es7')  )
-
 const { JS_TYP7 } = require(path.join(process.cwd(),'api/apps/paths.js'));
-//const miParams = require(path.join(JS_MODEL, 'com/ctyp/t01/params/p01_params.es7'));
-
 const 	{ params_def } 		  =  require(path.join(JS_TYP7 , 'params/p02_params_def.es7'));
 
 class params extends params_def {
