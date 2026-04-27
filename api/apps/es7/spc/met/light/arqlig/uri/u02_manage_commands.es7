@@ -7,10 +7,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_commands-            : Check command type based on uri and site 
+// - d-manage_commands-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { post_process_commands } =   require( cons.JS_MET7 + 'light/arqlig/uri/u04_post_process_commands.es7' )
 
@@ -21,18 +21,18 @@ class site_uri_manage_commands extends post_process_commands
   {
     super(  site, ir )
     this.n                  =   "site_uri_manage_commands::"
-  } 
-  
-//---------------------------------------------------------------------------------------------  
+  }
+
+//---------------------------------------------------------------------------------------------
 
   manage_commands()
   {
 
      this.m                    = 'manage_commands'
 
-     this.start_position_array       =   this.start_position_array + 1        
+     this.start_position_array       =   this.start_position_array + 1
 
-     this.p('u02_Comando para analizar A KB : ' + this.page_command      )           
+     this.p('u02_Comando para analizar A KB : ' + this.page_command      )
 
      switch(this.page_command)
      {
@@ -41,77 +41,77 @@ class site_uri_manage_commands extends post_process_commands
       // Enable aliases for architect
       case "knowledge":
         this.b.page_product        =   true
-        this.b.intelligent_command =   false        
+        this.b.intelligent_command =   false
         this.s.cs.page_name        =   'product'
-        
+
         break;;
 
       case "kb":
         this.b.page_product       =    true
-        this.b.intelligent_command =   false        
+        this.b.intelligent_command =   false
         this.s.cs.page_name       =   'product'
-        
+
         break;;
 
       // Direct Links
-      
+
       case "knowledge_information":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "auto_scroll":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "multiple_resolutions":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "list_implementation":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "regular_expresions":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "marquee_text":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "fast_movement_arrows":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "intelligent_scroll":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "secured_navigation":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
       case "pretty_print_pages":
         this.b.page_product       =   true
-        this.b.intelligent_command = false        
+        this.b.intelligent_command = false
         this.s.cs.page_name       =   'product'
         break;
 
@@ -125,8 +125,8 @@ class site_uri_manage_commands extends post_process_commands
     // this.p('u02_AFTER page_name: ' + this.s.cs.page_name)
 
     // this.p('u02_mcomm_uri_SITEALIAS KB 0 : ' + this.slash_ideal_uri + ' = > ' + this.slash_alias_uri)
-     
-    // Manage and sort arguments 
+
+    // Manage and sort arguments
     // Hasta este punto no se conoce dash_sub_query
     this.process_commands()
 
@@ -139,7 +139,7 @@ class site_uri_manage_commands extends post_process_commands
     // Aqui ya se ha generado la uri en su totalidad
     this.post_process_commands()
 
-    // this.p('u01_site_uri_Comando para analizar B: ' + this.page_command + ' ' + this.slash_sub_query)           
+    // this.p('u01_site_uri_Comando para analizar B: ' + this.page_command + ' ' + this.slash_sub_query)
 
 
     // This method will assure command is right for page
@@ -147,7 +147,7 @@ class site_uri_manage_commands extends post_process_commands
 
     // this.p('u02_c_sc_page_name: ' + this.page_name)
 
-  }  
+  }
 
 } // end Class
 

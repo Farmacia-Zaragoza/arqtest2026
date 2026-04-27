@@ -13,7 +13,7 @@
 //<link rel="stylesheet" href="styles.css"></head>
 
 // Style attributes example
-//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css" 
+//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css"
 //        as="style" onload="this.rel='stylesheet'">
 
 // ------------------------------------------------------------------------------------
@@ -26,7 +26,7 @@
 // - d-create_link_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { getset } = require(cons.JS_BASE + 'com/objects/html/getset.es6'),
 	{ html_style } = require(cons.JS_BASE + 'com/objects/html/html_style.es6');
@@ -59,10 +59,10 @@ class lnk02_css_link_cinco extends getset {
 
 		let url_awesome = 'https://fonts.googleapis.com/css?family=Roboto:300,400,500'
 
-		this.link_01.href = url_awesome 
+		this.link_01.href = url_awesome
 
-		// this.link_01.href				=  	
-		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name 	
+		// this.link_01.href				=
+		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name
 
 		this.link_01.pcreate()
 
@@ -76,7 +76,7 @@ class lnk02_css_link_cinco extends getset {
 		this.link_01.type 			= 'text/css'
 		this.link_01.as 			= 'style'
 
-//		this.link_01.integrity		=	
+//		this.link_01.integrity		=
 //			"sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 //		this.link_01.crossorigin	=	'anonymous'
 
@@ -85,8 +85,8 @@ class lnk02_css_link_cinco extends getset {
 
 		this.link_01.href = url_awesome + css_name
 
-		// this.link_01.href				=  	
-		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name 	
+		// this.link_01.href				=
+		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name
 
 		this.link_01.pcreate()
 
@@ -101,7 +101,7 @@ class lnk02_css_link_cinco extends getset {
 		this.link_01.type 			= 	'text/css'
 		// this.link_01.as 			= 	'style'
 		this.link_01.crossorigin	=	'anonymous'
-		this.link_01.integrity		=	
+		this.link_01.integrity		=
 				"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 
 		let url_bootstrap = 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/'
@@ -164,7 +164,7 @@ class lnk02_css_link_cinco extends getset {
 
 
 	build_data() {
-		
+
 		this.create_bootstrap()
 
 		this.create_theme()
@@ -173,7 +173,7 @@ class lnk02_css_link_cinco extends getset {
 
 
 		// Ok [18-05-05]
-		// this.p('Code_lnk02_link : >' + this.code ) 											
+		// this.p('Code_lnk02_link : >' + this.code )
 
 	} // End method
 

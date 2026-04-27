@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // arqlig_cache- arqlig_nocache
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Printlog
 // @Forker > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-arqlig_no_cache-  : Arqsoc no cache launcher
 // e-arqlig_cache-     : Arqsoc cache launcher
@@ -25,7 +25,8 @@
 
 // Must to be unique
 
-var    cons                =  require(  "/brqx/rcode/es7/com/agen/constants.es7"                         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+              =  require(  "/brqx/rcode/es7/com/agen/constants.es7"                         )
 
 const  { arqlig_no_cache } =  require(  cons.JS_MET7  + 'light/arqlig/model/arqlig_nocache_launcher.es7'),
         { arqlig_cache }   =  require(  cons.JS_MET7  + 'light/arqlig/model/arqlig_cache_launcher.es7'  ),
@@ -44,7 +45,7 @@ class arqlig extends printlog
       this.model           = new arqlig_cache(    pmt  )
     else
       this.model           = new arqlig_no_cache( pmt  )
-  } 
+  }
 
 } // end Class
 

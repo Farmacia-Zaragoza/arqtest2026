@@ -22,9 +22,9 @@
 // - d-create_marquee-    : Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  { getset }                    =   require(  cons.JS_BASE + 'com/objects/html/getset.es6'                    ),    
+const  { getset }                    =   require(  cons.JS_BASE + 'com/objects/html/getset.es6'                    ),
        { html_style }                =   require(  cons.JS_BASE + 'com/objects/html/html_style.es6'                  ),
        { scr02_js_scripts_cinco }   =   require(  cons.JS_MET7 + 'cinco/cinco/html/h01/deep/scripts/scr02_js_scripts_cinco.es7'      ),
        { scr03_js_minimized_cinco } =   require(  cons.JS_MET7 + 'cinco/cinco/html/h01/deep/scripts/scr03_js_minimized_cinco.es7'      ),
@@ -35,18 +35,18 @@ const  { getset }                    =   require(  cons.JS_BASE + 'com/objects/h
 class scr01_js_cinco extends getset  {
 
   constructor (     thm                            )
-  {   
+  {
     super()
 
-    this.n              =  'scr01_dog::'            
+    this.n              =  'scr01_dog::'
     this.m              =  'constructor'
 
-    this.thm            =  thm              
+    this.thm            =  thm
 
     // External object
     this.script_to_load        =  ''
-    
-    this.build_data()                          
+
+    this.build_data()
     }
 
 
@@ -67,17 +67,17 @@ class scr01_js_cinco extends getset  {
       case "inline_and_save":
         this.script_to_load     =   new scr05_js_inline_cinco(this.thm)
         break;
-    
+
       default:
         this.p('wrong_parameter ' + this.thm.s.ms.live_opt )
-   
+
       }
 
-      
-      // MAIN - PRODUCT
-     this.code                 +=  this.script_to_load.code  
 
-    // this.p('jscincoCode : >' + this.code )                       
+      // MAIN - PRODUCT
+     this.code                 +=  this.script_to_load.code
+
+    // this.p('jscincoCode : >' + this.code )
 
     }
 
