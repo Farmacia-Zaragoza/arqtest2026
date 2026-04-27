@@ -12,11 +12,11 @@
 //<!DOCTYPE html>
 //<html lang="en">
 //<head>
-//<body> 
+//<body>
 // ------------------------------------------------------------------------------------
 //* DOCTYPE
 //  HTML
-//   HEAD 
+//   HEAD
 //	 BODY
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
@@ -25,7 +25,7 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { printlog }          =  require(  cons.JS_TYP7  + 'logs/printlog.es7'                )
 
@@ -33,14 +33,14 @@ class common_hnode extends printlog  {
 
     constructor (     container						)
 	{
-    	super()			
+    	super()
 
         this.n                  =   "common_hnode::"
-       
+
         this.container          =   container
-       
+
         this.s					=   this.container.s
-    
+
         this.b                  =   this.container.b
 
 		// Common Json

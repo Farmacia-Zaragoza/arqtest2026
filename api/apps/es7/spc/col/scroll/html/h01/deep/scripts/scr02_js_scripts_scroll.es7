@@ -23,7 +23,7 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { getset } = require(cons.JS_BASE + 'com/objects/html/getset.es6'),
 	{ html_style } = require(cons.JS_BASE + 'com/objects/html/html_style.es6');
@@ -62,10 +62,10 @@ class scr02_js_scripts_scroll extends getset {
 
 		this.script_01.integrity	= 	"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		this.script_01.crossorigin	=	'anonymous'
-		
+
 		this.script_01.src =
 			"https://code.jquery.com/jquery-3.3.1.min.js"
-		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name
 
 		this.script_01.pcreate()
 
@@ -94,7 +94,7 @@ class scr02_js_scripts_scroll extends getset {
 	create_runtime() {
 		this.script_02.defer = ''
 
-		// this.script_01.async				=  	'async'	
+		// this.script_01.async				=  	'async'
 
 		let js_name = 'runtime.js'
 
@@ -214,7 +214,7 @@ class scr02_js_scripts_scroll extends getset {
 		this.create_main()
 
 		// Ok [18-06-17]
-		// this.p('js_scripts_Code : >' + this.code ) 											
+		// this.p('js_scripts_Code : >' + this.code )
 
 	}
 

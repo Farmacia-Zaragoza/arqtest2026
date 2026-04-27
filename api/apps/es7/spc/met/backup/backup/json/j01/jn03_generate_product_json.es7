@@ -9,19 +9,19 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn02_process_site }   =   require(  cons.JS_MET7  + 'backup/backup/json/j02/jn02_jnode_process_site.es7'   );
 
 class jn03_product_json extends jn02_process_site {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'common_json::'
   }
 
@@ -38,14 +38,14 @@ class jn03_product_json extends jn02_process_site {
 
 
 
-    this.j.save_top()      
+    this.j.save_top()
 
     this.generate_common_product()
 
     this.j.save_end()
   }
 
-  
+
 }
 
 exports.jn03_product_json = jn03_product_json

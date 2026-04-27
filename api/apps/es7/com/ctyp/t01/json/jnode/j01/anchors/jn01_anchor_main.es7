@@ -12,7 +12,7 @@
 // - d-save_json_object_anchor_main-          : Generate List Json Main side
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                         =   require(  'fs'                                                   ),
        empty                      =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,16 +23,16 @@ const  fs                         =   require(  'fs'                            
 // Comm Object
 class jn01_array_anchor_main extends jn02_array_anchor_inner {
 
-          
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn01_array_anchor_main::'      
+    this.n                   =  'jn01_array_anchor_main::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Recursive structure
-  save_json_object_anchor_main(depth = 0 , position = 20 , index = "main" ) 
+  save_json_object_anchor_main(depth = 0 , position = 20 , index = "main" )
   {
 
     // 020
@@ -42,7 +42,7 @@ class jn01_array_anchor_main extends jn02_array_anchor_inner {
 
     // h020
     // this.p('jn01_anchor_main_LIST_IPAGE ' + idx.iindex + ' ' + idx.hindex )
-                 
+
     // this.p('LIST_MAIN_BREADC ' + position)
 
     this.attribs(idx,position,index,depth)
@@ -60,7 +60,7 @@ class jn01_array_anchor_main extends jn02_array_anchor_inner {
     this.jj.index   = this.get_next_level(position)
 
     let object_type = "array"
-      
+
 
     this.jj.createspecificpart(object_type)
 
@@ -69,12 +69,12 @@ class jn01_array_anchor_main extends jn02_array_anchor_inner {
     this.save_json_array_anchor_inner(depth)
 
     // To close part
-    this.jj.end_corch(object_type)          
-    this.jj.end_key(object_type)          
+    this.jj.end_corch(object_type)
+    this.jj.end_key(object_type)
 
-    // this.jj.add_separator()  
+    // this.jj.add_separator()
   }
-  
+
 }
 
 exports.jn01_array_anchor_main = jn01_array_anchor_main

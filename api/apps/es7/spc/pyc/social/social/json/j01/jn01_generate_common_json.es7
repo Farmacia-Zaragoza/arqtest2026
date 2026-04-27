@@ -8,27 +8,27 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Json > Process_Site... >  X   > Json_Comm
 // @Site_Json > @Site_Process > Comm_Json  ... > @Defs
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Hay que gestionar mejor la herencia y los metodos repetidos
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn02_process_site }   =   require(  cons.JS_PYC7  + 'social/social/json/j02/jn02_jnode_process_site.es7' )
 
 class jn01_common_json extends jn02_process_site {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'common_json::'
   }
 
@@ -39,9 +39,9 @@ class jn01_common_json extends jn02_process_site {
 
     // this.p('jn01-Generating_NO_LLEGA ' + this.j.full_path + ' Lang ' + this.s.ms.main_lang )
 
-    this.j.save_top()      
+    this.j.save_top()
 
-    // A.SITE            -- > 0  
+    // A.SITE            -- > 0
 
     this.generate_common_site_sep()
 
@@ -54,7 +54,7 @@ class jn01_common_json extends jn02_process_site {
     this.generate_common_langs_sep()
 
     // J.Social
-    
+
     this.generate_common_simple_object_sep(8)
 
     // E.Menus
@@ -65,10 +65,10 @@ class jn01_common_json extends jn02_process_site {
 
 
     // C.Spec Symbols
-    this.generate_common_simple_array_sep(14)    
+    this.generate_common_simple_array_sep(14)
 
     // E.DIAMOND LANGS   -- > 15
-    // Is a simple diamond 
+    // Is a simple diamond
 
     this.generate_common_langs_sep(15)
 
@@ -77,10 +77,10 @@ class jn01_common_json extends jn02_process_site {
 
       // this.p('Grabando Final')
     this.j.save_end()
-  
+
   }
 
-  
+
 }
 
 exports.jn01_common_json = jn01_common_json

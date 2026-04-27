@@ -12,29 +12,29 @@
 // - d-review_childrens_recursive_object-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                   =   require(  'fs'                                                   ),
        empty                =   require(  cons.NODE_MOD + 'is-empty'                             ),
        accents              =   require(  cons.NODE_MOD + 'remove-accents'                       ),
        { idx_pointers }     =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
        { jn10_index_pf }   =   require(  cons.JS_TYP7  + 'json/jindex/j00/jn10_index_pf.es7'   );
-       
+
 // Comm Object
 class jni02_json_recursive_call extends jn10_index_pf {
 
-          
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jni02_json_recursive_call::'      
+    this.n                   =  'jni02_json_recursive_call::'
   }
 
-  //---------------------------------------------------------------------------------------------  
-  review_childrens_index_recursive(  
+  //---------------------------------------------------------------------------------------------
+  review_childrens_index_recursive(
             index                      ,  // 1.Indice
             enbreadcrumb  =   ''       ,  // 2.Breadcrumb en ingles
-            depth         =  0         ,  // 3. 
+            depth         =  0         ,  // 3.
             parent_otype  =  'object'  )  // 4.
   {
     this.m         =  'review_childrens_search_rcsv'
@@ -42,15 +42,15 @@ class jni02_json_recursive_call extends jn10_index_pf {
     var idx = new idx_pointers(index)
 
     // j020v001
-    // this.p('jn2i2R_Jindex ' + this.s.ms.main_lang + ' ' + idx.jindex)    
+    // this.p('jn2i2R_Jindex ' + this.s.ms.main_lang + ' ' + idx.jindex)
 
     // this.p('jn22R_First ' + this.arr['en']['j020v000'][0] )
-    
+
     let cats                   = this.getarr(this.s.ms.main_lang , idx.jindex)
 
     // Object.keys(myObj).length
     var last_element           = Object.keys(cats).length - 1
-    var cont                   = 0 
+    var cont                   = 0
 
 // aqui esta dando -1
     // this.p ('jni02_Last_Element ' + last_element)
@@ -69,30 +69,30 @@ class jni02_json_recursive_call extends jn10_index_pf {
       let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.cat).toLowerCase()
 
       this.rvlash_inner(current_level)
-      this.index               =  this.result   
-        
-      this.clink    =  this.getkeylang( idx.lindex , pos)      
+      this.index               =  this.result
+
+      this.clink    =  this.getkeylang( idx.lindex , pos)
 
       // end add_json block
 
       this.j.clean()
 
       this.j.index    =   this.index
-      
+
       // Set Json attribs
       this.attribs(idx, pos)
-      
+
       this.j.item     =   this.cat
       this.j.link     =   this.u.s.ms.lang + '/' + this.clink
-      this.j.level    =   depth    
+      this.j.level    =   depth
 
       // Este metodo lo vamos a tener que ajustar pues hay atributos que siempre se copian
       this.k.copyvalues(this.j)
 
-      this.p('jni02_INDEXXXX ' + this.j.value)      
+      this.p('jni02_INDEXXXX ' + this.j.value)
       // this.p('jn05_WE_ARE_HERE ' + this.cat)
 
-            
+
       if ( this.j.child == "yes" )
       {
 
@@ -101,7 +101,7 @@ class jni02_json_recursive_call extends jn10_index_pf {
         let current_otype = this.j.otype
 
 
-        this.review_childrens_index_recursive(  
+        this.review_childrens_index_recursive(
             current_level          ,
             current_enbreadcrumb       ,  // Breadcrumb en ingles
             depth +1            ,
@@ -111,14 +111,14 @@ class jni02_json_recursive_call extends jn10_index_pf {
         this.k.clean()
 
         // this.p ("Fin Hijo Obj " + this.j.index + '  ' + this.j.otype )
-    
+
         // Si ha llamado a algun hijo hay que regenerar los indices
-        
-      } 
+
+      }
       else
       {
         // FINAL RECURSIVIDAD - OBJETOS COMPLETOS
-        if ( this.s.cs.teaser_type	   ==  'full')   // 
+        if ( this.s.cs.teaser_type	   ==  'full')   //
         {
           let pf_to_load = ''
           if ( (this.k.type == "parragraph"  ) ||  (this.k.type == "iparragraph" ) )
@@ -126,23 +126,23 @@ class jni02_json_recursive_call extends jn10_index_pf {
           // Change v to slash-l
             this.rvtoslash(index)
             let folder_to_load = this.s.ms.contents_path + 'l' +  this.result
-            pf_to_load     = folder_to_load       + '/' + this.j.value 
+            pf_to_load     = folder_to_load       + '/' + this.j.value
 
-            // this.p ("jns02_si_rcsv L : " + this.j.link)    
+            // this.p ("jns02_si_rcsv L : " + this.j.link)
 
             var result = this.index_json_parragraph_from_file(pf_to_load )
-            
+
             if (result)
             {
               // this.p ('jns02-qry  ' + this.u.slash_sub_query + ' Result ' + result)
-              
+
               if (this.separator)
               {
                   // this.p('jns02_adding separator')
                   this.j.add_separator()
-              }              
-              // Debe usar hover link y cont            	
-              // this.p ("jns02_si_rcsv L : " + this.j.link)    
+              }
+              // Debe usar hover link y cont
+              // this.p ("jns02_si_rcsv L : " + this.j.link)
               // this.p ("jns02_si_rcsv I : " + this.j.hover)
 
               this.k.clean()
@@ -154,23 +154,23 @@ class jni02_json_recursive_call extends jn10_index_pf {
               this.k.createspecifictype()
               cont++
               this.separator = true
-              
-             }  
+
+             }
 	      }
 
           // esto igual hay que pensarlo
           // this.j.add_separator()
 
           // this.p('jn05_to_load ' +  pf_to_load)
-        
+
 
         }
       }
-    
+
      }  // End For
 
   }
-  
+
 }
 
 exports.jni02_json_recursive_call = jni02_json_recursive_call

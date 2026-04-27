@@ -12,7 +12,7 @@
 // - d-save_json_sidebar_recursive_array_to_file-          : Generate Json Recursive
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                             =   require(  'fs'                                                ),
        empty                          =   require(  cons.NODE_MOD + 'is-empty'                          ),
@@ -23,34 +23,34 @@ const  fs                             =   require(  'fs'                        
 
 class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                =  'jn06_comma_json_rand::'      
+    this.n                =  'jn06_comma_json_rand::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Random structure
   // Para que sea realista se debe hacer en cliente. Esto va s aser solo para tener una idea
-  save_json_sidebar_rand_array_to_file(  
+  save_json_sidebar_rand_array_to_file(
             index                 ,  // Indice
             enbreadcrumb  =   ''  ,  // Breadcrumb en ingles
             num_rand      = 5     ,  // Numero de posiciones para hacer rand
-            depth         =  0    ) 
+            depth         =  0    )
   {
 
     var idx = new idx_pointers(index)
-    
-    
+
+
     let cats          = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                              ;
 
     var last_element  = Object.keys(cats).length - 1
     var rnd_cats      = Array()
     var rand_elem     = 0
-    var pos           = 0 
+    var pos           = 0
 
-    let cont = 0 
+    let cont = 0
     while (cont < num_rand)
     {
        rand_elem = rand.Rand (0 , last_element)
@@ -72,7 +72,7 @@ class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
       // Set Json attribs
       this.attribs(idx, pos)
-      
+
 
       // this.p('jn05_rand_Generating ' + ipos + ' ' + last_element +  ' C ' + this.cat )
 
@@ -83,30 +83,30 @@ class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
       // add_json block
       this.rvlash_inner(current_level)
-      this.index               = this.result   
-        
+      this.index               = this.result
+
       this.links_management(idx , pos)
-        
+
 
       // end add_json block
-      
+
       this.j.index    =   this.index
 
-     
+
 
       // i020v010
       // this.p('jn05 file_to_load ' + this.cat  +  ' I ' + idx.iindex  +  '  '  + this.j.value)
 
-      this.j.otype    =   this.gethash_keymain( idx.oindex , pos )    
-      
+      this.j.otype    =   this.gethash_keymain( idx.oindex , pos )
+
       this.j.item     =   this.cat
-      this.j.level    =   depth    
+      this.j.level    =   depth
 
       // Procesa atributos del site ( se hace en arroba - aqui habria que eliminarlo)
       // this.process_site_values()                          ;
 
       this.k.copyvalues(this.j)
-      
+
       if ( this.j.child == "yes" )
       {
 
@@ -115,46 +115,46 @@ class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
           this.k.createspecificpart()
 
-          this.review_childrens_recursive_object(  
+          this.review_childrens_recursive_object(
             current_level          ,
             enbreadcrumb       ,  // Breadcrumb en ingles
             depth + 1            ,
             this.j.otype)
-          
-          this.k.end_pull()          
-  
-      } 
+
+          this.k.end_pull()
+
+      }
       else
       {
-        if ( this.s.cs.teaser_type	   ==  'full')   // 
+        if ( this.s.cs.teaser_type	   ==  'full')   //
         {
           let pf_to_load = ''
 
           if ( (this.k.type == "parragraph"  ) ||  (this.k.type == "iparragraph" ) )
           {
-		  
+
             this.rvtoslash(current_level)
             let folder_to_load = this.s.ms.contents_path + 'l' +  this.result
-            pf_to_load     = folder_to_load       + '/' + this.j.value 
+            pf_to_load     = folder_to_load       + '/' + this.j.value
           }
-        // /brqx/pers/struc/arqdru/fnode/json_lang_structure/l020/l013/        
+        // /brqx/pers/struc/arqdru/fnode/json_lang_structure/l020/l013/
         // this.p('Parrafete a cargar ' + this.result +  '   ' + pf_to_load )
 
           this.manage_parragraphs('array' , pf_to_load )
 
           this.j.clean()
-          this.k.clean()          
+          this.k.clean()
 	    }
       }
 
       if (--iterations  >= 0)
         this.j.add_separator()
 
-    
+
      }  // End For
 
   }
-  
+
 }
 
 exports.jn06_comma_json_rand = jn06_comma_json_rand

@@ -6,13 +6,13 @@
 //- d-copyvalues             : Copy json values
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { printlog }     =   require(  cons.JS_TYP7 + 'logs/printlog.es7'                );
 
 
 class json_def  extends printlog {
-  constructor() 
+  constructor()
   {
     super()
     this.n              = "json_def::"
@@ -23,13 +23,13 @@ class json_def  extends printlog {
     this.tame           = ""
     this.code           = ""
     this.content        = ""
-    
+
     // Object Definition
 
-    this.cat            =  ''    
-    
-    this.index          =  ''    
-    this.id             =  ''    
+    this.cat            =  ''
+
+    this.index          =  ''
+    this.id             =  ''
     this.type           =  ''
     this.item           =  ''
     this.photo          =  ''
@@ -40,10 +40,10 @@ class json_def  extends printlog {
 
 
     this.link           =  ''
-    
+
     // Relative Link type (absolute | relative | coomposed)
     this.rtype          =  ''
-    
+
     this.child          =  ''
     this.flag           =  ''
     this.sound          =  ''
@@ -59,7 +59,7 @@ class json_def  extends printlog {
     this.categories     =  ''
 
     // Terms y MainTems son arrays ya definidos
-    
+
     this.country        =  ''
     this.city           =  ''
     this.location       =  ''

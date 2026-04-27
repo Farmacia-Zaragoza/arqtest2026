@@ -12,7 +12,7 @@
 // - d-save_json_sidebar_recursive_array_to_file-          : Generate Json Recursive
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                             =   require(  'fs'                                                ),
        empty                          =   require(  cons.NODE_MOD + 'is-empty'                          ),
@@ -23,14 +23,14 @@ const  fs                             =   require(  'fs'                        
 
 class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                =  'jn06_comma_json_rand::'      
+    this.n                =  'jn06_comma_json_rand::'
   }
 
-  
+
 }
 
 exports.jn06_comma_json_rand = jn06_comma_json_rand

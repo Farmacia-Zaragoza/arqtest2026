@@ -9,14 +9,14 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc_defs
 // @Struc > @Array > @String > @Cache > @log
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { arroba_setarr }     =   require(  cons.JS_TYP7  + 'array/a01_arroba_setarr.es7'        );
 
@@ -25,7 +25,7 @@ class struc_defs extends arroba_setarr {
     super()
     this.n                          =   "struc_defs::"
 
-    // Objects	
+    // Objects
     this.b                          =  ''
 
     // Array to save files to manage
@@ -33,15 +33,15 @@ class struc_defs extends arroba_setarr {
 
 	// Array to save file
     this.contents                   =   Array()
-    
+
     // to save array. Only for structures
     this.tsa                        =   Array()
 
     // to save array. Only for structures
     this.tsb                        =   Array()
-	    
+
   }
-  
+
 }
 
 exports.struc_defs = struc_defs

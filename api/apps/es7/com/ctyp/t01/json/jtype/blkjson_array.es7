@@ -8,7 +8,7 @@
 //- d-save_header_array             : Add array header to json structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   echo              =   require(  cons.NODE_MOD   + 'node-echo'                                         ),
         sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
@@ -16,7 +16,7 @@ const   echo              =   require(  cons.NODE_MOD   + 'node-echo'           
 
 
 class blkjson_array extends blkjson {
-  constructor(file_name = '') 
+  constructor(file_name = '')
   {
     super(file_name)
   }
@@ -26,7 +26,7 @@ class blkjson_array extends blkjson {
     let code   =  '"' +  header + '" : '
     sctf.create_update_full_filename(this.full_path, code)
 
-    this.clean()    
+    this.clean()
   }
 
   save_header(header)
@@ -39,7 +39,7 @@ class blkjson_array extends blkjson {
     let code   =  '"' +  header + '" : [ '
     sctf.create_update_full_filename(this.full_path, code)
 
-    this.clean()    
+    this.clean()
   }
 
 }

@@ -16,23 +16,23 @@
 // - d-gen_rest_search_main-          : Generate List Json Main side
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { rs02_object_search_inner } =   require(  cons.JS_TYP7  + 'arroba/rest/rs02_search_inner.es7'  );
 
 // Comm Object
 class rs01_object_search_main extends rs02_object_search_inner {
 
-          
-  constructor (arroba , rest)   
-  {   
+
+  constructor (arroba , rest)
+  {
     super(arroba , rest)
-    this.n                   =  'rs01_object_search_main::'      
+    this.n                   =  'rs01_object_search_main::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Recursive structure
-  gen_rest_search_main(  position   = '020'   ) 
+  gen_rest_search_main(  position   = '020'   )
   {
 
     // 020
@@ -42,9 +42,9 @@ class rs01_object_search_main extends rs02_object_search_inner {
     if (this.s.b.rest_result )
       this.rest.child      = "yes"
     else
-      this.rest.child      = "yes"    
-    
-      
+      this.rest.child      = "yes"
+
+
     this.rest.type       = "bclink"
 
     // hmain
@@ -69,12 +69,12 @@ class rs01_object_search_main extends rs02_object_search_inner {
 
      var current_level = this.index
 
-     this.p('rs01_Ssearch_mai RESU ' + this.rest.child)     
-     
+     this.p('rs01_Ssearch_mai RESU ' + this.rest.child)
+
      if ( this.rest.child == "yes" )
      {
        if (     this.s.b.page_search)  this.gen_rest_search_inner(  position           )
-       else 
+       else
        {
          // this.p('rs01_Ssearch_mai ' + this.s.cs.loadtype)
     	 switch(this.s.cs.loadtype)
@@ -82,13 +82,13 @@ class rs01_object_search_main extends rs02_object_search_inner {
     	   case "position":  this.gen_rest_list_inner()  ;     break ;
     	   case "page":      this.gen_rest_page_inner()      ;      break ;
 	     }
-		   
+
 	   }
-       
-      } 
-  
+
+      }
+
   }
-  
+
 }
 
 exports.rs01_object_search_main = rs01_object_search_main

@@ -23,7 +23,7 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { deep_scripts_base } =   require(  cons.JS_ACO7 + 'html/h01/deep/scripts/deep_scripts_base.es7')
 
@@ -50,10 +50,10 @@ class deep_scripts_react extends deep_scripts_base {
 
 		this.script_01.integrity	= 	"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		this.script_01.crossorigin	=	'anonymous'
-		
+
 		this.script_01.src =
 			"https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name
 
 		this.script_01.pcreate()
 
@@ -63,7 +63,7 @@ class deep_scripts_react extends deep_scripts_base {
     create_booklet_jquery(path_pmt             = 'dev/static/booklet/' ,
                                             js_name                = 'jquery-2.1.0.min.js' )
     {
-        
+
         this.script_01.async = ''
 
 		this.script_01.integrity = ''
@@ -97,7 +97,7 @@ class deep_scripts_react extends deep_scripts_base {
     {
       this.create_booklet_jquery(path_pmt, js_name)
     }
-    
+
     create_seo_scripts()
     {
       this.create_booklet_jquery()
@@ -112,10 +112,10 @@ class deep_scripts_react extends deep_scripts_base {
 
 // 		this.script_01.integrity	= 	"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		this.script_01.crossorigin	=	'anonymous'
-		
+
 		this.script_01.src =
 			"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/" + js_name
-		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name
 
 		this.script_01.pcreate()
 
@@ -129,10 +129,10 @@ class deep_scripts_react extends deep_scripts_base {
 
 		this.script_01.integrity	= 	"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 		this.script_01.crossorigin	=	'anonymous'
-		
+
 		this.script_01.src =
 			"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/" + js_name
-		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name
 
 		this.script_01.pcreate()
 
@@ -158,19 +158,19 @@ class deep_scripts_react extends deep_scripts_base {
 
 
 
-	build_data(path_pmt = 'dev/static/js/') 
+	build_data(path_pmt = 'dev/static/js/')
 	{
         this.p('deep_react DBG ' + this.thm.s.ms.site)
 
         switch (this.thm.s.ms.site)
         {
-         case "seo":	
+         case "seo":
            this.p("No jquery")
            this.create_seo_scripts()
 		   //this.create_jquery()
 		   // this.create_popper()
            break
-         case "social":	
+         case "social":
 		   this.create_bootstrap()
 		   break
         }
@@ -181,7 +181,7 @@ class deep_scripts_react extends deep_scripts_base {
 
 
 		// Ok [18-06-17]
-		// this.p('js_scripts_Code : >' + this.code ) 											
+		// this.p('js_scripts_Code : >' + this.code )
 
 	}
 

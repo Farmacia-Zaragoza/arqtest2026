@@ -16,12 +16,12 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                        =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_run_index_page }  =   require(  cons.JS_TYP7  + 'arroba/anode/a11_index_page/an112_run.es7'      )
 
 class anode_run_index_list extends anode_run_index_page {
-  constructor()  
+  constructor()
   {
     super()
 
@@ -29,37 +29,37 @@ class anode_run_index_list extends anode_run_index_page {
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   run_index_list_load()
   {
     // ESTE METODO VALDRIA PARA UNA BUSQUEDA
-    // this.generate_array_from_file( this.s.ms.main_lang,  this.s.cs.cache_path )    
+    // this.generate_array_from_file( this.s.ms.main_lang,  this.s.cs.cache_path )
     // this.p('an22_GENERATING_CACHE IDX ' + this.s.cs.lang + ' ' + this.s.cs.cache_path)
-    // this.generate_array_from_file( this.s.ms.main_lang,  this.s.cs.cache_path )    
-    
+    // this.generate_array_from_file( this.s.ms.main_lang,  this.s.cs.cache_path )
+
     // 1. Cargamos la informacion del idioma principal (ingles)
     let before_lang = this.s.ms.lang
 
     if ( !this.b.language_already_loaded  )
     {
       this.s.ms.lang           =   'en'
-      this.s.cs.lang         =   this.s.ms.lang    
-    
-      this.main_index_list_load()    
+      this.s.cs.lang         =   this.s.ms.lang
+
+      this.main_index_list_load()
     }
 
     this.s.ms.lang           =   before_lang
-    this.s.cs.lang         =   this.s.ms.lang    
-    
+    this.s.cs.lang         =   this.s.ms.lang
+
     if ( this.s.ms.lang != 'en' )
     {
       // this.p('j02_jnod_Loading ES')
-      this.main_index_list_load()    
+      this.main_index_list_load()
     }
   }
- 
 
-  
+
+
 }
 
 exports.anode_run_index_list = anode_run_index_list

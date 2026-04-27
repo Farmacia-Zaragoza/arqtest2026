@@ -15,19 +15,19 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_main_position_load }   =   require(  cons.JS_TYP7  + 'arroba/anode/a03_position/an34_main_load.es7'      )
 
 class anode_run_position extends anode_main_position_load {
-  constructor()  
+  constructor()
   {
     super()
 
     this.n                  =   "anode_run_position::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   run_position_load()
   {
     // 1. Cargamos la informacion del idioma principal (ingles)
@@ -36,23 +36,23 @@ class anode_run_position extends anode_main_position_load {
     if ( !this.b.language_already_loaded  )
     {
       this.s.ms.lang           =   'en'
-      this.s.cs.lang         =   this.s.ms.lang    
-    
-      this.main_position_load()    
+      this.s.cs.lang         =   this.s.ms.lang
+
+      this.main_position_load()
     }
 
     this.s.ms.lang           =   before_lang
-    this.s.cs.lang         =   this.s.ms.lang    
-    
+    this.s.cs.lang         =   this.s.ms.lang
+
     if ( this.s.ms.lang != 'en' )
     {
       // this.p('j02_jnod_Loading ES')
-      this.main_position_load()    
+      this.main_position_load()
     }
   }
- 
 
-  
+
+
 }
 
 exports.anode_run_position = anode_run_position

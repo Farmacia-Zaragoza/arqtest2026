@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Cache_Gen > Cache_Save > > Index
 // @Cache > .. > @Log
@@ -24,37 +24,37 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7" )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { struc }   =   require(  cons.JS_TYP7  + 'struc/s01_struc.es7'        ),
 	    fo  		= 	require(  cons.JS_LIB7  + 'file/file_operations.es7'   );
 
 class cache_del extends struc {
-  constructor() 
+  constructor()
   {
     super()
     this.n                          =   "cache_gen::"
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   gen_idx_path()
   {
     this.m          =    'gen_idx_path'
-    
+
     // Lo generamos si es index o search page
     if (this.s.b.index_page || this.s.b.page_search)
     {
-      let old_sub       = this.s.cs.sub 
+      let old_sub       = this.s.cs.sub
       let old_ext       = this.s.cs.ext
-      let old_page_type = this.s.cs.page_type 
-      let old_lang      = this.s.cs.lang 
+      let old_page_type = this.s.cs.page_type
+      let old_lang      = this.s.cs.lang
 
 
       this.s.cs.sub            =   'arroba'
-      this.s.cs.ext            =   'idx'   	
-      this.s.cs.page_type      =   'idx'   	
-      this.s.cs.lang           =   this.s.ms.main_lang   	
+      this.s.cs.ext            =   'idx'
+      this.s.cs.page_type      =   'idx'
+      this.s.cs.lang           =   this.s.ms.main_lang
 
       this.s.cs.debug          =   true
 
@@ -70,30 +70,30 @@ class cache_del extends struc {
       // Generamos IDX para el idioma de la uri
       this.gen()
 
-      
-      this.s.cs.sub            = old_sub 
+
+      this.s.cs.sub            = old_sub
       this.s.cs.ext            = old_ext
       this.s.cs.page_type      = old_page_type
 
-      
+
       this.p('IDX_EN_LOAD EN ' + this.s.cs.idx[this.s.ms.main_lang])
       this.p('LST_EN_LOAD EN ' + this.s.cs.list[this.s.ms.main_lang])
-      
+
       this.p('IDX RU_LOAD ES ' + this.s.cs.idx[this.s.cs.lang])
       this.p('LST RU_LOAD ES ' + this.s.cs.list[this.s.cs.lang])
 
-      
+
     }
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   clean_old_files()
   {
     // Debe eliminar los ficheros viejos de la ruta de cache
-  
+
     //    this.s.cs.cache_noversion_subpath   = this.s.cs.cache_subpath
-  	//this.p('cache_del_remov ' +  this.s.cs.cache_noversion_path)  	
-  	//this.p('cache_ali_remov ' +  this.s.cs.cache_alias)  	
+  	//this.p('cache_del_remov ' +  this.s.cs.cache_noversion_path)
+  	//this.p('cache_ali_remov ' +  this.s.cs.cache_alias)
 
   	fo.delete_file_pattern(this.s.cs.cache_noversion_path)
 

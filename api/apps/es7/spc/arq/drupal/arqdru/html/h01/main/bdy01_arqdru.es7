@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------------------------
 // Peloncita Structure Header
 //-------------------------------------------------------------------------------------
-// <body 
+// <body
 //  <app-root></app-root>
 //  <script>
 
@@ -14,7 +14,7 @@
 //    PENDING
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Bdy01 > Common_Angular > Common_Body... >  Html_Style
 // @Body > @Angular > @ABody > @Html
@@ -25,19 +25,19 @@
 // - create_scripts  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                 =   require( "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { common_angular }     =   require( cons.JS_ACO7  + 'html/h01/main/common_angular.es7' )          ,		
-		{ scr01_js_arqdru }	=	require( cons.JS_AQD7  + 'arqdru/html/h01/main/scr01_js_arqdru.es7');					
+const   { common_angular }     =   require( cons.JS_ACO7  + 'html/h01/main/common_angular.es7' )          ,
+		{ scr01_js_arqdru }	=	require( cons.JS_AQD7  + 'arqdru/html/h01/main/scr01_js_arqdru.es7');
 
 
 class bdy01_body_arqdru extends common_angular  {
 
   constructor (     container						)
-  {   
+  {
 		super(container)
 
-		this.n							=	'bdy_arqdru::'		
+		this.n							=	'bdy_arqdru::'
   }
 
   //-------------------------------------------------------------------------------------
@@ -48,9 +48,9 @@ class bdy01_body_arqdru extends common_angular  {
 		// Scripts links for dev environment
 		// Script tag for live environment
 
-  		this.scripts_01		     =  new scr01_js_arqdru(	this.container	)			
-		
-		this.content			+=	this.scripts_01.code							
+  		this.scripts_01		     =  new scr01_js_arqdru(	this.container	)
+
+		this.content			+=	this.scripts_01.code
   }
 
 }

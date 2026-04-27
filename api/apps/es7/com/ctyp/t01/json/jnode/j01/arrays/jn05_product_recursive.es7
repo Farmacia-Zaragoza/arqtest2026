@@ -12,7 +12,7 @@
 // - d-save_json_sidebar_recursive_array_to_file-          : Generate Json Recursive
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                       =   require(  'fs'                                                ),
        empty                    =   require(  cons.NODE_MOD + 'is-empty'                          ),
@@ -23,21 +23,21 @@ const  fs                       =   require(  'fs'                              
 // Common Array
 class jn05_array_product_recursive extends jn06_commo_json_recursive_call_product {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                =  'jn05_array_product_recursive::'      
+    this.n                =  'jn05_array_product_recursive::'
   }
 
   //---------------------------------------------------------------------------------------------
   // Parent Otype dice de que tipo deben ser todos los ojetos a este nivel
   // Recursive structure
-  save_json_recursive_product_array_to_file(  
+  save_json_recursive_product_array_to_file(
             index                 ,  // Indice
             enbreadcrumb  =   ''  ,  // Breadcrumb en ingles
             depth         =  0    ,
-            parent_otype = "array") 
+            parent_otype = "array")
   {
 
     this.j.clean()
@@ -61,36 +61,36 @@ class jn05_array_product_recursive extends jn06_commo_json_recursive_call_produc
       // Set Json attribs
     this.attribs(idx, pos , index, depth)
 
-    
-    this.p ('j05_prod Position to check B' + pos  + ' Idx ' + idx.jindex )
-    
-    // llega 03 y debe ser 3
-    
 
-    // this.p ('j05_prod Position to check (must to show a0001) ' + pos +  ' Cat: ' + this.cat )   
+    this.p ('j05_prod Position to check B' + pos  + ' Idx ' + idx.jindex )
+
+    // llega 03 y debe ser 3
+
+
+    // this.p ('j05_prod Position to check (must to show a0001) ' + pos +  ' Cat: ' + this.cat )
 
 
     let current_level        = this.j.index
 
       // add_json block
     this.rvlash_inner(current_level)
-    this.j.index               = this.result   
-        
-    
+    this.j.index               = this.result
+
+
     // jn05_recursive HOVER articles/a24
     // jn05_recursive CLINK https://dog.vbrqx.com/fr/article/a24
 
-    // this.p('jn05_recursive HOVER ' + this.j.hover)              
-    // this.p('jn05_recursive CLINK ' + this.j.link)              
+    // this.p('jn05_recursive HOVER ' + this.j.hover)
+    // this.p('jn05_recursive CLINK ' + this.j.link)
 
-    this.links_management(idx, pos)   
-   
+    this.links_management(idx, pos)
+
     // Siempre se esta insertando el dominio y esto esta mal
     // this.j.link               = this.s.cs.http_domainbar + this.j.link
 
     let object_type = this.k.otype
-    
-      
+
+
     if ( this.j.child == "yes" )
     {
 
@@ -100,13 +100,13 @@ class jn05_array_product_recursive extends jn06_commo_json_recursive_call_produc
         if (parent_otype == "array")
         {
           // this.p ("jn05_ircsv : Generating ARray")
-          this.k.createspecificpart(object_type)        
+          this.k.createspecificpart(object_type)
         }
         else
-          this.j.createspecificpart(object_type)                
+          this.j.createspecificpart(object_type)
 
 
-        this.review_childrens_recursive_product(  
+        this.review_childrens_recursive_product(
           current_level          ,
           enbreadcrumb           ,  // Breadcrumb en ingles
           depth + 1              ,
@@ -116,8 +116,8 @@ class jn05_array_product_recursive extends jn06_commo_json_recursive_call_produc
           this.k.end_pull(object_type)
         else
           this.j.end_pull(object_type)
-  
-    } 
+
+    }
     else
     {
       // AQUI NUNCA ENTRA
@@ -130,10 +130,10 @@ class jn05_array_product_recursive extends jn06_commo_json_recursive_call_produc
     }
     //if (last_element != pos)
     //   this.j.add_separator()
-    
- 
+
+
   }
-  
+
 }
 
 exports.jn05_array_product_recursive = jn05_array_product_recursive

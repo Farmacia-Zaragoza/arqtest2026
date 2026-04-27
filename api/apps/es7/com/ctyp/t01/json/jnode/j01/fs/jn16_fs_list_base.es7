@@ -12,7 +12,7 @@
 // - d-save_json_fs_list_base_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,15 +23,15 @@ const  fs                        =   require(  'fs'                             
 
 class jn16_fs_json_list_base extends jn10_hiera_json_simple {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                         =  'jn16_fs_json_list_base::'      
+    this.n                         =  'jn16_fs_json_list_base::'
   }
 
   //---------------------------------------------------------------------------------------------
-  save_json_fs_list_base_array_to_file(  
+  save_json_fs_list_base_array_to_file(
             index                      ,   // Indice
             enbreadcrumb    =   ''     ,
             file_structure = ''        ,
@@ -43,18 +43,18 @@ class jn16_fs_json_list_base extends jn10_hiera_json_simple {
 
     // this.p('jn16_gettingIDX ' + index)
     var idx               = new idx_pointers(index)
-    
-    let cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
+
+    let cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
 
     // Siempre van a tener meta_og_description como la ultima
-    
+
     var iterations        = Object.keys(cats).length - 1
 
     // Si hay estructura de lista entonces hay una iteracion menos
     if (this.b.exist_arroba_structure) iterations--
 
     var parent_breadcrumb = this.s.cs.lang_url + enbreadcrumb + '/'
-    
+
     // this.p('Num_elem_22_simple_' + last_element )
 
     for (var pos in cats)
@@ -65,14 +65,14 @@ class jn16_fs_json_list_base extends jn10_hiera_json_simple {
       // Set Json attribs
       this.attribs(idx, pos , index , depth)
 
-      // Esto hay que revisarlo      
+      // Esto hay que revisarlo
       if (this.j.item != 'sm_meta_og_description')
       {
 
         // add_json block - replace any occurences
 
         this.k.index    =   pos
-      
+
         if (this.k.link != "" )
         {
           this.k.link       =   parent_breadcrumb + this.k.link
@@ -88,9 +88,9 @@ class jn16_fs_json_list_base extends jn10_hiera_json_simple {
 
       }
      }  // End For
-  
+
   }
-  
+
 }
 
 exports.jn16_fs_json_list_base = jn16_fs_json_list_base

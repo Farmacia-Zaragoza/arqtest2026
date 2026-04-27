@@ -8,16 +8,16 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  { jn02_general_search_json } =   require(  cons.JS_ACO7  + 'json/j01/jn02_general_search_json.es7' ), 
+const  { jn02_general_search_json } =   require(  cons.JS_ACO7  + 'json/j01/jn02_general_search_json.es7' ),
        { objjson_site }         =   require(  cons.JS_PYC7  + 'social/social/json/j00/jn10_objjson_site.es7'  ),
        { arrjson_site }         =   require(  cons.JS_PYC7  + 'social/social/json/j00/jn11_arrjson_site.es7'  );
 
 class jn03_search_site extends jn02_general_search_json {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
     this.n                  =   'jn03_search_site::'
     this.m                  =   "cons"
@@ -41,13 +41,13 @@ class jn03_search_site extends jn02_general_search_json {
 
     let index               = 'main'
     let jindex              = 'j' + index
-   
+
 
 	let cats                =  this.getarr(this.s.ms.main_lang, jindex)															;
-    
-    
+
+
   }
-  
+
 }
 
 exports.jn03_search_site = jn03_search_site

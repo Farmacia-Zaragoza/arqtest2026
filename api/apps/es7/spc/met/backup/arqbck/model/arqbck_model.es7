@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // arqbck_cache- arqbck_nocache
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Printlog
 // @Forker > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-arqbck_no_cache-  : Arqsoc no cache launcher
 // e-arqbck_cache-     : Arqsoc cache launcher
@@ -25,7 +25,7 @@
 
 // Must to be unique
 
-var    cons                =  require(  "/brqx/rcode/es7/com/agen/constants.es7"                         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { arqbck_no_cache } =  require(  cons.JS_MET7  + 'backup/arqbck/model/arqbck_nocache_launcher.es7'),
        { arqbck_cache }    =  require(  cons.JS_MET7  + 'backup/arqbck/model/arqbck_cache_launcher.es7'  ),
@@ -44,7 +44,7 @@ class arqbck extends printlog
       this.model           = new arqbck_cache(    pmt  )
     else
       this.model           = new arqbck_no_cache( pmt  )
-  } 
+  }
 
 } // end Class
 

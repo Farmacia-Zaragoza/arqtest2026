@@ -9,19 +9,19 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn03_search_site }   =   require(  cons.JS_MET7  + 'backup/backup/json/j02/jn03_jnode_search_site.es7'   );
 
 class jn20_search_json extends jn03_search_site {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'search_json::'
   }
 
@@ -34,7 +34,7 @@ class jn20_search_json extends jn03_search_site {
     // this.p('jn20-Generating Search  ' + this.u.bars_sub_query )
 
 
-    this.j.save_top()      
+    this.j.save_top()
 
     this.generate_common_search()
 
@@ -42,7 +42,7 @@ class jn20_search_json extends jn03_search_site {
 
   }
 
-  
+
 }
 
 exports.jn20_search_json = jn20_search_json

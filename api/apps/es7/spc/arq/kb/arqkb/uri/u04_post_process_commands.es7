@@ -7,10 +7,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-post_process_commands-            : Check command type based on uri and site 
+// - d-post_process_commands-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { site_sure_commands } =   require( cons.JS_ARQ7 + 'kb/arqkb/uri/u05_sure_commands.es7' )
 
@@ -21,10 +21,10 @@ class post_process_commands extends site_sure_commands
   {
     super(  site, ir )
     this.n                  =   "post_process_commands::"
-  } 
-  
+  }
 
-//---------------------------------------------------------------------------------------------  
+
+//---------------------------------------------------------------------------------------------
   // This method depends of site
   post_process_commands()
   {
@@ -46,9 +46,8 @@ class post_process_commands extends site_sure_commands
         this.post_process_common_commands()
     }
 
-  }  
+  }
 
 } // end Class
 
 exports.post_process_commands = post_process_commands
-

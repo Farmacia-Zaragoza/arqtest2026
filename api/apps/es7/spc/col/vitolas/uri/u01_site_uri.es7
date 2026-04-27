@@ -6,7 +6,7 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { post_process_commands } =   require( cons.JS_SPC7 + 'vitolas/uri/u02_post_process_commands.es7' )
 
@@ -16,16 +16,16 @@ class site_uri extends post_process_commands
   {
     super(  site, ir )
     this.n                  =   "site_uri::"
-  } 
-  
-//---------------------------------------------------------------------------------------------  
+  }
+
+//---------------------------------------------------------------------------------------------
   // This method depends of site
   manage_commands()
   {
 
      this.m                    = 'manage_commands'
 
-     this.start_position_array       =   this.start_position_array + 1        
+     this.start_position_array       =   this.start_position_array + 1
 
      // this.p('u02_sc_Comando para analizar: ' + this.page_command)
 
@@ -44,7 +44,7 @@ class site_uri extends post_process_commands
 
     // this.p('u02_a_sc_page_name: ' + this.page_name)
 
-    // Manage and sort arguments 
+    // Manage and sort arguments
     // Hasta este punto no se conoce dash_sub_query
     this.process_commands()
 
@@ -60,11 +60,10 @@ class site_uri extends post_process_commands
 
     // this.p('u02_c_sc_page_name: ' + this.page_name)
 
-  }  
+  }
 
 
 
 } // end Class
 
 exports.site_uri = site_uri
-

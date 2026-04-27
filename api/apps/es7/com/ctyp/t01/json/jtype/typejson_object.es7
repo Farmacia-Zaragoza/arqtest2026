@@ -7,14 +7,14 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const 	{ blkjson_object } 	= 	require(	cons.JS_TYP7    + 'json/jtype/blkjson_object.es7'								),
 		sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7');
-		
+
 
 class typejson_object extends blkjson_object {
-	constructor(file_name = '') 
+	constructor(file_name = '')
 	{
 		super(file_name )
 		this.n 				= 	"typejson::"
@@ -22,7 +22,7 @@ class typejson_object extends blkjson_object {
 
 	createspecifictype()
 	{
-		 
+
 		this.managespecifictype(false)
 
 		this.create()
@@ -31,28 +31,28 @@ class typejson_object extends blkjson_object {
 
 		sctf.update_file_with_code(this.full_path, this.code)
 
-		this.clean()		
+		this.clean()
 	}
 
 	createspecificpart(object_type = "object" )
 	{
 
-		this.content = '"' +  this.item + '": {' 
+		this.content = '"' +  this.item + '": {'
 
-		this.managespecifictype(true)											
+		this.managespecifictype(true)
 
 		//this.add_separator()
-		
-		this.add_childrens(	this.child				)					
+
+		this.add_childrens(	this.child				)
 
 		if (object_type == 'array')
 			this.add_pull(		this.level , '['				)
-		else		
+		else
 			this.add_pull(		this.level , '{'				)
 
 		sctf.update_file_with_code(this.full_path, this.content)
 
-		this.clean()															
+		this.clean()
 	}
 
 
@@ -60,22 +60,22 @@ class typejson_object extends blkjson_object {
 	{
 		// Add {
 
-		this.content = '"' +  this.item + '": {' 
+		this.content = '"' +  this.item + '": {'
 
 		this.managecommontype(true)
 
 		//this.add_separator()
-		
-		this.add_childrens(	this.child				)			
+
+		this.add_childrens(	this.child				)
 
 		if (object_type == 'array')
 			this.add_pull(		this.level , '['				)
-		else		
+		else
 			this.add_pull(		this.level , '{'				)
 
 
 		sctf.create_update_full_filename(this.full_path, this.content)
-		this.clean()		
+		this.clean()
 	}
 
 	createcommontype()
@@ -87,7 +87,7 @@ class typejson_object extends blkjson_object {
 		this.code = '"' +  this.item + '": '  + this.code
 
 		sctf.create_update_full_filename(this.full_path, this.code)
-		this.clean()		
+		this.clean()
 	}
 
 	managethemeelem(part)
@@ -95,7 +95,7 @@ class typejson_object extends blkjson_object {
         // Index es la J y si ees un objeto no hace falta ponerlo de nuevo
 		// this.add_index(						this.index		)
 		this.add_type(						this.type		)
-		this.add_element( 		'value' 	, this.value	)		
+		this.add_element( 		'value' 	, this.value	)
 		this.add_element( 		'bgcolor' 	, this.bgcolor	)
 
 		if (part)
@@ -106,7 +106,7 @@ class typejson_object extends blkjson_object {
 	}
 
 
-	
+
 }
 
 exports.typejson_object = typejson_object

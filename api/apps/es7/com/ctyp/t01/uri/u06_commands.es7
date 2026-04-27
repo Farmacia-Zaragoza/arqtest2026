@@ -17,7 +17,7 @@
 // - d-process_commands-              : Call to process commands
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_sorts }     =   require(  cons.JS_TYP7 + 'uri/u07_sorts.es7'    );
 
@@ -25,25 +25,25 @@ class uri_commands extends uri_sorts {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_commands::'        
+    super()
+    this.n               =   'uri_commands::'
   }
 
   // architect/ricardocabellotorres  -> article XX
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Local Method - This method depends of site
   url_page_load_drupal_node(page_number)
   {
-    // this.p('u04_aliases_Comando para analizar: ' + this.uri)           
+    // this.p('u04_aliases_Comando para analizar: ' + this.uri)
 
     this.b.page_product       =   true
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'product'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'        
-    this.s.cs.position        =  '20'    
-    this.s.cs.page            =  page_number   
-    
+    this.s.cs.teaser_type	  =  'full'
+    this.s.cs.position        =  '20'
+    this.s.cs.page            =  page_number
+
   }
 
   //---------------------------------------------------------------------------------------------
@@ -54,9 +54,9 @@ class uri_commands extends uri_sorts {
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'product'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   //---------------------------------------------------------------------------------------------
 
@@ -66,9 +66,9 @@ class uri_commands extends uri_sorts {
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'photo'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   //---------------------------------------------------------------------------------------------
 
@@ -80,7 +80,7 @@ class uri_commands extends uri_sorts {
     this.s.cs.loadtype        =  'position'
     this.s.cs.teaser_type	  =  'slim'   // Tipo de presentacion por defecto
     this.s.cs.position        =  pos
-  }	  
+  }
 
   //---------------------------------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ class uri_commands extends uri_sorts {
       case "product":
         this.url_page_set_product()
         break;;
-        
+
       case "list":
         this.url_page_set_list()
         break;;
@@ -134,7 +134,7 @@ class uri_commands extends uri_sorts {
       case "cookies":
         this.url_page_load_drupal_node(24)
         break;;
-        
+
       case "policy":
         // this.p('u05_LOADING_POLICY')
         this.url_page_load_drupal_node(24)
@@ -145,8 +145,8 @@ class uri_commands extends uri_sorts {
         // this.manage_front()
         this.s.cs.page_name       =  'front'
         this.s.cs.loadtype        =  'page'
-        this.s.cs.position        =  '20'    
-        this.s.cs.page            =  '0'    
+        this.s.cs.position        =  '20'
+        this.s.cs.page            =  '0'
         break;;
 
       default:
@@ -162,9 +162,9 @@ class uri_commands extends uri_sorts {
         // this.s.cs.page_command    =  this.uri
         this.s.cs.dash_sub_query  =  this.dash_uri
         // this.manage_front()
-        
+
     }
-  
+
     this.process_commands()
 
   }
@@ -176,50 +176,50 @@ class uri_commands extends uri_sorts {
 
     // Ahora hay que gestionar la url para comandos inteligents
 
-    // que pasa si es esta uri : intelligent_scroll    
-    if ( this.b.intelligent_command        && 
-        (this.page_command.substr(0,1) == 'i' )  ) 
+    // que pasa si es esta uri : intelligent_scroll
+    if ( this.b.intelligent_command        &&
+        (this.page_command.substr(0,1) == 'i' )  )
     {
-      this.b.page_intelligent     =   true 
-      this.page_command           =  this.page_command.substr(1)            
+      this.b.page_intelligent     =   true
+      this.page_command           =  this.page_command.substr(1)
     }
 
     // Por defecto es el mismo y luego vemos casos
-    this.uri_args_sorted        =  this.uri_arr            
+    this.uri_args_sorted        =  this.uri_arr
 
     // this.p('u05_possarray: ' +  ' ' + this.start_position_array )
-    
+
     // Comando + Idioma --> 1
 
     // Igual hay que restar o sumar el numero de argumentos - la posicion inicical
-    
+
     let contador_posiciones = this.count_lang_uri_arr - this.start_position_array
-    
+
     switch(this.start_position_array)
     {
       case 0:
         // No hay idiomas ni comandos
-        // this.p('NO HAY IDIOMA NI COMANDO')                
+        // this.p('NO HAY IDIOMA NI COMANDO')
         break;;
       case 1:
         // Hay idioma o comando - Hay que ver los elementos que tiene el array
-        // this.p('HAY IDIOMA O COMANDO ')    
+        // this.p('HAY IDIOMA O COMANDO ')
         // Que pasa si es un solo comando : list el array estara vacio
-          this.uri_args_sorted  =  this.uri_arr_lang          
-        
+          this.uri_args_sorted  =  this.uri_arr_lang
+
         break;;
       case 2:
         // Hay idioma y comando
-        // this.p('HAY IDIOMA Y COMANDO ' +  contador_posiciones)                  
-          this.uri_args_sorted  =  this.uri_arr_lang_command        
+        // this.p('HAY IDIOMA Y COMANDO ' +  contador_posiciones)
+          this.uri_args_sorted  =  this.uri_arr_lang_command
         break;;
 
     }
 
-    this.sort_url()                              
+    this.sort_url()
 
-  }  
-  
+  }
+
 }
 
 exports.uri_commands = uri_commands

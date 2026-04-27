@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // social_cache- social_nocache
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-social_no_cache-  : Social no cache launcher
 // e-social_cache-     : Social cache launcher
@@ -25,7 +25,7 @@
 
 // Must to be unique
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"                         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { social_no_cache } =   require(  cons.JS_PYC7  + 'social/social/model/social_nocache_launcher.es7'),
         { social_cache }    =   require(  cons.JS_PYC7  + 'social/social/model/social_cache_launcher.es7'  ),
@@ -42,7 +42,7 @@ class social extends printlog
 
     if (pmt.cache)      this.model          = new social_cache(    pmt  )
     else                this.model          = new social_no_cache( pmt  )
-  } 
+  }
 
 }
 

@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // war_cache- war_nocache
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-war_no_cache-  : Social no cache launcher
 // e-war_cache-     : Social cache launcher
@@ -23,7 +23,7 @@
 
 // cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { war_no_cache }    =   require(  cons.JS_PYC7  + 'war/war/model/war_nocache_launcher.es7' ),
         { war_cache }       =   require(  cons.JS_PYC7  + 'war/war/model/war_cache_launcher.es7'),
@@ -40,7 +40,7 @@ class war extends printlog
 
     if (pmt.cache)      this.model          = new war_cache(    pmt  )
     else                this.model          = new war_no_cache( pmt  )
-  } 
+  }
 
 } // end Class
 

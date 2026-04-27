@@ -11,55 +11,55 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-//- d-get_child_properties-       : Method to overload. Old structure 
+//- d-get_child_properties-       : Method to overload. Old structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
-// Anode > Anode_Run > Anode_main_load > Anode_main_process > Anode_load > Anode_process > Anode_defs > 
+// Anode > Anode_Run > Anode_main_load > Anode_main_process > Anode_load > Anode_process > Anode_defs >
 // Anode > Cache > Struc
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { html_style } 	= 	require(	cons.JS_TYP7 + 'html/style/html_style.es7'			  ),
 		   sctf  			    = 	require(  cons.JS_LIB7  + 'file/save_code_to_file.es7' 	            );
 
 class hnode extends html_style {
-  constructor(    tag_type                )  
+  constructor(    tag_type                )
   {
     super(tag_type)
 
     // Este metodo debe ir en otra clase
     // Debemos generar el codigo y guardarlo
-    
+
   }
 
   process_and_generate_html_file()
   {
     // Son necesarios porque ya no se ejecuta directamente en el constructor
     this.spec_attribs()
-    
+
     this.build_data()
-    
+
     // No se guardan una salida de jsons
     if (!this.b.only_json_page )
     {
       this.save_data()
       // Hay que generar los alias
-      // this.p ('h01_hnode_Generating_Aliases ' + this.s.cs.cache_alias) 
-      // this.p ('h01_hnode_Generating_Path '    + this.s.cs.cache_path) 
+      // this.p ('h01_hnode_Generating_Aliases ' + this.s.cs.cache_alias)
+      // this.p ('h01_hnode_Generating_Path '    + this.s.cs.cache_path)
       // Esto solo tiene sentido si no es un lenguaje raro
-      
+
       if (!this.b.is_strange_lang && this.s.cs.page_type != 'idx')
         sctf.link_full_filename(this.s.cs.cache_path , this.s.cs.cache_alias)
-      
+
     }
   }
-  
+
   save_data()
   {
-	sctf.create_file_with_code(	  this.s.cs.cache_path				, 
+	sctf.create_file_with_code(	  this.s.cs.cache_path				,
 								  this.code						)
   }
 

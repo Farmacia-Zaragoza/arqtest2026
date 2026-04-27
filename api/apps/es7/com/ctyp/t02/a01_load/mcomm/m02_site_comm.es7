@@ -8,33 +8,33 @@
 // Fast node load - Replace Mysql connections - Taxonomy Class
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Class            : 
+// Class            :
 // c-site_mcomm-
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Mcomm > scomm_struc > scomm_defs
 // Site_Mcomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { scomm_struc }      =   require(  cons.JS_TYF7  + 'a01_load/scomm/s03_struc.es7'  ),
        { cache_site }       =   require(  cons.JS_TYP7  + 'site/s10_cache_site.es7'       );
 
 // Multi positions Load. Generate a new arr
 class site_mcomm extends scomm_struc {
-  constructor(    site               , 
-                  positions = '0 2 5')  
+  constructor(    site               ,
+                  positions = '0 2 5')
   {
     super()
- 
+
     this.n                           =   "site_mcomm::"
     this.m                           =   "cons"
 
-       
+
     this.s					         =   site
-    this.b					         =   this.s.b    
+    this.b					         =   this.s.b
 
     // common type
 
@@ -56,7 +56,7 @@ class site_mcomm extends scomm_struc {
 
     // Vamos a generar una ruta sin uri y sin lang
     // Comm no lo necesita
-    
+
     this.s.cs.uri                     =   'uritype'
     this.s.cs.comm                    =   'comm'
     this.s.cs.sub                     =   'arroba'
@@ -64,7 +64,7 @@ class site_mcomm extends scomm_struc {
     this.s.cs.multi_positions         =   positions
 
     // this.p ('c01_cache ' +  this.s.cs.multi_positions)
-        
+
     // this.p('s01_passsed_type ' + this.s.t_sub)
 
     // Define a(Anode) and run ( load @node and save)
@@ -73,21 +73,21 @@ class site_mcomm extends scomm_struc {
     // this.p('m02_site_commm ' + this.s.ms.default_lang)
 
     // Genera el anode cargando todas las propiedades ( recuperamos de arroba )
-    
+
     // this.s.ms.lang          =    this.s.ms.default_lang
-    // this.s.cs.lang          =    this.s.ms.default_lang    
+    // this.s.cs.lang          =    this.s.ms.default_lang
 
 
     // this.p('m02_scomm_Arroba_Path ' + this.a.s.cs.cache_path)
 
     this.arr                         = this.a.arr
-    this.s.b.language_already_loaded = true    
-    
+    this.s.b.language_already_loaded = true
+
     this.s.cs.loadtype               = old_loadtype
     this.s.cs.lang                   = old_lang
     this.s.cs.page                   = old_page
     this.s.cs.position               = old_position
-    
+
   }
 
 

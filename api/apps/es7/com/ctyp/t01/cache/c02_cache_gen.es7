@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Cache_Gen > Cache_Save > > Index
 // @Cache > .. > @Log
@@ -19,18 +19,18 @@
 //- d-generate_cache_path-       : Generate cache path
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"     )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const	{ cache_save }     =   require(  cons.JS_TYP7  + 'cache/c03_cache_save.es7'     )
 
 class cache_gen extends cache_save {
-  constructor() 
+  constructor()
   {
     super()
     this.n                          =   "cache_gen::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Local method
   generate_human_path()
   {
@@ -42,7 +42,7 @@ class cache_gen extends cache_save {
     this.s.cs.cache_subpath   += this.s.cs.sync     + '/'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   generate_cache_path()
   {
     this.m               = 'generate_cache_path'
@@ -50,25 +50,25 @@ class cache_gen extends cache_save {
   	// We will generata path for cache structure
   	// Vamos a pensar primero
 
-    // /brqx/pers/cache/arqdru/ 
-    // jnode/ Human|robot|any - Connection ssl|nossl - Lang lang - url -    	
-  	
+    // /brqx/pers/cache/arqdru/
+    // jnode/ Human|robot|any - Connection ssl|nossl - Lang lang - url -
+
   	// subtipe (passed as parameter to jnode)
-  	
+
   	// /brqx/pers/cache/arqdru/nouri/nocomm/blanc/nohuman/nouser/nocode/notrans/nosync/jnode
-  	
+
   	this.s.cs.cache_subpath    = this.s.cs.uri + '/'
 
     this.s.cs.cache_subpath   += this.s.cs.page_type  + '/'
-    
+
     // this.p('c02_chgen_Page type : ' + this.s.cs.page_type + ' Load type : '  + this.s.cs.loadtype )
 
     switch(this.s.cs.page_type)
     {
-          
+
       case "comm":
         this.s.cs.cache_subpath   += 'nodef'  + '/'
-        this.generate_human_path()  
+        this.generate_human_path()
 
         // Comun a todos los idiomas page_json.json
         this.s.cs.cache_subpath   += 'page' + '_'
@@ -82,7 +82,7 @@ class cache_gen extends cache_save {
 
       case "spec":
         this.s.cs.cache_subpath   += 'nodef'  + '/'
-        this.generate_human_path()  
+        this.generate_human_path()
 
         this.s.cs.cache_subpath   += this.s.cs.lang     + '_'
         // Comun a todas las paginas de un idioma
@@ -91,30 +91,30 @@ class cache_gen extends cache_save {
         this.s.cs.cache_noversion_subpath   = this.s.cs.cache_subpath
 
         this.s.cs.cache_subpath   += this.s.cs.data_spec_version     + '_'
-        
+
         break;
 
       // Search and Index type
       case "idx":
         this.s.cs.cache_subpath   += 'nodef'  + '/'
-        this.generate_human_path()  
+        this.generate_human_path()
 
         this.s.cs.cache_subpath   += this.s.cs.lang     + '_'
         // Comun a todas las paginas de un idioma
         this.s.cs.cache_subpath   += 'idx' + '_'
 
         this.s.cs.cache_noversion_subpath   = this.s.cs.cache_subpath
-        
+
         break;
 
 
       case "content":
         // front | product | article
         // que pasa si es una lista
-        
+
         this.s.cs.cache_subpath   += this.s.cs.page_name  + '/'
-        this.generate_human_path()  
-      
+        this.generate_human_path()
+
         this.s.cs.cache_subpath   += this.s.cs.lang     + '_'
 
         // human - user - code - trans - sync
@@ -126,11 +126,11 @@ class cache_gen extends cache_save {
         if (this.s.cs.page_name  == 'search')
         {
           //Subquery ya tiene el dash
-          this.s.cs.cache_subpath += this.s.cs.dash_sub_query 
+          this.s.cs.cache_subpath += this.s.cs.dash_sub_query
         }
 
         if (this.b.page_could_be_alias)
-          this.s.cs.cache_subalias =  this.s.cs.cache_subpath +  'alias' + '_' + this.s.cs.dash_sub_query + '_'        
+          this.s.cs.cache_subalias =  this.s.cs.cache_subpath +  'alias' + '_' + this.s.cs.dash_sub_query + '_'
 
 
         // aqui insertamos full | teasers y demas tampoco tiene sentido con alias
@@ -140,7 +140,7 @@ class cache_gen extends cache_save {
         if (this.b.index_page  &&  this.b.index_ready  && (this.s.cs.ext == "json") )
         {
             // this.p('GENINDEX ' +  this.s.cs.position + '_' + this.s.cs.page  )
-            this.s.cs.cache_subpath += this.s.cs.position + '_'     
+            this.s.cs.cache_subpath += this.s.cs.position + '_'
         }
 		else
         switch(this.s.cs.loadtype)
@@ -153,13 +153,13 @@ class cache_gen extends cache_save {
             this.s.cs.cache_subpath += this.result + '_'
             break;
           case "page":
-            this.s.cs.cache_subpath += this.s.cs.position + '_' + this.s.cs.page + '_'            
+            this.s.cs.cache_subpath += this.s.cs.position + '_' + this.s.cs.page + '_'
             break;
-            
+
           case "hierarchical":
             // Esto no lo conoce
             // this.p('c02_Cache JERARQUICO ' + this.s.cs.dash_hierarchi)
-            this.s.cs.cache_subpath += 	this.s.cs.dash_hierarchi + '_'          
+            this.s.cs.cache_subpath += 	this.s.cs.dash_hierarchi + '_'
             break;
         }
 
@@ -178,25 +178,25 @@ class cache_gen extends cache_save {
     // Generacion de ficheros sum y err
   	var cache_sum_ssl_manage = this.s.ms.general_cache_path  + this.s.cs.cache_subpath
 
-  	
+
     // Aqui insertamos el subtipo ( json )
-    
+
     // this.p('c02_cache_before_sub ' + this.s.cs.cache_subpath )
-    
+
     // hdata | json
-    this.s.cs.cache_subpath    += this.s.cs.sub 
-    this.s.cs.cache_subalias   += this.s.cs.sub 
+    this.s.cs.cache_subpath    += this.s.cs.sub
+    this.s.cs.cache_subalias   += this.s.cs.sub
 
     this.s.cs.cache_noversion_subpath   +=  '*' + this.s.cs.sub
 
 
     // No estamos gestionando ssl
-    if (this.s.b.type_ssl && 
-    	(this.s.ms.ssl_page == 'ssl') )  	
-    {  	
+    if (this.s.b.type_ssl &&
+    	(this.s.ms.ssl_page == 'ssl') )
+    {
       // this.p('Generationg SSL add: ' + this.s.ms.ssl_page )
-      this.s.cs.cache_subpath    += '_' + this.s.ms.ssl_page  
-      this.s.cs.cache_subalias   += '_' + this.s.ms.ssl_page  
+      this.s.cs.cache_subpath    += '_' + this.s.ms.ssl_page
+      this.s.cs.cache_subalias   += '_' + this.s.ms.ssl_page
 
       this.s.cs.cache_noversion_subpath  += '_' + this.s.ms.ssl_page
 
@@ -204,22 +204,22 @@ class cache_gen extends cache_save {
       cache_sum_ssl_manage += this.s.ms.ssl_page + '_'
     }
 
-    if (this.s.cs.ext != "")  
-    {	  	
-    	this.s.cs.cache_subpath  += '.' + this.s.cs.ext  	  	
-    	this.s.cs.cache_subalias += '.' + this.s.cs.ext  	  	
+    if (this.s.cs.ext != "")
+    {
+    	this.s.cs.cache_subpath  += '.' + this.s.cs.ext
+    	this.s.cs.cache_subalias += '.' + this.s.cs.ext
         this.s.cs.cache_noversion_subpath  += '.' + this.s.cs.ext
 
     }
 
-  	this.s.cs.cache_path  = this.s.ms.general_cache_path + this.s.cs.cache_subpath 
-  	this.s.cs.cache_alias = this.s.ms.general_cache_path + this.s.cs.cache_subalias 
+  	this.s.cs.cache_path  = this.s.ms.general_cache_path + this.s.cs.cache_subpath
+  	this.s.cs.cache_alias = this.s.ms.general_cache_path + this.s.cs.cache_subalias
 
     this.s.cs.cache_noversion_path = this.s.ms.general_cache_path + this.s.cs.cache_noversion_subpath
 
 
-    this.s.cs.cache_url      = 'cache/' + this.s.cs.cache_subpath 
-    this.s.cs.cache_urlalias = 'cache/' + this.s.cs.cache_subalias 
+    this.s.cs.cache_url      = 'cache/' + this.s.cs.cache_subpath
+    this.s.cs.cache_urlalias = 'cache/' + this.s.cs.cache_subalias
 
 
 
@@ -231,16 +231,16 @@ class cache_gen extends cache_save {
     // this.p('c02_cache_url ' + this.s.cs.cache_url)
     // this.p('Url defined for Common: ' + this.s.cs.cache_url)
 
-    // /brqx/pers/cache/arqdru/nouri/nocomm/blanc/nohuman/nouser/nocode/notrans/nosync/en_full_scomm  	  	
+    // /brqx/pers/cache/arqdru/nouri/nocomm/blanc/nohuman/nouser/nocode/notrans/nosync/en_full_scomm
   	// this.p('c02_CACHEGEN Pat : ' + this.s.cs.cache_path )
   	// this.p('c02_CACHENOVERSION Pat : ' + this.s.cs.cache_noversion_path )
 
   	// this.p('c02_cache_gen Sum : ' + this.s.cs.cache_sum  )
-  	
+
   	// Pagina especifica solo para indices y busquedas
-  	if (this.s.cs.page_type == 'idx') 
+  	if (this.s.cs.page_type == 'idx')
   	  this.s.cs.idx = this.s.cs.cache_path
-  	  	
+
   }
 
 

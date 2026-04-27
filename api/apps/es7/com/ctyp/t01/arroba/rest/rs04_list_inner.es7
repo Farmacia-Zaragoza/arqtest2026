@@ -12,28 +12,28 @@
 // - d-gen_rest_list_inner-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                   =   require(  'fs'                                                   ),
        empty                =   require(  cons.NODE_MOD + 'is-empty'                             ),
        accents              =   require(  cons.NODE_MOD + 'remove-accents'                       ),
        { idx_pointers }     =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
        { rs00_rest_pf }     =   require(  cons.JS_TYP7  + 'arroba/rest/rs00_rest_pf.es7'  );
-       
+
 // List Object
 class rs04_object_list_inner extends rs00_rest_pf {
 
-          
-  constructor (arroba , rest)   
-  {   
+
+  constructor (arroba , rest)
+  {
     super(arroba, rest)
-    this.n                   =  'rs04_object_list_inner::'      
-    
+    this.n                   =  'rs04_object_list_inner::'
+
     this.start_include      =  false
   }
 
-  //---------------------------------------------------------------------------------------------  
-  gen_rest_list_inner(  
+  //---------------------------------------------------------------------------------------------
+  gen_rest_list_inner(
             index                      )
   {
     this.m         =  'gen_rest_search_inner'
@@ -43,27 +43,27 @@ class rs04_object_list_inner extends rs00_rest_pf {
 
     // var idx = new idx_pointers(index,'nx')
 
-    var idx = new idx_pointers(index)    
-    // this.p('jn01_Jindex ' + this.s.ms.main_lang + ' ' + idx.jindex)    
+    var idx = new idx_pointers(index)
+    // this.p('jn01_Jindex ' + this.s.ms.main_lang + ' ' + idx.jindex)
 
     this.arroba_attribs_cats(idx)
-    
+
 // ITERATE PAGE ATTRIBS
     for (var pos in this.cats)
     {
       this.sheet.reload()
-      this.arroba_attribs(idx , pos)    
+      this.arroba_attribs(idx , pos)
 
       // rs04_Adding List a000000 - Ferrari
       // this.p('rs04_Adding List ' + this.cat + this.item)
 
       this.sheet.update(this.cat,this.item,this.link, this.photo, this.hover)
-    
+
       this.rest.add(this.sheet)
     } // End For
 
   }
-  
+
 }
 
 exports.rs04_object_list_inner = rs04_object_list_inner

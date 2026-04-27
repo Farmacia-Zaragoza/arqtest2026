@@ -10,10 +10,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-review_childrens_doble_array-                   : 2nd level function 
+// - d-review_childrens_doble_array-                   : 2nd level function
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                 =   require(  'fs'                                                    ),
        empty              =   require(  cons.NODE_MOD + 'is-empty'                              ),
@@ -24,16 +24,16 @@ const  fs                 =   require(  'fs'                                    
 
 class jn07_comma_json_doble_call extends jn00_comm_pf {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn07_comma_json_doble_call::'      
+    this.n                   =  'jn07_comma_json_doble_call::'
   }
 
-  
+
   }
-  
+
 }
 
 exports.jn07_comma_json_doble_call = jn07_comma_json_doble_call

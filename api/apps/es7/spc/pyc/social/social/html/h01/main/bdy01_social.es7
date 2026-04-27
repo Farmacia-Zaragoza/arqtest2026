@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------------------------
 // Peloncita Structure Header
 //-------------------------------------------------------------------------------------
-// <body 
+// <body
 //  <app-root></app-root>
 //  </script>
 
@@ -18,20 +18,20 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                 =  require( "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { common_react }    =  require( cons.JS_ACO7 + 'html/h01/main/common_react.es7' )          ,		
-		{ scr01_js_social }	= 	require( cons.JS_PYC7 + 	'social/social/html/h01/main/scr01_js_social.es7');					
+const   { common_react }    =  require( cons.JS_ACO7 + 'html/h01/main/common_react.es7' )          ,
+		{ scr01_js_social }	= 	require( cons.JS_PYC7 + 	'social/social/html/h01/main/scr01_js_social.es7');
 
 
 class bdy01_body_social extends common_react  {
 
     constructor (     container						)
-    {   
+    {
 		super(container)
 
-		this.n				=	'bdy_social::'		
-		
+		this.n				=	'bdy_social::'
+
     }
 
   	create_scripts()
@@ -40,9 +40,9 @@ class bdy01_body_social extends common_react  {
 		// Scripts links for dev environment
 		// Script tag for live environment
 
-  		this.scripts_01		= 	new scr01_js_social(	this.container	)			
-		
-		this.content		+=	this.scripts_01.code							
+  		this.scripts_01		= 	new scr01_js_social(	this.container	)
+
+		this.content		+=	this.scripts_01.code
 	}
 
 }

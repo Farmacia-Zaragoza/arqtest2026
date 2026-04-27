@@ -9,23 +9,23 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn02_process_site }   =   require(  cons.JS_SPC7  + 'scroll/json/j02/jn02_jnode_process_site.es7'   );
 
 class jn02_policy_json extends jn02_process_site {
-           
-  constructor (arroba = '') 
-  {   
+
+  constructor (arroba = '')
+  {
     // ARROBA se getiona en JNODE
     super(arroba)
     this.n                  =   'jn02_policy_json::'
 
     // this.p('j02_policy Cache_path ' + this.j.full_path )
-    
+
   }
 
   // Specific method for every type
@@ -44,7 +44,7 @@ class jn02_policy_json extends jn02_process_site {
 
     this.p('jn02_Gen_Policy  ' + this.j.full_path )
 
-    this.j.save_top()      
+    this.j.save_top()
 
     // COMUN PARA TODAS LAS PAGINAS - Y para ambos JSON
 
@@ -58,9 +58,9 @@ class jn02_policy_json extends jn02_process_site {
     // taxonomy
     // this.p('Categories ' + this.arroba.a.categories)
 
-    this.j.save_header(this.cat)      
+    this.j.save_header(this.cat)
 
-    this.save_json_sidebar_doble_object_to_file(  
+    this.save_json_sidebar_doble_object_to_file(
                 this.index         ,
                 this.arroba.a.categories  ) // Categories lang/ES Name
 
@@ -72,10 +72,10 @@ class jn02_policy_json extends jn02_process_site {
     // this.p('policy_json Grabando Final ' + this.j.full_path)
     this.j.save_end()
 
-  
+
   }
 
-  
+
 }
 
 exports.jn02_policy_json = jn02_policy_json

@@ -8,47 +8,47 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const echo                 =   require(  cons.NODE_MOD + 'node-echo'                ),
-      fs                   =   require(  'fs'                          );  
+      fs                   =   require(  'fs'                          );
 
 class savelog
 {
-  constructor() 
+  constructor()
   {
     // Atributos
     this.n               =   ''               // class name
     this.m               =   ''               // method name
-  
+
     this.type            =   ''               // type name
-  
+
     this.lr              =   '\n\r'             // br
 
     // Web_debug_change
-    //  this.br              =   '</br>'  
-    this.br              =   '\n\r'  
+    //  this.br              =   '</br>'
+    this.br              =   '\n\r'
 
 
     this.lf              =  ':</br>'
 
-    this.content         =   ''                  
-    this.code            =   ''                  
+    this.content         =   ''
+    this.code            =   ''
 
       // Common objects
 
     this.thm             =  ''
-    this.fnode           =  ''             
-    this.jnode           =  ''             
+    this.fnode           =  ''
+    this.jnode           =  ''
 
       // Search Engine
       //  We save all terms and main terms
 
     // Position Indicator to manage arrays
     this.pos             =   0
-  
+
     this.arr             =   Array()
-  
+
     this.terms           =   Array()
     this.mainterms       =   Array()
 
@@ -59,10 +59,10 @@ class savelog
     // Terms strings
     this.chain_terms     =   ''
     this.chain_mainterms =   ''
-    
+
     this.local_current_level      = ''
     this.local_current_breadcrumb = ''
-    
+
   }
 
   push_unique_array(term , name)
@@ -74,7 +74,7 @@ class savelog
     }
     else
     this.p('savelog_NO DEFINIDO ' + name)
-    
+
   }
 
   // Terminos para la query actual
@@ -91,84 +91,84 @@ class savelog
       this.mainterms.push(term)
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   // Definimos codigos de 3 posiciones para los padres y de 5 para los hijos
   get_next_level(pos)
   {
-    let next = ''                                        
+    let next = ''
 
-    let newpos = pos + ''                                    
-    let lenpos = newpos.length                                                                                                                                                                                                              
+    let newpos = pos + ''
+    let lenpos = newpos.length
 
-    // $this->p('getting level from: ' . $pos . ' len : ' . $lenpos)                
+    // $this->p('getting level from: ' . $pos . ' len : ' . $lenpos)
 
-    if      (lenpos == 1 )  next =  '00' + newpos                      
-    else if (lenpos == 2 )  next =  '0'  + newpos                     
-    else if (lenpos == 3 )  next =   newpos                         
-    else if (lenpos == 4 )  next =   newpos                         
-    else if (lenpos == 5 )  next =   newpos                         
+    if      (lenpos == 1 )  next =  '00' + newpos
+    else if (lenpos == 2 )  next =  '0'  + newpos
+    else if (lenpos == 3 )  next =   newpos
+    else if (lenpos == 4 )  next =   newpos
+    else if (lenpos == 5 )  next =   newpos
 
-    return next                                        
+    return next
   }
 
   get_next_level_four(pos)
   {
-    let next = ''                                        
+    let next = ''
 
-    let newpos = pos + ''                                    
-    let lenpos = newpos.length                                                                                                                                                                                                              
+    let newpos = pos + ''
+    let lenpos = newpos.length
 
-    // $this->p('getting level from: ' . $pos . ' len : ' . $lenpos)                
+    // $this->p('getting level from: ' . $pos . ' len : ' . $lenpos)
 
-    if      (lenpos == 1 )  next =  '000' + newpos                      
-    else if (lenpos == 2 )  next =  '00' + newpos                      
-    else if (lenpos == 3 )  next =  '0'  + newpos                     
-    else if (lenpos == 4 )  next =   newpos                         
+    if      (lenpos == 1 )  next =  '000' + newpos
+    else if (lenpos == 2 )  next =  '00' + newpos
+    else if (lenpos == 3 )  next =  '0'  + newpos
+    else if (lenpos == 4 )  next =   newpos
 
-    return next                                        
+    return next
   }
 
 
   // Define arrays para indices no definidos
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   set_multi_arr_2d(arr , index1 , index2)
   {
-    if ( !Array.isArray(arr) ) 
-    {	
+    if ( !Array.isArray(arr) )
+    {
       arr = Array()
     }
-    else 
+    else
     {
-      if ( !Array.isArray(arr[index1]) ) 
+      if ( !Array.isArray(arr[index1]) )
       {
         // this.p('Setting Array 01 ' + index1)
-        arr[index1]              = Array()                    
-        arr[index1][index2]      = Array()                          
+        arr[index1]              = Array()
+        arr[index1][index2]      = Array()
       }
       else
       {
-      // Notice: Undefined index: i000v001v004v000v001 
-        if ( !Array.isArray(arr[index1][index2]) )     
+      // Notice: Undefined index: i000v001v004v000v001
+        if ( !Array.isArray(arr[index1][index2]) )
         {
-          arr[index1][index2]      = Array()                                
+          arr[index1][index2]      = Array()
         }
       }
-    }     
-    
-    return arr   
+    }
+
+    return arr
   }
 
   //---------------------------------------------------------------------------------------------
   dd(msg)
   {
     // Agile debug method. To load with deb - brqx alias
-      let puting_contents          =  this.n + msg  + '>'   
+      let puting_contents          =  this.n + msg  + '>'
         global.GLOBALS['putcont']      +=  puting_contents
 
     let file = 'brqx_debug.ddt'
 
-    if (!fs.existsSync(file) ) 
+    if (!fs.existsSync(file) )
       this.d_start ( msg )
     else
     {
@@ -177,14 +177,14 @@ class savelog
         fs.appendFileSync('brqx_debug.ddt', global.GLOBALS['putcont'])
 
     }
-    global.GLOBALS['putcont']= ''                      
+    global.GLOBALS['putcont']= ''
   }
 
   //---------------------------------------------------------------------------------------------
   d(msg)
   {
     // Agile debug method. To load with deb - brqx alias
-      puting_contents=this.n + msg  + '>'   
+      puting_contents=this.n + msg  + '>'
         global.GLOBALS['putcont']+=puting_contents
   }
 
@@ -192,12 +192,12 @@ class savelog
   d_start(msg , letter = 't')
   {
     // Debug adding content only
-      let puting_contents  =  this.n + this.m +  '-' + msg  + '>'   
+      let puting_contents  =  this.n + this.m +  '-' + msg  + '>'
         global.GLOBALS['putcont']  =  puting_contents
 
-    let file           =  'brqx_debug.dd' + letter   
+    let file           =  'brqx_debug.dd' + letter
 
-    if (!fs.existsSync(file) ) 
+    if (!fs.existsSync(file) )
     {
       fs.appendFileSync(file , global.GLOBALS['putcont'])
        fs.chmodSync(file, parseInt('0775',8))  //changed to add the zero

@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------------------------
 // Peloncita Structure Header
 //-------------------------------------------------------------------------------------
-// <body 
+// <body
 //  <app-root></app-root>
 
 // Home page
@@ -42,7 +42,7 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { html_style } 	= 	require(	cons.JS_TYP7 + 'html/style/html_style.es7'			  ),
       { ifnojs }      =   require(  cons.JS_TYP7 + 'html/style/ifnojs.es7'            );
@@ -53,12 +53,12 @@ const { html_style } 	= 	require(	cons.JS_TYP7 + 'html/style/html_style.es7'			 
 class common_body extends html_style  {
 
     constructor (     container						)
-    {   
+    {
 		let tag_type					=	'body'
 		super(tag_type)
 
-		this.n							=	'common_body::'		
-        this.tag_type     				= 	'body'							
+		this.n							=	'common_body::'
+        this.tag_type     				= 	'body'
 
         this.class                      =   "loading"
 
@@ -68,7 +68,7 @@ class common_body extends html_style  {
 
 
 		// Tenemos que tener como un mapa del site
-		this.container.map					= 	'body/'								
+		this.container.map					= 	'body/'
 
 		// Common Json
 
@@ -76,40 +76,40 @@ class common_body extends html_style  {
 
         this.div_01                     =   new html_style('div')
 
-    	this.scripts_01					=	''                                      		
+    	this.scripts_01					=	''
 
-		this.ifnojs						=	new ifnojs()					
+		this.ifnojs						=	new ifnojs()
 
 		this.approot					=	new html_style('app-root')
 
 		this.pmtscr						=	new html_style('script')
 
 		// this.p('Domain Check SSL :'  + this.thm.u.http_domainbar)
-		
-		this.drift_code					=	this.container.s.os.drift			
-		
+
+		this.drift_code					=	this.container.s.os.drift
+
 		// External object
 		this.script_to_load				=	''
 
         //this.p('bdy_01_results ' + this.result_comm  + '  ' +  this.result_spec + '  ' +  this.result_cont )
-       
+
         // Sera false si hay que generar jsons
         if (this.container.jsons_ok)
-			this.build_data_ok()													
+			this.build_data_ok()
 		else
-			this.build_json_wrongs()													
-		
+			this.build_json_wrongs()
+
     }
 
 	//   <app-root></app-root>
 	create_approot()
 	{
 
-		this.approot.content				=		''													
+		this.approot.content				=		''
 
-		this.approot.pcreate()															
-		
-		this.content					+=		this.approot.code	
+		this.approot.pcreate()
+
+		this.content					+=		this.approot.code
 	}
 
     // Se debe generar si no es robot
@@ -120,13 +120,13 @@ class common_body extends html_style  {
     	this.a_01.content = 'π'
     	this.a_01.style   = 'visibility:hidden;display:none;'
     	this.a_01.href    = this.container.s.cs.http_domainbar + this.container.u.robot_uri
-    	
+
     	this.a_01.pcreate()
-          
+
         // this.p('common_body_robot_a ' + this.a_01.code )
-    	
-		this.content					+=		this.a_01.code    	
-    	
+
+		this.content					+=		this.a_01.code
+
     }
 
     // <!--[if lt IE 8]>
@@ -136,10 +136,10 @@ class common_body extends html_style  {
   	create_ifnojs()
     {
 		// External links
-		this.ifnojs.ifno_complex_mode_02('8' , 'lt' , '<p class="garlandupgrade">You are using an <strong>outdated</strong> arqdru. Please <a href="http://browsehappy.com/">upgrade your arqdru</a> to improve your experience.</p>'  	)							 	
-		
+		this.ifnojs.ifno_complex_mode_02('8' , 'lt' , '<p class="garlandupgrade">You are using an <strong>outdated</strong> arqdru. Please <a href="http://browsehappy.com/">upgrade your arqdru</a> to improve your experience.</p>'  	)
+
 		this.content 			+= 	this.ifnojs.code
-		 	
+
 	}
 
     build_json_wrongs()
@@ -148,17 +148,17 @@ class common_body extends html_style  {
 
         this.div_01.content      = this.container.line_comm
         this.div_01.pcreate()
-		this.content 			+= this.div_01.code 	                
+		this.content 			+= this.div_01.code
 
         this.div_01.content      = this.container.line_spec
         this.div_01.pcreate()
-		this.content 			+= this.div_01.code 	                
+		this.content 			+= this.div_01.code
 
         this.div_01.content      = this.container.line_cont
         this.div_01.pcreate()
-		this.content 			+= 	this.div_01.code 	                
+		this.content 			+= 	this.div_01.code
 
-		this.pcreate()											
+		this.pcreate()
 
         // this.p('bdy01_arq ' +  this.content)
 

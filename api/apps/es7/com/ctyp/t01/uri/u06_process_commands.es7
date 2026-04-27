@@ -13,7 +13,7 @@
 // - d-process_commands-              : Call to process commands
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_manage_commands }    =   require(  cons.JS_TYP7  + 'uri/u07_manage_commands.es7'        )
 
@@ -21,8 +21,8 @@ class uri_process_commands extends uri_manage_commands {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_process_commands::'        
+    super()
+    this.n               =   'uri_process_commands::'
   }
 
   //---------------------------------------------------------------------------------------------
@@ -32,48 +32,48 @@ class uri_process_commands extends uri_manage_commands {
 
     // Ahora hay que gestionar la url para comandos inteligents
 
-    // que pasa si es esta uri : intelligent_scroll    
-    if ( this.b.intelligent_command        && 
-        (this.page_command.substr(0,1) == 'i' )  ) 
+    // que pasa si es esta uri : intelligent_scroll
+    if ( this.b.intelligent_command        &&
+        (this.page_command.substr(0,1) == 'i' )  )
     {
-      this.b.page_intelligent     =   true 
-      this.page_command           =  this.page_command.substr(1)            
+      this.b.page_intelligent     =   true
+      this.page_command           =  this.page_command.substr(1)
     }
 
     // Por defecto es el mismo y luego vemos casos
-    this.uri_args_sorted        =  this.uri_arr            
+    this.uri_args_sorted        =  this.uri_arr
 
     // Por aqui no ha pasado
-    // 
-    
+    //
+
     // this.p('u07_comm_possarray: ' +  ' ' + this.start_position_array )
     // this.p('u07_comm_countlang: ' +  ' ' + this.count_lang_uri_arr )
-    
+
     // article/a01/idx       --> Start 0
     // en/article/a01/idx    --> Start 1
     // Comando + Idioma --> 1
 
     // Igual hay que restar o sumar el numero de argumentos - la posicion inicical
-    
+
     let contador_posiciones = this.count_lang_uri_arr - this.start_position_array
-    
+
     switch(this.start_position_array)
     {
       case -1:
         // No hay idiomas ni comandos
-        // this.p('NO HAY IDIOMA NI COMANDO')                
+        // this.p('NO HAY IDIOMA NI COMANDO')
         break;;
       case 0:
         // Hay idioma o comando - Hay que ver los elementos que tiene el array
-        // this.p('HAY IDIOMA O COMANDO ')    
+        // this.p('HAY IDIOMA O COMANDO ')
         // Que pasa si es un solo comando : list el array estara vacio
-          this.uri_args_sorted  =  this.uri_arr_lang          
-        
+          this.uri_args_sorted  =  this.uri_arr_lang
+
         break;;
       case 1:
         // Hay idioma y comando
-          // this.p('HAY IDIOMA Y COMANDO ' +  contador_posiciones)                  
-          this.uri_args_sorted  =  this.uri_arr_lang_command        
+          // this.p('HAY IDIOMA Y COMANDO ' +  contador_posiciones)
+          this.uri_args_sorted  =  this.uri_arr_lang_command
         break;;
 
     }
@@ -82,21 +82,21 @@ class uri_process_commands extends uri_manage_commands {
     if (this.count_lang_uri_arr == 0 )
     {
       // Si ya hemos puesto una lista de secciones no debemos poner la de articulos por defecto
-      if ( (this.s.cs.teaser_type != "detailed") && 
+      if ( (this.s.cs.teaser_type != "detailed") &&
            (this.page_command != 'kb') &&
-           (this.page_command != 'fs') 
+           (this.page_command != 'fs')
            )
         if (!this.b.page_list) this.url_page_set_list(20)
-      
+
       //  this.p('u06_Puede ser front')
-        
+
       // this.p('u06_Before_Sort List')
     }
 
-    this.sort_url()                              
+    this.sort_url()
 
-  }  
-  
+  }
+
 }
 
 exports.uri_process_commands = uri_process_commands

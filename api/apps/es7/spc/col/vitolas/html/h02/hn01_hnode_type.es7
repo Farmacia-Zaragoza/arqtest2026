@@ -8,17 +8,17 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Jnode_type > PrintLog
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Site - Url - HtmlType
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { printlog }          =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                              ),
 	   { common_hnode }      = 	require(	cons.JS_ACO7 + 'html/h01/main/common_hnode.es7'				),
@@ -27,23 +27,23 @@ const  { printlog }          =   require(  cons.JS_TYP7  + 'logs/printlog.es7'  
 
 
 class hnode_type extends printlog {
-           
-  constructor (container = '') 
-  {   
+
+  constructor (container = '')
+  {
     super()
     this.n                   =   'hn01_hnode_type::'
-    
+
     this.container           =   container
     this.s                   =   this.container.s
     this.u                   =   this.container.u
     this.hobject                   =   ''
-    
-    this.hnode               =   new common_hnode(this.container) 
 
-    
+    this.hnode               =   new common_hnode(this.container)
+
+
     // this.p('jntype_Page ' + this.u.page_name + ' P ' + this.s.cache_path)
 
-    // Aqui podemos gestionar los tipos rest  
+    // Aqui podemos gestionar los tipos rest
 
     switch(this.hnode.s.cs.page_name)
     {
@@ -53,34 +53,34 @@ class hnode_type extends printlog {
         break;;
     }
 
-    
+
     switch(this.s.page_type)
     {
         case "html":
-        
+
           this.hobject          =   new htm01_html_vitolas(this.hnode)
-          break;;   		
+          break;;
 
         case "rest":
           // this.p('jn01_type_Rest_generation')
           // this.h          =   new h02_rest(this.arroba)
-          break;;   		
+          break;;
 
         default:
-        
+
           this.hobject          =   new htm01_html_vitolas(this.hnode)
-          break;;   		
+          break;;
 
     }
 
     // Call to hnode
     this.hobject.process_and_generate_html_file()
-    
+
     // this.p(this.hobject.code)
-  
+
   }
 
-  
+
 }
 
 exports.hnode_type = hnode_type

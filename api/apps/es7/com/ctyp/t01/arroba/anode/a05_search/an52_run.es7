@@ -14,24 +14,24 @@
 //- d-run_hierarchical_load-       : Load from main hierarchical structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoRunHierar > AnoHieraMainLoad > AnoHieraMainProcess >AnoRunPosition
 // @Anode >  ...
 //-------------------------------------------------------------------------------------
-// Execution Line : 
+// Execution Line :
 //-------------------------------------------------------------------------------------
 // run_hierarchical_load > main_hierarchical_load >
 //-------------------------------------------------------------------------------------
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { anode_main_page_process } =   require( cons.JS_TYP7  + 'arroba/anode/a06_page/an62_main_process.es7'  )
 
 class anode_run_search extends anode_main_page_process {
-  constructor()  
+  constructor()
   {
     super()
 
@@ -39,7 +39,7 @@ class anode_run_search extends anode_main_page_process {
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Tenemos un nivel Mas : Multipage
   // @Format : Articulos - Positions - Pages
   run_rest_load()
@@ -51,7 +51,7 @@ class anode_run_search extends anode_main_page_process {
     let ask_redirect      = true
 
     let before_lang       =   this.s.ms.lang
-    
+
     let local_founded     = false
 
     // es - es
@@ -70,17 +70,17 @@ class anode_run_search extends anode_main_page_process {
 
 
     this.s.ms.lang           =   'en'
-    this.s.cs.lang           =   this.s.ms.lang    
+    this.s.cs.lang           =   this.s.ms.lang
 
     if (this.s.b.page_search)
     {
        this.p('a052_Generating_SEARCH_COMBO')
-       this.generate_array_from_file( this.s.ms.main_lang                    ,  
+       this.generate_array_from_file( this.s.ms.main_lang                    ,
        	                              this.s.cs.idx[this.s.ms.main_lang]     ,
        	                              ask_redirect                           )
     }
-      
-    this.generate_array_from_file( this.s.ms.main_lang                 ,  
+
+    this.generate_array_from_file( this.s.ms.main_lang                 ,
     	                           this.s.cs.list[this.s.ms.main_lang] ,
     	                           ask_redirect                        )
 
@@ -91,18 +91,18 @@ class anode_run_search extends anode_main_page_process {
     // For Index 2556
     // let longi = Object.keys(this.arr['en']['nxj020']).length -1
     // this.p('cache_arrlenNX  ' + longi)
-    
+
     // let longi = Object.keys(this.arr['en']['j020v001']).length -1
     // this.p('cache_arrlenCA  ' + longi)
-    
-       
+
+
     // Si se ha encontrado la rama, la ponemos a false para que busque en el otro idioma
-  
+
     this.s.ms.lang             =   before_lang
-    this.s.cs.lang             =   this.s.ms.lang    
+    this.s.cs.lang             =   this.s.ms.lang
 
     // GENERATE SEARCH INFORMATION FOR MAIN LANG DIFFERENT THAN ENGLISH
-    
+
     if ( this.s.ms.main_lang != 'en' )
     {
 	  this.replace( this.s.cs.list[this.s.ms.main_lang] ,'content', 'list')
@@ -112,11 +112,11 @@ class anode_run_search extends anode_main_page_process {
 
       this.p('an52_run_Loading MAIN_LANG_RARE')
       if (this.s.b.page_search)
-        this.generate_array_from_file( this.s.ms.main_lang ,  
-        	                           this.s.cs.idx[this.s.ms.lang] , 
+        this.generate_array_from_file( this.s.ms.main_lang ,
+        	                           this.s.cs.idx[this.s.ms.lang] ,
         	                           ask_redirect )
-      
-      this.generate_array_from_file( this.s.ms.main_lang ,  this.s.cs.list[this.s.ms.lang] , 
+
+      this.generate_array_from_file( this.s.ms.main_lang ,  this.s.cs.list[this.s.ms.lang] ,
         	                           ask_redirect )
 
       // Redirect page
@@ -127,7 +127,7 @@ class anode_run_search extends anode_main_page_process {
 
 
     // GENERATE SEARCH INFORMATION FOR LANG DIFFERENT THAN MAIN LANG
-    
+
     if ( this.s.ms.main_lang != this.s.cs.lang )
     {
 	  this.replace( this.s.cs.list[this.s.cs.lang] ,'content', 'list')
@@ -137,10 +137,10 @@ class anode_run_search extends anode_main_page_process {
 
       this.p('an52_run_Loading LANG ' + this.s.cs.lang)
       if (this.s.b.page_search)
-        this.generate_array_from_file( this.s.cs.lang ,  this.s.cs.idx[this.s.cs.lang] , 
+        this.generate_array_from_file( this.s.cs.lang ,  this.s.cs.idx[this.s.cs.lang] ,
         	                           ask_redirect )
-      
-      this.generate_array_from_file( this.s.cs.lang ,  this.s.cs.list[this.s.cs.lang] , 
+
+      this.generate_array_from_file( this.s.cs.lang ,  this.s.cs.list[this.s.cs.lang] ,
         	                           ask_redirect )
 
       // Redirect page
@@ -148,10 +148,10 @@ class anode_run_search extends anode_main_page_process {
         this.s.cs.redirect_page = this.s.cs.http_domainbar + this.s.cs.lang + '/list/idx'
 
     }
-    
+
   }
 
-  
+
 }
 
 exports.anode_run_search = anode_run_search

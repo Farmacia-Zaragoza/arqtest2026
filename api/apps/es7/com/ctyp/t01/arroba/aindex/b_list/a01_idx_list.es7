@@ -13,30 +13,29 @@
 // - d-save_arroba_index_list_to_file-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  accents            =   require(  cons.NODE_MOD + 'remove-accents'                       ),
-       { idx_pointers }                =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'   ),       
-       { a02_idx_page } =   require(  cons.JS_TYP7  + 'arroba/aindex/b_list/a02_idx_page.es7'  );
+const  { idx_pointers }                =   require(   path.join(JS_TYP7 , 'logs/idx_pointers.es7'   )),
+       { a02_idx_page } =   require(   path.join(JS_TYP7 ,  'arroba/aindex/b_list/a02_idx_page.es7'  ));
 
 // Common Array
 class a01_idx_list extends a02_idx_page {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                =  'a01_idx_page::'      
+    this.n                =  'a01_idx_page::'
   }
 
   //---------------------------------------------------------------------------------------------
   // Recursive structure
   // Graba todos. Solo tiene sentido si es una lista
-  save_arroba_index_list_to_file(  
+  save_arroba_index_list_to_file(
             index                 ,  // Indice
             enbreadcrumb  =   ''  ,  // Breadcrumb en ingles
             depth         =  0    ,
-            lang          =   ''  ) 
+            lang          =   ''  )
   {
 
     this.m          = 'save_json_search_rcsv'
@@ -55,57 +54,57 @@ class a01_idx_list extends a02_idx_page {
       // a0001 .. a0050
 
       this.arroba_attribs(idx, pos)
-    
+
       // a0010
       // this.p('a01_idxlist_INDEXXXX   ' +  '    ' + this.item)
-    
+
       let current_level        = index     + 'v' + this.level
       let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.item ).toLowerCase()
 
       // add_json block
       this.rvlash_inner(current_level)
-      this.index               = this.result   
-          
-      this.level    =   depth    
+      this.index               = this.result
+
+      this.level    =   depth
 
       // a0010 T sheet yes
-      // this.p ("a01_idx_no_rcsv : " + this.item +  ' T '  + this.ntype + ' C ' + this.child )    
-      
+      // this.p ("a01_idx_no_rcsv : " + this.item +  ' T '  + this.ntype + ' C ' + this.child )
+
       if ( this.child == "yes" )
       {
-         switch (this.ntype) 
+         switch (this.ntype)
          {
            case "branch":
-             this.save_arroba_index_list_to_file(  
+             this.save_arroba_index_list_to_file(
                 current_level          ,
                 current_enbreadcrumb       ,  // Breadcrumb en ingles
                 depth +1            )
-                           
+
              break;
 
            case "sheet":
-             // this.p('an09 cat  Ind ' + this.cat  + ' Cin ' + this.child )      
+             // this.p('an09 cat  Ind ' + this.cat  + ' Cin ' + this.child )
 
              // Def Current page for aword
              this.current_page = pos
-             
-             this.save_arroba_index_sheet_to_file(  
+
+             this.save_arroba_index_sheet_to_file(
                 current_level          ,
                 current_enbreadcrumb       ,  // Breadcrumb en ingles
                 depth +1            )
 
-             this.manage_sheet(pos)                
-                
+             this.manage_sheet(pos)
+
 
              break;
          }
 
       }
-    
+
      }  // End For
 
   }
-  
+
 }
 
 exports.a01_idx_list = a01_idx_list

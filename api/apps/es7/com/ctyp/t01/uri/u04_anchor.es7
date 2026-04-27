@@ -9,10 +9,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_anchor-       : Manage cache for sites 
+// - d-manage_anchor-       : Manage cache for sites
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const   { uri_front }     =   require(  cons.JS_TYP7 + 'uri/u05_front.es7'    );
@@ -21,12 +21,12 @@ class uri_anchor extends uri_front {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_anchor::'        
+    super()
+    this.n               =   'uri_anchor::'
   }
 
-    
-  //---------------------------------------------------------------------------------------------  
+
+  //---------------------------------------------------------------------------------------------
 
   // FORMATO PG ANCHOR pg05 --> anchor
   manage_pg_anchor(num = '')
@@ -34,53 +34,53 @@ class uri_anchor extends uri_front {
     this.num = num
     this.pos = this.strpos(this.num, "_")
 
-    if (this.pos !== false) 
+    if (this.pos !== false)
     {
-      let uri_arr_pre      =  this.num.split('_')   
+      let uri_arr_pre      =  this.num.split('_')
       this.num             =  uri_arr_pre[0]
       this.url_anchor      = 'pg' + uri_arr_pre[1]
       this.s.cs.anchor     =  this.url_anchor
       // this.p('u04_Ancho_Manage ' + this.s.cs.anchor)
-      
+
     }
   }
-  
+
   clean_anchor()
   {
     this.s.cs.anchor_name     =  this.url_anchor
 
     var regstr = new RegExp(".*(%[0-9a-f])+.*")
-    
+
     // this.p('u09_sorts_slashqry ' +  encodeURIComponent(this.dash_sub_query_no_dash).toLowerCase() )
-    
-    let strange_lang =   encodeURIComponent(this.url_anchor).toLowerCase()    
+
+    let strange_lang =   encodeURIComponent(this.url_anchor).toLowerCase()
 
     // Anchor for File Name
-    if ( regstr.exec(strange_lang) )           
+    if ( regstr.exec(strange_lang) )
     {
       this.replace(strange_lang, '%' , '-' )
       this.s.cs.anchor_name     =  this.result
     }
   }
-	  
+
 
 
   // Gestion de comandos de anchor #anchor
   manage_anchor()
   {
-                
+
     this.pos = this.strpos(this.uri, "#")
 
-    if (this.pos !== false) 
+    if (this.pos !== false)
     {
 
       // Special anchor
-      
+
       let uri_arr_pre          =   this.uri.split('#')
 
-      let count_positions      =  uri_arr_pre.length -1            
+      let count_positions      =  uri_arr_pre.length -1
 
-      // this.p('Numero_positions-:' + count_positions)                
+      // this.p('Numero_positions-:' + count_positions)
 
       switch (count_positions)
       {
@@ -90,44 +90,44 @@ class uri_anchor extends uri_front {
           this.url_anchor      =  uri_arr_pre[1]
           this.uri             =  uri_arr_pre[0]
 
-          this.p('u04_anchor_HAY ANCHOR ' + this.url_anchor)                    
+          this.p('u04_anchor_HAY ANCHOR ' + this.url_anchor)
 
           this.clean_anchor()
-          
-          break                                  
+
+          break
 
         default:
           // Wrong page or special anchor
           let special_pos = this.strpos(this.uri, "#-#")
 
-          if (special_pos !== false) 
+          if (special_pos !== false)
           {
             this.url_anchor      =  uri_arr_pre[2]
             this.uri             =  uri_arr_pre[0]
-			
+
 			this.clean_anchor()
-			  
+
           }
           else
           {
-            this.p('HAY MULTIPLES ANCHORS - NO PREPARADO')                    
-            this.manage_front()                          
+            this.p('HAY MULTIPLES ANCHORS - NO PREPARADO')
+            this.manage_front()
 	      }
 	  } // end switch
 
     }
     else
     {
-      this.url_anchor    =  ''                              
+      this.url_anchor    =  ''
     }
-    
+
     // this.p ('u03_cache Url Method ' +  this.url_method + ' Uri ' + this.uri)
 
     // Normal anchor name ( no decoded)
     this.s.cs.anchor     =  this.url_anchor
-                
+
   }
-  
+
 }
 
 exports.uri_anchor = uri_anchor

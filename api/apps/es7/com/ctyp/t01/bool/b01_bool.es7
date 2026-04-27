@@ -10,20 +10,20 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const 	{ bool_copy } 			= 	require(	cons.JS_TYP7 + 'bool/b02_bool_copy.es7'	)
 
 // Change to cbool to be the same than php
 class cbool extends bool_copy {
-	constructor()			 
+	constructor()
 	{
 		super()
 		this.n 					= 	"bool::"
-		
+
 	}
 
-	load(	pmt = '' )			 
+	load(	pmt = '' )
 	{
 
 		this.n 					= 	"bool::"

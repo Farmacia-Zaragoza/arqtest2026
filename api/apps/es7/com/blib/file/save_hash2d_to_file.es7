@@ -1,6 +1,6 @@
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2018 )
-// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia
 // ---------------------------------------------------------------------------
 // Brqx 2017 - 22/10/17        Depth:[0N]
 // Version : 0.0.1                  Type :[FUNCTION]
@@ -9,22 +9,22 @@
 // ---------------------------------------------------------------------------
 //  + Almacena codigo y arrays en ficheros
 // ---------------------------------------------------------------------------
-// - Funciones 
+// - Funciones
 // ---------------------------------------------------------------------------
 //-- save_properties|code_to_file - file_get_code
 // ---------------------------------------------------------------------------
-// - Requiere 
+// - Requiere
 // ---------------------------------------------------------------------------
-//-- 
+//--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const   fs           =   require(  'fs'                                    ),
     path         =   require(  'path'                                    ),
     os           =   require(  'os'                                    ),
-    util         =   require(  'util'                            ),        
+    util         =   require(  'util'                            ),
     empty         =   require(  cons.NODE_MOD + 'is-empty'                          ),
     trim         =   require(  cons.NODE_MOD + 'trim'                            ),
     mkdirp         =   require(  cons.NODE_MOD + 'mkdirp'                          ),
@@ -34,7 +34,7 @@ const   { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'  
 
 // Ck [19-06-03]
 // Save Hash2d_to_file --> Guardamos el contenido del hash de 2dim en el fichero
-function save_hash2d_to_file(full_file_name_int = ''   , 
+function save_hash2d_to_file(full_file_name_int = ''   ,
                              arr_properties     = ''   ,
                              langs              = 'en' )
 {
@@ -54,18 +54,18 @@ function save_hash2d_to_file(full_file_name_int = ''   ,
       // Primero debe existir el padre
 
       dir =  path.dirname(full_file_name_int)
-     
-      if ( !fs.existsSync(dir)       ||   
+
+      if ( !fs.existsSync(dir)       ||
            !fs.lstatSync(dir).isDirectory()     )
       {
         // No Existe el padre --> Lo creamos
         mkdirp.sync(dir)
-        fs.chmodSync(dir, 0775)          
-        let user = os.userInfo().username          
-   
+        fs.chmodSync(dir, 0775)
+        let user = os.userInfo().username
+
         // Solo lo podemos hacer si somos apache
         if (user == 'apache' )
-          fs.chownSync(dir, 48 , 48 )            
+          fs.chownSync(dir, 48 , 48 )
       }
 
       if ( fs.existsSync(full_file_name_int) )
@@ -76,25 +76,25 @@ function save_hash2d_to_file(full_file_name_int = ''   ,
           // Creamos uno
           fs.openSync(full_file_name_int, 'w')
 		  fs.chmodSync(full_file_name_int, parseInt('0674',8))
-      }					
+      }
 
         // echo ('satf_Antes del for en la function ' + Object.entries(arr_properties).length )
-        
+
 
     var DATA = ''
     var ARR_DATA = ''
 
 
     for (var pos in arr_properties)
-    { 
+    {
 
-      if (langs = "")    
+      if (langs = "")
         ARR_DATA = arr_properties[pos]
       else
         ARR_DATA = langs.split(" ")
         // Aqui iteramos los idiomas
-        
-       
+
+
       for (var langpos in ARR_DATA)
       {
 		if (DATA != "" )
@@ -105,16 +105,16 @@ function save_hash2d_to_file(full_file_name_int = ''   ,
           // langpos son los idiomas
           // echo ('satf ' + langpos)
           input = DATA.replace('/\r\n/g', "")    // DOS style newlines
-          input = input.replace('/\r/g', "")      
-          LNDATA= input + os.EOL 
+          input = input.replace('/\r/g', "")
+          LNDATA= input + os.EOL
           fs.appendFileSync(full_file_name_int, LNDATA)
         }
       }
     }
-        
+
 
    } // End If Empty File
-  } // End If Arr Properties    
+  } // End If Arr Properties
 
 }
 

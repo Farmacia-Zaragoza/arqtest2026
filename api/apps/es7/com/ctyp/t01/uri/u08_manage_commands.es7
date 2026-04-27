@@ -13,7 +13,7 @@
 // - d-manage_general_commands-       : Call to manage commands
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_commands_methods }    =   require(  cons.JS_TYP7  + 'uri/u09_commands_methods.es7'        )
 
@@ -21,8 +21,8 @@ class uri_manage_commands extends uri_commands_methods {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_manage_commands::'        
+    super()
+    this.n               =   'uri_manage_commands::'
   }
 
 
@@ -61,7 +61,7 @@ class uri_manage_commands extends uri_commands_methods {
 
       // Dejamos photo para  los alias
       case "image":        this.url_page_set_photo()   ;        break;
-        
+
       case "list":        this.url_page_set_list()    ;         break;
 
       case "itable":      this.url_page_set_gallery()    ;         break;
@@ -73,8 +73,8 @@ class uri_manage_commands extends uri_commands_methods {
         // this.manage_front()
         this.s.cs.page_name       =  'front'
         this.s.cs.loadtype        =  'page'
-        this.s.cs.position        =  '20'    
-        this.s.cs.page            =  '0'    
+        this.s.cs.position        =  '20'
+        this.s.cs.page            =  '0'
         break;
 
       default:
@@ -90,13 +90,13 @@ class uri_manage_commands extends uri_commands_methods {
         // this.s.cs.page_command    =  this.uri
         this.s.cs.dash_sub_query  =  this.dash_uri
         // this.manage_front()
-        
+
     }
- 
+
 
   }
 
-  
+
 }
 
 exports.uri_manage_commands = uri_manage_commands

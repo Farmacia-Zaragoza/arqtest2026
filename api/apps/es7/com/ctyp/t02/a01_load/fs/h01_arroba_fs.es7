@@ -9,23 +9,23 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // arroba_sprod > scomm_struc > scomm_defs
 // Scomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { scomm_struc }        =   require(  cons.JS_TYF7  + 'a01_load/scomm/s03_struc.es7'   )
 
 // File System Structure strucure
 class arroba_fs extends scomm_struc {
-  constructor(arroba)  
+  constructor(arroba)
   {
 
     super()
- 
+
     this.n                  =   "arroba_fs::"
     this.m                  =   "cons"
 
@@ -35,11 +35,11 @@ class arroba_fs extends scomm_struc {
     this.u					=   this.arroba.u
 
     this.a                  =   this.arroba.a
-       
-    this.s					=   this.arroba.s
-    this.b					=   this.s.b    
 
-      
+    this.s					=   this.arroba.s
+    this.b					=   this.s.b
+
+
     this.s.b.language_already_loaded = false
 
     // this.p('arroba_Fs_uri_test  HH ' + this.arroba.u.uri_args_sorted[0])
@@ -54,7 +54,7 @@ class arroba_fs extends scomm_struc {
 
     // Llama a generar el anode. Pero cuando se ha generado la ruta de cache
     this.use_current_cache()
-    // Call to gen() - rundef() [asocial el site]  - run() 
+    // Call to gen() - rundef() [asocial el site]  - run()
 
     this.p('h01_fs_page ' +  this.s.cs.slash_hierarchi   + '  Pth ' + this.s.cs.cache_path)
     // this.p('p01_prodcache_load ' +  this.s.cs.loadtype + '  Pty ' + this.s.cs.page_type)

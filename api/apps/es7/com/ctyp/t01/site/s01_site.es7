@@ -13,14 +13,14 @@
 //- d-manage_params-       : Manage paremeters's site
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site > Site_Process > Site_Defs
 // Site > PrintLog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7" )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { site_methods } =   require(  cons.JS_TYP7  + 'site/s02_site_methods.es7'   ),
         { main_site }    =   require(  cons.JS_TYP7  + 'site/s12_main_site.es7'      ),
@@ -28,72 +28,72 @@ const   { site_methods } =   require(  cons.JS_TYP7  + 'site/s02_site_methods.es
         { old_site }     =   require(  cons.JS_TYP7  + 'site/s11_old_site.es7'       );
 
 class site extends site_methods {
-  constructor(b = "" )  
+  constructor(b = "" )
   {
 
     super()
 
     this.n               = "site::"
     this.b               = b
-    
+
     // Main Site Parameters
     this.ms              = new main_site()
-    
+
     //Cache Site
     this.cs              = new cache_site()
-    
+
     //Old Params (dog pending to remove)
     this.os              = new old_site()
 
     this.pmt             = this.b.pmt
-    
+
     // Aqui esta entrando tres veces
-    
+
     if (!this.b.managed_params)
         this.manage_params()
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   copy(site_passed)
   {
-    this.ms.copy ( site_passed.ms)	  
-    this.cs.copy ( site_passed.cs)	  
-    this.os.copy ( site_passed.os)	  
+    this.ms.copy ( site_passed.ms)
+    this.cs.copy ( site_passed.cs)
+    this.os.copy ( site_passed.os)
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   copy_jdata_comm(site_passed)
   {
-    this.ms.copy_jdata_comm ( site_passed.ms)	  
+    this.ms.copy_jdata_comm ( site_passed.ms)
   }
 
   copy_jdata_spec(site_passed)
   {
-    this.ms.copy_jdata_spec ( site_passed.ms)	  
+    this.ms.copy_jdata_spec ( site_passed.ms)
   }
 
   copy_jdata_content(site_passed)
   {
-    this.ms.copy_jdata_content ( site_passed.ms)	  
+    this.ms.copy_jdata_content ( site_passed.ms)
   }
 
 
   // PENDIENTE
-  //---------------------------------------------------------------------------------------------  
-  f_sync(sync_to = "", sync_from = "") 
+  //---------------------------------------------------------------------------------------------
+  f_sync(sync_to = "", sync_from = "")
   {
     this.sync_to     = sync_to
     this.sync_from   = sync_from
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   manage_params()
   {
     this.b.managed_params = true
 
     // We save page object
     this.m              =  'manage_params'
-    
+
     this.pg             =  this.pmt.pg
 
     // Manage string parameters
@@ -112,16 +112,16 @@ class site extends site_methods {
     this.ms.cached_site =  this.pmt.cached_site
 
     this.ms.images_site =  this.pmt.images_site
-    
+
     this.ms.base_path   =  this.pmt.base_path
 
     // Ruta conocida de las variables de sistema a cargar
 
-    // From : 
+    // From :
     // /brqx/pers/fromfile/arqdru/fnode/json_lang_structure/
-    // To : 
+    // To :
     // /brqx/struc/arq/drupal/arqdru/fnode/json_lang_structure/
-    // /brqx/cache/arq/drupal/garldru/ 
+    // /brqx/cache/arq/drupal/garldru/
 
 
     // Ruta para obtener la informacion (struc)
@@ -141,8 +141,8 @@ class site extends site_methods {
     this.ms.site_path          =   this.pmt.run_path
 
 	// Ok - /brqx/pers/struc/arqdru/fnode/json_lang_structure/
-    // this.p('s01_site_Site : ' + this.ms.site  + '  ' + this.ms.contents_path)	
-    
+    // this.p('s01_site_Site : ' + this.ms.site  + '  ' + this.ms.contents_path)
+
     this.ms.slan               =  this.pmt.slan
     this.ms.robot              =  this.pmt.robot
 
@@ -151,11 +151,11 @@ class site extends site_methods {
 
     // Live Options - Script - Minimized - Inline
     this.ms.live_opt           =   this.pmt.live_opt
-    
+
     this.ms.start_time         =   this.pmt.start_time
 
     this.ms.default_lang       = this.pmt.default_lang
-    
+
     this.ms.lang               = this.ms.default_lang
 
     this.ms.allowed_langs      = this.pmt.allowed_langs
@@ -164,34 +164,34 @@ class site extends site_methods {
 
     this.ms.spec_positions     = this.pmt.spec_positions
 
-    
+
     this.ms.max_articles       = this.pmt.max_articles
 
     // this.p('s01_langs ' + this.allowed_langs)
 
-    
+
     // For develop environment site_inline is false
-    
-    switch(this.ms.live_opt) 
+
+    switch(this.ms.live_opt)
     {
 
       case "script":
-        this.b.site_inline         =   false 
+        this.b.site_inline         =   false
         break;
       case "minimized":
-        this.b.site_inline         =   false 
+        this.b.site_inline         =   false
         break;
       case "inline":
-        this.b.site_inline         =   true 
+        this.b.site_inline         =   true
         break;
       case "inline_and_save":
-        this.b.site_inline         =   true 
+        this.b.site_inline         =   true
         break;
       case "inlinestyles":
-        this.b.site_inlinestyles   =   true 
+        this.b.site_inlinestyles   =   true
         break;
       case "inlineimages":
-        this.b.site_inlineimages   =   true 
+        this.b.site_inlineimages   =   true
         break;
     }
   }

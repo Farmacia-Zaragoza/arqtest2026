@@ -9,35 +9,35 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-//- d-current_hierarchical_process-       : Hierarchical Process for english langs 
-//- d-current_hierarchical_process_es-    : Hierarchical Process for non english langs 
+//- d-current_hierarchical_process-       : Hierarchical Process for english langs
+//- d-current_hierarchical_process_es-    : Hierarchical Process for non english langs
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoProcess > AnoTermProcess >
 // @Anode >  ...
 //-------------------------------------------------------------------------------------
-// Execution Line : 
+// Execution Line :
 //-------------------------------------------------------------------------------------
 // CurrProces > CurrLoad > RECURSIVE
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_hsheet_load }  =   require(  cons.JS_TYP7  + 'arroba/anode/a05_hsheet/an57_load.es7'   ),
        { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
 
 class anode_hbranch_process extends anode_hsheet_load {
-  constructor()  
+  constructor()
   {
 
     super()
     this.n                        = "anode_hbranch_process::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Will process all pages
   // MAIN/position/page --> @FORMAT
   current_hbranch_process(lang                          ,
@@ -48,25 +48,25 @@ class anode_hbranch_process extends anode_hsheet_load {
                                breadcrumb_lang          ,
                                title                    )
   {
-  
+
     this.m          = 'current_process'
 
-    var idx = new idx_pointers(array_index_string)    
-    
+    var idx = new idx_pointers(array_index_string)
+
     //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
     // this.p('j49_proc_Index : ' + array_index_string)
-  
+
     // Los bucles tienen que ser con el idioma ingles
-    
+
     // this.p('an49_jindex ' + idx.jindex)
     // this.p('an49_main_lang ' + this.s.ms.main_lang + ' '+ lang + '    ' + breadcrumb)
- 
+
     // Procesamos el idioma ingles
     // Pero si el idioma es el castellano, igual tambien interesa procesarlo
-    
-    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
 
-  
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+
+
   // this.p('j06_Before-pos-bucle1 ' + lang + '  ' + cats.length )
     for (var pos in cats)
     {
@@ -78,10 +78,10 @@ class anode_hbranch_process extends anode_hsheet_load {
         this.arroba_attribs(idx, pos)
 
         this.arroba_attribs_main_lang(idx, pos)
-    
+
          // Vamos a ir avanzando por la estructura y esta sera la base
          // Item es la el indice
-         
+
         var new_breadcrumb      = breadcrumb      + '/' + this.link_en
         var new_breadcrumb_lang = breadcrumb_lang + '/' + this.link
 
@@ -108,28 +108,28 @@ class anode_hbranch_process extends anode_hsheet_load {
 
           // kb/architecture
           let new_subpath              = current_subpath     + '/'   + this.link
-    
+
           let new_title                = title               + ' ' + this.value
         // this.p('an09_procc_New subpath: ' + new_subpath)
            // Aqui igual necesitamos el titulo del padre
            //
-        
+
           this.current_hbranch_load(  lang                        ,
                                            new_index_string            ,
-                                           new_file_structure_path     , 
+                                           new_file_structure_path     ,
                                            new_subpath                 ,
                                            new_breadcrumb              ,
                                            new_breadcrumb_lang         ,
                                            new_title                   )
-     
-              
+
+
         } // End If
 
-      }   
-    } // End For 
+      }
+    } // End For
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   current_hbranch_process_es(lang                     ,
                                  array_index_string       ,
                                  file_structure_path      ,
@@ -141,15 +141,15 @@ class anode_hbranch_process extends anode_hsheet_load {
 
     this.m          = 'current_process'
 
-    var idx = new idx_pointers(array_index_string)    
-    
-    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
-	
+    var idx = new idx_pointers(array_index_string)
+
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+
       // PROCESAMIENTO OTRO IDIOMA
 
-    // let cats_es = this.gethash_arr(lang, idx.jindex)  
-     
-  
+    // let cats_es = this.gethash_arr(lang, idx.jindex)
+
+
     for (var pos in cats)
     {
       if (!this.b.found_breadcrumb_lang)
@@ -161,11 +161,11 @@ class anode_hbranch_process extends anode_hsheet_load {
           // this.breadcrumb = this.gethash_keylang(idx.bindex, pos)
 
           // this.hover      = this.gethash_keylang(idx.hindex, pos)
-    
+
          // Vamos a ir avanzando por la estructura y esta sera la base
           var new_breadcrumb      = breadcrumb      + '/' + this.link_en
           var new_breadcrumb_lang = breadcrumb_lang + '/' + this.link
-        
+
           // this.p('an49 BREADCRUMB_ES ' + new_breadcrumb)
 
         // this.p('an49 cat ' + index + ' Breadcrumb ' + new_breadcrumb + ' FOUND ' + this.b.found_breadcrumb )
@@ -189,24 +189,24 @@ class anode_hbranch_process extends anode_hsheet_load {
 
           // kb/architecture
           let new_subpath              = current_subpath     + '/'   + this.link
-    
-          let new_title                = title  + ' ' + this.value 
+
+          let new_title                = title  + ' ' + this.value
         // this.p('an09_procc_New subpath: ' + new_subpath)
            // Aqui igual necesitamos el titulo del padre
            //
-        
+
           this.current_hbranch_load_es( lang                        ,
                                              new_index_string            ,
-                                             new_file_structure_path     , 
+                                             new_file_structure_path     ,
                                              new_subpath                 ,
                                              new_breadcrumb              ,
                                              new_breadcrumb_lang         ,
                                              new_title                   )
-              
+
         } // End If
 
-      }   
-    } // End For 
+      }
+    } // End For
 
   }
 

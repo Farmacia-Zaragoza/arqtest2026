@@ -1,6 +1,6 @@
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Node Js Farma AQR - AGILE ( BRQX NG Arquitectura 2019 )
-// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia
 // ---------------------------------------------------------------------------
 // Brqx 2019 - 13/05/19				Depth:[0N]
 // Version : 0.0.1                  Type :[FUNCTION]
@@ -9,21 +9,21 @@
 // ---------------------------------------------------------------------------
 //  + Ordena terminos de forma unica
 // ---------------------------------------------------------------------------
-// - Funciones 
+// - Funciones
 // ---------------------------------------------------------------------------
 //-- sort_unique - sort_unique_min_len
 // ---------------------------------------------------------------------------
-// - Requiere 
+// - Requiere
 // ---------------------------------------------------------------------------
-//-- 
+//--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-var     cons         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const	fs 					= 	require(	'fs'														),
-		empty 				=   require(	cons.NODE_MOD + 'is-empty'									),				
+		empty 				=   require(	cons.NODE_MOD + 'is-empty'									),
 		echo 				= 	require(	cons.NODE_MOD + 'node-echo'									),
-		util 				=   require(	'util'														),				
+		util 				=   require(	'util'														),
 		os					=	require(	'os'														),
     { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'   );
 
@@ -33,32 +33,32 @@ const	fs 					= 	require(	'fs'														),
 function sort_unique(passed_array)
 {
 
-    let output_arr         = Array() 
-    let numbers_arr       = Array() 
-    let words_arr         = Array() 
+    let output_arr         = Array()
+    let numbers_arr       = Array()
+    let words_arr         = Array()
 
-    output_arr    =    passed_array.sort()                      
+    output_arr    =    passed_array.sort()
 
     // this.p('u06-leneeeen : ' + this.uri_args_sorted.length )
-  
+
     // Ahora los numeros deben ir al final
-    
+
     for (var pos in output_arr)
     {
       var elem = output_arr[pos].toLowerCase()
-      if (!isNaN(elem))    
+      if (!isNaN(elem))
 	  {
 		if (!numbers_arr.includes(elem) )
-			numbers_arr.push(    elem )  
+			numbers_arr.push(    elem )
       }
-      else             
+      else
       {
 		if (!words_arr.includes(elem) )
-			words_arr.push(    elem   ) 
-  
+			words_arr.push(    elem   )
+
       }
     }
-  
+
     if (numbers_arr.length > 0 )
     {
       for (pos in numbers_arr )
@@ -68,9 +68,9 @@ function sort_unique(passed_array)
       }
     }
 
-	// Devuelve la lista ordenada. Si no se puede lo vamos a hacer con result	
+	// Devuelve la lista ordenada. Si no se puede lo vamos a hacer con result
 	return words_arr
-	
+
 }
 
 
@@ -78,24 +78,24 @@ function sort_unique(passed_array)
 function sort_unique_min_len(passed_array,min_len = 3)
 {
 	let notcheck_arr = sort_unique(passed_array)
-    let words_arr         = Array() 
-	
-	
+    let words_arr         = Array()
+
+
     for (var pos in notcheck_arr)
     {
       var elem = notcheck_arr[pos]
-      if (!isNaN(elem))    
+      if (!isNaN(elem))
 	  {
-			words_arr.push(    elem )  
+			words_arr.push(    elem )
       }
-      else             
+      else
       {
 		if (elem.length > min_len)
-			words_arr.push(    elem   ) 
- 
+			words_arr.push(    elem   )
+
       }
 	}
-	
+
 	return words_arr
 }
 

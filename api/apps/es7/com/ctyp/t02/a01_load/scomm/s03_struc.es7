@@ -16,37 +16,37 @@
 //- d-run_cache-       : Generate Jnode Obect cache path based
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Scomm > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Types (Objects) : 
+// Used Types (Objects) :
 //-------------------------------------------------------------------------------------
 // -Anode
 // -Afast
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var    cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7" )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { scomm_defs }      =   require(  cons.JS_TYF7  + 'a01_load/scomm/s04_defs.es7' ),
-       { anode }           =   require(  cons.JS_TYP7    + 'arroba/anode/a00_comm/an01_anode.es7');  
+       { anode }           =   require(  cons.JS_TYP7    + 'arroba/anode/a00_comm/an01_anode.es7');
 
 
 // Simple Common - Will Load only common information
 class scomm_struc extends scomm_defs {
-  constructor()  
+  constructor()
   {
 
     super()
- 
+
     // Tipo comun. Entonces tengo dudas de si extiende on o de jnode, yo creo que no va a extender
 
     this.n                  =   "scomm_struc::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Run cache method for arroba format
   run_cache()
   {
@@ -57,8 +57,8 @@ class scomm_struc extends scomm_defs {
     this.m                  =   "run_cache"
 
     // Aqui parece que no tenemos la ruta generada, lo cual ya estaria mal
-    
-    // /brqx/pers/cache/arqdru/nouri/nocomm/blanc/nohuman/nouser/nocode/notrans/nosync/en_position_0_common    
+
+    // /brqx/pers/cache/arqdru/nouri/nocomm/blanc/nohuman/nouser/nocode/notrans/nosync/en_position_0_common
 
     // PRINTCONTENT_ARROBA_COMMON
 
@@ -66,22 +66,22 @@ class scomm_struc extends scomm_defs {
 
     // si no hay cache o bien no existe el archivo se genera
     // Esto hay que revisarlo
-      // GENERAMOS JNODE 
+      // GENERAMOS JNODE
       this.p ( 's03_struc_MainLang ' + this.s.ms.main_lang )
       this.p ( 's03_struc_Cache Path ' + this.s.cs.cache_path )
 
     // Pasamos el site si es content
 
-    if (this.s.cs.page_type == "content" || (this.s.cs.page_type == "idx")) 
+    if (this.s.cs.page_type == "content" || (this.s.cs.page_type == "idx"))
     {
       this.a = new anode(this.s , this.u)
-      this.p('s03_struc_uri_test  HH ' + this.a.u.uri_args_sorted[0])      
-      
+      this.p('s03_struc_uri_test  HH ' + this.a.u.uri_args_sorted[0])
+
     }
     else
-      this.a = new anode(this.s , this.u)    
+      this.a = new anode(this.s , this.u)
 
-  
+
 
     this.a.run()
   }

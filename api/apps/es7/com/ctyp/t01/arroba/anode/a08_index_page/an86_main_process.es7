@@ -14,13 +14,13 @@
 //- d-main_page_process-           : Process from main file one position and one page
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_index_page_load }   =   require(  cons.JS_TYP7  + 'arroba/anode/a08_index_page/an87_page_load.es7'   ),
        { idx_pointers } =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'        );
 
 class anode_main_index_page_process extends anode_index_page_load {
-  constructor()  
+  constructor()
   {
     super()
 
@@ -28,19 +28,19 @@ class anode_main_index_page_process extends anode_index_page_load {
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Procesa Solo la primera posicion y la primera pagina
-  main_index_page_process(   index           = 'main'    , 
+  main_index_page_process(   index           = 'main'    ,
                        current_subpath = ''        )
   {
 
     var idx = new idx_pointers(index)
-  
+
     // Set Arroba attribs
     this.arroba_attribs(idx, this.s.cs.position)
-  
+
     // this.p('an76_mp_Cat Lang : ' + this.item + ' Cat ')
-  
+
     current_subpath  = 'l' +  this.dhild
 
     //// this.p('an76_jnod_Pos: ' + this.s.position + ' Cat : ' + this.item + ' Child: ' + this.child)
@@ -49,12 +49,12 @@ class anode_main_index_page_process extends anode_index_page_load {
     {
       // articles - l20
       // this.p('an76_Cat Lang : ' + this.s.cs.lang + ' Cat '  + this.item + ' Pat: ' + current_subpath)
-       
+
       this.current_index_page_load(this.s.ms.lang , current_subpath)
     }
 
   }
-  
+
 
 }
 

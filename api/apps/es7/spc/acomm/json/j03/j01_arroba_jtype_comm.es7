@@ -9,7 +9,7 @@
 // -------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // -------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 // -------------------------------------------------------------------------------------
 // Arroba_Jtype_Comm > JComm_Struc (common-point)
 // @Jtype > @Gen > Jcomm_Struct
@@ -21,7 +21,7 @@
 // - d-rungen_info-     : Generate Json structure to manage small infor for sites
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { jcomm_struc } =   require(  cons.JS_TYF7  + 'b02_save/jcomm/j02_struc.es7' ),
       sctf            =   require(  cons.JS_LIB7  + 'file/save_code_to_file.es7'   ),
@@ -29,11 +29,11 @@ const { jcomm_struc } =   require(  cons.JS_TYF7  + 'b02_save/jcomm/j02_struc.es
 
 
 class arroba_jtype_comm extends jcomm_struc {
-  constructor(    arroba           , 
-                  passed_type = 'comm' )  
+  constructor(    arroba           ,
+                  passed_type = 'comm' )
   {
     super()
- 
+
     this.n                  =   "arroba_jtype_comm::"
     this.m                  =   "cons"
 
@@ -41,22 +41,22 @@ class arroba_jtype_comm extends jcomm_struc {
     this.arroba             =   arroba
 
     this.s          =   this.arroba.s
-    this.b          =   this.arroba.b    
+    this.b          =   this.arroba.b
     this.a          =   this.arroba.a
-    
+
     this.jtype              =   ''
 
-    // this.p('ajtype_comm_langs an22 ' + ' ' + this.s.cs.lang )    
+    // this.p('ajtype_comm_langs an22 ' + ' ' + this.s.cs.lang )
     // this.p('ajtype_comm_cache_path an22 ' + this.s.cs.cache_path)
     // Necesitamos otra clase que podamos crear y manejar de forma independiente
     // csite : cache site
     // tsite
 
     // common type
-    
+
     // No podemos poner uritype a un tipo sin URI que forzamos
 
-    // Tenemos tres tipos : comm - spec - content    
+    // Tenemos tres tipos : comm - spec - content
    if (passed_type != "")     this.s.cs.page_type   =   passed_type
 
 
@@ -67,9 +67,9 @@ class arroba_jtype_comm extends jcomm_struc {
 
     this.s.cs.sub            =   'json'
     this.s.cs.ext            =  'json'
-    
+
     // this.p('s01_passsed_type ' + this.s.t_sub)
-    
+
   }
 
   //---------------------------------------------------------------------------------------------
@@ -78,127 +78,127 @@ class arroba_jtype_comm extends jcomm_struc {
   rungen_content()
   {
     this.m                   =   'rungen_content'
-  
+
     // content - front - list ( no la encuentra en dyn)
     this.p('jtyp_comm_RUNGEN ' + this.s.cs.page_name )
-    
-    // Aqui debe eliminar los viejos    
-    
+
+    // Aqui debe eliminar los viejos
+
     this.create_jnode_type_content()
 
     if (this.b.page_is_alias)
     {
-      // esto solo tiene sentido si es un alias   	
-     
-      this.p ('j01_jtype_Generating_Aliases ' + this.s.cs.cache_alias) 
-    // this.p ('j01_jtyep_Generating_Path '    + this.s.cs.cache_path) 
+      // esto solo tiene sentido si es un alias
 
-    // Esto es comun para todos los proyectos 
-    // Se puede generar el alias sin que exista el archivo aun 
-    
+      this.p ('j01_jtype_Generating_Aliases ' + this.s.cs.cache_alias)
+    // this.p ('j01_jtyep_Generating_Path '    + this.s.cs.cache_path)
+
+    // Esto es comun para todos los proyectos
+    // Se puede generar el alias sin que exista el archivo aun
+
        // No se generar alias ni para idiomas raros ni para indices - de momento
       if (!this.b.is_strange_lang && this.s.cs.page_type != 'idx')
-        sctf.link_full_filename(this.s.cs.cache_path , this.s.cs.cache_alias)    
+        sctf.link_full_filename(this.s.cs.cache_path , this.s.cs.cache_alias)
 
     }
 
     this.p('j01_arroba_CONTENT: ' + this.s.cs.cache_path )
-    
+
     this.jtype.rungen_json()
   }
   //---------------------------------------------------------------------------------------------
-  
+
   rungen_index()
   {
     this.m                   =   'rungen_index'
-  
+
     // content - front - list ( no la encuentra en dyn)
     this.p('jtyp_comm_RUNGEN ' + this.s.cs.page_name )
-    
-    // Aqui debe eliminar los viejos    
-    
+
+    // Aqui debe eliminar los viejos
+
     this.create_jnode_type_index()
 
     if (this.b.page_is_alias)
     {
-      // esto solo tiene sentido si es un alias   	
-     
-      this.p ('j01_jtype_Generating_Aliases ' + this.s.cs.cache_alias) 
-    // this.p ('j01_jtyep_Generating_Path '    + this.s.cs.cache_path) 
+      // esto solo tiene sentido si es un alias
 
-    // Esto es comun para todos los proyectos 
-    // Se puede generar el alias sin que exista el archivo aun 
-    
+      this.p ('j01_jtype_Generating_Aliases ' + this.s.cs.cache_alias)
+    // this.p ('j01_jtyep_Generating_Path '    + this.s.cs.cache_path)
+
+    // Esto es comun para todos los proyectos
+    // Se puede generar el alias sin que exista el archivo aun
+
       if (!this.b.is_strange_lang)
-        sctf.link_full_filename(this.s.cs.cache_path , this.s.cs.cache_alias)    
+        sctf.link_full_filename(this.s.cs.cache_path , this.s.cs.cache_alias)
 
     }
 
     // this.p('j01_arroba_CONTENT_INDEX: ' + this.s.cs.cache_path )
-    
+
     this.jtype.rungen_json()
   }
 
   //---------------------------------------------------------------------------------------------
-  
+
   rungen_info()
   {
     this.m                   =   'rungen_index'
-  
+
     // content - front - list ( no la encuentra en dyn)
     this.p('jtyp_comm_RUNGENLOADINFO ' + this.s.cs.page_name )
-    
-    // Aqui debe eliminar los viejos    
-    
+
+    // Aqui debe eliminar los viejos
+
     this.create_jnode_type_info()
 
     if (this.b.page_is_alias)
     {
-      // esto solo tiene sentido si es un alias   	
-     
-      this.p ('j01_jtype_Generating_Aliases ' + this.s.cs.cache_alias) 
-    // this.p ('j01_jtyep_Generating_Path '    + this.s.cs.cache_path) 
+      // esto solo tiene sentido si es un alias
 
-    // Esto es comun para todos los proyectos 
-    // Se puede generar el alias sin que exista el archivo aun 
-    
+      this.p ('j01_jtype_Generating_Aliases ' + this.s.cs.cache_alias)
+    // this.p ('j01_jtyep_Generating_Path '    + this.s.cs.cache_path)
+
+    // Esto es comun para todos los proyectos
+    // Se puede generar el alias sin que exista el archivo aun
+
       if (!this.b.is_strange_lang)
-        sctf.link_full_filename(this.s.cs.cache_path , this.s.cs.cache_alias)    
+        sctf.link_full_filename(this.s.cs.cache_path , this.s.cs.cache_alias)
 
     }
 
     this.p('j01_arroba_CONTENT: ' + this.s.cs.cache_path )
-    
+
     this.jtype.rungen_json()
   }
-   
+
   //---------------------------------------------------------------------------------------------
-  
+
   rungen()
   {
     this.m                   =   'rungen'
-    
-    // Narices Estaba llamando a este rungen 
+
+    // Narices Estaba llamando a este rungen
     // this.p('jtyp_comm_RUNGEN ' + this.s.cs.page_type )
    if (this.s.cs.page_type == 'spec' )
    {
-      // SSL hay que activarlo aqui 
+      // SSL hay que activarlo aqui
       this.s.b.type_ssl      =    true
-   }    
-    
+   }
+
     // Aqui debe eliminar los viejos
-    
+
     // Crear estructura para el objeto - Depende del tipo de proyecto
     this.create_jnode_type()
     // --> Call to gen and new jnode_type
     // Crear el objeto
     // Si no hay cache o bien no existe el fichero ---> Generarlo
-    // !A || !B = 
+    // !A || !B =
 
     // Se debe generar si no hay cache ( correcto)
-    // Se debe generar si no existe el fichero o tiene un size no adecuado o el directorio ( esta fallando )    
+    // Se debe generar si no existe el fichero o tiene un size no adecuado o el directorio ( esta fallando )
     if (!this.b.cache)
-    { 
+    {
        // this.p('j01_arroba_J_PASO_02 ' + this.s.cs.cache_path )
        // si no se ha definido jtype va a fallar
        this.jtype.rungen_json()
@@ -206,7 +206,7 @@ class arroba_jtype_comm extends jcomm_struc {
     else if (gfc.zero(this.s.cs.cache_path) )
     {
        this.jtype.rungen_json()
-    }    
+    }
     else
     {
       // Hay cache y los ficheros son correctos
@@ -217,17 +217,17 @@ class arroba_jtype_comm extends jcomm_struc {
           // activamos tipo ssl para spec y content
           this.s.ms.j_spec_result = true
           this.s.ms.j_spec_path  =  this.s.cs.cache_path
-          
-          break;;       
-        
+
+          break;;
+
         case "comm":
           this.s.ms.j_comm_result = true
           this.s.ms.j_comm_path  =  this.s.cs.cache_path
-         
-          break;;       
+
+          break;;
       }
     }
-   
+
   }
 
 

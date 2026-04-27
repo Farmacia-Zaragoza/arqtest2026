@@ -14,7 +14,7 @@
 // - d-review_childrens_doble_object-                   : 2nd level method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                            =   require(  'fs'                                                       ),
        empty                         =   require(  cons.NODE_MOD + 'is-empty'                                 ),
@@ -25,27 +25,27 @@ const  fs                            =   require(  'fs'                         
 // Common Objects
 class jn02_commo_json_doble extends jn03_commo_json_recursive {
 
-           
-    constructor ()   
-    {   
+
+    constructor ()
+    {
     super()
-    this.n                   =  'jn02_commo_json_doble::'      
+    this.n                   =  'jn02_commo_json_doble::'
     }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Used to generate Left and Right Menus
   // Recursive structure
-  save_json_sidebar_doble_object_to_file(  
+  save_json_sidebar_doble_object_to_file(
             index           ,   // Indice
             enbreadcrumb   =   ''  ,  // Breadcrumb en ingles
-            depth      =  0  ) 
+            depth      =  0  )
   {
 
     var idx = new idx_pointers(index)
-    
+
     let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                              ;
 
-    var iterations           = Object.keys(cats).length - 1    
+    var iterations           = Object.keys(cats).length - 1
 
     this.p ("jn02_d_" )
 
@@ -58,12 +58,12 @@ class jn02_commo_json_doble extends jn03_commo_json_recursive {
 
       let current_level  = this.j.index
       let current_enbreadcrumb  = enbreadcrumb + '/' + accents.remove (this.j.item ).toLowerCase()
-                
-     
-      // this.p('Managingg ' + this.j.type + '  - ' + this.j.child) 
+
+
+      // this.p('Managingg ' + this.j.type + '  - ' + this.j.child)
 
       let object_type = this.j.otype
-      
+
       if ( this.j.child == "yes" )
       {
 
@@ -75,17 +75,17 @@ class jn02_commo_json_doble extends jn03_commo_json_recursive {
         // Escribir la parte
 
 
-        this.review_childrens_doble_object(  
+        this.review_childrens_doble_object(
           current_level          ,
           enbreadcrumb       ,  // Breadcrumb en ingles
           depth + 1          ,
           this.j.otype            )
 
 
-        this.j.end_pull(object_type)          
+        this.j.end_pull(object_type)
         // Si ha llamado a algun hijo es un tipo ya generado
         this.b.type_generated = true
-      } 
+      }
       else
       {
         // Run Parragraphs
@@ -97,11 +97,11 @@ class jn02_commo_json_doble extends jn03_commo_json_recursive {
 
       if ( (--iterations  >= 0) && (this.b.type_generated) )
         this.j.add_separator()
-    
+
      }  // End For
-  
+
   }
-  
+
 }
 
 exports.jn02_commo_json_doble = jn02_commo_json_doble

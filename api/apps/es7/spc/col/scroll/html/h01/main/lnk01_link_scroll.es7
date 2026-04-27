@@ -14,25 +14,25 @@
 // - build_data     : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { common_link }         =   require(  cons.JS_ACO7 + 'html/h01/main/common_link.es7'        ),
        { common_link_react } =   require(  cons.JS_ACO7 + 'html/h01/deep/styles/common_link_react.es7'        );
 
 class lnk01_link_scroll extends common_link  {
- 
+
   constructor (     thm                    )
-  {   
+  {
 
-    super(thm)                              
+    super(thm)
 
-    this.n              =  'lnk01_link_scroll::'          
+    this.n              =  'lnk01_link_scroll::'
 
   }
 
   build_data()
   {
-    this.create_favicon()                      
+    this.create_favicon()
 
     this.link_to_load     =   new common_link_react(this.thm)
 

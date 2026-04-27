@@ -12,23 +12,23 @@
 //-------------------------------------------------------------------------------------
 // c-arroba_scomm-                 : Arroba Comm
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Scomm > scomm_struc > scomm_defs
 // Scomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { scomm_struc }        =   require(  cons.JS_TYF7  + 'a01_load/scomm/s03_struc.es7'          )
 
 // Simple Common - Will Load only common information
 class arroba_scomm extends scomm_struc {
-  constructor(    arroba  )  
+  constructor(    arroba  )
   {
 
     super()
- 
+
     this.n                  =   "arroba_scomm::"
     this.m                  =   "cons"
 
@@ -38,18 +38,18 @@ class arroba_scomm extends scomm_struc {
     this.u					=   this.arroba.u
 
     this.a                  =   this.arroba.a
-       
+
     this.s					=   this.arroba.s
-    this.b					=   this.s.b    
+    this.b					=   this.s.b
 
 
     this.gen_idx_path()
-          
+
       // Las cookies no las hemos cargado en ingles
     this.s.b.language_already_loaded = false
 
     // this.p('s01_arroba_comm_CK ' +  this.s.cs.position + ' Pg ' + this.s.cs.page + ' Typ ' + this.s.cs.page_type)
-        
+
     // Llama a generar el anode. Pero cuando se ha generado la ruta de cache
     this.use_current_cache()
 

@@ -6,17 +6,17 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Theme_Json (spc) > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Arroba_JType     : Generic type to create json files
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { tdata_comm }                 =   require(  cons.JS_ACO7  + 'json/j04/comm/j01_tdata_comm.es7'        ),
        { theme_json }                 =   require(  cons.JS_PYC7  + 'war/war/json/j04/j02_theme_json.es7'  ) ;
@@ -31,12 +31,12 @@ class theme_data extends tdata_comm
     // this.p ('J01_thm_data SET_CONTENT ' + '  ' + this.arroba.s.cs.page_name)
 
     this.manage_index_data_page()
-     
+
     this.thmjson            =  new theme_json(this.acontent.arroba)
 
     this.code               =  this.thmjson.code
 
-  } 
+  }
 
 } // end Class
 

@@ -12,7 +12,7 @@
 // - d-normalize_uris-        : Generate URI array normalizing parameters
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_create } =   require(  cons.JS_TYP7  + 'uri/u11_create.es7'           ),
         numbers        =   require(  cons.JS_LIB7  + 'number/numbers.es7'             ),
@@ -23,46 +23,46 @@ class uri_normalize extends uri_create {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_normalize::'        
+    super()
+    this.n               =   'uri_normalize::'
   }
 
 
   normalize_uris()
   {
     // TODAS LAS URIS VAN SI BARRAS - NI DELANTERAS NI TRASERAS
-    
+
     var uri_arr_pre          =  Array()
 
 
-    uri_arr_pre           =   this.uri.split('/')                    
+    uri_arr_pre           =   this.uri.split('/')
 
 
     // ANTES DE ANALIZAR URI
     // this.parr(uri_arr_pre)
 
 
-    let new_dash_uri        =  ''                        
-    let new_sash_uri        =  ''                        
-    let new_bars_uri        =  ''                        
+    let new_dash_uri        =  ''
+    let new_sash_uri        =  ''
+    let new_bars_uri        =  ''
 
     let lower_str          =  ''
 
     var possible_hierarchical = false
 
 
-    // this.p('u10_Before while ' + uri_arr_pre.length  )            
+    // this.p('u10_Before while ' + uri_arr_pre.length  )
     // Dos pasadas, en la primera normalizamos
 
     // A. LIMPIEZA - CLEANNING
 
-    for (var pos in uri_arr_pre)  
+    for (var pos in uri_arr_pre)
     {
       var str_to_manage = uri_arr_pre[pos]
 
       this.rmultispace_debug(str_to_manage)
       str_to_manage      =    this.result
-            
+
       if (!empty(str_to_manage) )
       {
         if (!isNaN(str_to_manage))
@@ -70,9 +70,9 @@ class uri_normalize extends uri_create {
         // Aqui nunca entra porque no hay argumentos solo con numeros
 
           lower_str      =    str_to_manage
-          
+
           // Podemos gestionar los espacios
-                    
+
           this.p('u09_without_space_NUMBER_NUNCA_ENTRA ' + this.result)
 
           // Metodo correcto - Falla Iconv al instalarse en ubuntu
@@ -89,7 +89,7 @@ class uri_normalize extends uri_create {
           // IDX  no se insertara en el array de la uri
 
           if      (str_to_manage == "idx")   this.b.index_page     =   true
-          else if (str_to_manage == "search") this.b.search_page    =   true        
+          else if (str_to_manage == "search") this.b.search_page    =   true
           else
           {
             // Aqui tenemos que repasar si tiene numeros porque sabemos que tiene letras
@@ -99,7 +99,7 @@ class uri_normalize extends uri_create {
 
             // AJUSTE_NUMERICO ( PERMITE HOMOGENIZAR ARGUMENTOS NUMERICOS )
 
-            if (!possible_hierarchical)  
+            if (!possible_hierarchical)
               if ( numbers.hasNumber(str_to_manage) )
               {
 
@@ -109,16 +109,16 @@ class uri_normalize extends uri_create {
           	      // This means have numbers and letters  art10
           	      // convert arti0004 --> a4
           	      let firstDigit = str_to_manage.search(/\d/) // will give you the first digit in the string
-          	  
+
           	      let letter  = str_to_manage.substr(0,1)
           	      let numbers = Number( str_to_manage.substr(firstDigit) ) + ''
-          	  
+
           	      str_to_manage = letter + numbers
-          	
+
           	      // Ahora tenemnos a10
                   // this.p('u08_Managinnnggg ' + str_to_manage )
-              
-              
+
+
                  }
                  else
                  {
@@ -126,89 +126,89 @@ class uri_normalize extends uri_create {
           	       // bb10aa
           	       this.manage_front()
           	       return
-          	
+
                  }
                }
-          
+
             lower_str      =   str_to_manage.toLowerCase()
 
             //  setlocale(LC_ALL, "en_US.utf8")
-      
-            // utf_urldecode     = utf8_decode(urldecode(args))  
+
+            // utf_urldecode     = utf8_decode(urldecode(args))
 
             // lower_str       =   iconv("utf-8", "ascii//TRANSLIT", lower_str_noutf)
           }
 
-          this.uri_arr.push(      lower_str    )                  
+          this.uri_arr.push(      lower_str    )
 
         }
-      }  
+      }
       // END FIRST BUCLE
-    
 
-      // this.p('u10_AFeter while ' + this.uri_arr.length  )            
-    
-      this.count_uri_arr      =  this.uri_arr.length  - 1                
-      let cont           =   0                         
-  
+
+      // this.p('u10_AFeter while ' + this.uri_arr.length  )
+
+      this.count_uri_arr      =  this.uri_arr.length  - 1
+      let cont           =   0
+
       // B. ALMACENAMIENTO - STORAGE
-  
-  
+
+
     for (var pos in this.uri_arr)
     {
       var pretrim_str_to_manage   =   this.uri_arr[pos]
-        
+
       var str_to_manage = pretrim_str_to_manage.trim()
 
-      new_dash_uri  +=   str_to_manage                  
-      new_sash_uri  +=   str_to_manage                       
-      new_bars_uri  +=   str_to_manage                       
+      new_dash_uri  +=   str_to_manage
+      new_sash_uri  +=   str_to_manage
+      new_bars_uri  +=   str_to_manage
 
       // Prepare for intelligent queries
       if ( cont > 0  )
       {
-        // this.p('Addding_Elements')                      
-        this.uri_arr_lang.push(       str_to_manage  )        
+        // this.p('Addding_Elements')
+        this.uri_arr_lang.push(       str_to_manage  )
       }
 
       if ( cont > 1  )
-        this.uri_arr_lang_command.push(    str_to_manage  )        
-    
+        this.uri_arr_lang_command.push(    str_to_manage  )
 
-      if  ((cont   >=  0           )  && 
+
+      if  ((cont   >=  0           )  &&
          (cont   <   this.count_uri_arr )  )
       {
-        new_dash_uri+=  '_'                          
-        new_sash_uri+=  '/'                          
-        new_bars_uri+=  '|'                          
+        new_dash_uri+=  '_'
+        new_sash_uri+=  '/'
+        new_bars_uri+=  '|'
 
       }
 
-      cont++                                  
-        
+      cont++
+
     }
-    
+
     // Array limpio
     // Dash (guiones) - Bars ( barras | )
-    
-    this.dash_uri        =  new_dash_uri                     
-    this.bars_uri        =  new_bars_uri                     
 
-    this.uri             =  new_sash_uri                    
-   
+    this.dash_uri        =  new_dash_uri
+    this.bars_uri        =  new_bars_uri
+
+    this.uri             =  new_sash_uri
+
     // Con slash
     this.slash_uri       =  this.uri
 
     // Works : El bucle de dos pasadas funcions en/enciclopedia
-    // this.p('Generated_Clean_Uri  : ' + this.uri)                    
-    
+    // this.p('Generated_Clean_Uri  : ' + this.uri)
+
     if (!this.b.robot_page)
-       this.robot_uri    =   this.uri + '/rbt'           
-    
+       this.robot_uri    =   this.uri + '/rbt'
+
     }
 
   }
-  
+
 }
 
 exports.uri_normalize = uri_normalize

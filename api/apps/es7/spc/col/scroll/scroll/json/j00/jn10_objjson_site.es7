@@ -5,17 +5,17 @@
 //- event_create             : Create event jquery method
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const 	echo 				= 	require(	cons.NODE_MOD   + 'node-echo'										),
 		sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
 		{ typejson_object }	= 	require(	cons.JS_OBJ     + 'json/typejson_object.es6'						);
 
 class objjson_site extends typejson_object {
-	constructor(file_name = '') 
+	constructor(file_name = '')
 	{
 		super(file_name)
-		
+
 		this.n 				= 	"objjson_site::"
 	}
 
@@ -23,8 +23,8 @@ class objjson_site extends typejson_object {
 	{
 				this.add_index(					this.index		)
 				this.add_type(					this.type		)
-				this.add_element( 		'name' , this.item	)		
-				this.add_element( 		'img' 	, this.photo	)		
+				this.add_element( 		'name' , this.item	)
+				this.add_element( 		'img' 	, this.photo	)
 				if (part)
 					this.add_element( 	'clink'	, this.link		)
 				else
@@ -40,14 +40,14 @@ class objjson_site extends typejson_object {
 			case "animal":
 				this.add_index(					this.index		)
 				this.add_type(					this.type		)
-				this.add_element( 		'name' , this.item	)		
-				this.add_element( 		'sound' , this.sound	)		
-				this.add_element( 		'value' , this.value	)		
+				this.add_element( 		'name' , this.item	)
+				this.add_element( 		'sound' , this.sound	)
+				this.add_element( 		'value' , this.value	)
 				if (part)
 					this.add_element( 	'clink'	, this.link		)
 				else
 					this.add_lastelement( 	'clink'	, this.link		)
-				
+
 				break;
 			case "aligator":
 				this.managebganimal(part)

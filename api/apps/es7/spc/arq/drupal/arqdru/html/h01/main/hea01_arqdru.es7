@@ -19,9 +19,9 @@
 // - build_data     : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { html_style }        =   require(  cons.JS_BASE + 'com/objects/html/html_style.es6'          ),    
+const   { html_style }        =   require(  cons.JS_BASE + 'com/objects/html/html_style.es6'          ),
         { ifnojs }            =   require(  cons.JS_BASE + 'com/objects/html/ifnojs.es6'            ),
         { lnk01_link_arqdru } =   require(  cons.JS_AQD7 + 'arqdru/html/h01/main/lnk01_link_arqdru.es7'    ),
         { met01_meta_arqdru } =   require(  cons.JS_AQD7 + 'arqdru/html/h01/main/met01_meta_arqdru.es7'    );
@@ -30,38 +30,38 @@ const   { html_style }        =   require(  cons.JS_BASE + 'com/objects/html/htm
 class hea01_head_arqdru extends html_style  {
 
   constructor (     arroba                )
-  {   
-    let tag_type         =   'head'                    
+  {
+    let tag_type         =   'head'
 
-    super(          tag_type  )              
+    super(          tag_type  )
 
     this.tag_type             =   'head'
-    this.n              =  'hea01_head::'                    
-    
-                
-    this.meta_01          =  ''      
+    this.n              =  'hea01_head::'
 
-    this.link_01          =  ''      
-                        
+
+    this.meta_01          =  ''
+
+    this.link_01          =  ''
+
      // Cnode objects
-   
-    this.compo_head          =  ''                                 
- 
+
+    this.compo_head          =  ''
+
     this.arroba            =  arroba
 
     // Head can't have tame
-    this.tame            =  ''                      
+    this.tame            =  ''
 
-    this.ifnojs            =  new ifnojs()                
+    this.ifnojs            =  new ifnojs()
 
-    this.title_01          =  new html_style('title')           
+    this.title_01          =  new html_style('title')
 
-    this.base_01          =  new html_style('base')           
+    this.base_01          =  new html_style('base')
 
-    if (this.arroba.jsons_ok)   
-      this.build_data()                                
+    if (this.arroba.jsons_ok)
+      this.build_data()
     else
-      this.build_json_head()                          
+      this.build_json_head()
 
     }
 
@@ -71,42 +71,42 @@ class hea01_head_arqdru extends html_style  {
     {
     // External Metas
 
-    this.meta_01          =  new met01_meta_arqdru( this.arroba  ) 
-    
-    this.content          +=  this.meta_01.code                      
+    this.meta_01          =  new met01_meta_arqdru( this.arroba  )
+
+    this.content          +=  this.meta_01.code
   }
 
 //  <title>Welcome to CICA</title>
     create_title()
     {
     // Lang_Ok [17_07_07]
-    // this.p('Title ' . this.thm.site_title)                  
+    // this.p('Title ' . this.thm.site_title)
 
-    this.title_01.content      =  this.arroba.s.ms.site_title            
-    this.title_01.pcreate()                              
-  
-    this.content          +=  this.title_01.code                      
+    this.title_01.content      =  this.arroba.s.ms.site_title
+    this.title_01.pcreate()
+
+    this.content          +=  this.title_01.code
   }
 
 //  <title>Welcome to CICA</title>
     create_base()
     {
     // Lang_Ok [17_07_07]
-    // this.p('Title ' . this.thm.site_title)                  
+    // this.p('Title ' . this.thm.site_title)
 
-    this.base_01.href        =  this.arroba.s.cs.http_domainbar        
-    this.base_01.pcreate()                              
-  
-    this.content          +=  this.base_01.code                      
+    this.base_01.href        =  this.arroba.s.cs.http_domainbar
+    this.base_01.pcreate()
+
+    this.content          +=  this.base_01.code
   }
 
 
     create_links()
     {
     // External links
-      this.link_01          =  new lnk01_link_arqdru(this.arroba)            
-  
-    this.content          +=  this.link_01.code                      
+      this.link_01          =  new lnk01_link_arqdru(this.arroba)
+
+    this.content          +=  this.link_01.code
   }
 
   // <!--[if lt IE 9]>
@@ -115,30 +115,30 @@ class hea01_head_arqdru extends html_style  {
     create_ifnojs()
     {
     // External links
-    this.ifnojs.ifno_complex_mode_02('9' , 'lt' , 
-        '<script src="js/vendor/html5-3.6-respond-1.4.2.min.js"></script>'  )       
-    
-    this.content += this.ifnojs.code                         
+    this.ifnojs.ifno_complex_mode_02('9' , 'lt' ,
+        '<script src="js/vendor/html5-3.6-respond-1.4.2.min.js"></script>'  )
+
+    this.content += this.ifnojs.code
   }
 
   build_json_head()
   {
-      this.pcreate()                                	  
-  }	  
+      this.pcreate()
+  }
 
 
   build_data()
   {
-      let head_code = ''                                    
+      let head_code = ''
 
 
-      this.create_metas()                              
-      this.create_title()                              
-      this.create_base()                              
-      this.create_links()                              
-      this.create_ifnojs()                               
+      this.create_metas()
+      this.create_title()
+      this.create_base()
+      this.create_links()
+      this.create_ifnojs()
 
-      this.pcreate()                                
+      this.pcreate()
 
   }
 

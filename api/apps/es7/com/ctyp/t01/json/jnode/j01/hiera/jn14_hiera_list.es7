@@ -12,7 +12,7 @@
 // - d-save_json_hiera_list_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -24,16 +24,16 @@ const  fs                        =   require(  'fs'                             
 
 class jn14_hiera_json_list extends jn15_array_hiera_product {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                         =  'jn14_hiera_json_list::'      
+    this.n                         =  'jn14_hiera_json_list::'
   }
 
 
   //---------------------------------------------------------------------------------------------
-  save_json_hiera_list_array_to_file(  
+  save_json_hiera_list_array_to_file(
             index                      ,   // jn11_idx 040v002v009v000
             enbreadcrumb    =   ''     ,   // brc en/kb/systems/containers/docker
             file_structure = ''        ,   // fis l040/a_systems/a_containers/a_docker
@@ -45,9 +45,9 @@ class jn14_hiera_json_list extends jn15_array_hiera_product {
     // "articles": {"index": "020","sg_breadcrumb": "en/articles","otype": "object",
     // "type": "breadcrumb","childrens": true,
     // "pull02": [
-      
+
     this.j.index    =   index
- 
+
     // 008
     var parent_pos   = parseInt(index.substr(-3))
     var parent_index = index.substr(0,index.length -4)
@@ -58,10 +58,10 @@ class jn14_hiera_json_list extends jn15_array_hiera_product {
 
     // Set Json attribs
     this.attribs(idx, parent_pos , index, depth)
-   
+
      // Supuestos valores del padre
      // En Link Name es value
-     
+
     this.j.item        =  "articles"
     this.j.type        =  "bclink"
     this.j.otype        =  "object"
@@ -72,7 +72,7 @@ class jn14_hiera_json_list extends jn15_array_hiera_product {
 
     this.j.hover       =  title
 
-      
+
     this.j.value        =  category
 
       // Procesa atributos del site ( se hace en arroba - aqui habria que eliminarlo)
@@ -81,16 +81,16 @@ class jn14_hiera_json_list extends jn15_array_hiera_product {
     this.k.copyvalues(this.j)
 
     let object_type = "array"
-    
-      
+
+
     // this.p ("jn15_hiera_product_Procesando Hijo Nivel Inicial " + this.j.otype  )
         // Array u Objeto
 
           // this.p ("jn05_ircsv : Generating ARray")
-    this.j.createspecificpart(object_type)        
+    this.j.createspecificpart(object_type)
 
     // Category no la usa
-    this.save_json_hiera_list_base_array_to_file(  
+    this.save_json_hiera_list_base_array_to_file(
           index                  ,  // 01. Index
           enbreadcrumb           ,  // 02. Breadcrumb
           file_structure         ,  // 03. File Structure
@@ -100,9 +100,9 @@ class jn14_hiera_json_list extends jn15_array_hiera_product {
           object_type            )
 
     this.j.end_corch(object_type)
-  
+
   }
-  
+
 }
 
 exports.jn14_hiera_json_list = jn14_hiera_json_list

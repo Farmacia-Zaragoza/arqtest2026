@@ -12,55 +12,55 @@
 //- d-page_process-          : Process only one page of current array
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { cache }     =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'    );
 
 class anode_page_process extends cache {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "anode_page_process::"
-    this.b            =  ''    
+    this.b            =  ''
   }
 
 
-  //---------------------------------------------------------------------------------------------  
-  // Will process only one page 
+  //---------------------------------------------------------------------------------------------
+  // Will process only one page
   // MAIN/position/page --> @FORMAT
   page_process(lang                  ,
                current_subpath       )
   {
-    
+
     this.m               =    'page_process'
-  
-  
+
+
     this.rvlash( current_subpath )
 	let index         = this.result
 
     //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
 	// this.p('an10_Proc Lang : ' + lang + ' Path ' +  current_subpath + ' Ind ' + index)
-  
+
 	let jindex = 'j' + index
 	let cindex = 'c' + index
 	let iindex = 'i' + index
 
 
     // Los bucles tienen que ser con el idioma ingles
-    
+
     // this.p('an10_befarr ' + jindex)
-    
-	let cats = this.getarr(this.s.ms.main_lang, jindex)	
-	
+
+	let cats = this.getarr(this.s.ms.main_lang, jindex)
+
 	// this.p('j06_Before-pos-bucle1 ' + lang + '  ' + cats.length )
 
     pos = this.s.cs.page
-    
+
     // this.p('a10_page_to_load ' + pos)
-    
+
 
     this.cat      = cats[pos]
-    this.child    = this.getkeymain(cindex, pos)                       
+    this.child    = this.getkeymain(cindex, pos)
 
     this.item     = this.getkeylang(iindex, pos)
 
@@ -77,15 +77,15 @@ class anode_page_process extends cache {
 
 		let next_level = this.get_next_level(pos)
 		let new_subpath  = current_subpath + '/' + 'l' +  next_level
-		
+
 		// l020/l000
 		// this.p('an10_New subpath: ' + new_subpath)
-			
+
 		this.current_load(	lang                        ,
 				            new_subpath				    )
-			
+
 			// /brqx/pers/fromfile/farma/fnode/json_lang_structure/l000/fr_cat
-							
+
 	} // End If
 
   }

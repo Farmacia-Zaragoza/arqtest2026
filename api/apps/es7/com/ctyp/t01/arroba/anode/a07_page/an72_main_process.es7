@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 // Cada tipo de archivo debe heredar anode para ser capaz de manejar ficheros de propiedades
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Class: 
+// Class:
 //-------------------------------------------------------------------------------------
 // c-anode_main_page_process-
 //-------------------------------------------------------------------------------------
@@ -18,28 +18,28 @@
 //- d-main_page_process-           : Process from main file one position and one page
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_page_load }   =   require(  cons.JS_TYP7  + 'arroba/anode/a07_page/an74_page_load.es7'   ),
        { idx_pointers } =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'        );
 
 class anode_main_page_process extends anode_page_load {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "anode_main_page_process::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Procesa Solo la primera posicion y la primera pagina
-  main_page_process(   index           = 'main'    , 
+  main_page_process(   index           = 'main'    ,
                        current_subpath = ''        )
   {
     var idx = new idx_pointers(index)
     this.arroba_attribs(idx,this.s.cs.position )
-    
+
     // this.p('an62_mp_Cat Lang : ' + this.item )
-  
+
     current_subpath  = 'l' +  this.dhild
 
     //// this.p('an62_jnod_Pos: ' + this.s.position + ' Cat : ' + this.item + ' Child: ' + this.child)
@@ -51,7 +51,7 @@ class anode_main_page_process extends anode_page_load {
     }
 
   }
-  
+
 
 }
 

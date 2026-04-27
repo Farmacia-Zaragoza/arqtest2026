@@ -26,7 +26,7 @@
 // FEATURE FEATURE-ANCHOR-MANAGEMENT
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { struc_gen_mix }   =   require(  cons.JS_TYP7  + 'struc/s08_struc_gen_mix.es7'      )
 
@@ -179,7 +179,7 @@ class struc_gen_anchor extends struc_gen_mix {
       		                                        pf_to_load,
       		                                        index     )
 
-        // load_file_information + generate_text_file                                                   
+        // load_file_information + generate_text_file
         // Se ha insertado un fichero externo
         // No debemos insertar el contenido actual por eso lo ponemos a false
       	this.sw_add_content = false

@@ -7,7 +7,7 @@
 // Fast node load - Replace Mysql connections
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Class: 
+// Class:
 //-------------------------------------------------------------------------------------
 // - c-a02_idx_page-
 //-------------------------------------------------------------------------------------
@@ -16,31 +16,28 @@
 // - d-save_arroba_index_page_to_file-          : Generate Arroba Index Page
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  fs                 =   require(  'fs'                                                                      ),
-       empty              =   require(  cons.NODE_MOD + 'is-empty'                                                ),
-       accents            =   require(  cons.NODE_MOD + 'remove-accents'                                          ),
-       { idx_pointers }                =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                     ),       
-       { a03_idx_manage } =   require(  cons.JS_TYP7  + 'arroba/aindex/b_list/a03_idx_manage.es7'  );
+const  { idx_pointers }                =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'       )),
+       { a03_idx_manage } =   require(  path.join(JS_TYP7 , 'arroba/aindex/b_list/a03_idx_manage.es7'  ));
 
 // Common Array
 class a02_idx_page extends a03_idx_manage {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                =  'a02_idx_page::'      
+    this.n                =  'a02_idx_page::'
   }
 
   //---------------------------------------------------------------------------------------------
   // Recursive structure
   // Graba todos. Solo tiene sentido si es una lista
-  save_arroba_index_page_to_file(  
+  save_arroba_index_page_to_file(
             index                 ,  // Indice
             enbreadcrumb  =   ''  ,  // Breadcrumb en ingles
-            depth         =  0    ) 
+            depth         =  0    )
   {
 
     this.m          = 'save_json_search_rcsv'
@@ -58,7 +55,7 @@ class a02_idx_page extends a03_idx_manage {
     if ( this.s.cs.lang != this.s.ms.main_lang )
       this.arroba_attribs_main_lang(idx, this.s.cs.page)
 
-    // 020v001    
+    // 020v001
     //this.p('jni_INDEXXXX ' + index  + ' Pos ' + pos)
 
     let current_level        = index     + 'v' + this.level
@@ -66,58 +63,58 @@ class a02_idx_page extends a03_idx_manage {
 
     // add_json block
     this.rvlash_inner(current_level)
-    this.index               = this.result   
+    this.index               = this.result
 
     // end add_json block
-      
+
     // Set Json attribs
 
-    // MANAGE TERMS - Esto esta pendiente 
-    
+    // MANAGE TERMS - Esto esta pendiente
+
     // Procesa la frase actual
     this.process_phrase(this.value)
-    
-    this.p ("a02_idx_no_rcsv Proces : " + this.value)        
-          
-    this.level    =   depth    
 
-    this.p ("a02_idx_no_rcsv  : " + current_level + ' C '  + this.child + ' I ' + this.item + ' N ' + this.ntype )    
-    
-      
+    this.p ("a02_idx_no_rcsv Proces : " + this.value)
+
+    this.level    =   depth
+
+    this.p ("a02_idx_no_rcsv  : " + current_level + ' C '  + this.child + ' I ' + this.item + ' N ' + this.ntype )
+
+
     if ( this.child == "yes" )
     {
-       switch (this.ntype) 
+       switch (this.ntype)
        {
          case "branch":
-           this.save_arroba_index_list_to_file(  
+           this.save_arroba_index_list_to_file(
               current_level          ,
               current_enbreadcrumb       ,  // Breadcrumb en ingles
               depth +1            )
 
              break;
-                           
+
          case "sheet":
-           // this.p('an09 cat  Ind ' + this.cat  + ' Cin ' + this.child )      
+           // this.p('an09 cat  Ind ' + this.cat  + ' Cin ' + this.child )
 
            // Def Current page for aword
            this.current_page = pos
-             
-           this.save_arroba_index_sheet_to_file(  
+
+           this.save_arroba_index_sheet_to_file(
               current_level          ,
               current_enbreadcrumb       ,  // Breadcrumb en ingles
               depth +1            )
 
-           this.manage_sheet(pos)                
-                
+           this.manage_sheet(pos)
+
 
              break;
-      
+
 
       }
     }
-    
+
   }
-  
+
 }
 
 exports.a02_idx_page = a02_idx_page

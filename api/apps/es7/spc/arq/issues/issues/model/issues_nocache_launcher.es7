@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // comm - spec - content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-site_mcomm-   : Multi position site to load arrobas
 // e-arroba_jtype- : Arroba Jtype - Json generated base in arroba path
@@ -27,7 +27,7 @@
 
 // Must to be unique
 
-var     cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { site_model }    =   require(  cons.JS_ARQ7  + 'issues/issues/model/site_model.es7'),
         { site_uri }      =   require(  cons.JS_ARQ7  + 'issues/issues/uri/u01_site_uri.es7'),
@@ -52,17 +52,16 @@ class issues_no_cache extends site_model
 
     // Aqui ya lo conoce
     // this.p('arq_model_page X0 ' + this.comm.s.cs.page +  ' Lang ' + this.comm.s.cs.lang )
-   
+
     //2. URI SPECIFIC VERSION FOR ARQDRU - WILL MANAGE REAL COMMANDS
     // Usando fast uri no funciona
-    this.uspc             =   new site_uri( this.comm.s   , 
+    this.uspc             =   new site_uri( this.comm.s   ,
                                               this.ir       )
 
     this.run_site()
 
-  } 
+  }
 
 } // end Class
 
 exports.issues_no_cache = issues_no_cache
-

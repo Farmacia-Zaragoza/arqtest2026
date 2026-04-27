@@ -19,9 +19,9 @@
 // - build_data     : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  { common_head } 			= 	require(	cons.JS_ACO7 + 'html/h01/main/common_head.es7'			      ),		
+const  { common_head } 			= 	require(	cons.JS_ACO7 + 'html/h01/main/common_head.es7'			      ),
         { lnk01_link_war }    =   require(  cons.JS_PYC7 + 'war/war/html/h01/main/lnk01_link_war.es7'    ),
         { met01_meta_war }    =   require(  cons.JS_PYC7 + 'war/war/html/h01/main/met01_meta_war.es7'    );
 
@@ -29,10 +29,10 @@ const  { common_head } 			= 	require(	cons.JS_ACO7 + 'html/h01/main/common_head.
 class hea01_head_war extends common_head  {
 
   constructor (     arroba                )
-  {   
-    super(          arroba  )              
+  {
+    super(          arroba  )
 
-    this.n              =  'hea01_head::'                    
+    this.n              =  'hea01_head::'
   }
 
   //   <div id="logo">
@@ -40,17 +40,17 @@ class hea01_head_war extends common_head  {
     {
     // External Metas
 
-    this.meta_01          =  new met01_meta_war( this.arroba  ) 
-    
-    this.content          +=  this.meta_01.code                      
+    this.meta_01          =  new met01_meta_war( this.arroba  )
+
+    this.content          +=  this.meta_01.code
   }
 
   create_links()
   {
     // External links
-      this.link_01          =  new lnk01_link_war(this.arroba)            
-  
-    this.content          +=  this.link_01.code                      
+      this.link_01          =  new lnk01_link_war(this.arroba)
+
+    this.content          +=  this.link_01.code
   }
 
 }

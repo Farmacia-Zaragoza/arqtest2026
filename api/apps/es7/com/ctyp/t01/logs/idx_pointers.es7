@@ -17,14 +17,14 @@
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 class idx_pointers
 {
-  constructor(index = '' , preindex = '') 
+  constructor(index = '' , preindex = '')
   {
      this.reload_idx_pointers(index ,preindex)
-  }  
+  }
 
   // Reload index pointeres
   // arr_nxn020_17@4
@@ -51,7 +51,7 @@ class idx_pointers
     this.rindex     =  preindex + 'r' + index    //   Relative Type Indicator ( relative | absolute )
 
     this.zindex     =  preindex + 'z' + index    //   Object Type
-    
+
   }
 
 

@@ -12,32 +12,32 @@
 //- d-current_index_sheet_load-                   : Load information for current subpath
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoLoad > AnoProcess >
 // @Anode >  ...
 //-------------------------------------------------------------------------------------
-// Execution Line : 
+// Execution Line :
 //-------------------------------------------------------------------------------------
-// curr_load > curr_process > 
+// curr_load > curr_process >
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var     cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { anode_gindex_sheet_process } =   require(  cons.JS_TYP7  + 'arroba/gindex/c_sheet/g02_idx_process.es7'  )
 
 
 class anode_gindex_sheet_load extends anode_gindex_sheet_process {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "anode_gindex_sheet_load::"
   }
 
-  //---------------------------------------------------------------------------------------------  
-  current_index_sheet_load(  lang            = 'en' ,  
+  //---------------------------------------------------------------------------------------------
+  current_index_sheet_load(  lang            = 'en' ,
                              current_subpath = ''   )
   {
 
@@ -49,7 +49,7 @@ class anode_gindex_sheet_load extends anode_gindex_sheet_process {
 
   // Indice para el array de contenidos - Informacion de los archivos
     this.rvlash( current_subpath )
-    
+
     let index         = this.result
 
     // Define el array si no esta definido
@@ -58,30 +58,30 @@ class anode_gindex_sheet_load extends anode_gindex_sheet_process {
     // ANTES DE GUARDAR LOS ARCHIVOS DEBEMOS SABER SI VAN A SER HOJAS O RAMAS (pendiente)
 
     // Para el ingles lo generamos aqui
-    
+
     this.set_lang_content_arr( lang )
 
-    // this.p('j04_Before_ : ' + lang + '  ' + content_index )    
+    // this.p('j04_Before_ : ' + lang + '  ' + content_index )
     // en -  l000_l001_l000
-    this.content_arr[lang][content_index]  = this.s.ms.contents_path +  current_subpath + '/' + lang + '_cat'   
+    this.content_arr[lang][content_index]  = this.s.ms.contents_path +  current_subpath + '/' + lang + '_cat'
 
   // Generate array of files for fast load
   // En este punto debemos saber si los ficheros son hojas o no
-  
+
   // Esta parte no se si la vamos a hacer
     ////if ( lang == 'en' )
     ////  this.generate_content_file_langs(content_index , current_subpath)
 
-    // this.p('j04_New File to Load:  '  + this.content_arr[content_index][lang])  
+    // this.p('j04_New File to Load:  '  + this.content_arr[content_index][lang])
 
     // Cargamos el array con la informacion
 
-    // /brqx/struc/arq/kb/arqkb/l020/en_cat    
+    // /brqx/struc/arq/kb/arqkb/l020/en_cat
     var file_to_load = this.content_arr[lang][content_index]
 
     // this.p('g01_sheet_file_' + lang + ' F ' + file_to_load)
 
-    
+
     // if ( lang == 'es')
     // {
     // Uncomment to see what files we are loading
@@ -89,15 +89,15 @@ class anode_gindex_sheet_load extends anode_gindex_sheet_process {
     // this.p('jn5_subpath ES ' + current_subpath)
     //}
     // /brqx/pers/struc/arqdru/fnode/json_lang_structure/l050/l000/en_cat
-        
+
     this.generate_array_from_file( lang ,  file_to_load)
     // load_file_information - generate
-    
-    // if ( index === '000v005' && lang === 'ja' )    
+
+    // if ( index === '000v005' && lang === 'ja' )
     //   this.p('an07_child ' + this.arr['ja']['i000v005'][1])
 
     // Aqui hay que preparar la recursividad
-    this.current_index_sheet_process( lang                        , 
+    this.current_index_sheet_process( lang                        ,
                           current_subpath             )
   }
 

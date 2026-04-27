@@ -7,16 +7,16 @@
 //Store structure of page - time - memory
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/rcode/es7/com/agen/constants.es7" )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const	{ getset } 		= 	require(	cons.JS_TYP7 + 'html/style/getset.es7'	 ),
 		moment	 				= 	require(	cons.NODE_MOD + 'moment'		 ),
-		util					=	require(	'util'							 );	
+		util					=	require(	'util'							 );
 
 class page_structure extends getset {
 	constructor() {
 		super()
-		
+
 		this.n						=	'page_structure'
 		this.start_time 			= ""
 		this.stop_time 				= ""
@@ -38,8 +38,8 @@ class page_structure extends getset {
 
 	update_end_time() //si existe usar el Globals que seran todos los casos pues no hay ventaja en ejecutar un index independiente
 	{
-		this.m = 'update_end_time' 
-	
+		this.m = 'update_end_time'
+
 		this.stop_time = Date.now() / 1000
 		this.start_time = global.GLOBALS.start_time
 		this.total_time = Math.round(this.stop_time - this.start_time, 4)
@@ -51,22 +51,22 @@ class page_structure extends getset {
 		// O : { rss: 4935680,  vsize: 41893888,  heapTotal: 1826816,  heapUsed: 650472 }
 
 		this.mem_usage = mem.heapUsed
-		
-		if (this.mem_usage < 1024) 
+
+		if (this.mem_usage < 1024)
 			this.mem_usage = this.mem_usage + " b"
-		else if (this.mem_usage < 1048576) 
+		else if (this.mem_usage < 1048576)
 			this.mem_usage = Math.round(this.mem_usage / 1024, 2) + " Kb"
-		else 
+		else
 			this.mem_usage = Math.round(this.mem_usage / 1048576, 2) + " Mb"
-		
+
 		this.mem_limit = mem.heapTotal
 	}
 
-	get_date() 
+	get_date()
 	{
 		this.m	= 'get_date'
 		// moment().format("MMM Do YY");
-		
+
 		// moment("20111031", "YYYYMMDD").fromNow(); // 6 years ago
 		// this.today = date("D-M-Y - H:i:s")
 		this.today = moment().format("D/MMM/YY - H:mm:ss")
@@ -79,7 +79,7 @@ class page_structure extends getset {
 		this.server_info = "[ZD 24C 128G SSD_4-SATA_1] - (CDN:XX) [SP:PM]"
 	}
 
-	create_div() 
+	create_div()
 	{
 		this.update_end_time()
 		this.code = ""

@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_Jtype_Comm > JComm_Struc (common-point)
 // @Jtype > @Gen > Jcomm_Struct
@@ -20,28 +20,28 @@
 // - d-rungen_json-          : Generate Arroba structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { jn50_idx_json }     =   require(  cons.JS_ACO7  + 'json/j01/n02/jn50_generate_idx_json.es7'  ),
        { printlog }          =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                           );
 
 
 class jnode_type_index extends printlog {
-  constructor(    arroba           )  
+  constructor(    arroba           )
   {
     super()
- 
+
     this.n                  =   "jnode_type_comm::"
     this.m                  =   "cons"
 
         this.arroba             =   arroba
     this.s                  =   this.arroba.s
     this.a                  =   this.arroba.a
-    
+
     this.arr                =   this.arroba.a.arr
     this.jobject            =   ''
-    
-    // Print PATH for JSONS ( Comm - Spec ) 
+
+    // Print PATH for JSONS ( Comm - Spec )
     // this.p('jn11_type_Page + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
 
 
@@ -53,8 +53,8 @@ class jnode_type_index extends printlog {
   rungen_json()
   {
     // this.p('jn01_jntyp_RUNNING_RUNGEN')
-    this.jobject.process_array_and_generate_json_file()	  
-  
+    this.jobject.process_array_and_generate_json_file()
+
   }
 
 

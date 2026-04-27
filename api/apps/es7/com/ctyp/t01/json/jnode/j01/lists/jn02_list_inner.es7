@@ -12,7 +12,7 @@
 // - d-save_json_array_list_inner-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -24,16 +24,16 @@ const  fs                        =   require(  'fs'                             
 // Pendiente de cambiar
 class jn02_array_list_inner extends jn11_object_allinone_main {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                         =  'jn02_array_list_inner::'      
+    this.n                         =  'jn02_array_list_inner::'
   }
 
 
   //---------------------------------------------------------------------------------------------
-  save_json_array_list_inner(  
+  save_json_array_list_inner(
             index           ,   // Indice
             enbreadcrumb   =   ''  ,
             depth          = 0 ,
@@ -42,8 +42,8 @@ class jn02_array_list_inner extends jn11_object_allinone_main {
     // top - bottom
 
     var idx = new idx_pointers(index)
-    
-    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
+
+    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
 
     // We dont put sm_meta_og_description
     var iterations           = Object.keys(cats).length - 2
@@ -56,7 +56,7 @@ class jn02_array_list_inner extends jn11_object_allinone_main {
       // Set Json attribs
       this.attribs(idx, pos)
 
-      
+
       if (this.j.item != 'sm_meta_og_description')
       {
 
@@ -65,14 +65,14 @@ class jn02_array_list_inner extends jn11_object_allinone_main {
 
         // add_json block - replace any occurences
         this.rvlash_inner(current_level)
-        this.index               =  this.result   
-        
+        this.index               =  this.result
+
         this.links_management(idx , pos)
 
         // this.p('jn02_list ' + idx.hindex + '  ' + this.k.hover)
 
         this.k.index    =   pos
-      
+
 
         // Estamos generando esta linea
         // { "index": "0","type": "link","otype": "object","name": "x.- Architectural Focus","clink": "en/article/a00" }
@@ -84,9 +84,9 @@ class jn02_array_list_inner extends jn11_object_allinone_main {
 
      }
    }  // End For
-  
+
   }
-  
+
 }
 
 exports.jn02_array_list_inner = jn02_array_list_inner

@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // comm - spec - content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-fast_uri-     : Uri for Cached site
 // e-site_mcomm-   : Multi position site to load arrobas
@@ -28,10 +28,10 @@
 //-------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
-//- d-no_cache_launcher_code-  : Ejecuta el codigo para sites sin cache 
+//- d-no_cache_launcher_code-  : Ejecuta el codigo para sites sin cache
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { site_model }      =   require(  cons.JS_PYC7  + 'social/social/model/site_model.es7'),
         { fast_uri }        =   require(  cons.JS_ACO7  + 'uri/n02/u10_fast_uri.es7'),
@@ -45,19 +45,19 @@ class social_cache extends site_model
 
     // this.pmt = new params()
     // this.pmt.copy (pmt)
-    
+
     this.pmt = pmt
 
     this.n                =  'social_cache::'
 
-    if (this.b.cache)    
+    if (this.b.cache)
       this.uspc         = new fast_uri(this.s, this.ir)
 
     // this.p('social_cache_Ready to choose : ' + this.b.cache )
 
     // Common Cache method
     this.cache_model()
-  } 
+  }
 
   // NO CACHE CODE
   no_cache_launcher_code()
@@ -67,7 +67,7 @@ class social_cache extends site_model
       // Para mañana --> hay que saber los jsons que esta usando cada pagina
       // Si son accesibles y que contenido tiene
 
-      // this.p('arq_che_page PASO_A01 ' + this.s.cs.page_type +  ' nAM ' + this.s.cs.page_name )      
+      // this.p('arq_che_page PASO_A01 ' + this.s.cs.page_type +  ' nAM ' + this.s.cs.page_name )
 
       this.comm              =  new site_mcomm(this.s, this.s.ms.comm_positions)
 
@@ -75,7 +75,7 @@ class social_cache extends site_model
       this.copy_model()
 
       this.run_site()
-  	
+
   }
 
 } // end Class

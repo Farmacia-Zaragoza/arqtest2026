@@ -10,10 +10,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-search_manage_term-          : Get object or array method fro common management 
+// - d-search_manage_term-          : Get object or array method fro common management
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { struc_attrib }         =   require(  cons.JS_TYP7  + 'struc/s09_struc_attrib.es7'            ),
        { r12_product_sheet_pf } =   require(  cons.JS_TYP7  + 'rest/r02_inner/r12_product_sheet_pf.es7'),
@@ -22,9 +22,9 @@ const  { struc_attrib }         =   require(  cons.JS_TYP7  + 'struc/s09_struc_a
        { r00_simple_sheet }     =   require(  cons.JS_TYP7  + 'rest/r02_inner/r00_simple_sheet.es7' );
 
 class rs00_rest_pf extends struc_attrib {
-           
-  constructor (arroba = '' , rest = '')   
-  {   
+
+  constructor (arroba = '' , rest = '')
+  {
     super()
     this.n                  =  'rs00_rest_pf::'
 
@@ -32,33 +32,33 @@ class rs00_rest_pf extends struc_attrib {
     this.arr                =   this.arroba.arr
 
     this.u					=   this.arroba.u
-       
+
     this.s					=   this.arroba.s
     this.b					=   this.s.b
-    
+
     this.rest               =   rest
-    
+
     this.sheet              =   ''
 
-    this.p('rs00_es_algo ' + this.s.cs.loadtype)    
+    this.p('rs00_es_algo ' + this.s.cs.loadtype)
     if ( this.b.page_search)
     {
       this.p('rs00_es_una_busqueda')
       this.sheet              =   new r01_search_sheet()
-    }    
+    }
     else if (this.s.cs.loadtype == "page")
     {
       this.p('rs00_es_un_producto')
       this.sheet              =   new r12_product_sheet_pf()
-    }    
+    }
     else if (this.s.cs.loadtype == "position")
     {
       this.p('rs00_es_una_lista')
-      this.sheet              =   new r02_product_sheet()    
+      this.sheet              =   new r02_product_sheet()
     }
 
-    this.pf01               =   new r00_simple_sheet() 
-          
+    this.pf01               =   new r00_simple_sheet()
+
   }
 
   //---------------------------------------------------------------------------------------------
@@ -67,15 +67,15 @@ class rs00_rest_pf extends struc_attrib {
   {
     this.m            =    'search_manage_term'
     // ALGORITMO
-    
+
     // Tenemos una lista de articulos
-    
+
     // Caso 01 : El array no tiene argumentos
 
     this.p('rs00_processSTR ' + word)
 
     let articles_pos = this.info[word].split(' ')
-  	
+
     if (!this.start_include)
   	{
       this.start_include = true
@@ -84,7 +84,7 @@ class rs00_rest_pf extends struc_attrib {
          let article = articles_pos[idx]
          if (!articles_arr.includes(article) )
            articles_arr.push(article)
-      }    	
+      }
   	}
   	else
   	{
@@ -95,15 +95,15 @@ class rs00_rest_pf extends struc_attrib {
       // Tenemos en array 10 12 25 42
 
       // Iiteramos 05 10 25
-      
+
       // Resultado AND -> 25
       for (var line_idx in articles_pos)
       {
          let article = articles_pos[line_idx]
          if (!articles_arr.includes(article) )
              delete articles_pos[article]
-      }    	
-      
+      }
+
       // Iteramos 10 25
 
       for (var line_idx in articles_arr)
@@ -111,14 +111,14 @@ class rs00_rest_pf extends struc_attrib {
          let article = articles_arr[line_idx]
          if (!articles_pos.includes(article) )
              delete articles_arr[article]
-      }    	
-      
+      }
+
       // Finalmente : 10 25
 
       // this.parr(articles_arr)
-    }  	
+    }
   }
-  
+
 }
 
 exports.rs00_rest_pf = rs00_rest_pf

@@ -8,7 +8,7 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // X > Process_Site... >  Acomm_Json   > Json_Comm
 // @Site_Process > @Acomm > @Defs
@@ -20,21 +20,21 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { jn01_robot_process }       =   require(  cons.JS_ACO7  + 'json/j02/jn03_jnode_robot_process.es7'  ), 
+const   { jn01_robot_process }       =   require(  cons.JS_ACO7  + 'json/j02/jn03_jnode_robot_process.es7'  ),
         { objjson_site }             =   require(  cons.JS_ACO7  + 'json/j00/jn10_objjson_site.es7'  ),
         { arrjson_site }             =   require(  cons.JS_ACO7  + 'json/j00/jn11_arrjson_site.es7'  );
 
 class jn02_process_site extends jn01_robot_process {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
     this.n                  =   'jn02_process_site::'
-    
+
     this.process_robot_page()
-    
+
   }
 
   //---------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ class jn02_process_site extends jn01_robot_process {
   generate_json_objects()
   {
     this.j                  =  new objjson_site(this.s.cs.cache_path)
- 
+
     // For special inner methods
     this.jj                  =  new objjson_site(this.s.cs.cache_path)
 
@@ -51,7 +51,7 @@ class jn02_process_site extends jn01_robot_process {
     this.kk                  =  new arrjson_site(this.s.cs.cache_path)
 
   }
-  
+
 }
 
 exports.jn02_process_site = jn02_process_site

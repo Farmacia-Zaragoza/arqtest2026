@@ -9,10 +9,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-create_cache_urls-               : Create cache urls  
+// - d-create_cache_urls-               : Create cache urls
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_defs }     =   require(  cons.JS_TYP7  + 'uri/u12_defs.es7'    )
 
@@ -20,19 +20,19 @@ class uri_create extends uri_defs {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_create::'        
+    super()
+    this.n               =   'uri_create::'
   }
 
-  //---------------------------------------------------------------------------------------------  
-  create_cache_urls()      
+  //---------------------------------------------------------------------------------------------
+  create_cache_urls()
   {
-    
-    let base_string      =  this.s.cs.http_domainbar   + 'cache/'   
+
+    let base_string      =  this.s.cs.http_domainbar   + 'cache/'
 
     // common
     // this.p('u09_crea CAche Subtipo ' + this.s.t_sub )
-    
+
     // nouri/nocomm/blanc/nohuman/nouser/nocode/notrans/nosync/en_full_common
     // this.p('u09_crea CAche Subpath ' + this.s.cache_subpath )
 
@@ -42,7 +42,7 @@ class uri_create extends uri_defs {
     // this.p('u09_crea Url ' + this.s.cache_url )
 
   }
-  
+
 }
 
 exports.uri_create = uri_create

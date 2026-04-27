@@ -8,9 +8,9 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
-// C > c01_idx_sheet > idx_pf > 
+// C > c01_idx_sheet > idx_pf >
 // @Pending > @Pending > Pending
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Class:
@@ -23,25 +23,22 @@
 // Feature - FEATURE-INDEXING
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  fs                   =   require(  'fs'                                                   ),
-       empty                =   require(  cons.NODE_MOD + 'is-empty'                             ),
-       accents              =   require(  cons.NODE_MOD + 'remove-accents'                       ),
-       { idx_pointers }     =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
-       { d01_idx_pf }       =   require(  cons.JS_TYP7  + 'arroba/aindex/d_pf/d01_idx_pf.es7'    );       
+const  { idx_pointers }     =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'                )),
+       { d01_idx_pf }       =   require(  path.join(JS_TYP7 , 'arroba/aindex/d_pf/d01_idx_pf.es7'    ));
 
 class c01_idx_sheet extends d01_idx_pf {
 
-          
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'c01_idx_sheet::'      
+    this.n                   =  'c01_idx_sheet::'
   }
 
-  //---------------------------------------------------------------------------------------------  
-  save_arroba_index_sheet_to_file(  
+  //---------------------------------------------------------------------------------------------
+  save_arroba_index_sheet_to_file(
             index                      ,  // 1.Indice
             enbreadcrumb  =   ''       ,  // 2.Breadcrumb en ingles
             depth         =  0         )  // 4.
@@ -51,15 +48,15 @@ class c01_idx_sheet extends d01_idx_pf {
     var idx = new idx_pointers(index)
 
     // No podemos usar this.cats porque se esta usando en el padre
-    var cats              =   this.gethash_arr(this.s.ms.main_lang, idx.jindex)    
+    var cats              =   this.gethash_arr(this.s.ms.main_lang, idx.jindex)
 
     var last_element           = Object.keys(cats).length - 1
     // 020v001 - 12
     // 020v010 N 11
-    
+
     // 11 - 12 - (-1)
     // this.p ('c01idx_sheet_Last_Element  ' + index +  ' N '  + last_element)
-    
+
     // Tendriamos que indexar las categorias
     for (var pos in cats)
     {
@@ -77,13 +74,13 @@ class c01_idx_sheet extends d01_idx_pf {
       // this.p('c01_idx_checkProcess ' + this.item  + '  V ' + this.value)
 
       // this.p('ani02_check ' + this.item +  ' C ' + this.child)
-            
+
       // FINAL RECURSIVIDAD - OBJETOS COMPLETOS
       let pf_to_load = ''
       if ( (this.type == "parragraph"  ) ||  (this.type == "iparragraph" ) )
       {
-            
-        // Process Text from Current array Loaded    
+
+        // Process Text from Current array Loaded
         // Indexacion total de todos los terminos
         if (this.s.b.text_index)
           this.index_arroba_parragraph_from_array( current_level )
@@ -91,16 +88,16 @@ class c01_idx_sheet extends d01_idx_pf {
         // /brqx/cache/arq/kb/kb/uritype/content/list/nohuman/nouser/nocode/notrans/nosync/
         // en_position_20_000_arroba_ssl.idx
         // /brqx/cache/arq/kb/kb/uritype/content/product/nohuman/nouser/nocode/notrans/nosync/
-        // en_page_20_1_000_arroba_ssl.idx        
+        // en_page_20_1_000_arroba_ssl.idx
 
 
-            
+
       }
-    
+
     }  // End For
 
   }
-  
+
 }
 
 exports.c01_idx_sheet = c01_idx_sheet

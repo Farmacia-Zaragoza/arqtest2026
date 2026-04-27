@@ -7,10 +7,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_aliases-            : Check aliases for site 
+// - d-manage_aliases-            : Check aliases for site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { site_common_commands } =   require( cons.JS_SPC7 + 'acomm/uri/u01_site_commands.es7' )
 
@@ -21,29 +21,29 @@ class uri_aliases extends site_common_commands
   {
     super(  site, ir )
     this.n                  =   "site_uri::"
-  } 
+  }
 
-//---------------------------------------------------------------------------------------------  
+//---------------------------------------------------------------------------------------------
 
   manage_aliases()
   {
 
      this.m                    = 'manage_commands'
 
-     // this.start_position_array       =   this.start_position_array + 1        
-     
+     // this.start_position_array       =   this.start_position_array + 1
+
      // Piensa que aqui no se ha procesado la Uri pero slash no tiene el idioma ya
      // /en/intelligent_scroll
 
 //     this.p('u01_site_uri_SITEALIAS KB A : ' + this.slash_ideal_uri )
-     
+
 
      switch(this.slash_ideal_uri)
      {
       // Multi Lang article
       // Alias for page
-          
-      // Lists 
+
+      // Lists
       case "knowledge_information/":
         this.url_page_load_drupal_node('0')
         break;
@@ -93,9 +93,8 @@ class uri_aliases extends site_common_commands
 
     }
 
-  }  
+  }
 
 } // end Class
 
 exports.uri_aliases = uri_aliases
-

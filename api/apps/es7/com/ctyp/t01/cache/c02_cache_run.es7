@@ -13,57 +13,57 @@
 //- d-run-       : Run cache content
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Cache > Cache_gen > Cache_save > Cacle_del
 // Cache > Struc
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var     cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"     )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { cache_gen }   =   require(  cons.JS_TYP7  + 'cache/c03_cache_gen.es7'         )
 
 class cache_run extends cache_gen {
-  constructor() 
+  constructor()
   {
     super()
     this.n                          =   "cache_run::"
-          
+
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Generate Cache File ( only for Arroba format )
-  // 3 content types 
+  // 3 content types
   run()
   {
     this.n                          =   "cache_run::"
 
     // page
-    // this.p('c01_Entrando en run GENERA: ' + this.s.cs.loadtype + ' Path ' +  this.s.cs.lang)   
+    // this.p('c01_Entrando en run GENERA: ' + this.s.cs.loadtype + ' Path ' +  this.s.cs.lang)
     // Problema - En spec pagtype llega como content
-    // this.p('c02_cr: ' + this.s.cs.loadtype + ' Path ' +  this.s.cs.cache_path)   
-    // this.p('c02_cr: ' + this.s.cs.page_type + ' ' + this.s.cs.position + ' ' + this.s.cs.page)   
+    // this.p('c02_cr: ' + this.s.cs.loadtype + ' Path ' +  this.s.cs.cache_path)
+    // this.p('c02_cr: ' + this.s.cs.page_type + ' ' + this.s.cs.position + ' ' + this.s.cs.page)
 
     // Tenemos un nivel Mas : Multipage
     // @Format : Articulos - Positions - Pages
-    
+
     // /brqx/cache/arq/kb/kb/uritype/content/list/nohuman/nouser/nocode/notrans/nosync/en_position_20_000_arroba_ssl.idx
 
-    if (this.s.cs.page_type == "content" || (this.s.cs.page_type == "idx")) 
+    if (this.s.cs.page_type == "content" || (this.s.cs.page_type == "idx"))
     {
     // CONTENT PAGES
     // ---------------------------------------------------------------------------------------
       if (this.s.b.rest_page)
       {
       // REST ZONE 	--> article - list - search
-        this.run_rest_load()  
+        this.run_rest_load()
       }
       else
       {
       // NORMAL ZONE
-          this.p('c02_cr_CHECK hiera : ' + this.s.cs.loadtype)   
-      
+          this.p('c02_cr_CHECK hiera : ' + this.s.cs.loadtype)
+
     	  switch(this.s.cs.loadtype)
     	  {
             case "hierarchical":
@@ -78,8 +78,8 @@ class cache_run extends cache_gen {
                this.run_fs_load()
                break;
 
-    	    case "position": 
-              if (this.s.b.index_page && this.s.b.index_ready ) 
+    	    case "position":
+              if (this.s.b.index_page && this.s.b.index_ready )
                 this.run_index_list_load(this.s.cs.multi_positions)
               else if (this.s.b.page_search && this.s.b.index_ready)
               {
@@ -88,36 +88,36 @@ class cache_run extends cache_gen {
               	this.run_rest_load()
               }
               else
-              {    	    
+              {
                 // RUNNING LIST
                 //this.p('c02_cr LISTNUA')
-                this.run_position_load() 
+                this.run_position_load()
                 // let counts = '' + Object.keys(this.arr['en']['j020']).length - 1
-                // this.p('c01_cache_LISTNUMSEARCH ' + counts  )            
+                // this.p('c01_cache_LISTNUMSEARCH ' + counts  )
               }
-    	    
-    	    break ; 
-    		case "page": 
+
+    	    break ;
+    		case "page":
               if (this.s.b.index_page && this.s.b.index_ready )
                 this.run_index_page_load()
               else
-                this.run_multi_page_load() 
-    		
-    		break ; 
+                this.run_multi_page_load()
+
+    		break ;
     	  }
         // Generate Cache_path file
         // No tiene sentido en Rest
-        this.main_full_content_cache_save()    
-      } 
+        this.main_full_content_cache_save()
+      }
     // ---------------------------------------------------------------------------------------
     }
     else
     {
-    // COMMON PAGES ( Comm and Spec ) 
+    // COMMON PAGES ( Comm and Spec )
     // ---------------------------------------------------------------------------------------
       // this.p('c02_cr_else ' + this.s.cs.loadtype)
 
-      switch(this.s.cs.loadtype) 
+      switch(this.s.cs.loadtype)
       {
 
         case "twolangs":
@@ -142,20 +142,20 @@ class cache_run extends cache_gen {
         default:
           // this.p ('c01_cache_loading_posi A ' + this.s.position + ' Lang ' + this.s.cs.lang )
 
-          this.run_position_load() 
+          this.run_position_load()
 
           // this.p ('c01_cache_loading_posi B ' + this.s.position + ' Lang ' + this.s.cs.lang )
        }
 
       // Generate Cache_path file
       // No tiene sentido en Rest
-      this.main_full_content_cache_save()    
+      this.main_full_content_cache_save()
     }
     // this.p('c01_cache found : ' + this.s.cs.founded_type)
 
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
 
 }

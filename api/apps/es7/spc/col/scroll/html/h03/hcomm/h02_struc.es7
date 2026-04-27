@@ -8,32 +8,32 @@
 // Fast node load - Replace Mysql connections - Taxonomy Class
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Jcomm > Scom_defs
 // Scomm > Cache
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"      )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { scomm_defs }      =   require(  cons.JS_TYF7  + 'a01_load/scomm/s04_defs.es7'               ),
        { hnode_type }      =   require(    cons.JS_SPC7    + 'scroll/html/h02/hn01_hnode_type.es7' ),
-       fs                  =   require(  'fs'                                               );  
+       fs                  =   require(  'fs'                                               );
 
 
 // Simple Common - Will Load only common information
 class hcomm_struc extends scomm_defs {
-  constructor()  
+  constructor()
   {
 
     super()
- 
+
     // Tipo comun. Entonces tengo dudas de si extiende on o de jnode, yo creo que no va a extender
 
     this.n                  =   "hcomm_struc::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Te define and extend
   run_cache_to_generate_html()
   {
@@ -47,22 +47,22 @@ class hcomm_struc extends scomm_defs {
     //  es_position_6_hdata.hdata
     this.p('h02_struc_before check ' + this.s.cs.cache_path )
 
-    if ( !this.b.cache   )                  
+    if ( !this.b.cache   )
     {
       // GENERAMOS HNODE
-      // this.p('h02_HnodeNotCAche') 
+      // this.p('h02_HnodeNotCAche')
       this.htype = new hnode_type(this.container)
     }
-    else  if ( !fs.existsSync(this.s.cs.cache_path))  
+    else  if ( !fs.existsSync(this.s.cs.cache_path))
     {
       // GENERAMOS JNODE
-      // this.p('h02_Hnode') 
+      // this.p('h02_Hnode')
       this.htype = new hnode_type(this.container)
     }
 	else
     {
-      // CARGAMOS JFAST 
-      // Ya existe que necesitamos generar ? 
+      // CARGAMOS JFAST
+      // Ya existe que necesitamos generar ?
       // La estructura del site
       this.p('h02_Hfast')
       //this.j = new jfast(this.arroba)

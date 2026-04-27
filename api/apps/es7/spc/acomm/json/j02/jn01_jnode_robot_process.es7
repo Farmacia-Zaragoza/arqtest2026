@@ -8,7 +8,7 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // X > Process_Site... >  Acomm_Json   > Json_Comm
 // @Site_Process > @Acomm > @Defs
@@ -20,15 +20,15 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { jn01_general_common_json } =   require(  cons.JS_ACO7  + 'json/j01/jn01_general_common_json.es7' ), 
+const   { jn01_general_common_json } =   require(  cons.JS_ACO7  + 'json/j01/jn01_general_common_json.es7' ),
         { file_robot }	             = 	 require(  cons.JS_TYP7  + 'robot/file_robot.es7'              );
 
 class jn01_robot_process extends jn01_general_common_json {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
 
     this.arroba             =  arroba
@@ -41,16 +41,16 @@ class jn01_robot_process extends jn01_general_common_json {
 
     this.a                  =  this.arroba.a
     this.arr                =  this.arroba.a.arr
-    
+
     this.n                  =   'jn01_robot_process::'
     this.m                  =   "cons"
   }
 
   //---------------------------------------------------------------------------------------------
-  
+
   process_robot_page()
   {
-    
+
     if (this.s.b.robot_page)
     {
       // this.p('jn02_PAGINA_ROBOT ' + this.s.cs.http_domainbar)
@@ -58,9 +58,9 @@ class jn01_robot_process extends jn01_general_common_json {
 
       // this.p('jn02_resolution ' + this.arr['en']['i000v002'][7] )
       // this.p('jn02_resolution ' + this.arr['en']['i000v002'][8] )
-      
+
       var resolutions_site = this.arr['en']['i000v002'][7] + ' ' +this.arr['en']['i000v002'][8]
-       
+
 
       // this.p('jn02_robot_tit '  + this.s.ms.site_title)
       // this.p('jn02_robot_uri '  + this.s.cs.lang_url  )
@@ -68,7 +68,7 @@ class jn01_robot_process extends jn01_general_common_json {
 
       // En robot uri manda solo la uri ( de )
       this.j                  =  new file_robot(
-      	this.s.cs.cache_path        , 
+      	this.s.cs.cache_path        ,
       	this.s.ms.site_title        ,
       	this.s.cs.http_domainbar    ,
       	this.s.cs.lang_url          ,
@@ -84,12 +84,12 @@ class jn01_robot_process extends jn01_general_common_json {
 
     let index               = 'main'
     let jindex              = 'j' + index
-   
+
 
 	let cats                =  this.getarr(this.s.ms.main_lang, jindex)															;
-    
+
   }
-  
+
 }
 
 exports.jn01_robot_process = jn01_robot_process

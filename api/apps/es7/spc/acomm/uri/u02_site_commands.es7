@@ -13,10 +13,10 @@
 // - d-enable_as_a_product-               : Enable Alias Type to be a product
 // - d-enable_alias_as_a_product-         : Enable Alias Type to be a product
 // - d-enable_alias_as_a_photo-           : Enable Alias Type to be a photo
- 
+
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                   =   require( "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { common_post_process_commands } =   require( cons.JS_ACO7 + 'uri/u03_common_post_process_commands.es7' )
 
@@ -25,40 +25,40 @@ class site_common_commands extends common_post_process_commands {
   constructor(site = '' , ir = '' )
   {
     super(  site, ir )
-    this.n               =   'site_common_commands::'        
+    this.n               =   'site_common_commands::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   enable_as_a_product()
   {
     this.b.page_product        =   true
-    this.b.intelligent_command =   false        
+    this.b.intelligent_command =   false
     this.s.cs.page_name        =   'product'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   enable_alias_as_a_product()
   {
     this.b.page_is_alias       =   true
     this.b.page_product        =   true
-    this.b.intelligent_command =   false        
+    this.b.intelligent_command =   false
     this.s.cs.page_name        =   'product'
-    
+
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   enable_alias_as_a_photo()
   {
     this.b.page_is_alias       =   true
-    this.b.intelligent_command =   false        
+    this.b.intelligent_command =   false
     this.s.cs.page_name        =   'photo'
-    
+
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // This method depends of site
   manage_common_commands()
   {
@@ -77,18 +77,18 @@ class site_common_commands extends common_post_process_commands {
       case "articulo":       this.url_page_set_product()  ;      break;
       case "articles":       this.url_page_set_product()  ;      break;
 
-      
+
       // Multi Lang photo
 
       case "foto":           this.url_page_set_photo()       ;      break;
 
-      // Misma idea de drupal gneneramos los cuerpos de los articulos para el json		
+      // Misma idea de drupal gneneramos los cuerpos de los articulos para el json
       case "teasers":
         this.b.page_teaser        =   true
         this.s.cs.page_name       =  'teasers'
         this.s.cs.teaser_type	  =  'full'   // Tipo de presentacion por defecto
         this.s.cs.loadtype        =  'position'
-        this.s.cs.position        =  '20'    
+        this.s.cs.position        =  '20'
         break;;
 
       // Spanish policy - debe generar el articulo 24
@@ -96,14 +96,14 @@ class site_common_commands extends common_post_process_commands {
 
       // German policy
       case "politik":         this.url_page_set_policy()    ;          break;
-        
+
       // French policy
       case "polique":         this.url_page_set_policy()   ;        break;
 
       case "fivearticles":
         this.b.page_teaser       =   true
         this.s.cs.page_name           =  'rand'
-        this.s.cs.teaser_type	     =  'full'        
+        this.s.cs.teaser_type	     =  'full'
         break;;
 
       case "kb":       this.url_page_set_kb()  ;      break;
@@ -117,7 +117,7 @@ class site_common_commands extends common_post_process_commands {
 
         // Arroba load
         // this.s.cs.loadtype	   =  'full'
-        
+
         break;;
 
       case "searchapi":
@@ -153,7 +153,7 @@ class site_common_commands extends common_post_process_commands {
         this.b.page_search_rest_fast =   true
         this.s.cs.page_name         =  'search'
         this.s.search_type	   =  'full'
-                
+
         break;;
 
       default:
@@ -161,8 +161,8 @@ class site_common_commands extends common_post_process_commands {
         this.manage_general_commands()
     }
 
-  }  
-  
+  }
+
 }
 
 exports.site_common_commands = site_common_commands

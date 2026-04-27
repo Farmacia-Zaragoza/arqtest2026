@@ -12,7 +12,7 @@
 // - d-save_json_simple_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,23 +23,23 @@ const  fs                        =   require(  'fs'                             
 // Pendiente de cambiar
 class jn04_comma_json_simple_list extends jn05_array_product_recursive {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                         =  'jn04_comma_json_simple_list::'      
+    this.n                         =  'jn04_comma_json_simple_list::'
   }
 
 
   //---------------------------------------------------------------------------------------------
-  save_json_list_array_to_file(  
+  save_json_list_array_to_file(
             index           ,   // Indice
             enbreadcrumb   =   ''  )  // Breadcrumb en ingles
   {
     // top - bottom
 
     var idx = new idx_pointers(index)
-    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
+    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
     var iterations           = Object.keys(cats).length - 1
 
     // this.p('Num_elem_22_simple_' + last_element )
@@ -49,7 +49,7 @@ class jn04_comma_json_simple_list extends jn05_array_product_recursive {
 
       // Set Json attribs
       this.attribs(idx, pos , index)
-      
+
 
       let current_level        = this.j.index
       let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.j.item ).toLowerCase()
@@ -64,9 +64,9 @@ class jn04_comma_json_simple_list extends jn05_array_product_recursive {
 
 
      }  // End For
-  
+
   }
-  
+
 }
 
 exports.jn04_comma_json_simple_list = jn04_comma_json_simple_list

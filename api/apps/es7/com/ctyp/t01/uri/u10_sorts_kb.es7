@@ -9,14 +9,14 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Class:
 //-------------------------------------------------------------------------------------
-// - c-uri_sorts_kb-     
+// - c-uri_sorts_kb-
 //-------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-sort_url_manage_kb-     : Manage kb for hierarchical structures 
+// - d-sort_url_manage_kb-     : Manage kb for hierarchical structures
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7" );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { uri_page_string } =   require(  cons.JS_TYP7 + 'uri/u11_page_string.es7' ),
       fs                  =   require(  'fs'                                     );
@@ -26,12 +26,12 @@ class uri_sorts_kb extends uri_page_string {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_sorts_kb::'        
+    super()
+    this.n               =   'uri_sorts_kb::'
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   sort_url_manage_kb()
   {
     // --------------- HIERARCHICAL ZONE ------------------
@@ -46,22 +46,22 @@ class uri_sorts_kb extends uri_page_string {
     {
       str_to_manage      += '/'   + this.uri_args_sorted[pos]
       str_to_test        += '/a_' + this.uri_args_sorted[pos]
-      str_to_manage_dash += '_'   + this.uri_args_sorted[pos] 
+      str_to_manage_dash += '_'   + this.uri_args_sorted[pos]
     }
 
     str_to_test +=  '/' + this.s.ms.lang + '_cat'
 
     // Si no existe la ruta deber cargar el front
     // this.p('u08_sort ' + str_to_test )
-    
+
     // Aqui comprobamos el idioma ingles
     // Pero la ruta puede ser para otro idioma como
-    // kb/sistemas/servidoresweb    
-    
-    var exist_english_path = true 
-    
+    // kb/sistemas/servidoresweb
+
+    var exist_english_path = true
+
     if (this.s.ms.lang == 'en')
-      exist_english_path = fs.existsSync(str_to_test) 
+      exist_english_path = fs.existsSync(str_to_test)
 
 
     if (!exist_english_path )
@@ -71,20 +71,20 @@ class uri_sorts_kb extends uri_page_string {
     }
     else
     {
-      this.s.cs.slash_hierarchi   = str_to_manage 
+      this.s.cs.slash_hierarchi   = str_to_manage
       this.s.cs.dash_hierarchi    = str_to_manage_dash
-   
+
       // Se define aqui para KB HS
       // Ojo que aqui tiene el idioma !!!! ites/kb/systems/
-    
-      this.bar_slash_ideal_uri    = '/' + str_to_manage 
+
+      this.bar_slash_ideal_uri    = '/' + str_to_manage
     }
     // --------------- HIERARCHICAL ZONE ------------------
   }
 
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   sort_url_manage_fs()
   {
     // --------------- FILE SYSTEM ZONE ------------------
@@ -99,14 +99,14 @@ class uri_sorts_kb extends uri_page_string {
     for (var pos in this.uri_args_sorted)
     {
       elem = this.uri_args_sorted[pos]
-      str_to_manage      +=  this.uri_args_sorted[pos] 
-      str_to_manage_dash +=  this.uri_args_sorted[pos] 
+      str_to_manage      +=  this.uri_args_sorted[pos]
+      str_to_manage_dash +=  this.uri_args_sorted[pos]
 
-      if (--iterations  >= 0 ) 
+      if (--iterations  >= 0 )
       {
         str_to_manage      +=   '/'
         str_to_manage_dash +=   '_'
-      
+
       }
 
     }
@@ -115,15 +115,15 @@ class uri_sorts_kb extends uri_page_string {
     // en/fs/o14_waterfalls/0160x0200
     this.p('u10_sorts_fs URI ' + str_to_manage)
 
-    var exist_english_path = true 
-    
+    var exist_english_path = true
+
     var str_to_test = this.s.ms.fs_path + '/' + str_to_manage
 
     // this.p('u10_sorts_fs URITest ' + str_to_test)
-    
-    
+
+
     if (this.s.ms.lang == 'en')
-      exist_english_path = fs.existsSync(str_to_test) 
+      exist_english_path = fs.existsSync(str_to_test)
 
     // Desctivamos la comprobacion exacta de ruta
     if (!exist_english_path && ("B" == "A") )
@@ -145,21 +145,21 @@ class uri_sorts_kb extends uri_page_string {
         str_to_manage_dash = 'fs'
       }
 
-      this.s.cs.slash_hierarchi   = str_to_manage 
+      this.s.cs.slash_hierarchi   = str_to_manage
       this.s.cs.dash_hierarchi    = str_to_manage_dash
-   
+
       // this.p('u10_sorts_fs sla ' + this.s.cs.slash_hierarchi)
       // this.p('u10_sorts_fs das ' + this.s.cs.dash_hierarchi)
-      
-   
+
+
       // Se define aqui para KB HS
       // Ojo que aqui tiene el idioma !!!! ites/kb/systems/
-    
-      this.bar_slash_ideal_uri    = '/' + str_to_manage 
+
+      this.bar_slash_ideal_uri    = '/' + str_to_manage
     }
     // --------------- FILE SYSTEM ZONE ------------------
   }
-  
+
 }
 
 exports.uri_sorts_kb = uri_sorts_kb

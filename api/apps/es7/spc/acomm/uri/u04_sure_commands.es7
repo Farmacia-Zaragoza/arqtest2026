@@ -9,10 +9,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-sure_commands-            : Check command type based on uri and site 
+// - d-sure_commands-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri }             =   require(    cons.JS_TYP7    + 'uri/u01_obj.es7'            )
 
@@ -25,10 +25,10 @@ class site_common_sure_commands extends uri {
     // Here we create uri
     this.gen_url_structure()
 
-    this.n               =   'site_common_sure_commands::'        
+    this.n               =   'site_common_sure_commands::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // This method depends of site
   sure_common_commands()
   {
@@ -43,13 +43,13 @@ class site_common_sure_commands extends uri {
         // Solo tres argumentos
         // article/a12 - en/article/a12
         if (this.uri_args_sorted.length > 3 )
-        { 
+        {
           this.p ('u03_Pagina incorrecta. demasiados argumentos')
           this.manage_front()
         }
         break;
 
-      // Misma idea de drupal gneneramos los cuerpos de los articulos para el json		
+      // Misma idea de drupal gneneramos los cuerpos de los articulos para el json
       case "articles":
         // solo 1 argumento
         if (this.uri_args_sorted.length > 0 )
@@ -62,7 +62,7 @@ class site_common_sure_commands extends uri {
       case "fivearticles":
         // solo 1 argumento
         if (this.uri_args_sorted.length > 0 )
-        { 
+        {
           this.manage_front()
           this.p ('Pagina incorrecta. demasiados argumentos')
         }
@@ -72,16 +72,16 @@ class site_common_sure_commands extends uri {
         // Pendiente
 
         // this.p ('Pagina_busqueda__params: ' + this.uri_args_sorted.length)
-        
+
         if (this.uri_args_sorted.length > 5 )
-        { 
+        {
           this.manage_front()
           this.p ('Pagina incorrecta. demasiados argumentos')
         }
         break;
     } // End switch
-  }  
-  
+  }
+
 }
 
 exports.site_common_sure_commands = site_common_sure_commands

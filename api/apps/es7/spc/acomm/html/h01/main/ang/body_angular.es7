@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------------------------
 // Peloncita Structure Header
 //-------------------------------------------------------------------------------------
-// <body 
+// <body
 //  <app-root></app-root>
 //  <script>
 
@@ -14,7 +14,7 @@
 //    PENDING
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Bdy01 > Common_Angular > Common_Body... >  Html_Style
 // @Body > @Angular > @ABody > @Html
@@ -25,21 +25,21 @@
 // - create_scripts  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                 =   require( "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { common_angular }  =   require( cons.JS_ACO7  + 'html/h01/main/ang/common_angular.es7' )          ,		
-		{ scripts_angular }	=	require( cons.JS_ACO7  + 'html/h01/main/ang/scripts_angular.es7');					
+const   { common_angular }  =   require( cons.JS_ACO7  + 'html/h01/main/ang/common_angular.es7' )          ,
+		{ scripts_angular }	=	require( cons.JS_ACO7  + 'html/h01/main/ang/scripts_angular.es7');
 
 
 class body_angular extends common_angular  {
 
   constructor (     container						)
-  {   
+  {
 		super(container)
 
         // this.p('bdy_ang_COMMON_URL ' + this.container.jurl_comm)
 
-		this.n							=	'bdy_arqdru::'		
+		this.n							=	'bdy_arqdru::'
   }
 
   //-------------------------------------------------------------------------------------
@@ -50,9 +50,9 @@ class body_angular extends common_angular  {
 		// Scripts links for dev environment
 		// Script tag for live environment
 
-  		this.scripts_01		     =  new scripts_angular(	this.container	)			
-		
-		this.content			+=	this.scripts_01.code							
+  		this.scripts_01		     =  new scripts_angular(	this.container	)
+
+		this.content			+=	this.scripts_01.code
   }
 
 }

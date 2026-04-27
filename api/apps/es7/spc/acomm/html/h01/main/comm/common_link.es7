@@ -27,57 +27,57 @@
 // - create_favicon     : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                        =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { html_style } 	= 	require(	cons.JS_TYP7 + 'html/style/html_style.es7'			  ),
       { getset } 		= 	require(	cons.JS_TYP7 + 'html/style/getset.es7'	);
 
 class common_link extends getset  {
- 
+
   constructor (     thm                    )
-  {   
+  {
 
-    super()                              
+    super()
 
-    this.n              =  'common_link::'          
+    this.n              =  'common_link::'
 
-    this.thm            =  thm                
+    this.thm            =  thm
 
     // External object
     this.script_to_load        =  ''
     this.link_to_load        =  ''
 
     // tag object
-    this.linktag          =   ''                 
-  
-    this.link_favicon        =  new html_style('link')     
-  
-    this.build_data()                        
+    this.linktag          =   ''
+
+    this.link_favicon        =  new html_style('link')
+
+    this.build_data()
 
   }
 
   //L[01]  <link rel="icon" type="image/svg" href="img/favicon/arqdru_icon_edu_2017.svg">
   create_favicon()
   {
-            
-    this.link_favicon.rel          =  'icon'                        
-    this.link_favicon.type          =  'image/x-icon'                      
+
+    this.link_favicon.rel          =  'icon'
+    this.link_favicon.type          =  'image/x-icon'
 
     // DomainBAr http://arqdru.vbrqx.com/ang/vx/favicon.ico
-    
+
     // Hay que revisar por que no llega
     // lnk02_ICON r_img/logos/brqx_icon_arquitectrura_drupal_2010_50x50.gif
     // this.p('lnk02_ICON ' + this.thm.s.ms.icon )
 
-    this.link_favicon.href          =    
-        this.thm.s.cs.http_domainbar +  this.thm.s.ms.icon        
-  
+    this.link_favicon.href          =
+        this.thm.s.cs.http_domainbar +  this.thm.s.ms.icon
+
     // this.p('DomainBAr ' +  this.link_favicon.href)
 
-    this.link_favicon.pcreate()                            
-    
-    this.code            +=  this.link_favicon.code            
-  }    
+    this.link_favicon.pcreate()
+
+    this.code            +=  this.link_favicon.code
+  }
 
 }
 

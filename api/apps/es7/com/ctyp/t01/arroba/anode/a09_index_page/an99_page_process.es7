@@ -12,37 +12,37 @@
 //- d-page_process-          : Process only one page of current array
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const  { cache }              =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'   ),
        { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
 
 class anode_index_page_process extends cache {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "anode_index_page_process::"
-    
+
   }
 
-  //---------------------------------------------------------------------------------------------  
-  // Will process only one page 
+  //---------------------------------------------------------------------------------------------
+  // Will process only one page
   // MAIN/position/page --> @FORMAT
   current_index_page_process(lang                  ,
                current_subpath       )
   {
-    
+
     this.m               =    'current_index_page_process'
-  
-  
+
+
     this.rvlash( current_subpath )
 	let index         = this.result
 
     // j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
 	// this.p('an10_Proc Lang : ' + lang + ' Path ' +  current_subpath + ' Ind ' + index)
- 
-    var idx = new idx_pointers(index)     
+
+    var idx = new idx_pointers(index)
 
     this.arroba_attribs(idx, this.s.cs.page , index , current_subpath)
     this.s.cs.founded_type    = this.ntype
@@ -60,18 +60,18 @@ class anode_index_page_process extends cache {
 	{
 
 		let new_subpath  = this.subpath
-		
+
 		// l020/l000
         // l020/l001
 		// this.p('an79_New subpath: ' + this.item +  'P ' + new_subpath)
-        
 
-        // Hay que iterar todos los atributos de la pagina			
+
+        // Hay que iterar todos los atributos de la pagina
 		this.current_index_list_process(	lang                        ,
 				            new_subpath				    )
-			
+
 			// /brqx/pers/fromfile/farma/fnode/json_lang_structure/l000/fr_cat
-							
+
 	} // End If
 
   }

@@ -12,7 +12,7 @@
 // - d-save_json_search_main-          : Generate List Json Main side
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                         =   require(  'fs'                                                   ),
        empty                      =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,19 +23,19 @@ const  fs                         =   require(  'fs'                            
 // Comm Object
 class jn01_object_search_main extends jn02_object_search_inner {
 
-          
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn01_object_search_main::'      
+    this.n                   =  'jn01_object_search_main::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Recursive structure
-  save_json_search_main(  
+  save_json_search_main(
             position   = 20        ,   // Indice
             enbreadcrumb   =   ''  ,  // Breadcrumb en ingles
-            depth      =  0  ) 
+            depth      =  0  )
   {
 
     // 020
@@ -45,7 +45,7 @@ class jn01_object_search_main extends jn02_object_search_inner {
 
     // h020
     // this.p('LIST_IPAGE ' + idx.iindex + ' ' + idx.hindex )
-                 
+
     // this.p('LIST_MAIN_BREADC ' + position)
 
     this.j.clean()
@@ -70,7 +70,7 @@ class jn01_object_search_main extends jn02_object_search_inner {
 
     this.p ('js1_search_main_Breadcrumb ' + this.j.breadcrumb)
 
-    // Barra de busqueda 
+    // Barra de busqueda
     this.j.link  = this.s.cs.lang_url  +  this.j.breadcrumb
 
     this.j.index   = this.get_next_level(position)
@@ -78,20 +78,20 @@ class jn01_object_search_main extends jn02_object_search_inner {
 
     var enbreadcrumb = ''
     //       this.j.index             =   this.index
-      
-    this.j.level    =   depth    
+
+    this.j.level    =   depth
 
       // Procesa atributos del site ( se hace en arroba - aqui habria que eliminarlo)
       // this.process_site_values()                          ;
 
      let object_type = "array"
-      
+
      var current_level = this.j.index
 
-     this.k.copyvalues(this.j)     
-     
+     this.k.copyvalues(this.j)
+
      // REVISANDO SEARCH_
-     
+
      if ( this.j.child == "yes" )
      {
 
@@ -103,20 +103,20 @@ class jn01_object_search_main extends jn02_object_search_inner {
 
           // Escribir la parte
 
-          this.save_json_search_inner_to_file(  
+          this.save_json_search_inner_to_file(
             position           ,
             enbreadcrumb       ,  // Breadcrumb en ingles
             depth + 1              ,
             "array"            )
 
           this.j.clean()
-          this.j.end_corch(object_type)          
+          this.j.end_corch(object_type)
 
-      } 
-   
-  
+      }
+
+
   }
-  
+
 }
 
 exports.jn01_object_search_main = jn01_object_search_main

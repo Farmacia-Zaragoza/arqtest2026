@@ -9,13 +9,13 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-sort_url-               : Sort Url parameters checking options 
-// - d-sort_url_manage_kb-     : Manage kb for hierarchical structures 
-// - d-sort_url_manage_others- : Manage kb for common non ordered structures 
+// - d-sort_url-               : Sort Url parameters checking options
+// - d-sort_url_manage_kb-     : Manage kb for hierarchical structures
+// - d-sort_url_manage_others- : Manage kb for common non ordered structures
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7" );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { uri_page_string } =   require(  cons.JS_TYP7 + 'uri/u12_page_string.es7' ),
       fs                  =   require(  'fs'                                     ),
@@ -26,12 +26,12 @@ class uri_sorts extends uri_page_string {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_sorts::'        
+    super()
+    this.n               =   'uri_sorts::'
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   sort_url_manage_kb()
   {
     // --------------- HIERARCHICAL ZONE ------------------
@@ -46,22 +46,22 @@ class uri_sorts extends uri_page_string {
     {
       str_to_manage      += '/' + this.uri_args_sorted[pos]
       str_to_test      += '/a_' + this.uri_args_sorted[pos]
-      str_to_manage_dash += '_' + this.uri_args_sorted[pos] 
+      str_to_manage_dash += '_' + this.uri_args_sorted[pos]
     }
 
     str_to_test +=  '/' + this.s.ms.lang + '_cat'
 
     // Si no existe la ruta deber cargar el front
     this.p('u08_sort ' + str_to_test )
-    
+
     // Aqui comprobamos el idioma ingles
     // Pero la ruta puede ser para otro idioma como
-    // kb/sistemas/servidoresweb    
-    
-    var exist_english_path = true 
-    
+    // kb/sistemas/servidoresweb
+
+    var exist_english_path = true
+
     if (this.s.ms.lang == 'en')
-      exist_english_path = fs.existsSync(str_to_test) 
+      exist_english_path = fs.existsSync(str_to_test)
 
 
     if (!exist_english_path )
@@ -71,36 +71,36 @@ class uri_sorts extends uri_page_string {
     }
     else
     {
-      this.s.cs.slash_hierarchi   = str_to_manage 
+      this.s.cs.slash_hierarchi   = str_to_manage
       this.s.cs.dash_hierarchi    = str_to_manage_dash
-   
+
       // Se define aqui para KB HS
       // Ojo que aqui tiene el idioma !!!! ites/kb/systems/
-    
-      this.bar_slash_ideal_uri    = '/' + str_to_manage 
+
+      this.bar_slash_ideal_uri    = '/' + str_to_manage
     }
     // --------------- HIERARCHICAL ZONE ------------------
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   sort_url_manage_others()
   {
     var str_to_manage      = ''
 
     this.uri_args_sorted      =  sort.sort_unique(this.uri_args_sorted)
 
-    let count_no_repe        =  this.uri_args_sorted.length                
-    let new_dash_uri         =  ''                        
-    let new_sash_uri         =  ''                        
-    let new_bars_uri         =  ''                        
+    let count_no_repe        =  this.uri_args_sorted.length
+    let new_dash_uri         =  ''
+    let new_sash_uri         =  ''
+    let new_bars_uri         =  ''
 
-    
+
     let new_dash_args        =  ''
     let new_sash_args        =  ''
-    
-    
-    let cont             =  0                          
+
+
+    let cont             =  0
 
     // this.p('u06-sort_lenen : ' + this.uri_args_sorted.length )
 
@@ -112,45 +112,45 @@ class uri_sorts extends uri_page_string {
     for (var pos in this.uri_args_sorted)
     {
       str_to_manage = this.uri_args_sorted[pos]
-  
+
       /// this.p('u06_sort_managing ' + str_to_manage)
 
-      new_dash_uri  +=   str_to_manage                      
-      new_sash_uri  +=   str_to_manage                       
-      new_bars_uri  +=   str_to_manage                       
+      new_dash_uri  +=   str_to_manage
+      new_sash_uri  +=   str_to_manage
+      new_bars_uri  +=   str_to_manage
 
 
-      if ((pos   >=  0           )  && 
+      if ((pos   >=  0           )  &&
          (pos   <   count_no_repe )  )
       {
-        new_dash_uri+=  '_'                          
-        new_sash_uri+=  '/'                          
-        new_bars_uri+=  '|'                          
+        new_dash_uri+=  '_'
+        new_sash_uri+=  '/'
+        new_bars_uri+=  '|'
 
       }
 
-      if  (pos   >=  0 )        
+      if  (pos   >=  0 )
         {
-          new_dash_args  +=   str_to_manage                      
-          new_sash_args  +=   str_to_manage                       
+          new_dash_args  +=   str_to_manage
+          new_sash_args  +=   str_to_manage
 
         }
 
-        if  ((pos   >=  2           )  && 
+        if  ((pos   >=  2           )  &&
            (pos   <   count_no_repe )  )
         {
-          new_dash_args+=  '_'                          
-          new_sash_args+=  '/'                          
+          new_dash_args+=  '_'
+          new_sash_args+=  '/'
         }
 
-        cont++                                  
-    
+        cont++
+
     }
 
 
-    this.slash_sub_query         =   new_sash_uri                       
-    this.dash_sub_query          =   new_dash_uri                       
-    this.bars_sub_query          =   new_bars_uri.slice(0,-1)                       
+    this.slash_sub_query         =   new_sash_uri
+    this.dash_sub_query          =   new_dash_uri
+    this.bars_sub_query          =   new_bars_uri.slice(0,-1)
 
 
     this.page_args               =  new_sash_args
@@ -158,22 +158,22 @@ class uri_sorts extends uri_page_string {
 
     let slash_ideal_uri          =   this.slash_sub_query
     let dash_ideal_uri           =   this.dash_sub_query
-    
+
     // this.p('u06_currdash: ' + this.page_iargs + ' ' + this.start_position_array )
 
-    
+
 
     switch(this.start_position_array)
     {
       case 0:
         // No hay idiomas ni comandos
-        // this.p('NO HAY IDIOMA NI COMANDO')                
+        // this.p('NO HAY IDIOMA NI COMANDO')
         break;
       case 1:
-        // this.p('HAY IDIOMA O COMANDO ')    
-            slash_ideal_uri           =   this.page_command + '/' + this.slash_sub_query     
-            dash_ideal_uri             =   this.page_command + '_' + this.dash_sub_query     
-        
+        // this.p('HAY IDIOMA O COMANDO ')
+            slash_ideal_uri           =   this.page_command + '/' + this.slash_sub_query
+            dash_ideal_uri             =   this.page_command + '_' + this.dash_sub_query
+
         break;
       case 2:
         // Hay idioma y comando
@@ -182,28 +182,28 @@ class uri_sorts extends uri_page_string {
           let con_idioma_dash      =   this.s.lang + '_' + this.page_command
 
           let sin_idioma        =  this.page_command
-          slash_ideal_uri         =   sin_idioma + '/' + this.slash_sub_query     
-          dash_ideal_uri           =   sin_idioma + '_' + this.dash_sub_query     
+          slash_ideal_uri         =   sin_idioma + '/' + this.slash_sub_query
+          dash_ideal_uri           =   sin_idioma + '_' + this.dash_sub_query
         break;
       default:
         this.p('u06_nuevo_caso ' + this.start_position_array)
-        
+
     }
 
 
-    this.slash_ideal_uri        =   slash_ideal_uri     
-    this.dash_ideal_uri         =   dash_ideal_uri     
-    
-    // Esto no esta funcionando
-    this.bar_slash_ideal_uri    =  "/" +  slash_ideal_uri     
+    this.slash_ideal_uri        =   slash_ideal_uri
+    this.dash_ideal_uri         =   dash_ideal_uri
 
-    // this.p('u05_idioma   : ' + this.s.lang )                    
-    // this.p('u05_comando  : ' + this.page_command )                    
-    // this.p('u06_sorts_ideal uri: ' + this.s.cs.slash_hierarchi )                    
-  	
+    // Esto no esta funcionando
+    this.bar_slash_ideal_uri    =  "/" +  slash_ideal_uri
+
+    // this.p('u05_idioma   : ' + this.s.lang )
+    // this.p('u05_comando  : ' + this.page_command )
+    // this.p('u06_sorts_ideal uri: ' + this.s.cs.slash_hierarchi )
+
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   sort_url()
   {
 
@@ -211,9 +211,9 @@ class uri_sorts extends uri_page_string {
       this.sort_url_manage_kb()
     else
       this.sort_url_manage_others()
-                
+
   }
-  
+
 }
 
 exports.uri_sorts = uri_sorts

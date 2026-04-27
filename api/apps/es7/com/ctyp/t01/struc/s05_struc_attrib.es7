@@ -15,20 +15,20 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc_attrib > scomm_defs
 // @Struc > @Array > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const   { struc_defs }    =   require(  cons.JS_TYP7  + 'struc/s06_struc_defs.es7'    )
 
 
 class struc_attrib extends struc_defs {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "struc_attrib::"
@@ -43,7 +43,7 @@ class struc_attrib extends struc_defs {
     // Managed : C - T - B - P - G - H - I - S - O - R
 
     this.j.cat               =   this.getkeymain( idx.jindex , pos )
-    
+
     this.j.child             =   this.getkeymain( idx.cindex , pos )
     this.j.type              =   this.getkeymain( idx.tindex , pos )
     this.j.breadcrumb        =   this.getkeymain( idx.bindex , pos )
@@ -66,9 +66,9 @@ class struc_attrib extends struc_defs {
     this.j.value   =  this.result
 
 
-    this.j.otype             =   this.getkeymain( idx.oindex , pos )    
+    this.j.otype             =   this.getkeymain( idx.oindex , pos )
 
-    this.j.link              =   this.getkeylang( idx.lindex , pos )    
+    this.j.link              =   this.getkeylang( idx.lindex , pos )
 
     // Both for Objects and arrays
 
@@ -86,7 +86,7 @@ class struc_attrib extends struc_defs {
     this.k.id                =   this.j.id
 
     this.k.sound             =   this.j.id
-    
+
     this.k.value             =   this.j.value
     this.k.otype             =   this.j.otype
 

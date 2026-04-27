@@ -12,29 +12,29 @@
 // - d-manage_sheet-          : Prepare file name and process array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  satf  			 = 	require(  cons.JS_LIB7  + 'file/save_hash1d_to_file.es7' 	),
-       { idx_pointers }  =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'   ),       
-       { c01_idx_sheet } =   require(  cons.JS_TYP7  + 'arroba/aindex/c_sheet/c01_idx_sheet.es7'  );
+const  satf  			 = 	require(  path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	)),
+       { idx_pointers }  =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'   )),
+       { c01_idx_sheet } =   require(  path.join(JS_TYP7 , 'arroba/aindex/c_sheet/c01_idx_sheet.es7'  ));
 
 class a03_idx_manage extends c01_idx_sheet {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                =  'a03_idx_manage::'      
+    this.n                =  'a03_idx_manage::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   // Prepara los nombres de archivo y graba el array
   manage_sheet(pos)
   {
 
     this.replace(this.s.cs.cache_path,'list','product')
-        
+
     this.replace(this.result,'position','page')
 
     let pagestring = this.s.cs.position + '_' + pos
@@ -42,29 +42,29 @@ class a03_idx_manage extends c01_idx_sheet {
     this.replace(this.result,this.s.cs.position,pagestring)
 
     let file_to_save = this.result
-        
+
     // this.p ('c01_sheet ' + pos + '   ' + file_to_save )
     //this.index_arroba_parragraph_from_file(pf_to_load )
 
-    // HAY QUE GRABAR EL CONTENIDO EN CADA FICHERO 
+    // HAY QUE GRABAR EL CONTENIDO EN CADA FICHERO
     // PUES ES LA FORMA DE INDICAR DONDE HEMOS VISTO EL TERMINO
 
-    satf.save_hash1d_to_file(	    file_to_save 		                    , 
+    satf.save_hash1d_to_file(	    file_to_save 		                    ,
     								this.word_arr						    ,
     								this.articles_arr                       ,
     								this.s.cs.position						,
-    								this.s.cs.page						    ) 
+    								this.s.cs.page						    )
 
     // Esto debe ser algo distinto, como una mezcla con lo existente
     // Article1 Aarticle2 ... ARticleN
     this.mix_array_from_file( this.s.ms.main_lang,  file_to_save )
     // this.contents = this.word_arr
     // this.generate_mix(this.s.ms.main_lang)
-    
+
     // word 55 ocurrences - articles ( 3 6 8)
-    
+
   }
-  
+
 }
 
 exports.a03_idx_manage = a03_idx_manage

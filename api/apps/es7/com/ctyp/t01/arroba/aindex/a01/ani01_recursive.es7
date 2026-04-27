@@ -12,37 +12,34 @@
 // - d-save_json_search_recursive_array_to_file-          : Generate Json Recursive
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  fs                 =   require(  'fs'                                                                      ),
-       empty              =   require(  cons.NODE_MOD + 'is-empty'                                                ),
-       accents            =   require(  cons.NODE_MOD + 'remove-accents'                                          ),
-       { idx_pointers }                =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                     ),       
-       { ani10_arroba_product } =   require(  cons.JS_TYP7  + 'arroba/aindex/a01/ani10_product.es7'  );
+const  { idx_pointers }                =   require( path.join(JS_TYP7 , 'logs/idx_pointers.es7'          )),       
+       { ani10_arroba_product } =   require(  path.join(JS_TYP7 , 'arroba/aindex/a01/ani10_product.es7'  ));
 
 // Common Array
 class ani01_arroba_recursive extends ani10_arroba_product {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                =  'jni01_json_recursive::'      
+    this.n                =  'jni01_json_recursive::'
   }
 
   //---------------------------------------------------------------------------------------------
   // Recursive structure
   // Graba todos. Solo tiene sentido si es una lista
-  save_arroba_index_list_recursive_array_to_file(  
+  save_arroba_index_list_recursive_array_to_file(
             index                 ,  // Indice
             enbreadcrumb  =   ''  ,  // Breadcrumb en ingles
-            depth         =  0    ) 
+            depth         =  0    )
   {
 
     this.m          = 'save_json_search_rcsv'
 
     var idx = new idx_pointers(index)
-    
+
     let cats         = this.getarr(this.s.ms.main_lang, idx.jindex)                              ;
 
     var last_element           = Object.keys(cats).length - 1
@@ -59,9 +56,9 @@ class ani01_arroba_recursive extends ani10_arroba_product {
 
       // a0001 .. a0050
       this.cat                 = cats[pos]
-    
+
       // this.p('jni_INDEXXXX ' + this.cat)
-    
+
       let next_level           = this.get_next_level(pos)
 
       let current_level        = index     + 'v' + next_level
@@ -69,39 +66,39 @@ class ani01_arroba_recursive extends ani10_arroba_product {
 
       // add_json block
       this.rvlash_inner(current_level)
-      this.index               = this.result   
-        
+      this.index               = this.result
+
       this.clink               = this.getkeylang( idx.lindex , pos)
 
       // end add_json block
 
-      
+
       // Set Json attribs
       this.arroba_attribs(idx, pos)
-      
-      
+
+
       this.item     =   this.cat
       this.link     =   this.clink
-      this.level    =   depth    
+      this.level    =   depth
 
 
-      // this.p ("jns01_no_rcsv : " + this.j.item +  ' T '  + this.j.otype )    
-      
+      // this.p ("jns01_no_rcsv : " + this.j.item +  ' T '  + this.j.otype )
+
       if ( this.child == "yes" )
       {
 
 
-          this.review_childrens_index_recursive(  
+          this.review_childrens_index_recursive(
             current_level          ,
             enbreadcrumb       ,  // Breadcrumb en ingles
             depth + 1            ,
             this.otype         )
-  
-      } 
+
+      }
       else
       {
-        // Solo se va a generar cuerpo si es full el tipo de teaser 
-        if ( this.s.cs.teaser_type	   ==  'full')   // 
+        // Solo se va a generar cuerpo si es full el tipo de teaser
+        if ( this.s.cs.teaser_type	   ==  'full')   //
         {
           let pf_to_load = ''
 
@@ -110,7 +107,7 @@ class ani01_arroba_recursive extends ani10_arroba_product {
 
             this.rvtoslash(index)
             let folder_to_load = this.s.ms.contents_path + 'l' +  this.result
-            pf_to_load     = folder_to_load       + '/' + this.value 
+            pf_to_load     = folder_to_load       + '/' + this.value
 
             //this.index_arroba_parragraph_from_file(pf_to_load )
             this.index_arroba_parragraph_from_array(current_level )
@@ -120,11 +117,11 @@ class ani01_arroba_recursive extends ani10_arroba_product {
 
         }
       }
-    
+
      }  // End For
 
   }
-  
+
 }
 
 exports.ani01_arroba_recursive = ani01_arroba_recursive

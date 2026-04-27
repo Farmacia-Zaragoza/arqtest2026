@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // arroba_sprod > scomm_struc > scomm_defs
 // Scomm > Cache > Printlog
@@ -17,17 +17,17 @@
 // FEATURE-SEARCH_LOAD
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { scomm_struc }        =   require(  cons.JS_TYF7  + 'a01_load/scomm/s03_struc.es7'   )
 
 // Simple Common - Will Load only product information of article passed
 class arroba_search extends scomm_struc {
-  constructor(arroba)  
+  constructor(arroba)
   {
 
     super()
- 
+
     this.n                  =   "arroba_search::"
     this.m                  =   "cons"
 
@@ -37,19 +37,19 @@ class arroba_search extends scomm_struc {
     this.u					=   this.arroba.u
 
     this.a                  =   this.arroba.a
-       
+
     this.s					=   this.arroba.s
-    this.b					=   this.s.b    
-     
+    this.b					=   this.s.b
+
     this.s.b.language_already_loaded = false
 
     this.gen_idx_path()
-    
+
     // Llama a generar el anode. Pero cuando se ha generado la ruta de cache
     this.use_current_cache()
-    // Call to gen() - rundef() [asocial el site]  - a.run() [page - position - multiposition - hierarchical ] 
-    
-    
+    // Call to gen() - rundef() [asocial el site]  - a.run() [page - position - multiposition - hierarchical ]
+
+
     // this.p('i01_arrsearch_LOADING  :'      + '  Pth ' + this.s.cs.idx[this.s.cs.lang])
     // this.p('i01_arrsearch_LOADING  :'      + '  Pth ' + this.s.cs.cache_path)
 

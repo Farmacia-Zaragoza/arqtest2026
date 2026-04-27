@@ -21,9 +21,9 @@
 // - d-create_marquee-		: Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),		
+const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
 		{ html_style } 					= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									),
 		{ scr02_js_scripts_scroll }		= 	require(	cons.JS_SPC7 + 'scroll/html/h01/deep/scripts/scr02_js_scripts_scroll.es7'			),
 		{ scr03_js_minimized_scroll }	= 	require(	cons.JS_SPC7 + 'scroll/html/h01/deep/scripts/scr03_js_minimized_scroll.es7'			),
@@ -34,28 +34,28 @@ const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'
 class scr01_js_scroll extends getset  {
 
     constructor (     thm	              						)
-    {   
+    {
 		super()
 
-		this.n							=	'scr01_dog::'						
+		this.n							=	'scr01_dog::'
 		this.m							=	'constructor'
 
-		this.thm						=	thm							
+		this.thm						=	thm
 
 		// External object
 		this.script_to_load				=	''
 		this.script_to_load2				=	''
-		
+
 		// Composition object
-	 	this.compo_scripts				=	''																							
-		
-		this.build_data()													
+	 	this.compo_scripts				=	''
+
+		this.build_data()
     }
 
 
 	check_loaded_scripts()
 	{
-		this.head_code = ''				
+		this.head_code = ''
 
 
 			// DEV - requiere primero los otro scripts
@@ -72,23 +72,23 @@ class scr01_js_scroll extends getset  {
 			{
 				this.script_to_load 	= 	new scr05_js_inline_scroll(this.thm)
 			}
-			
+
 			// MAIN - PRODUCT
-			this.code					+=	this.script_to_load.code	
+			this.code					+=	this.script_to_load.code
 
 
-			
-		
+
+
 	}
 
 
     build_data()
     {
 
-		this.check_loaded_scripts()													
+		this.check_loaded_scripts()
 
 		// Ok [18-10-07]
-		// this.p('jsscrollCode : >' + this.code ) 											
+		// this.p('jsscrollCode : >' + this.code )
 
     }
 

@@ -6,12 +6,12 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Theme_Json (spc) > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // arroba_scomm     : Common files
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -22,7 +22,7 @@
 // FEATURE-INDEX_GENERATION
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { printlog }                   =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                  ),
       { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
@@ -61,16 +61,16 @@ class tindex_comm extends printlog
 
         this.p('j10_LOADINDEXING ' +  this.s.b.index_page)
 
-        this.acontent     =  new arroba_lindex(this.arroba)       
+        this.acontent     =  new arroba_lindex(this.arroba)
 
         // GET FROM ARROBA
         this.arr          =  this.arroba.arr
         this.s            =  this.arroba.s
         this.u            =  this.arroba.u
     }
-    
-    this.s = this.arroba.s	  
-	  
+
+    this.s = this.arroba.s
+
   }
 
 } // end Class

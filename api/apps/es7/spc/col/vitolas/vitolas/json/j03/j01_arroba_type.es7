@@ -9,13 +9,13 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_Jtype > Arroba_Gen_Types > JComm_Struc (common-point)
 // @Jtype > @Gen > Jcomm_Struct
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Site     : Site Object
 // Url      : Url Object
@@ -23,21 +23,21 @@
 // Jtype    : Jnode Type
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { arroba_jtype_comm } =   require(  cons.JS_SPC7  + 'acomm/json/j03/j01_arroba_jtype_comm.es7'),
        { jnode_type }        =   require(  cons.JS_SPC7  + 'vitolas/json/j02/jn01_jnode_type.es7'     ),
-       fs                    =   require(  'fs'                                                      );  
+       fs                    =   require(  'fs'                                                      );
 
 class arroba_jtype extends arroba_jtype_comm {
-  constructor(    arroba           , 
-                  passed_type = 'comm' )  
+  constructor(    arroba           ,
+                  passed_type = 'comm' )
   {
     super(arroba, passed_type)
     this.n                  =   "arroba_jtype::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   create_jnode_type()
   {
     this.m                  =   "run_cache"
@@ -50,22 +50,22 @@ class arroba_jtype extends arroba_jtype_comm {
     //  es_position_6_json.json
     // this.p('j02_arroba_gen ' + this.s.cs.cache_path )
 
-    if       ( !this.b.cache                    )                  
+    if       ( !this.b.cache                    )
     {
       // GENERAMOS JNODE
-      // this.p('j02_JnodeNotCAche') 
+      // this.p('j02_JnodeNotCAche')
       this.jtype            =   new jnode_type( this.arroba      )
     }
-    else  if ( !fs.existsSync(this.s.cs.cache_path))  
+    else  if ( !fs.existsSync(this.s.cs.cache_path))
     {
       // GENERAMOS JNODE
-      // this.p('j02_Jnode') 
+      // this.p('j02_Jnode')
       this.jtype            =   new jnode_type( this.arroba      )
     }
 	else
     {
-      // CARGAMOS JFAST 
-      // Ya existe que necesitamos generar ? 
+      // CARGAMOS JFAST
+      // Ya existe que necesitamos generar ?
       // La estructura del site
       this.p('j02_Jfast')
       // this.j = new jfast(      this.arroba      )

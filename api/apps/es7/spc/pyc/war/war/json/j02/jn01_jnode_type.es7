@@ -8,12 +8,12 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Jnode_type > PrintLog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Json_function     : Generate Json Functions
 //-------------------------------------------------------------------------------------
@@ -25,7 +25,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { jnode_type_comm }       =   require(  cons.JS_ACO7  + 'json/j02/jn01_jnode_type_comm.es7'                              ),
        { jn01_common_json }      =   require(  cons.JS_ACO7  + 'json/j01/n02_war/jn01_generate_common_json.es7' ),
@@ -34,50 +34,50 @@ const  { jnode_type_comm }       =   require(  cons.JS_ACO7  + 'json/j02/jn01_jn
 
 
 class jnode_type extends jnode_type_comm {
-           
-  constructor (arroba = '') 
-  {   
+
+  constructor (arroba = '')
+  {
     super(arroba)
     this.n                  =   'jn01_jnode_type::'
-   
-    
-    // Print PATH for JSONS ( Comm - Spec ) 
+
+
+    // Print PATH for JSONS ( Comm - Spec )
     // this.p('jn01_type_Page ' + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
   }
 
   manage_switch_page_type()
   {
-    
-    // Print PATH for JSONS ( Comm - Spec ) 
+
+    // Print PATH for JSONS ( Comm - Spec )
     this.p('jn01_type_Page ' + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
     this.p('jn01_type_PageName ' + this.s.cs.page_name)
 
     switch(this.s.cs.page_type)
     {
       case "spec"   : this.jobject          =   new jn11_spec_json(this.arroba)   ;      break;
-      case "comm"   : this.jobject          =   new jn01_common_json(this.arroba) ;      break;   		
+      case "comm"   : this.jobject          =   new jn01_common_json(this.arroba) ;      break;
       case "content": this.manage_switch_page_name() ;          break;
-    }   		
+    }
   }
 
   manage_switch_page_name()
   {
-  	
+
     this.p('jn01_jnowar name DBG ' + this.s.cs.page_name)
     switch(this.s.cs.page_name)
     {
-      case "product":  this.jobject   =   new jn03_product_war_json(this.arroba) ;  break;   		
+      case "product":  this.jobject   =   new jn03_product_war_json(this.arroba) ;  break;
 
-      case "front":    this.jobject   =   new jn03_product_war_json(this.arroba) ;  break;   		
+      case "front":    this.jobject   =   new jn03_product_war_json(this.arroba) ;  break;
 
-      // case "list":     this.jobject   =   new jn06_list_json(this.arroba) ;  break;   		 
+      // case "list":     this.jobject   =   new jn06_list_json(this.arroba) ;  break;
 
-      default:  
+      default:
         this.manage_switch_page_name_common()
-         		
-    }  	
-  	
-  	
+
+    }
+
+
   }
 
 

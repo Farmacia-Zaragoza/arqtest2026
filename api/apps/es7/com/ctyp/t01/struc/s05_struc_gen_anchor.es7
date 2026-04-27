@@ -18,7 +18,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc_gen > Struc_attrib > Struc_defs
 // @Struc > @SetArray @String > @Cache > @log
@@ -26,19 +26,19 @@
 // FEATURE FEATURE-ANCHOR-MANAGEMENT
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { struc_gen_mix }   =   require(  cons.JS_TYP7  + 'struc/s06_struc_gen_mix.es7'      )
 
 class struc_gen_anchor extends struc_gen_mix {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "struc_gen_anchor::"
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   anchor_management(lang , index, starting_pos)
   {
     // ANCHOR MANAGEMENT
@@ -63,72 +63,72 @@ class struc_gen_anchor extends struc_gen_mix {
       // this.p('s04_mng BB ' + right_str)
 
       var dual_anchor_pos = this.strpos(right_str, "##")
-    
+
       var anchor_pos = this.strpos(right_str, "#")
       var arroba_pos = this.strpos(right_str, "@")
 
       var include_pos = this.strpos(left_str, "FF")
 
-      if ( arroba_pos !== false) 
+      if ( arroba_pos !== false)
       {
-        // TIENE ARROBA - SOLO PODEMOS MANEJAR ANCHOR EN LA DERECHA 
+        // TIENE ARROBA - SOLO PODEMOS MANEJAR ANCHOR EN LA DERECHA
         let uri_arr_pre          =   right_str.split('@')
-        right_str                =   uri_arr_pre[1] 
+        right_str                =   uri_arr_pre[1]
 
 
       }
-     
 
-      if ( anchor_pos !== false) 
+
+      if ( anchor_pos !== false)
       {
         // Tiene solo Anchor - NO TIENE ARROBA
         // $:S[Common Features#common_features]: MRIF - RDM - LDA
         //#anchor content_management@Architecture Frontend Link - Content Management
-        
+
         var pf_anchor = ''
 
          // Tenemos un anchor
         let uri_arr_pre          =   right_str.split('#')
 
-        let count_positions      =  uri_arr_pre.length -1            
+        let count_positions      =  uri_arr_pre.length -1
 
-     
+
         if ( count_positions == 1)
         {
           let str = uri_arr_pre[1]
           pf_anchor = str.substr(0, str.length)
 
-          // this.p('HAY COMANDO_CACHE')     
+          // this.p('HAY COMANDO_CACHE')
 
           // Comprobamos que es un anchor permitido
           // Lo lo insertamos
           this.p('s04_sgt_anchor ' + pf_anchor)
           this.s.add_anchor(pf_anchor)
-          
+
         }
         // Es una taxonomia
-        if ( dual_anchor_pos !== false)    
+        if ( dual_anchor_pos !== false)
         {
           let str = uri_arr_pre[2]
           pf_anchor = str.substr(0, str.length)
 
           this.p ('s05_value_metatag_DBG '  + str)
 
-                
+
 
           this.s.add_metatag(pf_anchor)
           this.value = left_str + '[' + uri_arr_pre[0] + uri_arr_pre[1] + '#' + uri_arr_pre[2] + ']'
 
           this.p ('s05_value_metatag_DBG '  + pf_anchor)
-         
+
           this.p ('s05_value_metatag_DBG '  + this.value)
-          
+
           this.s.b.anchor_metatag = true
 	    }
 
       }
 
-      // Manage Include regex files      
+      // Manage Include regex files
       if (include_pos !== false)
       {
       	// Hay que incluir el fichero
@@ -142,19 +142,19 @@ class struc_gen_anchor extends struc_gen_mix {
 
         // Aqui habria que pasarle la posicion actual
         // Ha grabado 5 - debe pasar ese 5
-      	this.generate_array_from_text_inner_file( lang, 
-      		                                      pf_to_load, 
+      	this.generate_array_from_text_inner_file( lang,
+      		                                      pf_to_load,
       		                                      index )
 
         // Se ha insertado un fichero externo
         // No debemos insertar el contenido actual por eso lo ponemos a false
       	this.sw_add_content = false
-      }  
-     
-     
+      }
+
+
      }
-  		
-    	
+
+
   }
 
 

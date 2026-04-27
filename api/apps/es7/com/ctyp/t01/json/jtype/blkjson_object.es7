@@ -7,7 +7,7 @@
 //- d-save_header               : Add key header to json structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const 	echo 				= 	require(	cons.NODE_MOD   + 'node-echo'													),
         sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
@@ -15,7 +15,7 @@ const 	echo 				= 	require(	cons.NODE_MOD   + 'node-echo'													),
 
 
 class blkjson_object extends blkjson {
-	constructor(file_name = '') 
+	constructor(file_name = '')
 	{
 		super(file_name)
 		this.n 				= 	"blkjson_object::"
@@ -26,7 +26,7 @@ class blkjson_object extends blkjson {
 		let code 	=	'"' +  header + '" : {'
 		sctf.create_update_full_filename(this.full_path, code)
 
-		this.clean()		
+		this.clean()
 	}
 
 	save_nokeyheader(header)
@@ -34,12 +34,12 @@ class blkjson_object extends blkjson {
 		let code 	=	'"' +  header + '" : '
 		sctf.create_update_full_filename(this.full_path, code)
 
-		this.clean()		
-		
+		this.clean()
+
 	}
 
-	save_header(header) {  	
-		this.save_keyheader(header) 
+	save_header(header) {
+		this.save_keyheader(header)
 	}
 
 }

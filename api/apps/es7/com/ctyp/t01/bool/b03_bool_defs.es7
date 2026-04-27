@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7" )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'   )
 
@@ -22,12 +22,12 @@ class bool_defs extends printlog {
     // Parameters object
     this.pmt                  =  ''
 
-    //-------------------------------- Site parameters [8] --------------------------------  
-    
+    //-------------------------------- Site parameters [8] --------------------------------
+
     this.live                            = false
     this.lang                            = false
     this.lang_uri                        = true
-    this.trans                           = false    
+    this.trans                           = false
     this.sync                            = false
     this.cache                           = false
     this.nocode                          = false
@@ -35,10 +35,10 @@ class bool_defs extends printlog {
 
     this.managed_params                  = false
 
-    // Gestion de anchors para productos    
+    // Gestion de anchors para productos
     this.anchor_allowed                  = false
 
-    // Gestion de anchors para metatag - Si esta activo el anchor es un metatag    
+    // Gestion de anchors para metatag - Si esta activo el anchor es un metatag
     this.anchor_metatag                  = false
 
     // Gestion de comandos inteligentes - ojo que se pueden confundir con alias
@@ -53,7 +53,7 @@ class bool_defs extends printlog {
 
     // Extrange langs : zh - bn - uk - ru - hi - in
     this.is_strange_lang                = false
-    
+
     this.page_download                   = false    // 01
     this.page_search                     = false
     this.page_search_api                 = false				// Generate Json
@@ -81,7 +81,7 @@ class bool_defs extends printlog {
     this.page_allinone                   = false    // 11 Pages
 
     // Robot page
-    
+
     this.robot_page                      = false
 
     // Index page
@@ -97,7 +97,7 @@ class bool_defs extends printlog {
     // this.robot_url_managed               = false
 
     // Hierarchical Method
-    
+
     this.found_breadcrumb                = false
 
 
@@ -110,7 +110,7 @@ class bool_defs extends printlog {
     this.type_common                     = false
     this.type_human                      = false
     this.type_synced                     = false
-    this.type_ssl                        = false    // 
+    this.type_ssl                        = false    //
     this.type_url                        = false    // 16 Types
     this.type_have_properties            = false
     this.type_have_specific_properties   = false
@@ -123,11 +123,11 @@ class bool_defs extends printlog {
     this.type_cache                      = false    // 15
 
     // No lo hemos usado hasta ahora
-    this.type_generated                  = false    
-    
-    this.drupal_bootstrap                = false    
+    this.type_generated                  = false
+
+    this.drupal_bootstrap                = false
     this.file_yaml                       = false
-    
+
     this.contents_translated             = false
 
     this.ready_to_load                   = false    // Ready to load page
@@ -135,7 +135,7 @@ class bool_defs extends printlog {
 
     // Rest - file loag
     this.rest_result                     = false
-    
+
   }
 }
 

@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_Jtype_Comm > JComm_Struc (common-point)
 // @Jtype > @Gen > Jcomm_Struct
@@ -19,7 +19,7 @@
 // - d-rungen-          : Generate Arroba structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { jn01_common_json }  =   require(  cons.JS_ACO7  + 'json/j01/n02/jn01_generate_common_json.es7'  ),
        { jn11_spec_json }    =   require(  cons.JS_ACO7  + 'json/j01/n02/jn11_generate_spec_json.es7'    ),
@@ -36,91 +36,91 @@ const  { jn01_common_json }  =   require(  cons.JS_ACO7  + 'json/j01/n02/jn01_ge
 
 
 class jnode_type_comm extends printlog {
-  constructor(    arroba           )  
+  constructor(    arroba           )
   {
     super()
- 
+
     this.n                  =   "jnode_type_comm::"
     this.m                  =   "cons"
 
         this.arroba             =   arroba
     this.s                  =   this.arroba.s
     this.a                  =   this.arroba.a
-    
+
     this.arr                =   this.arroba.a.arr
     this.jobject            =   ''
-    
+
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   manage_switch_page_type()
   {
-    
-    // Print PATH for JSONS ( Comm - Spec ) 
+
+    // Print PATH for JSONS ( Comm - Spec )
     this.p('jn01_type_Page ' + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
     this.p('jn01_type_PageName ' + this.s.cs.page_name)
 
     switch(this.s.cs.page_type)
     {
       case "spec"   : this.jobject          =   new jn11_spec_json(this.arroba)   ;      break;
-      case "comm"   : this.jobject          =   new jn01_common_json(this.arroba) ;      break;   		
+      case "comm"   : this.jobject          =   new jn01_common_json(this.arroba) ;      break;
       case "content": this.manage_switch_page_name_common() ;          break;
-    }   		
+    }
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   manage_switch_page_name_common()
   {
     switch(this.s.cs.page_name)
     {
-      case "nodef":    this.jobject   =   new jn01_common_json(this.arroba)  ;  break;   		
+      case "nodef":    this.jobject   =   new jn01_common_json(this.arroba)  ;  break;
 
-      case "blanc":    this.jobject   =   new jn03_product_json(this.arroba) ;  break;   		
+      case "blanc":    this.jobject   =   new jn03_product_json(this.arroba) ;  break;
 
-      case "front":    this.jobject   =   new jn03_product_json(this.arroba) ;  break;   		
+      case "front":    this.jobject   =   new jn03_product_json(this.arroba) ;  break;
 
-      case "product":  this.jobject   =   new jn03_product_json(this.arroba) ;  break;   		
+      case "product":  this.jobject   =   new jn03_product_json(this.arroba) ;  break;
 
-      // case "idx":      this.jobject   =   new jn50_idx_json(this.arroba)     ;  break;   		
+      // case "idx":      this.jobject   =   new jn50_idx_json(this.arroba)     ;  break;
 
-      case "kb":       this.jobject   =   new jn40_kb_json(this.arroba)      ;  break;   		
+      case "kb":       this.jobject   =   new jn40_kb_json(this.arroba)      ;  break;
 
-      case "fs":       this.jobject   =   new jn46_fs_json(this.arroba)      ;  break;   		
+      case "fs":       this.jobject   =   new jn46_fs_json(this.arroba)      ;  break;
 
       case "photo":
             this.p('jn01_jnotype - Generating_photo_as_A_product')
-            // Ojo que photo carga product y product considera teaser or no       
+            // Ojo que photo carga product y product considera teaser or no
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;   		
+            break;
 
       case "slide":
-        
+
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;   		
+            break;
 
       case "gallery":
-        
+
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;   		
+            break;
 
       case "allinone":
             // Ojo : puede ser list - gallery - tab - slide
             this.p('jn01_jtype - T E A S E R S ')
             this.jobject          =   new jn04_teasers_json(this.arroba)
-            break;   		
+            break;
 
       case "list":
              // Ojo : puede ser list - gallery - tab - slide
             this.jobject          =   new jn06_list_json(this.arroba)
-            break;   		 
+            break;
 
       case "rand":
             // Ojo : puede ser list - gallery - tab - slide
             // Deberia implementarse a nivel de cliente
             this.jobject          =   new jn05_rands_json(this.arroba)
-            break;   		
+            break;
 
       case "search":
             // Entra aqui -- Carga todos los articulos
@@ -128,7 +128,7 @@ class jnode_type_comm extends printlog {
             // Ahora ha cambiado puesto que debemos cargar el idx correspondiente
 
             this.jobject          =   new jn20_search_json(this.arroba)
-            break;   		
+            break;
 
     }
 
@@ -137,8 +137,8 @@ class jnode_type_comm extends printlog {
   rungen_json()
   {
     // this.p('jn01_jntyp_RUNNING_RUNGEN')
-    this.jobject.process_array_and_generate_json_file()	  
-  
+    this.jobject.process_array_and_generate_json_file()
+
   }
 
 

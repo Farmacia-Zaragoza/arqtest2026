@@ -4,11 +4,11 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // comm - spec - content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-container-         : Arroba container
 //-------------------------------------------------------------------------------------
@@ -21,21 +21,21 @@
 //- d-check_logo_data- ; Check Logo Information
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
 //-------------------------------------------------------------------------------------
-// Run Line : 
+// Run Line :
 //-------------------------------------------------------------------------------------
-// Cache_Model > No_Cache_Launcher 
+// Cache_Model > No_Cache_Launcher
 // @CacheModel > @Launcher
 //-------------------------------------------------------------------------------------
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var     cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { index_fast }    =   require(  cons.JS_TYP7  + 'fire/index_fast.es7'               ),
         { container }     =   require(  cons.JS_TYP7  + 'container/c01_cont.es7'            ),
@@ -52,10 +52,10 @@ class common_model extends index_fast
     super(  pmt )
 
     // Debemos definirla por la visibilidad de la variable
-    
+
     // Si tenemos 3 clases : c > b > a
     // El argumento c.arg debe existir en a para poder usarse en un metodo de a
-    
+
 //    this.uspc             =  ''
 
     this.arroba           =  new container()
@@ -70,30 +70,30 @@ class common_model extends index_fast
     this.n                =  'common_model::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   check_logo_data()
   {
   	let logo_data_check = false
 
     //site_path :  /mnt/ssd/brqx/run/react/arq/kb/arqkb
-  	
+
   	let logo_file         = this.s.ms.images_path + this.s.ms.logo_mobile.substr(2)
-    if (!fs.existsSync(logo_file) )  logo_data_check = true  	
+    if (!fs.existsSync(logo_file) )  logo_data_check = true
   	if (logo_data_check) this.p('CHECK_MOBILE_LOGO ' +  logo_file)
-  	
+
   	logo_file         = this.s.ms.images_path + this.s.ms.logo_tablet.substr(2)
-    if (!fs.existsSync(logo_file) )  logo_data_check = true  	
+    if (!fs.existsSync(logo_file) )  logo_data_check = true
   	if (logo_data_check) this.p('CHECK_TABLET_LOGO ' +  logo_file)
 
   	logo_file         = this.s.ms.images_path + this.s.ms.logo_desktop.substr(2)
-    if (!fs.existsSync(logo_file) )  logo_data_check = true  	
+    if (!fs.existsSync(logo_file) )  logo_data_check = true
   	if (logo_data_check) this.p('CHECK_DESKTOP_LOGO ' +  logo_file)
 
   	logo_file         = this.s.ms.images_path + this.s.ms.logo_4k.substr(2)
-    if (!fs.existsSync(logo_file) )  logo_data_check = true  	
+    if (!fs.existsSync(logo_file) )  logo_data_check = true
   	if (logo_data_check) this.p('CHECK_4k_LOGO ' +  logo_file)
-  	
+
   }
 
 
@@ -110,15 +110,15 @@ class common_model extends index_fast
     {
        // Si no hay cache debe regenerarse todo
        this.no_cache_launcher_code()
-    }    	
+    }
     else if (gfc.no_zero(this.uspc.c.s.cs.cache_sum))
-    {    	
+    {
        // Hay cache y existe el fichero de cache
        this.p('Getting-Cached-Code ' + this.uspc.c.s.cs.cache_path)
-       this.code = gfc.get_file_code(this.uspc.c.s.cs.cache_path)    	
-       //this.p('ardrmod_getting_code ' + this.code.length)       
+       this.code = gfc.get_file_code(this.uspc.c.s.cs.cache_path)
+       //this.p('ardrmod_getting_code ' + this.code.length)
     }
-    else 
+    else
     {
        this.p('Enter-In-No_Cache')
 
@@ -129,13 +129,13 @@ class common_model extends index_fast
         this.code = gfc.get_file_code(this.uspc.c.s.cs.cache_alias)
       }
       else
-      {    	
-        // Hay cache y no existe el fichero 
+      {
+        // Hay cache y no existe el fichero
         this.no_cache_launcher_code()
       }
-          	
+
     }
- 	
+
   }
 
 
@@ -151,20 +151,20 @@ class common_model extends index_fast
   }
 
 //-------------------------------------------------------------------------------------
-  
-  run_comm_model() 
+
+  run_comm_model()
   {
     this.m         = 'run_comm_model'
 
     // this.arroba.u.gen_url_structure()
-    // this.acomm.u = this.arroba.u 
+    // this.acomm.u = this.arroba.u
 
     // El problema es que aqui aun no sabemos el path
     // ----------------------------------------------------------------------------------
     // this.p('arqdru comm  NOLOSABEMOS Before RUNGEN ' + this.commjson.s.cs.cache_path )
 
     // this.p('rcm_Slangs an22 ' +  ' ' + this.uspc.s.cs.lang )
-    
+
     this.commjson.rungen()
     // Call to process_array_and_generate_json_file ( Call to rungen and later to rungen_json)
 
@@ -177,7 +177,7 @@ class common_model extends index_fast
 
     this.arroba.copy_uri(this.uspc)
 
-    
+
     this.check_logo_data()
 
     // Ok
@@ -185,10 +185,10 @@ class common_model extends index_fast
     // this.p('comm_model_URI an22 ' + this.arroba.u.dash_uri + '   ' + this.arroba.u.uri )
 
     // COMMON URL MANAGEMENT
-    this.arroba.s.ms.j_comm_path           = this.commjson.s.cs.cache_path  
+    this.arroba.s.ms.j_comm_path           = this.commjson.s.cs.cache_path
     this.arroba.s.ms.j_comm_url            = this.uspc.s.cs.http_domainbar + this.commjson.s.cs.cache_url
-    
-    // Recargamos estructura. No generamos Json 
+
+    // Recargamos estructura. No generamos Json
     // Necesitamos recupèrar la estructura ya generada
     // A PARTIR DE AQUI ES SPEC - habra que pasar las posiciones por parametro
 
@@ -196,11 +196,11 @@ class common_model extends index_fast
     // Aqui tenemos el problema. Lo perdemos todo
 
     // this.p('comm_model_BEFORE_WRONG_LANG _Starting langs an22' + '  ' + this.arroba.s.ms.lang )
-   
+
     // this.p('comm_model_BEFORE_WRONG_LANG _Starting to manage spec an22' +  '   '  + this.s.ms.spec_positions )
     // Carga Multiples posiciones
 
-    this.gcomm    =  new arroba_mcomm(this.arroba , this.s.ms.spec_positions)        
+    this.gcomm    =  new arroba_mcomm(this.arroba , this.s.ms.spec_positions)
 
     // Hay que averiguar donde lo hemos puesto content - Desde luego esta mal
 
@@ -218,23 +218,23 @@ class common_model extends index_fast
 
 //-------------------------------------------------------------------------------------
 
-  run_spec_model() 
+  run_spec_model()
   {
 
     this.m               = 'run_spec_model'
 
-    // this.p('Before_to_call To Specjson' )      
+    // this.p('Before_to_call To Specjson' )
     this.specjson.rungen()
     // Create jnodetype - rungen_json
 
     // Checking arroba content
     // this.arroba.arr = this.specjson.a.arr
-    
+
     this.arroba.s.ms.j_spec_path         = this.specjson.s.cs.cache_path
     this.arroba.s.ms.j_spec_url          = this.uspc.s.cs.http_domainbar + this.specjson.s.cs.cache_url
 
 
-  } 
+  }
 
 } // end Class
 

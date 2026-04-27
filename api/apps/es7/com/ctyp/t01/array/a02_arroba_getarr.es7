@@ -14,23 +14,24 @@
 // - d-gethash_keymain-          : Get key for main lang
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_GetArr
 // @Array > @String > @Cache > @log
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const   path                =   require('path'                                             );
 
-const   { arroba_mixarr }    =   require(  cons.JS_TYP7  + 'array/a03_arroba_mixarr.es7'    )
+const { JS_TYP7 } = require(path.join(process.cwd(),'api/apps/paths.js'));
+const 	{ arroba_mixarr } 		  =  require(path.join(JS_TYP7 , 'array/a03_arroba_mixarr.es7'));
 
 
 class arroba_getarr extends arroba_mixarr {
   constructor() {
     super()
     this.n                          =   "arroba_getarr::"
-	    
+
   }
 
   gethash_keylang(index , key)  {   return this.getkeylang(index , key)   }
@@ -70,20 +71,20 @@ class arroba_getarr extends arroba_mixarr {
   }
 
 
-  // Necesaria para evitar indices vacios. 
+  // Necesaria para evitar indices vacios.
   // a.Devolvera una cadena vacia si no existe el indice
 
   //---------------------------------------------------------------------------------------------
   getkey(lang, index , key)
   {
-    // Notice: Undefined index: i000v001v004v000v001 
+    // Notice: Undefined index: i000v001v004v000v001
     let current_arr = this.gethash_arr(lang , index)
 
       // solution for array_key_exist de php
     if(key in current_arr)
-        return current_arr[key]                        
-    else 
-        return ''                                
+        return current_arr[key]
+    else
+        return ''
   }
 
   gethash_arr(lang , index)
@@ -101,11 +102,11 @@ class arroba_getarr extends arroba_mixarr {
 
     let empty_arr = Array()
 
-    if ( Array.isArray(this.arr) ) 
-	  if ( Array.isArray(this.arr[lang]) ) 
-        if ( Array.isArray(this.arr[lang][index]) ) 
-    // Notice: Undefined index: i000v001v004v000v001 
-          return this.arr[lang][index] 
+    if ( Array.isArray(this.arr) )
+	  if ( Array.isArray(this.arr[lang]) )
+        if ( Array.isArray(this.arr[lang][index]) )
+    // Notice: Undefined index: i000v001v004v000v001
+          return this.arr[lang][index]
         else
           return empty_arr
       else
@@ -133,7 +134,7 @@ class arroba_getarr extends arroba_mixarr {
     {
      term = this.arr[name][pos]
      result += term + sep
-    } 
+    }
     return result.trim()
   }
 

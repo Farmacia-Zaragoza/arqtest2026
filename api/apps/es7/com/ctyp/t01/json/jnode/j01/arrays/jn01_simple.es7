@@ -12,7 +12,7 @@
 // - d-save_json_simple_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,16 +23,16 @@ const  fs                        =   require(  'fs'                             
 // Pendiente de cambiar
 class jn01_comma_json_simple extends jn02_comma_json_doble {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                         =  'jn01_comma_json_a_simple::'      
+    this.n                         =  'jn01_comma_json_a_simple::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Garland Main - Top - Bottom - One Dimension
-  save_json_simple_array_to_file(  
+  save_json_simple_array_to_file(
             index                   ,   // Indice
             enbreadcrumb    =   ''  ,
             concat_to_links = ''    )  // Breadcrumb en ingles
@@ -42,7 +42,7 @@ class jn01_comma_json_simple extends jn02_comma_json_doble {
     var  idx = new idx_pointers(index)
 
     // en
-    // this.p('j22_com_simple ' + 'Before_run_bucle ' + this.s.ms.main_lang +   ' J ' +  index  )    
+    // this.p('j22_com_simple ' + 'Before_run_bucle ' + this.s.ms.main_lang +   ' J ' +  index  )
 	  let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)															;
 
     var iterations           = Object.keys(cats).length - 1
@@ -56,7 +56,7 @@ class jn01_comma_json_simple extends jn02_comma_json_doble {
 
       // Set Json attribs
       this.attribs(idx, pos, index)
-      
+
       this.k.link     =   this.k.link  + concat_to_links
 
       this.manage_array_parragraphs('array', this.k.index)
@@ -65,9 +65,9 @@ class jn01_comma_json_simple extends jn02_comma_json_doble {
         this.j.add_separator()
 
      }  // End For
-  
+
   }
-  
+
 }
 
 exports.jn01_comma_json_simple = jn01_comma_json_simple

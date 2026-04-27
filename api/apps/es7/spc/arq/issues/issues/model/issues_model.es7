@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // issues_cache- issues_nocache
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Printlog
 // @Forker > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-issues_no_cache-  : Arqdru no cache launcher
 // e-issues_cache-     : Arqdru cache launcher
@@ -25,7 +25,7 @@
 
 // Must to be unique
 
-var     cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { issues_no_cache } =   require(  cons.JS_ARQ7  + 'issues/issues/model/issues_nocache_launcher.es7' ),
         { issues_cache }    =   require(  cons.JS_ARQ7  + 'issues/issues/model/issues_cache_launcher.es7'),
@@ -42,7 +42,7 @@ class issues extends printlog
 
     if (pmt.cache)      this.model           = new issues_cache(    pmt  )
     else                this.model           = new issues_no_cache( pmt  )
-  } 
+  }
 
 } // end Class
 

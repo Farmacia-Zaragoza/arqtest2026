@@ -13,7 +13,7 @@
 //<link rel="stylesheet" href="styles.css"></head>
 
 // Style attributes example
-//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css" 
+//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css"
 //        as="style" onload="this.rel='stylesheet'">
 
 // ------------------------------------------------------------------------------------
@@ -25,9 +25,9 @@
 // - build_data  	 		: Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =  require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  { deep_link_base } = require(	cons.JS_ACO7 + 'html/h01/deep/styles/deep_link_base.es7')		
+const  { deep_link_base } = require(	cons.JS_ACO7 + 'html/h01/deep/styles/deep_link_base.es7')
 
 
 class deep_link_angular extends deep_link_base {
@@ -39,13 +39,13 @@ class deep_link_angular extends deep_link_base {
   }
 
 
-  build_data() 
+  build_data()
   {
 
     if (this.s.b.robot_page)
-	  this.create_robot()     
+	  this.create_robot()
     else
-    {    
+    {
 	  this.create_googlefonts()
 	  this.create_fontawesome()
 
@@ -56,7 +56,7 @@ class deep_link_angular extends deep_link_base {
 	  this.create_style('dev/','styles.css')
     }
 		// Ok [18-05-05]
-		// this.p('Code_lnk02_link : >' + this.code ) 											
+		// this.p('Code_lnk02_link : >' + this.code )
   } // End method
 
 } // End class

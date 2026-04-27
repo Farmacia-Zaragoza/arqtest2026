@@ -6,13 +6,13 @@
 //- d-copyvalues             : Copy json values
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { json_def }     =   require(  cons.JS_TYP7 + 'json/jtype/json_def.es7'      );
 
 
 class json_copy  extends json_def {
-  constructor() 
+  constructor()
   {
     super()
     this.n         = "json_copy::"
@@ -35,7 +35,7 @@ class json_copy  extends json_def {
 
     // Relative Link Type
     this.rtype            =  k.rtype
-    
+
     this.child            =  k.child
     this.flag             =  k.flag
     this.sound            =  k.sound
@@ -51,7 +51,7 @@ class json_copy  extends json_def {
     this.categories       =  k.categories
 
     // Terms y MainTems son arrays ya definidos
-    
+
     this.country          =  k.country
     this.city             =  k.city
     this.location         =  k.location

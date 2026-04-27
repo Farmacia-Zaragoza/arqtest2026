@@ -17,7 +17,7 @@
 // <span class="dots"
 // ...</span
 
-   
+
 // ------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Class:c-scr01_js_truck-
@@ -27,7 +27,7 @@
 // - create_common  	 		: Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons           =  require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { html_style } 	=  require(	cons.JS_TYP7 + 'html/style/html_style.es7'			  )
 
@@ -37,7 +37,7 @@ class car_loader extends html_style {
 	constructor(thm) {
 
 		let tag_type 				= 	"div"
-		
+
 		super(tag_type)
 		this.n = 'car_loader::'
 		this.m = 'constructor'
@@ -47,11 +47,11 @@ class car_loader extends html_style {
 		this.thm = thm
 
 		this.div_01 = new html_style('div')
-		
+
 		this.div_01.class = "loading-window"
 		this.div_02 = new html_style('div')
 		this.div_02.class = "car"
-		
+
 		this.div_03 = new html_style('div')
 
 		this.span_01 = new html_style('div')
@@ -63,9 +63,9 @@ class car_loader extends html_style {
     {
       this.div_03.class =class_name
       this.div_03.pcreate()
-    	
+
       this.div_02.content += this.div_03.code
-    	    	    	
+
     }
 
 
@@ -84,9 +84,9 @@ class car_loader extends html_style {
       this.create_div_03("car-detail front")
       this.create_div_03("car-detail wheel")
       this.create_div_03("car-detail wheel wheel2")
-      
+
       this.div_02.pcreate()
-      	
+
       this.div_01.content += this.div_02.code
 
     }
@@ -99,7 +99,7 @@ class car_loader extends html_style {
        this.create_span_02()
 
        this.div_02.pcreate()
-       
+
        this.div_01.content += this.div_02.code
     }
 
@@ -107,14 +107,14 @@ class car_loader extends html_style {
 // Loading</span
 // <span class="dots"
 // ...</span
-    
+
     create_span_01()
     {
       // TRANSLATE TEXT
       this.span_01.content = "Loading"
-      
+
       this.span_01.pcreate()
-   
+
       this.div_02.content += this.span_01.code
 
     }
@@ -123,9 +123,9 @@ class car_loader extends html_style {
     {
       this.span_01.class   = "dots"
       this.span_01.content = "..."
-      
+
       this.span_01.pcreate()
-   
+
       this.div_02.content += this.span_01.code
 
     }
@@ -133,17 +133,17 @@ class car_loader extends html_style {
     create_div_01()
     {
     	this.create_div_02_a()
-    	
+
     	this.create_div_02_b()
-    	
+
     	this.div_01.pcreate()
-    	
+
     	this.content = this.div_01.code
-    	
+
     }
 
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 
@@ -152,7 +152,7 @@ class car_loader extends html_style {
 		this.pcreate()
 
 		//Ok [20-01-13]
-		// this.p('car_loader > ' +  this.code)												
+		// this.p('car_loader > ' +  this.code)
 
 	}
 

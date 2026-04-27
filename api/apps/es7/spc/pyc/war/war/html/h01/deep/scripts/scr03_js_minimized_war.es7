@@ -23,28 +23,28 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'		),		
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'		),
 		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'	);
 
 
 class scr03_js_minimized_war extends getset  {
 
     constructor (     thm	              						)
-    {   
+    {
 		super()
 
-		this.n								=	'scr03_js_minimized_war::'						
+		this.n								=	'scr03_js_minimized_war::'
 		this.m								=	'constructor'
 
-		this.thm							=	thm							
-	
+		this.thm							=	thm
+
 		this.script_01						=	new html_style('script')
-					
+
 		this.script_jquery					=	new html_style('script')
 
-		this.build_data()													
+		this.build_data()
 
     }
 
@@ -54,88 +54,88 @@ class scr03_js_minimized_war extends getset  {
 
     create_jquery()
     {
-		let js_name 								=	'jquery-3.3.1.min.js'		
+		let js_name 								=	'jquery-3.3.1.min.js'
 
-		this.script_jquery.defer					=  	'defer'									
+		this.script_jquery.defer					=  	'defer'
 
-		
-		this.script_jquery.src				=  	
-			this.thm.s.cs.http_domainbar + 'r_fassets/js/' + js_name 	
 
-		this.script_jquery.pcreate()														
-		
-		this.code						+=	this.script_jquery.code						
-	}		
+		this.script_jquery.src				=
+			this.thm.s.cs.http_domainbar + 'r_fassets/js/' + js_name
+
+		this.script_jquery.pcreate()
+
+		this.code						+=	this.script_jquery.code
+	}
 
 	//[S_01] <script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script>
     create_runtime()
     {
-		// this.script_01.defer				=  	'defer'									
-		// this.script_01.async				=  	'async'	
+		// this.script_01.defer				=  	'defer'
+		// this.script_01.async				=  	'async'
 
 		// It is already minimized
 		let js_name							=	'runtime_min.js'
 
 
-		this.script_01.src					=  	
+		this.script_01.src					=
 			this.thm.s.cs.http_domainbar + 'dev/' + js_name
 
-		this.script_01.pcreate()														
-		
-		this.code							+=	this.script_01.code	
-	}		
+		this.script_01.pcreate()
+
+		this.code							+=	this.script_01.code
+	}
 
 	//[S_02] <script type="text/javascript" src="polyfills.f80b7e6581d9215d226e.js"></script>
     create_es2015polyfills()
     {
 
-		this.script_01.async				=  	''	
+		this.script_01.async				=  	''
 
 		let js_name							=	'es2015-polyfills.js'
 
 
-		this.script_01.src					=  	
+		this.script_01.src					=
 			this.thm.s.cs.http_domainbar + 'dev/' + js_name
-		
-		this.script_01.pcreate()														
-		
-		this.code							+=	this.script_01.code	
-	}		
+
+		this.script_01.pcreate()
+
+		this.code							+=	this.script_01.code
+	}
 
 	//[S_02] <script type="text/javascript" src="polyfills.f80b7e6581d9215d226e.js"></script>
     create_polyfills()
     {
 
-		this.script_01.async				=  	''	
+		this.script_01.async				=  	''
 
 		let js_name							=	'polyfills_min.js'
 
 
-		this.script_01.src					=  	
+		this.script_01.src					=
 			this.thm.s.cs.http_domainbar + 'dev/' + js_name
-		
-		this.script_01.pcreate()														
-		
-		this.code							+=	this.script_01.code	
-	}		
+
+		this.script_01.pcreate()
+
+		this.code							+=	this.script_01.code
+	}
 
 
 
 	//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
     create_main()
     {
-		this.script_01.async				=  	''	
+		this.script_01.async				=  	''
 
 		let js_name							=	'main_min.js'
 
 
-		this.script_01.src					=  	
+		this.script_01.src					=
 			this.thm.s.cs.http_domainbar + 'dev/' + js_name
 
-		this.script_01.pcreate()														
-		
-		this.code							+=	this.script_01.code						
-	}		
+		this.script_01.pcreate()
+
+		this.code							+=	this.script_01.code
+	}
 
 
     build_data()
@@ -144,12 +144,12 @@ class scr03_js_minimized_war extends getset  {
 
 		this.create_runtime()
 		this.create_es2015polyfills()
-		
+
 		this.create_polyfills()
 		this.create_main()
 
 		// Pending [17-11-02]
-		// this.p('jsmin_Code : >' + this.code ) 											
+		// this.p('jsmin_Code : >' + this.code )
 
     }
 

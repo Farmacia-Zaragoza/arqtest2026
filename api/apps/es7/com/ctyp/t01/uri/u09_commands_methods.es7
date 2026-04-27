@@ -15,7 +15,7 @@
 // - d-url_page_set_photo-            : Set urls to be managed as a photo
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_sorts }     =   require(  cons.JS_TYP7 + 'uri/u11_sorts.es7'    );
 
@@ -23,25 +23,25 @@ class uri_commands_methods extends uri_sorts {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_commands_methods::'        
+    super()
+    this.n               =   'uri_commands_methods::'
   }
 
   // architect/ricardocabellotorres  -> article XX
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Local Method - This method depends of site
   url_page_load_drupal_node(page_number , page_position = '20')
   {
-    // this.p('u04_aliases_Comando para analizar: ' + this.uri)           
+    // this.p('u04_aliases_Comando para analizar: ' + this.uri)
 
     this.b.page_product       =   true
     this.s.cs.page_type	      =  'content'
     // this.s.cs.page_name       =  'product'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'        
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  page_position
-    this.s.cs.page            =  page_number   
-    
+    this.s.cs.page            =  page_number
+
   }
 
   //---------------------------------------------------------------------------------------------
@@ -54,9 +54,9 @@ class uri_commands_methods extends uri_sorts {
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'product'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   //---------------------------------------------------------------------------------------------
 
@@ -66,9 +66,9 @@ class uri_commands_methods extends uri_sorts {
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'photo'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_slide(pos = 30)
   {
@@ -76,9 +76,9 @@ class uri_commands_methods extends uri_sorts {
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'slide'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_gallery(pos = 30)
   {
@@ -86,21 +86,21 @@ class uri_commands_methods extends uri_sorts {
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'gallery'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
 
   url_page_set_kb(pos = 40)
   {
     // Aqui tenemos que estar seguro que la estructura es correcta
-        
+
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'kb'
     this.s.cs.loadtype        =  'hierarchical'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_idx(pos = 20)
   {
@@ -110,40 +110,40 @@ class uri_commands_methods extends uri_sorts {
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'idx'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_rest(pos = 20)
   {
     // Aqui tenemos que estar seguro que la estructura es correcta
     this.b.rest_page          =   true
     this.b.page_list          =   false
-    this.b.page_product       =   false    
+    this.b.page_product       =   false
     this.b.page_search        =   true
 
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'rest'
     this.s.cs.loadtype        =  'position'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.ext             =  'rest'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_search(pos = 20)
   {
     // Aqui tenemos que estar seguro que la estructura es correcta
 
     this.b.page_list          =   false
-    this.b.page_product       =   false    
+    this.b.page_product       =   false
     this.b.page_search        =   true
-    
+
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'search'
     this.s.cs.loadtype        =  'position'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
 
   //---------------------------------------------------------------------------------------------
@@ -151,17 +151,17 @@ class uri_commands_methods extends uri_sorts {
   url_page_set_list(pos = '20')
   {
     this.b.page_list          =   true
-    this.b.page_product       =   false    
-    this.b.page_search        =   false    
+    this.b.page_product       =   false
+    this.b.page_search        =   false
     this.s.cs.page_type	      =  'content'
     this.s.cs.page_name       =  'list'
     this.s.cs.loadtype        =  'position'
     this.s.cs.teaser_type	  =  'slim'   // Tipo de presentacion por defecto
     this.s.cs.position        =  pos
-  }	  
+  }
 
   //---------------------------------------------------------------------------------------------
-  
+
 }
 
 exports.uri_commands_methods = uri_commands_methods

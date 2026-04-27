@@ -6,19 +6,19 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { strings_defs }     =   require(  cons.JS_TYP7 + 'string/s02_defs.es7'      );    
+const   { strings_defs }     =   require(  cons.JS_TYP7 + 'string/s02_defs.es7'      );
 
 class index_def extends strings_defs
 {
-  
-  constructor() 
+
+  constructor()
   {
     super()
-  
+
   // Atributos
-    this.n           =   'index_def::'               
+    this.n           =   'index_def::'
 
     this.starttimer     = ''
 
@@ -34,9 +34,8 @@ class index_def extends strings_defs
     //Param object
     this.pmt        =  ''
 
-  }  
+  }
 
 }  // End Class
 
 exports.index_def = index_def
-

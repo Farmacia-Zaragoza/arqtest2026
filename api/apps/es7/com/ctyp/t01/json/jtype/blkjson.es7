@@ -8,7 +8,7 @@
 //- d-end_pull             : End pull level to json structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   echo           =   require(  cons.NODE_MOD   + 'node-echo'                          ),
         sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
@@ -16,7 +16,7 @@ const   echo           =   require(  cons.NODE_MOD   + 'node-echo'              
 
 
 class blkjson extends manage_json {
-  constructor(file_name = '') 
+  constructor(file_name = '')
   {
 
     super()
@@ -26,30 +26,30 @@ class blkjson extends manage_json {
     this.code       =   ""
     this.content     =   ""
     this.pull_content  =  ''
-    
+
     this.full_path    =  file_name
 
     // this.p('blkjson - Gen ' + this.full_path)
-    sctf.create_new_empty_file(this.full_path)    
+    sctf.create_new_empty_file(this.full_path)
   }
 
   add_pull(level , separator = '[')
   {
     // igual puede ser pull01
-    
+
     // this.p('LevelPull: ' + level)
     var constant = "pull02"
-    
-    if     ( level == "1" )  constant = "pull03"
-    else if ( level == "2" )  constant = "pull04"    
-    else if ( level == "3" )  constant = "pull05"    
-    else if ( level == "4" )  constant = "pull05"    
 
-    this.content += "\"" + constant + "\": " 
+    if     ( level == "1" )  constant = "pull03"
+    else if ( level == "2" )  constant = "pull04"
+    else if ( level == "3" )  constant = "pull05"
+    else if ( level == "4" )  constant = "pull05"
+
+    this.content += "\"" + constant + "\": "
     this.content += separator
 
     sctf.create_update_full_filename(this.full_path, this.content)
-    this.clean()    
+    this.clean()
 
   }
 
@@ -57,10 +57,10 @@ class blkjson extends manage_json {
   {
     if (object_type == 'array')
       this.end_corch()
-    else    
+    else
       this.end_key()
 
-      this.end_key()      
+      this.end_key()
   }
 
 
@@ -68,14 +68,14 @@ class blkjson extends manage_json {
   save_top()
   {
     this.add_key()
-    this.clean()    
+    this.clean()
   }
 
   save_end()
   {
     this.end_key()
-    this.clean()    
-    
+    this.clean()
+
   }
 
 
@@ -85,8 +85,8 @@ class blkjson extends manage_json {
     this.code   =  ','
     sctf.create_update_full_filename(this.full_path, this.code)
 
-    this.clean()    
-    
+    this.clean()
+
   }
 
 
@@ -162,10 +162,10 @@ class blkjson extends manage_json {
   {
     let constant = 'childrens'
     var childrens_passed = 'false'
-    
-    if ( childrens_passed_str == 'yes' ) 
+
+    if ( childrens_passed_str == 'yes' )
       childrens_passed = 'true'
-    
+
     this.add_lastboolean( constant , childrens_passed)
   }
 
@@ -173,10 +173,10 @@ class blkjson extends manage_json {
   {
     let constant = 'childrens'
     var childrens_passed = 'false'
-    
-    if ( childrens_passed_str == 'yes' ) 
+
+    if ( childrens_passed_str == 'yes' )
       childrens_passed = 'true'
-    
+
     this.add_boolean( constant , childrens_passed)
   }
 
@@ -185,28 +185,28 @@ class blkjson extends manage_json {
   {
     let content = "{"
     sctf.create_update_full_filename(this.full_path, content)
-    this.clean()    
+    this.clean()
   }
 
   end_key()
   {
     let content = "}"
     sctf.create_update_full_filename(this.full_path, content)
-    this.clean()    
+    this.clean()
   }
 
   add_corch()
   {
     let content = "["
     sctf.create_update_full_filename(this.full_path, content)
-    this.clean()    
+    this.clean()
   }
 
   end_corch()
   {
     let content = "]"
     sctf.create_update_full_filename(this.full_path, content)
-    this.clean()    
+    this.clean()
   }
 
 }

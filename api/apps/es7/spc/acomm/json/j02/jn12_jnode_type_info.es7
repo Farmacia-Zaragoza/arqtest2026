@@ -9,42 +9,42 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_Jtype_Info > Printlog
 // @Jtype > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Class: 
+// Class:
 //-------------------------------------------------------------------------------------
 // - c-jnode_type_info-
 //-------------------------------------------------------------------------------------
-// Method : 
+// Method :
 //-------------------------------------------------------------------------------------
 // - d-rungen_json-          : Generate Arroba structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { jn60_info_json }     =   require(  cons.JS_ACO7  + 'json/j01/n02/jn60_generate_info_json.es7'  ),
        { printlog }          =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                           );
 
 
 class jnode_type_info extends printlog {
-  constructor(    arroba           )  
+  constructor(    arroba           )
   {
     super()
- 
+
     this.n                  =   "jnode_type_info::"
     this.m                  =   "cons"
 
         this.arroba             =   arroba
     this.s                  =   this.arroba.s
     this.a                  =   this.arroba.a
-    
+
     this.arr                =   this.arroba.a.arr
     this.jobject            =   ''
-    
-    // Print PATH for JSONS ( Comm - Spec ) 
+
+    // Print PATH for JSONS ( Comm - Spec )
     this.p('jn01_type_PageLOAD60 ' + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
 
 
@@ -56,7 +56,7 @@ class jnode_type_info extends printlog {
   rungen_json()
   {
     // this.p('jn01_jntyp_RUNNING_RUNGEN')
-    this.jobject.process_array_and_generate_json_file()	  
+    this.jobject.process_array_and_generate_json_file()
   }
 
 

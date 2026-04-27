@@ -13,19 +13,19 @@
 //-------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn10_index_site }   =   require(  cons.JS_ACO7  + 'json/j02/jn10_jnode_index_site.es7' ),
 	    shtf  			= 	require(  cons.JS_LIB7  + 'file/save_hash_to_file.es7' 	);
 class jn60_info_json extends jn10_index_site {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'jn60_info_json::'
   }
 
@@ -38,12 +38,12 @@ class jn60_info_json extends jn10_index_site {
     this.p('jn20-Generating IDX  ' + this.u.bars_sub_query )
 
     // De momento no es un JSON
-    // this.j.save_top()      
+    // this.j.save_top()
 
     // Grabar la info del site
 
     this.p('js60_Full List ' + this.s.cs.cache_path)
- 
+
     // Position normalizado a 3 digitos
     this.p('js60_Fast ListEN   ' + this.s.cs.list['en'])
     this.p('js60_Fast ListLANG ' + this.s.cs.list[this.s.cs.lang])
@@ -55,17 +55,17 @@ class jn60_info_json extends jn10_index_site {
     // content/list/nohuman/nouser/nocode/notrans/nosync/en_position_20_arroba_ssl.idx
 
     // hay que pasarle la pagina o el articulo
-    
+
     let filter = this.s.cs.position_norm
-    
+
     // GENERATING_INDEX_FOR_REST
-    
+
     if (this.s.cs.loadtype == "page")
       filter += 'v' + this.s.cs.page_norm + "(v[0-9][0-9][0-9])*"
     else (this.s.cs.loadtype == "position")
     {
       // this.p('jn60 - Ojo_POSITION___LIST ' + this.s.cs.teaser_type)
-      
+
       if (this.s.cs.teaser_type == "detailed")
       {
         // this.p('jn60 - Ojo_loADTYPE_FULLSITE')
@@ -73,22 +73,22 @@ class jn60_info_json extends jn10_index_site {
 
       }
     }
-    // 020v001    
+    // 020v001
     this.p('js60_Filter ' + filter)
     // ggggggggggggg
 
-    
-	shtf.save_hash_to_file(	    this.s.cs.list[this.s.ms.main_lang]		       , 
-								this.arr[this.s.ms.main_lang]                     ,						    
+
+	shtf.save_hash_to_file(	    this.s.cs.list[this.s.ms.main_lang]		       ,
+								this.arr[this.s.ms.main_lang]                     ,
                                 filter                             )
-	shtf.save_hash_to_file(	    this.s.cs.list[this.s.cs.lang]		       , 
-								this.arr[this.s.cs.lang]                     ,						    
+	shtf.save_hash_to_file(	    this.s.cs.list[this.s.cs.lang]		       ,
+								this.arr[this.s.cs.lang]                     ,
                                 filter                             )
 
 
   }
 
-  
+
 }
 
 exports.jn60_info_json = jn60_info_json

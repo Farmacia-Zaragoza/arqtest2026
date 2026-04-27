@@ -4,7 +4,7 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // comm::SCOMM     --> Simple object to manage any uri
 // spec::SITE_URI  --> Specific URL Object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -13,7 +13,7 @@
 
 // Must to be unique
 
-var     cons              =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"                   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { common_model }  =   require(  cons.JS_SPC7  + 'acomm/model/common_model.es7'              ),
         { site_mcomm }    =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m02_site_comm.es7'          ),
@@ -32,19 +32,19 @@ class scroll extends common_model
 
     this.n                =  'scroll::'
 
-    //1. Multi Position EN - 
+    //1. Multi Position EN -
     // Specific final comm
     this.comm             =   new site_mcomm(this.s, '0 1')
     this.copy_model()
 
     //2. URI SPECIFIC VERSION FOR ARQDRU - WILL MANAGE REAL COMMANDS
-    this.uspc             =   new site_uri( this.comm.s   , 
+    this.uspc             =   new site_uri( this.comm.s   ,
                                             this.ir       )
 
     // Generate common json file - Forced type so we knew is another page
     this.commjson         =   new arroba_jtype(this.acomm   ,'comm')
     this.run_comm_model()
-      
+
     // Generate common json file - Forced type so we knew is another page
     this.specjson         =   new arroba_jtype(this.arroba , 'spec')
     this.run_spec_model()
@@ -52,9 +52,8 @@ class scroll extends common_model
     this.thmdata          =   new theme_data(this.arroba)
 
 
-  } 
+  }
 
 } // end Class
 
 exports.scroll = scroll
-

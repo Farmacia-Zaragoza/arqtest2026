@@ -14,12 +14,12 @@
 //- d-main_index_list_process-       : Process from main file only specific position
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoMainPositionProcess > AnoMainPageProcess
 // @Anode >  ...
 //-------------------------------------------------------------------------------------
-// Execution Line : 
+// Execution Line :
 //-------------------------------------------------------------------------------------
 // main_position_process > current_load >
 //-------------------------------------------------------------------------------------
@@ -27,21 +27,21 @@
 
 
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_gindex_list_load } =   require( cons.JS_TYP7  + 'arroba/gindex/b_list/g01_idx_load.es7'),
        { idx_pointers }           =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                );
 
 class anode_gindex_main_process extends anode_gindex_list_load {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "anode_gindex_main_process::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Procesa Solo la primera posicion o la pasada
-  main_index_list_process(   index           = 'main'    , 
+  main_index_list_process(   index           = 'main'    ,
                              current_subpath = ''        )
   {
 
@@ -49,11 +49,11 @@ class anode_gindex_main_process extends anode_gindex_list_load {
     var idx     = new idx_pointers(index)
 
     this.arroba_attribs(idx, this.s.cs.position)
-  
+
     current_subpath  = 'l' +  this.dhild
 
     // l020
-    // this.p('g02_path ' + current_subpath ) 
+    // this.p('g02_path ' + current_subpath )
     // this.p('j04_jnod_Pos: ' + this.s.position + ' Cat : ' + this.cat + ' Child: ' + this.child)
 
     if ( this.child == "yes" )
@@ -66,7 +66,7 @@ class anode_gindex_main_process extends anode_gindex_list_load {
   }
 
   // Procesa Solo la primera posicion o la pasada
-  main_index_page_process(   index           = 'main'    , 
+  main_index_page_process(   index           = 'main'    ,
                              current_subpath = ''        )
   {
 
@@ -74,11 +74,11 @@ class anode_gindex_main_process extends anode_gindex_list_load {
     var idx     = new idx_pointers(index)
 
     this.arroba_attribs(idx, this.s.cs.position)
-  
+
     current_subpath  = 'l' +  this.dhild
 
     // l020
-    // this.p('g02_path ' + current_subpath ) 
+    // this.p('g02_path ' + current_subpath )
     // this.p('j04_jnod_Pos: ' + this.s.position + ' Cat : ' + this.cat + ' Child: ' + this.child)
 
     if ( this.child == "yes" )

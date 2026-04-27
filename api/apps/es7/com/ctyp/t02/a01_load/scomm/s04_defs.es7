@@ -13,14 +13,14 @@
 //- d-use_current_cache-       : Prepare cache structure for current object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Defined Objects : 
+// Defined Objects :
 //-------------------------------------------------------------------------------------
 // -o-boolean-     : b
 // -o-site-        : s
 // -o-anode-       : a
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons          =   require(  "/brqx/rcode/es7/com/agen/constants.es7" )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { cache }     =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'         );
 
@@ -29,13 +29,13 @@ class scomm_defs extends cache {
     super()
     this.n            =   "scomm_defs::"
 
-    // Objects	
+    // Objects
     this.b            =  ''
 
     this.s            =  ''
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   use_current_cache()
   {
     this.m            =  ' use_current_cache'
@@ -44,7 +44,7 @@ class scomm_defs extends cache {
     this.gen()
 
     // Si es contenido le pasamos la uri
-    if (this.s.cs.page_type == "content" || (this.s.cs.page_type == "idx")) 
+    if (this.s.cs.page_type == "content" || (this.s.cs.page_type == "idx"))
       this.a.u = this.u
 
     // this.p('s04_def-cache_path ' + this.s.cs.cache_path)
@@ -54,16 +54,16 @@ class scomm_defs extends cache {
     // this.a.rundef(this.s)
 
     this.m            =  ' use_current_cache'
-  	
+
   	// A ANODE se le pasa el site. No arroba
     this.a.run()
-  	
+
   	// Va a generar un nuevo fichero con lo comun incorporando lo nuevo
     // this.p('s04_defs_Found: ' + this.s.cs.founded_type)
     // this.p('s04_defs_Path '   + this.s.cs.cache_path + ' C ' + this.b.cache)
 
-    // this.p('s02_struc_Checking Cache Path ' + this.j.s.cache_path + ' C ' + this.b.cache)  	
-  	
+    // this.p('s02_struc_Checking Cache Path ' + this.j.s.cache_path + ' C ' + this.b.cache)
+
   }
 
 }

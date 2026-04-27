@@ -14,18 +14,18 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { index_def }    =   require(  cons.JS_TYP7  + 'fire/index_def.es7'                 )
 
 
 class index extends index_def
 {
-  
-  constructor(  pmt = '' )      
+
+  constructor(  pmt = '' )
   {
   // Atributos
-  super()  
+  super()
 
   }
 
@@ -40,30 +40,30 @@ class index extends index_def
   {
 
     // this.p('Managing robots Uri: ' + this.ir.uri )
-    
+
     let robots_count    = 0
-    
+
     var uri_str          = ''
 
     // Save robot real uri
-    this.ir.robot_uri    =   this.ir.uri    
+    this.ir.robot_uri    =   this.ir.uri
 
     let uri_arr          =   this.ir.uri.split('/')
 
-    let count_uri_arr    =  uri_arr.length  - 1                
-        
-    for (var pos in uri_arr)  
+    let count_uri_arr    =  uri_arr.length  - 1
+
+    for (var pos in uri_arr)
     {
         var str_to_manage = uri_arr[pos]
         // this.p('Managing term ' + str_to_manage)
-        
+
         if (!isNaN(str_to_manage))
         {
 			if (str_to_manage != 'rbt')
 			{
         	  uri_str += str_to_manage
-              if (pos < count_uri_arr)          	uri_str += '/'        	  
-        	} 
+              if (pos < count_uri_arr)          	uri_str += '/'
+        	}
         	else
         	  robots_count++
         }
@@ -72,32 +72,32 @@ class index extends index_def
 			if (str_to_manage != 'rbt')
 			{
         	  uri_str += str_to_manage
-              if (pos < count_uri_arr)          	uri_str += '/'        	
-        	
-        	}    
+              if (pos < count_uri_arr)          	uri_str += '/'
+
+        	}
         	else
         	  robots_count++
-        	    	
+
         }
     } // End for
-    
+
     // Si es robot lo habilitamos
     // Si no lo creamos
-    if (robots_count === 1 )   
+    if (robots_count === 1 )
        this.enable_robot_page(uri_str)
-    
+
   }
 
   //-------------------------------------------------------------------------------------
   enable_robot_page(uri_str = '')
   {
     // this.p('Managed robots Uri: ' + uri_str )
-    
+
     // this.b.robot_url_managed    = true
     this.s.b.robot_page            = true
     this.s.cs.human                = 'robot'
-    this.ir.uri                    =  uri_str 
-  	
+    this.ir.uri                    =  uri_str
+
   	// this.p('index_Robot page ' + this.s.b.robot_page)
   }
 

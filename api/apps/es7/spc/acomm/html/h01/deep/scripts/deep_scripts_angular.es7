@@ -23,7 +23,7 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =  require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { deep_scripts_base } =   require(  cons.JS_ACO7 + 'html/h01/deep/scripts/deep_scripts_base.es7')
 
@@ -49,10 +49,10 @@ class deep_scripts_angular extends deep_scripts_base {
 
 		this.script_01.integrity	= 	"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		this.script_01.crossorigin	=	'anonymous'
-		
+
 		this.script_01.src =
 			"https://code.jquery.com/jquery-3.3.1.min.js"
-		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name
 
 		this.script_01.pcreate()
 
@@ -81,7 +81,7 @@ class deep_scripts_angular extends deep_scripts_base {
 
 
 
-	build_data(path_pmt = 'dev/') 
+	build_data(path_pmt = 'dev/')
 	{
 		this.create_jquery()
 
@@ -94,7 +94,7 @@ class deep_scripts_angular extends deep_scripts_base {
 		this.create_common(path_pmt,'main.js')
 
 		// Ok [18-06-17]
-		// this.p('js_scripts_Code : >' + this.code ) 											
+		// this.p('js_scripts_Code : >' + this.code )
 
 	}
 

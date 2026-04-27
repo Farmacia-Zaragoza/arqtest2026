@@ -13,14 +13,14 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'        )
 
 
-class strings_defs extends printlog 
+class strings_defs extends printlog
 {
-  constructor() 
+  constructor()
   {
     super()
     this.n                   =  "strings_defs::"
@@ -58,7 +58,7 @@ class strings_defs extends printlog
     this.escaped_bar         =  '&#92;'
 
   }
-  
+
 
 }
 

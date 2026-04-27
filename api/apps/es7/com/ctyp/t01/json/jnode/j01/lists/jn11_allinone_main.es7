@@ -12,7 +12,7 @@
 // - d-save_json_object_list_main-          : Generate List Json Main side
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                         =   require(  'fs'                                                   ),
        empty                      =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,19 +23,19 @@ const  fs                         =   require(  'fs'                            
 // Comm Object
 class jn11_object_allinone_main extends jn01_array_anchor_main {
 
-          
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn11_object_allinone_main::'      
+    this.n                   =  'jn11_object_allinone_main::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Recursive structure
-  save_json_object_allinone_main(  
+  save_json_object_allinone_main(
             position   = 20        ,   // Indice
             enbreadcrumb   =   ''  ,  // Breadcrumb en ingles
-            depth      =  0  ) 
+            depth      =  0  )
   {
 
     this.m                   =   'save_json_object_allinone_main'
@@ -46,7 +46,7 @@ class jn11_object_allinone_main extends jn01_array_anchor_main {
 
     // h020
     // this.p('jn01_list_main_LIST_IPAGE ' + idx.iindex + ' ' + idx.hindex )
-                 
+
     // this.p('LIST_MAIN_BREADC ' + position)
 
     this.attribs(idx,position,index,depth)
@@ -65,11 +65,11 @@ class jn11_object_allinone_main extends jn01_array_anchor_main {
 
 
      let object_type = "array"
-      
+
      var current_level = this.j.index
 
-     this.k.copyvalues(this.j)     
-     
+     this.k.copyvalues(this.j)
+
      if ( this.j.child == "yes" )
      {
 
@@ -79,18 +79,18 @@ class jn11_object_allinone_main extends jn01_array_anchor_main {
 
         // Escribir la parte
 
-        this.save_json_sidebar_recursive_array_to_file(  
+        this.save_json_sidebar_recursive_array_to_file(
                 this.index                , // Index of array
                 this.arroba.j.categories  ) // Categories lang/ES Name
 
 
-        this.j.end_corch(object_type)          
+        this.j.end_corch(object_type)
 
-      } 
-   
-  
+      }
+
+
   }
-  
+
 }
 
 exports.jn11_object_allinone_main = jn11_object_allinone_main

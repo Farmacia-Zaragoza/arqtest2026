@@ -9,13 +9,13 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-sort_url-               : Sort Url parameters checking options 
-// - d-sort_url_manage_others- : Manage kb for common non ordered structures 
+// - d-sort_url-               : Sort Url parameters checking options
+// - d-sort_url_manage_others- : Manage kb for common non ordered structures
 //-------------------------------------------------------------------------------------
 // FEATURES-STRANGE_LANG
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7" );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { uri_sorts_kb }    =   require(  cons.JS_TYP7 + 'uri/u10_sorts_kb.es7' ),
       sort		          =   require(  cons.JS_LIB7  + 'sort/sort_unique.es7'	 );
@@ -25,29 +25,29 @@ class uri_sorts_uri extends uri_sorts_kb {
 
   constructor()
   {
-    super()    
-    this.n                =   'uri_sorts_uri::'        
+    super()
+    this.n                =   'uri_sorts_uri::'
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   sort_url_manage_others()
   {
     var str_to_manage      = ''
 
     this.uri_args_sorted      =  sort.sort_unique(this.uri_args_sorted)
 
-    let count_no_repe        =  this.uri_args_sorted.length                
-    let new_dash_uri         =  ''                        
-    let new_sash_uri         =  ''                        
-    let new_bars_uri         =  ''                        
+    let count_no_repe        =  this.uri_args_sorted.length
+    let new_dash_uri         =  ''
+    let new_sash_uri         =  ''
+    let new_bars_uri         =  ''
 
-    
+
     let new_dash_args        =  ''
     let new_sash_args        =  ''
-    
-    
-    let cont             =  0                          
+
+
+    let cont             =  0
 
     // this.p('u06-sort_lenen : ' + this.uri_args_sorted.length )
 
@@ -59,63 +59,63 @@ class uri_sorts_uri extends uri_sorts_kb {
     for (var pos in this.uri_args_sorted)
     {
       str_to_manage = this.uri_args_sorted[pos]
-  
+
       /// this.p('u06_sort_managing ' + str_to_manage)
 
-      new_dash_uri  +=   str_to_manage                      
-      new_sash_uri  +=   str_to_manage                       
-      new_bars_uri  +=   str_to_manage                       
+      new_dash_uri  +=   str_to_manage
+      new_sash_uri  +=   str_to_manage
+      new_bars_uri  +=   str_to_manage
 
 
-      if ((pos   >=  0           )  && 
+      if ((pos   >=  0           )  &&
          (pos   <   count_no_repe )  )
       {
-        new_dash_uri+=  '_'                          
-        new_sash_uri+=  '/'                          
-        new_bars_uri+=  '|'                          
+        new_dash_uri+=  '_'
+        new_sash_uri+=  '/'
+        new_bars_uri+=  '|'
 
       }
 
-      if  (pos   >=  0 )        
+      if  (pos   >=  0 )
         {
-          new_dash_args  +=   str_to_manage                      
-          new_sash_args  +=   str_to_manage                       
+          new_dash_args  +=   str_to_manage
+          new_sash_args  +=   str_to_manage
 
         }
 
-        if  ((pos   >=  2           )  && 
+        if  ((pos   >=  2           )  &&
            (pos   <   count_no_repe )  )
         {
-          new_dash_args+=  '_'                          
-          new_sash_args+=  '/'                          
+          new_dash_args+=  '_'
+          new_sash_args+=  '/'
         }
 
-        cont++                                  
-    
+        cont++
+
     }
 
     // Limpiamos la ultima barra
     // Necesitamos los dash para generar las cadenas de terminos
 
     this.slash_sub_query         =   new_sash_uri
-    this.bars_sub_query          =   new_bars_uri      
+    this.bars_sub_query          =   new_bars_uri
     this.dash_sub_query          =   new_dash_uri
 
     // Tambien puede ser una uri rara
-    
+
     // u09_sorts_slashqry तेज/
 
       // variables sin la ultima barra o el ultimo guion
-    this.slash_sub_query_no_bar  =   new_sash_uri.slice(0,-1)                       
-    this.dash_sub_query_no_dash  =   new_dash_uri.slice(0,-1)                       
-    this.bars_sub_query          =   new_bars_uri.slice(0,-1)                       
+    this.slash_sub_query_no_bar  =   new_sash_uri.slice(0,-1)
+    this.dash_sub_query_no_dash  =   new_dash_uri.slice(0,-1)
+    this.bars_sub_query          =   new_bars_uri.slice(0,-1)
 
     // %E0%A4%9C%E0%A5%88%E0%A4%97%E0%A5%81%E0%A4%86%E0%A4%B0
     var regstr = new RegExp(".*(%[0-9a-f])+.*")
     // this.p('u09_sorts_slashqry ' +  encodeURIComponent(this.dash_sub_query_no_dash).toLowerCase() )
-    let strange_lang =   encodeURIComponent(this.dash_sub_query_no_dash).toLowerCase()    
+    let strange_lang =   encodeURIComponent(this.dash_sub_query_no_dash).toLowerCase()
 
-    if ( regstr.exec(strange_lang) ) 
+    if ( regstr.exec(strange_lang) )
     {
       this.b.is_strange_lang = true
       this.p('------------------WARNING-STRANGE_URI-------------------')
@@ -136,20 +136,20 @@ class uri_sorts_uri extends uri_sorts_kb {
 
     let slash_ideal_uri          =   this.slash_sub_query
     let dash_ideal_uri           =   this.dash_sub_query
-    
+
     // this.p('u09_currdash: ' + this.page_iargs + ' ' + this.start_position_array )
 
     switch(this.start_position_array)
     {
       case 0:
         // No hay idiomas ni comandos
-        // this.p('NO HAY IDIOMA NI COMANDO')                
+        // this.p('NO HAY IDIOMA NI COMANDO')
         break;
       case 1:
-        // this.p('HAY IDIOMA O COMANDO ')    
-            slash_ideal_uri           =   this.page_command + '/' + this.slash_sub_query     
-            dash_ideal_uri             =   this.page_command + '_' + this.dash_sub_query     
-        
+        // this.p('HAY IDIOMA O COMANDO ')
+            slash_ideal_uri           =   this.page_command + '/' + this.slash_sub_query
+            dash_ideal_uri             =   this.page_command + '_' + this.dash_sub_query
+
         break;
       case 2:
         // Hay idioma y comando
@@ -158,28 +158,28 @@ class uri_sorts_uri extends uri_sorts_kb {
           let con_idioma_dash      =   this.s.lang + '_' + this.page_command
 
           let sin_idioma        =  this.page_command
-          slash_ideal_uri         =   sin_idioma + '/' + this.slash_sub_query     
-          dash_ideal_uri           =   sin_idioma + '_' + this.dash_sub_query     
+          slash_ideal_uri         =   sin_idioma + '/' + this.slash_sub_query
+          dash_ideal_uri           =   sin_idioma + '_' + this.dash_sub_query
         break;
       default:
         this.p('u09_nuevo_caso ' + this.start_position_array)
-        
+
     }
 
 
-    this.slash_ideal_uri        =   slash_ideal_uri     
-    this.dash_ideal_uri         =   dash_ideal_uri     
-    
-    // Esto no esta funcionando
-    this.bar_slash_ideal_uri    =  "/" +  slash_ideal_uri     
+    this.slash_ideal_uri        =   slash_ideal_uri
+    this.dash_ideal_uri         =   dash_ideal_uri
 
-    // this.p('u05_idioma   : ' + this.s.lang )                    
-    // this.p('u05_comando  : ' + this.page_command )                    
-    // this.p('u06_sorts_ideal uri: ' + this.s.cs.slash_hierarchi )                    
-  	
+    // Esto no esta funcionando
+    this.bar_slash_ideal_uri    =  "/" +  slash_ideal_uri
+
+    // this.p('u05_idioma   : ' + this.s.lang )
+    // this.p('u05_comando  : ' + this.page_command )
+    // this.p('u06_sorts_ideal uri: ' + this.s.cs.slash_hierarchi )
+
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   sort_url()
   {
@@ -190,9 +190,9 @@ class uri_sorts_uri extends uri_sorts_kb {
       this.sort_url_manage_fs()
     else
       this.sort_url_manage_others()
-                
+
   }
-  
+
 }
 
 exports.uri_sorts_uri = uri_sorts_uri

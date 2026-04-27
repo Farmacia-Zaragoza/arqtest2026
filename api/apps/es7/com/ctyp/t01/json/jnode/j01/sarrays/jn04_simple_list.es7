@@ -12,7 +12,7 @@
 // - d-save_json_simple_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,14 +23,14 @@ const  fs                        =   require(  'fs'                             
 // Pendiente de cambiar
 class jn04_comma_json_simple_list extends jn05_array_product_recursive {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                         =  'jn04_comma_json_simple_list::'      
+    this.n                         =  'jn04_comma_json_simple_list::'
   }
 
-    
+
 }
 
 exports.jn04_comma_json_simple_list = jn04_comma_json_simple_list

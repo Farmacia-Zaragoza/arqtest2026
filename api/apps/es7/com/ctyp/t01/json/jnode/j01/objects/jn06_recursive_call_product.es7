@@ -16,7 +16,7 @@
 // - d-review_childrens_recursive_product-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                         =   require(  'fs'                                                   ),
        empty                      =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -27,34 +27,34 @@ const  fs                         =   require(  'fs'                            
 // Comm Object
 class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
 
-          
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn05_commo_json_recursive_call::'      
+    this.n                   =  'jn05_commo_json_recursive_call::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Parent Otype dice de que tipo deben ser todos los ojetos a este nivel
-  review_childrens_recursive_product(  
+  review_childrens_recursive_product(
             index                      ,  // 1.Indice
             enbreadcrumb  =   ''       ,  // 2.Breadcrumb en ingles
-            depth         =  0         ,  // 3. 
+            depth         =  0         ,  // 3.
             parent_otype  =  'object'  )  // 4.
   {
     this.m         =  'review_childrens_recursive_object'
 
     var idx = new idx_pointers(index)
-    
+
     let cats                   = this.gethash_arr(this.s.ms.main_lang , idx.jindex)
 
     // Object.keys(myObj).length
     var iterations           = Object.keys(cats).length - 1
 
-    //this.p('jn06_rc ' + this.s.ms.main_lang + ' ' + idx.jindex)    
+    //this.p('jn06_rc ' + this.s.ms.main_lang + ' ' + idx.jindex)
     //this.p('jn06 rc ' + this.arr['en']['j020v020']['1'] )
     //this.p('jn06_rc ' + last_element)
-    
+
 
     for (var pos in cats)
     {
@@ -74,9 +74,9 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
       let current_level        = this.j.index
       let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.j.item).toLowerCase()
 
-      
+
       // this.p ('jn06_rcp ' + pos + '  ' + current_level + ' - ' +  this.j.item )
-      
+
       this.links_management(idx , pos)
 
       // FALTA REVISAR LOS ROBOTS
@@ -85,30 +85,30 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
 
       switch(this.j.item)
       {
-        case "anchor"  : 
+        case "anchor"  :
           // this.p('jn06_rcsv_prod ANCHOR  ' + this.j.value )
           if (this.j.value != "" )
           {
             this.s.b.anchor_allowed =  ( this.strpos(this.s.cs.anchor_list, this.j.value) !== false )
-            if (!this.s.b.anchor_allowed) 
+            if (!this.s.b.anchor_allowed)
             {
-              this.j.value = '' ; this.k.value = '' 
+              this.j.value = '' ; this.k.value = ''
             }
           }
-            
-          break ; 
+
+          break ;
 
         case "metatags": this.j.value = this.s.ms.metatags               ; break ;
 
         case "anchor_list": this.j.value = this.s.cs.anchor_list         ; break ;
       }
-      
+
       if (is_alist)
         this.attribs(idx, pos , index, depth)
 
-      // this.p ("jn06_si_rcsv  : " + this.j.item +  ' PT '  + parent_otype + ' T ' + this.j.link )    
+      // this.p ("jn06_si_rcsv  : " + this.j.item +  ' PT '  + parent_otype + ' T ' + this.j.link )
 
-      let current_otype = this.j.otype            
+      let current_otype = this.j.otype
 
       if ( this.j.child == "yes" )
       {
@@ -116,10 +116,10 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
         // this.p ("jn06_rc_no_entra : Have Childrens: " + this.j.item)
 
         // Le pasamos el separador de los hijos
-        if (parent_otype == "array")   this.k.createspecificpart(current_otype)        
-        else                           this.j.createspecificpart(current_otype)                
+        if (parent_otype == "array")   this.k.createspecificpart(current_otype)
+        else                           this.j.createspecificpart(current_otype)
 
-        this.review_childrens_recursive_product(  
+        this.review_childrens_recursive_product(
             current_level          ,
             current_enbreadcrumb       ,  // Breadcrumb en ingles
             depth +1            ,
@@ -128,17 +128,17 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
 
         if (parent_otype == "array")           this.k.end_pull(current_otype)
         else          this.j.end_pull(current_otype)
-    
+
         // Si ha llamado a algun hijo es un tipo ya generado
         this.b.type_generated = true
-        
-      } 
+
+      }
       else
       {
-          // this.p('jn06_rc ' + this.j.item +  '  ' +  this.j.index + ' t ' + this.j.type + ' v ' + this.j.value)  
-        
+          // this.p('jn06_rc ' + this.j.item +  '  ' +  this.j.index + ' t ' + this.j.type + ' v ' + this.j.value)
+
           this.manage_array_parragraphs( current_otype , current_level )
-          
+
           // Si se genera un tipo interno y el tipo generado se gestiona internamente
       }
 
@@ -146,10 +146,10 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
       // this.p('jn06_rcsv - Anchor page name _DGG ' + this.s.cs.page_name + ' J ' + this.j.item + '-')
       // this.p('jn06_rcsv - pageseps _DGG ' + this.s.cs.pagesep_list)
 
-      // Anchor List menu 
-      if ((this.s.cs.page_name == "product"    ) || 
-          (this.s.cs.page_name == "front"    )    )  
-      if ((this.j.item         == "anchor_list") && 
+      // Anchor List menu
+      if ((this.s.cs.page_name == "product"    ) ||
+          (this.s.cs.page_name == "front"    )    )
+      if ((this.j.item         == "anchor_list") &&
           (this.s.cs.pagesep_list != ""          ) )
       {
          // esto habria que generarlo solo si hay anchor permitido
@@ -157,10 +157,10 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
             this.j.add_separator()
 
          this.save_json_object_anchor_main(depth)
-         // Estamos manejando un anchor		  
+         // Estamos manejando un anchor
 		     // this.p('jn06_Anchor DGGB ENTERINGGG' + this.j.value + ' Allowed ' + this.s.b.anchor_allowed )
          // this.p('jn06_time_to_generate_anchors '+ this.anchor_list)
-         
+
 //         if (this.b.robot_page) this.jJ.type = 'unlink'
          this.b.type_generated = true
 
@@ -169,11 +169,11 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
 
       if ( (--iterations  >= 0) && (this.b.type_generated) )
         this.j.add_separator()
-    
+
      }  // End For
 
   }
-  
+
 }
 
 exports.jn06_commo_json_recursive_call_product = jn06_commo_json_recursive_call_product

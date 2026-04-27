@@ -13,32 +13,32 @@
 //- d-generate_content_file_langs-    : Generate file information for any lang
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoLoad > AnoProcess >
 // @Anode >  ...
 //-------------------------------------------------------------------------------------
-// Execution Line : 
+// Execution Line :
 //-------------------------------------------------------------------------------------
-// curr_load > curr_process > 
+// curr_load > curr_process >
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var     cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { anode_hbranch_process } =   require(  cons.JS_TYP7  + 'arroba/anode/a04_hbranch/an49_process.es7'        )
 
 
 class anode_hbranch_load extends anode_hbranch_process {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "anode_hbranch_load::"
   }
 
-  //---------------------------------------------------------------------------------------------  
-  current_hbranch_load(  lang                = 'en'  ,  
+  //---------------------------------------------------------------------------------------------
+  current_hbranch_load(  lang                = 'en'  ,
                               array_index_string  = ''    ,
                               file_structure_path = ''    ,
                               current_subpath     = ''    ,
@@ -53,21 +53,21 @@ class anode_hbranch_load extends anode_hbranch_process {
 
     this.set_lang_content_arr( lang )
 
-    // this.p('j04_Before_ : ' + lang + '  ' + array_index_string )    
+    // this.p('j04_Before_ : ' + lang + '  ' + array_index_string )
     // en -  l000_l001_l000
-    this.content_arr[lang][array_index_string]  = this.s.ms.contents_path +  file_structure_path + '/' + lang + '_cat'   
+    this.content_arr[lang][array_index_string]  = this.s.ms.contents_path +  file_structure_path + '/' + lang + '_cat'
 
   // Generate array of files for fast load
   // En este punto debemos saber si los ficheros son hojas o no
-  
+
   // Esta parte no se si la vamos a hacer
     ////if ( lang == 'en' )
     ////  this.generate_content_file_langs(content_index , current_subpath)
 
-    // this.p('j04_New File to Load:  '  + this.content_arr[content_index][lang])  
+    // this.p('j04_New File to Load:  '  + this.content_arr[content_index][lang])
 
     // Cargamos el array con la informacion
-    
+
     var file_to_load = this.content_arr[lang][array_index_string]
 
     // if (lang == 'es')
@@ -83,22 +83,22 @@ class anode_hbranch_load extends anode_hbranch_process {
     // an47_CS: l040/architecture/cloud
     // an47_BR: kb/architecture/cloud
 
-        
+
     this.generate_array_from_file( lang ,  file_to_load)
     // load_file_information - generate
-    
+
     // kb/systems/databases
     // if (lang == 'es')
     this.p('an47_buscando slash_en ' + this.s.cs.slash_hierarchi +  " == B " + breadcrumb)
     this.p('an47_buscando slash_en ' + this.s.cs.slash_hierarchi +  " == L " + breadcrumb_lang)
-    
+
     var found_breadcrumb = breadcrumb
 
-    if ( breadcrumb      == this.s.cs.slash_hierarchi ) 
+    if ( breadcrumb      == this.s.cs.slash_hierarchi )
       this.b.found_breadcrumb      = true
 
 
-    // if ( breadcrumb_lang == this.s.cs.slash_hierarchi ) 
+    // if ( breadcrumb_lang == this.s.cs.slash_hierarchi )
     // {
     //  this.b.found_breadcrumb      = true
     //  found_breadcrumb = breadcrumb_lang
@@ -109,9 +109,9 @@ class anode_hbranch_load extends anode_hbranch_process {
       this.s.cs.founded_index      = array_index_string
 
       this.s.cs.founded_file_structure = file_structure_path
-      
+
       var ipage = 'i' + array_index_string
-      
+
       // Anchor y vacio. Es correcto
       // this.p('an47_Pased LANG ' + lang )
 
@@ -121,8 +121,8 @@ class anode_hbranch_load extends anode_hbranch_process {
       // En este caso ms y cs tienen el mismo lang
       // es/kb/systems/databases
       this.s.cs.founded_lang_breadcrumb  = this.s.ms.lang + '/' + found_breadcrumb
-      
-      this.rslash( breadcrumb )      
+
+      this.rslash( breadcrumb )
       this.s.cs.founded_dash_breadcrumb = this.result
       this.s.cs.founded_category        = this.link
       this.s.cs.founded_title           = title + ' - ' + this.link
@@ -130,10 +130,10 @@ class anode_hbranch_load extends anode_hbranch_process {
       // To know if is a list or a product : Ntype ( branch | sheet )
       this.s.cs.founded_type   = this.ntype
 
-    
+
       // BREADCRUMB - CAT
       // if (lang == 'es')
-      this.p('an47_FIN_BUSQUEDA_ES_TRUE [' + lang + ']  ' + this.s.cs.founded_slash_breadcrumb) 
+      this.p('an47_FIN_BUSQUEDA_ES_TRUE [' + lang + ']  ' + this.s.cs.founded_slash_breadcrumb)
 
       if (this.ntype == 'sheet')
       {
@@ -148,10 +148,10 @@ class anode_hbranch_load extends anode_hbranch_process {
 
           // kb/architecture
           // let new_subpath              = current_subpath     + '/'   + this.item
-        
-        
+
+
         // Tengo dudas sis se llama aqui
-        // this.current_hsheet_process(lang                  , 
+        // this.current_hsheet_process(lang                  ,
       	//                                 new_index_string          ,
       	//                                 new_file_structure_path         ,
         //                                 new_subpath             ,
@@ -159,19 +159,19 @@ class anode_hbranch_load extends anode_hbranch_process {
 
 
         // model
-        this.p('an47_FIN_BUSQUEDA_ITEM  [' + lang + ']   ' + this.link) 
+        this.p('an47_FIN_BUSQUEDA_ITEM  [' + lang + ']   ' + this.link)
         // Architecture - History - The Model
-        this.p('an47_FIN_BUSQUEDA_HOVER [' + lang + ']   ' + this.hover) 
+        this.p('an47_FIN_BUSQUEDA_HOVER [' + lang + ']   ' + this.hover)
 
-        this.p('an47_FIN_BUSQUEDA_FILE  [' + lang + ']   ' + file_to_load) 
+        this.p('an47_FIN_BUSQUEDA_FILE  [' + lang + ']   ' + file_to_load)
 
 
 
         // LLAMAR a generar HOJA FINAL TENIENDO EN CUENTA LAS aes
-        
-        
+
+
         // Tengo dudas sis se llama aqui
-        this.current_hsheet_process(lang                  , 
+        this.current_hsheet_process(lang                  ,
       	                                 array_index_string          ,
       	                                 file_structure_path         ,
                                          current_subpath             ,
@@ -181,24 +181,24 @@ class anode_hbranch_load extends anode_hbranch_process {
 
       }
       //if (this.s.cs.page_type == "content"  && (lang != "en") )
-      // this.generate_array_from_file_review_size( lang ,  file_to_load)    
+      // this.generate_array_from_file_review_size( lang ,  file_to_load)
       //else
       //    this.generate_array_from_file( lang ,  file_to_load)
     // load_file_information - generate
 
-      // this.p('an47_FIN_CATEGORIA '   + this.s.cs.founded_category) 
-      // this.p('an47_FIN_TYPE '        + this.s.cs.founded_type) 
+      // this.p('an47_FIN_CATEGORIA '   + this.s.cs.founded_category)
+      // this.p('an47_FIN_TYPE '        + this.s.cs.founded_type)
 
       // AQUI FALTA CARGAR EL FICHERO y la Hoja, pues estamos en el padre
 
 
     }
-    else    
+    else
     {
       //if (lang == 'es')
       //this.p('an47_LANG ' + lang +  '  '  + breadcrumb)
 
-      this.current_hbranch_process( lang                        , 
+      this.current_hbranch_process( lang                        ,
       	                                 array_index_string          ,
       	                                 file_structure_path         ,
                                          current_subpath             ,
@@ -207,14 +207,14 @@ class anode_hbranch_load extends anode_hbranch_process {
                                          title                       )
 
     }
-                                            
+
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // MANAGING LANGUAGE BREADCRUMBS
 
-  current_hbranch_load_es(    lang                = 'en'  ,  
+  current_hbranch_load_es(    lang                = 'en'  ,
                               array_index_string  = ''    ,
                               file_structure_path = ''    ,
                               current_subpath     = ''    ,
@@ -228,21 +228,21 @@ class anode_hbranch_load extends anode_hbranch_process {
     // Para el ingles lo generamos aqui ==> Define Array
     this.set_lang_content_arr( lang )
 
-    // this.p('j04_Before_ : ' + lang + '  ' + array_index_string )    
+    // this.p('j04_Before_ : ' + lang + '  ' + array_index_string )
     // en -  l000_l001_l000
-    this.content_arr[lang][array_index_string]  = this.s.ms.contents_path +  file_structure_path + '/' + lang + '_cat'   
+    this.content_arr[lang][array_index_string]  = this.s.ms.contents_path +  file_structure_path + '/' + lang + '_cat'
 
   // Generate array of files for fast load
   // En este punto debemos saber si los ficheros son hojas o no
-  
+
   // Esta parte no se si la vamos a hacer
     ////if ( lang == 'en' )
     ////  this.generate_content_file_langs(content_index , current_subpath)
 
-    // this.p('j04_New File to Load:  '  + this.content_arr[content_index][lang])  
+    // this.p('j04_New File to Load:  '  + this.content_arr[content_index][lang])
 
     // Cargamos el array con la informacion
-    
+
     var file_to_load = this.content_arr[lang][array_index_string]
 
     // if (lang == 'es')
@@ -258,15 +258,15 @@ class anode_hbranch_load extends anode_hbranch_process {
     // an47_CS: l040/architecture/cloud
     // an47_BR: kb/architecture/cloud
 
-        
+
     this.generate_array_from_file( lang ,  file_to_load)
     // load_file_information - generate
-    
+
     // kb/systems/databases
     // if (lang == 'es')
     // this.p('an47_buscando slash_es ' + this.s.cs.slash_hierarchi + ' = B ' + breadcrumb )
     // this.p('an47_buscando slash_es ' + this.s.cs.slash_hierarchi + ' = L ' + breadcrumb_lang )
-    
+
     var found_breadcrumb = breadcrumb
 
     if ( breadcrumb == this.s.cs.slash_hierarchi )
@@ -277,15 +277,15 @@ class anode_hbranch_load extends anode_hbranch_process {
       this.b.found_breadcrumb_lang      = true
       found_breadcrumb = breadcrumb_lang
     }
-      
+
     if ( this.b.found_breadcrumb_lang )
     {
       this.s.cs.founded_index      = array_index_string
 
       this.s.cs.founded_file_structure = file_structure_path
-      
+
       var ipage = 'i' + array_index_string
-      
+
       // Anchor y vacio. Es correcto
       // this.p('an47_Pased LANG ' + lang )
 
@@ -295,8 +295,8 @@ class anode_hbranch_load extends anode_hbranch_process {
       // En este caso ms y cs tienen el mismo lang
       // es/kb/systems/databases
       this.s.cs.founded_lang_breadcrumb  = this.s.ms.lang + '/' + found_breadcrumb
-      
-      this.rslash( found_breadcrumb )      
+
+      this.rslash( found_breadcrumb )
       this.s.cs.founded_dash_breadcrumb = this.result
       this.s.cs.founded_category   = this.link
       this.s.cs.founded_title      = title + ' ' + this.value
@@ -306,11 +306,11 @@ class anode_hbranch_load extends anode_hbranch_process {
 
       // BREADCRUMB - CAT
       // if (lang == 'es')
-      this.p('an47_FIN_BUSQUEDA_ES_TRUE [' + lang + '] ' + this.s.cs.founded_slash_breadcrumb) 
-      // this.p('an47_FIN_CATEGORIA '   + this.s.cs.founded_category) 
-      // this.p('an47_FIN_TYPE '        + this.s.cs.founded_type) 
+      this.p('an47_FIN_BUSQUEDA_ES_TRUE [' + lang + '] ' + this.s.cs.founded_slash_breadcrumb)
+      // this.p('an47_FIN_CATEGORIA '   + this.s.cs.founded_category)
+      // this.p('an47_FIN_TYPE '        + this.s.cs.founded_type)
 
-      this.current_hsheet_process_es( lang                        , 
+      this.current_hsheet_process_es( lang                        ,
       	                                 array_index_string          ,
       	                                 file_structure_path         ,
                                          current_subpath             ,
@@ -319,23 +319,23 @@ class anode_hbranch_load extends anode_hbranch_process {
                                          title                       )
 
       // let  file_to_load  = this.s.ms.contents_path +  file_structure_path + '/' + lang + '_cat'
-      
-      
+
+
       // CALL TO GENERATE LOAD this.item - this.hover  file_to_load
       // HEMOS ENCONTRADO LA HOJA - AHORA HAY QUE CARGAR EL FICHERO
-      
+
       // cache_run::load_file_information - an47_FIN_BUSQUEDA_ITEM  [en]  model
       // cache_run::load_file_information - an47_FIN_BUSQUEDA_HOVER [en]  Architecture - History - The Model
       // cache_run::load_file_information - an47_FIN_BUSQUEDA_FILE  [en]  /brqx/struc/arq/kb/arqkb/l040/a_architecture/a_history/a_model/en_cat
 
 
     }
-    else    
+    else
     {
       //if (lang == 'es')
       //this.p('an47_LANG ' + lang +  '  '  + breadcrumb)
 
-      this.current_hbranch_process_es( lang                        , 
+      this.current_hbranch_process_es( lang                        ,
       	                                 array_index_string          ,
       	                                 file_structure_path         ,
                                          current_subpath             ,
@@ -344,7 +344,7 @@ class anode_hbranch_load extends anode_hbranch_process {
                                          title                       )
 
     }
-                                            
+
   }
 
 }

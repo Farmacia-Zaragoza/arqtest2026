@@ -22,7 +22,7 @@
 // - create_common  	 		: Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons             =  require(  "/brqx/rcode/es7/com/agen/constants.es7"     )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { html_style } 	=  require(	cons.JS_TYP7 + 'html/style/html_style.es7'	  ),
       { getset }        =  require( cons.JS_TYP7 + 'html/style/getset.es7'        );
@@ -44,7 +44,7 @@ class deep_scripts_base extends getset {
 
 	}
 
-	create_common( path_pmt = 'dev/' , 
+	create_common( path_pmt = 'dev/' ,
 	               js_name = 'scripts.js') {
 		this.script_01.async = ''
 

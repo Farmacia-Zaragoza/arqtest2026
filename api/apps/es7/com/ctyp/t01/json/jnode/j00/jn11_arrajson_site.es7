@@ -11,14 +11,14 @@
 //- event_create             : Create event jquery method
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const 	echo 				= 	require(	cons.NODE_MOD   + 'node-echo'					),
 		sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
 		{ typejson_array }	= 	require(	cons.JS_TYP7     + 'json/jtype/typejson_array.es7');
 
 class arrajson_site extends typejson_array {
-	constructor(file_name = '') 
+	constructor(file_name = '')
 	{
 		super(file_name)
 		this.n 				= 	"commjson_site::"
@@ -26,14 +26,14 @@ class arrajson_site extends typejson_array {
 
 	createcommonsearchtype()
 	{
-		 
+
 		this.managesearchcommontype(false)
 
 		this.create()
 
 		sctf.update_file_with_code(this.full_path, this.code)
 
-		this.clean()		
+		this.clean()
 	}
 
 	createcommonsearchpart(object_type = 'array')
@@ -41,20 +41,20 @@ class arrajson_site extends typejson_array {
 
 		this.add_key()
 
-		this.managesearchcommontype(true)											
+		this.managesearchcommontype(true)
 
 		//this.add_separator()
-		
-		this.add_childrens(	this.child				)					
+
+		this.add_childrens(	this.child				)
 
 		if (object_type == 'array')
 			this.add_pull(		this.level , '['				)
-		else		
+		else
 			this.add_pull(		this.level , '{'				)
 
 		sctf.update_file_with_code(this.full_path, this.content)
 
-		this.clean()															
+		this.clean()
 	}
 
 
@@ -65,16 +65,16 @@ class arrajson_site extends typejson_array {
 			case "allowedterms":
 				this.add_index(					this.index						)
 				this.add_type(					this.type						)
-				this.add_lastelement( 		'terms' , this.chain_terms	)		
-				
+				this.add_lastelement( 		'terms' , this.chain_terms	)
+
 				break;
 
 			case "currentterms":
 				this.add_index(					this.index						)
 				this.add_type(					this.type						)
-				this.add_element( 		'mainterms' , this.chain_mainterms	)		
-				this.add_lastelement( 		'terms' , this.chain_terms	)		
-				
+				this.add_element( 		'mainterms' , this.chain_mainterms	)
+				this.add_lastelement( 		'terms' , this.chain_terms	)
+
 				break;
 
 			case "searchitems":
@@ -89,12 +89,12 @@ class arrajson_site extends typejson_array {
 				this.add_element(    'countries'		,		this.countries		)
 				this.add_element(    'cities'			,		this.citiew			)
 				this.add_element(    'locations'		,		this.locations		)
-				this.add_element(    'places'		,		this.places			)				
+				this.add_element(    'places'		,		this.places			)
 				this.add_element(    'years'			,		this.years			)
 				this.add_element(    'dates'			,		this.dates			)
 				this.add_element(    'natures'		,		this.natures		)
-				this.add_element( 		'mainterms' , this.chain_mainterms	)		
-				this.add_lastelement( 		'terms' , this.chain_terms	)		
+				this.add_element( 		'mainterms' , this.chain_mainterms	)
+				this.add_lastelement( 		'terms' , this.chain_terms	)
 
 				break;
 
@@ -105,15 +105,15 @@ class arrajson_site extends typejson_array {
 				this.add_element(    'country'		,		this.country		)
 				this.add_element(    'city'			,		this.city			)
 				this.add_element(    'location'		,		this.location		)
-				this.add_element(    'place'		,		this.place			)				
+				this.add_element(    'place'		,		this.place			)
 				this.add_element(    'year'			,		this.year			)
 				this.add_element(    'date'			,		this.date			)
 				this.add_element(    'nature'		,		this.nature		)
 				this.add_element(    'img'		    ,		this.photo		)
 
-				
-				this.add_element( 		'mainterms' , this.chain_mainterms	)		
-				this.add_lastelement( 		'terms' , this.chain_terms	)		
+
+				this.add_element( 		'mainterms' , this.chain_mainterms	)
+				this.add_lastelement( 		'terms' , this.chain_terms	)
 
 				break;
 

@@ -22,7 +22,7 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { site_defs }    =   require(  cons.JS_TYP7  + 'site/s03_site_defs.es7'  ),
         sort		     =   require(  cons.JS_LIB7  + 'sort/sort_unique.es7'	 );

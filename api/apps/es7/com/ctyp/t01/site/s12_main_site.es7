@@ -13,14 +13,14 @@
 // - d-copy-   : Copy site values
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Main_Site> > PrintLog
 // @Site > @Log
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"    )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'              )
 
@@ -28,13 +28,13 @@ class main_site extends printlog {
   constructor() {
     super()
     this.n                   =   "main_site::"
-    
+
     this.load                =   "disk"
 
     // Idioma principal de la arquitectura ( actualizable por arroba properties )
     this.main_lang           =   "en"
     this.default_lang        =   "es"
-    
+
     this.lang                =   "es"
     this.slan                =   "n"      // No Multi Language by default
     this.robot               =   ''
@@ -49,7 +49,7 @@ class main_site extends printlog {
     this.ssl_page            =  'nnn'
 
     // Paths for Json files
-    
+
     this.j_comm_path         =  ''
     this.j_spec_path         =  ''
     this.j_cont_path         =  ''
@@ -78,9 +78,9 @@ class main_site extends printlog {
     this.j_cont_ck_cod       =   0
 
     this.lnk_generation_type =  ''
-    
-    this.allowed_langs       =  ''    
-    this.allowed_commands    =  ''   
+
+    this.allowed_langs       =  ''
+    this.allowed_commands    =  ''
 
     // Default exception
     this.exception           =  'No allowed uri'
@@ -101,7 +101,7 @@ class main_site extends printlog {
 
     this.server              =   ""
     this.env                 =   "dev"
-    
+
     // ICON - LOGO
 
     this.icon                =  ""
@@ -121,12 +121,12 @@ class main_site extends printlog {
 
     this.base_path           =  ''
 
-    // 
+    //
     this.photos_link         =  "photos"  // To manage image resolutions - phptos links
     this.photos_path         =  "/ssd/photos"  // To manage image resolutions - phptos links
 
 
-    this.current_photo_path  =  "" 
+    this.current_photo_path  =  ""
 
     this.metatags            =  ""
 
@@ -139,25 +139,25 @@ class main_site extends printlog {
     // Images path r_img - Will change with every project
     this.images_path         = ''
 
-    // Real site path (run path) 
+    // Real site path (run path)
     // /mnt/ssd/brqx/run/arq/arqdru
     this.site_path           = ''
 
     this.general_cache_path  = ''
- 
+
 
     this.start_time          =  ''
   }
 
   //---------------------------------------------------------------------------------------------
   copy(msite) {
-    
+
     this.load                =   msite.load
 
     // Idioma principal de la arquitectura
     this.main_lang           =   msite.main_lang
     this.default_lang        =   msite.default_lang
-    
+
     this.lang                =   msite.lang
     this.slan                =   msite.slan
     this.robot               =   msite.robot
@@ -201,10 +201,10 @@ class main_site extends printlog {
     this.j_cont_ck_cod       =   msite.j_cont_ck_cod
 
     // Syntax validate result for jsons
-    
+
 
     this.lnk_generation_type =   msite.lnk_generation_type
-    
+
     this.allowed_langs       =   msite.allowed_langs
     this.allowed_commands    =   msite.allowed_commands
 
@@ -254,7 +254,7 @@ class main_site extends printlog {
     this.photos_path         =   msite.photos_path
 
     // Customized path for current photo
-    this.current_photo_path  =   msite.current_photo_path 
+    this.current_photo_path  =   msite.current_photo_path
 
 
     this.images_path         =   msite.images_path

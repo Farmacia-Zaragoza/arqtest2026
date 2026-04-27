@@ -14,7 +14,7 @@
 //- d-main_full_content_cache_save-    : Save cache content
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"     )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const	fs 				= 	require(  'fs'												),
 	    shtf  			= 	require(  cons.JS_LIB7  + 'file/save_hash_to_file.es7' 	),
@@ -22,37 +22,37 @@ const	fs 				= 	require(  'fs'												),
         { cache_del }   =   require(  cons.JS_TYP7  + 'cache/c04_cache_del.es7'         );
 
 class cache_save extends cache_del {
-  constructor() 
+  constructor()
   {
     super()
     this.n                          =   "cache_save::"
   }
 
-  
+
   // Save the cache files in disk ( pending)
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   main_full_file_cache_save()
   {
   	// this.p('cach_sv03_Vamos a generar el fichero cache ' + this.cache_path)
-  	
+
     // Es un HASH of HASH -- this.content_arr[content_index][lang]
   	// this.p('jn06_Longitud del array ' + Object.entries(this.content_arr).length)
 
     // for (var pos_lang in this.content_arr )
     //   this.p('Pos ' + pos_lang)
 
-	satf.save_hash2d_to_file(	this.s.cs.cache_path				, 
+	satf.save_hash2d_to_file(	this.s.cs.cache_path				,
 								this.content_arr						)
-  	
+
   }
   // Save contents in file - Save Hash To File
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   main_full_content_cache_save()
   {
     // Aqui se genera la estructtura cache
   	// this.p('cach_sv03_Vamos a generar el fichero cache ' + this.s.cs.cache_path)
 
-	shtf.save_hash_to_file(	    this.s.cs.cache_path				, 
+	shtf.save_hash_to_file(	    this.s.cs.cache_path				,
 								this.tsb						)
 
   }

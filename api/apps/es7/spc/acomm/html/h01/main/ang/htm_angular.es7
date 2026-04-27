@@ -12,11 +12,11 @@
 //<!DOCTYPE html>
 //<html lang="en">
 //<head>
-//<body> 
+//<body>
 // ------------------------------------------------------------------------------------
 //* DOCTYPE
 //  HTML
-//   HEAD 
+//   HEAD
 //	 BODY
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
@@ -25,11 +25,11 @@
 // - create_body  	 : Generate body
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  { common_html } 	= 	require(	cons.JS_ACO7 + 'html/h01/main/comm/common_html.es7'			), 		
-	   { head_angular }	= 	require(	cons.JS_ACO7 + 'html/h01/main/ang/head_angular.es7'	),					
-	   { body_angular }	= 	require(	cons.JS_ACO7 + 'html/h01/main/ang/body_angular.es7'	);					
+const  { common_html } 	= 	require(	cons.JS_ACO7 + 'html/h01/main/comm/common_html.es7'			),
+	   { head_angular }	= 	require(	cons.JS_ACO7 + 'html/h01/main/ang/head_angular.es7'	),
+	   { body_angular }	= 	require(	cons.JS_ACO7 + 'html/h01/main/ang/body_angular.es7'	);
 
 
 class htm_angular extends common_html  {
@@ -37,33 +37,33 @@ class htm_angular extends common_html  {
     constructor (     container						)
 	{
         let tag_type     			= 	'html'
-    	super(				container	)			
+    	super(				container	)
 
         // this.p('htm_ang_COMMON_URL ' + this.container.jurl_comm)
 
         this.n                  =   "htm_angular::"
     }
-    
+
 	//<head>
     create_head()
     {
 		// External Head
-		this.head_01	=	
+		this.head_01	=
 				new head_angular(this.container)	// Drupal theme structure
 
-//		this.content			+=  '<HEAD>HOLA</HEAD>' //this.head_01.code					
-		this.code			+=  this.head_01.code					
-			}		
+//		this.content			+=  '<HEAD>HOLA</HEAD>' //this.head_01.code
+		this.code			+=  this.head_01.code
+			}
 
     create_body()
     {
 		// External Div
-		this.body_01	=	
+		this.body_01	=
 				new body_angular( this.container )	// Drupal theme structure
 
-//		this.content			+=  '<BODY>HOLA</BODY>'  //this.body_01.code					
-		this.code				+=  this.body_01.code					
-	}		
+//		this.content			+=  '<BODY>HOLA</BODY>'  //this.body_01.code
+		this.code				+=  this.body_01.code
+	}
 
 }
 

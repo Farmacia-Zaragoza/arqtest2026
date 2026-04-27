@@ -9,16 +9,16 @@
 // Fast node load - Replace Mysql connections - Taxonomy Class
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Class: 
+// Class:
 //-------------------------------------------------------------------------------------
 // - c-uri_ports-
 //-------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_ports-       : Manage ports and protocols in page 
+// - d-manage_ports-       : Manage ports and protocols in page
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_cache }    =   require(  cons.JS_TYP7 + 'uri/u03_cache.es7'              );
 
@@ -26,24 +26,24 @@ class uri_ports extends uri_cache {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_ports::'        
+    super()
+    this.n               =   'uri_ports::'
   }
 
   manage_ports()
   {
-    
+
     this.domain          = this.ir.domain
     this.uri             = this.ir.uri
 
     this.robot_uri       = this.ir.robot_uri
-    
+
     this.port            = this.ir.port
     this.server_protocol = this.ir.protocol
 
     // Replace dot by dash
     this.rdot(this.domain)
-    
+
     this.dash_domain     = this.result
 
     // req.secure
@@ -52,39 +52,39 @@ class uri_ports extends uri_cache {
 
     var isSecure = false
 
-    if ( this.server_protocol == "https" ) isSecure = true 
-    
+    if ( this.server_protocol == "https" ) isSecure = true
 
-    if (isSecure) 
+
+    if (isSecure)
     {
       // this.p('PAGE_IS_SSL_LALAL_SSL')
       this.s.ms.ssl_page     = "ssl"
       this.http_domain   = "https://" + this.domain
-    } 
-    else 
+    }
+    else
     {
       this.s.ms.ssl_page     = "nnn"
       this.http_domain   = "http://"  + this.domain
     }
-  
+
     // To change for siteurl
-    this.s.cs.http_domainbar   = this.http_domain + '/' 
+    this.s.cs.http_domainbar   = this.http_domain + '/'
 
     // this.p('u02_ports defining_Domain ' + this.s.cs.http_domainbar )
 
-    if (  this.port == 80 || this.s.ms.ssl_page == "nnn") 
+    if (  this.port == 80 || this.s.ms.ssl_page == "nnn")
     {
         this.dash_port = "_" + "http" + "_"
-    } 
+    }
     else if (this.port == 443 || this.s.ms.ssl_page == "ssl")
-    { 
+    {
         this.dash_port = "_" + "https" + "_"
-    } 
-    else 
+    }
+    else
         this.dash_port = "_" + this.port + "_"
 
   }
-  
+
 }
 
 exports.uri_ports = uri_ports

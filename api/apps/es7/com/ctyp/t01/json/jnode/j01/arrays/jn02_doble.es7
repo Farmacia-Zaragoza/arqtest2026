@@ -13,7 +13,7 @@
 // - d-save_json_sidebar_doble_array_to_file-          : Generate Json Doble
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                            =   require(  'fs'                                  ),
        empty                         =   require(  cons.NODE_MOD + 'is-empty'                        ),
@@ -24,26 +24,26 @@ const  fs                            =   require(  'fs'                         
 
 class jn02_comma_json_doble extends jn03_comma_json_recursive {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn02_comma_json_doble::'      
+    this.n                   =  'jn02_comma_json_doble::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Used to generate Left and Right Menus
   // Recursive structure
-  save_json_sidebar_doble_array_to_file(  
+  save_json_sidebar_doble_array_to_file(
             index           ,   // Indice
             enbreadcrumb   =   ''  ,  // Breadcrumb en ingles
-            depth      =  0  ) 
+            depth      =  0  )
   {
 
     var idx                    = new idx_pointers(index)
-    
+
     let cats                   = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                              ;
-    
+
     var iterations           = Object.keys(cats).length - 1
 
     // 006 - en
@@ -59,7 +59,7 @@ class jn02_comma_json_doble extends jn03_comma_json_recursive {
 
       // add_json block
       this.rvlash_inner(current_level)
-      this.index               = this.result   
+      this.index               = this.result
 
       this.j.index             =   this.index
 
@@ -74,7 +74,7 @@ class jn02_comma_json_doble extends jn03_comma_json_recursive {
 
         // Escribir la parte
 
-        this.review_childrens_doble_array(  
+        this.review_childrens_doble_array(
           current_level          ,
           enbreadcrumb       ,  // Breadcrumb en ingles
           depth + 1          ,
@@ -83,21 +83,21 @@ class jn02_comma_json_doble extends jn03_comma_json_recursive {
         // Finalizar la parte
 
         this.k.end_pull(object_type)
-      } 
+      }
       else
       {
-//        if ( this.s.cs.teaser_type	   ==  'full') 
+//        if ( this.s.cs.teaser_type	   ==  'full')
 //        {
           let pf_to_load = ''
           if ( (this.k.type == "parragraph"  ) ||  (this.k.type == "iparragraph" ) )
           {
             this.rvtoslash(index)
             let folder_to_load = this.s.ms.contents_path + 'l' +  this.result
-            let pf_to_load     = folder_to_load       + '/' + this.k.value 
+            let pf_to_load     = folder_to_load       + '/' + this.k.value
 
             // this.p('jn02_dbl_Parrafete a cargar ' + pf_to_load )
           }
-          
+
           this.manage_parragraphs('array', pf_to_load)
 //        }
       }
@@ -105,11 +105,11 @@ class jn02_comma_json_doble extends jn03_comma_json_recursive {
       if ( (--iterations  >= 0) && (this.b.type_generated) )
         this.j.add_separator()
 
-    
+
      }  // End For
-  
+
   }
-  
+
 }
 
 exports.jn02_comma_json_doble = jn02_comma_json_doble

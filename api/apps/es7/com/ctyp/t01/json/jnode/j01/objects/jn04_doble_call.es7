@@ -13,7 +13,7 @@
 // - d-review_childrens_doble_object-                   : 2nd level method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                                 =   require(  'fs'                                  ),
        empty                              =   require(  cons.NODE_MOD + 'is-empty'                                      ),
@@ -24,24 +24,24 @@ const  fs                                 =   require(  'fs'                    
 // Common Objects
 class jn04_commo_json_doble_call extends jn05_commo_json_recursive_call {
 
-           
-    constructor ()   
-    {   
+
+    constructor ()
+    {
     super()
-    this.n                   =  'jn04_commo_json_doble_call::'      
+    this.n                   =  'jn04_commo_json_doble_call::'
     }
 
-  //---------------------------------------------------------------------------------------------  
-  review_childrens_doble_object(  
+  //---------------------------------------------------------------------------------------------
+  review_childrens_doble_object(
             index                    ,   // Indice
             enbreadcrumb   =   ''    ,  // Breadcrumb en ingles
-            depth          =  0      ,  
-            parent_otype   = 'object') 
+            depth          =  0      ,
+            parent_otype   = 'object')
   {
 
     var idx = new idx_pointers(index)
 
-    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                                 
+    let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
 
     // this.p('Before pos bucle ' + cats.length )
 
@@ -60,7 +60,7 @@ class jn04_commo_json_doble_call extends jn05_commo_json_recursive_call {
 
 
       // this.rvlash_inner(current_level)
-      // this.index               =  this.result   
+      // this.index               =  this.result
 
         // this.p('Parrafete a cargar ' + pf_to_load )
 
@@ -69,11 +69,11 @@ class jn04_commo_json_doble_call extends jn05_commo_json_recursive_call {
 
       if ( (--iterations  >= 0) && (this.b.type_generated) )
         this.j.add_separator()
-    
+
      }  // End For
 
   }
-  
+
 }
 
 exports.jn04_commo_json_doble_call = jn04_commo_json_doble_call

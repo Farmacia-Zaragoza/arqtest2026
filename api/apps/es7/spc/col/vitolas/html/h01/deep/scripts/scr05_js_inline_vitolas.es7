@@ -26,9 +26,9 @@
 // - d-create_objectN-		: 	Create Blazy content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),		
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
 		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									),
 		scpf				= 	require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'	);
 
@@ -36,24 +36,24 @@ const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			
 class scr05_js_inline_vitolas extends getset  {
 
     constructor (     thm	              						)
-    {   
+    {
 
 		let 	tag_name		=		'script'
 		super( tag_name )
 
-		this.n					=		'scr01_truck::'						
+		this.n					=		'scr01_truck::'
 		this.m					=		'constructor'
 
-		this.thm				=		thm							
+		this.thm				=		thm
 
 		this.scr01				=		new html_style('script')
 
- 		this.scr01.type			=		"text/javascript" 
+ 		this.scr01.type			=		"text/javascript"
  		this.scr01.charset		=		"utf-8"
-	
+
 		this.script_code_path	=		''
-		
-		this.build_data()													
+
+		this.build_data()
 
     }
 
@@ -64,14 +64,14 @@ class scr05_js_inline_vitolas extends getset  {
 
 		let js_name 								=	'jquery-3.3.1.min.js'
 
-		this.script_code_path				=  	
-				this.thm.u.site_path + '/r_fassets/js' + js_name	
+		this.script_code_path				=
+				this.thm.u.site_path + '/r_fassets/js' + js_name
 
 		this.p('SITE_PATH ' + this.script_code_path )
-		
+
 		this.content		+=		scpf.file_get_code(this.script_code_path) + " "
 
-	}		
+	}
 
 	//[S_01]<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     create_slick()
@@ -79,14 +79,14 @@ class scr05_js_inline_vitolas extends getset  {
 
 		let js_name 								=	'slick_1_6_0_min.js'
 
-		this.script_code_path				=  	
+		this.script_code_path				=
 				this.thm.u.site_path + '/r_fassets/js/' + js_name
 
 		this.p('SITE_PATH ' + this.script_code_path )
 
 		this.content		+=		scpf.file_get_code(this.script_code_path) + " "
 
-	}		
+	}
 
 	//[S_01] <script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script>
     create_runtime()
@@ -95,14 +95,14 @@ class scr05_js_inline_vitolas extends getset  {
 		let js_name							=	'runtime_min.js'
 
 
-		this.script_code_path				=  	
+		this.script_code_path				=
 				this.thm.u.site_path + '/dev/' + js_name
 
 		this.p('SITE_PATH ' + this.script_code_path )
 
 		this.content			+=		scpf.file_get_code(this.script_code_path)
 
-	}		
+	}
 
 	//[S_02] <script type="text/javascript" src="polyfills.f80b7e6581d9215d226e.js"></script>
     create_polyfills()
@@ -110,13 +110,13 @@ class scr05_js_inline_vitolas extends getset  {
 
 		let js_name							=	'polyfills.js'
 
-		this.script_code_path				=  	
+		this.script_code_path				=
 				this.thm.u.site_path + '/dev/' + js_name
 
 		this.p('SITE_PATH ' + this.script_code_path )
 
 		this.content			+=		scpf.file_get_code(this.script_code_path)
-	}		
+	}
 
 
 	//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
@@ -124,12 +124,12 @@ class scr05_js_inline_vitolas extends getset  {
     {
 		let js_name							=	'main_min.js'
 
-		this.script_code_path				=  	
+		this.script_code_path				=
 				this.thm.u.site_path + '/dev/' + js_name
 
 		this.p('SITE_PATH ' + this.script_code_path )
 
-	}		
+	}
 
     build_data()
     {
@@ -141,7 +141,7 @@ class scr05_js_inline_vitolas extends getset  {
 		this.create_main()
 
 		// Ok [17-11-02]
-		// this.p('Code : >' + this.code ) 											
+		// this.p('Code : >' + this.code )
 
     }
 

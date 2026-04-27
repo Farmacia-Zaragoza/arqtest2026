@@ -13,7 +13,7 @@
 // c-site_defs-
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"    )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { strings }       =   require(  cons.JS_TYP7  + 'string/s01_strings.es7'      )
 
@@ -23,7 +23,7 @@ class site_defs extends strings {
     super()
     this.n                          =   "site_defs::"
 
-    // Objects	
+    // Objects
     this.b                          =  ''
     this.c                          =  ''
     this.pmt                        =  ''
@@ -43,7 +43,7 @@ class site_defs extends strings {
     this.arr['pagesep_name']         =   Array()
 
     this.arr['pagesep_sep']             =   Array()
-    
+
   }
 
 }

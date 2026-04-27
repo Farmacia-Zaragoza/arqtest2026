@@ -21,13 +21,13 @@
 //Recibe un array e intelientenement lo ordena eliminando duplicados
 //Ojo que es funcion 52 - 56
 
-var 	cons 		= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"				);
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const 	echo 		= 	require(	cons.NODE_MOD 	+ 'node-echo'										);
 
 
-function countdim(my_array) 
+function countdim(my_array)
 {
     if (Array.isArray(my_array))
     {
@@ -35,16 +35,16 @@ function countdim(my_array)
 		let current_dim = initial_dim
 		for (pos in my_array)
 		{
-			if (Array.isArray(my_array[pos]) )  
+			if (Array.isArray(my_array[pos]) )
 			{
-				var child_array = my_array[pos] 
+				var child_array = my_array[pos]
 				dim	= initial_dim + countdim (child_array)
-		
+
 				if (dim > current_dim )		current_dim = dim
-			}		
+			}
 		}
 		return current_dim
-    } 
+    }
     return 0
 
 }

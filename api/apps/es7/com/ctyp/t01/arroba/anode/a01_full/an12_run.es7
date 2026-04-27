@@ -14,12 +14,12 @@
 //- d-run_full_load-             : Load from main file all positions
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_main_full_load }   =   require(  cons.JS_TYP7  + 'arroba/anode/a01_full/an14_main_load.es7' )
 
 class anode_run_full extends anode_main_full_load {
-  constructor()  
+  constructor()
   {
     super()
 
@@ -27,7 +27,7 @@ class anode_run_full extends anode_main_full_load {
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   run_full_load()
   {
     // Aqui no esta entrando. Igual para busquedas
@@ -40,29 +40,29 @@ class anode_run_full extends anode_main_full_load {
     if ( !this.b.language_already_loaded  )
     {
       this.s.ms.lang           =   'en'
-      this.s.cs.lang           =   this.s.ms.lang    
-    
-      this.main_full_load(this.s.ms.main_lang)    
+      this.s.cs.lang           =   this.s.ms.lang
+
+      this.main_full_load(this.s.ms.main_lang)
     }
 
     this.s.ms.lang           =   before_lang
-    this.s.cs.lang           =   this.s.ms.lang    
-    
+    this.s.cs.lang           =   this.s.ms.lang
+
     this.p('an12_Generating_Lang ' + this.s.ms.lang )
     if ( this.s.ms.lang != 'en' )
     {
-      // GENERAMOS 
-      //this.main_position_load('en')    
-      this.main_full_load(this.s.ms.lang)    
-      //this.main_full_load('es')    
-    
+      // GENERAMOS
+      //this.main_position_load('en')
+      this.main_full_load(this.s.ms.lang)
+      //this.main_full_load('es')
+
       // 2. Cargamos la informacion del idioma del site pedido
-    // this.main_position_load('es')    
+    // this.main_position_load('es')
       // this.main_position_fast_load('es')
     }
   }
 
-  
+
 }
 
 exports.anode_run_full = anode_run_full

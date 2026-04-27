@@ -11,7 +11,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Process:
 //-------------------------------------------------------------------------------------
-// @content_file --> contents[] --> arr[] 
+// @content_file --> contents[] --> arr[]
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Class:
 //-------------------------------------------------------------------------------------
@@ -25,13 +25,13 @@
 //- d-mix_array_from_file-           : Generate array mixing
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc > Struc_gen > Struc_attrib > scomm_defs
 // @Struc > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { struc_load_arroba } =   require(  cons.JS_TYP7  + 'struc/s02_struc_load_arroba.es7'),
       empty                 =   require(  cons.NODE_MOD + 'is-empty'                        ),
@@ -40,42 +40,42 @@ const { struc_load_arroba } =   require(  cons.JS_TYP7  + 'struc/s02_struc_load_
 
 
 class struc extends struc_load_arroba {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "struc::"
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
 
   // Vamos a revisar el tamaño del fichero en algunos casos
   generate_array_from_file_review_size(lang = 'en' , file = '' , ask_redirect = false)
   {
      var stats = fs.statSync(file)
-     var fileSizeInBytes = stats["size"]  
-  
+     var fileSizeInBytes = stats["size"]
+
    this.p('s01_struc size ' + file + ' B ' + fileSizeInBytes )
-  
+
    this.generate_array_from_file(lang , file , ask_redirect)
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   // Ficheros de texto arroba format
   generate_array_from_file(lang = 'en' , file = '' , ask_redirect = false)
   {
-    this.m        = 'generate_array_from_file' 
+    this.m        = 'generate_array_from_file'
     // this.p('s01_Stru LOAD IDX ' + file)
 
     this.b.rest_result = true
 
     this.load_file_information(file)
-  
+
     // ESTA PARTE IGUAL HAY QUE CAMBIARLA PARA REST
     if (this.b.rest_result)
-    { 
+    {
       // this.p('s01_stru_generating ' + file )
       this.generate(lang)
     }
@@ -84,17 +84,17 @@ class struc extends struc_load_arroba {
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   // Ficheros de texto arroba format mezclados con estucturas reales de ficheros
-  generate_array_from_folder(lang   = 'en'         , 
+  generate_array_from_folder(lang   = 'en'         ,
                              folder = ''           ,
                              file   = ''           ,
                              index  = '060'        ,
                              breadcrumb = 'fs'     ,
                              ask_redirect = false  )
   {
-    this.m        = 'generate_array_from_folder' 
+    this.m        = 'generate_array_from_folder'
     // this.p('s01_Stru LOAD IDX ' + file)
 
     this.b.rest_result = true
@@ -111,13 +111,13 @@ class struc extends struc_load_arroba {
     // Load folder in folder_coontent_array
     //if (lang = "en")
     // Debe cargarlo siempre pues puede ser que se necesite una vez que se ha parado english search
-    
+
     this.load_folder_information(folder)
 
-  
+
     // ESTA PARTE IGUAL HAY QUE CAMBIARLA PARA REST
     if (this.b.rest_result)
-    { 
+    {
 
       if (this.folder_contents.length > 0 )
       {
@@ -131,19 +131,19 @@ class struc extends struc_load_arroba {
           this.generate_folder_lang(lang          ,
                            index         ,
                            breadcrumb    )
-        
+
       }
     }
     else if (ask_redirect)
       this.s.b.redirect_page      = true
   }
-  
-  //---------------------------------------------------------------------------------------------  
+
+  //---------------------------------------------------------------------------------------------
 
   // Ficheros de texto arroba format
   mix_array_from_file(lang = 'en' , file = '' )
   {
-    this.m        = 'mix_array_from_file' 
+    this.m        = 'mix_array_from_file'
     // this.p('s01_Stru LOAD IDX ' + file)
 
     this.b.rest_result = true
@@ -152,33 +152,33 @@ class struc extends struc_load_arroba {
   if (this.b.rest_result) this.generate_mix(lang)
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   // Ficheros de texto normales
-  generate_array_from_text_file(  lang = 'en' , 
-                                  file = '' , 
+  generate_array_from_text_file(  lang = 'en' ,
+                                  file = '' ,
                                   index = "")
   {
-    this.m        = 'generate_array_from_text_file' 
+    this.m        = 'generate_array_from_text_file'
     // this.p('s01_Stru LOAD IDX ' + file)
 
     this.b.rest_result = true
-    this.cont          = 0 
+    this.cont          = 0
 
     // Necesarios para la inclusion de archivos
-    
+
     this.load_file_information(file)
     if (this.b.rest_result) this.generate_text_file(lang, index)
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   // Ficheros de texto normales incluiidos
-  generate_array_from_text_inner_file(lang         = 'en' , 
-                                      file         = '' , 
+  generate_array_from_text_inner_file(lang         = 'en' ,
+                                      file         = '' ,
                                       index_pased  = ""  )
   {
-    this.m        = 'generate_array_from_text_inner_file' 
+    this.m        = 'generate_array_from_text_inner_file'
     // this.p('s01_Stru LOAD IDX ' + file)
 
     // this.p('s01_struc_file1 ' + file)
@@ -186,11 +186,11 @@ class struc extends struc_load_arroba {
     // Recordamos que el contador (this.cont) es lo que nos permite insertar nuevas posiciones el el array
     // Tambien recordamos que todos los indices son manejados con una funcion Radix 64 que lo minimiza
     this.b.rest_result = true
-    
+
     this.load_file_information(file)
-    if (this.b.rest_result) 
+    if (this.b.rest_result)
     {
-      // this.p('s01_struc_file2 ' + file)      
+      // this.p('s01_struc_file2 ' + file)
       this.generate_text_file(lang , index_pased)
     }
   }

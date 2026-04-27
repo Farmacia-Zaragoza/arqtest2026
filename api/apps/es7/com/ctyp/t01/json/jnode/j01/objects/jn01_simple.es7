@@ -13,7 +13,7 @@
 // - d-save_json_product_array_to_file-          : Pending
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                            =   require(  'fs'                                  ),
        empty                         =   require(  cons.NODE_MOD + 'is-empty'                        ),
@@ -24,16 +24,16 @@ const  fs                            =   require(  'fs'                         
 
 class jn01_commo_json_simple extends jn02_commo_json_doble {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn01_commo_json_simple::'      
+    this.n                   =  'jn01_commo_json_simple::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Garland Main - Top - Bottom - One Dimension
-  save_json_simple_object_to_file(  
+  save_json_simple_object_to_file(
             index           ,   // Indice
             enbreadcrumb   =   ''  , depth = 0)  // Breadcrumb en ingles
   {
@@ -41,7 +41,7 @@ class jn01_commo_json_simple extends jn02_commo_json_doble {
 
     var idx = new idx_pointers(index)
 
-    
+
     let cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                              ;
 
 
@@ -71,9 +71,9 @@ class jn01_commo_json_simple extends jn02_commo_json_doble {
         this.j.add_separator()
 
      }  // End For
-  
+
   }
-  
+
 }
 
 exports.jn01_commo_json_simple = jn01_commo_json_simple

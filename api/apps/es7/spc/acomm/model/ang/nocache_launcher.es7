@@ -4,11 +4,11 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // comm - spec - content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Angular_NoCache > Angular_Model > Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
@@ -17,7 +17,7 @@
 //-------------------------------------------------------------------------------------
 // d-run_method-
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-site_mcomm-   : Multi position site to load arrobas
 // e-site_uri-     : Url for non cached
@@ -28,7 +28,7 @@
 
 // Must to be unique
 
-var   cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { angular_model }         =   require(  cons.JS_ACO7  + 'model/ang/model.es7'      ),
       { site_uri }              =   require(  cons.JS_ACO7  + 'uri/n02/u01_site_uri.es7'      ),
@@ -39,7 +39,7 @@ const { angular_model }         =   require(  cons.JS_ACO7  + 'model/ang/model.e
 
 class angular_no_cache extends angular_model
 {
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   constructor(pmt = '' )
   {
 
@@ -50,19 +50,19 @@ class angular_no_cache extends angular_model
 
     // callen/search/wysiwyg/regex/management
     // this.p('nocache_launcher - rest call' + this.ir.uri)
-    
+
     var pos = this.strpos(this.ir.uri, "rest")
 
     if (pos !== false)
-    { 
+    {
       this.p('nocache_launcher - rest call')
       this.run_rest()
     }
     else
       this.run_method()
-  } 
+  }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   run_method()
   {
@@ -72,33 +72,33 @@ class angular_no_cache extends angular_model
     // Entonces actuar en consecuencia ajustando uris y parametros
 
     // aqui llega bien
-    // this.p('arqdru_noche_robot A ' + this.s.b.robot_page )     
+    // this.p('arqdru_noche_robot A ' + this.s.b.robot_page )
 
     //1. Multi Position EN - Por defecto 0 2 5
     // Specific final comm - '0 2 4 5 15 16'
-    this.comm              =  new site_mcomm(this.s, 
+    this.comm              =  new site_mcomm(this.s,
                                              this.s.ms.comm_positions)
 
     this.copy_model()
 
-    // this.p('arqdru_noche_robot A ' + this.comm.s.b.robot_page )     
+    // this.p('arqdru_noche_robot A ' + this.comm.s.b.robot_page )
     // this.p('arqdru_noche_domain  ' + this.comm.s.cs.http_domainbar )
 
     // Aqui ya lo conoce
     // this.p('arq_model_page X0an22 ' + this.comm.s.cs.page +  ' Lang ' + this.comm.s.cs.lang )
-   
+
     //2. URI SPECIFIC VERSION FOR ARQDRU - WILL MANAGE REAL COMMANDS
     // Usando fast uri no funciona
-    this.uspc             =   new site_uri( this.comm.s   , 
+    this.uspc             =   new site_uri( this.comm.s   ,
                                               this.ir       )
- 
+
     // o14_waterfalls
     // this.p('nche_launcher_uri_test  HH ' + this.uspc.uri_args_sorted[0])
 
     // Conoce lang
     // this.p('arq_model_uspc X1an22 ' + this.uspc.s.cs.page +  ' Lang ' + this.uspc.s.cs.lang )
 
-    // this.p('arqdru_noche_robot B ' + this.comm.s.b.robot_page )     
+    // this.p('arqdru_noche_robot B ' + this.comm.s.b.robot_page )
     // this.p('arqdru_noche_domain  ' + this.comm.s.cs.http_domainbar )
 
     // Copiamos el dominio para generar los robot
@@ -106,22 +106,22 @@ class angular_no_cache extends angular_model
     this.acomm.s.cs.http_domainbar = this.comm.s.cs.http_domainbar
 
     // this.p('arq_model_uspc X2an22 ' + this.uspc.s.cs.page +  ' Lang ' + this.uspc.s.cs.lang )
-    
+
     this.run_site()
-  	
+
   }
 
   // en/rest/search/architecture/method
   run_rest()
   {
-    this.uspc             =   new site_uri( this.s   , 
+    this.uspc             =   new site_uri( this.s   ,
                                             this.ir       )
 
     // habra que poner esto en arroba rest
     this.s.cs.uri         =   "uritype"
-    
+
     this.arroba.copy_uri(this.uspc)
-  	
+
   	this.acontent     =  new arroba_rest(this.arroba)
 
 
@@ -139,10 +139,10 @@ class angular_no_cache extends angular_model
 
     // Tipo rest a devolver
     this.rest         =  new r02_main(this.s.b.page_search)
-  	
+
   	this.restgen      =  new rs01_object_search_main(this.arroba , this.rest)
 
-    this.restgen.gen_rest_search_main()      
+    this.restgen.gen_rest_search_main()
 
     // content - page
     this.p('nocacheload ' + this.s.cs.loadtype)
@@ -159,10 +159,9 @@ class angular_no_cache extends angular_model
 
   	// Ahora toca generar la respuesta rest
 
-  	
+
   }
 
 } // end Class
 
 exports.angular_no_cache = angular_no_cache
-

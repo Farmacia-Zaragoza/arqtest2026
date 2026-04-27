@@ -6,13 +6,13 @@
 //-------------------------------------------------------------------------------------
 // Hierachy structure and Class
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Uri > Site_Uri_Mng_Commands > Post_Process_Commands > Sure_Commands > Aliases > Site_Common_Commands
 // @Site_Uri_> @Common_Uri > @Uri > @Strings > @Printlog
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { site_uri_manage_commands } =   require( cons.JS_PYC7 + 'seo/seo/uri/u02_manage_commands.es7' )
 
@@ -23,9 +23,8 @@ class site_uri extends site_uri_manage_commands
   {
     super(  site, ir )
     this.n                  =   "site_uri::"
-  } 
+  }
 
 } // end Class
 
 exports.site_uri = site_uri
-

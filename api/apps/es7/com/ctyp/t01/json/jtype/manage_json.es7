@@ -7,7 +7,7 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const    { json }        =   require(  cons.JS_TYP7   + 'json/jtype/json.es7'                        )
 
@@ -142,14 +142,14 @@ class manage_json extends json {
           this.add_element(     'name'     , this.item    )
           this.add_element(     'value'     , this.value    )
           this.add_element(     'hover'     , this.hover    )
-  
+
           if (part)
             this.add_element(   'clink'    , this.link    )
           else
             this.add_lastelement(   'clink'    , this.link    )
-  
+
           break;
-  
+
       case "bgitem":
         this.add_index(            this.index    )
         this.add_type(            this.type    )

@@ -22,7 +22,7 @@
 // - d-create_marquee-    : Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { getset } 		= 	require(	cons.JS_TYP7 + 'html/style/getset.es7'	)
 
@@ -31,18 +31,18 @@ const   { getset } 		= 	require(	cons.JS_TYP7 + 'html/style/getset.es7'	)
 class common_scripts extends getset  {
 
   constructor (     thm                            )
-  {   
+  {
     super()
 
-    this.n              =  'common_scripts::'            
+    this.n              =  'common_scripts::'
     this.m              =  'constructor'
 
-    this.thm            =  thm              
+    this.thm            =  thm
 
     // External object
     this.script_to_load        =  ''
-    
-    this.build_data()                          
+
+    this.build_data()
     }
 
 }

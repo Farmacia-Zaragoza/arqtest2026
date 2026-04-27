@@ -9,14 +9,14 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc_defs
 // @Struc > @Array > @String > @Cache > @log
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons           =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 //const { printlog }   =   require(  cons.JS_TYP7  + 'logs/printlog.es7'        ),
 const { r01_sheet }  =   require(  cons.JS_TYP7  + 'rest/r01_sheet.es7'        );
@@ -29,14 +29,14 @@ class r02_main  {
     this.arr         =   Array()
     this.result      =   false
     this.count       =   0
-    
-    this.item        =   new r01_sheet()	    
+
+    this.item        =   new r01_sheet()
   }
-  
+
   add(sheet){
   	this.arr.push(sheet)
   }
-  
+
 }
 
 exports.r02_main = r02_main

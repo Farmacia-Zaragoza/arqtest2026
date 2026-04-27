@@ -13,7 +13,7 @@
 //<link rel="stylesheet" href="styles.css"></head>
 
 // Style attributes example
-//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css" 
+//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css"
 //        as="style" onload="this.rel='stylesheet'">
 
 // ------------------------------------------------------------------------------------
@@ -26,7 +26,7 @@
 // - d-create_link_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"    )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { html_style } 	=  require(	cons.JS_TYP7 + 'html/style/html_style.es7'	  ),
       { getset }        =  require( cons.JS_TYP7 + 'html/style/getset.es7'        );
@@ -43,7 +43,7 @@ class deep_link_base extends getset {
 		this.thm = thm
 
         this.s   = this.thm.s
-        
+
         this.b   = this.s.b
 
 		this.link_01 = new html_style('link')
@@ -62,10 +62,10 @@ class deep_link_base extends getset {
 
 		let url_awesome = 'https://fonts.googleapis.com/css?family=Roboto:300,400,500'
 
-		this.link_01.href = url_awesome 
+		this.link_01.href = url_awesome
 
-		// this.link_01.href				=  	
-		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name 	
+		// this.link_01.href				=
+		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name
 
 		this.link_01.pcreate()
 
@@ -80,7 +80,7 @@ class deep_link_base extends getset {
 		this.link_01.type 			= 'text/css'
 		this.link_01.as 			= 'style'
 
-		this.link_01.integrity		= ''	
+		this.link_01.integrity		= ''
 //		this.link_01.crossorigin	=	'anonymous'
 
 		let url_materialize = 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/'
@@ -88,8 +88,8 @@ class deep_link_base extends getset {
 
 		this.link_01.href = url_materialize + css_name
 
-		// this.link_01.href				=  	
-		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name 	
+		// this.link_01.href				=
+		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name
 
 		this.link_01.pcreate()
 
@@ -103,7 +103,7 @@ class deep_link_base extends getset {
 		this.link_01.type 			= 'text/css'
 		this.link_01.as 			= 'style'
 
-		this.link_01.integrity		= ''	
+		this.link_01.integrity		= ''
 //			"sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 //		this.link_01.crossorigin	=	'anonymous'
 
@@ -112,8 +112,8 @@ class deep_link_base extends getset {
 
 		this.link_01.href = url_awesome + css_name
 
-		// this.link_01.href				=  	
-		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name 	
+		// this.link_01.href				=
+		//	this.thm.u.http_domainbar + 'r_cassets/libs/css/fontawesome/' + css_name
 
 		this.link_01.pcreate()
 
@@ -128,7 +128,7 @@ class deep_link_base extends getset {
 		this.link_01.type 			= 	'text/css'
 		// this.link_01.as 			= 	'style'
 		this.link_01.crossorigin	=	'anonymous'
-		this.link_01.integrity		=	
+		this.link_01.integrity		=
 				"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 
 		let url_bootstrap = 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/'
@@ -142,7 +142,7 @@ class deep_link_base extends getset {
 	}
 
 	// <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
-	create_style(path_pmt = 'dev/static/css/', css_name = 'main.css') 
+	create_style(path_pmt = 'dev/static/css/', css_name = 'main.css')
 	{
 
 		// this.link_jquery.rel			 	=  'preload'

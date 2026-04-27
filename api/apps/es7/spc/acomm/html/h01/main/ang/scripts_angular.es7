@@ -16,7 +16,7 @@
 // - build_data         : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { deep_scripts_angular } =   require(  cons.JS_ACO7 + 'html/h01/deep/scripts/deep_scripts_angular.es7'    ),
         { common_scripts}        =   require(  cons.JS_ACO7 + 'html/h01/main/comm/common_scripts.es7'    );
@@ -25,10 +25,10 @@ const   { deep_scripts_angular } =   require(  cons.JS_ACO7 + 'html/h01/deep/scr
 class scripts_angular extends common_scripts  {
 
   constructor (     thm                            )
-  {   
+  {
     super(thm)
 
-    this.n              =  'scripts_angular::'            
+    this.n              =  'scripts_angular::'
     }
 
 
@@ -40,9 +40,9 @@ class scripts_angular extends common_scripts  {
     this.script_to_load     =   new deep_scripts_angular(this.thm)
 
     // MAIN - PRODUCT
-    this.code               +=  this.script_to_load.code  
+    this.code               +=  this.script_to_load.code
 
-    // this.p('jsarqdruCode : >' + this.code )                       
+    // this.p('jsarqdruCode : >' + this.code )
 
   }
 

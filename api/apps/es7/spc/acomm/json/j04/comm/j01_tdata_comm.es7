@@ -6,12 +6,12 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Theme_Json (spc) > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // arroba_scomm     : Common files
 // arroba_sprod     : Common files
@@ -24,7 +24,7 @@
 // FEATURE-METATAGS_GENERATION - FEATURE_ANCHOR_GENERATION - FEATURE-LOAD_ARROBA_CONTENT
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { tindex_comm }               =   require(  cons.JS_ACO7  + 'json/j04/comm/j10_dindex_comm.es7'  ),
       { jn01_checking_search_words } =   require(  cons.JS_TYP7  + 'json/jsearch/j02/jn01_check_words.es7' ),
@@ -47,7 +47,7 @@ class tdata_comm extends tindex_comm
     this.acontent           =   arroba
     this.u                  =   this.arroba.u
 
-    // this.p('tdatacomm_url_test  HH ' + this.arroba.u.uri_args_sorted[0])    
+    // this.p('tdatacomm_url_test  HH ' + this.arroba.u.uri_args_sorted[0])
 
     this.s                  =   this.arroba.s
   }
@@ -55,26 +55,26 @@ class tdata_comm extends tindex_comm
   //-------------------------------------------------------------------------------------
   manage_index_data_page()
   {
-    if (this.s.b.index_page)    
+    if (this.s.b.index_page)
     {
         // No conoce la pagina
         // this.p ('j01_thmd ' + ' N  ' + this.arroba.s.cs.page)
 
        // INDEXING_CONTENT
        this.s.b.index_ready = true
-       this.s.cs.ext        = 'idx'   	
-       this.s.cs.sub        = 'arroba'   	
+       this.s.cs.ext        = 'idx'
+       this.s.cs.sub        = 'arroba'
        this.manage_index_page_name()
 
-       this.s.b.index_ready = false       
+       this.s.b.index_ready = false
     }
-    else 
+    else
     {
         if (this.s.b.page_search)
         {
           // SEARCH_CONTENT
           this.u.url_page_set_list()
-        
+
     	  this.manage_content_page_name()
 
           this.arr          =  this.acontent.arroba.arr
@@ -87,16 +87,16 @@ class tdata_comm extends tindex_comm
           this.p('jn1th_SEARCHING-NUM ' + count )
 
           this.u.url_page_set_search()
-          
+
           // Enable index to enter in search
           this.s.b.index_ready = true
         }
-        
+
         // this.p ('j01_thmf_ ' + '  ' + this.arroba.s.cs.page_name)
 
     	this.manage_content_page_name()
     }
-  	
+
   }
 
 
@@ -107,30 +107,30 @@ class tdata_comm extends tindex_comm
     this.m              = 'manage_content_page_name'
 
     // Desde aqui el tipo de pagina es content
-    
+
     // METATAGS_GENERATION
     this.s.cs.page_type = 'content'
-        
+
     // if (!this.jck.are_words_right_for_search(this.index,this.u.bars_sub_query) )
     //   this.u.manage_front()
     //   this.arroba.u   = this.u
     //   this.arroba.s   = this.s
-           
+
     // Manage ARROBA DATA - Common values
 
     // Llega product (list | search)
-    // this.p ('J01_tdata_comm SELECT_TYPE ' + this.s.cs.page_name  + ' ' + this.s.cs.position)    
-    // this.p ('J01_tdata_comm BEFORE_LOAD LANG' + '  ' + this.s.cs.lang)    
+    // this.p ('J01_tdata_comm SELECT_TYPE ' + this.s.cs.page_name  + ' ' + this.s.cs.position)
+    // this.p ('J01_tdata_comm BEFORE_LOAD LANG' + '  ' + this.s.cs.lang)
 
     // aui no lo conoce
-    // this.p ('J01_tdata_comm BEFORE_WRONG' + '  ' + this.s.cs.founded_type)    
-    // this.p ('J01_tdata_comm BEFORE_WRONG' + '  ' + this.s.cs.founded_type)    
-     
+    // this.p ('J01_tdata_comm BEFORE_WRONG' + '  ' + this.s.cs.founded_type)
+    // this.p ('J01_tdata_comm BEFORE_WRONG' + '  ' + this.s.cs.founded_type)
+
     // AQUI DEBEMOS PREPARAR LA BUSQUEDA
 
     // this.p('j01_tdatacomm__uri_test  HH ' + this.arroba.u.uri_args_sorted[0])
 
-    
+
     switch(this.s.cs.page_name)
     {
       // Caso Todo en Uno - Para paginas totalmente generadas
@@ -149,20 +149,20 @@ class tdata_comm extends tindex_comm
       case "fs":        this.acontent  =  new arroba_fs(this.arroba)  ;  break;
 
       case "search":    this.acontent  =  new arroba_search(this.arroba) ; break;
-        
+
       case "front":     this.acontent  =  new arroba_sprod(this.arroba) ; break;
 
       case "rest":      this.acontent  =  new arroba_rest(this.arroba) ; break;
 
     }
-    
+
     this.s = this.arroba.s
-    
+
     this.s.gen_anchors_and_metatags()
-        
+
     // this.p('j01_tdatacomm : ' + this.s.cs.founded_type)
 
-  } 
+  }
 
 } // end Class
 

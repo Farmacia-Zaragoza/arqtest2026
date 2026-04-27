@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"    )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { printlog }  =   require(  cons.JS_TYP7  + 'logs/printlog.es7'              )
 
@@ -33,56 +33,56 @@ class old_site extends printlog {
     this.page_information_caption    =  ""
     this.cookies_information_caption =  ""
 
-    //  Site - Firm fields    
-    
+    //  Site - Firm fields
+
 
     this.bg_images_path              =  "r_img"    // Link to background images
     this.bg_images_ext               =  ".svg"
-    
+
     // Uri for fnode
     this.fnode_uri                   =  ''
 
     //EMAIL - PHONE
-  
-    this.email_contact               = ''              
-    
-    this.email_num                   = ''              
-    this.email_alt                   = ''              
-    this.phone_num                   = ''              
-    
-  
-    //  Pendiente de revisar
-    this.phone_alt                   = ''              
-    this.alt_phone_icon              = ''            
-  
-    this.phone_adv                   = 'Contactar de 10am a 10pm'              
-    this.email_adv                   = 'Quitar _no_spam parar responder'         
-  
-    this.font_name                   = ''             // Only the name 
-    this.font_name_clean             = ''             // Only the name 
 
-    this.font_size                   = ''            
-    this.color                       = ''     // green - gray - orange - is a text not a color like Hex Format 
+    this.email_contact               = ''
+
+    this.email_num                   = ''
+    this.email_alt                   = ''
+    this.phone_num                   = ''
+
+
+    //  Pendiente de revisar
+    this.phone_alt                   = ''
+    this.alt_phone_icon              = ''
+
+    this.phone_adv                   = 'Contactar de 10am a 10pm'
+    this.email_adv                   = 'Quitar _no_spam parar responder'
+
+    this.font_name                   = ''             // Only the name
+    this.font_name_clean             = ''             // Only the name
+
+    this.font_size                   = ''
+    this.color                       = ''     // green - gray - orange - is a text not a color like Hex Format
     this.text                        = ''     // For image text generation
     this.class_name                  = ''     // Clase para Svg
-      
-    this.original_color              = ''     // green - gray - orange - is a text not a color like Hex Format 
-    this.target_color                = ''     // green - gray - orange - is a text not a color like Hex Format 
+
+    this.original_color              = ''     // green - gray - orange - is a text not a color like Hex Format
+    this.target_color                = ''     // green - gray - orange - is a text not a color like Hex Format
 
     // FILE STRUCTURE PROPERTIES
-  
-    this.cookies_msg_01              = ''              
-    this.cookies_msg_02              = ''              
-    this.cookies_msg_uri             = ''              
-    this.cookies_msg_uritext         = ''              
-  
-    this.cookies_text                = ''            
-    this.cookies_description         = ''            
-    this.cookies_page_title          = ''              
-  
-    this.header_msg                  = ''              
-    this.extended_msg                = ''              
-    
+
+    this.cookies_msg_01              = ''
+    this.cookies_msg_02              = ''
+    this.cookies_msg_uri             = ''
+    this.cookies_msg_uritext         = ''
+
+    this.cookies_text                = ''
+    this.cookies_description         = ''
+    this.cookies_page_title          = ''
+
+    this.header_msg                  = ''
+    this.extended_msg                = ''
+
     this.folder_dat                  =   ""
     this.live_folder_name            =   "live_img"
 
@@ -129,12 +129,12 @@ class old_site extends printlog {
     this.font_size            =  ""
 
     // Menu
-    
+
     this.mnu_hide            =  ''
 
     // Drift Code
-    
-    this.drift_code               = ''          
+
+    this.drift_code               = ''
 
     // Social Networks
 
@@ -179,22 +179,22 @@ class old_site extends printlog {
     this.scroll_title            =  ""
 
     // Captcha
-  
-    this.captcha_check                = ''     
-    this.captcha_why                  = ''             
-    this.captcha_wrong                = ''           
-    this.captcha_redirect             = ''           
-    this.captcha_load                 = ''             
-    this.captcha_text                 = ''             
+
+    this.captcha_check                = ''
+    this.captcha_why                  = ''
+    this.captcha_wrong                = ''
+    this.captcha_redirect             = ''
+    this.captcha_load                 = ''
+    this.captcha_text                 = ''
 
     this.captcha_letters              = ''
-  
+
     // Metas
 
     this.meta_desc            =  ""
     this.meta_author          =  ""
-    
-    
+
+
     // Meta Og
 
     this.meta_og_url          =  ""
@@ -202,7 +202,7 @@ class old_site extends printlog {
     this.meta_og_type          =  ""
     this.meta_og_description      =  ""
     this.meta_og_image          =  ""
-    
+
     this.img_base_resolution       =   ""
     this.img_folder           =   ""
     this.img_url_folder         =   ""
@@ -211,15 +211,15 @@ class old_site extends printlog {
 
     this.sync_to             =   "ebrqx.com"
     this.sync_from             =   "dbrqx.com"
-    
+
     // Search Engine
-    
+
     // Indica la posicion a partir de la cual se va a interpretar la ruta de busqueda
     // aaaa/bbbbbb/cccc/dddd/resolution/year.....
 
     // Depende del tipo de engine de busqueda pues puede ser que devuelve el path absoluto o relativo
     // Y que admita symblinks o no
-    this.search_path_initial     = 0    
+    this.search_path_initial     = 0
 
     // Search Path - Ruta de busqueda
     this.search_path                  = ''
@@ -227,7 +227,7 @@ class old_site extends printlog {
 	// Search Type : full | simple
 	// indica si en los resultados de la busqueda vamos a devolver los filtros o no
 	this.search_type = ''
-	    
+
   }
 
 
@@ -248,55 +248,55 @@ class old_site extends printlog {
     this.page_information_caption    =  os.page_information_caption
     this.cookies_information_caption =  os.cookies_information_caption
 
-    //  Site - Firm fields    
-    
+    //  Site - Firm fields
+
 
     this.bg_images_path              =  os.bg_images_path
     this.bg_images_ext               =  os.bg_images_ext
-   
+
 
     //EMAIL - PHONE
-  
-    this.email_contact               =  os.email_contact              
-    
-    this.email_num                   =  os.email_num              
-    this.email_alt                   =  os.email_alt             
-    this.phone_num                   =  os.phone_num              
-    
-  
-    //  Pendiente de revisar
-    this.phone_alt                   =  os.phone_alt              
-    this.alt_phone_icon              =  os.alt_phone_icon            
-  
-    this.phone_adv                   =  os.phone_adv              
-    this.email_adv                   =  os.email_adv         
-  
-    this.font_name                   =  os.font_name 
-    this.font_name_clean             =  os.font_name_clean 
 
-    this.font_size                   =  os.font_size            
-    this.color                       =  os.color 
+    this.email_contact               =  os.email_contact
+
+    this.email_num                   =  os.email_num
+    this.email_alt                   =  os.email_alt
+    this.phone_num                   =  os.phone_num
+
+
+    //  Pendiente de revisar
+    this.phone_alt                   =  os.phone_alt
+    this.alt_phone_icon              =  os.alt_phone_icon
+
+    this.phone_adv                   =  os.phone_adv
+    this.email_adv                   =  os.email_adv
+
+    this.font_name                   =  os.font_name
+    this.font_name_clean             =  os.font_name_clean
+
+    this.font_size                   =  os.font_size
+    this.color                       =  os.color
     this.text                        =  os.text
     this.class_name                  =  os.class_name
-      
-    this.original_color              =  os.original_color 
-    this.target_color                =  os.target_color 
+
+    this.original_color              =  os.original_color
+    this.target_color                =  os.target_color
 
     // FILE STRUCTURE PROPERTIES
-  
-    this.cookies_msg_01              =  os.cookies_msg_01              
-    this.cookies_msg_02              =  os.cookies_msg_02              
-    this.cookies_msg_uri             =  os.cookies_msg_uri            
-    this.cookies_msg_uritext         =  os.cookies_msg_uritext           
-  
-    this.cookies_text                =  os.cookies_text     
-    this.cookies_description         =  os.cookies_description
-    this.cookies_page_title          =  os.cookies_page_title       
-  
-    this.header_msg                  =  os.header_msg        
-    this.extended_msg                =  os.extended_msg              
 
-    
+    this.cookies_msg_01              =  os.cookies_msg_01
+    this.cookies_msg_02              =  os.cookies_msg_02
+    this.cookies_msg_uri             =  os.cookies_msg_uri
+    this.cookies_msg_uritext         =  os.cookies_msg_uritext
+
+    this.cookies_text                =  os.cookies_text
+    this.cookies_description         =  os.cookies_description
+    this.cookies_page_title          =  os.cookies_page_title
+
+    this.header_msg                  =  os.header_msg
+    this.extended_msg                =  os.extended_msg
+
+
     this.folder_dat                  =   os.folder_dat
     this.live_folder_name            =   os.live_folder_name
 
@@ -343,12 +343,12 @@ class old_site extends printlog {
     this.font_size                    =  os.font_size
 
     // Menu
-    
+
     this.mnu_hide                     =  os.mnu_hide
 
     // Drift Code
-    
-    this.drift_code                   =  os.drift_code          
+
+    this.drift_code                   =  os.drift_code
 
     // Social Networks
 
@@ -393,22 +393,22 @@ class old_site extends printlog {
     this.scroll_title                 =  os.scroll_title
 
     // Captcha
-  
-    this.captcha_check                =   os.captcha_check     
-    this.captcha_why                  =   os.captcha_why             
-    this.captcha_wrong                =   os.captcha_wrong           
-    this.captcha_redirect             =   os.captcha_redirect           
-    this.captcha_load                 =   os.captcha_load             
-    this.captcha_text                 =   os.captcha_text             
+
+    this.captcha_check                =   os.captcha_check
+    this.captcha_why                  =   os.captcha_why
+    this.captcha_wrong                =   os.captcha_wrong
+    this.captcha_redirect             =   os.captcha_redirect
+    this.captcha_load                 =   os.captcha_load
+    this.captcha_text                 =   os.captcha_text
 
     this.captcha_letters              =   os.captcha_letters
-  
+
     // Metas
 
     this.meta_desc                    =  os.meta_desc
     this.meta_author                  =  os.meta_author
-    
-    
+
+
     // Meta Og
 
     this.meta_og_url                  =  os.meta_og_url
@@ -416,7 +416,7 @@ class old_site extends printlog {
     this.meta_og_type                 =  os.meta_og_type
     this.meta_og_description          =  os.meta_og_description
     this.meta_og_image                =  os.meta_og_image
-    
+
     this.img_base_resolution          =  os.img_base_resolution
     this.img_folder                   =  os.img_folder
     this.img_url_folder               =  os.img_url_folder
@@ -425,10 +425,10 @@ class old_site extends printlog {
 
     this.sync_to                      =  os.sync_to
     this.sync_from                    =  os.sync_from
-    
+
     // Search Engine
-    
-    this.search_path_initial          =  os.search_path_initial    
+
+    this.search_path_initial          =  os.search_path_initial
 
     // Search Path - Ruta de busqueda
     this.search_path                  =  os.search_path
@@ -436,7 +436,7 @@ class old_site extends printlog {
 	// Search Type : full | simple
 	// indica si en los resultados de la busqueda vamos a devolver los filtros o no
 	this.search_type                  =  os.search_type
-	    
+
   }
 
 }

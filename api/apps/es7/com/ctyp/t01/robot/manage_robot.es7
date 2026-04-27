@@ -7,20 +7,20 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const    { robot }     =   require(  cons.JS_TYP7   + 'robot/robot.es7'               ),
          { strings }   =   require(  cons.JS_TYP7   + 'string/s01_strings.es7'        ) ;
 
 class manage_robot extends robot {
-  constructor(file_name = '') 
+  constructor(file_name = '')
   {
     super()
     this.n         =   "manage_robot::"
-    
+
     this.s         =   new strings()
   }
-  
+
   // Common method both if is array or if is object
   managecommontype(part = false)
   {
@@ -44,12 +44,12 @@ class manage_robot extends robot {
         this.add_index(          this.index    )
         this.add_type(          this.type    )
         this.add_element(     'title' , this.hover  )
-        this.add_element( 'otype' ,   this.otype    )       
+        this.add_element( 'otype' ,   this.otype    )
         if (part)
           this.add_element(   'clink'  , this.link    )
         else
           this.add_lastelement(   'clink'  , this.link    )
-        
+
         break;
 
       case "iparragraph":
@@ -79,7 +79,7 @@ class manage_robot extends robot {
 
         this.link              = this.domain_site + this.photo
         this.type              = 'link'
-       
+
         //  Managing value
         // this.p('manage_robot_replacing ' + this.photo )
         this.s.ruri(this.photo)
@@ -125,12 +125,12 @@ class manage_robot extends robot {
            this.link            =  this.domain_site + this.link
 
         this.l.href            = this.link
-        
+
         this.l.content         = this.item + ' - ' + this.value
         this.l.title           = this.item
 
         this.type              = 'link'
-        
+
 
         break;
 
@@ -193,7 +193,7 @@ class manage_robot extends robot {
       case "link":
         // Managed to generate link
         // Tenemos link - value - hover - item
-        
+
         if (this.link.substr(0,4) == 'http')
            this.link            =  this.link
         else
@@ -205,14 +205,14 @@ class manage_robot extends robot {
 
         this.type            = 'link'
 
-        // Es correcto en principio no hay que hacer nada        
+        // Es correcto en principio no hay que hacer nada
         break;
 
       // Normal Link
       case "bclink":
         // Managed to generate link
         // Tenemos link - value - hover - item
-        
+
         if (this.link.substr(0,4) == 'http')
            this.link            =  this.link
         else
@@ -224,7 +224,7 @@ class manage_robot extends robot {
 
 
         this.type            = 'link'
-        // Es correcto en principio no hay que hacer nada        
+        // Es correcto en principio no hay que hacer nada
         break;
 
       // Simple Link
@@ -305,30 +305,30 @@ class manage_robot extends robot {
         break;
 
       case "topimage":
-        this.add_index(              this.index    )  
-        this.add_type(              this.type    )  
+        this.add_index(              this.index    )
+        this.add_type(              this.type    )
         this.add_element(     'height'     , this.hover  )
 
         if (part)
-          this.add_element(     'img'     , this.photo  )  
+          this.add_element(     'img'     , this.photo  )
         else
-          this.add_lastelement(     'img'   , this.photo  )  
+          this.add_lastelement(     'img'   , this.photo  )
 
-        break                              
+        break
 
 
       case "bgimage":
-        this.add_index(              this.index    )  
-        this.add_type(              this.type    )  
+        this.add_index(              this.index    )
+        this.add_type(              this.type    )
 
         if (part)
-          this.add_element(     'img'     , this.photo  )  
+          this.add_element(     'img'     , this.photo  )
         else
-          this.add_lastelement(     'img'   , this.photo  )  
+          this.add_lastelement(     'img'   , this.photo  )
 
-        break ;                              
+        break ;
 
-      // <a href="https://dog.vbrqx.com/r_img/logos/brqx_icon_arquitectrura_drupal_2010_50x50.gif" 
+      // <a href="https://dog.vbrqx.com/r_img/logos/brqx_icon_arquitectrura_drupal_2010_50x50.gif"
       // title="stl_site_icon"></a>
       case "image":
         // RESOLUTIONS MANAGED
@@ -339,12 +339,12 @@ class manage_robot extends robot {
         this.pos = this.s.strpos(this.photo, "RESOLUTION")
 
         if (this.pos !== false)
-        { 
+        {
           //this.p('manage_robot_HAY_RESOLUTION')
-          // this.p('Image ' + this.photo)          
-          this.resolution = 'RESOLUTION' 
+          // this.p('Image ' + this.photo)
+          this.resolution = 'RESOLUTION'
         }
-        else 
+        else
         {
           this.link              = this.domain_site + this.photo
           //  Managing value
@@ -355,11 +355,11 @@ class manage_robot extends robot {
           // this.p('manage_robot_replaced ' + this.s.result )
           this.l.href            = this.link
         }
-        
+
         this.type              = 'link'
         this.l.title           = this.site_title + ' - ' + this.item
 
-        break ;                              
+        break ;
 
       case "logotype":
           this.link              = this.domain_site + this.photo
@@ -375,17 +375,17 @@ class manage_robot extends robot {
 
 
       case "breakpoint":
-        this.add_index(              this.index    )  
-        this.add_type(              this.type    )  
-        this.add_element( 'name' ,   this.item    )       
-        this.add_element( 'break' ,   this.value    )       
+        this.add_index(              this.index    )
+        this.add_type(              this.type    )
+        this.add_element( 'name' ,   this.item    )
+        this.add_element( 'break' ,   this.value    )
 
         if (part)
-          this.add_element(     'resolution'     , this.hover  )  
+          this.add_element(     'resolution'     , this.hover  )
         else
-          this.add_lastelement(     'resolution'   , this.hover  )  
+          this.add_lastelement(     'resolution'   , this.hover  )
 
-        break;                              
+        break;
 
       // Common - Multi language Items
       case "menuitem":
@@ -393,55 +393,55 @@ class manage_robot extends robot {
         this.add_type(          this.type    )
         this.add_element( 'otype' ,   this.otype    )
         if (part)
-          this.add_element(   'value' , this.item  )    
+          this.add_element(   'value' , this.item  )
         else
-          this.add_lastelement(   'value' , this.item  )    
-    
+          this.add_lastelement(   'value' , this.item  )
+
         break
 
       case "item":
         this.add_index(          this.index    )
         this.add_type(          this.type    )
         if (part)
-          this.add_element(   'value' , this.value  )    
+          this.add_element(   'value' , this.value  )
         else
-          this.add_lastelement(   'value' , this.value  )    
-    
+          this.add_lastelement(   'value' , this.value  )
+
         break
 
       case "responsiveimage":
         this.managebranchelem(part)
-        break                              
+        break
 
       case "simplemenu":
         this.managebranchelem(part)
-        break                              
+        break
 
       case "doublemenu":
         this.managebranchelem(part)
-        break                              
+        break
 
       case "slide":
         this.managebranchelem(part)
-        break                              
+        break
 
       case "randomgallery":
         this.managebranchelem(part)
-        break                              
+        break
 
       case "branch":
         this.managebranchelem(part)
-        break                              
+        break
 
       default:
         // Text
         // this.p('mng_rbt_Type Text ' +  this.value)
 
         var anchor_pos = this.strpos(this.value, "#")
-        
+
         if (anchor_pos != false)          this.manage_rbt_anchors()
-        
-      
+
+
     }
   }
 }

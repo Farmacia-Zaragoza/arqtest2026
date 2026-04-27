@@ -8,14 +8,14 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const { an03_general_index_arroba } =   require(  cons.JS_ACO7  + 'arroba/n01/an03_general_index_arroba.es7' ) 
+const { an03_general_index_arroba } =   require(  cons.JS_ACO7  + 'arroba/n01/an03_general_index_arroba.es7' )
 
 class jn10_index_site extends an03_general_index_arroba {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
     this.n                  =   'jn10_index_site::'
     this.m                  =   "cons"
@@ -34,13 +34,13 @@ class jn10_index_site extends an03_general_index_arroba {
 
     let index               = 'main'
     let jindex              = 'j' + index
-   
+
 
 	let cats                =  this.gethash_arr(this.s.ms.main_lang, jindex)															;
-    
-    
+
+
   }
-  
+
 }
 
 exports.jn10_index_site = jn10_index_site

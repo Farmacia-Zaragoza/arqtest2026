@@ -12,7 +12,7 @@
 // - d-save_json_hiera_product_array_to_file-          : Generate Json Recursive
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"       )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                       =   require(  'fs'                                                ),
        empty                    =   require(  cons.NODE_MOD + 'is-empty'                          ),
@@ -25,17 +25,17 @@ const  fs                       =   require(  'fs'                              
 // Common Array
 class jn15_array_hiera_product extends jn16_hiera_json_list_base {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                =  'jn15_array_hiera_product::'      
+    this.n                =  'jn15_array_hiera_product::'
   }
 
   //---------------------------------------------------------------------------------------------
   // Parent Otype dice de que tipo deben ser todos los ojetos a este nivel
   // Recursive structure
-  save_json_hiera_product_array_to_file(  
+  save_json_hiera_product_array_to_file(
             index                      ,   // P01. Indice
             enbreadcrumb    =   ''     ,   // P02. Breadcrumb
             file_structure = ''        ,   // P03. Structure
@@ -63,13 +63,13 @@ class jn15_array_hiera_product extends jn16_hiera_json_list_base {
     this.attribs(idx, parent_pos, index, depth)
 
     // El link es el mismo que el del producto
-    
+
     this.j.link     =   this.s.cs.lang_url  +  enbreadcrumb
-    
+
     this.j.breadcrumb =   enbreadcrumb
-      
+
     this.j.index      =   index
-   
+
      // Supuestos valores del padre
 
      // En Link Name es value
@@ -77,27 +77,27 @@ class jn15_array_hiera_product extends jn16_hiera_json_list_base {
     // this.j.type        = 'bclink'
     // this.j.otype       = "object"
     // this.k.otype       = "object"
-    
-      
+
+
     this.j.value        =  cat
 
-    
+
       // Procesa atributos del site ( se hace en arroba - aqui habria que eliminarlo)
     // this.process_site_values()                          ;
 
     this.k.copyvalues(this.j)
 
     let object_type = "object"
-    
-      
+
+
     // this.p ("jn15_hiera_product_Procesando Hijo Nivel Inicial " + this.j.otype  )
         // Array u Objeto
 
           // this.p ("jn05_ircsv : Generating ARray")
-    this.k.createspecificpart(object_type)        
+    this.k.createspecificpart(object_type)
 
 
-    this.save_json_hiera_simple_array_to_file(  
+    this.save_json_hiera_simple_array_to_file(
           index                  ,  // 01. Index
           enbreadcrumb           ,  // 02. Breadcrumb
           file_structure         ,  // 03. File Structure
@@ -109,10 +109,10 @@ class jn15_array_hiera_product extends jn16_hiera_json_list_base {
 
 
     this.k.end_pull(object_type)
-   
- 
+
+
   }
-  
+
 }
 
 exports.jn15_array_hiera_product = jn15_array_hiera_product

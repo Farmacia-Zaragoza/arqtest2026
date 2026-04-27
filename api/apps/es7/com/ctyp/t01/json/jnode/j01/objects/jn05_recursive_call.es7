@@ -12,7 +12,7 @@
 // - d-review_childrens_recursive-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                         =   require(  'fs'                                                   ),
        empty                      =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,11 +23,11 @@ const  fs                         =   require(  'fs'                            
 // Comm Object
 class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
 
-          
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn05_commo_json_recursive_call::'      
+    this.n                   =  'jn05_commo_json_recursive_call::'
   }
 
   clean_empty_values(index , depth)
@@ -40,37 +40,37 @@ class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
 
     for (var pos in cats)
     {
-      this.attribs(idx, pos , index , depth)       
-      
+      this.attribs(idx, pos , index , depth)
+
       if (this.j.value == "")
       {
         // this.p('jn05_obj_Call Ojo alias ' + this.j.item)
         delete cats[pos]
-      } 
+      }
     }
   }
-  
 
-  //---------------------------------------------------------------------------------------------  
-  review_childrens_recursive(  
+
+  //---------------------------------------------------------------------------------------------
+  review_childrens_recursive(
             index                      ,  // 1.Indice
             enbreadcrumb  =   ''       ,  // 2.Breadcrumb en ingles
-            depth         =  0         ,  // 3. 
+            depth         =  0         ,  // 3.
             parent_otype  =  'object'  )  // 4.
   {
     this.m         =  'review_childrens_recursive_object'
 
     var idx = new idx_pointers(index)
-    
+
     let cats                   = this.gethash_arr(this.s.ms.main_lang , idx.jindex)
     var iterations             = Object.keys(cats).length - 1
 
     // Aqui solo entran los metodos generales
-    // this.p('jn05_rc ' + this.s.ms.main_lang + ' ' + idx.jindex)    
+    // this.p('jn05_rc ' + this.s.ms.main_lang + ' ' + idx.jindex)
     // this.p('jn05 rc ' + this.arr['en']['j020v000'][0] )
     // this.p('jn05_rc ' + iterations)
 
-    // Hay que hacer una primera pasada limpiando aliases 
+    // Hay que hacer una primera pasada limpiando aliases
 
 
     for (var pos in cats)
@@ -92,17 +92,17 @@ class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
 
       if (this.j.type == "alias")
       {
-		// Si el alias no tiene valor no se genera  
-		  
+		// Si el alias no tiene valor no se genera
+
 	  }
 
       this.links_management(idx , pos)
-      
-      // this.p ("jn05_si_rcsv : " + this.j.item +  ' PT '  + parent_otype + ' T ' + this.j.otype )    
+
+      // this.p ("jn05_si_rcsv : " + this.j.item +  ' PT '  + parent_otype + ' T ' + this.j.otype )
 
       // sg_site_name
-      // this.p('j05_Rcsv_callobj ' + this.j.item)            
-      
+      // this.p('j05_Rcsv_callobj ' + this.j.item)
+
       if ( this.j.child == "yes" )
       {
 
@@ -114,15 +114,15 @@ class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
         if (parent_otype == "array")
         {
           // this.p ("jn05_ircsv : Generating ARray")
-          this.k.createspecificpart(current_otype)        
+          this.k.createspecificpart(current_otype)
         }
         else
-          this.j.createspecificpart(current_otype)                
+          this.j.createspecificpart(current_otype)
 
 
 
 
-        this.review_childrens_recursive(  
+        this.review_childrens_recursive(
             current_level          ,
             current_enbreadcrumb       ,  // Breadcrumb en ingles
             depth +1            ,
@@ -134,10 +134,10 @@ class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
           this.k.end_pull(current_otype)
         else
           this.j.end_pull(current_otype)
-    
+
         // Si ha llamado a algun hijo es un tipo ya generado
         this.b.type_generated = true
-      } 
+      }
       else
       {
         // FINAL RECURSIVIDAD - OBJETOS COMPLETOS
@@ -150,11 +150,11 @@ class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
 
       if ( (--iterations  >= 0) && (this.b.type_generated) )
         this.j.add_separator()
-       
+
      }  // End For
 
   }
-  
+
 }
 
 exports.jn05_commo_json_recursive_call = jn05_commo_json_recursive_call

@@ -12,28 +12,28 @@
 // - d-gen_rest_search_inner-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                   =   require(  'fs'                                                   ),
        empty                =   require(  cons.NODE_MOD + 'is-empty'                             ),
        accents              =   require(  cons.NODE_MOD + 'remove-accents'                       ),
        { idx_pointers }     =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
        { rs03_object_page_inner }   =   require(  cons.JS_TYP7  + 'arroba/rest/rs03_page_inner.es7'  );
-       
+
 // Comm Object
 class rs02_object_search_inner extends rs03_object_page_inner {
 
-          
-  constructor (arroba , rest)   
-  {   
+
+  constructor (arroba , rest)
+  {
     super(arroba, rest)
-    this.n                   =  'rs02_object_search_inner::'      
-    
+    this.n                   =  'rs02_object_search_inner::'
+
     this.start_include      =  false
   }
 
-  //---------------------------------------------------------------------------------------------  
-  gen_rest_search_inner(  
+  //---------------------------------------------------------------------------------------------
+  gen_rest_search_inner(
             index                      )
   {
     this.m         =  'gen_rest_search_inner'
@@ -41,11 +41,11 @@ class rs02_object_search_inner extends rs03_object_page_inner {
     // arr_nxj020_32@w_make
     var idx = new idx_pointers(index,'nx')
 
-    // this.p('jn01_Jindex ' + this.s.ms.main_lang + ' ' + idx.jindex)    
+    // this.p('jn01_Jindex ' + this.s.ms.main_lang + ' ' + idx.jindex)
 
 
     // this.p('jn22R_First ' + this.arr['en']['nxj020'].length )
-    
+
     this.cats                   = this.gethash_arr(this.s.ms.main_lang , idx.jindex)
 
     this.info                   = this.gethash_arr(this.s.ms.main_lang , idx.iindex)
@@ -56,7 +56,7 @@ class rs02_object_search_inner extends rs03_object_page_inner {
 
     // Object.keys(myObj).length
     var last_element           = Object.keys(this.cats).length - 1
-    var cont                   = 0 
+    var cont                   = 0
 
     // this.p ('jn05_Last_Element ' + index + ' L ' + last_element)
 
@@ -65,7 +65,7 @@ class rs02_object_search_inner extends rs03_object_page_inner {
 
     // 843 - w_behavioiur
     // this.parr(cats)
-  
+
     let search = true
     var articles_arr = Array()
 
@@ -78,8 +78,8 @@ class rs02_object_search_inner extends rs03_object_page_inner {
     // Tenemos
     // arr_nxj020_w_effect@23
     // arr_nxi020_w_effect@1 2 3 4 6 7 8 9 10 21 22 23 25 26 27 28 29
-    
-    // Quiero arr_nxj020_effect@23 
+
+    // Quiero arr_nxj020_effect@23
     // Quiero arr_nxi020_effect@1 2 3 4 6 7 8 9 10 21 22 23 25 26 27 28 29
 
     // ITERA ARGUMENTOS - NO ELEMENTOS DE LA BUSQUEDA
@@ -98,7 +98,7 @@ class rs02_object_search_inner extends rs03_object_page_inner {
          // Llega 1 3 6
 
       // arr_nxi020_85@1 2 3 4 6 7 8 9 10 21 22 23 25 26 27 28 29
-      
+
       }
 
     }
@@ -114,12 +114,12 @@ class rs02_object_search_inner extends rs03_object_page_inner {
     {
       idx = new idx_pointers(index)
 
-      // this.p('jn01_Jindex ' + this.s.ms.main_lang + ' ' + idx.jindex)    
+      // this.p('jn01_Jindex ' + this.s.ms.main_lang + ' ' + idx.jindex)
       this.cats                   = this.gethash_arr(this.s.ms.main_lang , idx.jindex)
 
       // Object.keys(myObj).length
       var last_element           = Object.keys(this.cats).length - 1
-      var cont                   = 0 
+      var cont                   = 0
 
       // this.p ('jn05_Last_ElementZ ' + index + ' L ' + last_element)
 
@@ -129,35 +129,35 @@ class rs02_object_search_inner extends rs03_object_page_inner {
       for (var pos in articles_arr)
       {
 
-        // 9 - 13        
+        // 9 - 13
         let article_num = articles_arr[pos]
 
         // 001
         this.sheet.index           =   this.get_next_level(article_num)
-        
+
         // Tenemos que componer la lista
 
         // en/article/a01
-        this.sheet.link             =  this.gethash_keylang( idx.lindex , article_num)      
+        this.sheet.link             =  this.gethash_keylang( idx.lindex , article_num)
 
         // a.- Architectural keys: The definition of product structure is architecture
-        this.sheet.item             =  this.gethash_keylang( idx.iindex , article_num)      
+        this.sheet.item             =  this.gethash_keylang( idx.iindex , article_num)
 
         // a.- Architectural keys: The definition of product structure is architecture
-        this.sheet.breadcrumb       =  this.gethash_keylang( idx.bindex , article_num)      
+        this.sheet.breadcrumb       =  this.gethash_keylang( idx.bindex , article_num)
 
-        this.sheet.hover            =  this.gethash_keylang( idx.hindex , article_num)      
+        this.sheet.hover            =  this.gethash_keylang( idx.hindex , article_num)
 
-        this.sheet.type            =   this.gethash_keylang( idx.tindex , article_num)      
+        this.sheet.type            =   this.gethash_keylang( idx.tindex , article_num)
 
         this.rest.add(this.sheet)
-     }  
+     }
 
-    
+
     } // End For
 
   }
-  
+
 }
 
 exports.rs02_object_search_inner = rs02_object_search_inner

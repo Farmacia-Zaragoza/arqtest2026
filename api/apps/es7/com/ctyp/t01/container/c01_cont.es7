@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Site     : Site Object
 // Url      : Url Object
@@ -21,17 +21,17 @@
 //- d-copy_uri-       : Copy uri entity
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { printlog }     =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                  ),
         { cbool }        =   require(  cons.JS_TYP7  + 'bool/b01_bool.es7'                  ),
         { site }         =   require(  cons.JS_TYP7  + 'site/s01_site.es7'                  ),
         { uri }          =   require(  cons.JS_TYP7  + 'uri/u01_obj.es7'                    ),
-        { index_req }    =   require(  cons.JS_TYP7  + 'fire/index_req.es7'                 );  
+        { index_req }    =   require(  cons.JS_TYP7  + 'fire/index_req.es7'                 );
 
 
 class container extends printlog {
-  constructor(b = "" )  
+  constructor(b = "" )
   {
     super()
 
@@ -43,7 +43,7 @@ class container extends printlog {
 
     // Anode type
     this.a               = ''
-    
+
     // Pendiente
     this.j               = ''
   }
@@ -56,24 +56,24 @@ class container extends printlog {
 
   copy(arrobatype)
   {
-  
-     this.b.copy(                           arrobatype.b        )	
-     this.s.copy(                           arrobatype.s        )	
+
+     this.b.copy(                           arrobatype.b        )
+     this.s.copy(                           arrobatype.s        )
      this.copy_arr(                         arrobatype.arr      )
 
      // Guardamos el Anode
-  	 this.a        = arrobatype.a 
-	
+  	 this.a        = arrobatype.a
+
   }
 
   // PENDIENTE - NO SE SI ES CORRECTO
   copyj(arrobatype)
   {
-  
-     this.copy(arrobatype)	
+
+     this.copy(arrobatype)
      // Ojito que genera nuevos ficheros
      this.j             =   new jnode_type( arrobatype)
-	
+
   }
 
 
@@ -82,7 +82,7 @@ class container extends printlog {
      this.u.copy(uritype)
      this.s             = uritype.s
   }
-  
+
   copy_arr(arr)
   {
      var elem = ''
@@ -91,9 +91,9 @@ class container extends printlog {
        elem = arr[pos]
   	   this.arr[pos] = elem
   	 }
-  	
-  }	
-  	
+
+  }
+
 }
 
 exports.container = container

@@ -10,12 +10,12 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-create_json_common_type-          : Get object or array method fro common management 
+// - d-create_json_common_type-          : Get object or array method fro common management
 // - d-manage_parragraphs-               : Generate parragraphs
 // - d-save_json_parragraph_from_file-   : Generate parragraphs
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn11_index_fn }     =   require(  cons.JS_TYP7  + 'json/jindex/j00/jn11_index_fn.es7' ),
 	    shtf  			= 	require(  cons.JS_LIB7  + 'file/save_hash_to_file.es7' 	),
@@ -24,11 +24,11 @@ const   { jn11_index_fn }     =   require(  cons.JS_TYP7  + 'json/jindex/j00/jn1
 
 
 class jn10_index_pf extends jn11_index_fn {
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn10_index_pf::'      
+    this.n                   =  'jn10_index_pf::'
   }
 
   //---------------------------------------------------------------------------------------------
@@ -37,23 +37,23 @@ class jn10_index_pf extends jn11_index_fn {
     if (type == "array")
       this.k.createspecifictype(type)
     else
-      this.j.createspecifictype(type)    
-    
+      this.j.createspecifictype(type)
+
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Page Properties - Only Data - Parragraphs
   index_json_parragraph_from_file( file_to_load    )   // Indice
   {
- 
+
     // We have the lines in this.contents
     // Hay que limpiar el array
     // this.p('j00_comm_pf_Loading File ' + file_to_load)
-    
+
 
     this.word_arr         =   Array()
     var str_aux           =   ''
-    
+
     this.load_file_information(file_to_load)
 
 
@@ -64,19 +64,19 @@ class jn10_index_pf extends jn11_index_fn {
     {
       // Son lineas de texto e igual vacias
       // Hay que escapar las comillas dobles
-      
+
       let phrase = this.contents[pos]
 
       // this.p('Ahrase ' + phrase)
       // ALGORITMO
       // Cada frase debe procesarse y generarse informacion por cada palabra relativa a ser buscada
       this.process_phrase(phrase)
-          
+
       // INDEX (word) VALUE (count)
-      
-      
+
+
     }  // End For
-  
+
       // SEGUNDO FOR - CHECK IDEAL WORDS FOR INDEXING
 
     // for (var pos in this.word_arr)
@@ -86,7 +86,7 @@ class jn10_index_pf extends jn11_index_fn {
     // }
 
     // pf_result = false
-    
+
     // Tenemos las palabras relacionadas con el articulo
     // Ahora estas palabras hay que indexarlas en la estructura de busqueda
     // arr_palabra_@ 1 2 3 4 5 --> articulos donde existe la palabra
@@ -95,14 +95,14 @@ class jn10_index_pf extends jn11_index_fn {
 
     this.p('jn10_saving_HASH ' + this.s.cs.cache_path )
 
-	satf.save_hash1d_to_file(	    this.s.cs.cache_path 		        , 
+	satf.save_hash1d_to_file(	    this.s.cs.cache_path 		        ,
 								this.word_arr						    ,
 								this.s.cs.position						, // 0020
 								this.s.cs.page							) // 1
-  
-  
+
+
   }
-    
+
 }
 
 exports.jn10_index_pf = jn10_index_pf

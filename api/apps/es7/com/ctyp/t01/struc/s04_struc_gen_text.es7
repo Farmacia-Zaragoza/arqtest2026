@@ -11,7 +11,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Process:
 //-------------------------------------------------------------------------------------
-// @content_file --> contents[] --> arr[]  ( structured array of contents ) 
+// @content_file --> contents[] --> arr[]  ( structured array of contents )
 //                              --> tsa[]  ( To Save Array )   ( @format array of content )
 //                              --> tsb[]  ( To Save Array B ) ( @format array of unique content )
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -25,7 +25,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc_gen > Struc_attrib > Struc_defs
 // @Struc > @SetArray @String > @Cache > @log
@@ -33,45 +33,45 @@
 // FEATURE FEATURE-TEXT-INCLUDE
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { struc_gen_anchor }   =   require(  cons.JS_TYP7  + 'struc/s05_struc_gen_anchor.es7'      )
 
 class struc_gen_text extends struc_gen_anchor {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "struc_gen_text::"
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   // Basado en this.contents
   generate_text_file(lang ='en' , index = "" )
   {
-	
+
 	var value = ""
-	
+
 	var common_name = ""
-	var arr_name = "" 
-	var arr_value = "" 
-	
+	var arr_name = ""
+	var arr_value = ""
+
 	// Usamos estos dos parametros para gestionar la inclusion de textos en otros textos conservando la indexacion y posicion de los mismos
-	
+
 	// this.p('s02_Length ' + this.contents.length )
 
     // 020v000v001
     // this.p ( 's04_struc_gentext_DBG ' + index)
     common_name = index
-    
-	
+
+
 	// NECESITAMOS UN CONTENTS LOCAL
-	var contents = Array() 
-	for (var pos in this.contents) contents[pos] = this.contents[pos] 
-	
+	var contents = Array()
+	for (var pos in this.contents) contents[pos] = this.contents[pos]
+
 	for (var pos in contents)
   	{
-      
+
 	  this.sw_add_content = true
       this.quotescape(contents[pos] )
 
@@ -79,7 +79,7 @@ class struc_gen_text extends struc_gen_anchor {
 
 
       this.p('s02_text PosA ' + this.cont + ' V ' + value)
-      
+
       if (this.s.cs.page_type == "content")
       {
         // Debemos mandarles el contador actual
@@ -87,64 +87,64 @@ class struc_gen_text extends struc_gen_anchor {
         // Debe llegar aqui el 21
 
         this.anchor_management(lang , index)
-        
+
         if (this.s.b.anchor_metatag)
-        { 
+        {
           // Copiamos y desactivamos
           value = this.value
           this.s.b.anchor_metatag = false
         }
         // Caso 1 - No se hace nada - se recupera la misma posicion
         // Caso 2 - Se inserta un fichero - se recupera la position generada
-        
+
       }
       // 6 llega 6 pero el valor anterior para obtener el dato era 3
 
       // this.p('s02_text FFILE ' + pos + ' V ' + value)
-      
+
       if (this.sw_add_content)
-	  {	
+	  {
         this.p('s02_text PosB ' + this.cont + ' V ' + value)
-        
+
         let curr_pos   = this.cont + lang
-        let next_level = this.get_next_level(this.cont)            
+        let next_level = this.get_next_level(this.cont)
 
-        // J 
+        // J
 
-        arr_name  = 'j' + common_name   
+        arr_name  = 'j' + common_name
         arr_value = 'text_' + next_level
 
         // j020v001v001 pos 6
-        // this.p('s02_stru_FFILE ' + arr_name + '   P  ' + pos)           
+        // this.p('s02_stru_FFILE ' + arr_name + '   P  ' + pos)
 
 	    this.set_lang_arr_pos(lang  , arr_name , this.cont , arr_value)
         this.set_lang_arr_pos('all' , arr_name , curr_pos , arr_value)
 
-        // I 
-      
-        arr_name  = 'i' + common_name 
+        // I
+
+        arr_name  = 'i' + common_name
         arr_value = value
 
-        // an07_child ' + this.arr['ja']['i000v005'] 
- 
+        // an07_child ' + this.arr['ja']['i000v005']
+
         // i020v001001 pos 5
-        // this.p('s02_stru_FFILE DBG ' + arr_name + '  P ' + this.real_pos_with_include + ' V ' + arr_value)           
+        // this.p('s02_stru_FFILE DBG ' + arr_name + '  P ' + this.real_pos_with_include + ' V ' + arr_value)
 
 	    this.set_lang_arr_pos(lang  , arr_name , this.cont , arr_value)
         this.set_lang_arr_pos('all' , arr_name , curr_pos , arr_value)
 
         this.cont++
      }
-        
-  	} // End foreach    
-   
+
+  	} // End foreach
+
     // Actualizamos la posicion de las lineas ya insertadas
-  
-    
+
+
     // this.parr(this.arr['en']['j020v000v001'])
-    
+
     // VAmos a entender lo que estamos guardando
-    
+
   }
 
 

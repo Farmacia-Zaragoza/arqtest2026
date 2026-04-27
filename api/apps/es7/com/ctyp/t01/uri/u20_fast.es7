@@ -13,7 +13,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/rcode/es7/com/agen/constants.es7" )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_paths }     =   require(  cons.JS_BASE + 'com/objects/drupal/uri/u08_paths.es6'    );
         match           =   require(  cons.JS_BASE  + 'com/libs/string/match.es6'          ),
@@ -24,7 +24,7 @@ const   { uri_paths }     =   require(  cons.JS_BASE + 'com/objects/drupal/uri/u
 
 
 class uri_fast extends uri_paths {
-  constructor(s , ir) 
+  constructor(s , ir)
   {
   super()
   this.n                =  "uri::"
@@ -32,7 +32,7 @@ class uri_fast extends uri_paths {
   this.s                =  s
   this.ir               =  ir    // Index request
   //this.sch              =  sch    // Scheme
-  
+
   //this.pg               =  this.s.pg
 
   this.b                =  this.s.b
@@ -46,31 +46,31 @@ class uri_fast extends uri_paths {
   this.domain     = this.ir.domain
 
     // Global replace works
-    
+
   this.replace(this.domain , '.' , "_" )
-    
+
   this.dash_domain   = this.result
-  
+
   this.ssl_page     = "nnn"
   this.http_domain   = "http://" + this.domain
-  this.http_domainbar   = this.http_domain + '/'  
-  this.dash_port = "_" + "http" + "_"  
+  this.http_domainbar   = this.http_domain + '/'
+  this.dash_port = "_" + "http" + "_"
 
   // this.manage_front()
   this.dash_uri        =  'front'                           // Main home
     // This could to change with language
-  this.uri          =   'front'                          
-    
-  this.compouri        =  ''                            
-  
-  this.slash_ideal_uri      =   this.uri                         
-  this.dash_ideal_uri        =   this.uri       
+  this.uri          =   'front'
+
+  this.compouri        =  ''
+
+  this.slash_ideal_uri      =   this.uri
+  this.dash_ideal_uri        =   this.uri
 
   this.page_command        =  'blanc'
   this.page_name          =  'blanc'
-  
- 
-  // Create Paths for human or for robot 
+
+
+  // Create Paths for human or for robot
   this.create_paths("page", 'human')
   }
 

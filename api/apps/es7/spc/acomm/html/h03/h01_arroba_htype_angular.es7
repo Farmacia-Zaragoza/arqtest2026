@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_Htype > Hcomm_struc > Scomm_defs (common-point)
 // H_TypeSpc > H_TypeCom > S_Type > Printlog
@@ -21,23 +21,23 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { hcomm_struc }        =   require(  cons.JS_ACO7  + 'html/h03/h03_struc_comm.es7'    ),
        { hnode_type_angular } =   require(  cons.JS_ACO7  + 'html/h02/hn01_hnode_type_angular.es7' );
 
 class arroba_htype_angular extends hcomm_struc {
-  constructor(    container  )  
+  constructor(    container  )
   {
     super(container)
- 
+
     this.n                  =   "arroba_htype_angular::"
     this.m                  =   "cons"
-    
+
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
+  //---------------------------------------------------------------------------------------------
+
   run_cache_to_generate_html()
   {
     this.m                  =   "run_cache_to_generate_html"
@@ -47,11 +47,11 @@ class arroba_htype_angular extends hcomm_struc {
     // this.p('h02_struc_before check ' + this.s.cs.cache_path )
 
     // GENERAMOS HNODE
-    // this.p('h02_HnodeNotCAche') 
+    // this.p('h02_HnodeNotCAche')
     this.htype = new hnode_type_angular(this.container)
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
 }
 

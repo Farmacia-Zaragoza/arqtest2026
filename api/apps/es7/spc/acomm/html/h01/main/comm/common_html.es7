@@ -12,11 +12,11 @@
 //<!DOCTYPE html>
 //<html lang="en">
 //<head>
-//<body> 
+//<body>
 // ------------------------------------------------------------------------------------
 //* DOCTYPE
 //  HTML
-//   HEAD 
+//   HEAD
 //	 BODY
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
@@ -25,58 +25,58 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"                           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const  { ifnojs } 				= 	require(	cons.JS_TYP7 + 'html/style/ifnojs.es7'				 ),
 	   { hnode } 				= 	require(	cons.JS_TYP7 + 'html/hnode/h01_hnode.es7'			 ),
-	   { common_robot }	        = 	require(	cons.JS_ACO7 + 'html/h01/main/comm/common_robot.es7' );					
+	   { common_robot }	        = 	require(	cons.JS_ACO7 + 'html/h01/main/comm/common_robot.es7' );
 
 class common_html extends hnode  {
 
     constructor (     container						)
 	{
         let tag_type     			= 	'html'
-    	super(				tag_type	)			
+    	super(				tag_type	)
 
         this.n                  =   "common_html::"
-       
+
         this.container          =   container
-       
+
         this.s					=   this.container.s
-    
+
         this.b                  =   this.container.b
-        
+
 		// Another level fast full page cache
-												
+
     }
 
     spec_attribs()
     {
-        this.tag_type     			= 	'html'						
-		
-		this.ifnojs					=	new ifnojs()					
-		
-		this.n 						=		'htm01_html_social'	
-		
+        this.tag_type     			= 	'html'
+
+		this.ifnojs					=	new ifnojs()
+
+		this.n 						=		'htm01_html_social'
+
     	this.body_01    			=	''
-    
-            		
+
+
 	// Attributes
-	
-		this.img_background		=	''										
-		this.img_logo			=	''										
-    	
+
+		this.img_background		=	''
+		this.img_logo			=	''
+
     }
-    
+
 
     create_robot()
     {
-		this.body_01	=	
+		this.body_01	=
 				new common_robot( this.container )	// Drupal theme structure
 
-		this.code				+=  this.body_01.code					
-	}		
+		this.code				+=  this.body_01.code
+	}
 
 
 // <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-.
@@ -88,39 +88,39 @@ class common_html extends hnode  {
 
 	create_if_no_js()
 	{
-		this.ifnojs.ifno_oneline('7' , 'lt' , 'no-js lt-ie9 lt-ie8 lt-ie7' )		
-		this.code = this.ifnojs.code 	 			
-		this.ifnojs.ifno_oneline('7' , ''   , 'no-js lt-ie9 lt-ie8')			 	
-		this.code += this.ifnojs.code 	
-		this.ifnojs.ifno_oneline('8' , ''   , 'no-js lt-ie9')				 	
-		this.code += this.ifnojs.code 	
-		this.ifnojs.ifno_complex('8' , 'gt'  	)							 	
-		this.code += this.ifnojs.code 	
-		
+		this.ifnojs.ifno_oneline('7' , 'lt' , 'no-js lt-ie9 lt-ie8 lt-ie7' )
+		this.code = this.ifnojs.code
+		this.ifnojs.ifno_oneline('7' , ''   , 'no-js lt-ie9 lt-ie8')
+		this.code += this.ifnojs.code
+		this.ifnojs.ifno_oneline('8' , ''   , 'no-js lt-ie9')
+		this.code += this.ifnojs.code
+		this.ifnojs.ifno_complex('8' , 'gt'  	)
+		this.code += this.ifnojs.code
+
 	}
 
     build_data()
     {
 	// To build content is needed to build block
-		this.code			=	''								
+		this.code			=	''
 
-		this.create_if_no_js() 									
+		this.create_if_no_js()
 
-		this.create_head()										
+		this.create_head()
 
         if (this.s.b.robot_page)
-		  this.create_robot()     
+		  this.create_robot()
         else
-		  this.create_body()										
+		  this.create_body()
 
-		// this.pcreate()											
-		
-		this.code 		+= 	'</html>'							
+		// this.pcreate()
+
+		this.code 		+= 	'</html>'
 
 		// Esta linea no se puede hacer dinamica
-//		doctype='<!DOCTYPE html>'									
+//		doctype='<!DOCTYPE html>'
 
-		// this.p('Code >' + this.code ) 												
+		// this.p('Code >' + this.code )
     }
 
 }

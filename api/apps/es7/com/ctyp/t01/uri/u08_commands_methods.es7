@@ -15,7 +15,7 @@
 // - d-url_page_set_photo-            : Set urls to be managed as a photo
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_sorts_uri }     =   require(  cons.JS_TYP7 + 'uri/u09_sorts_uri.es7'    );
 
@@ -23,28 +23,28 @@ class uri_commands_methods extends uri_sorts_uri {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_commands_methods::'        
+    super()
+    this.n               =   'uri_commands_methods::'
   }
 
   // architect/ricardocabellotorres  -> article XX
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Local Method - This method depends of site
   url_page_load_drupal_node(page_number , page_position = '20')
   {
-    // this.p('u04_aliases_Comando para analizar: ' + this.uri)           
+    // this.p('u04_aliases_Comando para analizar: ' + this.uri)
 
     this.b.page_product       =   true
     // this.s.cs.page_name       =  'product'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'        
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  page_position
-    this.s.cs.page            =  page_number   
+    this.s.cs.page            =  page_number
 
     this.s.cs.position_norm  = this.get_next_level(this.s.cs.position)
     this.s.cs.page_norm      = this.get_next_level(this.s.cs.page)
-    
-    
+
+
   }
 
   //---------------------------------------------------------------------------------------------
@@ -54,12 +54,12 @@ class uri_commands_methods extends uri_sorts_uri {
     // Puede ser un producto o puede ser una lista
 
     this.b.page_product       =   true
-    this.b.page_list          =   false    
+    this.b.page_list          =   false
     this.s.cs.page_name       =  'product'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   //---------------------------------------------------------------------------------------------
 
@@ -69,57 +69,57 @@ class uri_commands_methods extends uri_sorts_uri {
     this.b.page_product       =   true
     this.s.cs.page_name       =  'photo'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_slide(pos = 30)
   {
     // this.b.page_product       =   true
     this.s.cs.page_name       =  'slide'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_gallery(pos = 30)
   {
     // this.b.page_product       =   true
     this.s.cs.page_name       =  'gallery'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_fs(pos = 60)
   {
     // Sistema de archivos
     this.p ('ENABLING_FS ' + pos)
-        
+
     this.s.cs.page_name       =  'fs'
     this.s.cs.loadtype        =  'filesystem'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
 
   url_page_set_kb(pos = 40)
   {
-        
+
     this.s.cs.page_name       =  'kb'
     this.s.cs.loadtype        =  'hierarchical'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_idx(pos = 20)
   {
 
     this.s.cs.page_name       =  'idx'
     this.s.cs.loadtype        =  'page'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_rest(pos = 20)
   {
@@ -128,23 +128,23 @@ class uri_commands_methods extends uri_sorts_uri {
 
     this.s.cs.page_type	      =  'idx'
     this.s.cs.page_name       =  'rest'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.ext             =  'idx'
     this.s.cs.sub             =  'arroba'         // Subtype
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_search(pos = 20)
   {
     // Aqui tenemos que estar seguro que la estructura es correcta
 
     this.b.page_search        =   true
-    
+
     this.s.cs.page_name       =  'search'
     this.s.cs.loadtype        =  'position'
-    this.s.cs.teaser_type	  =  'full'   
+    this.s.cs.teaser_type	  =  'full'
     this.s.cs.position        =  pos
-  }	  
+  }
 
 
   //---------------------------------------------------------------------------------------------
@@ -158,7 +158,7 @@ class uri_commands_methods extends uri_sorts_uri {
     this.s.cs.loadtype        =  'position'
     this.s.cs.teaser_type	  =  'slim'   // Tipo de presentacion por defecto
     this.s.cs.position        =  pos
-  }	  
+  }
 
   url_page_set_full_site(pos = '20')
   {
@@ -166,15 +166,15 @@ class uri_commands_methods extends uri_sorts_uri {
     this.b.page_list          =   false
     this.b.page_product       =   false
     this.b.page_allinone      =   true
-    this.s.cs.page_name       =  'allinone'    
+    this.s.cs.page_name       =  'allinone'
     this.s.cs.loadtype        =  'position'
     this.s.cs.teaser_type	  =  'detailed'
-    this.s.cs.position        =  pos    
+    this.s.cs.position        =  pos
   }
-      
+
 
   //---------------------------------------------------------------------------------------------
-  
+
 }
 
 exports.uri_commands_methods = uri_commands_methods

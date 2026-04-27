@@ -14,24 +14,24 @@
 // - build_data     : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { common_link }       =   require(  cons.JS_ACO7 + 'html/h01/main/comm/common_link.es7'        ),
        { deep_link_angular } =   require(  cons.JS_ACO7 + 'html/h01/deep/styles/deep_link_angular.es7'        );
 
 class links_angular extends common_link  {
- 
+
   constructor (     thm                    )
-  {   
+  {
 
-    super(thm)                              
+    super(thm)
 
-    this.n              =  'lnk01_link_arqdru::'          
+    this.n              =  'lnk01_link_arqdru::'
   }
 
   build_data()
   {
-    this.create_favicon()                      
+    this.create_favicon()
 
     this.link_to_load     =   new deep_link_angular(this.thm)
 

@@ -1,6 +1,6 @@
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2018 )
-// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia
 // ---------------------------------------------------------------------------
 // Brqx 2019 - 22/10/17        Depth:[0N]
 // Version : 0.0.1                  Type :[FUNCTION]
@@ -9,22 +9,22 @@
 // ---------------------------------------------------------------------------
 //  + Almacena codigo y arrays en ficheros
 // ---------------------------------------------------------------------------
-// - Funciones 
+// - Funciones
 // ---------------------------------------------------------------------------
 //-- save_hash_to_file
 // ---------------------------------------------------------------------------
-// - Requiere 
+// - Requiere
 // ---------------------------------------------------------------------------
-//-- 
+//--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const   fs           =   require(  'fs'                                    ),
     path         =   require(  'path'                                    ),
     os           =   require(  'os'                                    ),
-    util         =   require(  'util'                            ),        
+    util         =   require(  'util'                            ),
     empty        =   require(  cons.NODE_MOD + 'is-empty'                          ),
 	echo 		 = 	require(	cons.NODE_MOD + 'node-echo'									),
     trim         =   require(  cons.NODE_MOD + 'trim'                            ),
@@ -35,7 +35,7 @@ const   fs           =   require(  'fs'                                    ),
 // Ck [19-06-03]
 // Save Hash_to_file --> Guardamos el contenido del hash de 1dim en el fichero
 // Recibe una array de una dimension
-function save_hash_to_file(full_file_name_int = ''   , 
+function save_hash_to_file(full_file_name_int = ''   ,
                            arr_properties     = ''   ,
                            filter             = ''   )
 {
@@ -55,18 +55,18 @@ function save_hash_to_file(full_file_name_int = ''   ,
       // Primero debe existir el padre
 
       dir =  path.dirname(full_file_name_int)
-     
-      if ( !fs.existsSync(dir)       ||   
+
+      if ( !fs.existsSync(dir)       ||
            !fs.lstatSync(dir).isDirectory()     )
       {
         // No Existe el padre --> Lo creamos
         mkdirp.sync(dir)
-        fs.chmodSync(dir, 0775)          
-        let user = os.userInfo().username          
-   
+        fs.chmodSync(dir, 0775)
+        let user = os.userInfo().username
+
         // Solo lo podemos hacer si somos apache
         if (user == 'apache' )
-          fs.chownSync(dir, 48 , 48 )            
+          fs.chownSync(dir, 48 , 48 )
         }
 
         if ( fs.existsSync(full_file_name_int) )
@@ -77,10 +77,10 @@ function save_hash_to_file(full_file_name_int = ''   ,
           // Creamos uno
           fs.openSync(full_file_name_int, 'w')
 		  fs.chmodSync(full_file_name_int, parseInt('0674',8))
-		}					
+		}
 
         // echo ('satf_Antes del for en la function ' + Object.entries(arr_properties).length )
-        
+
 
     var DATA = ''
     var TSB = ''
@@ -90,7 +90,7 @@ function save_hash_to_file(full_file_name_int = ''   ,
     //var regstr = new RegExp("^([a-z]" + filter + "v[0-9][0-9][0-9])$")
     var regstr = new RegExp("^([a-z]" + filter + ")$")
 
-    
+
     for (var index1 in arr_properties)
     {
 
@@ -98,44 +98,44 @@ function save_hash_to_file(full_file_name_int = ''   ,
       if (filter != "" )
       {
         // echo ("hAYfiltroooo " + filter)
-        regexok = regstr.exec(index1)        
+        regexok = regstr.exec(index1)
         //regesok = /^([a-z][0-9][0-9][0-9]v[0-9][0-9][0-9])$/.test(index1)
       }
-      
+
       if (regexok)
       {
        // if (filter != "" )      echo('iNDEXXXXSAVE ' + index1 )
 
       TSB = arr_properties[index1]
-       
+
       for (var arr_pos in TSB)
       {
         value =  TSB[arr_pos]
-          
+
         // How we store STORE
         // en - j000 - 0 - value
-	    // this.tsb[index1][arr_pos]		= 	value    
+	    // this.tsb[index1][arr_pos]		= 	value
 
         DATA='arr_' + index1 + '_' + arr_pos + '@' + value
-          
+
         // Aqui tenemos que evitar los ctrl M
         // Est correcto pues hace un reemplazo global con la g
-          
+
         // satf arr_p000v004_5@r_img/logos/logo_jr_brqx_2012_gold.gif
         // satf arr_i020v001v001_4@Силуэт: культовый. Дизайн: вне времени
-          
+
         // echo ('satf ' + DATA)
 
         input = DATA.replace('/\r\n/g', "")    // DOS style newlines
-        input = input.replace('/\r/g', "")      
-        LNDATA= input + os.EOL 
+        input = input.replace('/\r/g', "")
+        LNDATA= input + os.EOL
         fs.appendFileSync(full_file_name_int, LNDATA)
       } // End For
       } // End Ifregex
     }
 
    } // End If Empty File
-  } // End If Arr Properties    
+  } // End If Arr Properties
 
 }
 

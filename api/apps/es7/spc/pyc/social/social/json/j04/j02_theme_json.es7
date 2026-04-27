@@ -6,19 +6,19 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Theme_Json (spc) > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Class            : c-theme_json- 
+// Class            : c-theme_json-
 //-------------------------------------------------------------------------------------
-// Used Entities     
+// Used Entities
 //-------------------------------------------------------------------------------------
 // Arroba_JType     : Specific type to create json files
 // Theme Html       : Type to create html code
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { tjson_comm }          =   require(  cons.JS_ACO7  + 'json/j04/comm/j02_tjson_comm.es7'   ),
         { theme_react }         =   require(  cons.JS_ACO7  + 'html/h04/h02_theme_react.es7'  ),
@@ -32,21 +32,21 @@ class theme_json extends tjson_comm
     this.n                  =   "theme_json::"
 
     // this.p('j02_thmjson_HERE_Page_type ' + this.arroba.s.cs.page_type )
-    
+
     this.jcontent           =   new arroba_jtype_social(this.arroba , 'content')
 
-    this.manage_index_json_page()   
+    this.manage_index_json_page()
 
     this.generate_content_json()
 
     // Aqui podemos ajustar el contenido para hacer un listado con las busquedas
-    
-    // Con cache , aun no se ha generado la arroba   
+
+    // Con cache , aun no se ha generado la arroba
     this.thmhtml            =   new theme_react(this.arroba)
-        
+
     this.code               =   this.thmhtml.code
 
-  } 
+  }
 
 } // end Class
 

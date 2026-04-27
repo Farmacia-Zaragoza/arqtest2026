@@ -9,19 +9,19 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn04_search_site }   =   require(  cons.JS_ACO7  + 'json/j02/jn04_jnode_search_site.es7'   );
 
 class jn20_search_json extends jn04_search_site {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'search_json::'
   }
 
@@ -33,17 +33,17 @@ class jn20_search_json extends jn04_search_site {
     // this.p('jn20-Generating Search NO LLEGA  ' + this.j.full_path )
     // this.p('jn20-Generating Search  ' + this.u.bars_sub_query )
 
-    this.j.save_top()      
+    this.j.save_top()
 
     this.generate_common_langs_uri_sep()
 
     this.generate_common_search()
-    
+
     this.j.save_end()
 
   }
 
-  
+
 }
 
 exports.jn20_search_json = jn20_search_json

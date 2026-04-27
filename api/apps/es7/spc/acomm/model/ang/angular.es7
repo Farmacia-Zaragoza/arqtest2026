@@ -4,20 +4,20 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // arqdru_cache- arqdru_nocache
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Launcher> PrintLog
 // @Launcher > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Class : 
+// Class :
 //-------------------------------------------------------------------------------------
 // c-angular-          : Angular Class
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-arqdru_no_cache-  : Arqdru no cache launcher
 // e-arqdru_cache-     : Arqdru cache launcher
@@ -28,7 +28,7 @@
 
 // Must to be unique
 
-var     cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { angular_no_cache } =   require(  cons.JS_ACO7  + 'model/ang/nocache_launcher.es7'),
         { angular_cache }    =   require(  cons.JS_ACO7  + 'model/ang/cache_launcher.es7'  ),
@@ -45,7 +45,7 @@ class angular extends printlog
 
     if (pmt.cache)        this.model          = new angular_cache(    pmt  )
     else                  this.model          = new angular_no_cache( pmt  )
-  } 
+  }
 } // end Class
 
 exports.angular = angular

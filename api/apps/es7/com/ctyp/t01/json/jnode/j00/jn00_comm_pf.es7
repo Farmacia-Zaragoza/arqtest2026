@@ -10,13 +10,13 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-create_json_common_type-          : Get object or array method fro common management 
+// - d-create_json_common_type-          : Get object or array method fro common management
 // - d-manage_array_parragraphs-               : Generate parragraphs
 // - d-save_json_parragraph_from_file-   : Generate parragraphs
 // - d-save_full_array_parragraph
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                    =   require(  'fs'                                        ),
        { jn01_comm_pho }     =   require(  cons.JS_TYP7  + 'json/jnode/j00/jn01_comm_pho.es7'   ),
@@ -24,11 +24,11 @@ const  fs                    =   require(  'fs'                                 
        empty                 =   require(  cons.NODE_MOD   + 'is_empty'                     );
 
 class jn00_comm_pf extends jn01_comm_pho {
-           
-    constructor ()   
-    {   
+
+    constructor ()
+    {
     super()
-    this.n                   =  'jn00_comm_pf::'      
+    this.n                   =  'jn00_comm_pf::'
     }
 
   //---------------------------------------------------------------------------------------------
@@ -37,8 +37,8 @@ class jn00_comm_pf extends jn01_comm_pho {
     if (type == "array")
       this.k.createspecifictype(type)
     else
-      this.j.createspecifictype(type)    
-    
+      this.j.createspecifictype(type)
+
   }
 
   links_management(idx, pos = 0 )
@@ -46,28 +46,28 @@ class jn00_comm_pf extends jn01_comm_pho {
     let clink = this.gethash_keylang( idx.lindex , pos)
 
     // Si es vacio no definmos link
-    if (clink != "" )    
+    if (clink != "" )
     {
       // if     (  this.j.rtype ==  "absolute" ) Si es absolutio lo dejamos como esta
-     if ( this.j.rtype ==  "relative" )  
+     if ( this.j.rtype ==  "relative" )
 	    clink               = this.s.cs.lang + '/' + clink
-     else if ( this.j.rtype ==  "composed" ) 
+     else if ( this.j.rtype ==  "composed" )
      {
        if ( this.s.cs.lang_url !=  "nourldef" )
 	     clink               = this.s.cs.lang_url  + clink
      }
     }
-	
+
 	this.j.link = clink
 	this.k.link = clink
 
-	  
+
   }
 
 
   //---------------------------------------------------------------------------------------------
-  manage_array_parragraphs( type_passed = 'array' , 
-                      index = '')  
+  manage_array_parragraphs( type_passed = 'array' ,
+                      index = '')
   {
     // this.p('jn00_pf_Type ' + this.k.type )
 
@@ -84,62 +84,62 @@ class jn00_comm_pf extends jn01_comm_pho {
     else
     {
       // this.p('j00_Before to Call 2ndlevel ' +  this.j.item + ' V ' + this.j.value )
-      // Structure to create : 
+      // Structure to create :
       // "languages": [
       //   { "es": { "index": "005_000" ...
       // Si es un alias no debe generarse si no tiene valor
       let gen = true
 
-      // YA nunca va a ocurrrir puesto que lo gestionamos en arroba      
+      // YA nunca va a ocurrrir puesto que lo gestionamos en arroba
       // if ( (this.j.type == "alias" )  && ( this.j.value == ""  ) ) gen = false
       if ( (this.j.type == ""      )  && ( this.j.value == ""  ) ) gen = false
 
       if ( (this.j.item == "anchor"      )  && ( this.j.value == ""  ) ) gen = false
 
       if (gen) this.generate_type_reviewed(type_passed)
-        
+
       // OJITO QUE ASI GENERA LAS COMAS - POR LO QUE HAY QUE GESTIONARLO EN AL PADRE
     }
-  
+
   }
-  
+
   generate_type_reviewed(type_passed = "array")
   {
     if (type_passed == "array")
       this.k.createspecifictype(type_passed)
     else
-      this.j.createspecifictype(type_passed)    
+      this.j.createspecifictype(type_passed)
 
     // Aqui estoy perdido. Debo hacerlo al insertar los elementos en el array
     // this.b.add_comma = true
-    this.b.type_generated = true	  
+    this.b.type_generated = true
   }
-    
+
   // Los parrafos son siembre arrays
   save_full_array_parragraph(index)
   {
      // Para entenderlo, la generacion actual se base en j ( object ) / k ( array)
      // La generacion interna se bas en el parametro que pasamos
      // "parragraph": {"index": "020v000v001","type": "iparragraph","title": "a.- Architectural Focus","otype": "object","clink": "page/architecture/articles/a000","childrens": false,"pull03": [
-     //  { "index": "0","type": "text","value": "Surely people are not sure what the word \"architecture\" combined with a process of agile development and deployment." } 
-     
+     //  { "index": "0","type": "text","value": "Surely people are not sure what the word \"architecture\" combined with a process of agile development and deployment." }
+
      // this.p('j00pf_item ' + index )
      this.j.child = "yes"
      this.j.createspecificpart("array")
-     
+
      if (this.s.cs.page_name == 'photo' )
        this.save_json_photo_from_file( index  )
      else
-       this.save_json_parragraph_from_file( index  )     
-          
+       this.save_json_parragraph_from_file( index  )
+
      this.j.end_pull("array")
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Page Properties - Only Data - Parragraphs
   save_json_parragraph_from_file( index    )   // Indice
   {
- 
+
     // We have the lines in this.contents
     // Hay que limpiar el array
     this.p('jn00_comm_pf_Loading Index ' + index)
@@ -154,11 +154,11 @@ class jn00_comm_pf extends jn01_comm_pho {
     var iterations             = cats.length - 1
     var iterations_en          = iterations
     var iterations_es          = cats_es.length - 1
-    
+
     // var iterations           = Object.keys(cats).length - 1
 
     // HAY VECES QUE LOS TEXTOS NO SON IGUALES
-    
+
 
     if ( this.s.cs.lang != "en" && (iterations != iterations_es))
     {
@@ -170,13 +170,13 @@ class jn00_comm_pf extends jn01_comm_pho {
     this.p('j00_comm_LEngth_Array_Pf  ' + iterations  )
     this.parr(cats)
     // this.parr(info)
-    
+
     let cont = 0
     let pf_anchor = ''
 
     // Vaciamos la lista de anchors
     this.anchor_list = ''
-    // 
+    //
     var created_type = true
 
 
@@ -186,19 +186,19 @@ class jn00_comm_pf extends jn01_comm_pho {
       // Son lineas de texto e igual vacias
       // Hay que escapar las comillas dobles
 
-      // Reemplazamos las barras si las hubiere. Debe ser el primer reemplazo      
+      // Reemplazamos las barras si las hubiere. Debe ser el primer reemplazo
 
       this.attribs(idx, pos)
 
-      this.p('jn00_comm_pf_' + pos + ' I ' + iterations + ' V ' + this.k.value + ' I ' + this.k.item)      
+      this.p('jn00_comm_pf_' + pos + ' I ' + iterations + ' V ' + this.k.value + ' I ' + this.k.item)
 
       if (!empty(this.k.value) )
       {
 
         this.k.type = 'text'
-       
+
         this.k.index = cont++
-        
+
         // Creamos tipos siendo anchor
         this.k.createspecifictype()
 
@@ -211,9 +211,9 @@ class jn00_comm_pf extends jn01_comm_pho {
           this.k.add_separator()
 
      }  // End For
-  
+
   }
-    
+
 }
 
 exports.jn00_comm_pf = jn00_comm_pf

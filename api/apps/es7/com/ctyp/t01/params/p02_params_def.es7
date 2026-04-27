@@ -9,6 +9,8 @@
 // Methods:
 //-------------------------------------------------------------------------------------
 
+const   path                =   require('path'                                             );
+
 const { JS_TYP7 } = require(path.join(process.cwd(),'api/apps/paths.js'));
 const 	{ printlog } 		  =  require(path.join(JS_TYP7 , 'logs/printlog.es7'));
 

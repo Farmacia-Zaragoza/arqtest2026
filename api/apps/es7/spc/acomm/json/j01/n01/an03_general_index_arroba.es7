@@ -9,19 +9,19 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-generate_common_index-      : Common method to index articles 
+// - d-generate_common_index-      : Common method to index articles
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"               )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { ani01_arroba_recursive } =   require(  cons.JS_TYP7  + 'arroba/aindex/a01/ani01_recursive.es7' )
 
 class an03_general_index_arroba extends ani01_arroba_recursive {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'an03_general_index_arroba::'
   }
 
@@ -33,7 +33,7 @@ class an03_general_index_arroba extends ani01_arroba_recursive {
     this.pos = pos
 
     // this.p('jn20-Generating Search  ' + pos )
-    
+
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
     this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
@@ -43,15 +43,15 @@ class an03_general_index_arroba extends ani01_arroba_recursive {
 
     // Esta ya generandose el fichero. Aqui habria que igual filtrar las palabras de busqueda primero
 
-    
+
     // De momento no es un JSON
 
-    this.save_arroba_index_recursive_array_to_file(  
+    this.save_arroba_index_recursive_array_to_file(
                 this.index                , // Index of array
                 this.arroba.j.categories  ) // Categories lang/ES Name
 
-	  
-	  
+
+
   }
 
 }

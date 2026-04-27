@@ -9,19 +9,19 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn02_process_site }   =   require(  cons.JS_ACO7  + 'json/j02/jn02_jnode_process_site.es7'   );
 
 class jn46_fs_json extends jn02_process_site {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'jn46_fs_json::'
   }
 
@@ -35,7 +35,7 @@ class jn46_fs_json extends jn02_process_site {
     // this.p('jn03_product_arqdru_' + this.s.cs.position + '.-.' +   this.s.cs.page )
     // this.p('jn03_product_arqdru_First ' + this.arr['en']['j020v020'][9] )
 
-    this.j.save_top()      
+    this.j.save_top()
 
     // E.Diamond Languages -- > 15
 
@@ -47,7 +47,7 @@ class jn46_fs_json extends jn02_process_site {
     this.j.save_end()
   }
 
-  
+
 }
 
 exports.jn46_fs_json = jn46_fs_json

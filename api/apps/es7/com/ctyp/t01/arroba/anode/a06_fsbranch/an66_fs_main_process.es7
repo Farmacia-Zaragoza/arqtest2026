@@ -14,7 +14,7 @@
 //- d-main_hierarchical_process-       : Process from main file only specific position
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoMultiLoad > AnoMultiProcess > AnoRunPosition
 // @Anode >  ...
@@ -22,13 +22,13 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var    cons            =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_fsbranch_load }  =   require(  cons.JS_TYP7  + 'arroba/anode/a06_fsbranch/an67_load.es7'   ),
        { idx_pointers }           =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'        );
 
 class anode_fs_main_process extends anode_fsbranch_load {
-  constructor()  
+  constructor()
   {
     super()
 
@@ -36,9 +36,9 @@ class anode_fs_main_process extends anode_fsbranch_load {
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Procesa Solo la primera posicion o la pasada
-  main_fs_process(   index               = 'main'    , 
+  main_fs_process(   index               = 'main'    ,
                                array_index_string  = ''        ,
                                file_structure_path = ''        ,
                                current_subpath     = ''        ,
@@ -52,7 +52,7 @@ class anode_fs_main_process extends anode_fsbranch_load {
 
     this.arroba_attribs(idx, this.s.cs.position)
 
-    
+
     // Vamos a ir avanzando por la estructura y esta sera la base
     // kb
     var breadcrumb      = this.breadcrumb
@@ -61,15 +61,15 @@ class anode_fs_main_process extends anode_fsbranch_load {
     this.p('an66_mainp_bre ' + breadcrumb)
 
     // El indice inicial es sin la v o sea 040
-   
+
     array_index_string  = this.dhild
 
     // l060
     current_subpath     = 'l' +  this.dhild
 
     file_structure_path = current_subpath
-    
-    
+
+
     // this.p('an46_jnod_Pos: ' + this.s.cs.position + ' Item : ' + this.item + ' Child: ' + this.child)
 
     if ( this.child == "yes" )
@@ -77,26 +77,26 @@ class anode_fs_main_process extends anode_fsbranch_load {
       // this.p('an46_Cat Lang : ' + this.s.ms.lang + ' Item '  + this.item + ' Pat: ' + current_subpath)
       // cache::main_hierarchical_process - an36_Cat Lang : en Cat hierarchical_kb Pat: l040
       // cache::main_hierarchical_process - an36_Cat Lang : es Cat hierarchical_kb Pat: l040
-  
-  
+
+
       // this.p('an46_call_to_hierarchical_structure ' + this.s.cs.slash_hierarchi)
       // this.p('an46_init_path ' + init_subpath)
 
       // en l040 kb
       // English Breadcrumbs
       // kb/systems/databases
-      
-      let saved_array_index_string  = array_index_string   
-      let saved_file_structure_path = file_structure_path  
-      let saved_current_subpath     = current_subpath      
-      let saved_breadcrumb          = breadcrumb       
-      let saved_uri_depth           = uri_depth    
+
+      let saved_array_index_string  = array_index_string
+      let saved_file_structure_path = file_structure_path
+      let saved_current_subpath     = current_subpath
+      let saved_breadcrumb          = breadcrumb
+      let saved_uri_depth           = uri_depth
 
 
-      this.p('an66_main_p I ' + array_index_string)      
-      this.p('an66_main_p F ' + file_structure_path)      
-      this.p('an66_main_p S ' + current_subpath)      
-      this.p('an66_main_p C ' + breadcrumb)      
+      this.p('an66_main_p I ' + array_index_string)
+      this.p('an66_main_p F ' + file_structure_path)
+      this.p('an66_main_p S ' + current_subpath)
+      this.p('an66_main_p C ' + breadcrumb)
 
 
       if ( this.s.ms.lang == "en" )
@@ -106,13 +106,13 @@ class anode_fs_main_process extends anode_fsbranch_load {
                                      file_structure_path , // 3. l060
                                      current_subpath     , // 4. l060
                                      breadcrumb          , // 5. fs
-                                     title               , // 6. 
+                                     title               , // 6.
                                      this.s.ms.fs_path   ,
                                      uri_depth           ) // 7. file system path
       }
       else
       {
-        
+
         this.p ('an46_Entering in LANG BREADCRUMB')
         this.current_fsbranch_load_es(this.s.ms.lang            ,  // 1
                                       saved_array_index_string  ,  // 2
@@ -122,13 +122,13 @@ class anode_fs_main_process extends anode_fsbranch_load {
                                       title                     ,  // 6
                                       this.s.ms.fs_path         ,
                                       saved_uri_depth               )
-      }                              
-                                     
+      }
+
     }
 
   }
 
-  
+
 }
 
 exports.anode_fs_main_process = anode_fs_main_process

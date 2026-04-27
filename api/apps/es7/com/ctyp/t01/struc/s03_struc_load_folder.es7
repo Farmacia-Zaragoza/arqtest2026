@@ -11,7 +11,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Process:
 //-------------------------------------------------------------------------------------
-// @content_file --> contents[] --> arr[] 
+// @content_file --> contents[] --> arr[]
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Class:
 //-------------------------------------------------------------------------------------
@@ -22,13 +22,13 @@
 //- d-load_folder_information-         : Load from file and save in contents array
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc > Struc_gen > Struc_attrib > scomm_defs
 // @Struc > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { struc_pho }        =   require(  cons.JS_TYP7  + 'struc/s04_struc_pho.es7'),
       empty                =   require(  cons.NODE_MOD + 'is-empty'                        ),
@@ -38,7 +38,7 @@ const { struc_pho }        =   require(  cons.JS_TYP7  + 'struc/s04_struc_pho.es
       fs                   =   require('fs');
 
 class struc_load_folder extends struc_pho {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "struc_load_folder::"
@@ -47,7 +47,7 @@ class struc_load_folder extends struc_pho {
   // Load contents with information of folder
   // folder_contents --> Folder list
   // file_contents   --> File list
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   load_folder_information(folder = '')
   {
     this.m         = 'load_folder_information'
@@ -60,7 +60,7 @@ class struc_load_folder extends struc_pho {
       this.folder_contents = []
       this.file_contents   = []
 
-      for (var elemento of Object.values(files)) 
+      for (var elemento of Object.values(files))
       {
         if ((elemento != "RESOLUTION") && ( elemento != "gen_folders.x" ))
         {
@@ -76,23 +76,23 @@ class struc_load_folder extends struc_pho {
           }
           else
            this.file_contents.push(elemento)
-         
+
 	   }
       }
-      
+
       // 24
       // this.p('s03_stru_Num ' + this.folder_contents.length)
      // Hay carpetas que iterar
-     this.b.rest_result = true        
+     this.b.rest_result = true
 
     }
 
   }
-  
+
   //---------------------------------------------------------------------------------------------
   // Generate array with contents information
   // Basado en this.contents
-  generate_folder(lang       ='en'      , 
+  generate_folder(lang       ='en'      ,
                   index      = '060'    ,
                   breadcrumb = 'fs'     )
   {
@@ -100,14 +100,14 @@ class struc_load_folder extends struc_pho {
     // Generate Meta information
     this.generate(lang)
 
-    var idx = new idx_pointers(index)    
+    var idx = new idx_pointers(index)
 
-    let cats              = this.gethash_arr(this.s.ms.main_lang , idx.jindex)  
-    let info              = this.gethash_arr(this.s.ms.main_lang , idx.iindex)  
-    let ahover            = this.gethash_arr(this.s.ms.main_lang , idx.hindex)  
-    let alink             = this.gethash_arr(this.s.ms.main_lang , idx.lindex)  
+    let cats              = this.gethash_arr(this.s.ms.main_lang , idx.jindex)
+    let info              = this.gethash_arr(this.s.ms.main_lang , idx.iindex)
+    let ahover            = this.gethash_arr(this.s.ms.main_lang , idx.hindex)
+    let alink             = this.gethash_arr(this.s.ms.main_lang , idx.lindex)
 
-        
+
     var iterations        = Object.keys(cats).length - 1
 
     // this.p('s03_stru_num ' + iterations)
@@ -124,10 +124,10 @@ class struc_load_folder extends struc_pho {
 	for (var pos in cats)
   	{
 
-      this.arroba_attribs(idx, pos)       
+      this.arroba_attribs(idx, pos)
 
       // this.p('stru_load_dats ' + this.value)
-    
+
       if ( (!this.folder_contents.includes(this.value)) &&
            (!this.folder_contents.includes(this.link )) )
       {
@@ -137,8 +137,8 @@ class struc_load_folder extends struc_pho {
       	delete info[pos]
 
       }
-    
-    
+
+
     }
 
     cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
@@ -156,14 +156,14 @@ class struc_load_folder extends struc_pho {
 
       var elem = this.folder_contents[pos]
 
-    
+
 
       var arr_pos = pos
       let curr_pos = arr_pos + lang
- 
+
       // var current_index = index + 'v' + this.get_next_level(pos)
       // var current_index = this.get_next_level(index)
- 
+
       value = this.get_next_level(pos)
 
       this.sethash_lang_arr_pos(lang , idx.jindex , arr_pos , value)
@@ -180,29 +180,29 @@ class struc_load_folder extends struc_pho {
           this.arroba_attribs_main_lang(idx, pos)
           // Cogemos la informacion del elemento
           // this.p('stru_load_elem inc ' + elem)
-          
+
           value = info[pos]
-          
+
           hover = ahover[pos]
 
           link  = alink[pos]
-          
+
         }
-        else    	
+        else
         {
           // No tenemos informacion
-          // this.p('stru_load_elem not ' + elem)    	
+          // this.p('stru_load_elem not ' + elem)
           value = elem
           hover = elem
 
           // breadcrumb + '/' + elem
           link  = elem
-          
+
           local_breadcrumb = breadcrumb + '/' + elem
-        }          
+        }
 
         // this.p('s03_stru_FOLDER ' + arr_name_i + '  P ' + elem)
-        	    
+
 	    this.sethash_lang_arr_pos(lang , idx.iindex , arr_pos , value)
 		  this.sethash_lang_arr_pos('all' , idx.iindex , curr_pos , value)
 
@@ -220,39 +220,39 @@ class struc_load_folder extends struc_pho {
 
 	    this.sethash_lang_arr_pos(lang , idx.cindex , arr_pos , child)
 		  this.sethash_lang_arr_pos('all' , idx.cindex , curr_pos , child)
-    	
+
     }
 
     // "index": "0","type": "bclink","otype": "object","value": "a00_bride","hover": "",
-    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" } 
+    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" }
 
     cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
-    iterations        = Object.keys(cats).length - 1    
+    iterations        = Object.keys(cats).length - 1
 
     // this.p('s03_stru_num ajust ' + iterations + ' I ' + idx.jindex )
-    
+
 
   }
 
   //---------------------------------------------------------------------------------------------
   // Generate array with contents information
   // Basado en this.contents
-  generate_folder_lang(lang       ='en'      , 
+  generate_folder_lang(lang       ='en'      ,
                   index      = '060'    ,
                   breadcrumb = 'fs'     )
   {
 
     // Generate Meta information
-    
+
     this.generate(lang)
 
-    var idx = new idx_pointers(index)    
+    var idx = new idx_pointers(index)
 
-    let info              = this.gethash_arr(lang , idx.iindex)  
-    let ahover            = this.gethash_arr(lang , idx.hindex)  
-    let alink             = this.gethash_arr(lang , idx.lindex)  
+    let info              = this.gethash_arr(lang , idx.iindex)
+    let ahover            = this.gethash_arr(lang , idx.hindex)
+    let alink             = this.gethash_arr(lang , idx.lindex)
 
-       
+
 
     // this.p('s03_stru_num ' + iterations)
 
@@ -278,7 +278,7 @@ class struc_load_folder extends struc_pho {
 
         var arr_pos = pos
         let curr_pos = arr_pos + lang
- 
+
 
 
     	if ( (info.includes(elem)) || (alink.includes(elem)) )
@@ -286,16 +286,16 @@ class struc_load_folder extends struc_pho {
           this.arroba_attribs_main_lang(idx, pos)
           // Cogemos la informacion del elemento
           // this.p('stru_load_elem inc ' + elem)
-          
+
           value = info[pos]
-          
+
           hover = ahover[pos]
 
           link  = alink[pos]
-          
+
 
         // this.p('s03_stru_FOLDER ' + arr_name_i + '  P ' + elem)
-        	    
+
 	    this.sethash_lang_arr_pos(lang , idx.iindex , arr_pos , value)
 		  this.sethash_lang_arr_pos('all' , idx.iindex , curr_pos , value)
 
@@ -314,14 +314,14 @@ class struc_load_folder extends struc_pho {
 	    this.sethash_lang_arr_pos(lang , idx.cindex , arr_pos , child)
 		  this.sethash_lang_arr_pos('all' , idx.cindex , curr_pos , child)
 
-	    }    	
+	    }
     }
 
     // "index": "0","type": "bclink","otype": "object","value": "a00_bride","hover": "",
-    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" } 
+    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" }
 
     let cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
-    let iterations        = Object.keys(cats).length - 1    
+    let iterations        = Object.keys(cats).length - 1
 
     this.p('s03_stru_num ajust ES ' + iterations + ' I ' + idx.jindex )
 
@@ -330,13 +330,13 @@ class struc_load_folder extends struc_pho {
   //---------------------------------------------------------------------------------------------
   // Generate array with contents information
   // Basado en this.contents
-  generate_files(lang       ='en'      , 
+  generate_files(lang       ='en'      ,
                   index      = '060'    ,
                   breadcrumb = 'fs'     )
   {
 
 
-    var idx = new idx_pointers(index)    
+    var idx = new idx_pointers(index)
 
     // this.p('s03_stru_num ' + iterations)
 
@@ -361,10 +361,10 @@ class struc_load_folder extends struc_pho {
 
       var arr_pos = pos
       let curr_pos = arr_pos + lang
- 
+
       // var current_index = index + 'v' + this.get_next_level(pos)
       // var current_index = this.get_next_level(index)
- 
+
       value = this.get_next_level(pos)
 
       this.sethash_lang_arr_pos(this.s.ms.main_lang , idx.jindex , arr_pos , value)
@@ -383,9 +383,9 @@ class struc_load_folder extends struc_pho {
       link  = elem
 
       local_breadcrumb = breadcrumb + '/' + elem
-        
+
       this.p('s03_stru_FILE ' + arr_name_i + '   E  ' + elem)
-	    
+
 	    this.sethash_lang_arr_pos(lang , idx.iindex , arr_pos , value)
 		  this.sethash_lang_arr_pos('all' , idx.iindex , curr_pos , value)
 
@@ -403,14 +403,14 @@ class struc_load_folder extends struc_pho {
 
 	    this.sethash_lang_arr_pos(lang , idx.cindex , arr_pos , child)
 		  this.sethash_lang_arr_pos('all' , idx.cindex , curr_pos , child)
-    	
+
     }
 
     // "index": "0","type": "bclink","otype": "object","value": "a00_bride","hover": "",
-    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" } 
+    // "sg_breadcrumb": "fs/a000","clink": "https://dog.vbrqx.com/en//en/fs/a000" }
 
     let cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
-    let iterations        = Object.keys(cats).length - 1    
+    let iterations        = Object.keys(cats).length - 1
 
     //  12 - j060v014v000v001
     // this.p('s03_stru_num ajust_FI ' + iterations + ' I ' + idx.jindex )

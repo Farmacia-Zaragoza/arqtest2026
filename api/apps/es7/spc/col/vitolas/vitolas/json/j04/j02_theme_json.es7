@@ -6,17 +6,17 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Theme_Json (spc) > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Arroba_JType     : Generic type to create json files
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { tjson_comm }      =   require(  cons.JS_SPC7  + 'acomm/json/j04/j02_tjson_comm.es7'   ),
         { theme_html }      =   require(  cons.JS_SPC7  + 'vitolas/html/h04/h01_theme_html.es7' ),
@@ -30,13 +30,13 @@ class theme_json extends tjson_comm
     this.n                  =   "theme_json::"
 
     this.jcontent           =   new arroba_jtype(this.arroba)
-    
+
     this.generate_content_json()
-       
+
     this.thmhtml            =   new theme_html(this.arroba)
     this.code               =   this.thmhtml.code
 
-  } 
+  }
 
 } // end Class
 

@@ -6,19 +6,19 @@
 // Inheritance Line : copy - def - printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { html_style } 	= 	require(	cons.JS_TYP7 + 'html/style/html_style.es7'			  ),
       { json_copy }     =   require(  cons.JS_TYP7 + 'json/jtype/json_copy.es7'                     );
 
 class robot  extends json_copy {
-  constructor() 
+  constructor()
   {
     super()
     this.n         = "robot::"
-    
+
     this.l         = new html_style('a')
-   
+
   }
 
   manage_rbt_anchors()
@@ -46,67 +46,67 @@ class robot  extends json_copy {
       var dual_anchor_pos = this.strpos(right_str, "##")
 
       var page_anchor_pos = this.strpos(right_str, "#-#")
-    
+
       var anchor_pos = this.strpos(right_str, "#")
       var arroba_pos = this.strpos(right_str, "@")
 
       var include_pos = this.strpos(left_str, "FF")
 
-      if ( arroba_pos !== false) 
+      if ( arroba_pos !== false)
       {
-        // TIENE ARROBA - SOLO PODEMOS MANEJAR ANCHOR EN LA DERECHA 
+        // TIENE ARROBA - SOLO PODEMOS MANEJAR ANCHOR EN LA DERECHA
         let uri_arr_pre          =   right_str.split('@')
-        right_str                =   uri_arr_pre[1] 
+        right_str                =   uri_arr_pre[1]
 
 
       }
-     
 
-      if ( anchor_pos !== false) 
+
+      if ( anchor_pos !== false)
       {
         // Tiene solo Anchor - NO TIENE ARROBA
         // $:S[Common Features#common_features]: MRIF - RDM - LDA
         //#anchor content_management@Architecture Frontend Link - Content Management
-        
+
         var pf_anchor = ''
 
          // Tenemos un anchor
         let uri_arr_pre          =   right_str.split('#')
 
-        let count_positions      =  uri_arr_pre.length -1            
+        let count_positions      =  uri_arr_pre.length -1
 
-     
+
         if ( count_positions == 1)
         {
           let str = uri_arr_pre[1]
           pf_anchor = str.substr(0, str.length)
 
           this.value = uri_arr_pre[0]
-          // this.p('HAY COMANDO_CACHE')     
+          // this.p('HAY COMANDO_CACHE')
 
           // Comprobamos que es un anchor permitido
           // Lo lo insertamos
           this.p('s04_sgt_anchor ' + pf_anchor)
 
-          
+
         }
-        
+
         // Es una taxonomia
-        if ( dual_anchor_pos !== false) 
+        if ( dual_anchor_pos !== false)
         {
           let str = uri_arr_pre[2]
           pf_anchor = str.substr(0, str.length)
 
           this.p ('s07_value_metatag_ '  + str)
 
-               
 
-          this.value = uri_arr_pre[0]  
+
+          this.value = uri_arr_pre[0]
 
           this.p ('s07_value_metatag_ '  + pf_anchor)
-         
+
           this.p ('s07_value_metatag_ '  + this.value)
-          
+
 
 	    }
 
@@ -116,14 +116,14 @@ class robot  extends json_copy {
           pf_anchor = str.substr(0, str.length)
 
           this.p ('s07_value_sep_ '  + str)
-                
+
           // Only page separators
-          this.value = uri_arr_pre[0] 
+          this.value = uri_arr_pre[0]
 
           this.p ('s07_value_sep_anchor '  + pf_anchor)
-         
+
           this.p ('s07_value_sep value  '  + this.value)
-          
+
 	    }
 
         this.l.href            = this.domain_site + this.uri_site + '#' + pf_anchor
@@ -136,13 +136,13 @@ class robot  extends json_copy {
 	   }
 
       }
-	  
-	  
-  }	  
-  
 
-  
-  create(name = "") 
+
+  }
+
+
+
+  create(name = "")
   {
     this.code = ""
     // this.p('Creando el link' + this.type + ' ' + this.link)
@@ -150,7 +150,7 @@ class robot  extends json_copy {
     // Si es una imagen hay que ajustarla
 
     if (this.type == 'link'  )
-    { 
+    {
        this.l.pcreate()
        this.code = this.l.code
     }

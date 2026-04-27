@@ -6,19 +6,19 @@
 // Inheritance Line : copy - def - printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   echo             =   require(  cons.NODE_MOD +  'node-echo'                           ),  
+const   echo             =   require(  cons.NODE_MOD +  'node-echo'                           ),
        { json_copy }     =   require(  cons.JS_TYP7 + 'json/jtype/json_copy.es7'         );
 
 class json  extends json_copy {
-  constructor() 
+  constructor()
   {
     super()
     this.n         = "json::"
   }
 
-  create(name = "") 
+  create(name = "")
   {
     this.code = "{ "
     if (name != "" )
@@ -33,19 +33,19 @@ class json  extends json_copy {
   }
 
   // "topMenu": [ c ]
-  create_block(name , pair_code = '') 
+  create_block(name , pair_code = '')
   {
-    this.create_lastblock(name , pair_code)    
+    this.create_lastblock(name , pair_code)
     this.code += ","
   }
 
   // "topMenu": [ c ]
-  create_lastblock(name , pair_code = '') 
+  create_lastblock(name , pair_code = '')
   {
     this.code += "\"" + name + "\": " + "[ "
 
-    if (pair_code != "" )    
-      this.code += pair_code    
+    if (pair_code != "" )
+      this.code += pair_code
     else
       this.code += this.content
 
@@ -55,51 +55,51 @@ class json  extends json_copy {
 
   //  "index": "01",
   // "index": "01",
-  create_element(name , pair_code = '') 
+  create_element(name , pair_code = '')
   {
     this.create_lastelement(name , pair_code)
     this.code += ","
   }
 
   // "index": "01"
-  create_lastelement(name , pair_code = '' ) 
+  create_lastelement(name , pair_code = '' )
   {
     this.code += "\"" + name + "\": " + "\""
 
-    if (pair_code != "" )    
-      this.code += pair_code    
+    if (pair_code != "" )
+      this.code += pair_code
     else
       this.code += this.content
 
     this.code += "\""
   }
 
-  add_element(name , pair_code = '') 
+  add_element(name , pair_code = '')
   {
     this.add_lastelement(name , pair_code)
     this.content += ","
   }
 
   // "index": "01"
-  add_lastelement(name , pair_code = '' ) 
+  add_lastelement(name , pair_code = '' )
   {
     this.content += "\"" + name + "\": " + "\""
 
-    this.content += pair_code    
+    this.content += pair_code
 
     this.content += "\""
   }
 
-  add_boolean(name , pair_code = '') 
+  add_boolean(name , pair_code = '')
   {
     this.add_lastboolean(name , pair_code)
     this.content += ","
   }
 
-  add_lastboolean(name , pair_code = '' ) 
+  add_lastboolean(name , pair_code = '' )
   {
-    this.content += "\"" + name + "\": " 
-    this.content += pair_code    
+    this.content += "\"" + name + "\": "
+    this.content += pair_code
   }
 
 

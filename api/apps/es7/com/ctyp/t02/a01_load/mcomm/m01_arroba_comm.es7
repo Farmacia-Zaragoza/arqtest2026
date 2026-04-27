@@ -9,13 +9,13 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_Mcomm > scomm_struc > scomm_defs
 // Mcomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Defined Objects : 
+// Defined Objects :
 //-------------------------------------------------------------------------------------
 // -o-boolean-     : b
 // -o-uri-         : u
@@ -23,16 +23,16 @@
 // -o-anode-       : a
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { scomm_struc }      =   require(  cons.JS_TYF7  + 'a01_load/scomm/s03_struc.es7'          )
 
 // Multi positions Load from arroba
 class arroba_mcomm extends scomm_struc {
-  constructor( arroba , positions = '0 2 5' )  
+  constructor( arroba , positions = '0 2 5' )
   {
     super()
- 
+
     this.n                  =   "arroba_mcomm::"
     this.m                  =   "cons"
 
@@ -43,12 +43,12 @@ class arroba_mcomm extends scomm_struc {
 
     // Arroba Anode
     this.a                  =   this.arroba.a
-       
+
     this.s					=   this.arroba.s
-    
+
     // this.p('arroba_mcomm_cache_path' + this.s.cs.cache_path)
-    
-    this.b					=   this.s.b    
+
+    this.b					=   this.s.b
 
     this.s.cs.lang          =   this.s.ms.lang
 
@@ -66,7 +66,7 @@ class arroba_mcomm extends scomm_struc {
     this.s.cs.ext                     =   ''
 
     this.s.cs.multi_positions         =   positions
-    
+
 
     this.s.b.language_already_loaded  = false
 
@@ -77,7 +77,7 @@ class arroba_mcomm extends scomm_struc {
     // Tenemos el contenido  del array en a
     this.arroba.arr = this.a.arr
 
-    // this.p('m01_comm_First Alias**JA ' + this.a.gethash_keylang( 'i000v005' , 1 ) )        
+    // this.p('m01_comm_First Alias**JA ' + this.a.gethash_keylang( 'i000v005' , 1 ) )
     // Arroba path
     // this.p('m01_comm_Checking Cache Path ' + this.s.cs.cache_path )
 

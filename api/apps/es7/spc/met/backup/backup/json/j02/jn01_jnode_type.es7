@@ -8,12 +8,12 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Jnode_type > PrintLog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Json_function     : Generate Json Functions
 //-------------------------------------------------------------------------------------
@@ -25,7 +25,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { printlog }          =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                              ),
        { jn01_common_json }  =   require(  cons.JS_MET7  + 'backup/backup/json/j01/jn01_generate_common_json.es7'  ),
@@ -40,20 +40,20 @@ const  { printlog }          =   require(  cons.JS_TYP7  + 'logs/printlog.es7'  
 
 
 class jnode_type extends printlog {
-           
-  constructor (arroba = '') 
-  {   
+
+  constructor (arroba = '')
+  {
     super()
     this.n                  =   'jn01_jnode_type::'
-    
+
     this.arroba             =   arroba
     this.s                  =   this.arroba.s
     this.a                  =   this.arroba.a
-    
+
     this.arr                =   this.arroba.a.arr
     this.jobject            =   ''
-    
-    // Print PATH for JSONS ( Comm - Spec ) 
+
+    // Print PATH for JSONS ( Comm - Spec )
     // this.p('jn01_type_Page ' + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
 
     switch(this.s.cs.page_type)
@@ -61,100 +61,100 @@ class jnode_type extends printlog {
       case "spec":
         // Carga todos los articulos
         this.jobject          =   new jn11_spec_json(this.arroba)
-        break;;   		
+        break;;
 
       case "comm":
 
         // Carga todos los articulos
         // this.p('jn01_type_Trying to loading COMM')
         this.jobject          =   new jn01_common_json(this.arroba)
-        break;   		
+        break;
 
       case "content":
 
         // Llega product pero ha generado mal el path
         // this.p('jn01_Before_Switch Content ' + this.s.cs.page_name )
-  
+
         switch(this.s.cs.page_name)
         {
 
           case "nodef":
             // Carga todos los articulos
             this.jobject          =   new jn01_common_json(this.arroba)
-            break;;   		
+            break;;
 
 
           case "blanc":
             // Carga todos los articulos
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;;   		
+            break;;
 
           case "front":
-        
+
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;;   		
+            break;;
 
           case "policy":
             // this.p('jn02_type_Policy_generation')
             this.jobject          =   new jn02_policy_json(this.arroba)
-            break;;   		
+            break;;
 
           case "product":
-        
+
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;;   		
+            break;;
 
           case "photo":
-        
+
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;;   		
+            break;;
 
           case "slide":
-        
+
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;;   		
+            break;;
 
           case "gallery":
-        
+
             this.jobject          =   new jn03_product_json(this.arroba)
-            break;;   		
+            break;;
 
           case "teasers":
             // Ojo : puede ser list - gallery - tab - slide
             this.jobject          =   new jn04_teasers_json(this.arroba)
-            break;;   		
+            break;;
 
           case "list":
              // Ojo : puede ser list - gallery - tab - slide
             this.jobject          =   new jn06_list_json(this.arroba)
-            break;;   		 
+            break;;
 
           case "rand":
             // Ojo : puede ser list - gallery - tab - slide
             // Deberia implementarse a nivel de cliente
             this.jobject          =   new jn05_rands_json(this.arroba)
-            break;;   		
+            break;;
 
           case "search":
             // Entra aqui -- Carga todos los articulos
             // this.p ("jn01_jntype_Aqui tenemos la busqueda")
 
             this.jobject          =   new jn20_search_json(this.arroba)
-            break;;   		
+            break;;
 
         }
         break;;
-    }   		
+    }
 
-  
+
   }
 
   //---------------------------------------------------------------------------------------------
   rungen_json()
   {
     // this.p('jn01_jntyp_RUNNING_RUNGEN')
-    this.jobject.process_array_and_generate_json_file()	  
-  
+    this.jobject.process_array_and_generate_json_file()
+
   }
 }
 

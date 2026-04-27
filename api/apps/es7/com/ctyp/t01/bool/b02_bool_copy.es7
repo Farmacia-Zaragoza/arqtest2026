@@ -13,26 +13,26 @@
 // - d-copy-   : Copy boolean values
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Bool_Copy > Bool_Defs > Log
 // @Bool > @Log
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"                 )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { bool_defs }         =   require(  cons.JS_TYP7 + 'bool/b03_bool_defs.es7'   )
 
 class bool_copy extends bool_defs {
-  constructor() 
+  constructor()
   {
     super()
     this.n = "bool_copy::"
   }
 
   // ----------------------------- Copy boolean parameters -----------------------------
-  copy(b) 
+  copy(b)
   //-------------------------------- Cache parameters --------------------------------
   {
     // Site parameters
@@ -88,7 +88,7 @@ class bool_copy extends bool_defs {
     this.page_allinone                   =   b.page_allinone
 
     // Robot page
-    
+
     this.robot_page                      =   b.robot_page
     this.index_page                      =   b.index_page
 
@@ -101,7 +101,7 @@ class bool_copy extends bool_defs {
     this.robot_url_managed               =   b.robot_url_managed
 
     // Hierarchical Method
-    
+
     this.found_breadcrumb                =   b.found_breadcrumb
 
 
@@ -126,7 +126,7 @@ class bool_copy extends bool_defs {
     this.type_translation                =   b.type_translation
     this.type_translated                 =   b.type_translated
     this.type_cache                      =   b.type_cache
-    this.type_generated                  =   b.type_generated    
+    this.type_generated                  =   b.type_generated
 
     this.drupal_bootstrap                =   b.drupal_bootstrap
     this.file_yaml                       =   b.file_yaml
@@ -134,13 +134,13 @@ class bool_copy extends bool_defs {
     this.contents_translated             =   b.contents_translated
 
     this.ready_to_load                   =   b.ready_to_load
-    
+
     // Objects
     this.pmt                             =   b.pmt
-    
+
     // Rest  File load
     this.rest_result                     =   b.rest_result
-    
+
   }
 
 }

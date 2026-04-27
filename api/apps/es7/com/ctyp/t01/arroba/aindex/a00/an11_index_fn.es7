@@ -10,24 +10,23 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_phrase-          : Process phrase 
+// - d-process_phrase-          : Process phrase
 // - d-process_word-            : Process word
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { cache }             =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'     ),
-        empty                 =   require(  cons.NODE_MOD   + 'is_empty'              );
+const   { cache }             =   require(path.join(JS_TYP7 , 'cache/c01_cache.es7'     ));
 
 class an11_index_fn extends cache {
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn11_index_fn::'      
+    this.n                   =  'jn11_index_fn::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
 
   process_word(word)
   {
@@ -41,23 +40,23 @@ class an11_index_fn extends cache {
 
     // Ojo con el error
     // jn50_idx_json::review_childrens_search_rcsv - jn10_Word some => function some() { [native code] }1
-    
-    
+
+
     // Este es el minimo que se leera como argumento de Arroba Dat
     if (word.length >= 3)
     {
        // this.p('jn11_Word ' + word + ' L ' + word.length)
 
-        if(aword in this.word_arr )    
-        {    
+        if(aword in this.word_arr )
+        {
           // this.p('jn11_In_Word ' + word + ' L ' + word.length)
     	  this.word_arr[aword] += 1
     	}
-    	else 
+    	else
     	{
           // this.p('jn11_New_Word ' + word + ' L ' + word.length)
     	  this.word_arr[aword] =  0
-    	  
+
     	}
     }
 
@@ -72,10 +71,10 @@ class an11_index_fn extends cache {
 
 
     uri_arr_pre           =   this.phrase.split(' ')
-  
+
     var str_aux           =   ''
     var word              =   ''
-  
+
     // Separamos por espacios
     // Debemos evitar expresiones regulares
     // PRMER FOR - CLEAN PHRASES AND REVIE WORDS
@@ -89,9 +88,9 @@ class an11_index_fn extends cache {
 
 
 	   this.replace(str_aux , "/\r|\n/|:|\\$|\\[|\\]|@|\\/|-|=|_|\\(|\\)|\\.|\'|\#" , " "	)
-       
+
        //this.p('jn11_CLEAN '+ this.result )
-       uri_arr_int         =   this.result.split(' ')       
+       uri_arr_int         =   this.result.split(' ')
 
        for (var pos2 in uri_arr_int)
        {
@@ -104,14 +103,14 @@ class an11_index_fn extends cache {
           {
              // this.p('jn11_Processing ' + word)
              this.process_word(word)
-    	
+
     	  }
        }
     }
 
   }
-  //---------------------------------------------------------------------------------------------  
-    
+  //---------------------------------------------------------------------------------------------
+
 }
 
 exports.an11_index_fn = an11_index_fn

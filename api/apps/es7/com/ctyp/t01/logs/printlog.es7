@@ -9,16 +9,16 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods
 //-------------------------------------------------------------------------------------
-// - d-l-                    :   Log print 
-// - d-p-                    :   Fast print 
-// - d-parr-                 :   Arrays print (used for debug) 
+// - d-l-                    :   Log print
+// - d-p-                    :   Fast print
+// - d-parr-                 :   Arrays print (used for debug)
 //-------------------------------------------------------------------------------------
 // - d-arroba_attribs_main_lang- : Set common attributes for main lang
 // - d-arroba_attribs-           : Set common atributes for arroba object
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   echo         =   require(  cons.NODE_MOD +  'node-echo'                ),
        accents                    =   require(  cons.NODE_MOD + 'remove-accents' ),
@@ -27,16 +27,16 @@ const   echo         =   require(  cons.NODE_MOD +  'node-echo'                )
 
 class printlog extends savelog
 {
-  
-  constructor() 
+
+  constructor()
   {
   super()
-  }  
+  }
 
   l (msg)
   {
     // echo don't need EOL
-    echo(msg)  
+    echo(msg)
   }
 
   gen_current_level(pos, parent_index , current_index , breadcrumb)
@@ -51,7 +51,7 @@ class printlog extends savelog
   arroba_attribs_main_lang(idx , pos)
   {
     // Managed : J - C - D - I - B - T  --  P - H - N - S - O - R
-    
+
     // Used in lang aliases
     this.item_en           =   this.gethash_keymain( idx.jindex , pos )
 
@@ -79,7 +79,7 @@ class printlog extends savelog
     // this.maps              =   new Map(Object.entries(this.cats))
     this.last_element      =   this.keys.length - 1
 
-    
+
   }
 
   //---------------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ class printlog extends savelog
     this.index             =   index  + 'v' + this.level
     this.subpath           =   subpath  + '/l' + this.level
 
-    
+
     this.child             =   this.gethash_keymain( idx.cindex , pos )
     this.dhild             =   this.gethash_keymain( idx.dindex , pos )
 
@@ -113,7 +113,7 @@ class printlog extends savelog
     this.link              =   this.gethash_keylang( idx.lindex , pos )
 
     this.photo             =   this.gethash_keylang( idx.pindex , pos )
-    
+
     this.hover             =   this.gethash_keylang( idx.hindex , pos )
 
     this.ntype             =   this.gethash_keymain( idx.nindex , pos )
@@ -127,10 +127,10 @@ class printlog extends savelog
   p (msg)
   {
   // let puting_contents  = this.n + this.m + ' - ' + msg  + os.EOL             ;
-    let puting_contents  = this.n + this.m + ' - ' + msg      
-  
+    let puting_contents  = this.n + this.m + ' - ' + msg
+
     // echo don't need EOL
-    echo(puting_contents)  
+    echo(puting_contents)
   }
 
   // Debug array - forEach javascript
@@ -141,8 +141,8 @@ class printlog extends savelog
     // this.p('Entrando')
 
     // Check if is array
-    if ( Array.isArray(a_passed) ) 
-      for (var index in a_passed ) 
+    if ( Array.isArray(a_passed) )
+      for (var index in a_passed )
       {
         let elem = a_passed[index]
         //this.p(pos   + ' - ' + elem )
@@ -154,7 +154,7 @@ class printlog extends savelog
 
   // Php strpos function
   //---------------------------------------------------------------------------------------------
-  strpos (haystack, needle, offset) 
+  strpos (haystack, needle, offset)
   {
       var i = (haystack+'').indexOf(needle, (offset || 0));
     return i === -1 ? false : i;

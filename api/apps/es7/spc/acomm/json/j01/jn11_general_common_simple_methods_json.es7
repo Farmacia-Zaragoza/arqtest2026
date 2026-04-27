@@ -19,21 +19,21 @@
 // - d-generate_common_product-       : Generate Product for No anchor content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn01_commo_json_simple }   =   require(  cons.JS_TYP7  + 'json/jnode/j01/objects/jn01_simple.es7' )
 
 class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     // el super no entiende de arroba
     super()
-    
+
 /*    this.arroba             =    arroba
     this.a                  =    this.arroba.a
     this.s                  =    this.a.s
-  */  
+  */
     this.n                  =   'jn11_general_common_simple_methods_json::'
   }
 
@@ -42,13 +42,13 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
   generate_common_sidebar_recursive(pos = 0)
   {
     this.pos          =   pos
-  
+
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
     this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
-    this.j.save_header(this.cat)      
+    this.j.save_header(this.cat)
 
-    this.save_json_sidebar_recursive_object_to_file(  
+    this.save_json_sidebar_recursive_object_to_file(
                 this.index                , // Index of array
                 this.arroba.a.categories  ) // Categories lang/ES Name
 
@@ -60,13 +60,13 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
   generate_common_sidebar_recursive_array(pos = 20)
   {
     this.pos          = pos
-  
+
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
     this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
-    this.k.save_header(this.cat)      
+    this.k.save_header(this.cat)
 
-    this.save_json_sidebar_recursive_array_to_file(  
+    this.save_json_sidebar_recursive_array_to_file(
                 this.index                , // Index of array
                 this.arroba.a.categories  ) // Categories lang/ES Name
 
@@ -88,9 +88,9 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
     this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
-    this.k.save_header(this.cat)      
+    this.k.save_header(this.cat)
 
-    this.save_json_simple_array_to_file(  
+    this.save_json_simple_array_to_file(
                 this.index                , // Index of array
                 this.arroba.a.categories  ) // Categories lang/ES Name
 
@@ -104,9 +104,9 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
     this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
-    this.j.save_header(this.cat)      
+    this.j.save_header(this.cat)
 
-    this.save_json_simple_object_to_file(  
+    this.save_json_simple_object_to_file(
                 this.index         ,
                 this.arroba.a.categories  ) // Categories lang/ES Name
 
@@ -131,22 +131,22 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
     this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
-    this.k.save_header(this.cat)      
+    this.k.save_header(this.cat)
 
     let string_to_pase = this.u.bar_slash_ideal_uri
 
     // Esto con kb no tiene sentido
     // this.p ('jn11_printing SLASH_' + this.u.bar_slash_ideal_uri)
 
-    if ( (this.u.bar_slash_ideal_uri == 'blanc'   )  || 
+    if ( (this.u.bar_slash_ideal_uri == 'blanc'   )  ||
          (this.u.bar_slash_ideal_uri == '/blanc/' )   )
        string_to_pase = ''
 
 
-    this.save_json_simple_array_to_file(  
+    this.save_json_simple_array_to_file(
                 this.index         ,
                 this.arroba.a.categories  ,
-                string_to_pase            )  // Concat to langs/links 
+                string_to_pase            )  // Concat to langs/links
 
       // Inserta final de llave
     this.k.end_corch()
@@ -165,9 +165,9 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
     this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
-    this.j.save_header(this.cat)      
+    this.j.save_header(this.cat)
 
-    this.save_json_sidebar_doble_object_to_file(  
+    this.save_json_sidebar_doble_object_to_file(
                 this.index         ,
                 this.arroba.a.categories  ) // Categories lang/ES Name
 
@@ -185,10 +185,10 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     this.m                =   'generate_common_product'
 
     // A.PRODUCT CONTENT
-    
-    // Llega esto : 
+
+    // Llega esto :
     // il040_l000_l008_l000
-    
+
 
     this.cat          =   'articles'
 
@@ -199,15 +199,15 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
 
     if (this.s.cs.founded_type == 'sheet')
     {
-      // Anchor has position 09. Pero 
-    
-      // this.p ('jn11_prod_lang ' + this.s.ms.lang + ' - ipage '  + ipage )    
-    
+      // Anchor has position 09. Pero
+
+      // this.p ('jn11_prod_lang ' + this.s.ms.lang + ' - ipage '  + ipage )
+
       this.arr[this.s.ms.main_lang][ipage][9]  = this.s.cs.anchor
-      
+
       this.arr[this.s.ms.main_lang][ipage][100] = this.s.cs.founded_slash_breadcrumb
 
-      this.k.save_header(this.cat)      
+      this.k.save_header(this.cat)
 
     // Ok jn40_kb_json::generate_common_product - jn11_idx 040v000v008v000
     // OK jn40_kb_json::generate_common_product - jn11_brc kb/architecture/cloud/why
@@ -220,24 +220,24 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
 
     // Categories esta pendiente
     // Aqui no es recursivo es simple
-    
-      // Es una hoja 
-      this.save_json_hiera_product_array_to_file(  
+
+      // Es una hoja
+      this.save_json_hiera_product_array_to_file(
                     this.s.cs.founded_index      , // Index of array
                     this.s.cs.founded_slash_breadcrumb ,
                     this.s.cs.founded_file_structure   ,
                     this.s.cs.founded_category         ,
                     this.s.cs.founded_title            )
-                    
+
       this.s.cs.page_name = 'product'
 
       this.k.end_corch()
-      
+
     }
     else
     {
       // Es una lista
-      this.k.save_header(this.cat)      
+      this.k.save_header(this.cat)
 
       this.p('jn11_idx ' + this.s.cs.founded_index            )
       this.p('jn11_brc ' + this.s.cs.founded_slash_breadcrumb )
@@ -249,19 +249,19 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
       this.save_json_hiera_list_array_to_file(
                     this.s.cs.founded_index            , // Index of array
                     this.s.cs.founded_slash_breadcrumb ,
-                    this.s.cs.founded_file_structure   , 
+                    this.s.cs.founded_file_structure   ,
                     this.s.cs.founded_category         ,
                     this.s.cs.founded_title            )
 
 
-      this.s.cs.page_name = 'list'    	
+      this.s.cs.page_name = 'list'
 
       this.k.end_corch()
 
-    } 
-     
+    }
 
-  
+
+
   }
 
 
@@ -278,31 +278,31 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     this.p('jn11_TYPE_CONTENT :' + this.s.cs.founded_type)
 
     if (this.s.cs.founded_type == 'sheet')
-    {   
+    {
 
       var ipage         =   'i' + this.get_next_level(this.s.cs.position) + 'v' +  this.get_next_level(this.s.cs.page)
-    	
+
       this.pos = this.s.cs.position
 
       // Anchor has position 09
-    
-      this.p ('jn11_prod_lang ' + this.s.cs.lang + ' - ipage '  + ipage )    
-    
+
+      this.p ('jn11_prod_lang ' + this.s.cs.lang + ' - ipage '  + ipage )
+
       this.arr[this.s.cs.lang][ipage][9] = this.s.cs.anchor
 
       this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
       this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
       // console.info(this.cat)
-    
-      //this.p ('jn03_prod_Anchorint ' + ipage + ' - '  +this.get_next_level(pos) ) 
-    
+
+      //this.p ('jn03_prod_Anchorint ' + ipage + ' - '  +this.get_next_level(pos) )
+
       // jn03_cat articles
       // this.p('jn03_cat ' + this.cat)
 
-      this.k.save_header(this.cat)      
+      this.k.save_header(this.cat)
 
-      this.save_json_recursive_product_array_to_file(  
+      this.save_json_recursive_product_array_to_file(
                 this.index                , // Index of array
                 this.arroba.j.categories  ) // Categories lang/ES Name
 
@@ -315,7 +315,7 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
 
       this.pos               =   this.s.cs.position
       // pos               =   20
-    
+
       // this.p ('jn05_loading_position ' + pos)
 
       this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
@@ -324,18 +324,18 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
       // jn03_cat articles
       // this.p('jn03_cat ' + this.cat)
 
-      this.k.save_header(this.cat)      
+      this.k.save_header(this.cat)
 
-      this.save_json_list_array_to_file(  
+      this.save_json_list_array_to_file(
                 this.index                , // Index of array
                 this.arroba.j.categories  ,
                 num_rands                         ) // Rand items to generate
 
       this.k.end_corch()
-    	
+
     }
-      
-  
+
+
   }
 
   //---------------------------------------------------------------------------------------------
@@ -348,24 +348,24 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     this.m                =   'generate_common_product'
 
     // A.PRODUCT CONTENT
-   
+
     this.pos = this.s.cs.position
 
 
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
     this.index        =   this.arr[this.s.ms.main_lang]['dmain'][this.pos]
 
-    this.k.save_header(this.cat)      
+    this.k.save_header(this.cat)
 
-    this.save_json_recursive_product_array_to_file(  
+    this.save_json_recursive_product_array_to_file(
                 this.index                , // Index of array
                 this.arroba.j.categories  ) // Categories lang/ES Name
 
     this.k.end_corch()
-  
+
   }
 
-  
+
   //---------------------------------------------------------------------------------------------
   // Teasers - Nodos completos
 
@@ -374,7 +374,7 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     this.m                =   'generate_common_teasers'
 
     this.pos          = pos
-  
+
     // A.PRODUCT CONTENT
 
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
@@ -383,14 +383,14 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     // jn03_cat articles
     // this.p('jn03_cat ' + this.cat)
 
-    this.k.save_header(this.cat)      
+    this.k.save_header(this.cat)
 
-    this.save_json_sidebar_recursive_array_to_file(  
+    this.save_json_sidebar_recursive_array_to_file(
                 this.index                , // Index of array
                 this.arroba.j.categories  ) // Categories lang/ES Name
 
     this.k.end_corch()
-  }  
+  }
 
   //---------------------------------------------------------------------------------------------
   // Rands - Nodos aletorios completos
@@ -398,10 +398,10 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
   generate_common_rands(num_rands = 5)
   {
     this.m                =   'generate_common_teasers'
-  
+
     this.pos               =   this.s.cs.position
     // pos               =   20
-    
+
     // this.p ('jn05_loading_position ' + pos)
 
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
@@ -410,26 +410,26 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     // jn03_cat articles
     // this.p('jn03_cat ' + this.cat)
 
-    this.k.save_header(this.cat)      
+    this.k.save_header(this.cat)
 
-    this.save_json_sidebar_rand_array_to_file(  
+    this.save_json_sidebar_rand_array_to_file(
                 this.index                , // Index of array
                 this.arroba.j.categories  ,
                 num_rands                    ) // Rand items to generate
 
     this.k.end_corch()
-  
+
   }
 
   //---------------------------------------------------------------------------------------------
-  // Lists 
+  // Lists
   generate_common_list(num_rands = 5)
   {
     this.m                =   'generate_common_teasers'
-  
+
     this.pos               =   this.s.cs.position
     // pos               =   20
-    
+
     // this.p ('jn05_loading_position ' + pos)
 
     this.cat          =   this.arr[this.s.ms.main_lang]['jmain'][this.pos]
@@ -438,15 +438,15 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
     // jn03_cat articles
     // this.p('jn03_cat ' + this.cat)
 
-    this.k.save_header(this.cat)      
+    this.k.save_header(this.cat)
 
-    this.save_json_list_array_to_file(  
+    this.save_json_list_array_to_file(
                 this.index                , // Index of array
                 this.arroba.j.categories  ,
                 num_rands                         ) // Rand items to generate
 
     this.k.end_corch()
-  
+
   }
 
 

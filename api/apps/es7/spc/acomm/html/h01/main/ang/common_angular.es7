@@ -6,7 +6,7 @@
 //-------------------------------------------------------------------------------------
 // Peloncita Structure Header
 //-------------------------------------------------------------------------------------
-// <body 
+// <body
 //  <app-root></app-root>
 
 // Home page
@@ -39,7 +39,7 @@
 //    PENDING
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Common_Angular > Common_Body... >  Html_Style
 // @Angular > @ABody > @Html
@@ -52,37 +52,37 @@
 // - create_parameter_scripts  : Create script code for angular
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons              =   require( "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { common_body }    =   require( cons.JS_ACO7  + 'html/h01/main/comm/common_body.es7' ),
       { car_loader }     =   require( cons.JS_ACO7  + 'html/h01/deep/loader/car_loader.es7' );
-          
+
 
 
 class common_angular extends common_body  {
 
   constructor (     container            )
-  {   
+  {
     super(container)
 
     this.p('comm_ang_COMMON_URL ' + this.container.jurl_comm)
 
-    this.n              =  'common_angular::'    
-  
+    this.n              =  'common_angular::'
+
   }
 
   create_loader()
   {
     // iniciamos el contenido
 
-    this.div_01         = new car_loader( this.container )      
-    
+    this.div_01         = new car_loader( this.container )
+
     // this.p ('common_ang_LOADER > ' + this.div_01.code )
-    
+
   	this.content     += this.div_01.code
-  	
+
   }
-  
+
 
 
   //-------------------------------------------------------------------------------------
@@ -90,11 +90,11 @@ class common_angular extends common_body  {
   create_approot()
   {
 
-    this.approot.content        =    ''                          
+    this.approot.content        =    ''
 
-    this.approot.pcreate()                              
-    
-    this.content          +=    this.approot.code  
+    this.approot.pcreate()
+
+    this.content          +=    this.approot.code
   }
 
 
@@ -128,44 +128,44 @@ class common_angular extends common_body  {
 
     // Common for any page - for en (specific lang)
     // lang_common_json:  " en/common.json",
-        
+
     this.pmtscr.content        +=  'page: {'
 
        this.p('HOMEPAGE - is the ' + this.container.s.cs.page_name)
     this.pmtscr.content        +=  'type: "' + this.container.s.cs.page_name +  '"'
 
 
-    this.pmtscr.content        +=  ' } }'    
+    this.pmtscr.content        +=  ' } }'
 
 
     this.pmtscr.pcreate()
-    
-    this.content          +=  this.pmtscr.code              
+
+    this.content          +=  this.pmtscr.code
   }
 
   //-------------------------------------------------------------------------------------
-  
+
   build_data_ok()
   {
-    
-    this.create_ifnojs()                     
+
+    this.create_ifnojs()
 
     this.create_loader()
 
     this.create_approot()
 
-        // Disabled while I generate search    
-    this.create_parameter_scripts()                    
+        // Disabled while I generate search
+    this.create_parameter_scripts()
 
-    this.create_scripts()                    
+    this.create_scripts()
 
     this.create_a_robot()
 
-    this.pcreate()                      
+    this.pcreate()
 
     // Ok [18-02-02]
-    // this.p('bdy01:cod ' + this.code)              
-    // this.p('bdy01:codl_BODY ' + this.code.length)              
+    // this.p('bdy01:cod ' + this.code)
+    // this.p('bdy01:codl_BODY ' + this.code.length)
 
     }
 }

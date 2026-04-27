@@ -9,7 +9,7 @@
 // <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
 
 // Style attributes example
-//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css" 
+//L[04]  /link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css"
 //        as="style" onload="this.rel='stylesheet'">
 
 // ------------------------------------------------------------------------------------
@@ -22,9 +22,9 @@
 // - d-create_style-		: 	Create Style
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),		
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
 		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									),
 		scpf				= 	require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'	);
 
@@ -32,19 +32,19 @@ const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			
 class lnk04_css_inline_vitolas extends html_style  {
 
     constructor (     thm	              						)
-    {   
+    {
 
 		let 	tag_name	=	'style'
 		super( tag_name )
 
-		this.n							=	'scr01_vitolas::'						
+		this.n							=	'scr01_vitolas::'
 		this.m							=	'constructor'
 
-		this.thm						=	thm							
-		
+		this.thm						=	thm
+
 		this.link_code_path				=	''
 
-		this.build_data()													
+		this.build_data()
 
     }
 
@@ -52,58 +52,58 @@ class lnk04_css_inline_vitolas extends html_style  {
 	// <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
     create_style()
     {
-		let css_name 					=	'styles.css'									
+		let css_name 					=	'styles.css'
 
-		this.link_code_path				=  	
-				this.thm.u.site_path + '/dev/' + css_name						
+		this.link_code_path				=
+				this.thm.u.site_path + '/dev/' + css_name
 
 
-		this.content					+=	
+		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "
-	}		
+	}
 
 
     create_bootstrap()
     {
-		let css_name 					=	'bootstrap_v413_min.css'									
+		let css_name 					=	'bootstrap_v413_min.css'
 
-		this.link_code_path				=  	
-				this.thm.u.site_path + '/fassets/css/' + css_name						
+		this.link_code_path				=
+				this.thm.u.site_path + '/fassets/css/' + css_name
 
 
-		this.content					+=	
+		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "
-	}		
+	}
 
 
     create_fontawesome()
     {
-		let css_name 					=	'fontawesome_v57_min.css'									
+		let css_name 					=	'fontawesome_v57_min.css'
 
-		this.link_code_path				=  	
-				this.thm.u.site_path + '/fassets/css/' + css_name						
+		this.link_code_path				=
+				this.thm.u.site_path + '/fassets/css/' + css_name
 
 
-		this.content					+=	
+		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "
-	}		
+	}
 
     build_data()
     {
 
  		this.charset			=	"utf-8"
 
- 		this.title				=	"css_style" 
+ 		this.title				=	"css_style"
  		this.type				=	"text/css"
 
 		this.create_bootstrap()
 		this.create_fontawesome()
 		this.create_style()
 
-		this.pcreate()									
+		this.pcreate()
 
 		// Ok [17-11-02]
-		// this.p('Code : >' + this.code ) 											
+		// this.p('Code : >' + this.code )
 
     }
 

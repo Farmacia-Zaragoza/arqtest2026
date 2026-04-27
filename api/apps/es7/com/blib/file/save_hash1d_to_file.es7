@@ -1,6 +1,6 @@
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2018 )
-// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia
 // ---------------------------------------------------------------------------
 // Brqx 2017 - 22/10/17        Depth:[0N]
 // Version : 0.0.1                  Type :[FUNCTION]
@@ -9,22 +9,22 @@
 // ---------------------------------------------------------------------------
 //  + Almacena codigo y arrays en ficheros
 // ---------------------------------------------------------------------------
-// - Funciones 
+// - Funciones
 // ---------------------------------------------------------------------------
 //-- d-save_hash1d_to_file-
 // ---------------------------------------------------------------------------
-// - Requiere 
+// - Requiere
 // ---------------------------------------------------------------------------
-//-- 
+//--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-var   cons     =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const   fs           =   require(  'fs'                                    ),
     path         =   require(  'path'                                    ),
     os           =   require(  'os'                                    ),
-    util         =   require(  'util'                            ),        
+    util         =   require(  'util'                            ),
     empty         =   require(  cons.NODE_MOD + 'is-empty'                          ),
     trim         =   require(  cons.NODE_MOD + 'trim'                            ),
     mkdirp         =   require(  cons.NODE_MOD + 'mkdirp'                          ),
@@ -33,7 +33,7 @@ const   fs           =   require(  'fs'                                    ),
 
 // Ck [19-06-03]
 // Save Hash2d_to_file --> Guardamos el contenido del hash de 2dim en el fichero
-function save_hash1d_to_file(full_file_name_int = ''       , // 01. File  
+function save_hash1d_to_file(full_file_name_int = ''       , // 01. File
                              arr_words          = ''       , // 02. Words
                              arr_articles       = ''       , // 03. Info
                              position_to_load   = ''       , // 04. Position
@@ -59,18 +59,18 @@ function save_hash1d_to_file(full_file_name_int = ''       , // 01. File
       // Primero debe existir el padre
 
       dir =  path.dirname(full_file_name_int)
-     
-      if ( !fs.existsSync(dir)       ||   
+
+      if ( !fs.existsSync(dir)       ||
            !fs.lstatSync(dir).isDirectory()     )
       {
         // No Existe el padre --> Lo creamos
         mkdirp.sync(dir)
-        fs.chmodSync(dir, 0775)          
-        let user = os.userInfo().username          
-   
+        fs.chmodSync(dir, 0775)
+        let user = os.userInfo().username
+
         // Solo lo podemos hacer si somos apache
         if (user == 'apache' )
-          fs.chownSync(dir, 48 , 48 )            
+          fs.chownSync(dir, 48 , 48 )
         }
 
         if ( fs.existsSync(full_file_name_int) )
@@ -81,10 +81,10 @@ function save_hash1d_to_file(full_file_name_int = ''       , // 01. File
           // Creamos uno
           fs.openSync(full_file_name_int, 'w')
 		  fs.chmodSync(full_file_name_int, parseInt('0674',8))
-		}					
+		}
 
         // echo ('satf_Antes del for en la function ' + Object.entries(arr_properties).length )
-        
+
 
     var num_repeat = ''
     var line_word = ''
@@ -97,7 +97,7 @@ function save_hash1d_to_file(full_file_name_int = ''       , // 01. File
     // W O R D S
     let c = 0
     for (var word in arr_words)
-    { 
+    {
       num_repeat = arr_words[word]
       //OLD line_word='arr_nxj0'  + position_to_load + '_' + c  + '@' + word
       //NEW Line arr_nxj020_effect@23
@@ -107,18 +107,18 @@ function save_hash1d_to_file(full_file_name_int = ''       , // 01. File
 	  if (line_word != "" )
 	  {
         input = line_word.replace('/\r\n/g', "")    // DOS style newlines
-        input = input.replace('/\r/g', "")      
-        LNDATA= input + os.EOL 
+        input = input.replace('/\r/g', "")
+        LNDATA= input + os.EOL
         fs.appendFileSync(full_file_name_int, LNDATA)
         c++
       }
-      
+
     }
 
     // I N F O R M A T I O N
     c = 0
     for (var word in arr_words)
-    { 
+    {
 
       articles = arr_articles[word]
       line_appear='arr_nxi0' + position_to_load + '_' + word  + '@' + articles
@@ -126,8 +126,8 @@ function save_hash1d_to_file(full_file_name_int = ''       , // 01. File
 	  if (line_appear != "" )
 	  {
         input = line_appear.replace('/\r\n/g', "")    // DOS style newlines
-        input = input.replace('/\r/g', "")      
-        LNDATA= input + os.EOL 
+        input = input.replace('/\r/g', "")
+        LNDATA= input + os.EOL
         fs.appendFileSync(full_file_name_int, LNDATA)
         c++
       }
@@ -135,7 +135,7 @@ function save_hash1d_to_file(full_file_name_int = ''       , // 01. File
     }
 
    } // End If Empty File
-  } // End If Arr Properties    
+  } // End If Arr Properties
 
 }
 

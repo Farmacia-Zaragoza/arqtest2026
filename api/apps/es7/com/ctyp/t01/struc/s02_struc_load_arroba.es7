@@ -11,7 +11,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Process:
 //-------------------------------------------------------------------------------------
-// @content_file --> contents[] --> arr[] 
+// @content_file --> contents[] --> arr[]
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Class:
 //-------------------------------------------------------------------------------------
@@ -26,13 +26,13 @@
 //- d-mix_array_from_file-           : Generate array mixing
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc > Struc_gen > Struc_attrib > scomm_defs
 // @Struc > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                 =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { struc_load_folder }        =   require(  cons.JS_TYP7  + 'struc/s03_struc_load_folder.es7'),
         empty              =   require(  cons.NODE_MOD + 'is-empty'                        ),
@@ -40,24 +40,24 @@ const { struc_load_folder }        =   require(  cons.JS_TYP7  + 'struc/s03_stru
 		fs 				   =   require(	'fs'												);
 
 class struc_load_arroba extends struc_load_folder {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "struc_load_arroba::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   set_file(file = '')   {   	this.file = file   }
 
   // Load contents with information of file
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   load_file_information(file = '')
   {
 	// File to load struct
-	// 
+	//
     this.m         = 'load_file_information'
 
-    if (file != "")	
+    if (file != "")
   		this.file = file
 
 
@@ -65,18 +65,18 @@ class struc_load_arroba extends struc_load_folder {
   	{
 	  // this.p('s01_struc_File ExisT ' + this.file)
       // Valta vaciar el array
-      
+
       // Tenemos estructura de arroba lista
-      
+
       this.b.exist_arroba_structure = true
-      
+
       this.contents = []
 
-     
-	    var ff_arr = '' 
+
+	    var ff_arr = ''
 
       // this.p ('s01_struc FILARR ' + this.file)
-      	
+
 	    ff_arr = new ffi.properties_from_file(this.file)
 
       let contents = ff_arr.arr
@@ -88,17 +88,17 @@ class struc_load_arroba extends struc_load_folder {
       	 value = contents[pos]
 
          // this.p ('s01_struc_load_arroba ARR ' + value)
-      	
+
          if (!empty(value) )
-  	        this.contents.push(value) 
+  	        this.contents.push(value)
 	    }
 	  }
 	  else
 	  {
-        // Enable Redirect 
+        // Enable Redirect
 		  this.p('s01_struc_File_dont_exist IDX ' + this.file)
 		  this.b.rest_result = false
-      this.b.exist_arroba_structure = false		
+      this.b.exist_arroba_structure = false
     }
   }
 

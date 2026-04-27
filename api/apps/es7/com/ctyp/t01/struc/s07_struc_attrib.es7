@@ -15,20 +15,20 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Struc_attrib > scomm_defs
 // @Struc > @Array > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
 const   { struc_defs }    =   require(  cons.JS_TYP7  + 'struc/s08_struc_defs.es7'    )
 
 
 class struc_attrib extends struc_defs {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "struc_attrib::"
@@ -54,10 +54,10 @@ class struc_attrib extends struc_defs {
 
     // El index no se obtiene de la estructura. Se genera
     this.j.parent_index      =   index
-    
+
     // Indice de los hijos - No se obtiene - se pasa
     this.j.index             =   index  + 'v' + this.get_next_level(pos)
-    
+
     this.j.child             =   this.getkeymain( idx.cindex , pos )
     this.j.type              =   this.getkeymain( idx.tindex , pos )
     this.j.breadcrumb        =   this.getkeylang( idx.bindex , pos )
@@ -83,11 +83,11 @@ class struc_attrib extends struc_defs {
     this.j.value   =  this.result
 
 
-    this.j.otype             =   this.getkeymain( idx.oindex , pos )    
+    this.j.otype             =   this.getkeymain( idx.oindex , pos )
 
-    this.j.link              =   this.getkeylang( idx.lindex , pos )    
-    
-    if (depth != "" ) 
+    this.j.link              =   this.getkeylang( idx.lindex , pos )
+
+    if (depth != "" )
       this.j.level = depth
     else
       this.j.level = 0
@@ -112,10 +112,10 @@ class struc_attrib extends struc_defs {
     this.k.id                =   this.j.id
 
     this.k.sound             =   this.j.id
-    
+
     this.k.value             =   this.j.value
     this.k.item              =   this.j.item
-    
+
     this.k.otype             =   this.j.otype
 
     this.k.link              =   this.j.link

@@ -12,7 +12,7 @@
 // - d-save_json_array_anchor_inner-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -24,11 +24,11 @@ const  fs                        =   require(  'fs'                             
 // Pendiente de cambiar
 class jn02_array_anchor_inner extends jn00_comm_pf {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                         =  'jn02_array_anchor_inner::'      
+    this.n                         =  'jn02_array_anchor_inner::'
   }
 
 
@@ -39,36 +39,36 @@ class jn02_array_anchor_inner extends jn00_comm_pf {
 
     this.kk.type = 'anchor'
     var anchor_domain = this.s.cs.lang_url + '#'
-           
+
     // https://dog.vbrqx.com/ca/#
-    //this.p('jn06_rcsv_anchor_dom ' + anchor_domain) 
+    //this.p('jn06_rcsv_anchor_dom ' + anchor_domain)
 
-     // let current_otype = "this.j.otype"array                     
+     // let current_otype = "this.j.otype"array
 
-    let current_otype = "array"                     
-           
+    let current_otype = "array"
+
     var arr_anchors = this.s.arr["pagesep"]
 
     var arr_anchors_name = this.s.arr["pagesep_name"]
-    
+
     // "": { "index": "common_features","type": "link","otype": "",
-    // "name": "undefined # anchor_list","clink": "undefined#common_features" }           
-    
+    // "name": "undefined # anchor_list","clink": "undefined#common_features" }
+
     var iterations           = Object.keys(arr_anchors).length - 1
 
     this.p('jn02_anchors - iter  ' + iterations )
     this.parr(arr_anchors)
-    
+
     for (var pos in arr_anchors)
     {
 	  this.kk.index   = this.get_next_level(pos)
 	  this.kk.item     = arr_anchors[pos]
 	  this.kk.value   = arr_anchors_name[this.kk.item]
 	  this.kk.link       = anchor_domain + arr_anchors[pos]
-       
+
       // this.kk.value  = this.jj.site_title + ' # ' + this.jj.item
 			 // this.p ('jn06_poslnkA ' + this.j.item)
-             
+
       if (this.kk.item != "")
       {
         this.kk.createspecifictype(current_otype)
@@ -78,11 +78,11 @@ class jn02_array_anchor_inner extends jn00_comm_pf {
           this.kk.add_separator()
 	  }
       else
-        --iterations			 
+        --iterations
 	}
-  
+
   }
-  
+
 }
 
 exports.jn02_array_anchor_inner = jn02_array_anchor_inner

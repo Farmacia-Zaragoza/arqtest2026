@@ -9,10 +9,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_anchor-       : Manage cache for sites 
+// - d-manage_anchor-       : Manage cache for sites
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { uri_front }     =   require(  cons.JS_TYP7 + 'uri/u06_front.es7'    );
 
@@ -20,14 +20,14 @@ class uri_robot extends uri_front {
 
   constructor()
   {
-    super()    
-    this.n               =   'uri_robot::'        
+    super()
+    this.n               =   'uri_robot::'
   }
 
-    
-  //---------------------------------------------------------------------------------------------  
 
-  
+  //---------------------------------------------------------------------------------------------
+
+
 }
 
 exports.uri_robot = uri_robot

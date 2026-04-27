@@ -12,7 +12,7 @@
 // - d-save_json_simple_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                      =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  cons.NODE_MOD + 'is-empty'                             ),
@@ -23,14 +23,14 @@ const  fs                        =   require(  'fs'                             
 // Pendiente de cambiar
 class jn01_comma_json_simple extends jn02_comma_json_doble {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                         =  'jn01_comma_json_a_simple::'      
+    this.n                         =  'jn01_comma_json_a_simple::'
   }
 
-  
+
 }
 
 exports.jn01_comma_json_simple = jn01_comma_json_simple

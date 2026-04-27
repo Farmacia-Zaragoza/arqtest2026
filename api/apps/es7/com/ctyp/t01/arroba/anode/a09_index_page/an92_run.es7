@@ -14,12 +14,12 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                        =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_gindex_main_load }  =   require(  cons.JS_TYP7  + 'arroba/gindex/a_main/g01_idx_load.es7'      )
 
 class anode_run_index_page extends anode_gindex_main_load {
-  constructor()  
+  constructor()
   {
     super()
 
@@ -27,7 +27,7 @@ class anode_run_index_page extends anode_gindex_main_load {
   }
 
   // Este es distinto pues carga un fichero de indice y no genera arroba
-  
+
   run_index_page_load(positions = '')
   {
 
@@ -36,30 +36,30 @@ class anode_run_index_page extends anode_gindex_main_load {
 
     // en - en
     // this.p('an82_LANGLOAD: ' + this.s.ms.main_lang + ' ms: ' + this.s.ms.lang + ' cs: ' + this.s.cs.lang  )
-    
+
 
     if ( this.b.language_already_loaded == false  )
     {
        this.s.ms.lang           =   'en'
-       this.s.cs.lang           =   this.s.ms.lang    
-    
-       this.main_index_page_load()    
-       
+       this.s.cs.lang           =   this.s.ms.lang
+
+       this.main_index_page_load()
+
        // this.p('an72_FOUNDED_TYPE ' + this.s.cs.founded_type)
     }
 
     this.s.ms.lang           =   before_lang
-    this.s.cs.lang         =   this.s.ms.lang    
-    
+    this.s.cs.lang         =   this.s.ms.lang
+
     if ( this.s.ms.lang != 'en' )
     {
       // this.p('j82_LANGLOAD ES ' + this.s.cs.lang)
-      
-      this.main_index_page_load()    
+
+      this.main_index_page_load()
     }
- 
+
   }
-  
+
 }
 
 exports.anode_run_index_page = anode_run_index_page

@@ -17,30 +17,30 @@
 //- d-current_hsheet_process_es-    : Process current sheet for spec lang for hierarchical method
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoProcess > AnoTermProcess >
 // @Anode >  ...
 //-------------------------------------------------------------------------------------
-// Execution Line : 
+// Execution Line :
 //-------------------------------------------------------------------------------------
 // CurrProces > CurrLoad > RECURSIVE
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_run_search }  =   require(  cons.JS_TYP7  + 'arroba/anode/a08_search/an82_run.es7'   ),
        { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
 
 class anode_fssheet_process extends anode_run_search {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "anode_fssheet_process::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Will process all pages
   // MAIN/position/page --> @FORMAT
   current_fssheet_process(    lang                  ,
@@ -51,18 +51,18 @@ class anode_fssheet_process extends anode_run_search {
                               title               = ''    ,
                               folder_to_load      = ''    )
   {
-  
+
     this.m          = 'current_process'
 
     // Load folder in folder_content_array
 
     this.p('an79_Folder Load  ' + folder_to_load)
-    
+
     this.load_folder_information(folder_to_load)
 
     this.p('an79_Num_files  ' + this.file_contents.length)
     this.p('an79_Num_folder ' + this.folder_contents.length)
-  
+
     let num_folders = this.folder_contents.length
     let num_files   = this.file_contents.length
 
@@ -70,19 +70,19 @@ class anode_fssheet_process extends anode_run_search {
     this.arr[lang]['r' + array_index_string] = "sheet"
 
 
-    // Le insertamos v001 porque es el valor para las imagenes cuando hay parrafadas  
+    // Le insertamos v001 porque es el valor para las imagenes cuando hay parrafadas
     array_index_string += 'v001'
-    
+
     // hay que falsear el valor del tipo de hoja
-  
+
     if ( num_folders == 0 )
     {
       this.p('an79 generating files '  + array_index_string)
-      this.generate_files( lang               ,  
-    	                   array_index_string ) 
+      this.generate_files( lang               ,
+    	                   array_index_string )
 
       // En ficheros requiere actualizar el indice
-      this.s.cs.founded_index      = array_index_string    	                   
+      this.s.cs.founded_index      = array_index_string
     }
     else
     {
@@ -91,15 +91,15 @@ class anode_fssheet_process extends anode_run_search {
         this.generate_folder(lang                 ,
                              array_index_string   ,
                              breadcrumb           )
-      else                           
+      else
         this.generate_folder_lang(lang                 ,
                                   array_index_string   ,
                                   breadcrumb           )
 
     }
-    
-    
-    
+
+
+
   }
 
 }

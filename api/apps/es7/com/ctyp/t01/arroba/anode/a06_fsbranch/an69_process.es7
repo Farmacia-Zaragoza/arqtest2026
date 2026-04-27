@@ -9,35 +9,35 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-//- d-current_fsbranch_process-       : File system sheet load for en lagn 
-//- d-current_hierarchical_process_es-    : Hierarchical Process for non english langs 
+//- d-current_fsbranch_process-       : File system sheet load for en lagn
+//- d-current_hierarchical_process_es-    : Hierarchical Process for non english langs
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoProcess > AnoTermProcess >
 // @Anode >  ...
 //-------------------------------------------------------------------------------------
-// Execution Line : 
+// Execution Line :
 //-------------------------------------------------------------------------------------
 // CurrProces > CurrLoad > RECURSIVE
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_fssheet_process }  =   require(  cons.JS_TYP7  + 'arroba/anode/a07_fssheet/an79_process.es7'   ),
        { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
 
 class anode_fsbranch_process extends anode_fssheet_process {
-  constructor()  
+  constructor()
   {
 
     super()
     this.n                        = "anode_fsbranch_process::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Will process all pages
   // MAIN/position/page --> @FORMAT
   current_fsbranch_process(    lang                     , // 1. en
@@ -49,30 +49,30 @@ class anode_fsbranch_process extends anode_fssheet_process {
                                folder_to_load           ,
                                uri_depth                 )
   {
-  
+
     this.m          = 'current_fsbranch_process'
 
-    var idx = new idx_pointers(array_index_string)    
-    
+    var idx = new idx_pointers(array_index_string)
+
     //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
     // this.p('j69_proc_Index : ' + array_index_string)
-  
+
     // Los bucles tienen que ser con el idioma ingles
-    
+
     // this.p('an49_jindex ' + idx.jindex)
     // this.p('an49_main_lang ' + this.s.ms.main_lang + ' '+ lang + '    ' + breadcrumb)
- 
+
     // Procesamos el idioma ingles
     // Pero si el idioma es el castellano, igual tambien interesa procesarlo
-    
-    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
+
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
 
     // this.parr(cats)
-    // Tenemos que ir comparando la url que vamos gestionando con la url real 
+    // Tenemos que ir comparando la url que vamos gestionando con la url real
     // para ello usaremos el array de uri
 
     var right_argument = false
-  
+
   // this.p('j06_Before-pos-bucle1 ' + lang + '  ' + cats.length )
     for (var pos in cats)
     {
@@ -83,10 +83,10 @@ class anode_fsbranch_process extends anode_fssheet_process {
 
         this.arroba_attribs(idx, pos)
         this.arroba_attribs_main_lang(idx, pos)
-    
+
          // Vamos a ir avanzando por la estructura y esta sera la base
          // Item es la el indice
-         
+
         var new_breadcrumb = breadcrumb + '/' + this.value
 
         // this.p('an49 p_cat ' + pos + ' Breadcrumb ' + new_breadcrumb + ' FOUND ' + this.b.found_breadcrumb )
@@ -112,22 +112,22 @@ class anode_fsbranch_process extends anode_fssheet_process {
 
           // fs/a000_bride - real file system link
           let new_subpath              = current_subpath     + '/'  + this.link
-    
+
           let new_title                = title               + ' '  + this.value
-          
+
           let new_folder_to_load       = folder_to_load      + '/'  + this.link
-         
+
           this.p('an69_procc_New subpath: ' + new_folder_to_load)
            // Aqui igual necesitamos el titulo del padre
            //
-        
+
           let uri_value                = this.u.uri_args_sorted[uri_depth]
-          
+
           this.p('an69_proce_uri UU ' + uri_value + ' --=-- ' + this.value)
-          
+
           // si son iguales seguimos cargando
           // Esto hay que pensarlo bien
-          
+
           if (uri_value == this.value)
           {
             this.current_fsbranch_load(    lang                        , // 1. es|it
@@ -138,31 +138,31 @@ class anode_fsbranch_process extends anode_fssheet_process {
                                            new_title                   , // 6. waterfalls
                                            new_folder_to_load          , // 7. ssd../o14_waterfalls
                                            uri_depth + 1               )
-          
-            right_argument = true	
-          	
-          	
+
+            right_argument = true
+
+
           }
-          
-              
+
+
         } // End If
 
-      }  // End If 
+      }  // End If
     } // End For
 
     // Hay que ver que no tenga el argumento correcto y que el idioma se ingles
-    if ( (!right_argument) && 
+    if ( (!right_argument) &&
          (this.u.lang_site == "en") )
     {
        // sino es un front
        this.p('an69_MANAGING_FRONT '+ this.u.lang_site)
        this.b.cache              =   false
        this.u.manage_front()
-    } 
-     
+    }
+
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   current_fsbranch_process_es(   lang                     , // 1. es|it
                                  array_index_string       , // 2. 060v001
                                  file_structure_path      , // 3. l060/waterfalls
@@ -175,16 +175,16 @@ class anode_fsbranch_process extends anode_fssheet_process {
 
     this.m          = 'current_process'
 
-    var idx = new idx_pointers(array_index_string)    
-    
-    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
-	
+    var idx = new idx_pointers(array_index_string)
+
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+
       // PROCESAMIENTO OTRO IDIOMA
 
-    // let cats_es = this.gethash_arr(lang, idx.jindex)  
+    // let cats_es = this.gethash_arr(lang, idx.jindex)
 
-    var right_argument = false     
-  
+    var right_argument = false
+
     for (var pos in cats)
     {
       if (!this.b.found_breadcrumb == true)
@@ -195,10 +195,10 @@ class anode_fsbranch_process extends anode_fssheet_process {
           // this.breadcrumb = this.gethash_keylang(idx.bindex, pos)
 
           // this.hover      = this.gethash_keylang(idx.hindex, pos)
-    
+
          // Vamos a ir avanzando por la estructura y esta sera la base
           var new_breadcrumb = breadcrumb + '/' + this.value
-        
+
           // this.p('an49 BREADCRUMB_ES ' + new_breadcrumb)
 
         // this.p('an49 cat ' + index + ' Breadcrumb ' + new_breadcrumb + ' FOUND ' + this.b.found_breadcrumb )
@@ -222,19 +222,19 @@ class anode_fsbranch_process extends anode_fssheet_process {
 
           // kb/architecture
           let new_subpath              = current_subpath     + '/'   + this.link_en
-    
-          let new_title                = title  + ' ' + this.value 
 
-          let new_folder_to_load       = folder_to_load      + '/' + this.link_en          
+          let new_title                = title  + ' ' + this.value
+
+          let new_folder_to_load       = folder_to_load      + '/' + this.link_en
         // this.p('an09_procc_New subpath: ' + new_subpath)
            // Aqui igual necesitamos el titulo del padre
            //
           let uri_value                = this.u.uri_args_sorted[uri_depth]
 
           this.p('an69_proce_uri UUES ' + uri_value + ' --=-- ' + this.value)
-          
+
           if (uri_value == this.value)
-          {        
+          {
             this.current_fsbranch_load_es( lang                        , // 1. es|it
                                          new_index_string            , // 2. 060v001
                                          new_file_structure_path     , // 3. l060/waterfalls
@@ -243,13 +243,13 @@ class anode_fsbranch_process extends anode_fssheet_process {
                                          new_title                   , // 6. waterfalls
                                          new_folder_to_load          , // 7. ssd../o14_waterfalls
                                          uri_depth + 1               )
-              
+
             right_argument = true
-          }	              
+          }
         } // End If
 
-      } // End If  
-    } // End For 
+      } // End If
+    } // End For
 
     if (!right_argument)
     {
@@ -257,7 +257,7 @@ class anode_fsbranch_process extends anode_fssheet_process {
        // sino es un front
        this.b.cache              =   false
        this.u.manage_front()
-    } 
+    }
 
   }
 

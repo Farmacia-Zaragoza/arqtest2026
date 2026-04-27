@@ -14,13 +14,13 @@
 //- d-main_page_process-           : Process from main file one position and one page
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons             =   require(  "/brqx/rcode/es7/com/agen/constants.es7"  )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_page_load }   =   require(  cons.JS_TYP7  + 'arroba/anode/a04_page/an44_page_load.es7'   ),
        { idx_pointers } =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'        );
 
 class anode_main_page_process extends anode_page_load {
-  constructor()  
+  constructor()
   {
     super()
 
@@ -28,21 +28,21 @@ class anode_main_page_process extends anode_page_load {
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Procesa Solo la primera posicion y la primera pagina
-  main_page_process(   index           = 'main'    , 
+  main_page_process(   index           = 'main'    ,
                        current_subpath = ''        )
   {
 
     var idx = new idx_pointers(index)
-  
-    
-    this.cat    = this.getkeymain( idx.jindex , this.s.cs.position)                 
-    this.child  = this.getkeymain( idx.cindex , this.s.cs.position)                 
-    this.dhild  = this.getkeymain( idx.dindex , this.s.cs.position)                 
-  
+
+
+    this.cat    = this.getkeymain( idx.jindex , this.s.cs.position)
+    this.child  = this.getkeymain( idx.cindex , this.s.cs.position)
+    this.dhild  = this.getkeymain( idx.dindex , this.s.cs.position)
+
     // this.p('an06_mp_Cat Lang : ' + this.cat + ' Cat ')
-  
+
     current_subpath  = 'l' +  this.dhild
 
     //// this.p('j04_jnod_Pos: ' + this.s.position + ' Cat : ' + this.cat + ' Child: ' + this.child)
@@ -50,12 +50,12 @@ class anode_main_page_process extends anode_page_load {
     if ( this.child == "yes" )
     {
       // this.p('Cat Lang : ' + this.s.lang + ' Cat '  + this.cat + ' Pat: ' + current_subpath)
-    
+
       this.page_load(this.s.ms.lang , current_subpath)
     }
 
   }
-  
+
 
 }
 

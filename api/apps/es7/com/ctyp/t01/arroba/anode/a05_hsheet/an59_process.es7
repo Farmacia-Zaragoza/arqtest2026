@@ -17,30 +17,30 @@
 //- d-current_hsheet_process_es-    : Process current sheet for spec lang for hierarchical method
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // AnoProcess > AnoTermProcess >
 // @Anode >  ...
 //-------------------------------------------------------------------------------------
-// Execution Line : 
+// Execution Line :
 //-------------------------------------------------------------------------------------
 // CurrProces > CurrLoad > RECURSIVE
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                   =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { anode_run_fs } =   require(  cons.JS_TYP7  + 'arroba/anode/a06_fsbranch/an62_run.es7'   ),
        { idx_pointers }       =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                 );
 
 class anode_hsheet_process extends anode_run_fs {
-  constructor()  
+  constructor()
   {
     super()
     this.n                        = "anode_hsheet_process::"
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // Will process all pages
   // MAIN/position/page --> @FORMAT
   current_hsheet_process(lang                  ,
@@ -51,22 +51,22 @@ class anode_hsheet_process extends anode_run_fs {
                               breadcrumb_lang     = 'kb'  ,
                               title               = ''    )
   {
-  
-    this.m          = 'current_process'
-  
 
-    var idx = new idx_pointers(array_index_string)    
+    this.m          = 'current_process'
+
+
+    var idx = new idx_pointers(array_index_string)
     //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
     //// this.p('a09 Proc Lang : ' + lang + ' Path ' +  current_subpath + ' Ind ' + index)
 
     // Los bucles tienen que ser con el idioma ingles
-    
+
     // this.p('an09_jindex ' + idx.jindex)
-    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
-  
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+
     // 12
     // this.p('an59_Before-pos-bucle1' + lang + '  ' + array_index_string + ' L ' +  cats.length )
-    
+
     for (var pos in cats)
     {
       // Para cada uno hay que gestionar hijos
@@ -80,20 +80,20 @@ class anode_hsheet_process extends anode_run_fs {
       if (this.item == "metatags" )       this.s.add_metatag(this.value)
 
       // process cat prev_item V  Cin
-      // this.p('an59_process cat ' + this.item + ' V ' + this.value  + ' Cin ' + this.breadcrumb )        
+      // this.p('an59_process cat ' + this.item + ' V ' + this.value  + ' Cin ' + this.breadcrumb )
 
       if ( (this.value  != "") ||(this.photo != "")   )    this.term_process()
-     
+
       // || (this.hover  != "") --> Nada con hover de momento
 
       // Estos ya estan metidos en el array asi que hay que iterar los hijos
       //this.p('LEVEL : ' + index + ' pos ' + pos + ' value: '  + cats[pos] + ' childrens: ' + chld[pos]  )
 
-      
+
       // Aqui no tiene sentido preguntar por el hijo
       if ( this.child == "yes" )
       {
-    
+
         // this.p('an09_procc_New subpath: ' + new_subpath)
 
           let new_index_string         = array_index_string  + 'v'  +  this.level
@@ -105,15 +105,15 @@ class anode_hsheet_process extends anode_run_fs {
           let new_subpath              = current_subpath     + '/'   + this.link
 
           let new_title                = title + ' ' + this.value
-      
+
         this.current_hsheet_load(  lang                        ,
                                            new_index_string            ,
-                                           new_file_structure_path     , 
+                                           new_file_structure_path     ,
                                            new_subpath                 ,
                                            new_breadcrumb              ,
                                            new_breadcrumb_lang         ,
                                            new_title                   )
-     
+
         // /brqx/pers/fromfile/farma/fnode/json_lang_structure/l000/fr_cat
       } // End If
       else
@@ -122,13 +122,13 @@ class anode_hsheet_process extends anode_run_fs {
         //// this.p('an09_outside p ' + this.type + ' ' + this.item + ' ' + this.b.page_front + ' ' + this.b.page_product + ' ' + this.b.page_allinone)
         // Si es no termina y se cierra la recursividad
 
-        if ( (this.type == "parragraph"  ) ||  
+        if ( (this.type == "parragraph"  ) ||
              (this.type == "iparragraph" ) )
         {
           // this.p('an09_p ' + this.b.page_list + ' ' + this.b.page_product)
 
           let folder_to_load    = this.s.ms.contents_path + file_structure_path
-          let pf_to_load        = folder_to_load       + '/' + this.value 
+          let pf_to_load        = folder_to_load       + '/' + this.value
 
           let new_level         = array_index_string  + 'v'  +  this.level
 
@@ -136,26 +136,26 @@ class anode_hsheet_process extends anode_run_fs {
           // 020v050 - 020v001
           // paragraph se corresponde con el indice de array 020v001v001
           // por lo que los parrafos internos deben corresponderse con 020v001v001v000
-           
+
           // /brqx/struc/arq/kb/arqkb/l020/l000/a000_focus_details_en - 020v025v001
-          // inside_p 
-          // /brqx/struc/arq/kb/arqkb/l040/a_architecture/a_history/a_model/a000_article_details_en  
+          // inside_p
+          // /brqx/struc/arq/kb/arqkb/l040/a_architecture/a_history/a_model/a000_article_details_en
           // 040v000v001v000v001
-          // this.p('an59 inside_p  ' + pf_to_load + '  ' + new_level) 
+          // this.p('an59 inside_p  ' + pf_to_load + '  ' + new_level)
 
           // Aqui podriamos gestionar rutas de ficheros
           if (this.s.cs.page_name == "photo")
             this.generate_array_from_photo_file( lang, pf_to_load, new_level)
-          else          
+          else
             this.generate_array_from_text_file( lang, pf_to_load, new_level)
           // Ojo que aqui leemos los ficheros
-          
+
           // this.s.add_anchors_to_metatags()
-          
+
 	    }
-      	
+
       }
-    } // End For 
+    } // End For
 
   }
 
@@ -168,22 +168,22 @@ class anode_hsheet_process extends anode_run_fs {
                               breadcrumb_lang     = 'kb'  ,
                               title               = ''    )
   {
-  
-    this.m          = 'current_hsheet_process_es'
-  
 
-    var idx = new idx_pointers(array_index_string)    
+    this.m          = 'current_hsheet_process_es'
+
+
+    var idx = new idx_pointers(array_index_string)
     //         j06 Proc Lang : es Path l000/l001/l000 Ind 000v001v000
     //// this.p('a09 Proc Lang : ' + lang + ' Path ' +  current_subpath + ' Ind ' + index)
 
     // Los bucles tienen que ser con el idioma ingles
-    
+
     // this.p('an09_jindex ' + idx.jindex)
-    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)  
-  
+    let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
+
     // 12
     // this.p('an59_Before-pos-bucle1 ' + lang + '  ' + array_index_string + ' L ' +  cats.length )
-    
+
     for (var pos in cats)
     {
       // Para cada uno hay que gestionar hijos
@@ -197,20 +197,20 @@ class anode_hsheet_process extends anode_run_fs {
       if (this.item == "metatags" )       this.s.add_metatag(this.value)
 
       // process cat  prev_item V  Cin
-      // this.p('an59_process cat  ' + this.item + ' V ' + this.value  + ' Cin ' + this.breadcrumb )        
+      // this.p('an59_process cat  ' + this.item + ' V ' + this.value  + ' Cin ' + this.breadcrumb )
 
       if ( (this.value  != "") ||(this.photo != "")   )    this.term_process()
-     
+
       // || (this.hover  != "") --> Nada con hover de momento
 
       // Estos ya estan metidos en el array asi que hay que iterar los hijos
       //this.p('LEVEL : ' + index + ' pos ' + pos + ' value: '  + cats[pos] + ' childrens: ' + chld[pos]  )
 
-      
+
       // Aqui no tiene sentido preguntar por el hijo
       if ( this.child == "yes" )
       {
-    
+
         // this.p('an09_procc_New subpath: ' + new_subpath)
 
         let new_index_string         = array_index_string  + 'v'  +  this.level
@@ -223,15 +223,15 @@ class anode_hsheet_process extends anode_run_fs {
 
         let new_title                = title + ' ' + this.value
 
-      
+
         this.current_hsheet_load_es(  lang                        ,
                                            new_index_string            ,
-                                           new_file_structure_path     , 
+                                           new_file_structure_path     ,
                                            new_subpath                 ,
                                            new_breadcrumb              ,
                                            new_breadcrumb_lang         ,
                                            new_title                   )
-     
+
         // /brqx/pers/fromfile/farma/fnode/json_lang_structure/l000/fr_cat
       } // End If
       else
@@ -240,13 +240,13 @@ class anode_hsheet_process extends anode_run_fs {
         //// this.p('an09_outside p ' + this.type + ' ' + this.item + ' ' + this.b.page_front + ' ' + this.b.page_product + ' ' + this.b.page_allinone)
         // Si es no termina y se cierra la recursividad
 
-        if ( (this.type == "parragraph"  ) ||  
+        if ( (this.type == "parragraph"  ) ||
              (this.type == "iparragraph" ) )
         {
           // this.p('an09_p ' + this.b.page_list + ' ' + this.b.page_product)
 
           let folder_to_load    = this.s.ms.contents_path + file_structure_path
-          let pf_to_load        = folder_to_load       + '/' + this.value 
+          let pf_to_load        = folder_to_load       + '/' + this.value
 
           let new_level         = array_index_string  + 'v'  +  this.level
 
@@ -254,26 +254,26 @@ class anode_hsheet_process extends anode_run_fs {
           // 020v050 - 020v001
           // paragraph se corresponde con el indice de array 020v001v001
           // por lo que los parrafos internos deben corresponderse con 020v001v001v000
-           
+
           // /brqx/struc/arq/kb/arqkb/l020/l000/a000_focus_details_en - 020v025v001
-          // inside_p 
-          // /brqx/struc/arq/kb/arqkb/l040/a_architecture/a_history/a_model/a000_article_details_en  
+          // inside_p
+          // /brqx/struc/arq/kb/arqkb/l040/a_architecture/a_history/a_model/a000_article_details_en
           // 040v000v001v000v001
-          // this.p('an59 inside_p  ' + pf_to_load + '  ' + new_level) 
+          // this.p('an59 inside_p  ' + pf_to_load + '  ' + new_level)
 
           // Aqui podriamos gestionar rutas de ficheros
           if (this.s.cs.page_name == "photo")
             this.generate_array_from_photo_file( lang, pf_to_load, new_level)
-          else          
+          else
             this.generate_array_from_text_file( lang, pf_to_load, new_level)
           // Ojo que aqui leemos los ficheros
-          
+
           // this.s.add_anchors_to_metatags()
-          
+
 	    }
-      	
+
       }
-    } // End For 
+    } // End For
 
   }
 

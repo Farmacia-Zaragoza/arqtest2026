@@ -9,21 +9,21 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Jcomm > Jcomm_struc > Scomm_defs (common-point)
 // Jcomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { jcomm_struc }      =   require(  cons.JS_TYF7  + 'b02_save/jcomm/j02_struc.es7'          )
 
 class arroba_jcomm extends jcomm_struc {
-  constructor(    arroba  )  
+  constructor(    arroba  )
   {
     super()
- 
+
     this.n                  =   "arroba_jcomm::"
     this.m                  =   "cons"
 
@@ -31,7 +31,7 @@ class arroba_jcomm extends jcomm_struc {
     this.arroba             =   arroba
 
     this.s					=   arroba.s
-    this.b					=   this.s.b    
+    this.b					=   this.s.b
 
     this.s.cs               =   new cache_site()
 
@@ -40,17 +40,17 @@ class arroba_jcomm extends jcomm_struc {
 
     this.s.cs.comm           =   'comm'
 
-    
+
     this.s.cs.sub            =   'json'
     this.s.cs.ext            =  'json'
-   
-    
+
+
     this.arroba.s           =   this.s
-    
+
     // this.p('s01_passsed_type ' + this.s.t_sub)
 
     this.run_cache_to_generate_json()
-    
+
   }
 
 }

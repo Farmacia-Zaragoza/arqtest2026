@@ -7,25 +7,25 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const 	{ blkrobot } 		= 	require(	cons.JS_TYP7    + 'robot/blkrobot.es7'								),
 		sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7');
-		
+
 
 class file_robot extends blkrobot {
-	constructor(  file_name        = ''   , 
+	constructor(  file_name        = ''   ,
                   site_title       = ''   ,
 	              domain_site      = ''   ,
 	              langdomain_site  = ''   ,
-	              uri_site         = ''   , 
-	              resolutions_line = ''   ) 
+	              uri_site         = ''   ,
+	              resolutions_line = ''   )
 	{
 		super(file_name)
 
         this.m                =   'cons'
         this.n                =   'file_robot::'
-		
+
 		this.site_title       =   site_title
 		this.uri_site         =   uri_site
 		this.domain_site      =   domain_site
@@ -46,11 +46,11 @@ class file_robot extends blkrobot {
     manage_resolutions_for_image()
     {
        var res_arr = this.resolutions_line.split(' ')
-       
+
        for (pos in res_arr)
        {
 		  // Hay que reemplazar RESOLUTION por cada resolucion
-		  this.s.replace(this.photo, 'RESOLUTION' , res_arr[pos])   
+		  this.s.replace(this.photo, 'RESOLUTION' , res_arr[pos])
 		  // this.p('file_robot_IMG' + this.s.result )
           this.l.href              = this.domain_site + this.s.result
 
@@ -73,7 +73,7 @@ class file_robot extends blkrobot {
           // this.p('file_robot_RESOLUTIONS A')
           this.manage_resolutions_for_image()
         }
-		else 
+		else
 		{
 		  this.create()
           // sctf.update_file_with_code_no_break_line(this.full_path, this.code)
@@ -86,15 +86,15 @@ class file_robot extends blkrobot {
 
         this.resolution = ''
 
-		this.managespecifictype(true)											
+		this.managespecifictype(true)
 
         if (this.resolution == "RESOLUTION")
           this.p('file_robot_RESOLUTIONS B')
 
-		
-		this.add_childrens(	this.child				)					
 
-		this.clean()															
+		this.add_childrens(	this.child				)
+
+		this.clean()
 	}
 
 
@@ -107,10 +107,10 @@ class file_robot extends blkrobot {
         if (this.resolution == "RESOLUTION" )
           this.p('file_robot_RESOLUTIONS C')
 
-		
-		this.add_childrens(	this.child				)			
 
-		this.clean()		
+		this.add_childrens(	this.child				)
+
+		this.clean()
 	}
 
 	createcommontype()
@@ -128,7 +128,7 @@ class file_robot extends blkrobot {
 		sctf.create_update_full_filename(this.full_path, this.code)
 		//sctf.create_update_full_filename_no_break_line(this.full_path, this.code)
 
-		this.clean()		
+		this.clean()
 	}
 
 	managespecifictype(part = false)
@@ -140,13 +140,13 @@ class file_robot extends blkrobot {
                 // Generar el link con los parametros
 				this.add_index(					this.index		)
 				this.add_type(					this.type		)
-				this.add_element( 		'name' , this.hover	)		
-				// this.add_element( 		'hover' , this.hover	)		
+				this.add_element( 		'name' , this.hover	)
+				// this.add_element( 		'hover' , this.hover	)
 				if (part)
 					this.add_element( 	'clink'	, this.link		)
 				else
 					this.add_lastelement( 	'clink'	, this.link		)
-				
+
 				break;
 			default:
 				this.managecommontype(part)
@@ -156,8 +156,8 @@ class file_robot extends blkrobot {
 
 
 	managethemeelem(part) 	{	}
-	managebranchelem(part)	{	}	
-	
+	managebranchelem(part)	{	}
+
 }
 
 exports.file_robot = file_robot

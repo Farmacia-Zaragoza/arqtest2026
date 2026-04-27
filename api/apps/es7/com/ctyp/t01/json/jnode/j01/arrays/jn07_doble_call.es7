@@ -10,10 +10,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-review_childrens_doble_array-                   : 2nd level function 
+// - d-review_childrens_doble_array-                   : 2nd level function
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                       =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                         =   require(  'fs'                                                          ),
        empty                      =   require(  cons.NODE_MOD + 'is-empty'                                    ),
@@ -24,18 +24,18 @@ const  fs                         =   require(  'fs'                            
 
 class jn07_comma_json_doble_call extends jn10_fs_json_simple {
 
-           
-  constructor ()   
-  {   
+
+  constructor ()
+  {
     super()
-    this.n                   =  'jn07_comma_json_doble_call::'      
+    this.n                   =  'jn07_comma_json_doble_call::'
   }
 
   //---------------------------------------------------------------------------------------------
-  review_childrens_doble_array(  
+  review_childrens_doble_array(
             index           ,   // Indice
             enbreadcrumb   =   ''  ,  // Breadcrumb en ingles
-            depth      =  0  ) 
+            depth      =  0  )
   {
     // Cada metodo debe tener su clase indices para evitar regeneraciones
 
@@ -58,7 +58,7 @@ class jn07_comma_json_doble_call extends jn10_fs_json_simple {
 
       // add_json block
       this.rvlash_inner(current_level)
-      this.index               =  this.result   
+      this.index               =  this.result
 
       // No pasa
       this.p('jn07_GenVslash ' + this.index + ' l ' + current_level)
@@ -66,14 +66,14 @@ class jn07_comma_json_doble_call extends jn10_fs_json_simple {
       this.links_management(idx, pos)
 
       this.j.index             =   this.index
-      
+
 
       if ( (this.k.type == "parragraph"  ) ||  (this.k.type == "iparragraph" ) )
       {
           this.rvtoslash(index)
           let folder_to_load = this.s.ms.contents_path + 'l' +  this.result
-          let pf_to_load     = folder_to_load       + '/' + this.j.value 
-                
+          let pf_to_load     = folder_to_load       + '/' + this.j.value
+
           // this.p('Parrafete a cargar ' + pf_to_load )
       }
 
@@ -83,11 +83,11 @@ class jn07_comma_json_doble_call extends jn10_fs_json_simple {
 
       if (--iterations  >= 0)
         this.j.add_separator()
-    
+
      }  // End For
 
   }
-  
+
 }
 
 exports.jn07_comma_json_doble_call = jn07_comma_json_doble_call

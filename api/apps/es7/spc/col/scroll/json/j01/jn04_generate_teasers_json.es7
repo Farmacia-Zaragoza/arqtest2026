@@ -9,19 +9,19 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/base/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn02_process_site }   =   require(  cons.JS_SPC7  + 'scroll/json/j02/jn02_jnode_process_site.es7'   );
 
 class jn04_teasers_json extends jn02_process_site {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'jn04_teasers_json::'
   }
 
@@ -33,15 +33,15 @@ class jn04_teasers_json extends jn02_process_site {
     // product_20.-.1
     // this.p('jn03_product_' + this.s.t_position + '.-.' +   this.s.t_page )
 
-    this.k.save_top()      
+    this.k.save_top()
 
     this.generate_common_teasers()
 
     this.j.save_end()
-  
+
   }
 
-  
+
 }
 
 exports.jn04_teasers_json = jn04_teasers_json
