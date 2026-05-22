@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // comm - spec - content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-site_mcomm-   : Multi position site to load arrobas
 // e-arroba_jtype- : Arroba Jtype - Json generated base in arroba path
@@ -27,7 +27,7 @@
 
 // Must to be unique
 
-var     cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { common_model }  =   require(  cons.JS_SPC7  + 'acomm/model/common_model.es7'        ),
         { site_mcomm }    =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m02_site_comm.es7'    ),
@@ -54,16 +54,16 @@ class arqliq_no_cache extends common_model
 
     // Aqui ya lo conoce
     // this.p('arq_model_page X0 ' + this.comm.s.cs.page +  ' Lang ' + this.comm.s.cs.lang )
-   
+
     //2. URI SPECIFIC VERSION FOR ARQDRU - WILL MANAGE REAL COMMANDS
     // Usando fast uri no funciona
-    this.uspc             =   new site_uri( this.comm.s   , 
+    this.uspc             =   new site_uri( this.comm.s   ,
                                               this.ir       )
 
     // Generate common json file
     this.commjson         =   new arroba_jtype(this.acomm ,'comm')
     this.run_comm_model()
-      
+
     // Generate spec json file
     this.specjson         =   new arroba_jtype(this.arroba , 'spec')
     this.run_spec_model()
@@ -74,9 +74,8 @@ class arqliq_no_cache extends common_model
 
     this.code             =   this.thmdata.code
 
-  } 
+  }
 
 } // end Class
 
 exports.arqliq_no_cache = arqliq_no_cache
-

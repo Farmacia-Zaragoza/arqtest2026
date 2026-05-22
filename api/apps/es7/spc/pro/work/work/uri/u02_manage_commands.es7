@@ -7,10 +7,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_commands-            : Check command type based on uri and site 
+// - d-manage_commands-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { post_process_commands } =   require( cons.JS_PRO7 + 'work/work/uri/u04_post_process_commands.es7' )
 
@@ -21,18 +21,18 @@ class site_uri_manage_commands extends post_process_commands
   {
     super(  site, ir )
     this.n                  =   "site_uri_manage_commands::"
-  } 
-  
-//---------------------------------------------------------------------------------------------  
+  }
+
+//---------------------------------------------------------------------------------------------
 
   manage_commands()
   {
 
      this.m                    = 'manage_commands'
 
-     this.start_position_array       =   this.start_position_array + 1        
+     this.start_position_array       =   this.start_position_array + 1
 
-     // this.p('u02_Comando para analizar A KB : ' + this.page_command      )           
+     // this.p('u02_Comando para analizar A KB : ' + this.page_command      )
 
      this.manage_common_commands()
 
@@ -40,8 +40,8 @@ class site_uri_manage_commands extends post_process_commands
     // this.p('u02_AFTER page_name: ' + this.s.cs.page_name)
 
     // this.p('u02_mcomm_uri_SITEALIAS KB 0 : ' + this.slash_ideal_uri + ' = > ' + this.slash_alias_uri)
-     
-    // Manage and sort arguments 
+
+    // Manage and sort arguments
     // Hasta este punto no se conoce dash_sub_query
     this.process_commands()
 
@@ -52,7 +52,7 @@ class site_uri_manage_commands extends post_process_commands
     // Aqui ya se ha generado la uri en su totalidad
     this.post_process_commands()
 
-    // this.p('u01_site_uri_Comando para analizar B: ' + this.page_command + ' ' + this.slash_sub_query)           
+    // this.p('u01_site_uri_Comando para analizar B: ' + this.page_command + ' ' + this.slash_sub_query)
 
 
     // This method will assure command is right for page
@@ -60,7 +60,7 @@ class site_uri_manage_commands extends post_process_commands
 
     // this.p('u02_c_sc_page_name: ' + this.page_name)
 
-  }  
+  }
 
 } // end Class
 

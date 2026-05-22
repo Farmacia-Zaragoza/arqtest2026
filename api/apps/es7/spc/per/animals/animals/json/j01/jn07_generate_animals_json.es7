@@ -9,23 +9,23 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn02_process_site }   =   require(  cons.JS_PER7  + 'animals/animals/json/j02/jn02_jnode_process_site.es7'   );
 
 class jn07_animals_json extends jn02_process_site {
-           
-  constructor (arroba = '') 
-  {   
+
+  constructor (arroba = '')
+  {
     // ARROBA se getiona en JNODE
     super(arroba)
     this.n                  =   'jn07_animals_json::'
 
     // this.p('j02_policy Cache_path ' + this.j.full_path )
-    
+
   }
 
   // Specific method for every type
@@ -35,16 +35,16 @@ class jn07_animals_json extends jn02_process_site {
 
     // this.p('jn07_Gen_Animals  ' + this.j.full_path )
 
-    this.j.save_top()      
+    this.j.save_top()
 
     // I.Animals
     this.generate_common_simple_array(9)
 
     this.j.save_end()
-  
+
   }
 
-  
+
 }
 
 exports.jn07_animals_json = jn07_animals_json

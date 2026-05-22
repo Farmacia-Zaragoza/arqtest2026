@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------------------------
 // Peloncita Structure Header
 //-------------------------------------------------------------------------------------
-// <body 
+// <body
 //  <app-root></app-root>
 //  <script>
 
@@ -14,7 +14,7 @@
 //    PENDING
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Bdy01 > Common_Angular > Common_Body... >  Html_Style
 // @Body > @Angular > @ABody > @Html
@@ -25,19 +25,19 @@
 // - create_scripts  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                 =   require( "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { common_react }  =   require( cons.JS_ACO7  + 'html/h01/main/rea/common_react.es7' )          ,		
-		{ scripts_react }	=	require( cons.JS_ACO7  + 'html/h01/main/rea/scripts_react.es7');					
+const   { common_react }  =   require( cons.JS_ACO7  + 'html/h01/main/rea/common_react.es7' )          ,
+		{ scripts_react }	=	require( cons.JS_ACO7  + 'html/h01/main/rea/scripts_react.es7');
 
 
 class body_react extends common_react  {
 
   constructor (     container						)
-  {   
+  {
 		super(container)
 
-		this.n							=	'bdy_arqdru::'		
+		this.n							=	'bdy_arqdru::'
   }
 
   //-------------------------------------------------------------------------------------
@@ -48,9 +48,9 @@ class body_react extends common_react  {
 		// Scripts links for dev environment
 		// Script tag for live environment
 
-  		this.scripts_01		     =  new scripts_react(	this.container	)			
-		
-		this.content			+=	this.scripts_01.code							
+  		this.scripts_01		     =  new scripts_react(	this.container	)
+
+		this.content			+=	this.scripts_01.code
   }
 
 }

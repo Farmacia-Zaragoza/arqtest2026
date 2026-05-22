@@ -9,13 +9,13 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_Jtype > Arroba_Gen_Types > JComm_Struc (common-point)
 // @Jtype > @Gen > Jcomm_Struct
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Jtype    : Jnode Type
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -24,7 +24,7 @@
 //- d-create_jnode_type-       : Genera el objeto Jonde Type
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { arroba_jtype_comm } =   require(  cons.JS_ACO7  + 'json/j03/j01_arroba_jtype_comm.es7'),
        { jnode_type }        =   require(  cons.JS_PER7  + 'animals/animals/json/j02/jn01_jnode_type.es7'     ),
@@ -32,8 +32,8 @@ const  { arroba_jtype_comm } =   require(  cons.JS_ACO7  + 'json/j03/j01_arroba_
 
 
 class arroba_jtype extends arroba_jtype_comm {
-  constructor(    arroba           , 
-                  passed_type = 'comm' )  
+  constructor(    arroba           ,
+                  passed_type = 'comm' )
   {
     super(arroba, passed_type)
     this.n                  =   "arroba_jtype::"
@@ -53,15 +53,15 @@ class arroba_jtype extends arroba_jtype_comm {
     // this.p('j01_arroba_gencont ' + this.s.cs.cache_path )
 
       // GENERAMOS JNODE
-      // this.p('j02_JnodeNotCAche') 
+      // this.p('j02_JnodeNotCAche')
     // Con content se genera siempre
 
     this.jtype            =   new jnode_type( this.arroba      )
- 
+
   }
 
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   create_jnode_type()
   {
     this.m                  =   "create_jnode_type"
@@ -75,16 +75,16 @@ class arroba_jtype extends arroba_jtype_comm {
     // this.p('j01_arroba_gen ' + this.s.cs.cache_path )
 
       // GENERAMOS JNODE
-      // this.p('j02_JnodeNotCAche') 
+      // this.p('j02_JnodeNotCAche')
     // Se debe generar si no hay cache ( correcto)
     // Se debe generar si no existe el fichero o tiene un size no adecuado o el directorio ( esta fallando )
 
-    if (!this.b.cache || gfc.zero(this.s.cs.cache_path) ) 
+    if (!this.b.cache || gfc.zero(this.s.cs.cache_path) )
     {
       // this.p('j01_arroba_type_Debe entrar aqui')
       this.jtype            =   new jnode_type( this.arroba      )
- 
- 
+
+
     }
   }
 }

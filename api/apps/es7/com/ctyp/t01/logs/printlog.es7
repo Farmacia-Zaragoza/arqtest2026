@@ -22,6 +22,7 @@ const path = require('path');
 
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
+Hay que quitar esto de node MOD
 const   echo         =   require(  cons.NODE_MOD +  'node-echo'                ),
        accents                    =   require(  cons.NODE_MOD + 'remove-accents' ),
         { savelog }     =   require(  cons.JS_TYP7  + 'logs/savelog.es7'      );

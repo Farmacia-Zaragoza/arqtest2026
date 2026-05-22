@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // comm - spec - content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-fast_uri-     : Uri for Cached site
 // e-site_mcomm-   : Multi position site to load arrobas
@@ -25,10 +25,10 @@
 //-------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
-//- d-no_cache_launcher_code-  : Ejecuta el codigo para sites sin cache 
+//- d-no_cache_launcher_code-  : Ejecuta el codigo para sites sin cache
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { common_model }    =   require(  cons.JS_SPC7  + 'acomm/model/common_model.es7'        ),
         { issues_no_cache } =   require(  cons.JS_MET7  + 'liquid/arqliq/model/arqliq_nocache_launcher.es7' ),
@@ -38,7 +38,7 @@ const   { common_model }    =   require(  cons.JS_SPC7  + 'acomm/model/common_mo
         { site_mcomm }      =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m02_site_comm.es7'    ),
         { params }          =   require(  cons.JS_TYP7  + 'params/p01_params.es7'          ),
 		gfc  			    =   require(  cons.JS_LIB7  + 'file/get_file_code.es7' 	          ),
-        fs                  =   require(  'fs'                                                  );  
+        fs                  =   require(  'fs'                                                  );
 
 class arqliq_cache extends common_model
 {
@@ -48,7 +48,7 @@ class arqliq_cache extends common_model
 
     // this.pmt = new params()
     // this.pmt.copy (pmt)
-    
+
     this.pmt = pmt
 
     this.n                =  'arqliq_cache::'
@@ -56,7 +56,7 @@ class arqliq_cache extends common_model
 	// Necesito mejorar el modelo. El sistema de cache no es optimo
 	// Necesito crear un sistema que sea capaz de encontrar el tipo de pagina
 
-    if (this.b.cache)    
+    if (this.b.cache)
       this.uspc         = new fast_uri(this.s, this.ir)
 
     this.p('arqdru_cache_Ready to choose : ' + this.b.cache )
@@ -67,19 +67,19 @@ class arqliq_cache extends common_model
     {
        // Si no hay cache debe regenerarse todo
        this.no_cache_launcher_code()
-    }    	
+    }
     else if (gfc.no_zero(this.uspc.c.s.cs.cache_sum))
-    {    	
-       // Hay cache y existe el fichero de cache
-       this.code = gfc.get_file_code(this.uspc.c.s.cs.cache_path)    	
-       //this.p('ardrmod_getting_code ' + this.code.length)       
-    }
-    else 
     {
-       // Hay cache y no existe el fichero 
-       this.no_cache_launcher_code()    	
+       // Hay cache y existe el fichero de cache
+       this.code = gfc.get_file_code(this.uspc.c.s.cs.cache_path)
+       //this.p('ardrmod_getting_code ' + this.code.length)
     }
-  } 
+    else
+    {
+       // Hay cache y no existe el fichero
+       this.no_cache_launcher_code()
+    }
+  }
 
   // NO CACHE CODE
   no_cache_launcher_code()
@@ -89,37 +89,37 @@ class arqliq_cache extends common_model
       // Para mañana --> hay que saber los jsons que esta usando cada pagina
       // Si son accesibles y que contenido tiene
 
-      this.p('arq_che_page PASO_A01 ' + this.s.cs.page_type +  ' nAM ' + this.s.cs.page_name )      
+      this.p('arq_che_page PASO_A01 ' + this.s.cs.page_type +  ' nAM ' + this.s.cs.page_name )
 
       this.comm              =  new site_mcomm(this.s, '0 2 4 5 15 16')
 
       //this.p('arq_che_page X02 ' + this.comm.s.cs.page_type +  ' nAM ' + this.comm.s.cs.page_name )
       this.copy_model()
 
-      //this.p('arq_che_page X03 ' + this.acomm.s.cs.page_type +  ' nAM ' + this.acomm.s.cs.page_name )      
+      //this.p('arq_che_page X03 ' + this.acomm.s.cs.page_type +  ' nAM ' + this.acomm.s.cs.page_name )
 
 
       // Generate common json file
       this.commjson         =   new arroba_jtype(this.acomm ,'comm')
 
-      //this.p('arq_che_page X04 ' + this.acomm.s.cs.page_type +  ' nAM ' + this.acomm.s.cs.page_name )      
+      //this.p('arq_che_page X04 ' + this.acomm.s.cs.page_type +  ' nAM ' + this.acomm.s.cs.page_name )
 
       this.run_comm_model()
 
-      //this.p('arq_che_page X05 ' + this.arroba.s.cs.page_type +  ' nAM ' + this.arroba.s.cs.page_name )      
+      //this.p('arq_che_page X05 ' + this.arroba.s.cs.page_type +  ' nAM ' + this.arroba.s.cs.page_name )
 
       // Generate spec json file
       this.specjson         =   new arroba_jtype(this.arroba , 'spec')
       this.run_spec_model()
 
-      //this.p('arq_che_page X06 ' + this.arroba.s.cs.page_type +  ' nAM ' + this.arroba.s.cs.page_name )      
+      //this.p('arq_che_page X06 ' + this.arroba.s.cs.page_type +  ' nAM ' + this.arroba.s.cs.page_name )
 
       //this.p('arq_che_page X11 ' + this.arroba.s.cs.page_type +  ' Lang ' + this.arroba.s.cs.lang )
-      
+
       this.thmdata          =   new theme_data(this.arroba)
 
       this.code             =   this.thmdata.code
-  	
+
   }
 
 } // end Class

@@ -9,21 +9,21 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Arroba_Htype > Hcomm_struc > Scomm_defs (common-point)
 // H_Type > S_Type > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"   )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { hcomm_struc }      =   require(  cons.JS_PYC7  + 'meto/meto/html/h03/hcomm/h02_struc.es7')
 
 class arroba_htype extends hcomm_struc {
-  constructor(    container  )  
+  constructor(    container  )
   {
     super()
- 
+
     this.n                  =   "arroba_hcomm::"
     this.m                  =   "cons"
 
@@ -31,7 +31,7 @@ class arroba_htype extends hcomm_struc {
     this.container          =   container
 
     this.s					=   this.container.s
-    this.b					=   this.container.b    
+    this.b					=   this.container.b
 
     this.htype              =   ''
 
@@ -43,14 +43,14 @@ class arroba_htype extends hcomm_struc {
     // Are html auto generated
     this.s.cs.sub           =   'hdata'
     this.s.cs.ext           =  'hdata'
-  
+
     this.s.b.type_ssl       =   true
-    
+
     // this.p('s01_passsed_type ' + this.s.t_sub)
 
     // Generate Cache path
     this.gen()
- 
+
     // Genera ficheros de control
     this.generate_cache_summary_structure()
 

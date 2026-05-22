@@ -5,7 +5,7 @@
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Fast_Uri > ... > Site_Common_Commands
 // @Site_Uri_> @Common_Uri > @Uri > @String > @ PrintLog
@@ -15,7 +15,7 @@
 // - d-manage_uri_commands-            : Generate cache url
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { site_uri_manage_commands } =   require( cons.JS_ACO7 + 'uri/n02/u02_manage_commands.es7' ),
       { cache }                    =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'         ) ;
@@ -26,11 +26,11 @@ class fast_uri extends site_uri_manage_commands
   {
     super(  site, ir )
     this.n                         =   "fast_uri::"
-    
+
     this.manage_uri_commands()
-  } 
-  
-  //---------------------------------------------------------------------------------------------  
+  }
+
+  //---------------------------------------------------------------------------------------------
   // This method depends of site
   manage_uri_commands()
   {
@@ -75,12 +75,11 @@ class fast_uri extends site_uri_manage_commands
     // this.p('Fast_uri_uri Path Cah  ' + this.c.s.cs.cache_path)
     // this.p('Fast_uri_uri Path Ali  ' + this.c.s.cs.cache_alias)
 
-  }  
+  }
 
-//---------------------------------------------------------------------------------------------  
+//---------------------------------------------------------------------------------------------
 
 
 } // end Class
 
 exports.fast_uri = fast_uri
-

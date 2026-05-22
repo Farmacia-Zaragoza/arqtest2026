@@ -12,11 +12,11 @@
 //<!DOCTYPE html>
 //<html lang="en">
 //<head>
-//<body> 
+//<body>
 // ------------------------------------------------------------------------------------
 //* DOCTYPE
 //  HTML
-//   HEAD 
+//   HEAD
 //	 BODY
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
@@ -25,43 +25,43 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const  { common_html } 			= 	require(	cons.JS_ACO7 + 'html/h01/main/common_html.es7'			      ),		
-		{ hea01_head_animals }	= 	require(	cons.JS_PER7 + 'animals/animals/html/h01/main/hea01_animals.es7'		),					
-		{ bdy01_body_animals }	= 	require(	cons.JS_PER7 + 'animals/animals/html/h01/main/bdy01_animals.es7'		);					
+const  { common_html } 			= 	require(	cons.JS_ACO7 + 'html/h01/main/common_html.es7'			      ),
+		{ hea01_head_animals }	= 	require(	cons.JS_PER7 + 'animals/animals/html/h01/main/hea01_animals.es7'		),
+		{ bdy01_body_animals }	= 	require(	cons.JS_PER7 + 'animals/animals/html/h01/main/bdy01_animals.es7'		);
 
 
 class htm01_html_animals extends common_html  {
 
     constructor (     container						)
 	{
-    	super(				container	)			
+    	super(				container	)
 
         this.n                  =   "htm01_html_animals::"
-       
+
     }
 
 	//<head>
     create_head()
     {
 		// External Head
-		this.head_01	=	
+		this.head_01	=
 				new hea01_head_animals(this.container)	// Drupal theme structure
 
-//		this.content			+=  '<HEAD>HOLA</HEAD>' //this.head_01.code					
-		this.code			+=  this.head_01.code					
-			}		
+//		this.content			+=  '<HEAD>HOLA</HEAD>' //this.head_01.code
+		this.code			+=  this.head_01.code
+			}
 
     create_body()
     {
 		// External Div
-		this.body_01	=	
+		this.body_01	=
 				new bdy01_body_animals( this.container )	// Drupal theme structure
 
-//		this.content			+=  '<BODY>HOLA</BODY>'  //this.body_01.code					
-		this.code				+=  this.body_01.code					
-	}		
+//		this.content			+=  '<BODY>HOLA</BODY>'  //this.body_01.code
+		this.code				+=  this.body_01.code
+	}
 }
 
 exports.htm01_html_animals = htm01_html_animals

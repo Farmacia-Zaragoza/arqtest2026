@@ -26,7 +26,6 @@
 // Must to be unique
 
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
-              =  require(  "/brqx/rcode/es7/com/agen/constants.es7"                         )
 
 const  { arqlig_no_cache } =  require(  cons.JS_MET7  + 'light/arqlig/model/arqlig_nocache_launcher.es7'),
         { arqlig_cache }   =  require(  cons.JS_MET7  + 'light/arqlig/model/arqlig_cache_launcher.es7'  ),

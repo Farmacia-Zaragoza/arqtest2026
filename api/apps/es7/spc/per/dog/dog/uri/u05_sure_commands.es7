@@ -9,10 +9,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-sure_commands-            : Check command type based on uri and site 
+// - d-sure_commands-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons               =   require(  "/brqx/rcode/es7/com/agen/constants.es7"      )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { uri_aliases } =   require( cons.JS_PER7 + 'dog/dog/uri/u06_aliases.es7' )
 
@@ -22,10 +22,10 @@ class site_sure_commands extends uri_aliases {
   {
     super(  site, ir )
 
-    this.n               =   'site_commands::'        
+    this.n               =   'site_commands::'
   }
 
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // This method depends of site
   sure_commands()
   {
@@ -36,22 +36,22 @@ class site_sure_commands extends uri_aliases {
      {
 
       case "surespecific":
-        // Este caso esta pendiente para lo que haga falta 
+        // Este caso esta pendiente para lo que haga falta
         // article/a12
         if (this.uri_args_sorted.length > 1 )
-        { 
+        {
           this.p ('Pagina incorrecta. demasiados argumentos')
           this.manage_front()
         }
         break;
-        
+
       default:
 
         this.sure_common_commands()
-        
+
     } // End switch
-  }  
-  
+  }
+
 }
 
 exports.site_sure_commands = site_sure_commands

@@ -5,15 +5,15 @@
 //- event_create             : Create event jquery method
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const 	{ typejson_array }	= 	require(	cons.JS_OBJ     + 'json/typejson_array.es6'						);
 
 class arrjson_site extends typejson_array {
-	constructor(file_name = '') 
+	constructor(file_name = '')
 	{
 		super(file_name)
-		
+
 		this.n 				= 	"arrjson_site ::"
 	}
 
@@ -22,8 +22,8 @@ class arrjson_site extends typejson_array {
 	{
 				this.add_index(					this.index		)
 				this.add_type(					this.type		)
-				this.add_element( 		'name' , this.item	)		
-				this.add_element( 		'img' 	, this.photo	)		
+				this.add_element( 		'name' , this.item	)
+				this.add_element( 		'img' 	, this.photo	)
 				if (part)
 					this.add_element( 	'clink'	, this.link		)
 				else
@@ -39,14 +39,14 @@ class arrjson_site extends typejson_array {
 			case "animal":
 				this.add_index(					this.index		)
 				this.add_type(					this.type		)
-				this.add_element( 		'name' , this.item	)		
-				this.add_element( 		'sound' , this.sound	)		
-				this.add_element( 		'value' , this.value	)		
+				this.add_element( 		'name' , this.item	)
+				this.add_element( 		'sound' , this.sound	)
+				this.add_element( 		'value' , this.value	)
 				if (part)
 					this.add_element( 	'clink'	, this.link		)
 				else
 					this.add_lastelement( 	'clink'	, this.link		)
-				
+
 				break;
 			case "aligator":
 				this.managebganimal(part)
@@ -202,4 +202,4 @@ class arrjson_site extends typejson_array {
 }
 
 
-exports.arrjson_site  = arrjson_site 
+exports.arrjson_site  = arrjson_site

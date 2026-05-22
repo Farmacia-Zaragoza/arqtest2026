@@ -6,7 +6,7 @@
 //-------------------------------------------------------------------------------------
 // Peloncita Structure Header
 //-------------------------------------------------------------------------------------
-// <body 
+// <body
 //  <app-root></app-root>
 //  </script>
 
@@ -15,7 +15,7 @@
 //    PENDING
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Common_React > Common_Body... >  Html_Style
 // @React > @ABody > @Html
@@ -27,17 +27,17 @@
 // - build_data_ok             : Generate body content for react
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { common_body }      =   require( cons.JS_ACO7  + 'html/h01/main/comm/common_body.es7' )          
+const   { common_body }      =   require( cons.JS_ACO7  + 'html/h01/main/comm/common_body.es7' )
 
 
 class common_react extends common_body  {
 
   constructor (     container            )
-  {   
+  {
     super(container)
-    this.n               =  'common_react::'    
+    this.n               =  'common_react::'
   }
 
   //-------------------------------------------------------------------------------------
@@ -50,41 +50,41 @@ class common_react extends common_body  {
 
     this.div_01.data_type    =  this.container.s.cs.page_name
 
-    this.div_01.data_comm    =  this.container.jurl_comm 
+    this.div_01.data_comm    =  this.container.jurl_comm
 
     this.div_01.data_spec    =  this.container.jurl_spec
 
-    this.div_01.data_content =  this.container.jurl_cont 
+    this.div_01.data_content =  this.container.jurl_cont
 
 
-    // this.div_01.data_content     =  this.jpath_cont 
-    
+    // this.div_01.data_content     =  this.jpath_cont
+
     this.div_01.pcreate()
     this.content            +=  this.div_01.code
   }
 
     //-------------------------------------------------------------------------------------
-  
+
   build_data_ok()
   {
-  // Structure 
+  // Structure
   // [FB] [CONTAINER] [SCRIPTS] [SERVER_FOOTER]
-    this.content      =  ''                
-    
-    this.create_ifnojs()                     
+    this.content      =  ''
+
+    this.create_ifnojs()
 
     this.create_div()
 
-    this.create_scripts()                    
+    this.create_scripts()
 
     this.create_a_robot()
 
-    this.pcreate()                      
+    this.pcreate()
 
     // Ok [18-02-02]
-    // this.p('bdy01:cod ' + this.code)              
+    // this.p('bdy01:cod ' + this.code)
 
-    //this.p('bdy01:codl_BODY ' + this.code.length)              
+    //this.p('bdy01:codl_BODY ' + this.code.length)
 
   }
 

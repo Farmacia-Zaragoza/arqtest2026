@@ -8,17 +8,17 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Hnode_type > PrintLog
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities     
+// Used Entities
 //-------------------------------------------------------------------------------------
 // e-htm01_html_liquid-     : html dynamic generation code class
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { printlog }          =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                              ),
 	   { common_hnode }      = 	require(	cons.JS_ACO7 + 'html/h01/main/common_hnode.es7'				),
@@ -26,28 +26,28 @@ const  { printlog }          =   require(  cons.JS_TYP7  + 'logs/printlog.es7'  
 
 
 class hnode_type extends printlog {
-           
-  constructor (container = '') 
-  {   
+
+  constructor (container = '')
+  {
     super()
     this.n                   =   'hn01_hnode_type::'
-    
+
     this.container           =   container
     this.s                   =   this.container.s
     this.u                   =   this.container.u
     this.hobject             =   ''
-    
-    
+
+
     // this.p('jntype_Page ' + this.u.page_name + ' P ' + this.s.cache_path)
 
     // Print Hdata path
     // this.p('Hnode_Page: ' + this.s.cs.cache_path)
 
-    this.hnode               =   new common_hnode(this.container) 
+    this.hnode               =   new common_hnode(this.container)
 
-    // Aqui podemos gestionar los tipos rest  
+    // Aqui podemos gestionar los tipos rest
     // LLega indefinido - Aun no se esta gestionando
-    
+
     // Transformamos el tipo de search en list para angular
     switch(this.hnode.s.cs.page_name)
     {
@@ -61,31 +61,31 @@ class hnode_type extends printlog {
     switch(this.s.page_type)
     {
         case "html":
-        
+
           this.hobject          =   new htm01_html_liquid(this.hnode)
-          break;;   		
+          break;;
 
         case "rest":
           // this.p('jn01_type_Rest_generation')
           // this.h          =   new h02_rest(this.arroba)
-          break;;   		
+          break;;
 
         default:
-        
+
           // this.p('Running_-_Html_-_liquid')
           this.hobject          =   new htm01_html_liquid(this.hnode)
-          break;;   		
+          break;;
 
     }
 
     // Call to hnode
     this.hobject.process_and_generate_html_file()
-    
+
     // this.p(this.hobject.code)
-  
+
   }
 
-  
+
 }
 
 exports.hnode_type = hnode_type

@@ -8,7 +8,7 @@
 // Fast node load - Replace Mysql connections - Taxonomy Class
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // hcomm_struc > Scom_defs > cache > struct > strings
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -18,7 +18,7 @@
 // - d- generate_cache_summary_structure-   : Generate Sum checking Cache file
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"           )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { scomm_defs }      =   require(  cons.JS_TYF7  + 'a01_load/scomm/s04_defs.es7'           ),
        { hnode_type }      =   require(  cons.JS_PYC7    + 'meto/meto/html/h02/hn01_hnode_type.es7' ),
@@ -27,16 +27,16 @@ const  { scomm_defs }      =   require(  cons.JS_TYF7  + 'a01_load/scomm/s04_def
 
 
 class hcomm_struc extends scomm_defs {
-  constructor()  
+  constructor()
   {
     super()
- 
+
 
     this.n                  =   "hcomm_struc::"
   }
-  
-  //---------------------------------------------------------------------------------------------  
-  
+
+  //---------------------------------------------------------------------------------------------
+
   run_cache_to_generate_html()
   {
     this.m                  =   "run_cache_to_generate_html"
@@ -46,18 +46,18 @@ class hcomm_struc extends scomm_defs {
     // this.p('h02_struc_before check ' + this.s.cs.cache_path )
 
     // GENERAMOS HNODE
-    // this.p('h02_HnodeNotCAche') 
+    // this.p('h02_HnodeNotCAche')
     this.htype = new hnode_type(this.container)
   }
 
-  //---------------------------------------------------------------------------------------------  
-  
-  
+  //---------------------------------------------------------------------------------------------
+
+
   generate_cache_summary_structure()
   {
     this.m                  =   "generate_cache_summary_structure"
 
-    
+
      //Primero se vacia el fichero SIEMPRE
      sctf.create_new_empty_file(this.s.cs.cache_sum)
      sctf.create_new_empty_file(this.s.cs.cache_err)
@@ -70,7 +70,7 @@ class hcomm_struc extends scomm_defs {
      // Comm
 
      // this.p ('h02_TESTING_PATH ' + this.container.s.ms.j_comm_path)
-     this.container.s.ms.j_comm_ck_syn = jtest.jsontest(   this.container.s.ms.j_comm_path)  
+     this.container.s.ms.j_comm_ck_syn = jtest.jsontest(   this.container.s.ms.j_comm_path)
      http_struct                       = new jtest.jsonuritest(this.container.s.ms.j_comm_url)
 
      this.container.s.ms.j_comm_ck_uri = http_struct.result
@@ -81,7 +81,7 @@ class hcomm_struc extends scomm_defs {
 
      // Spec
 
-     this.container.s.ms.j_spec_ck_syn = jtest.jsontest(   this.container.s.ms.j_spec_path)  
+     this.container.s.ms.j_spec_ck_syn = jtest.jsontest(   this.container.s.ms.j_spec_path)
      http_struct                       = new jtest.jsonuritest(this.container.s.ms.j_spec_url)
 
      this.container.s.ms.j_spec_ck_uri = http_struct.result
@@ -92,7 +92,7 @@ class hcomm_struc extends scomm_defs {
 
      // Cont
 
-     this.container.s.ms.j_cont_ck_syn  = jtest.jsontest(   this.container.s.ms.j_cont_path)  
+     this.container.s.ms.j_cont_ck_syn  = jtest.jsontest(   this.container.s.ms.j_cont_path)
      http_struct                        = new jtest.jsonuritest(this.container.s.ms.j_cont_url)
 
      this.container.s.ms.j_cont_ck_uri = http_struct.result
@@ -105,46 +105,46 @@ class hcomm_struc extends scomm_defs {
      if ( http_result_ok ) file = this.s.cs.cache_sum
      else                  file = this.s.cs.cache_err
 
-     // Nunca generamos un fichero sum si la url no es de jsons     
+     // Nunca generamos un fichero sum si la url no es de jsons
      if (this.b.only_json_page) file = this.s.cs.cache_err
 
-     
-     sctf.update_file_with_code(this.s.cs.cache_sum, 'Fecha ' + this.s.pg.today)  	         
 
-     line = jtest.create_json_line(   this.container.s.ms.j_comm_ck     , 
+     sctf.update_file_with_code(this.s.cs.cache_sum, 'Fecha ' + this.s.pg.today)
+
+     line = jtest.create_json_line(   this.container.s.ms.j_comm_ck     ,
                                       this.container.s.ms.j_comm_ck_cod ,
                                       this.container.s.ms.j_comm_ck_syn ,
                                       this.container.s.ms.j_comm_ck_uri )
 
      this.container.s.ms.j_comm_line = line + ' ' +  this.container.s.ms.j_comm_url
 
-     sctf.update_file_with_code(file, this.container.s.ms.j_comm_line)  	
+     sctf.update_file_with_code(file, this.container.s.ms.j_comm_line)
 
-     line = jtest.create_json_line(   this.container.s.ms.j_spec_ck     , 
+     line = jtest.create_json_line(   this.container.s.ms.j_spec_ck     ,
                                       this.container.s.ms.j_spec_ck_cod ,
                                       this.container.s.ms.j_spec_ck_syn ,
                                       this.container.s.ms.j_spec_ck_uri )
 
      this.container.s.ms.j_spec_line = line + ' ' +  this.container.s.ms.j_spec_url
 
-     sctf.update_file_with_code(file, this.container.s.ms.j_spec_line)  	
+     sctf.update_file_with_code(file, this.container.s.ms.j_spec_line)
 
-     
-     line = jtest.create_json_line(   this.container.s.ms.j_cont_ck     , 
+
+     line = jtest.create_json_line(   this.container.s.ms.j_cont_ck     ,
                                       this.container.s.ms.j_cont_ck_cod ,
                                       this.container.s.ms.j_cont_ck_syn ,
                                       this.container.s.ms.j_cont_ck_uri )
 
      this.container.s.ms.j_cont_line = line + ' ' +  this.container.s.ms.j_cont_url
 
-     sctf.update_file_with_code(file, this.container.s.ms.j_cont_line)  	
+     sctf.update_file_with_code(file, this.container.s.ms.j_cont_line)
 
 
 
-     sctf.update_file_with_code(file, this.container.s.ms.j_comm_path)  	
-     sctf.update_file_with_code(file, this.container.s.ms.j_spec_path)  	
-     sctf.update_file_with_code(file, this.container.s.ms.j_cont_path)  	
-  	
+     sctf.update_file_with_code(file, this.container.s.ms.j_comm_path)
+     sctf.update_file_with_code(file, this.container.s.ms.j_spec_path)
+     sctf.update_file_with_code(file, this.container.s.ms.j_cont_path)
+
   }
 
 }

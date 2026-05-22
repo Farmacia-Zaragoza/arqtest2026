@@ -4,17 +4,17 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // dog_cache- dog_nocache
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Site_Model > Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-dog_no_cache-  : Arqdru no cache launcher
 // e-dog_cache-     : Arqdru cache launcher
@@ -25,7 +25,7 @@
 
 // Must to be unique
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { dog_no_cache } =   require(  cons.JS_PER7  + 'dog/dog/model/dog_nocache_launcher.es7' ),
         { dog_cache }    =   require(  cons.JS_PER7  + 'dog/dog/model/dog_cache_launcher.es7'),
@@ -42,7 +42,7 @@ class dog extends printlog
 
     if (pmt.cache)      this.model          = new dog_cache(    pmt  )
     else                this.model          = new dog_no_cache( pmt  )
-  } 
+  }
 
 } // end Class
 

@@ -6,17 +6,17 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Theme_Json (spc) > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Arroba_JType     : Generic type to create json files
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                          =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { tdata_asign }                =   require(  cons.JS_PER7  + 'animals/animals/json/j04/j11_tdata_asign.es7'               ),
        { arroba_mcomm }               =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m01_arroba_comm.es7' ),
@@ -54,74 +54,74 @@ class theme_data extends tdata_asign
         this.arroba.s.cs.loadtype = 'full'
 
         // este es especial porque debe cargar el idioma actual e ingles
-        this.acontent     =  new arroba_mcomm(this.arroba, '18')       
-        
+        this.acontent     =  new arroba_mcomm(this.arroba, '18')
+
         this.arr          =  this.arroba.arr
         this.s            =  this.arroba.s
         this.u            =  this.arroba.u
         this.arroba.s.cs.loadtype = 'full'
 
 
-        this.acontent     =  new arroba_mcomm(this.arroba, '20')       
+        this.acontent     =  new arroba_mcomm(this.arroba, '20')
 
         this.arr          =  this.arroba.arr
         this.s            =  this.arroba.s
         this.u            =  this.arroba.u
 
         this.jck          =  new jn01_checking_search_words(this.arroba)
-        
+
         let pos           =  18
         this.index        =  this.arr[this.s.ms.main_lang]['dmain'][pos]
-        
+
         // clienti_ ( llega con el dash )
-        // this.p('jn01_theme_data_  ' +  this.u.bars_sub_query)        
+        // this.p('jn01_theme_data_  ' +  this.u.bars_sub_query)
 
          //this.p('jn01_theme_data_busqueda permitida')
-        
+
         if (!this.jck.are_words_right_for_search(this.index,this.u.bars_sub_query) )
         {
-           this.p('jn01_theme_hay_que_cargar_el_front')        
+           this.p('jn01_theme_hay_que_cargar_el_front')
            // Esta parte hay que revisarla y entenderla bien
            this.u.manage_front()
 
            this.arroba.u   = this.u
            this.arroba.s   = this.s
-           
+
         }
         // sino hay que enviar a home
-         
-         
+
+
         break;;
 
       case "product":
         // Hay que cargar el producto N
-        // this.p('thm_dat_Es un producto ')   
-        this.acontent     =  new arroba_sprod(this.arroba, 9)        
+        // this.p('thm_dat_Es un producto ')
+        this.acontent     =  new arroba_sprod(this.arroba, 9)
         break;
 
       case "blanc":
         // Hay que cargar los animales que estan en el dos
-        // this.p('thm_dat_Es un producto ')   
-        this.acontent     =  new arroba_mcomm(this.arroba, "4 8 9 11" )        
+        // this.p('thm_dat_Es un producto ')
+        this.acontent     =  new arroba_mcomm(this.arroba, "4 8 9 11" )
         break;
 
       case "front":
         // Hay que cargar los animales que estan en el dos
-        this.p('j01_thm_dat_Es la home')   
-        this.acontent     =  new arroba_mcomm(this.arroba, "4 8 9 11" )        
+        this.p('j01_thm_dat_Es la home')
+        this.acontent     =  new arroba_mcomm(this.arroba, "4 8 9 11" )
         break;
 
       case "animals":
         // Hay que cargar los animales que estan en el dos
-        // this.p('thm_dat_Es un producto ')   
-        this.acontent     =  new arroba_mcomm(this.arroba, "4 8 9 11")        
+        // this.p('thm_dat_Es un producto ')
+        this.acontent     =  new arroba_mcomm(this.arroba, "4 8 9 11")
         break;
 
       case "animal":
         // Hay que cargar los animales que estan en el dos
-        // this.p('thm_dat_Es un producto ')   
-        this.acontent     =  new arroba_sprod(this.arroba, 9)        
-        this.acontent     =  new arroba_mcomm(this.arroba, "4 8 9 11")        
+        // this.p('thm_dat_Es un producto ')
+        this.acontent     =  new arroba_sprod(this.arroba, 9)
+        this.acontent     =  new arroba_mcomm(this.arroba, "4 8 9 11")
         break;
 
       default:
@@ -148,12 +148,12 @@ class theme_data extends tdata_asign
     // this.p('j01_PHERE_Page_numb B ' + this.arroba.s.cs.page )
 
     // this.p('j01_THERE_Page_type ' + this.acontent.arroba.s.cs.page_type )
-     
+
     this.thmjson            =  new theme_json(this.acontent.arroba)
 
     this.code               =  this.thmjson.code
 
-  } 
+  }
 
 } // end Class
 

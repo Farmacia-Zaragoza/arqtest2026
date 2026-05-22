@@ -6,17 +6,17 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Theme_Json (spc) > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // Arroba_HType     : Generic html type
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"        )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                  ),
        { arroba_htype }     =   require(  cons.JS_PER7  + 'dog/dog/html/h03/hcomm/h01_arroba_htype.es7' );
@@ -37,7 +37,7 @@ class theme_html extends printlog
 
     this.code               =   this.hcontent.htype.hobject.code
 
-  } 
+  }
 
 
 } // end Class

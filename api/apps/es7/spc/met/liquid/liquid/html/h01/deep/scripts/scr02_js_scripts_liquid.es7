@@ -23,7 +23,7 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var    cons                  =   require(  "/brqx/rcode/es7/com/agen/constants.es7"          )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { getset } = require(cons.JS_BASE + 'com/objects/html/getset.es6'),
 	{ html_style } = require(cons.JS_BASE + 'com/objects/html/html_style.es6');
@@ -62,10 +62,10 @@ class scr02_js_scripts_liquid extends getset {
 
 		this.script_01.integrity	= 	"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		this.script_01.crossorigin	=	'anonymous'
-		
+
 		this.script_01.src =
 			"https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name
 
 		this.script_01.pcreate()
 
@@ -79,10 +79,10 @@ class scr02_js_scripts_liquid extends getset {
 
 		this.script_01.integrity	= 	"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		this.script_01.crossorigin	=	'anonymous'
-		
+
 		this.script_01.src =
 			"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/" + js_name
-		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name
 
 		this.script_01.pcreate()
 
@@ -96,10 +96,10 @@ class scr02_js_scripts_liquid extends getset {
 
 		this.script_01.integrity	= 	"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 		this.script_01.crossorigin	=	'anonymous'
-		
+
 		this.script_01.src =
 			"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/" + js_name
-		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name 	
+		// this.thm.u.http_domainbar + 'r_cassets/libs/js/jquery/' + js_name
 
 		this.script_01.pcreate()
 
@@ -128,7 +128,7 @@ class scr02_js_scripts_liquid extends getset {
 	create_runtime() {
 		this.script_02.defer = ''
 
-		// this.script_01.async				=  	'async'	
+		// this.script_01.async				=  	'async'
 
 		let js_name = 'runtime.js'
 
@@ -243,7 +243,7 @@ class scr02_js_scripts_liquid extends getset {
 
 
 		// Ok [18-06-17]
-		// this.p('js_scripts_Code : >' + this.code ) 											
+		// this.p('js_scripts_Code : >' + this.code )
 
 	}
 

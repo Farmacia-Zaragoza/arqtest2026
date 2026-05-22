@@ -9,19 +9,19 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-process_array_and_generate_json_file-          : Prepare Json Path 
+// - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                         =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { jn02_process_site }   =   require(  cons.JS_PYC7  + 'meto/meto/json/j02/jn02_jnode_process_site.es7'   );
 
 class jn05_rands_json extends jn02_process_site {
-           
-  constructor (arroba = '' ) 
-  {   
+
+  constructor (arroba = '' )
+  {
     super(arroba)
-    
+
     this.n                  =   'jn05_rands_json::'
   }
 
@@ -33,15 +33,15 @@ class jn05_rands_json extends jn02_process_site {
     // product_20.-.1
     // this.p('jn03_product_' + this.s.t_position + '.-.' +   this.s.t_page )
 
-    this.j.save_top()      
+    this.j.save_top()
 
     this.generate_common_rands(5)
 
     this.j.save_end()
-  
+
   }
 
-  
+
 }
 
 exports.jn05_rands_json = jn05_rands_json

@@ -4,11 +4,11 @@
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
 //-------------------------------------------------------------------------------------
-// Objects : 
+// Objects :
 // comm - spec - content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Used Entities : 
+// Used Entities :
 //-------------------------------------------------------------------------------------
 // e-container-         : Arroba container
 //-------------------------------------------------------------------------------------
@@ -17,7 +17,7 @@
 //- d-run_site-  : Carga el modelo para todas la paginas
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
-// Inheritance Line : 
+// Inheritance Line :
 //-------------------------------------------------------------------------------------
 // Comm_Model > Index_fast > Index
 // @Model > @Index > @Log
@@ -25,7 +25,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var     cons              =   require(  "/brqx/rcode/es7/com/agen/constants.es7"              )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { common_model }  =   require(  cons.JS_ACO7  + 'model/common_model.es7'              ),
         { site_uri }      =   require(  cons.JS_PYC7  + 'seo/arqseo/uri/u01_site_uri.es7'         ),
@@ -42,11 +42,11 @@ class site_model extends common_model
 
   run_site()
   {
-    
+
     // Generate common json file
     this.commjson         =   new arroba_jtype(this.acomm  ,'comm')
     this.run_comm_model()
-      
+
     // Generate spec json file
     this.specjson         =   new arroba_jtype(this.arroba , 'spec')
     this.run_spec_model()
@@ -59,9 +59,9 @@ class site_model extends common_model
     // Aqui lo que hay que hacer es ver si es front page
     // Solo en este caso tiene sentido mirar alias
     // El problema va a venir con la cache
-    
+
     // this.p('ardru_tras_spec_antes ' + this.b.page_could_be_alias)
-    
+
     if (this.b.page_could_be_alias)
     {
       this.uspc.manage_lang_aliases(this.arroba)
@@ -69,8 +69,8 @@ class site_model extends common_model
 
     // La conocemos
     // this.p('Arq_tras_spec Old Uri ' + this.arroba.u.uri  )
-    // En este punto si es un alias conocido no del idioma actual 
-    // se debera cargar dicho alias y generar la url correspondiente 
+    // En este punto si es un alias conocido no del idioma actual
+    // se debera cargar dicho alias y generar la url correspondiente
 
 
     // this.p('arq_model_page C ' + this.arroba.s.cs.page +  ' Lang ' + this.arroba.s.cs.lang )

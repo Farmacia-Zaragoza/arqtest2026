@@ -11,10 +11,10 @@
 //-------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_commands-            : Check command type based on uri and site 
+// - d-manage_commands-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                    =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { post_process_commands } =   require( cons.JS_ACO7 + 'uri/n02/u04_post_process_commands.es7' )
 
@@ -25,10 +25,10 @@ class site_uri_manage_commands extends post_process_commands
   {
     super(  site, ir )
     this.n                  =   "site_uri_manage_commands::"
-  } 
-  
+  }
+
   // architect/ricardocabellotorres  -> article XX
-  //---------------------------------------------------------------------------------------------  
+  //---------------------------------------------------------------------------------------------
   // This method depends of site
   manage_commands()
   {
@@ -36,28 +36,28 @@ class site_uri_manage_commands extends post_process_commands
      this.m                    = 'manage_commands'
 
      // No entiendo por que hago esto pero parece ser necesario
-     // this.start_position_array       =   this.start_position_array + 1        
+     // this.start_position_array       =   this.start_position_array + 1
 
      // kb - product
-     this.p('u02mc_Alias para analizar A: ' + this.page_command      )           
+     this.p('u02mc_Alias para analizar A: ' + this.page_command      )
      // La primera vez no va a conocer los alias
      // La siguiente si
      // Esto va a desaparecer pues se va a comprobar a nivel de estructura
-     
+
         // llega blanc
      this.manage_common_commands()
 
      // this.p('u02_AFTER page_name: ' + this.s.cs.page_name)
 
      // aqui tiene que actuar
-     
+
      // Solo se puede manejar una vez sino entramos en un bucle
-     
-     // Manage and sort arguments 
+
+     // Manage and sort arguments
      // Hasta este punto no se conoce dash_sub_query
 
      this.process_commands()
-     
+
      this.m                    = 'manage_commands'
 
     // this.p('u02_b_sc_page_name: ' + this.page_name)
@@ -65,14 +65,14 @@ class site_uri_manage_commands extends post_process_commands
     // Aqui ya se ha generado la uri en su totalidad
     this.post_process_commands()
 
-      // this.p('u01_site_uri_Comando para analizar B: ' + this.page_command + ' ' + this.slash_sub_query)           
+      // this.p('u01_site_uri_Comando para analizar B: ' + this.page_command + ' ' + this.slash_sub_query)
 
 
       // This method will assure command is right for page
     this.sure_commands()
 
       // this.p('u02_c_sc_page_name: ' + this.page_name)
-  }  
+  }
 
 } // end Class
 

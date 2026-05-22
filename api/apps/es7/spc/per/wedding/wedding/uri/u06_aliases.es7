@@ -7,10 +7,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_aliases-            : Check aliases for site 
+// - d-manage_aliases-            : Check aliases for site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var     cons                =   require(  "/brqx/rcode/es7/com/agen/constants.es7"         )
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { site_common_commands } =   require( cons.JS_ACO7 + 'uri/u01_site_commands.es7' )
 
@@ -21,25 +21,25 @@ class uri_aliases extends site_common_commands
   {
     super(  site, ir )
     this.n                  =   "site_uri::"
-  } 
+  }
 
-//---------------------------------------------------------------------------------------------  
+//---------------------------------------------------------------------------------------------
 
   manage_aliases()
   {
 
      this.m                    = 'manage_commands'
 
-     // this.start_position_array       =   this.start_position_array + 1        
+     // this.start_position_array       =   this.start_position_array + 1
 
-     this.p('u01_site_uri_SITEALIAS: ' + this.slash_ideal_uri)           
+     this.p('u01_site_uri_SITEALIAS: ' + this.slash_ideal_uri)
 
      switch(this.slash_ideal_uri)
      {
       // Multi Lang article
       // Alias for page
-          
-      // Esto hay que revisarlo y mejorarlo    
+
+      // Esto hay que revisarlo y mejorarlo
       case "architect/ricardocabellotorres/":
 
         this.url_page_load_drupal_node('19')
@@ -165,9 +165,9 @@ class uri_aliases extends site_common_commands
       case "contenido_articulo/a2/q_enclaves_arquitectonicos_la_relacion_de_dichas_necesidades_con_la_de_los_componentes_a_utilizar_es_arquitectura/p17/":
         this.url_page_load_drupal_node('17')
         break;
-      
+
       // Codigos
-      
+
       case "category/a0/codigo_articulo/":
         this.url_page_load_drupal_node('0')
         break;
@@ -279,9 +279,9 @@ class uri_aliases extends site_common_commands
       case "category/a17/pagina_articulo/":
         this.url_page_load_drupal_node('17')
         break;
-      
 
-      // Lists 
+
+      // Lists
       case "vis/articles/":
         this.url_page_set_list()
         break;
@@ -300,9 +300,8 @@ class uri_aliases extends site_common_commands
 
     }
 
-  }  
+  }
 
 } // end Class
 
 exports.uri_aliases = uri_aliases
-

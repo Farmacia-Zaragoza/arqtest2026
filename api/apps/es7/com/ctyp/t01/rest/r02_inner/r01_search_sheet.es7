@@ -8,13 +8,13 @@
 //Fast node load - Manage page cache
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Class : 
+// Class :
 //-------------------------------------------------------------------------------------
 // c-r01_sheet-      : Simple sheet rest class
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var   cons           =   require(  "/brqx/rcode/es7/com/agen/constants.es7"            );
+const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { r00_simple_sheet }  =   require(  cons.JS_TYP7  + 'rest/r02_inner/r00_simple_sheet.es7' );
 // const { printlog }   =   require(  cons.JS_TYP7  + 'logs/printlog.es7'        );
@@ -24,11 +24,11 @@ class r01_search_sheet {
 //    super()
     this.n                          =   "r01_search_sheet::"
 
-    this.type         =   ''              
+    this.type         =   ''
     this.link         =   ''
     this.breadcrumb   =   ''
     this.hover        =   ''
-    
+
     // Parrafo para insertar - va a ser una hoja
     this.pf01         =   new r00_simple_sheet()
     // array de parrafos
@@ -39,7 +39,7 @@ class r01_search_sheet {
   }
 
   // Copy here to have small rest object
-  
+
 }
 
 exports.r01_search_sheet = r01_search_sheet
