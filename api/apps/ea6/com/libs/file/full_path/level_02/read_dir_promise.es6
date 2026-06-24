@@ -1,6 +1,6 @@
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2018 )
-// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia
 // ---------------------------------------------------------------------------
 // Brqx 2017 - 22/10/17				Depth:[0N]
 // Version : 0.0.1                  Type :[FUNCTION]
@@ -9,13 +9,13 @@
 // ---------------------------------------------------------------------------
 //  + Funciones que retornan promesas
 // ---------------------------------------------------------------------------
-// - Funciones 
+// - Funciones
 // ---------------------------------------------------------------------------
 //-- save_properties|code_to_file - file_get_code
 // ---------------------------------------------------------------------------
-// - Requiere 
+// - Requiere
 // ---------------------------------------------------------------------------
-//-- 
+//--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
 // fs-extra maneja promesas
@@ -24,12 +24,12 @@
 const 	fs 					= require(	'fs'																				),
 		path 				= require(	'path'																				),
 		os 					= require(	'os'																				),
-		empty 				= require(	'/brqx/base/react/zcommon/node_modules/is-empty'									),
-		trim 				= require(	'/brqx/base/react/zcommon/node_modules/trim'										),
-		mkdirp 				= require(	'/brqx/base/react/zcommon/node_modules/mkdirp'										),
-		rr					= require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir'							),
-		rs					= require(	'/brqx/base/react/zcommon/node_modules/fs-readdir-promise'							),
-		creff 				= require( 	'/brqx/base/rcode/es6/com/libs/file/full_path/level_02/create_full_filename.es6'	);
+		empty 				= require(	'is-empty'									),
+		trim 				= require(	'trim'										),
+		mkdirp 				= require(	'mkdirp'										),
+		rr					= require(	'recursive-readdir'							),
+		rs					= require(	'fs-readdir-promise'							),
+		creff 				= require( 	'es6/com/libs/file/full_path/level_02/create_full_filename.es6'	);
 
 
 /*
@@ -37,11 +37,11 @@ async function readdir_promise(full_path_dir = '',result)
 {
 	return new Promise(function (resolve, reject) {
     	fs.readdir(full_path_dir, function (error, result) {
-      	if (error) 
+      	if (error)
       	{
         	reject(error);
-      	} 
-      	else 
+      	}
+      	else
       	{
         	resolve(result);
       	}
@@ -69,7 +69,7 @@ rs(mypath).then(
 
 
 
-//print files 
+//print files
 
 
-//module.exports.readdir_promise 			= readdir_promise 
+//module.exports.readdir_promise 			= readdir_promise
