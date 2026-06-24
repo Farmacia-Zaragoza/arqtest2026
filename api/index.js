@@ -28,8 +28,6 @@ define("JS_BASE" ,	path.join(global.ROOT, 'api/apps/es6/'						))
 define("JS_OBJ" , 	path.join(global.ROOT, 'api/apps/es6/com/objects/'			))
 define("JS_LIB" , 	path.join(global.ROOT, 'api/apps/es6/com/libs/'			))
 
-define("NODE_MOD", 	'/brqx/run/node_modules/'	)
-
 define("JS_THM" , 	path.join(global.ROOT, 'api/apps/es6/spc/theme/'			))
 define("JS_THC" ,   path.join(global.ROOT, 'api/apps/es6/spc/theme/common/'	))
 
@@ -108,7 +106,7 @@ app.all('*', (req, res) => {
     // Aquí es donde fire.es7 toma el control
     // Asumiendo que fire.es7 es un router de express o una función (req, res)
 //      res.json({ estado: "Inicio lanzamiento" });
-    return fireApp(req, res);
+    return sureapp(req, res);
 });
 
 // 6. Exportamos la app (Vercel se encarga de "levantarla")
