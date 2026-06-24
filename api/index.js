@@ -7,6 +7,8 @@ const path = require('path');
 const ROOT = process.cwd();
 global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global
 
+global.echo = (...args) => console.log(...args);
+
 if (typeof global.define !== 'function') {
     global.define = function(name, value) {
         Object.defineProperty(global, name, {
