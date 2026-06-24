@@ -68,7 +68,7 @@ define("JS_TYF7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'			))
 
 const app = express();
 
-const fireApp = require('./apps/fire.js');
+const fireApp = require('./apps/fire.es7');
 
 //-------------------------------------------------------------------------------------
 let run_path                =   path.resolve(".")
