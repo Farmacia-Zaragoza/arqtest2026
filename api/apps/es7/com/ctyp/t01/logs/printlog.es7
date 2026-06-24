@@ -20,11 +20,10 @@
 
 const path = require('path');
 
-const cons = require(path.join(process.cwd(), 'api/apps/es7/com/agen/constants.es7'));
 
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { savelog }     =   require(  cons.JS_TYP7  + 'logs/savelog.es7'      );
+const   { savelog }     =   require( path.join(JS_TYP7, 'logs/savelog.es7' )      );
 
 
 class printlog extends savelog
