@@ -9,6 +9,11 @@ global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global
 
 global.echo = (...args) => console.log(...args);
 
+global.removeAccents = (str) => {
+  if (typeof str !== 'string') return str;
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+};
+
 if (typeof global.define !== 'function') {
     global.define = function(name, value) {
         Object.defineProperty(global, name, {
