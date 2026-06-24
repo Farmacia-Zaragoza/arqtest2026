@@ -2,10 +2,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const path = require('path');
 
 const ROOT = process.cwd();
 global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global
+global.path = require('path');
 
 global.echo = (...args) => console.log(...args);
 
