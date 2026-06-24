@@ -1,13 +1,22 @@
 {
   "functions": {
-    "api/index.js": {
-      "includeFiles": "apps/**"
-    }
-  },
+     "api/**/*.*": {
+       "includeFiles": "api/apps/**"
+     }
+   },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
-    }
-  ]
+
+     {
+       "src": "/api/(.*)",
+       "dest": "/api/index.js"
+     },
+     {
+       "src": "/api/apps/(.*)",
+       "dest": "/api/index.js"
+     },
+     {
+       "src": "/(.*)",
+       "dest": "/api/index.js"
+     }
+   ]
 }
