@@ -6,7 +6,7 @@
 //-------------------------------------------------------------------------------------
 //[S_01] <script src="https://cdn.jsdelivr.net/blazy/1.8.2/blazy.min.js" defer></script>
 //[S_02] <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" defer></script>
-																			  
+
 //[S_03] <script> JS CODE </script>
 // ------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -18,125 +18,124 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.es6"									);
 
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),		
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
 		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									);
 
 
 class scr06_js_async_truck extends getset  {
 
     constructor (     thm	              						)
-    {   
+    {
 
 		super()
 
-		this.n							=	'scr01_truck::'						
+		this.n							=	'scr01_truck::'
 		this.m							=	'constructor'
 
-		this.thm						=	thm							
-	
+		this.thm						=	thm
+
 		this.script_jquery				=	new html_style('script')
 		this.script_main				=	new html_style('script')
 		this.script_product				=	new html_style('script')
 		this.script_flexslider			=	new html_style('script')
 		this.script_blazy				=	new html_style('script')
 
-		this.build_data()													
+		this.build_data()
 
     }
 
 	//[S_01] <script src="https://cdn.jsdelivr.net/blazy/1.8.2/blazy.min.js" defer></script>
     create_blazy()
     {
-		this.script_blazy.async				=  	'async'									
+		this.script_blazy.async				=  	'async'
 
 
 		let js_name							=	'blazy.min.js'
 
-		this.script_blazy.src				=  	
-				this.thm.u.http_domainbar + 'r_fassets/libs/js/' + js_name 									
+		this.script_blazy.src				=
+				this.thm.u.http_domainbar + 'r_fassets/libs/js/' + js_name
 
-		this.script_blazy.pcreate()														
-		
-		this.code							+=	this.script_blazy.code						
-	}		
+		this.script_blazy.pcreate()
 
-	//[S_02] <script src="https://code.jquery.com/jquery-2.1.4.min.js" 
+		this.code							+=	this.script_blazy.code
+	}
+
+	//[S_02] <script src="https://code.jquery.com/jquery-2.1.4.min.js"
 	// integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw=" crossorigin="anonymous" defer></script>
     create_jquery()
     {
-		this.script_jquery.async			=  	'async'									
+		this.script_jquery.async			=  	'async'
 
 		let js_name							=	'jquery-3.2.1.min.js'
 
-		this.script_jquery.src				=  	
-				this.thm.u.http_domainbar + 'r_fassets/libs/js/' + js_name 									
+		this.script_jquery.src				=
+				this.thm.u.http_domainbar + 'r_fassets/libs/js/' + js_name
 
-		this.script_jquery.pcreate()														
-		
-		this.code							+=	this.script_jquery.code						
-	}		
+		this.script_jquery.pcreate()
+
+		this.code							+=	this.script_jquery.code
+	}
 
 
 	//[S_03] <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js" defer></script>
     create_flexslider()
     {
-		this.script_flexslider.async		=  	'async'									
+		this.script_flexslider.async		=  	'async'
 
 		let js_name							=	'jquery.flexslider.min.js'
 
-		this.script_flexslider.src			=  	
-				this.thm.u.http_domainbar + 'r_fassets/libs/js/' + js_name 									
+		this.script_flexslider.src			=
+				this.thm.u.http_domainbar + 'r_fassets/libs/js/' + js_name
 
-		this.script_flexslider.pcreate()														
-		
-		this.code							+=	this.script_flexslider.code						
+		this.script_flexslider.pcreate()
 
-	}		
+		this.code							+=	this.script_flexslider.code
+
+	}
 
 	//[S_09] <script src="assets/js/main.js" defer></script>
 	create_main()
     {
 		// External Div
-		let js_name 						=	'main'									
-		
-		this.script_main.async				=  	'async'									
+		let js_name 						=	'main'
+
+		this.script_main.async				=  	'async'
 
 		// Live Enviroment
 
 		if ( this.thm.b.site_live ) 		js_name	+=	'_live'
 
-		this.script_main.src				=  	
-				this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '_min.js'									
-		
-		this.script_main.pcreate()														
-		
-		this.code							+=	this.script_main.code					
+		this.script_main.src				=
+				this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '_min.js'
 
-	}		
+		this.script_main.pcreate()
+
+		this.code							+=	this.script_main.code
+
+	}
 
 	//[S_09] <script src="assets/js/main.js" defer></script>
 	create_product()
     {
 		// External Div
-		let js_name 						=	'product'									
-		
-		this.script_main.async				=  	'async'									
+		let js_name 						=	'product'
+
+		this.script_main.async				=  	'async'
 
 		// Live Enviroment
 
-		if ( this.thm.b.site_live ) 		
+		if ( this.thm.b.site_live )
 			js_name							+=	'_live'
 
-		this.script_main.src				=  	
-				this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '_min.js'									
-		
-		this.script_main.pcreate()														
-		
-		this.code							+=	this.script_main.code					
+		this.script_main.src				=
+				this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '_min.js'
 
-	}		
+		this.script_main.pcreate()
+
+		this.code							+=	this.script_main.code
+
+	}
 
     build_data()
     {
@@ -146,20 +145,20 @@ class scr06_js_async_truck extends getset  {
 		this.create_jquery()
 		this.create_flexslider()
 
-		if ( this.thm.b.site_live )		
-			if (this.thm.b.page_product) 	
+		if ( this.thm.b.site_live )
+			if (this.thm.b.page_product)
 				this.create_product()													;
 			else
 				this.create_main()
 		else
 		{
-			if (this.thm.b.page_product) 	
+			if (this.thm.b.page_product)
 				this.create_product()													;
 			this.create_main()
-		}				
+		}
 
 		// Pending [17-11-02]
-		// this.p('Code : >' + this.code ) 											
+		// this.p('Code : >' + this.code )
 
     }
 

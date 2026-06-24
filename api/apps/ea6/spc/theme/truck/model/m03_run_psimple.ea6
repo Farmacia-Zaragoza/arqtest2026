@@ -12,7 +12,7 @@ var 		cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"
 const 		{ model_run_disk } 	= 	require(	cons.JS_BASE 	+ 	'spc/theme/truck/model/m04_run_disk.ea6'		),
 			{ pn01_simple } 	= 	require(	cons.JS_BASE 	+ 	'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'	),
 			run					= 	require(	cons.JS_BASE 	+ 	'com/pms/mongo/save_code_mongo_promise.ea6'			),
-			echo 				= 	require(	cons.NODE_MOD 	+	'node-echo'											);
+			echo 				= 	require(	'node-echo'											);
 
 
 // QUIERO HACER UN ENFOQUE DE PROMESAS GENERADORES Y SINCRONIAS
@@ -23,7 +23,7 @@ class model_run_psimple extends model_run_disk
 	{
 		// Pasamos la request
 		super(pmt)
-	
+
 		// RUN --> PROCESS
 	}
 	// FROM --> run_options (no cache | reload )
@@ -43,7 +43,7 @@ class model_run_psimple extends model_run_disk
 
 		// this.p('SITE_LIVE : ' + this.b.site_live + ' = ' +  false)
 
-		if ( this.pnode.status) 
+		if ( this.pnode.status)
 		{
 			echo("NOCACHE_" + this.pnode.code.length)
 			// echo("NOCACHE_" + this.pnode.code)
@@ -56,14 +56,13 @@ class model_run_psimple extends model_run_disk
 			// Seria preguntar si tenemos mongo funcionando
 			//	if (this.b.site_have_mongo)
 			run.save_code_mongo_promise(data_and_error,t)
-			.then(function () {} ) 
+			.then(function () {} )
 
 		}
-		
+
 	}
 
 
 } // end Class
 
 exports.model_run_psimple = model_run_psimple
-

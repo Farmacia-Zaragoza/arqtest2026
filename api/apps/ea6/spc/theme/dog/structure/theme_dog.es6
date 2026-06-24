@@ -9,9 +9,8 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var 	cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"					);
 
-const	echo 					= 	require(	cons.NODE_MOD + 'node-echo'												),
+const	echo 					= 	require(	'node-echo'												),
 		{ theme_structure }		= 	require( 	cons.JS_BASE  + 'com/objects/drupal/theme/t01_structure.es6'			),
 		{ fn01_flat } 			= 	require(	cons.JS_BASE  + 'spc/theme/common/fast_node/fnode/fn01_flat.es6'		),
 		{ fn02_images } 		= 	require(	cons.JS_BASE  + 'spc/theme/common/fast_node/fnode/fn02_images.es6'		),
@@ -25,7 +24,7 @@ const	echo 					= 	require(	cons.NODE_MOD + 'node-echo'												),
 		{ fn31_cookies }      	= 	require(	cons.JS_BASE  + 'spc/theme/dog/fast_node/fnode/fn31_cookies.es6'		),
 
 		{ fn32_cookies_links }  = 	require(	cons.JS_BASE  + 'spc/theme/dog/fast_node/fnode/fn32_cookies_links.es6'),
-		
+
 		{ cbool }				= 	require( 	cons.JS_BASE  + 'com/objects/drupal/bool/b01_bool.es6'					),
 		{ categories }			= 	require( 	cons.JS_BASE  + 'com/objects/categories/categories.es6'					),
 		{ contents }			= 	require( 	cons.JS_BASE  + 'com/objects/categories/contents.es6'					);
@@ -33,7 +32,7 @@ const	echo 					= 	require(	cons.NODE_MOD + 'node-echo'												),
 
 class theme_dog extends theme_structure {
 
-	constructor(pg, u) 
+	constructor(pg, u)
 	{
 		super()
 		this.n 							= 	"thm_dog::"
@@ -52,14 +51,14 @@ class theme_dog extends theme_structure {
 			this.p('COOOKIES_PAGE_OJHITO')
 
 			// Yaml cookies file
-			this.arr['fyode']['cookies'] 			= 	new fy01_cookies(this.u)					
-	
-	
+			this.arr['fyode']['cookies'] 			= 	new fy01_cookies(this.u)
+
+
 			// Dat cookies file
-			this.arr['fnode']['cookies'] 			= 	new fn31_cookies(this.u)					
-	
+			this.arr['fnode']['cookies'] 			= 	new fn31_cookies(this.u)
+
 			// Dat cookies file
-			this.arr['fnode']['cookies_links'] 		= 	new fn32_cookies_links(this.u)			
+			this.arr['fnode']['cookies_links'] 		= 	new fn32_cookies_links(this.u)
 		}
 
 		// this.p('AFTER_IMAGES')
@@ -77,7 +76,7 @@ class theme_dog extends theme_structure {
 		this.arr['fnode']['site_info_lang'] = fnode_site
 
 //		this.p('END_THEME')
-	
+
 		this.u.cat = new categories()
 		this.u.cot = new contents(this.s.folder_dat)
 	}
@@ -85,4 +84,3 @@ class theme_dog extends theme_structure {
 }
 
 exports.theme_dog = theme_dog
-

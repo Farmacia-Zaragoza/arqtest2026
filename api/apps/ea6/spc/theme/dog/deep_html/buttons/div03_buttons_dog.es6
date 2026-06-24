@@ -21,7 +21,6 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 							= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"							)
 
 const 	{ html_style } 					= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'								),
 		{ div01_button_circle_dog }		= 	require( 	cons.JS_BASE  + 'spc/theme/dog/deep_html/buttons/div01_button_circle_dog.es6'	),
@@ -29,7 +28,7 @@ const 	{ html_style } 					= 	require(	cons.JS_BASE  + 'com/objects/html/html_st
 
 class div03_buttons_dog extends html_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 				= 	"div"
 
@@ -40,12 +39,12 @@ class div03_buttons_dog extends html_style {
 		this.tag_type 				= 	"div"
 		this.class 					= 	"row links align-items-center"
 		this.thm 					= 	thm
-	
-				
+
+
 		this.miv_01					=	new div01_button_circle_dog(this.thm)
 
 		this.miv_02					=	new div02_buttons_dog(this.thm)
-		
+
 		this.fnode 					= 	this.thm.arr['fnode']['flag_list']
 
 		this.build_data()
@@ -54,17 +53,17 @@ class div03_buttons_dog extends html_style {
 	create_div_01()
 	{
 		let class_01				=	'col desktop button-container'
-		
+
 		let url_01					=	'http://dog.dbrqx.com/index2/social_01'
 
 		let tit_01					=	'Page name Social 01'
 
 		let txt_01					=	'Click to go to Social 01'
 
-		this.miv_01.reload_contents(	
-							class_01		, 
-							url_01 			, 
-							tit_01 			, 
+		this.miv_01.reload_contents(
+							class_01		,
+							url_01 			,
+							tit_01 			,
 							txt_01			)
 
 		this.content				+=	this.miv_01.code
@@ -82,7 +81,7 @@ class div03_buttons_dog extends html_style {
 	create_div_03()
 	{
 		let class_02				=	'col text-right desktop button-container'
-		
+
 		let url_02					=	'http://dog.dbrqx.com/index2/social_02'
 
 		let tit_02					=	'Page name Social 02'
@@ -91,9 +90,9 @@ class div03_buttons_dog extends html_style {
 
 		// class_name, link, title, text)
 		this.miv_01.reload_contents(
-					class_02		, 
-					url_02 			, 
-					tit_02 			, 
+					class_02		,
+					url_02 			,
+					tit_02 			,
 					txt_02			)
 
 		this.content				+=	this.miv_01.code
@@ -103,7 +102,7 @@ class div03_buttons_dog extends html_style {
 	}
 
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 
@@ -116,7 +115,7 @@ class div03_buttons_dog extends html_style {
 		this.pcreate()
 
 		//Ok [18-02-05]
-		// this.p('btn3_Code > ' +  this.code)												
+		// this.p('btn3_Code > ' +  this.code)
 
 	}
 

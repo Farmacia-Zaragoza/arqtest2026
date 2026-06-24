@@ -5,7 +5,7 @@
 //Theme DIV Structure - Peloncita site
 //-------------------------------------------------------------------------------------
 // PENDING FOR FINAL DESIGN
-//* <div class="info-cloud"> 
+//* <div class="info-cloud">
 //	  div (external)
 //       <img src="img/box/brqx_2017_dev_live_green_050.svg" data-content="Some text about dev/live" data-header="Dev/live" alt="" class="info-cloud-top-row-button cloud-live-button">
 //	  div (external)
@@ -25,26 +25,25 @@
 //-------------------------------------------------------------------------------------
 //* DIV
 //   DIV 	* 5
-//	   IMG  
+//	   IMG
 //   DIV (external
 //	 DIV    * 2
-//     IMG  
+//     IMG
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //Methods:
 //-------------------------------------------------------------------------------------
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 								= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"								)
 
 const 	{ html_style } 						= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'									),
-		empty 								= 	require(	cons.NODE_MOD + 'is_empty'															),
+		empty 								= 	require(	'is_empty'															),
 		{ div01_helper_button_dog }			= 	require( 	cons.JS_BASE  + 'spc/theme/dog/deep_html/helpers/div01_helper_button_dog.es6'		),
 		{ div01_helper_arrow_sizer_dog }	= 	require( 	cons.JS_BASE  + 'spc/theme/dog/deep_html/helpers/div01_helper_arrow_sizer_dog.es6'	);
 
 class div02_helper_dog extends html_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 				= 	"div"
 
@@ -56,7 +55,7 @@ class div02_helper_dog extends html_style {
 		this.class 					= 	"info-cloud"
 		this.thm 					= 	thm
 		this.fnode 					= 	this.thm.arr['fnode']['flag_list']
-		
+
 		// We will use reload method
 		this.miv_01 				= 	new div01_helper_button_dog (this.thm)
 
@@ -68,7 +67,7 @@ class div02_helper_dog extends html_style {
 	// img src="img/box/brqx_2017_dev_live_green_050.svg"
 	create_div_01()
 	{
-		let class			=	'info-cloud-top-row-button cloud-live-button'	
+		let class			=	'info-cloud-top-row-button cloud-live-button'
 		let svg_file		=	'brqx_2017_dev_live_green_050.svg'
 
 		this.miv_01.reload(	'r_img/box/'					, // path
@@ -77,7 +76,7 @@ class div02_helper_dog extends html_style {
 							this.thm.s.nfo_text_dev_live	, // header - text
 							this.thm.s.nfo_desc_dev_live	) // content
 
-		
+
 		this.content				+=	this.miv_01.code
 	}
 
@@ -87,7 +86,7 @@ class div02_helper_dog extends html_style {
 		// Ojo que puede ser green or red depending of load
 		// Debe gestionarse en conjunto
 
-		let class			=	'info-cloud-top-row-button cloud-html-php-button'	
+		let class			=	'info-cloud-top-row-button cloud-html-php-button'
 		let svg_file		=	'brqx_2017_html_php_green_050.svg'
 
 		this.miv_01.reload(	'r_img/box/'					, // path
@@ -96,14 +95,14 @@ class div02_helper_dog extends html_style {
 							this.thm.s.nfo_text_html_php	, // header
 							this.thm.s.nfo_desc_html_php	) // content
 
-		
+
 		this.content				+=	this.miv_01.code
 	}
-	
+
 	// img src="img/box/brqx_2017_http_https_green_050.svg"
 	create_div_03()
 	{
-		let class			=	'info-cloud-top-row-button cloud-http-https-button'	
+		let class			=	'info-cloud-top-row-button cloud-http-https-button'
 		let svg_file		=	'brqx_2017_http_https_green_050.svg'
 
 		this.miv_01.reload(	'r_img/box/'					, // path
@@ -112,14 +111,14 @@ class div02_helper_dog extends html_style {
 							this.thm.s.nfo_text_http_https	, // header
 							this.thm.s.nfo_desc_http_https	) // content
 
-		
+
 		this.content				+=	this.miv_01.code
 	}
 
 	// img src="img/box/brqx_2017_anon_auth_green_050.svg"
 	create_div_04()
 	{
-		let class			=	'info-cloud-top-row-button cloud-anon-auth-button'	
+		let class			=	'info-cloud-top-row-button cloud-anon-auth-button'
 		let svg_file		=	'brqx_2017_anon_auth_green_050.svg'
 
 		this.miv_01.reload(	'r_img/box/'					, // path
@@ -127,7 +126,7 @@ class div02_helper_dog extends html_style {
 							class							, // class
 							this.thm.s.nfo_text_anon_auth	, // header
 							this.thm.s.nfo_desc_anon_auth	) // content
-		
+
 		this.content				+=	this.miv_01.code
 	}
 
@@ -135,7 +134,7 @@ class div02_helper_dog extends html_style {
 	create_div_05()
 	{
 
-		let class			=	'info-cloud-top-row-button cloud-user-human-button'	
+		let class			=	'info-cloud-top-row-button cloud-user-human-button'
 		let svg_file		=	'brqx_2017_user_human_red_050.svg'
 
 		this.miv_01.reload(	'r_img/box/'					, // path
@@ -144,7 +143,7 @@ class div02_helper_dog extends html_style {
 							this.thm.s.nfo_text_user_human	, // header
 							this.thm.s.nfo_desc_user_human	) // content
 
-		
+
 		this.content				+=	this.miv_01.code
 	}
 	// <div data-toggle="popover" (external arrow sizer)
@@ -156,7 +155,7 @@ class div02_helper_dog extends html_style {
 	// src="img/box/brqx_2017_keyboard_enabled_green_100.svg"
 	create_div_07()
 	{
-		let class			=	'info-cloud-bot-row-button keyboard-button'	
+		let class			=	'info-cloud-bot-row-button keyboard-button'
 		let svg_file		=	'brqx_2017_keyboard_enabled_green_100.svg'
 
 		this.miv_01.reload(	'r_img/box/'					, // path
@@ -167,14 +166,14 @@ class div02_helper_dog extends html_style {
 							this.thm.s.nfo_tit_navigation	, // title
 							'popover'						, // toggle
 							'focus'							) // trigger
-		
+
 		this.content		+=	this.miv_01.code
 	}
 
 	create_div_08()
 	{
 
-		let class			=	'info-cloud-bot-row-button auto-scroll-button'	
+		let class			=	'info-cloud-bot-row-button auto-scroll-button'
 		let svg_file		=	'brqx_2017_auto_scroll_enabled_green_100.svg'
 
 		this.miv_01.reload(	'r_img/box/'					, // path
@@ -185,12 +184,12 @@ class div02_helper_dog extends html_style {
 							this.thm.s.nfo_tit_scrolling	, // title
 							'popover'						, // toggle
 							'focus'							) // trigger
-		
+
 		this.content		+=	this.miv_01.code
 	}
 
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 
@@ -206,7 +205,7 @@ class div02_helper_dog extends html_style {
 		this.pcreate()
 
 		//Ok [17-06-24]
-		this.p('flg_Code > ' +  this.code)												
+		this.p('flg_Code > ' +  this.code)
 
 	}
 

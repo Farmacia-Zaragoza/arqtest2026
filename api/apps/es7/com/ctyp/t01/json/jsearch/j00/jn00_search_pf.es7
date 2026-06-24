@@ -18,7 +18,7 @@ const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 //const   { cache }             =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'                    ),
 const   { jn01_general_common_json } =   require(  cons.JS_ACO7  + 'json/j01/n01/jn01_general_common_json.es7' ),
-        empty                 =   require(  cons.NODE_MOD   + 'is_empty'                             );
+        empty                 =   require(  'is_empty'                             );
 
 
 class jn00_search_pf extends jn01_general_common_json {

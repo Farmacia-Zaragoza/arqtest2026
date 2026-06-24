@@ -6,19 +6,17 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"	);
-
 const 	{ printlog } 		= 	require(	cons.JS_BASE + 'com/objects/logs/printlog.es6'		),
-		path 				= 	require( 'path' 												);		
+		path 				= 	require( 'path' 												);
 
 class index_def extends printlog
 {
-	
-  constructor() 
+
+  constructor()
   {
 	super()
 	// Atributos
-    this.n 				= 	'index_def::'							 
+    this.n 				= 	'index_def::'
 
 	this.site_name 		= "truck"
 	this.theme_name 	= "truck"
@@ -27,7 +25,7 @@ class index_def extends printlog
 	// /mnt/ssd/brqx/base/rcode/es6/com/objects/fire
 	this.base_dir 		= path.resolve(".")
 
-	// this.p('BASE' + this.base_dir)	
+	// this.p('BASE' + this.base_dir)
 	// Pendiente
 	this.supermnu_libs 	= this.base_dir + "/"
 
@@ -55,9 +53,8 @@ class index_def extends printlog
 	this.search 		= "noreload"
 
 	this.code			=	''
-  }	
+  }
 
 }	// End Class
 
 exports.index_def = index_def
-

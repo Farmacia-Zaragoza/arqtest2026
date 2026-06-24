@@ -18,8 +18,8 @@ const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 const   { uri_paths }     =   require(  cons.JS_BASE + 'com/objects/drupal/uri/u08_paths.es6'    );
         match           =   require(  cons.JS_BASE  + 'com/libs/string/match.es6'          ),
         starr           =   require(  cons.JS_BASE  + 'com/libs/string/string_array.es6'   ),
-        urldecode       =   require(  cons.NODE_MOD + 'urldecode'                          ),
-        iconv           =   require(  cons.NODE_MOD + 'iconv-lite'                         ),
+        urldecode       =   require('urldecode'),
+        iconv           =   require('iconv-lite'),
         path            =   require(  'path'                                               );
 
 

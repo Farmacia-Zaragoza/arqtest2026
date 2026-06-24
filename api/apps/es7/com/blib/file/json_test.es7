@@ -22,8 +22,8 @@
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   gfc  			     =   require(  cons.JS_LIB7  + 'file/get_file_code.es7' 	 ),
-        validator            =   require(  cons.NODE_MOD + 'is-my-json-valid'            ),
-        syncrequest          =   require(  cons.NODE_MOD   +   'syncrequest'             ),
+        validator            =   require(  'is-my-json-valid'            ),
+        syncrequest          =   require(  'sync-request'             ),
         fs                   =   require(  'fs'                                                  );
 
 

@@ -15,8 +15,8 @@
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const  fs                   =   require(  'fs'                                                   ),
-       empty                =   require(  cons.NODE_MOD + 'is-empty'                             ),
-       accents              =   require(  cons.NODE_MOD + 'remove-accents'                       ),
+       empty                =   require(  'is-empty'                             ),
+       accents              =   require(  'remove-accents'                       ),
        { idx_pointers }     =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
        { rs03_object_page_inner }   =   require(  cons.JS_TYP7  + 'arroba/rest/rs03_page_inner.es7'  );
 

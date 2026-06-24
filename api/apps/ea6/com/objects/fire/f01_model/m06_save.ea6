@@ -7,19 +7,18 @@
 // - d-save_code_to_mongo- 					: Async method to save code to mongo
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 		cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
 
 const 		{ index } 			= 	require(	cons.JS_BASE + 'com/objects/fire/f02_index/index.es6'		),
-			mongoose 			= 	require(	cons.NODE_MOD + 'mongoose'									),
+			mongoose 			= 	require(	'mongoose'									),
  	 		{ idSchema }		= 	require(	cons.JS_BASE + 'com/libs/mongo/schemes/html.sch'									);
-			echo 				= 	require(	cons.NODE_MOD + 'node-echo'									);
+			echo 				= 	require(	'node-echo'									);
 
 class model_save extends index
 {
 	constructor( pmt = '' )
 	{
 		super(pmt)
-		
+
 		// RUN --> PROCESS
 	}
 
@@ -28,15 +27,15 @@ class model_save extends index
 
 	// --------------------------- SAVE_CODE_TO_MONGO ---------------------------
 	async check_dont_exist_to_save_code()
-	{ 
+	{
 		// Cannot overwrite `pages` model once compiled.
 			// No existe el registro. Lo insertamos ( Que tarde lo que quiera)
 
 		// this.p('0N. Saving to Mongo '+  this.s.name  + ' LEN ' + this.code.length)
-		
+
 		// this.p('Type sch ' + typeof this.u.sch + ' value ' +  this.u.sch)
-			
-		var dont_exist = await this.u.sch.find().byDontExist(this.u.page_string ) 
+
+		var dont_exist = await this.u.sch.find().byDontExist(this.u.page_string )
 
 		// console.log('nUMDOCS '+ count)
 
@@ -46,17 +45,17 @@ class model_save extends index
 
 	// --------------------------- SAVE_CODE_TO_MONGO ---------------------------
 	async save_code_to_mongo(dont_exist)
-	{ 
+	{
 		// Cannot overwrite `pages` model once compiled.
 			// No existe el registro. Lo insertamos ( Que tarde lo que quiera)
 
 		// this.pnn('0N. Saving to Mongo '+  true  + '  ' + dont_exist)
 
-		if (dont_exist === 0 )			
+		if (dont_exist === 0 )
 		{
 			// var htmlScheme = mongoose.model('pages', idSchema);
 
-			// this.p('SITE ' + this.s.name			)		
+			// this.p('SITE ' + this.s.name			)
 			// this.p('ISLANG ' + this.s.slan 			)
 			// this.p('DOMAIN ' + this.u.dash_domain 		)
 			// this.p('LANG ' + this.s.lang			)
@@ -69,9 +68,9 @@ class model_save extends index
 
 			//  01   02        03     04     05      06      07         08        09      10
 			// _id  site - is_lang - domain - lang - ssl - live_opt -  robot - command - page
-		
-			var htmPage = new this.u.sch({ 
-//			var htmPage = new htmlScheme({ 
+
+			var htmPage = new this.u.sch({
+//			var htmPage = new htmlScheme({
 							 	   		   _id: this.u.page_string			,	// 01
 										   site : this.s.name 				, 	// 02
 									 	   is_lang : this.s.slan   			,	// 03
@@ -84,7 +83,7 @@ class model_save extends index
 									 	   page : this.u.page_name   		,	// 10
 									 	   code : this.code 				});
 
-			
+
 			htmPage.save(function (err) {
 		  	if (!err) console.log('Success!');
 		  	else
@@ -94,10 +93,10 @@ class model_save extends index
 		  	  	 	console.log('Duplicate record! ' + err.message);
 		  	  	 // Duplicate record!E11000 duplicate key error index: truck.kittens.$name_1 dup key: { : "fluffyto_a03" }
 			}
-		
+
 		 	})
 
-		}		 	
+		}
 	}
 
 
@@ -105,4 +104,3 @@ class model_save extends index
 } // end Class
 
 exports.model_save = model_save
-

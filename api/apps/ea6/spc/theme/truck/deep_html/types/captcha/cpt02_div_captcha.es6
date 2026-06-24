@@ -20,7 +20,6 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
 const 	{ html_style } 					= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'										),
 		{ cpt01_button_captcha }		= require( 	cons.JS_BASE + 'spc/theme/truck/deep_html/types/captcha/cpt01_button_captcha.es6'		);
@@ -28,7 +27,7 @@ const 	{ html_style } 					= require(	cons.JS_BASE + 'com/objects/html/html_styl
 
 class cpt02_div_captcha extends html_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 					= "div"
 
@@ -84,14 +83,14 @@ class cpt02_div_captcha extends html_style {
 		this.content += this.div_01.code
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.create_div()
 		this.pcreate()
 
 		//Ok [17-06-24]
-		//$this->dd('Code > ' . $this->code)													
+		//$this->dd('Code > ' . $this->code)
 
 	}
 

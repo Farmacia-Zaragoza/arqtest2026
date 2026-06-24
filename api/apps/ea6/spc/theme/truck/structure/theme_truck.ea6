@@ -9,9 +9,8 @@
 //Store structure of nodes and files needed in theme
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons	 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"					);
 
-const	echo 					= 	require(	cons.NODE_MOD + 'node-echo'												),
+const	echo 					= 	require(	'node-echo'												),
 		{ theme_structure }		= 	require( 	cons.JS_BASE  + 'com/objects/drupal/theme/t01_structure.es6'			),
 		{ fn01_flat } 			= 	require(	cons.JS_BASE  + 'spc/theme/common/fast_node/fnode/fn01_flat.ea6'		),
 		{ fn02_images } 		= 	require(	cons.JS_BASE  + 'spc/theme/common/fast_node/fnode/fn02_images.ea6'		),
@@ -27,7 +26,7 @@ const	echo 					= 	require(	cons.NODE_MOD + 'node-echo'												),
 		{ fn31_cookies }      	= 	require(	cons.JS_BASE  + 'spc/theme/truck/fast_node/fnode/fn31_cookies.ea6'		),
 
 		{ fn32_cookies_links }  = 	require(	cons.JS_BASE  + 'spc/theme/truck/fast_node/fnode/fn32_cookies_links.ea6'),
-		
+
 		{ cbool }				= 	require( 	cons.JS_BASE  + 'com/objects/drupal/bool/b01_bool.es6'					),
 		{ categories }			= 	require( 	cons.JS_BASE  + 'com/objects/categories/categories.es6'					),
 		{ contents }			= 	require( 	cons.JS_BASE  + 'com/objects/categories/contents.es6'					);
@@ -35,7 +34,7 @@ const	echo 					= 	require(	cons.NODE_MOD + 'node-echo'												),
 
 class theme_truck extends theme_structure {
 
-	constructor(pg, u) 
+	constructor(pg, u)
 	{
 		super()
 		this.n 							= 	"thm_truck::"
@@ -51,33 +50,33 @@ class theme_truck extends theme_structure {
 		var fnode 						= new fn01_flat(this.u, "middle")
 
 		this.arr['fnode']['file_list'] = fnode
-		
+
 		// 139 - 0.4s
-		// this.p('Num_imgs ' + this.arr['fnode']['file_list'].arr['img'].length	)						
-		
+		// this.p('Num_imgs ' + this.arr['fnode']['file_list'].arr['img'].length	)
+
 		// this.p('BEFORE_IMAGES')
-	
+
 		var fnode_images = new fn02_images(fnode)
 
 
 		this.arr['fnode']['image_list'] = fnode_images
 
 		// 139 - 4s
-		// this.p('Num_imgl ' + this.arr['fnode']['image_list'].arr['oim'].length	)						
+		// this.p('Num_imgl ' + this.arr['fnode']['image_list'].arr['oim'].length	)
 
 		if (this.b.page_cookies )
 		{
 			this.p('COOOKIES_PAGE_OJHITO')
 
 			// Yaml cookies file
-			this.arr['fyode']['cookies'] 			= 	new fy01_cookies(this.u)					
-	
-	
+			this.arr['fyode']['cookies'] 			= 	new fy01_cookies(this.u)
+
+
 			// Dat cookies file
-			this.arr['fnode']['cookies'] 			= 	new fn31_cookies(this.u)					
-	
+			this.arr['fnode']['cookies'] 			= 	new fn31_cookies(this.u)
+
 			// Dat cookies file
-			this.arr['fnode']['cookies_links'] 		= 	new fn32_cookies_links(this.u)			
+			this.arr['fnode']['cookies_links'] 		= 	new fn32_cookies_links(this.u)
 		}
 
 		// this.p('AFTER_IMAGES')
@@ -99,7 +98,7 @@ class theme_truck extends theme_structure {
 		this.arr['fnode']['site_info_lang'] = fnode_site
 
 //		this.p('END_THEME')
-	
+
 		this.u.cat = new categories()
 		this.u.cot = new contents(this.s.folder_dat)
 	}
@@ -107,4 +106,3 @@ class theme_truck extends theme_structure {
 }
 
 exports.theme_truck = theme_truck
-

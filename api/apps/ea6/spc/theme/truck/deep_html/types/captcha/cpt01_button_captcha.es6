@@ -17,7 +17,6 @@
 //- build_data  	 : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
 const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'										),
 		{ cpt03_div_captcha }	= 	require( 	'/brqx/base/rcode/es6/spc/theme/truck/deep_html/types/captcha/cpt03_div_captcha.es6'	);
@@ -25,7 +24,7 @@ const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.e
 
 class cpt01_button_captcha extends svg_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 					= "button"
 
@@ -44,10 +43,10 @@ class cpt01_button_captcha extends svg_style {
 	create_svg()
 	{
 		this.svg_path				= 	'r_img/captcha/'
-		this.svg_name 				= 	this.button_name								
-		
+		this.svg_name 				= 	this.button_name
+
 		this.svg_alt				=	''	 // Pending to compose
-		
+
 		this.create_svg_base()
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
@@ -56,7 +55,7 @@ class cpt01_button_captcha extends svg_style {
 
 
 
-	reload_data(button_name = "", button_class = "", button_alt = "") 
+	reload_data(button_name = "", button_class = "", button_alt = "")
 	{
 		this.button_name 			= button_name
 		this.button_class 			= button_class
@@ -64,7 +63,7 @@ class cpt01_button_captcha extends svg_style {
 		this.build_data()
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content 				= ""
 		this.class 					= this.button_class
@@ -72,7 +71,7 @@ class cpt01_button_captcha extends svg_style {
 		this.pcreate()
 
 		//Ok [17-06-24]
-		// this.p('code >' + this.code)		
+		// this.p('code >' + this.code)
 
 	}
 

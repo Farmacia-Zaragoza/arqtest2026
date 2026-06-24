@@ -24,7 +24,7 @@ const 	{ html_style } 					= 	require(	cons.JS_BASE 	+ 	'com/objects/html/html_s
 		{ svg_style } 					= 	require(	cons.JS_BASE  	+ 	'com/objects/html/svg_style.es6'				),
 		{ scr01_js_light }				= 	require(	cons.JS_MET7 	+ 	'light/light/html/h01/main/scr01_js_light.es7'),
 		{ ifnojs }	 					= 	require(	cons.JS_BASE 	+ 	'com/objects/html/ifnojs.es6'					),
-		minify 							= 	require(	cons.NODE_MOD 	+	'html-minifier'									).minify;
+		minify 							= 	require(	'html-minifier'									).minify;
 
 
 class bdy01_body_light extends html_style  {

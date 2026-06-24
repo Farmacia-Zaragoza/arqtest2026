@@ -13,39 +13,37 @@
 
 // Must to be unique
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
-
 const 	{ pn01_simple } 	= require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'					),
 		run						= require(	cons.JS_BASE + 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'			),
-		def_page  				= require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple_def.ea6'				),	
+		def_page  				= require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple_def.ea6'				),
 		{ pn02_fast } 		= require(	cons.JS_BASE + 'spc/theme/common/fast_node/pnode/pn02_fast.es6'						),
-		empty 				= require(	'/brqx/base/react/zcommon/node_modules/is_empty'									),
-		trim 				= require(	'/brqx/base/react/zcommon/node_modules/trim'										),
-		echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
+		empty 				= require(	'is_empty'									),
+		trim 				= require(	'trim'										),
+		echo 				= require(	'node-echo'									);
 
 // QUIERO HACER UN ENFOQUE DE PROMESAS
 // PRIMERO NECESITO UN SISTEMA NO OOP
 
-function truck(t	= '' )	
+function truck(t	= '' )
 {
-		
-	if (t.b.site_cache && 
-		(t.b.page_download || 
-			(t.c.ram == "noreload" ) && 
+
+	if (t.b.site_cache &&
+		(t.b.page_download ||
+			(t.c.ram == "noreload" ) &&
 			!(t.c.arr['ram'].includes("FPC"))
 		)
-	   ) 
+	   )
 	{
 		// t.p('Entering fast')
 		t.pnode = new pn02_fast(t.u)
 	}
 
-	if ("A" === "A") 
-		if ( t.b.site_cache 									&& 
-			(t.c.ram 		== 	"noreload"	) 				&& 
-			!(t.c.arr['ram'].includes("FPC")	)	  			&& 
-			(!empty(t.pnode)					)				&& 
-			(t.pnode.status == 1				)			    ) 
+	if ("A" === "A")
+		if ( t.b.site_cache 									&&
+			(t.c.ram 		== 	"noreload"	) 				&&
+			!(t.c.arr['ram'].includes("FPC")	)	  			&&
+			(!empty(t.pnode)					)				&&
+			(t.pnode.status == 1				)			    )
 		{
 
 			// echo("FPC" )
@@ -56,8 +54,8 @@ function truck(t	= '' )
 			var start_time = global.GLOBALS.start_time
 			var total_time = Math.round(stop_time - start_time, 4)
 			var time_str = total_time + " segundos "
-		} 
-		else if (t.s.load != "drupal") 
+		}
+		else if (t.s.load != "drupal")
 		{
 			var supermnu_dats = t.supermnu_libs + "dats/" + t.theme_name + "/"
 
@@ -68,23 +66,22 @@ function truck(t	= '' )
 			// t.pnode = new pn01_simple(t.u)
 			// t.p('AAA_BEFORE_TO_CREATE_PNODE' + t.type)
 			// Run promise A
-			var pt1 = def_page.pn01_simple_def(data_and_error, t) 
+			var pt1 = def_page.pn01_simple_def(data_and_error, t)
 			.then(function () {} )
 
 			var pt2 = run.fnode_promise(data_and_error, t.pnode)
-			.then(function () {} ) 
+			.then(function () {} )
 
-			Promise.all([pt1, pt2]).then(function() 
+			Promise.all([pt1, pt2]).then(function()
 			{
 					t.p("END_NOCACHE_" + t.pnode.code.length)
 					// echo("NOCACHE_" + t.pnode.code)
 					// echo(t.pnode.code)
-				
-			})			
+
+			})
 		}
 
 } // End Constructor
 
 
 module.exports.truck = truck
-

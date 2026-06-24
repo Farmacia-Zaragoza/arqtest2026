@@ -21,7 +21,7 @@ const fs                    =   require(  'fs'                                  
       { cache }             =   require(  cons.JS_TYP7  + 'cache/c01_cache.es7'      ),
       { idx_pointers }  =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                     ),
 	  rand	                 = 	 require(  cons.JS_LIB7 + 'rand/rand.es7' 	           ),
-      empty                 =   require(  cons.NODE_MOD   + 'is_empty'                );
+      empty                 =   require(  'is_empty'                );
 
 class jn01_comm_pho extends cache {
 

@@ -10,7 +10,7 @@
 	<img src="img/bones/gold_dog_bone_2017.svg" alt="" class="helper-bone">
 	<div class="info-cloud-helper-block">
 		<span class="info-cloud-helper-title">Lorem ipsum dolor sit amet</span><br>
-		<span class="info-cloud-helper-text">consectetur adipisicingelit. 
+		<span class="info-cloud-helper-text">consectetur adipisicingelit.
 //-------------------------------------------------------------------------------------
 //* DIV
 //    IMG
@@ -26,7 +26,6 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"					)
 
 const 	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'						),
 		{ svg_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'						),
@@ -34,7 +33,7 @@ const 	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_sty
 
 class div03_helper_dog extends svg_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 				= 	"div"
 
@@ -45,13 +44,13 @@ class div03_helper_dog extends svg_style {
 		this.tag_type 				= 	"div"
 		this.class 					= 	"helper"
 		this.thm 					= 	thm
-		
+
 		this.div_01					=	new html_style('div')
 
 		this.span_01				=	new html_style('span')
-		
+
 		this.miv_01					=	new div02_helper_dog(this.thm)
-		
+
 		this.fnode 					= 	this.thm.arr['fnode']['flag_list']
 		this.build_data()
 	}
@@ -60,13 +59,13 @@ class div03_helper_dog extends svg_style {
 	{
 		this.svg_path				= 	'r_img/dogs/'
 		this.svg_name 				= 	'edu_version_03_real_dog.svg'
-		
+
 		this.svg_alt				=	''
-		
+
 		this.svg_class				= 	'img-fluid'
-		
+
 		this.create_svg_base()
-		
+
 		this.zone_01					=	this.content
 	}
 
@@ -85,24 +84,24 @@ class div03_helper_dog extends svg_style {
 		this.span_01.content		=	this.thm.s.nfo_
 
 		this.span_01.class			=	'info-cloud-helper-title'
-		
+
 		this.content				+=	this.miv_01.code
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 
 		// 10
 
 		this.div_01.pcreate()
-		
+
 		this.content 			= 	this.div_01.code
 
 		this.pcreate()
 
 		//Ok [17-06-24]
-		this.p('flg_Code > ' +  this.code)												
+		this.p('flg_Code > ' +  this.code)
 
 	}
 

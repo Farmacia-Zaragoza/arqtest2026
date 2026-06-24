@@ -18,17 +18,15 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"						);
-
 const 	{ html_style } 		= 	require(	cons.JS_BASE  	+ 'com/objects/html/html_style.es6'						),
-		{ flx01_li_flex }	= 	require( 	cons.JS_BASE  	+ 'spc/theme/common/deep_html/slider/flx01_li_flex.es6'	),	
-		empty 				= 	require(	cons.NODE_MOD 	+ 'is_empty'											),
-		path				= 	require( 	'path'																	);	
+		{ flx01_li_flex }	= 	require( 	cons.JS_BASE  	+ 'spc/theme/common/deep_html/slider/flx01_li_flex.es6'	),
+		empty 				= 	require(	'is_empty'											),
+		path				= 	require( 	'path'																	);
 
 
 class flx02_ul_product_flex extends html_style {
 
-  constructor(fnode = "", slide_type = "slider") 
+  constructor(fnode = "", slide_type = "slider")
   {
 	let tag_type 							= "ul"
 
@@ -42,7 +40,7 @@ class flx02_ul_product_flex extends html_style {
     this.build_data()
   }
 
-  build_data() 
+  build_data()
   {
     this.code = ""
     this.content = ""
@@ -54,22 +52,22 @@ class flx02_ul_product_flex extends html_style {
 
 	var max_slides
 
-    if ( isNaN(slide_num)   ||  
-    	 (slide_num > num_elems) ) 
+    if ( isNaN(slide_num)   ||
+    	 (slide_num > num_elems) )
     	 	slide_num = 1
-    	 	
+
     var img_name = this.fnode.arr['oim'][slide_num]
     var tit = this.fnode.arr['tit'][slide_num]
 
 	// this.p('Img Name ' + img_name)
 
-    if (!empty(img_name)) 
+    if (!empty(img_name))
       {
 
         var orientation = this.fnode.arr['ori'][slide_num]
         this.li_01.reload_contents(slide_num, orientation)
         this.content += this.li_01.code
-        
+
       }
 
     this.pcreate()

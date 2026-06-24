@@ -13,11 +13,10 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var	{ bnode } 				= 	require(	'/brqx/base/rcode/es6/com/objects/drupal/node/bnode.es6'	)	
 
 class bn01_base extends bnode {
 
-	constructor(block_type = "", block_id = "", fnode = "", stype = "list") 
+	constructor(block_type = "", block_id = "", fnode = "", stype = "list")
 	{
 		this.n = "bn01_base::"
 		this.fnode = fnode
@@ -43,10 +42,10 @@ class bn01_base extends bnode {
 		this.suffix_code = this.suffix + "_code" + ".block"
 		this.generate_load_from_disk_path()
 
-		if (this.s.load === "drupal") 
+		if (this.s.load === "drupal")
 			{
 				this.run_from_drupal()
-			} else 
+			} else
 			{
 				this.run_from_disk()
 			}
@@ -57,18 +56,18 @@ class bn01_base extends bnode {
 		else if (prop == "b_type") this.bock_type = value
 	}
 
-	load_child_details() 
+	load_child_details()
 	{}
 
-	load_child_details_b() 
+	load_child_details_b()
 	{
 		var block_code = this.code
-		
+
 		this.replace(block_code , "img src=", "img data-src=")
 		this.code = this.result
 	}
 
-	prepare_specific_child_properties() 																			
+	prepare_specific_child_properties()
 	{}
 
 }

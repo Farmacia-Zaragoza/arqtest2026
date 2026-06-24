@@ -4,7 +4,7 @@
 //-------------------------------------------------------------------------------------
 // Truck Structure Scripts - Version 01 - Js as scripts
 //-------------------------------------------------------------------------------------
-// <script src="assets/js/fb.js" async></script>	
+// <script src="assets/js/fb.js" async></script>
 // ------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Class:c-scr01_js_truck-
@@ -15,27 +15,26 @@
 // - d-create_fb-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"	)
 
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			),		
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			),
 		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'		);
 
 
 class scr02_fbjs_script_dog extends getset  {
 
     constructor (     thm	              						)
-    {   
+    {
 
 		super()
 
-		this.n							=	'scr02_fbjs_script_dog::'						
+		this.n							=	'scr02_fbjs_script_dog::'
 		this.m							=	'constructor'
 
-		this.thm						=	thm							
-	
+		this.thm						=	thm
+
 		this.script_fb					=	new html_style('script')
 
-		this.create_fb()													
+		this.create_fb()
 
     }
 
@@ -43,21 +42,21 @@ class scr02_fbjs_script_dog extends getset  {
     create_fb()
     {
 
-		let js_name 					=	'fb'									
+		let js_name 					=	'fb'
 
-		// this.script_fb.defer			=  	'defer'									
-		this.script_fb.defer			=  	''	
+		// this.script_fb.defer			=  	'defer'
+		this.script_fb.defer			=  	''
 
-		this.script_fb.async			=  	'async'									
+		this.script_fb.async			=  	'async'
 
-		this.script_fb.src				=  	
-			this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '.js'											
+		this.script_fb.src				=
+			this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '.js'
 
-		this.script_fb.pcreate()														
-		
-		this.code						+=	this.script_fb.code						
-	}		
+		this.script_fb.pcreate()
+
+		this.code						+=	this.script_fb.code
+	}
 
 }
 
-exports.scr02_fbjs_script_dog  = scr02_fbjs_script_dog 
+exports.scr02_fbjs_script_dog  = scr02_fbjs_script_dog

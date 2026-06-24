@@ -9,121 +9,120 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-get_child_properties-  				: Get specific child properties 
+// - d-get_child_properties-  				: Get specific child properties
 // - d-load_child_details-    				: Recover from drupal child properties
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"							);
 
 const 	{ fnode } 				= 	require(	cons.JS_BASE 	+ 'com/objects/drupal/node/fnode.es6'							),
-		echo 					= 	require(	cons.NODE_MOD 	+	'node-echo'													),
+		echo 					= 	require(	'node-echo'													),
 		{ cbool }				= 	require( 	cons.JS_BASE 	+ 'com/objects/drupal/bool/b01_bool.es6'						),
 		{ sec03_yaml_cookies } 	= 	require(	cons.JS_BASE 	+ 'spc/theme/common/yamls/sections/bs/sec03_yaml_cookies.es6'	);
 
 
 class fy01_cookies extends fnode {
 
-           
+
     constructor (   u							=	''				, // 02. U object
-					stype						=	'cookies_yaml'	) // 08. Node Type  
-    {   
+					stype						=	'cookies_yaml'	) // 08. Node Type
+    {
 
 		super()
-		this.n 									=	'fy01_cookies::'			
-	
+		this.n 									=	'fy01_cookies::'
+
 		this.sec								=	''
 
-		this.u 									=	u 													
+		this.u 									=	u
 
 		this.b									= 	new cbool()
 
-		this.u 									=	u 													
-		this.s 									=	this.u.s 										
-		this.c 									=	this.u.c 										
-				
-		
-		this.b.copy (this.s.b)													
-		
+		this.u 									=	u
+		this.s 									=	this.u.s
+		this.c 									=	this.u.c
 
-    	this.type								=	'cookies_yaml_structure'					 // Type for structures			
-		this.short_type							=	'COK-YML'						
-    	
-    	
+
+		this.b.copy (this.s.b)
+
+
+    	this.type								=	'cookies_yaml_structure'					 // Type for structures
+		this.short_type							=	'COK-YML'
+
+
 		// String fnode / node / cica_recuerdo
 		this.ftype					 			=	'fnode'															// Fast node type
-		this.stype 								=	stype															// Node subtype			
-		this.type_name							=	this.stype 													
-		
+		this.stype 								=	stype															// Node subtype
+		this.type_name							=	this.stype
 
-		this.b.type_user						=	false					
-		this.b.type_common						=	true										
+
+		this.b.type_user						=	false
+		this.b.type_common						=	true
 		this.b.type_human						= 	true 										 // if is dat file never will be erased on disk
-		this.b.type_url							= 	false 										 // 
-		this.b.type_translation					= 	false										
-		this.b.type_translated					= 	true										
-		
+		this.b.type_url							= 	false 										 //
+		this.b.type_translation					= 	false
+		this.b.type_translated					= 	true
 
-		this.b.type_have_taxonomy				=	false 										
-		this.b.type_have_code					=	true										
-		this.b.type_have_properties				=	true										
-		this.b.type_have_specific_properties	=	false										
-		
-		this.b.file_yaml						= 	true 												
+
+		this.b.type_have_taxonomy				=	false
+		this.b.type_have_code					=	true
+		this.b.type_have_properties				=	true
+		this.b.type_have_specific_properties	=	false
+
+		this.b.file_yaml						= 	true
 
 		// Type path adjustment
 
 		// fnode / file_structure
-		this.change								=	
-						'/' + this.ftype + '/' + this.type + '/' 	
+		this.change								=
+						'/' + this.ftype + '/' + this.type + '/'
 
 
-		// LANG_DEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma 
+		// LANG_DEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma
 
-		
-		this.suffix								=	this.s.lang + '_' + this.stype					
-		this.suffix_disk						=	this.suffix																
-		this.suffix_lang						=	this.suffix 																
+
+		this.suffix								=	this.s.lang + '_' + this.stype
+		this.suffix_disk						=	this.suffix
+		this.suffix_lang						=	this.suffix
 
 
 		// Generated html code
-   		this.suffix_code 						= 	this.suffix_lang + '.cyml'													
+   		this.suffix_code 						= 	this.suffix_lang + '.cyml'
 
 		// Va a tener una nueva estructura
-		// Parrafos		
+		// Parrafos
 
-		// let arrays_line = ''   
-		// this.arr['types'] = arrays_line.split (' ') 		 
+		// let arrays_line = ''
+		// this.arr['types'] = arrays_line.split (' ')
 
 
 		// Method for disk load and to generate and save content
-		this.generate_load_from_disk_path()													
+		this.generate_load_from_disk_path()
 
 		// /brqx/pers/drupal/v50/fnode/flat/fnode/cookies_structure/common_cookies_yaml_fnode.dyml
 		// /brqx/pers/drupal/v50/fnode/flat/fnode/cookies_structure/common_cookies_yaml_fnode_code.cyml
-		
-		// this.p('01_Cookies_LOADCOD '  + this.load_from_disk_path)								
-		// this.p('01_Cookies_LOADCOL ' + this.load_from_disk_lang_code)								
 
-		// this.p('01_Cookies_LANG ' + this.load_from_disk_lang)								
+		// this.p('01_Cookies_LOADCOD '  + this.load_from_disk_path)
+		// this.p('01_Cookies_LOADCOL ' + this.load_from_disk_lang_code)
+
+		// this.p('01_Cookies_LANG ' + this.load_from_disk_lang)
 
  		// /brqx/pers/drupal/v50/fnode/flat/fnode/cookies_structure/common_cookies_fnode.cok
-		
+
 		if (this.s.load == 'drupal')
 		{
-			this.run_from_drupal()															
+			this.run_from_drupal()
 		}
-		else 
+		else
 		{
-			this.run_from_disk()																
+			this.run_from_disk()
 		}
-		// this.p('RAM ' + this.ram_alias_path			)	
-		// this.p('RAMCOD ' + this.ram_alias_code_path			)	
+		// this.p('RAM ' + this.ram_alias_path			)
+		// this.p('RAMCOD ' + this.ram_alias_code_path			)
 		// /ram/home/ser/zd/main/es/zdom/emp/flat/zd_main_flat/es/cache/flat.dbrqx.com/anonymous/flat/fnode/cookies_structure/human/a/common/common_cookies_fnode.cok
-		
-		// print('<pre>')	
-		// print_r(this.contents)		
-		// print('</pre>')	
+
+		// print('<pre>')
+		// print_r(this.contents)
+		// print('</pre>')
     }
 
 
@@ -131,12 +130,12 @@ class fy01_cookies extends fnode {
 	{
 		// Convertimos description en un array de lines
 
-		let dim = ''  												
+		let dim = ''
 
 
-		//this.p('RUN_CHILD YAML ') 								
+		//this.p('RUN_CHILD YAML ')
 
-		let sections_code = ''													
+		let sections_code = ''
 
 		// echo (".....................................")
 
@@ -152,12 +151,12 @@ class fy01_cookies extends fnode {
 
 		var sec_yaml 		= new sec03_yaml_cookies(this.contents)
 
-		this.code 	= 	sec_yaml.code 										
-		
+		this.code 	= 	sec_yaml.code
+
 		// Ok [17-12-20]
 		// this.p('Yaml_code ' + this.code)
-	} 
-  
+	}
+
 }
 
 exports.fy01_cookies = fy01_cookies

@@ -23,7 +23,7 @@
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const   { strings_defs }       =   require(  cons.JS_TYP7  + 'string/s02_defs.es7'      ),
-       accents            =   require(  cons.NODE_MOD + 'remove-accents'                );
+       accents            =   require(  'remove-accents'   );
 
 
 class strings extends strings_defs

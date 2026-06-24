@@ -14,12 +14,10 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //Para poder extender debe haberse incluido antes
 
-var	{ bnode } 				= 	require(	'/brqx/base/rcode/es6/com/objects/drupal/node/bnode.es6'	)	
-
 
 class bn02_tagadelic extends bnode {
 
-	constructor(fnode = "", block_type = "block", block_id = "", num_columns = "4", stype = "tagadelic") 
+	constructor(fnode = "", block_type = "block", block_id = "", num_columns = "4", stype = "tagadelic")
 	{
 		this.n = "bn02_tagadelic::"
 
@@ -56,7 +54,7 @@ class bn02_tagadelic extends bnode {
 		if (this.s.load == "drupal") //create_paths - get_current_properties
 		{
 			this.run_from_drupal()
-		} 
+		}
 		else //create_paths - get_current_properties_from_disk
 		{
 			this.run_from_disk()
@@ -69,7 +67,7 @@ class bn02_tagadelic extends bnode {
 		else if (prop == "b_columns") this.num_columns = value
 	}
 
-	load_child_details() 
+	load_child_details()
 	{
 		if (this.s.load == "drupal") this.load_properties_dmode_tagadelic()
 	}

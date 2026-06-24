@@ -19,11 +19,10 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var { html_style } 		= require(	'/brqx/base/rcode/es6/com/objects/html/html_style.es6'		)
 
 class sld03_div_seleccion_middle extends html_style {
 
-	constructor() 
+	constructor()
 	{
 		this.tag_type = "div"
 
@@ -34,7 +33,7 @@ class sld03_div_seleccion_middle extends html_style {
 		this.h2_01 = new html_style("h2")
 	}
 
-	reload_contents(fnode = "", ifnode = "", item_active = "") 
+	reload_contents(fnode = "", ifnode = "", item_active = "")
 	{
 		this.item_active = item_active
 		this.fnode = fnode
@@ -59,7 +58,7 @@ class sld03_div_seleccion_middle extends html_style {
 		this.content += this.h2_01.code
 	}
 
-	create_div() 
+	create_div()
 	{
 		this.div_01.code = ""
 		this.div_01.content = ""
@@ -67,13 +66,13 @@ class sld03_div_seleccion_middle extends html_style {
 		this.content += this.div_01.code
 	}
 
-	create_ul() 
+	create_ul()
 	{
 		this.ul_01 		= new tax02_ul_peloncita(this.fnode.tnode)
 		this.content 	+= this.ul_01.code
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.code = ""
 		this.content = ""

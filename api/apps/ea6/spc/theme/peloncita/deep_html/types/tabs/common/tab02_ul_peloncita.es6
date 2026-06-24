@@ -14,107 +14,106 @@
 //  LI - START REPEAT
 //*  A
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Html Slider UL Peloncita 
+// Html Slider UL Peloncita
 // ------------------------------------------------------------------------------------
 // Methods:
-// - build_data   	  : Build html final code for object 
+// - build_data   	  : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var { html_style } 		= require(	'/brqx/base/rcode/es6/com/objects/html/html_style.es6'		)
 
 
 class tab02_ul_peloncita_middle extends html_style{
 
-             
-    constructor (   fnode   				= 	''  	,	
+
+    constructor (   fnode   				= 	''  	,
     								index_id				=	'id' 	,
 									index_name				= 	'txt'	)
-															
-									                                
-   {   
+
+
+   {
     // El constructor debe cargar las propiedades del archivo
-    
+
         super()
-        
-        this.tag_type        		=      	'ul'                    			
 
-		this.n						= 'sld02_ul_mid::'				    		
+        this.tag_type        		=      	'ul'
 
-    	this.num_elements_menu   = ''     
+		this.n						= 'sld02_ul_mid::'
 
-    	index_id 			=	'id'							
-    	index_name 		=	'txt'							
+    	this.num_elements_menu   = ''
+
+    	index_id 			=	'id'
+    	index_name 		=	'txt'
 
 
-		this.index_id 			=		index_id							
-		this.index_name 			=		index_name 						
+		this.index_id 			=		index_id
+		this.index_name 			=		index_name
 
-        super.constructor(this.tag_type)								    
+        super.constructor(this.tag_type)
 
-		this.fnode				=		fnode								
-    
-        this.li_01          		=       
-        					new tab01_li_peloncita_middle(	this.fnode)		
+		this.fnode				=		fnode
 
-       	this.build_data()                                              			
+        this.li_01          		=
+        					new tab01_li_peloncita_middle(	this.fnode)
+
+       	this.build_data()
 
 
     }
 
     build_data()
     {
-    this.code       =       '' 
-    this.content    =       '' 
+    this.code       =       ''
+    this.content    =       ''
 
-	this.class 	  =		'nav nav-tabs nav-tabs-responsive2'						
+	this.class 	  =		'nav nav-tabs nav-tabs-responsive2'
 
     this.num_elements_menu = this.fnode.arr[this.index_name].length
 
 	// 10 - bad
-	// this.p('Num-002 - ' + this.num_elements_menu)								
-  
+	// this.p('Num-002 - ' + this.num_elements_menu)
+
     // Clean al JS Code
     let sw_active = 0     // To set first active class
-    
+
     // REVISAR BUCLE
 
-	for (var slide_num in this.fnode.arr[this.index_id]) 
+	for (var slide_num in this.fnode.arr[this.index_id])
 	{
-		var slide_name			=	this.fnode.arr[this.index_id][slide_num] 
-                
+		var slide_name			=	this.fnode.arr[this.index_id][slide_num]
+
         this.replace(slide_name , " ", "-")
         var slide_hyphen = this.result
 
 //		<a id="Primer-vistazo-tab" data-toggle="tab" href="#Primer-vistazo" role="tab" aria-controls="Primer-vistazo" aria-expanded="true">
 //			<span class="text"> Primer vistazo </span>
 
-        let span_text            	=	slide_name 										
-        let a_id  	        		=   slide_hyphen 										
-        let a_aria_controls     	=	slide_hyphen										   
+        let span_text            	=	slide_name
+        let a_id  	        		=   slide_hyphen
+        let a_aria_controls     	=	slide_hyphen
 		let a_href            		=   "#" + 		 slide_hyphen
-		let li_class				=	''							  
+		let li_class				=	''
         let a_aria_expanded			=	''
 
-    
-		// General Num 0    
+
+		// General Num 0
         if ( !empty(slide_name) 									)
         {
 
           // Empty code for every slide
-          this.li_01.content=''        
-          this.li_01.code=''        
+          this.li_01.content=''
+          this.li_01.code=''
 
           if (sw_active == 0)
-          { 
-            li_class 			=	"active" 	
-			a_aria_expanded	=	"true"		
+          {
+            li_class 			=	"active"
+			a_aria_expanded	=	"true"
           }
 		  else if  (sw_active == 1)
 		  {
             li_class = "next"
 			a_aria_expanded	=	""
 		  }
-          else 
+          else
 		  {
             li_class = ""
 			a_aria_expanded	=	""
@@ -122,26 +121,26 @@ class tab02_ul_peloncita_middle extends html_style{
 
           sw_active++
 
-          this.li_01.reload_contents( 
-				li_class             	,	// 01	
+          this.li_01.reload_contents(
+				li_class             	,	// 01
 	            span_text            	,	// 02
-                a_id  	        		,	// 03   
-                a_aria_controls     	,	// 04   
+                a_id  	        		,	// 03
+                a_aria_controls     	,	// 04
 				a_aria_expanded		,	// 05
-				a_href						// 06					
+				a_href						// 06
 		  )
-                    
+
           this.content        +=    this.li_01.code
 
-            
+
         } // end If
-                
+
      } // end for
 
-	
-	this.pcreate() 														
-	// this.d('code:>' + this.code)										
-      
+
+	this.pcreate()
+	// this.d('code:>' + this.code)
+
   	} // End Build Data
 
 

@@ -10,10 +10,9 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"		);
 
 const 	{ params_def } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/params/p02_params_def.es6'	),
-		mongoose 			= 	require(	cons.NODE_MOD 	+ 	'mongoose'									),
+		mongoose 			= 	require(	'mongoose'									),
  		{ idSchema }		= 	require(	cons.JS_BASE 	+ 	'com/libs/mongo/schemes/html.sch'			);
 
 class params extends params_def {
@@ -32,7 +31,7 @@ class params extends params_def {
 					site_name		=	'truck'							,	// 13. Site name
 					theme_name		=	'truck'							,	// 14. Theme name
 					base_path		=	'/brqx/pers/drupal/v50/fnode/' 	, 	// 15 Base Path
-					htmScheme		=	''								) 	// 16. Mongo Scheme 
+					htmScheme		=	''								) 	// 16. Mongo Scheme
 	{
 		super()
 		this.n 					= 	"params::"
@@ -71,7 +70,7 @@ class params extends params_def {
 
 		// Se pasa la function y se interpreta ya como objeto mongo htmScheme
 		this.sch				=	htmScheme					// 16
-	
+
 	}
 }
 

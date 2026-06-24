@@ -24,7 +24,7 @@
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 
-const 	echo 		= 	require(	cons.NODE_MOD 	+ 'node-echo'										);
+const 	echo 		= 	require(	'node-echo'										);
 
 
 function countdim(my_array)

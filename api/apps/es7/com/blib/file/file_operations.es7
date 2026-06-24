@@ -24,10 +24,10 @@ const   fs           =   require(  'fs'                                         
         path         =   require(  'path'                                                ),
         os           =   require(  'os'                                                  ),
         util         =   require(  'util'                                                ),
-        empty        =   require(  cons.NODE_MOD + 'is-empty'                            ),
-        trim         =   require(  cons.NODE_MOD + 'trim'                                ),
-        mkdirp       =   require(  cons.NODE_MOD + 'mkdirp'                     ),
-        del          =   require(  cons.NODE_MOD + 'del'                        );
+        empty        =   require(  'is-empty'                            ),
+        trim         =   require(  'trim'                                ),
+        mkdirp       =   require(  'mkdirp'                     ),
+        del          =   require(  'del'                        );
 
 //---------------------------------------------------------------------------------------------
 

@@ -9,7 +9,7 @@
 //L[06]  <link rel="stylesheet" href="assets/css/style.css">
 //L[07]  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css"/>
 //L[08]  <link rel="stylesheet" href="libs/googleplus/jquery.kyco.googleplusfeed2.css">
-																			  
+
 // ------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Class:c-scr01_js_dog-
@@ -20,38 +20,37 @@
 // - d-create_link_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"	)
 
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			),		
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			),
 		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'		);
 
 
 class lnk02_css_link_dog extends getset  {
 
     constructor (     thm	              						)
-    {   
+    {
 
 		super()
 
-		this.n							=	'lnk02_css_as_link_dog::'						
+		this.n							=	'lnk02_css_as_link_dog::'
 		this.m							=	'constructor'
 
-		this.thm						=	thm							
-	
+		this.thm						=	thm
+
 		this.link_jquery				=	new html_style('link')
 		this.link_bootstrap				=	new html_style('link')
 		this.link_main					=	new html_style('link')
 		this.link_flex					=	new html_style('link')
 		this.link_googleplus			=	new html_style('link')
 
-		this.build_data()													
+		this.build_data()
 
     }
 
 	//L[04]  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     create_jquery()
     {
-		this.link_jquery.rel			 	=  'stylesheet'														
+		this.link_jquery.rel			 	=  'stylesheet'
 
 		this.link_jquery.type			=	'text/css'
 
@@ -61,24 +60,24 @@ class lnk02_css_link_dog extends getset  {
 			this.link_jquery.as			=	'style'
 		}
 
-	
-		let jquery_uri					=	
-			"https://code.jquery.com/ui/1.12.1/themes/smoothness/"	
 
-		this.link_jquery.href			=  
-			jquery_uri + 'jquery-ui.css' 								
+		let jquery_uri					=
+			"https://code.jquery.com/ui/1.12.1/themes/smoothness/"
 
-		this.link_jquery.pcreate()																		
-		
-		this.code							+=	this.link_jquery.code										
-	}		
+		this.link_jquery.href			=
+			jquery_uri + 'jquery-ui.css'
+
+		this.link_jquery.pcreate()
+
+		this.code							+=	this.link_jquery.code
+	}
 
 	//L[05]  <link rel="stylesheet" href="libs/bootstrap4/css/bootstrap.min.css">
     create_bootstrap()
     {
 		let css_name 						=	'bootstrap.min.css'
 
-		this.link_bootstrap.rel			 	=  	'stylesheet'														
+		this.link_bootstrap.rel			 	=  	'stylesheet'
 
 		this.link_bootstrap.type			=	'text/css'
 
@@ -89,14 +88,14 @@ class lnk02_css_link_dog extends getset  {
 		}
 
 		let bootstrap_path					= 	'bootstrap4/css/' 	+ css_name
-	
-		this.link_bootstrap.href					=  	
+
+		this.link_bootstrap.href					=
 				this.thm.u.http_domainbar + 'r_fassets/libs/' + bootstrap_path
 
-		this.link_bootstrap.pcreate()																		
-		
-		this.code							+=	this.link_bootstrap.code										
-	}		
+		this.link_bootstrap.pcreate()
+
+		this.code							+=	this.link_bootstrap.code
+	}
 
 
 	//L[06]  <link rel="stylesheet" href="assets/css/style.css">
@@ -106,7 +105,7 @@ class lnk02_css_link_dog extends getset  {
 
 		let css_name 						=	'style'
 
-		this.link_main.rel				 	=  	'stylesheet'														
+		this.link_main.rel				 	=  	'stylesheet'
 
 		this.link_main.type					=	'text/css'
 
@@ -115,19 +114,19 @@ class lnk02_css_link_dog extends getset  {
 			this.link_main.preload			=	'preload'
 			this.link_main.as				=	'style'
 		}
-			
 
-		if ( this.thm.b.site_live )		
-			css_name 						+=	'_live'				
 
-		this.link_main.href					=  	
-				this.thm.u.http_domainbar + 'r_assets/css/' + css_name + '.css'									
-	
-		this.link_main.pcreate()														
-		
-		this.code							+=	this.link_main.code					
+		if ( this.thm.b.site_live )
+			css_name 						+=	'_live'
 
-	}		
+		this.link_main.href					=
+				this.thm.u.http_domainbar + 'r_assets/css/' + css_name + '.css'
+
+		this.link_main.pcreate()
+
+		this.code							+=	this.link_main.code
+
+	}
 
 	//L[06]  <link rel="stylesheet" href="css/product.css">
 	create_product()
@@ -136,7 +135,7 @@ class lnk02_css_link_dog extends getset  {
 
 		let css_name 						=	'product'
 
-		this.link_product.rel				 =  'stylesheet'														
+		this.link_product.rel				 =  'stylesheet'
 
 		this.link_product.type				=	'text/css'
 
@@ -145,26 +144,26 @@ class lnk02_css_link_dog extends getset  {
 			this.link_product.preload		=	'preload'
 			this.link_product.as			=	'style'
 		}
-			
 
-		if ( this.thm.b.site_live )		
-			css_name 						+=	'_live'				
 
-		this.link_product.href				=  	
-				this.thm.u.http_domainbar + 'r_cassets/css/' + css_name + '.css'									
-	
-		this.link_product.pcreate()														
-		
-		this.code							+=	this.link_product.code					
+		if ( this.thm.b.site_live )
+			css_name 						+=	'_live'
 
-	}		
+		this.link_product.href				=
+				this.thm.u.http_domainbar + 'r_cassets/css/' + css_name + '.css'
+
+		this.link_product.pcreate()
+
+		this.code							+=	this.link_product.code
+
+	}
 
 	//L[07]  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css"/>
     create_flex()
     {
 		// External Div - Bootstrap style
 
-		this.link_flex.rel			 		=  	'stylesheet'														
+		this.link_flex.rel			 		=  	'stylesheet'
 
 		this.link_flex.type					=	'text/css'
 
@@ -173,14 +172,14 @@ class lnk02_css_link_dog extends getset  {
 			this.link_flex.preload			=	'preload'
 			this.link_flex.as				=	'style'
 		}
-		
-		let flexslider_uri					=	"https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/"	
-		this.link_flex.href			 		=  	flexslider_uri + 'flexslider.min.css' 								
-		this.link_flex.pcreate()																	
-		
-		this.code							+=	this.link_flex.code										
 
-	}		
+		let flexslider_uri					=	"https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/"
+		this.link_flex.href			 		=  	flexslider_uri + 'flexslider.min.css'
+		this.link_flex.pcreate()
+
+		this.code							+=	this.link_flex.code
+
+	}
 
 	//L[08]  <link rel="stylesheet" href="libs/googleplus/jquery.kyco.googleplusfeed2.css">
     create_googleplus()
@@ -188,7 +187,7 @@ class lnk02_css_link_dog extends getset  {
 
 		let css_name 						=	'jquery.kyco.googleplusfeed2.css'
 
-		this.link_googleplus.rel	 		=  	'stylesheet'														
+		this.link_googleplus.rel	 		=  	'stylesheet'
 
 		this.link_googleplus.type			=	'text/css'
 
@@ -200,14 +199,14 @@ class lnk02_css_link_dog extends getset  {
 
 		let googleplus_path					= 	'googleplus/' 	+ css_name
 
-		this.link_googleplus.href					=  	
-				this.thm.u.http_domainbar + 'r_fassets/libs/' + googleplus_path 									
+		this.link_googleplus.href					=
+				this.thm.u.http_domainbar + 'r_fassets/libs/' + googleplus_path
 
-		this.link_googleplus.pcreate()																	
-		
-		this.code							+=	this.link_googleplus.code										
+		this.link_googleplus.pcreate()
 
-	}		
+		this.code							+=	this.link_googleplus.code
+
+	}
 
     build_data()
     {
@@ -218,26 +217,26 @@ class lnk02_css_link_dog extends getset  {
 		this.create_googleplus()
 
 /*
-		if ( this.thm.b.site_live )		
+		if ( this.thm.b.site_live )
 		{
 			// LIVE
-			if (this.thm.b.page_product) 	
-				this.create_product()													
+			if (this.thm.b.page_product)
+				this.create_product()
 			else
 				this.create_main()
 		}
 		else
 		{
 			// DEV
-			if (this.thm.b.page_product) 	
-				this.create_product()													
+			if (this.thm.b.page_product)
+				this.create_product()
 			this.create_main()
 
 
 		}
 		// Ok [18-01-11]
 */
-		// this.p('Code : >' + this.code ) 											
+		// this.p('Code : >' + this.code )
 
     } // End method
 

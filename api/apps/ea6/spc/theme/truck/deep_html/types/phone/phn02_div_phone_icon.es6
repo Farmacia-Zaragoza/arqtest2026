@@ -16,14 +16,13 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 const	{ svg_style } 		= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'		);
 
 
 class phn02_div_phone_icon extends svg_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type = "div"
 
@@ -43,24 +42,24 @@ class phn02_div_phone_icon extends svg_style {
 		this.svg_name 				= 	"phone_icon_white.svg"
 
 		this.svg_class				=	"email_icon_white"
-		
+
 		this.svg_alt				=	''	 // Pending to compose
-		
+
 		this.create_svg_base()
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
 
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.create_svg()
 		this.pcreate()
-		
+
 		// Ok [17-11-02]
-		// this.p('code >' + this.code)		
-		
+		// this.p('code >' + this.code)
+
 	}
 
 }

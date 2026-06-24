@@ -15,14 +15,13 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 const 	{ html_style } 		= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'								),
 		rnd 				= require( 	cons.JS_BASE + 'com/libs/arrays/random_array.es6'								);
-		
+
 
 class lks02_div_links_truck extends html_style {
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 		= "div"
 		super(tag_type)
@@ -36,7 +35,7 @@ class lks02_div_links_truck extends html_style {
 		this.build_data()
 	}
 
-	create_links() 
+	create_links()
 	{
 		this.data_links += ""
 		var link_01 = this.thm.u.lang_url + "product/truck/"
@@ -48,7 +47,7 @@ class lks02_div_links_truck extends html_style {
 		var num_mini_trucks = 34
 
 		// Random numbers - We will change for file
-		for (var cont = 1 ; cont < num_mini_trucks ;cont++) 
+		for (var cont = 1 ; cont < num_mini_trucks ;cont++)
 		{
 			number = rnd.random(1, num_elems)
 			this.data_links += link_01 + number
@@ -59,14 +58,14 @@ class lks02_div_links_truck extends html_style {
 		this.data_links += link_01 + number
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.create_links()
 		this.pcreate()
 
 		//Ok [17-12-08]
-		// this.p('code >' + this.code)												
+		// this.p('code >' + this.code)
 
 	}
 

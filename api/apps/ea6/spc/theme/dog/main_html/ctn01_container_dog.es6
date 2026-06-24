@@ -33,9 +33,8 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 							= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"								)
 
-const 	{ html_style } 					= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'									),		
+const 	{ html_style } 					= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'									),
 
 		{ div21_div_nxm_divs }			= 	require(	cons.JS_BASE  + 'spc/theme/common/structures/divs/div21_div_nxm_divs.es6'			),
 
@@ -55,13 +54,13 @@ const 	{ html_style } 					= 	require(	cons.JS_BASE  + 'com/objects/html/html_st
 class ctn01_container_dog extends html_style  {
 
     constructor (     thm						)
-    {   
-        let tag_type     				= 	'div'							
+    {
+        let tag_type     				= 	'div'
 
-       	super(				tag_type	)				
-        this.tag_type   	  			= 	'div'							
+       	super(				tag_type	)
+        this.tag_type   	  			= 	'div'
 
-		this.n							=	'ctn01_dog::'			
+		this.n							=	'ctn01_dog::'
 
 		// Html Objects
 
@@ -74,20 +73,20 @@ class ctn01_container_dog extends html_style  {
 		this.div_03						=	new html_style('div')
 		this.div_04						=	new html_style('div')
 
-	    this.miv_01			         	=	''    
+	    this.miv_01			         	=	''
 
-		this.thm						=	thm							
+		this.thm						=	thm
 
-		this.class	 					=	'container-fluid' 					
-		this.id		 					=	'container-fluid' 					
+		this.class	 					=	'container-fluid'
+		this.id		 					=	'container-fluid'
 
-		this.fnode						=	this.thm.arr['fnode']['image_list']			
+		this.fnode						=	this.thm.arr['fnode']['image_list']
 
 		// Tenemos que tener como un mapa del site
-		this.thm.map					= 	'body/container'					
+		this.thm.map					= 	'body/container'
 
-	
-		this.build_data()												
+
+		this.build_data()
 
     }
 	// <div id="truck_links" srcs="faceboook.com google.com"></div>
@@ -98,13 +97,13 @@ class ctn01_container_dog extends html_style  {
 		// https://twitter.com/intent/tweet?original_referer=&text=Monitor%20PC%20%2071%2C12%20cm%20(28%20%27%27)%20Samsung%20U28E590D%20UHD%204K&url=http%3A%2F%2Fwww.elcorteingles.es%2Felectronica%2FA18147994-monitor-pc-samsung-u28e590d-28-negro-plata-4k-ultra-hd%2F
 		// https://plus.google.com/share?url=http%3A%2F%2Fwww.elcorteingles.es%2Felectronica%2FA18147994-monitor-pc-samsung-u28e590d-28-negro-plata-4k-ultra-hd%2F
 		// https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.elcorteingles.es%2Felectronica%2FA18147994-monitor-pc-samsung-u28e590d-28-negro-plata-4k-ultra-hd%2F&media=//sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201602/18/00115216113959____1__440x440.jpg&description=Monitor%20PC%20%2071%2C12%20cm%20(28%20%27%27)%20Samsung%20U28E590D%20UHD%204K
-		
+
 		this.div_01.srcs				= 	"https://faceboook.com/uri_test https://google.com/uri_test"
 
 		this.div_01.id					=	'dog_links'
-		
+
 		this.div_01.pcreate()
-		
+
 		this.content					=	this.div_01.code
 
 	}
@@ -116,16 +115,16 @@ class ctn01_container_dog extends html_style  {
 		let  	class_02	=	'row background-row background-row-dark justify-content-center'
 		let  	class_03	=	'row background-row background-row-light justify-content-center'
 
-   	 	this.miv_01		= 	
-   					new div21_div_nxm_divs( 
-						class_01, class_02 , class_03, 10 )	
-   					
+   	 	this.miv_01		=
+   					new div21_div_nxm_divs(
+						class_01, class_02 , class_03, 10 )
+
 
 		// Ok
 		// this.p('ctnr_miv:cod >' + this.code)
 
   		this.content			+=	this.miv_01.code
-  		  		
+
 	}
 
 	// <div class="row justify-content-center" id="top-row-images"
@@ -134,21 +133,21 @@ class ctn01_container_dog extends html_style  {
 		this.div_02.class		=	'row justify-content-center'
 		this.div_02.id			=	"top-row-images"
 
-		//Number of Top Images for 
+		//Number of Top Images for
 		//LargeDesktop - ImageDesktop - Tablet - LandscapePhone - PortraitPhone
-		
+
 		this.div_02.resnumbers	=	"8,6,5,4,3"
-		
+
 		this.div_02.pcreate()
   		this.content			+=	this.div_02.code
 	}
 
-	//<div class="row align-items-center " id="language-slider"></div>	
+	//<div class="row align-items-center " id="language-slider"></div>
 	create_language_slider()
 	{
 		this.div_03.class		=	'row align-items-center'
 		this.div_03.id			=	"language-slider"
-		
+
 		this.div_03.pcreate()
   		this.content			+=	this.div_03.code
 	}
@@ -156,24 +155,24 @@ class ctn01_container_dog extends html_style  {
 	// <div class="row">... resnumbers="6,6,4,4,4"
 	create_row_slider()
 	{
-  		this.miv_02		= 	
-  				new div01_slider_row_dog(	this.thm	)			
+  		this.miv_02		=
+  				new div01_slider_row_dog(	this.thm	)
 
 		// Ok
 		//this.p('ctnr_miv:cod >' + this.miv_02.code)
-	
-		this.content			+=	this.miv_02.code							
+
+		this.content			+=	this.miv_02.code
 	}
 
 	// <div class="row links align-items-center">
 	create_links()
 	{
-  		this.miv_03		= 	
-  				new div03_buttons_dog(	this.thm	)			
+  		this.miv_03		=
+  				new div03_buttons_dog(	this.thm	)
 
 		// this.p('ctnr_miv:cod >' + this.miv_03.code)
-	
-		this.content			+=	this.miv_03.code							
+
+		this.content			+=	this.miv_03.code
 	}
 
 
@@ -185,27 +184,27 @@ class ctn01_container_dog extends html_style  {
 
 		this.div_02.style		=	'margin-bottom: 35px;'
 
-		//Number of Top Images for 
+		//Number of Top Images for
 		//LargeDesktop - ImageDesktop - Tablet - LandscapePhone - PortraitPhone
-		
+
 		// Same numbers
 		//this.div_02.resnumbers	=	"8,6,5,4,3"
-		
+
 		this.div_02.pcreate()
   		this.content			+=	this.div_02.code
-  		
+
 		// this.p('btnr_div:cod >' + this.div_02.code)
-  		
+
 	}
 
 	// <div class="row">
 	create_row_slider_bottom()
 	{
 		// BOTTOM MENU
-  		this.miv_02		= 	
-  				new div03_menu_dog(	this.thm	)			
-	
-		this.content			+=	this.miv_02.code							
+  		this.miv_02		=
+  				new div03_menu_dog(	this.thm	)
+
+		this.content			+=	this.miv_02.code
 
 		// this.p('sldr_miv:cod >' + this.miv_02.code)
 
@@ -218,7 +217,7 @@ class ctn01_container_dog extends html_style  {
 		this.img_01.class		=	'black-happy-dog desktop'
 
 		this.img_01.percents	=	'20,10,70'
-		
+
 		this.img_01.pcreate()
   		this.content			+=	this.img_01.code
 	}
@@ -234,26 +233,26 @@ class ctn01_container_dog extends html_style  {
 	// <div class="mini-edu desktop">
 	create_helper_page()
 	{
-  		this.zone_01		= 	
-  				new zne04_helper_dog(	this.thm	)			
-	
-		this.content			+=	this.zone_01.code							
+  		this.zone_01		=
+  				new zne04_helper_dog(	this.thm	)
+
+		this.content			+=	this.zone_01.code
 	}
 
 	create_mobile_langs()
 	{
-  		this.miv_01		= 	
-  				new div03_mobile_langs_dog(	this.thm	)			
-	
-		this.content			+=	this.miv_01.code							
+  		this.miv_01		=
+  				new div03_mobile_langs_dog(	this.thm	)
+
+		this.content			+=	this.miv_01.code
 	}
 
 	create_hidden_elems()
 	{
-		
+
 		this.zone_02			=	new zne02_hiddens_dog(this.thm)
 
-		this.content			+=	this.zone_02.code							
+		this.content			+=	this.zone_02.code
 
 	}
 
@@ -265,7 +264,7 @@ class ctn01_container_dog extends html_style  {
 		this.a_01.pcreate()
 
 		this.content			+=	this.a_01.code
-		
+
 		this.a_01.id			=	'twitter-link'
 		this.a_01.href			=	this.thm.s.twitter
 		this.a_01.pcreate()
@@ -283,19 +282,19 @@ class ctn01_container_dog extends html_style  {
 		this.a_01.pcreate()
 
 		this.content			+=	this.a_01.code
-	
+
 	}
-	
+
     build_data()
     {
-	// Structure Container 
+	// Structure Container
 	// [DOG_LINKS] [SECTION] [SECTION] [FOOTER] [CAPTCHA]
 
-		this.content			=	''									
+		this.content			=	''
 
 		this.create_button_feeds_links()
-		
-		this.create_dog_links()											
+
+		this.create_dog_links()
 
 		this.create_top_row_images()
 
@@ -316,12 +315,12 @@ class ctn01_container_dog extends html_style  {
 		this.create_helper_page()
 
 		this.create_mobile_langs()
-		
+
 		this.create_hidden_elems()
 
 		this.create_social_links()
 
-		this.pcreate()											
+		this.pcreate()
 
 		// Ok [18-01-03]
 		// this.p('ctnr:codl >' + this.code.length)

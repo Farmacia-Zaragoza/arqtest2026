@@ -13,13 +13,12 @@
 //- d-build_dimensions-                    : Generate dimensions for photo
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var	{ inode } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/node/inode.ea6'	)	
+var	{ inode } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/node/inode.ea6'	)
 
 class in02_simple extends inode {
 
-	constructor(original_image_url_path = "", fnode = "", img_type_save = "path", stype = "cica_image") 
+	constructor(original_image_url_path = "", fnode = "", img_type_save = "path", stype = "cica_image")
 	{
 		super()
 		this.n = "in02_simple::"
@@ -51,17 +50,17 @@ class in02_simple extends inode {
 		this.suffix_code = this.suffix + "_code" + ".isimple"
 		this.generate_load_from_disk_path()
 
-		if (this.s.load == "drupal") 
+		if (this.s.load == "drupal")
 		{
 			this.run_from_drupal()
-		} 
-		else 
+		}
+		else
 		{
 			this.run_from_disk()
 		}
 	}
 
-	get_child_properties(prop, value) 
+	get_child_properties(prop, value)
 	{
 		if (prop == "name") this.image_name = value
 		else if (prop == "type") this.img_type_save = value
@@ -88,9 +87,9 @@ class in02_simple extends inode {
 		}
 	}
 
-	load_child_details() 
+	load_child_details()
 	{
-		if (this.s.load == "drupal") 
+		if (this.s.load == "drupal")
 		{
 			var arr_url = parse_url(this.original_image_url_path)
 			this.img_path = this.u.site_path + arr_url.path

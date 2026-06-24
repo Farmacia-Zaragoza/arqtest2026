@@ -15,14 +15,13 @@
 //- create_div_NN    	: Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
 const 	{ html_style } 				= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'											),
 		{ des01_div_parragraph }	= require( 	cons.JS_BASE + 'spc/theme/truck/deep_html/types/descriptions/des01_p_parragraph.es6'		);
 
 class des02_div_descriptions extends html_style {
 
-	constructor(thm, alignment = "text-center") 
+	constructor(thm, alignment = "text-center")
 	{
 		let tag_type 				= "div"
 		super(tag_type)
@@ -37,7 +36,7 @@ class des02_div_descriptions extends html_style {
 		this.build_data()
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 
@@ -46,7 +45,7 @@ class des02_div_descriptions extends html_style {
 		else
 		{
 			// Aqui queremos solo recorrer el bucle
-			for (var slide_num in this.fnode.arr['oim']) 
+			for (var slide_num in this.fnode.arr['oim'])
 			{
 				// var img_name = _fnode_arr_oim[slide_num]
 				this.content += this.div_01.code
@@ -57,7 +56,7 @@ class des02_div_descriptions extends html_style {
 
 		// Ok [17-11-02]
 		// this.p('Code : > ' + this.code)
-		
+
 	}
 
 }

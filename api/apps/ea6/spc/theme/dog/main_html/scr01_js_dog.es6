@@ -26,9 +26,8 @@
 // - d-create_marquee-		: Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 							= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"								)
 
-const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),		
+const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
 		{ html_style } 					= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									),
 		{ scr02_js_scripts_dog }		= 	require(	cons.JS_BASE + 'spc/theme/dog/deep_html/scripts/scr02_js_scripts_dog.es6'			),
 		{ scr03_js_minimized_dog }		= 	require(	cons.JS_BASE + 'spc/theme/dog/deep_html/scripts/scr03_js_minimized_dog.es6'			),
@@ -40,32 +39,32 @@ const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'
 class scr01_js_dog extends getset  {
 
     constructor (     thm	              						)
-    {   
+    {
 		super()
 
-		this.n							=	'scr01_dog::'						
+		this.n							=	'scr01_dog::'
 		this.m							=	'constructor'
 
-		this.thm						=	thm							
+		this.thm						=	thm
 
 		// External object
 		this.script_to_load				=	''
 		this.script_to_load2				=	''
-		
+
 		// Composition object
-	 	this.compo_scripts				=	''																							
-		
-		this.build_data()													
+	 	this.compo_scripts				=	''
+
+		this.build_data()
     }
 
 
 	check_loaded_scripts()
 	{
-		this.head_code = ''				
+		this.head_code = ''
 
 		this.compo_scripts	= new cn03_scripts(this.thm.u , 'scripts')
 
-		if ( this.compo_scripts.is_correct_to_reload_type() ) 
+		if ( this.compo_scripts.is_correct_to_reload_type() )
 		{
 
 			if ( !this.thm.b.site_live )
@@ -73,9 +72,9 @@ class scr01_js_dog extends getset  {
 				this.script_to_load 	= 	new scr02_js_scripts_dog(this.thm)
 
 				// DEV - requiere primero los otro scripts
-				
+
 				// MAIN - PRODUCT
-				this.code					+=	this.script_to_load.code	
+				this.code					+=	this.script_to_load.code
 
 			}
 			else
@@ -100,28 +99,28 @@ class scr01_js_dog extends getset  {
 				else
 					this.p('wrong_parameter ' + this.thm.s.live_opt )
 
-				this.code					+=	this.script_to_load.code	
+				this.code					+=	this.script_to_load.code
 
 				if 	( this.thm.s.live_opt === 'inline_and_save')
-					this.code				+=	this.script_to_load2.code	
+					this.code				+=	this.script_to_load2.code
 			}
-			
-			// Actualizamos el codigo del objeto
-			this.compo_scripts.load_type_details(this.code)					
-		}		
 
-		this.code	=	this.compo_scripts.code						
-		
+			// Actualizamos el codigo del objeto
+			this.compo_scripts.load_type_details(this.code)
+		}
+
+		this.code	=	this.compo_scripts.code
+
 	}
 
 
     build_data()
     {
 
-		this.check_loaded_scripts()													
+		this.check_loaded_scripts()
 
 		// Ok [18-01-12]
-		// this.p('js_Code : >' + this.code ) 											
+		// this.p('js_Code : >' + this.code )
 
     }
 

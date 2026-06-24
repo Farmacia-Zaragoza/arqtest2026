@@ -8,7 +8,7 @@
 
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   echo             =   require(  cons.NODE_MOD +  'node-echo'                           ),
+const   echo             =   require(  'node-echo' ),
        { json_copy }     =   require(  cons.JS_TYP7 + 'json/jtype/json_copy.es7'         );
 
 class json  extends json_copy {

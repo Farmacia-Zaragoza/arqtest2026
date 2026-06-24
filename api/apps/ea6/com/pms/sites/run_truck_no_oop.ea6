@@ -16,37 +16,37 @@
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 const 	{ pn01_simple } 	= require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'					),
-		run  				= require(	cons.JS_BASE + 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'					),	
-		def  				= require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple_def.ea6'				),	
+		run  				= require(	cons.JS_BASE + 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'					),
+		def  				= require(	cons.JS_BASE + 'spc/theme/truck/fast_node/pnode/pn01_simple_def.ea6'				),
 		{ pn02_fast } 		= require(	cons.JS_BASE + 'spc/theme/common/fast_node/pnode/pn02_fast.es6'						),
-		empty 				= require(	'/brqx/base/react/zcommon/node_modules/is_empty'									),
-		trim 				= require(	'/brqx/base/react/zcommon/node_modules/trim'										),
-		echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
+		empty 				= require(	'is_empty'									),
+		trim 				= require(	'trim'										),
+		echo 				= require(	'node-echo'									);
 
 
 // QUIERO HACER UN ENFOQUE DE PROMESAS
 // PRIMERO NECESITO UN SISTEMA NO OOP
 
-function truck(t	= '' )	
+function truck(t	= '' )
 {
-		
-	if (t.b.site_cache && 
-		(t.b.page_download || 
-			(t.c.ram == "noreload" ) && 
+
+	if (t.b.site_cache &&
+		(t.b.page_download ||
+			(t.c.ram == "noreload" ) &&
 			!(t.c.arr['ram'].includes("FPC"))
 		)
-	   ) 
+	   )
 	{
 		// t.p('Entering fast')
 		t.pnode = new pn02_fast(t.u)
 	}
 
-	if ("A" === "A") 
-		if ( t.b.site_cache 									&& 
-			(t.c.ram 		== 	"noreload"	) 				&& 
-			!(t.c.arr['ram'].includes("FPC")	)	  			&& 
-			(!empty(t.pnode)					)				&& 
-			(t.pnode.status == 1				)			    ) 
+	if ("A" === "A")
+		if ( t.b.site_cache 									&&
+			(t.c.ram 		== 	"noreload"	) 				&&
+			!(t.c.arr['ram'].includes("FPC")	)	  			&&
+			(!empty(t.pnode)					)				&&
+			(t.pnode.status == 1				)			    )
 		{
 
 			// echo("FPC" )
@@ -57,8 +57,8 @@ function truck(t	= '' )
 			var start_time = global.GLOBALS.start_time
 			var total_time = Math.round(stop_time - start_time, 4)
 			var time_str = total_time + " segundos "
-		} 
-		else if (t.s.load != "drupal") 
+		}
+		else if (t.s.load != "drupal")
 		{
 			var supermnu_dats = t.supermnu_libs + "dats/" + t.theme_name + "/"
 
@@ -68,50 +68,50 @@ function truck(t	= '' )
 
 			t.pnode = new pn01_simple(t.u)
 
-			if (this.s.load == "drupal") 
+			if (this.s.load == "drupal")
 				{
 					this.run_from_drupal()
-				} else 
+				} else
 				{
-					// 
+					//
 				// 1.Crea las rutas para la consulta
-					this.check_common_and_create_paths()					
-			
+					this.check_common_and_create_paths()
+
 				// 2. Si existe el fichero recupera las propiedades ( methodo del hijo )
-			
-					this.generate_object_info() 												 
-				
+
+					this.generate_object_info()
+
 					// Si hay codigo sale exitoso. Sino entra
-			
-					let we_dont_have_code_ready_to_use = true  
-			
+
+					let we_dont_have_code_ready_to_use = true
+
 					// 1. Intentamos obtener el codigo si no han dicho reload
 					if (this.b.type_have_code)
-					{ 
-						we_dont_have_code_ready_to_use = this.dont_exist_and_get_ram_code()  				
+					{
+						we_dont_have_code_ready_to_use = this.dont_exist_and_get_ram_code()
 					}
-			
-					if (('A' == 'A') && 
+
+					if (('A' == 'A') &&
 						we_dont_have_code_ready_to_use		)
 					{
-						this.if_is_correct_get_ram_properties()  
+						this.if_is_correct_get_ram_properties()
 
-						// Call RAM - SSD - DISK - SAVE ( get_current_properties_disk... ) 
-			
-						// this.p('Abc_GET_RAM_PROPERTIES')	
-						
-					}	
+						// Call RAM - SSD - DISK - SAVE ( get_current_properties_disk... )
+
+						// this.p('Abc_GET_RAM_PROPERTIES')
+
+					}
 
 
 					this.run_from_disk()
 				}
-	
+
 			this.status = true
 
 
 				// this.p('SITE_LIVE : ' + this.b.site_live + ' = ' +  false)
 
-			if ( ("A" === "A") && t.pnode.status) 
+			if ( ("A" === "A") && t.pnode.status)
 			{
 				echo("NOCACHE_" + t.pnode.code.length)
 
@@ -123,4 +123,3 @@ function truck(t	= '' )
 
 
 module.exports.truck = truck
-

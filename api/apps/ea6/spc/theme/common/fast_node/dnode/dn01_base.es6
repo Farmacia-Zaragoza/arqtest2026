@@ -8,12 +8,11 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - build_data   	  : Build html final code for object 
-// - build_node       : Load all drupal node details 
+// - build_data   	  : Build html final code for object
+// - build_node       : Load all drupal node details
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
 
 var { pcomp } 			= require(	cons.JS_BASE + 'com/objects/drupal/node/dnode.es6'		)
@@ -22,30 +21,30 @@ var { pcomp } 			= require(	cons.JS_BASE + 'com/objects/drupal/node/dnode.es6'		
 class dn01_base extends dnode {
 
     constructor (	u					=	'' 		,
-    								nid	 			= 	''				// 01. Url Object   
-								)  
-    {   
+    								nid	 			= 	''				// 01. Url Object
+								)
+    {
 		// Podemos recuperar el objeto url actual
-		
+
 		this.b						= 	new bool()
 
-		this.u 				=	u 													
-		this.s 				=	this.u.s 										
-		this.c 				=	this.u.c 										
-				
-		
-		this.b.copy (this.s.b)													
-				
-		//		this.u				=	GLOBALS['SITE_URL_OBJECT'] 					
-      	super.constructor()			
+		this.u 				=	u
+		this.s 				=	this.u.s
+		this.c 				=	this.u.c
+
+
+		this.b.copy (this.s.b)
+
+		//		this.u				=	GLOBALS['SITE_URL_OBJECT']
+      	super.constructor()
     }
 
-    delete_current_properties() 
-    {   
+    delete_current_properties()
+    {
 //	  	print 'Pn04_Checking:  ' + 		this.u.user_type + '<br>'
 
-		this.delete_files_from_ssd_and_ram_anon()								        
-		this.delete_files_from_ssd_and_ram_auth()								        
+		this.delete_files_from_ssd_and_ram_anon()
+		this.delete_files_from_ssd_and_ram_auth()
 
 	}
 

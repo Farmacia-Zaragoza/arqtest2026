@@ -17,7 +17,6 @@
 //- build_data  	 : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 const	{ svg_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'							),
 		{ flg02_div_flags }			= 	require( 	cons.JS_BASE  + 'spc/theme/truck/deep_html/types/flags/flg02_div_flags.es6'	);
@@ -25,7 +24,7 @@ const	{ svg_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.
 
 class flg01_div_flags extends svg_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 								= "a"
 
@@ -46,16 +45,16 @@ class flg01_div_flags extends svg_style {
 	{
 		this.svg_path				= 	'r_img/flags/'
 		this.svg_name 				= 	"brqx_flag_" + this.flag_lang + "_" + "2016_320_200.svg"
-		
+
 		this.svg_alt				=	''	 // Pending to compose
-		
+
 		this.create_svg_base()
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
 
 
-	reload_contents(flag_lang = "", flag_caption = "", active = "") 
+	reload_contents(flag_lang = "", flag_caption = "", active = "")
 	{
 		this.flag_caption 	= flag_caption
 		this.flag_lang 		= flag_lang
@@ -67,7 +66,7 @@ class flg01_div_flags extends svg_style {
 		this.clean()
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content 			= ""
 		this.class 				= this.class_name + " " + this.flag_active
@@ -80,7 +79,7 @@ class flg01_div_flags extends svg_style {
 		this.pcreate()
 
 		//Ok [17-12-02]
-		// this.p('Code > ' + this.code.length)												
+		// this.p('Code > ' + this.code.length)
 
 	}
 

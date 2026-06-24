@@ -20,7 +20,6 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 
 const 	{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'						),
@@ -28,7 +27,7 @@ const 	{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_styl
 
 class flx03_div_flex_carousel extends html_style {
 
-	constructor(fnode = "") 
+	constructor(fnode = "")
 	{
 		let tag_type 		= "div"
 
@@ -43,13 +42,13 @@ class flx03_div_flex_carousel extends html_style {
 		this.build_data()
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content 		= ""
 		this.content 		+= this.ul_01.code
 		this.pcreate()
 
-		//$this->d('code >' . $this->code)		
+		//$this->d('code >' . $this->code)
 	}
 
 }

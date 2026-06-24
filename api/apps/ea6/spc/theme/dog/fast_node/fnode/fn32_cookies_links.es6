@@ -8,12 +8,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-get_child_properties-  				: Get specific child properties 
+// - d-get_child_properties-  				: Get specific child properties
 // - d-load_child_details-    				: Recover from drupal child properties
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-
-var 	cons 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"					);
 
 
 const	{ fnode } 			= 	require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.es6'						),
@@ -23,91 +21,91 @@ const	{ fnode } 			= 	require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.es6
 
 
 class fn32_cookies_links extends fnode {
-           
+
     constructor (   u					=	''				, // 02. U object
 					page_position		=	''				, // 07. Position id
-					stype				=	'cookies_links'	) // 08. Node Type  
-    {   
+					stype				=	'cookies_links'	) // 08. Node Type
+    {
 		super()
 
-		this.n 							=	'fn32_cookies_links::'			
+		this.n 							=	'fn32_cookies_links::'
 
-		this.page_position				=	page_position 										
+		this.page_position				=	page_position
 
-		this.u 							=	u 													
+		this.u 							=	u
 
-		this.s							=	this.u.s											
-		this.c 							=	this.u.c 										
+		this.s							=	this.u.s
+		this.c 							=	this.u.c
 
 		this.b							= 	new cbool()
-		this.b.copy (this.s.b)													
+		this.b.copy (this.s.b)
 
 
-    	this.type						=	'cookies_links_structure'					 // Type for structures			
-		this.short_type					=	'COK-LINKS'						
-    	
-    	
+    	this.type						=	'cookies_links_structure'					 // Type for structures
+		this.short_type					=	'COK-LINKS'
+
+
 		// String fnode / node / cica_recuerdo
 		this.ftype 						=	'fnode'															// Fast node type
-		this.stype 						=	stype															// Node subtype			
-		this.type_name					=	this.stype 													
-		
+		this.stype 						=	stype															// Node subtype
+		this.type_name					=	this.stype
+
 
 		//Setting array types for content type - Pending
 
 		this.b.type_user						=	false										 // Different content if is anonymous
 		this.b.type_human						= 	true 										 // if is dat file never will be erased on disk
-		this.b.type_common						=	true										
-		this.b.type_url							= 	false 										 // Pending 
-		this.b.type_translation					= 	false										
-		this.b.type_translated					= 	false										
+		this.b.type_common						=	true
+		this.b.type_url							= 	false 										 // Pending
+		this.b.type_translation					= 	false
+		this.b.type_translated					= 	false
 
 
-		this.b.type_have_taxonomy				=	false 										
-		this.b.type_have_code					=	false										
-		this.b.type_have_properties				=	true										
-		this.b.type_have_specific_properties	=	true										
+		this.b.type_have_taxonomy				=	false
+		this.b.type_have_code					=	false
+		this.b.type_have_properties				=	true
+		this.b.type_have_specific_properties	=	true
 
-		this.b.type_synced						=	true 										
+		this.b.type_synced						=	true
 
 		// this.p('Sync_servers ' + this.u.sync_server_to + ' F ' + this.u.sync_server_from)
 
 		// Type path adjustment
 
 		// fnode / file_structure
-		this.change							=	
-						'/' + this.ftype + '/' + this.type + '/' 	
+		this.change							=
+						'/' + this.ftype + '/' + this.type + '/'
 
-		// LANG_INDEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma 
+		// LANG_INDEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma
 
-		
-		this.suffix				=	this.stype					
-		this.suffix_disk		=	this.suffix																
-		this.suffix_lang		=	this.suffix 																
 
-   		this.suffix_code 		= 	this.suffix + '.' + this.u.ssl_page + 'cokl'							
+		this.suffix				=	this.stype
+		this.suffix_disk		=	this.suffix
+		this.suffix_lang		=	this.suffix
+
+   		this.suffix_code 		= 	this.suffix + '.' + this.u.ssl_page + 'cokl'
 
 
 		// Links information url - title - target - extended TeXt
-		let arrays_line = 'uri tit name'   
-		this.arr['types'] = arrays_line.split (' ') 	 
+		let arrays_line = 'uri tit name'
+		this.arr['types'] = arrays_line.split (' ')
 
 
 		// Method for disk load and to generate and save content
-		this.generate_load_from_disk_path()													
+		this.generate_load_from_disk_path()
 
-	
-		// this.p('0C_COOKIES_LINKS ' + this.load_from_disk_path)								
-		
+
+		// this.p('0C_COOKIES_LINKS ' + this.load_from_disk_path)
+
 		if (this.s.load == 'drupal')
 		{
-			this.run_from_drupal()															
+			this.run_from_drupal()
 		}
-		else 
+		else
 		{
-			this.run_from_disk()																
+			this.run_from_disk()
 		}
-		// this.p('RAM_COOKIES ' + this.ram_alias_path			)										
+		// this.p('RAM_COOKIES ' + this.ram_alias_path			)
     }
 
 
@@ -115,41 +113,41 @@ class fn32_cookies_links extends fnode {
 	{
 		// Convertimos description en un array de lines
 
-		// this.p('RUN_CHILD ' + this.description) 															
+		// this.p('RUN_CHILD ' + this.description)
 
-		var link = new lnk01_p_strong()  
-		
-		let links_code = ''								
-		
+		var link = new lnk01_p_strong()
 
-		for (var pos in this.arr['name']) 
+		let links_code = ''
+
+
+		for (var pos in this.arr['name'])
 		{
-			var name			=	this.arr['name'][pos] 
+			var name			=	this.arr['name'][pos]
 
 			// this.p('cook_nam ' + name )
 
-			let tit = this.arr['tit'][pos]   
-			let url = this.arr['url'][pos]   
+			let tit = this.arr['tit'][pos]
+			let url = this.arr['url'][pos]
 
-			link.reload_data(name , tit , url)	
-			
-			links_code += link.code 	
-			
+			link.reload_data(name , tit , url)
+
+			links_code += link.code
+
 		}
 
-		// this.p ('COOKIES_LINKS_CODE' + links_code)					
-					
-		this.code 		= links_code					 				
-	} 
+		// this.p ('COOKIES_LINKS_CODE' + links_code)
+
+		this.code 		= links_code
+	}
 
 
 	prepare_specific_child_properties()
 	{
-		this.arr['properties'].push(				"cookies_text" 		 	+ this.sep  + this.cookies_text			)			
-		this.arr['properties'].push(				"cookies_description" 	+ this.sep  + this.cookies_description	)	
-				
+		this.arr['properties'].push(				"cookies_text" 		 	+ this.sep  + this.cookies_text			)
+		this.arr['properties'].push(				"cookies_description" 	+ this.sep  + this.cookies_description	)
+
 	}
-  
+
 }
 
 exports.fn32_cookies_links = fn32_cookies_links

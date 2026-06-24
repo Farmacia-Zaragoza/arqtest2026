@@ -21,36 +21,35 @@
 // - d-join_scripts-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"								);
 
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),		
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
 		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									),
 		scpf				= 	require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'	),
-		UglifyES 			= 	require(	cons.NODE_MOD +	'uglify-es'															),		
-		minify 				= 	require(	cons.NODE_MOD +	'html-minifier'														).minify;
+		UglifyES 			= 	require(	'uglify-es'															),
+		minify 				= 	require(	'html-minifier'														).minify;
 
 
 class scr05_jshead_inline_dog extends getset  {
 
     constructor (     thm	              						)
-    {   
+    {
 
 		let 	tag_name		=		'script'
 		super( tag_name )
 
-		this.n					=		'scr01_truck::'						
+		this.n					=		'scr01_truck::'
 		this.m					=		'constructor'
 
-		this.thm				=		thm							
+		this.thm				=		thm
 
 		this.scr01				=		new html_style('script')
 
- 		this.scr01.type			=		"text/javascript" 
+ 		this.scr01.type			=		"text/javascript"
  		this.scr01.charset		=		"utf-8"
-	
+
 		this.script_code_path	=		''
 
-		this.create_font()													
+		this.create_font()
 
     }
 
@@ -58,10 +57,10 @@ class scr05_jshead_inline_dog extends getset  {
     create_font()
     {
 
-		let js_name 			=		'fontawesome_all.js'									
+		let js_name 			=		'fontawesome_all.js'
 
-		this.script_code_path				=  	
-				this.thm.u.site_path + 'r_fassets/libs/js/' + js_name						
+		this.script_code_path				=
+				this.thm.u.site_path + 'r_fassets/libs/js/' + js_name
 
 
 		this.scr01.content		=		scpf.file_get_code(this.script_code_path)
@@ -69,7 +68,7 @@ class scr05_jshead_inline_dog extends getset  {
 
 		this.code 				+= 		this.scr01.code
 
-	}		
+	}
 
 
 }

@@ -20,12 +20,12 @@
 var 	cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"							)
 
 const 	{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'								),
-		empty 					= 	require(	cons.NODE_MOD + 'is_empty'														),
+		empty 					= 	require(	'is_empty'														),
 		{ flg01_div_flags }		= 	require( 	cons.JS_BASE  + 'spc/theme/truck/deep_html/types/flags/flg01_div_flags.es6'		);
 
 class flg02_div_flags extends html_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 				= "div"
 
@@ -42,7 +42,7 @@ class flg02_div_flags extends html_style {
 		this.build_data()
 	}
 
-	reload_contents() 
+	reload_contents()
 	{
 		this.build_data()
 	}
@@ -59,17 +59,17 @@ class flg02_div_flags extends html_style {
 		{
 			// 10
 			// this.p ('LAN_LEN ' + this.fnode.arr['lan'].length )
-			 
-			for (var slide_num in this.fnode.arr['lan']) 
+
+			for (var slide_num in this.fnode.arr['lan'])
 			{
 				var current_lan 	= this.fnode.arr['lan'][slide_num]
 				var current_title 	= this.fnode.arr['tit'][slide_num]
 
-				if (!empty(current_lan)) 
+				if (!empty(current_lan))
 				{
 					if (cont > 0) current_active = ""
-					this.div_01.reload_contents(	current_lan, 
-													current_title, 
+					this.div_01.reload_contents(	current_lan,
+													current_title,
 													current_active)
 					options_content += this.div_01.code
 					cont++
@@ -79,14 +79,14 @@ class flg02_div_flags extends html_style {
 		this.content = options_content
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.create_bucle_options()
 		this.pcreate()
 
 		//Ok [17-06-24]
-		// this.p('Code > ' +  this.code)												
+		// this.p('Code > ' +  this.code)
 
 	}
 

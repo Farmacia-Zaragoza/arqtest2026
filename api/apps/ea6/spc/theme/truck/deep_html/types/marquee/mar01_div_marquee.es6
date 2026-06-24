@@ -21,18 +21,17 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 const 	{ html_style } 				= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'										);
 
 class mar01_div_marquee extends html_style {
 
-	constructor(fnode, marquee_content = "", marquee_speed = "50", marquee_direction = "horizontal", marque_data_hover = "toggleForward") 
+	constructor(fnode, marquee_content = "", marquee_speed = "50", marquee_direction = "horizontal", marque_data_hover = "toggleForward")
 	{
 		let tag_type 					= "div"
 
 		super(tag_type)
-		
+
 		this.n 							= "mar01_div_marquee::"
 		this.marquee_content 			= ""
 		this.marquee_direction 			= "horizontal"
@@ -58,7 +57,7 @@ class mar01_div_marquee extends html_style {
 		this.content = this.siv_01.code
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.create_div_01()

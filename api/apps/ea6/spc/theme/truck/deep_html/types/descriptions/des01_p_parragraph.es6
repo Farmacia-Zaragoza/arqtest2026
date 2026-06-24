@@ -23,7 +23,6 @@
 //- reload_contents   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
 const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'								),
 		{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'								),
@@ -32,7 +31,7 @@ const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.e
 
 class des01_div_parragraph extends html_style {
 
-	constructor(thm = "") 
+	constructor(thm = "")
 	{
 		let tag_type 					= 	"div"
 
@@ -66,7 +65,7 @@ class des01_div_parragraph extends html_style {
 	}
 
 	create_marqee_content() {
-		for (var line of Object.values(this.flinks_lang.arr['lines'])) 
+		for (var line of Object.values(this.flinks_lang.arr['lines']))
 		{
 			this.p_01.content = "-" + line
 			this.p_01.pcreate()
@@ -75,10 +74,10 @@ class des01_div_parragraph extends html_style {
 		this.div_marquee_content.pcreate()
 	}
 
-	create_marquee() 
+	create_marquee()
 	//$this->extended_text = 'STARTS ONE --- Firts long description of the flat. Long lines of text.  --- FINISHES ONE'
 	{
-		this.div_marquee = new mar01_div_marquee(	this.fnode, 
+		this.div_marquee = new mar01_div_marquee(	this.fnode,
 													this.div_marquee_content.code, "30", "vertical", "forwardStop")
 		this.content += this.div_marquee.code
 	}
@@ -86,46 +85,46 @@ class des01_div_parragraph extends html_style {
 
 	create_backward()
 	{
-		this.siv_arrow_up.content				=		''													
+		this.siv_arrow_up.content				=		''
 		this.siv_arrow_up.svg_path				= 		'r_img/arrows/'
 		this.siv_arrow_up.svg_name 				= 		"arrow_up.svg"
-		
+
 		this.siv_arrow_up.svg_alt				=		''	 // Pending to compose
 
 		this.siv_arrow_up.svg_class				=		'arrow_up'
-		
+
 		this.siv_arrow_up.create_svg_base()
 
-		this.siv_arrow_up.pcreate()															
+		this.siv_arrow_up.pcreate()
 
-		for (var i = 0;  i < 5 ;  i++) this.siv_backward.content += this.siv_arrow_up.code		
-		
+		for (var i = 0;  i < 5 ;  i++) this.siv_backward.content += this.siv_arrow_up.code
+
 		this.siv_backward.pcreate()
 		this.content += this.siv_backward.code
 	}
 
 	create_forward()
 	{
-		this.siv_arrow_down.content				=		''													
+		this.siv_arrow_down.content				=		''
 		this.siv_arrow_down.svg_path			= 		'r_img/arrows/'
 		this.siv_arrow_down.svg_name 			= 		"arrow_down.svg"
-		
+
 		this.siv_arrow_down.svg_alt				=		''	 // Pending to compose
 		this.siv_arrow_down.svg_class			=		'arrow_down'
 
-		
+
 		this.siv_arrow_down.create_svg_base()
 
-		this.siv_arrow_down.pcreate()															
+		this.siv_arrow_down.pcreate()
 
-		for (var i = 0;  i < 5 ;  i++) this.siv_forward.content += this.siv_arrow_down.code		
-		
+		for (var i = 0;  i < 5 ;  i++) this.siv_forward.content += this.siv_arrow_down.code
+
 		this.siv_forward.pcreate()
 		this.content += this.siv_forward.code
 	}
 
 
-	reload_contents() 
+	reload_contents()
 	{
 		this.content = ""
 		this.create_backward()

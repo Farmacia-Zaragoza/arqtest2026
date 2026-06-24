@@ -10,8 +10,8 @@ var 		cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess
 
 const 		{ model_run_psimple } 	= 	require(	cons.JS_BASE 	+ 	'spc/theme/truck/model/m03_run_psimple.ea6'	),
 			{ pn04_mongo } 			= 	require(	cons.JS_BASE 	+ 	'spc/theme/common/fast_node/pnode/pn04_mongo.ea6'	),
-			empty 					= 	require(	cons.NODE_MOD	+	'is_empty'											),
-			echo 					= 	require(	cons.NODE_MOD	+	'node-echo'											);
+			empty 					= 	require(	'is_empty'											),
+			echo 					= 	require(	'node-echo'											);
 
 
 // QUIERO HACER UN ENFOQUE DE PROMESAS GENERADORES Y SINCRONIAS
@@ -22,14 +22,14 @@ class model_run_mongo extends model_run_psimple
 	{
 		// Pasamos la request
 		super(pmt)
-	
+
 		// RUN --> PROCESS
 	}
 
 	// FROM --> run_options
 	// TO   --> call_mongo - process - return code
 
-	// ------------------------- [01] ASYNC RUN [STA] ------------------------- 	
+	// ------------------------- [01] ASYNC RUN [STA] -------------------------
 	async run_mongo()
 	{
 
@@ -46,9 +46,9 @@ class model_run_mongo extends model_run_psimple
 
 			// Call to process (m05) --> print logo
 			await this.process()
-			
+
 			// Para comprobar en local (desconectar - Node )
-	 			 		
+
 	 		// await this.disconnect()
 
 //		}
@@ -59,4 +59,3 @@ class model_run_mongo extends model_run_psimple
 } // end Class
 
 exports.model_run_mongo = model_run_mongo
-

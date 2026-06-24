@@ -13,59 +13,58 @@
 //  UL - START REPEAT
 //* DIV - START REPEAT
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-// Html Slider Div02 Peloncita Class  
+// Html Slider Div02 Peloncita Class
 // ------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
 // - reload_contents  : Reload field attributes
-// - load_file        : Load dat file from system   
-// - build_data       : Build html final code for object 
+// - load_file        : Load dat file from system
+// - build_data       : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var { html_style } 		= require(	'/brqx/base/rcode/es6/com/objects/html/html_style.es6'		)
 
 class sea03_div_peloncita_middle extends html_style{
 
-         
+
     constructor (   search_node				= ''	)	// 02.Fast node for selection
-  {   
+  {
     // El constructor debe cargar las propiedades del archivo
 
-        this.tag_type        		=      	'div'                    		
+        this.tag_type        		=      	'div'
 
 
-		this.n						= 'sea03_mid::'				    		
+		this.n						= 'sea03_mid::'
 
 
-    
-    	this.div_01            			                                           
-    	this.ul_01            			                                           
+
+    	this.div_01
+    	this.ul_01
 
 	    this.node_id              =   ''                     // NID - Drupal Node ID
 
 
 
-		this.search_node			=		search_node					
+		this.search_node			=		search_node
 
 
-        super.constructor(this.tag_type)								    
+        super.constructor(this.tag_type)
 
 		this.reload_contents()
 
     }
 
-    reload_contents () 
-    {   
-		this.build_data()	            
+    reload_contents ()
+    {
+		this.build_data()
     }
 
 
     //	<div class="tab_start">
     build_data()
     {
-    this.code       =       '' 											
-    this.content    =       '' 											
-	this.class 	  =		'tab start'										
+    this.code       =       ''
+    this.content    =       ''
+	this.class 	  =		'tab start'
 
 	// Parte comun de los tabs
 	// Igual no es tan comun
@@ -75,7 +74,7 @@ class sea03_div_peloncita_middle extends html_style{
 	  										'types'				)
 
 
-	// this.d('ul_code' + this.ul_01.code)								
+	// this.d('ul_code' + this.ul_01.code)
 
 	// Parte especifica de los tabs - views
 	this.div_01 = new sea02_div_peloncita_middle (
@@ -83,21 +82,21 @@ class sea03_div_peloncita_middle extends html_style{
 	  										'types'					,
 	  										'types'					)
 
- 
+
     this.content        +=    this.ul_01.code
-                    
+
     this.content        +=    this.div_01.code
 
-	this.pcreate()          
+	this.pcreate()
 
-	// this.d('jcode 03 >' + this.fnode.jquery_code)							
+	// this.d('jcode 03 >' + this.fnode.jquery_code)
 
-	// this.d('code >' + this.code)							
+	// this.d('code >' + this.code)
 
 
-      
+
   } // End Build Data
-    
+
 }
 //-----------------------------------------------------------------------------------
 

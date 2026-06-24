@@ -25,7 +25,6 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 const 	{ html_style } 					= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'												),
 		{ flx02_ul_product_flex }		= require( 	cons.JS_BASE + 'spc/theme/common/deep_html/slider/flx02_ul_product_flex.es6'				),
@@ -39,11 +38,11 @@ const 	{ html_style } 					= require(	cons.JS_BASE + 'com/objects/html/html_styl
 
 class flx03_div_flex_slider extends html_style {
 
-	constructor(thm = "") 
+	constructor(thm = "")
 	{
 		let tag_type 						= "div"
 		super(tag_type)
-		
+
 		this.n 								= "flx03_flex_mid_truck::"
 		this.arr_div 						= Array()
 		this.flex_type 						= "slider"
@@ -57,11 +56,11 @@ class flx03_div_flex_slider extends html_style {
 
 		this.ul_01							= 	''
 
-		if (this.thm.b.page_product) 														
+		if (this.thm.b.page_product)
 		{
 			this.ul_01 = new flx02_ul_product_flex(this.fnode, "slider")
-		} 
-		else 
+		}
+		else
 			this.ul_01 = new flx02_ul_flex(this.fnode, "slider")
 
 		this.arr_div[0] = new mai03_div_email(this.thm)
@@ -79,19 +78,19 @@ class flx03_div_flex_slider extends html_style {
 		this.build_data()
 	}
 
-	create_ul() 			
+	create_ul()
 	{
 		this.content += this.ul_01.code
 	}
 
 	create_divs() {
-		for (var div of Object.values(this.arr_div)) 
+		for (var div of Object.values(this.arr_div))
 		{
 			this.content += div.code
 		}
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.create_ul()

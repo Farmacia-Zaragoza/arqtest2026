@@ -21,7 +21,7 @@ const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 const  fs                    =   require(  'fs'                                        ),
        { jn01_comm_pho }     =   require(  cons.JS_TYP7  + 'json/jnode/j00/jn01_comm_pho.es7'   ),
        { idx_pointers }  =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                     ),
-       empty                 =   require(  cons.NODE_MOD   + 'is_empty'                     );
+       empty                 =   require(  'is_empty'                     );
 
 class jn00_comm_pf extends jn01_comm_pho {
 

@@ -31,9 +31,9 @@
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { struc_pho }        =   require(  cons.JS_TYP7  + 'struc/s04_struc_pho.es7'),
-      empty                =   require(  cons.NODE_MOD + 'is-empty'                        ),
+      empty                =   require(  'is-empty'                        ),
       { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
-      readdirp             =   require( cons.NODE_MOD + 'readdirp'),
+      readdirp             =   require( 'readdirp'),
       ffi                  =   require(cons.JS_LIB7 + 'file/file_load.es7'),
       fs                   =   require('fs');
 

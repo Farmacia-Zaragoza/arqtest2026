@@ -48,7 +48,7 @@ const 	{ html_style } 					= 	require(	cons.JS_BASE 	+ 	'com/objects/html/html_s
 		{ svg_style } 					= 	require(	cons.JS_BASE  	+ 	'com/objects/html/svg_style.es6'				),
 		{ scr01_js_scroll }				= 	require(	cons.JS_SPC7 	+ 	'scroll/html/h01/main/scr01_js_scroll.es7'),
 		{ ifnojs }	 					= 	require(	cons.JS_BASE 	+ 	'com/objects/html/ifnojs.es6'					),
-		minify 							= 	require(	cons.NODE_MOD 	+	'html-minifier'									).minify;
+		minify 							= 	require(	'html-minifier'									).minify;
 
 
 class bdy01_body_scroll extends html_style  {

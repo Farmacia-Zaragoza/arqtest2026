@@ -4,31 +4,30 @@
 //-------------------------------------------------------------------------------------
 //Theme DIV Structure - Peloncita site
 //-------------------------------------------------------------------------------------
-//*<div data-toggle="popover" 
-//		data-trigger="focus" 
-//		title="Font size" 
-//		data-content="Click to increase|decrease text's font size." 
+//*<div data-toggle="popover"
+//		data-trigger="focus"
+//		title="Font size"
+//		data-content="Click to increase|decrease text's font size."
 //		class="info-cloud-bot-row-button text-button">
 //	 <img src="img/symbols/brqx_plus_symbol_040_2017.svg" class="change-text-size size-plus" alt="+">
 //	 <img src="img/symbols/brqx_minus_symbol_040_2017.svg" class="change-text-size size-minus" alt="-">
 //-------------------------------------------------------------------------------------
 //* DIV
 //    IMG
-//    IMG 
+//    IMG
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //Methods:
 //-------------------------------------------------------------------------------------
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"							);
 
 const 	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'								),
-		empty 						= 	require(	cons.NODE_MOD + 'is_empty'														),
+		empty 						= 	require(	'is_empty'														),
 
 class div01_helper_dog extends svg_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 				= 	"div"
 
@@ -38,11 +37,11 @@ class div01_helper_dog extends svg_style {
 
 		this.tag_type 				= 	"div"
 		this.class 					= 	"info-cloud-bot-row-button text-button"
-		
+
 		this.thm					=	thm
-		
-		this.data_toggle			=	"popover" 
-		this.data_trigger			=	"focus" 
+
+		this.data_toggle			=	"popover"
+		this.data_trigger			=	"focus"
 		this.data_content			=	this.thm.s.nfo_font_resize
 
 		this.title					=	this.thm.s.nfo_font_size
@@ -55,24 +54,24 @@ class div01_helper_dog extends svg_style {
 	{
 		this.svg_path				= 	'r_img/symbols/'
 		this.svg_name 				= 	'brqx_plus_symbol_040_2017.svg'
-		
+
 		this.svg_alt				=	'+'
-		
+
 		this.svg_class				= 	'change-text-size size-plus'
-		
+
 		this.create_svg_base()
-		
+
 		this.zone_01					=	this.content
 	}
 
 	create_svg_02()
 	{
 		this.svg_name 				= 	'brqx_minus_symbol_040_2017.svg'
-		
+
 		this.svg_class				= 	'change-text-size size-plus'
 
 		this.svg_alt				=	'-'
-		
+
 		this.create_svg_base()
 
 		this.content				=	this.zone_01  +	 this.content
@@ -80,7 +79,7 @@ class div01_helper_dog extends svg_style {
 	}
 
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 
@@ -90,7 +89,7 @@ class div01_helper_dog extends svg_style {
 		this.pcreate()
 
 		//Ok [17-06-24]
-		this.p('flg1_Code > ' +  this.code)												
+		this.p('flg1_Code > ' +  this.code)
 
 	}
 

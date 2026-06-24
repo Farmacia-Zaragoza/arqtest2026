@@ -21,8 +21,8 @@
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const	fs 					= 	require(	'fs'														),
-		empty 				=   require(	cons.NODE_MOD + 'is-empty'									),
-		echo 				= 	require(	cons.NODE_MOD + 'node-echo'									),
+		empty 				=   require(	'is-empty'									),
+		echo 				= 	require(	'node-echo'									),
 		util 				=   require(	'util'														),
 		os					=	require(	'os'														),
     { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'   );

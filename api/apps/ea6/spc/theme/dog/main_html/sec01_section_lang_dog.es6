@@ -16,82 +16,80 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - build_data   	  : Build html final code for object 
+// - build_data   	  : Build html final code for object
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-
-var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"									);
 
 
 const 	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'										),
 		{ svg_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'										),
 		{ flg03_div_flags } 		= 	require(	cons.JS_BASE  + 'spc/theme/dog/deep_html/flags/flg03_div_flags.es6'				);
-		
+
 
 class sec01_section_lang_dog extends html_style{
-             
-    constructor ( thm )  	
-   {   
+
+    constructor ( thm )
+   {
         let tag_type                 		=      'section'
 
-        super(tag_type)             						
+        super(tag_type)
 
-		this.n								=		'sec01_section_dog::'				
-	
-    	this.svg_name						=		''											
-    	this.svg_code_path					=		''											
-    	this.svg_01_code					=		''											
+		this.n								=		'sec01_section_dog::'
+
+    	this.svg_name						=		''
+    	this.svg_code_path					=		''
+    	this.svg_01_code					=		''
 
         this.tag_type                 		=      'section'
 
-		this.class 							=		'lang-grand clearfix'						
+		this.class 							=		'lang-grand clearfix'
 
-	  	this.thm							=		thm										
+	  	this.thm							=		thm
 
-		this.fnode							=		this.thm.arr['fnode']['flag_list']		
+		this.fnode							=		this.thm.arr['fnode']['flag_list']
 
-	   	this.map							=		this.thm.map + 'section/'				
+	   	this.map							=		this.thm.map + 'section/'
 	   	this.thm.map						=		this.map
-	   	
-	
+
+
 		this.miv_01 						=		new svg_style('div')
 
-		this.miv_01.fnode					=		this.fnode						
+		this.miv_01.fnode					=		this.fnode
 
-		this.build_data()	            
+		this.build_data()
 
     }
 
 //  <div class="lang-container clearfix"> - External
 	create_div_01()
 	{
-		this.div_01							=		new flg03_div_flags(	this.thm 			)	
+		this.div_01							=		new flg03_div_flags(	this.thm 			)
 
 		// this.p('flag:codl >' + this.div_01.code.length)
-		
-		// this.content 					+=		'LANG_CONTAINER>'							 		
-		this.content 						+=		this.div_01.code							 		
+
+		// this.content 					+=		'LANG_CONTAINER>'
+		this.content 						+=		this.div_01.code
 	}
 
 	create_svg_left()
 	{
 
-		this.miv_01.content					=		''													
+		this.miv_01.content					=		''
 
-		this.miv_01.class 					=		'arrow-left hidden-x-lg'							
+		this.miv_01.class 					=		'arrow-left hidden-x-lg'
 
 		this.miv_01.svg_path				= 		'r_img/arrows/'
 		this.miv_01.svg_name 				= 		"lang_arrow_left.svg"
-		
+
 		this.miv_01.svg_alt					=		''	 // Pending to compose
 		this.miv_01.svg_class				=		'arrow'
-		
+
 		this.miv_01.create_svg_base()
 
-		this.miv_01.pcreate()															
-		
-		this.content						+=		this.miv_01.code											
-		
+		this.miv_01.pcreate()
+
+		this.content						+=		this.miv_01.code
+
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
@@ -100,43 +98,43 @@ class sec01_section_lang_dog extends html_style{
 	create_svg_right()
 	{
 
-		this.miv_01.content					=		''													
+		this.miv_01.content					=		''
 
-		this.miv_01.class 					=		'arrow-right hidden-x-lg'							
+		this.miv_01.class 					=		'arrow-right hidden-x-lg'
 
 		this.miv_01.svg_path				= 		'r_img/arrows/'
 		this.miv_01.svg_name 				= 		"lang_arrow_right.svg"
-		
-		this.miv_01.svg_alt					=		''	 
-		
+
+		this.miv_01.svg_alt					=		''
+
 		this.miv_01.create_svg_base()
 
-		this.miv_01.pcreate()															
-		
-		this.content						+=		this.miv_01.code											
-		
+		this.miv_01.pcreate()
+
+		this.content						+=		this.miv_01.code
+
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
-    
+
 
     build_data()
     {
 
-	  	this.create_svg_left()															
+	  	this.create_svg_left()
 
-	  	this.create_div_01()																
+	  	this.create_div_01()
 
-	  	this.create_svg_right()															
+	  	this.create_svg_right()
 
-		this.pcreate()																	
+		this.pcreate()
 
 		// Ok [17-11-02]
 		// this.p('CodeL > ' + this.code.length)
 		// this.p('Code > ' + this.code)
-		
+
 	} // End Build Data
-  
+
 }
 
 exports.sec01_section_lang_dog = sec01_section_lang_dog

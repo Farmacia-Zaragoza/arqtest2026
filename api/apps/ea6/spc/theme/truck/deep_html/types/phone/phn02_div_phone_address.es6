@@ -14,14 +14,13 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 const	{ svg_style } 		= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'		);
 
 
 class phn02_div_phone_address extends svg_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type = "div"
 
@@ -45,22 +44,22 @@ class phn02_div_phone_address extends svg_style {
 
 		// this.p('PHONE_PATH ' + this.fnode.phone_svg_absolute_path )
 		// this.p('PHONE_URL '  + this.fnode.phone_svg_absolute_url )
-		
+
 		this.svg_alt				=	''	 // Pending to compose
-		
+
 		this.create_svg_base_with_full_path()
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content 				= ""
 		this.create_phone_svg()
 		this.pcreate()
-		
+
 		// ok [17-11-02]
-		// this.p('code >' + this.code)													
+		// this.p('code >' + this.code)
 	}
 
 }

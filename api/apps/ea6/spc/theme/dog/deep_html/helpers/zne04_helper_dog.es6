@@ -23,8 +23,6 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"						)
-
 const 	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'							),
 		{ svg_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'							),
 		{ getset } 					= 	require(	cons.JS_BASE  + 'com/objects/html/getset.es6'								),
@@ -32,7 +30,7 @@ const 	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_sty
 
 class zne04_helper_dog extends getset {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		super()
 		this.n 						= 	"flg02_div::"
@@ -42,13 +40,13 @@ class zne04_helper_dog extends getset {
 		this.fnode 					= 	this.thm.arr['fnode']['flag_list']
 
 		this.a_01					=	new html_style('a')
-		
+
 		this.div_01					=	new svg_style('div')
 		this.div_01.fnode			=	this.fnode
 
 		// Variable to manage multiple img content
 		this.zone_01				=	''
-		
+
 		// Pending
 		// this.miv_01 				= 	new div02_helper_dog (this.thm)
 
@@ -59,15 +57,15 @@ class zne04_helper_dog extends getset {
 	{
 		this.div_01.svg_path				= 	'r_img/round_square/'
 		this.div_01.svg_name 				= 	'edu_footprint_dark_200_2017.svg'
-		
+
 		this.div_01.svg_alt					=	'mini-dog-helper'
-		
+
 		this.div_01.svg_class				= 	'mini-edu-img-1'
-		
+
 		this.div_01.create_svg_base()
-		
+
 		this.zone_01						=	this.div_01.content
-		
+
 		this.div_01.content					=	''
 	}
 
@@ -75,9 +73,9 @@ class zne04_helper_dog extends getset {
 	{
 		this.div_01.svg_path				= 	'r_img/round_square/'
 		this.div_01.svg_name 				= 	'mini_edu_100_2017.svg'
-		
+
 		this.div_01.svg_class				= 	'mini-edu-img-2'
-		
+
 		this.div_01.create_svg_base()
 
 		this.div_01.content 				=	this.zone_01 +	this.div_01.content
@@ -90,8 +88,8 @@ class zne04_helper_dog extends getset {
 		this.create_svg_01()
 		this.create_svg_02()
 
-		this.div_01.class					=	'mini-edu desktop'		
-	
+		this.div_01.class					=	'mini-edu desktop'
+
 		this.div_01.pcreate()
 
 		this.code							=	this.div_01.code
@@ -106,24 +104,24 @@ class zne04_helper_dog extends getset {
 		this.a_01.content					=	this.thm.s.nfo_in
 
 		this.a_01.pcreate()
-		
+
 		this.div_01.content					=	this.a_01.code
-		this.div_01.class					=	'page-information'		
+		this.div_01.class					=	'page-information'
 		this.div_01.pcreate()
 
 		this.code							+=	this.div_01.code
 	}
 
 
-	build_data() 
+	build_data()
 	{
 		// Is a zone. Only have code
-		
+
 		this.create_div_01()
 		this.create_div_02()
 
 		//Ok [18-02-06]
-		// this.p('zne_Code > ' +  this.code)												
+		// this.p('zne_Code > ' +  this.code)
 
 	}
 

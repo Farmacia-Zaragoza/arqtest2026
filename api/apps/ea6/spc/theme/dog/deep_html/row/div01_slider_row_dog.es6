@@ -21,13 +21,12 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"	);
 
 const	{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'		);
 
 class div01_slider_row_dog extends html_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 			= 	"div"
 
@@ -50,7 +49,7 @@ class div01_slider_row_dog extends html_style {
 
 		this.div_01.class 		= 	"col-2 edu-letters-container-left desktop"
 		this.div_01.pcreate()
-		
+
 		this.build_data()
 	}
 
@@ -68,18 +67,18 @@ class div01_slider_row_dog extends html_style {
 		this.div_02.path		= 	this.thm.u.http_domainbar +
 			this.thm.s.img_url_word + '/' + this.thm.s.img_resDesktop + '/'
 
-//		this.div_02.path		= 	
+//		this.div_02.path		=
 //			this.thm.s.img_url_folder + '/' + '0935x0700' + '/'
 
 		this.div_02.ext			= 	'.' + this.thm.s.img_extension
 
 		this.div_02.pcreate()
 		this.content 			+= 	this.div_02.code
-		
+
 	}
 
 
-	build_data() 
+	build_data()
 	{
 		this.content 			= 	""
 
@@ -89,7 +88,7 @@ class div01_slider_row_dog extends html_style {
 		this.pcreate()
 
 		// CK [17-11-02]
-		// this.p('row_code >' + this.code)														
+		// this.p('row_code >' + this.code)
 
 	}
 

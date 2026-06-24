@@ -7,7 +7,6 @@
 //Store structure of nodes and files needed in theme
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
 const	echo 					= require(	'/brqx/base/react/zcommon/node_modules/node-echo'										),
 		{ theme_structure }		= require( 	cons.JS_BASE + 'com/objects/drupal/theme/t01_structure.es6'						),
@@ -21,15 +20,15 @@ const	echo 					= require(	'/brqx/base/react/zcommon/node_modules/node-echo'				
 function theme_truck (t)
 {
 	// Modelo de promesas
-	
+
 	var data_and_error	=	''
 
 	t.p("ZZZ_promises_starting")
 /*
 	run.fnode_promise(data_and_error,t.arr['fnode']['file_list'])
-	.then(function () 
+	.then(function ()
 	{
-	
+
 		run.fnode_promise(data_and_error,t.arr['fnode']['image_list'])			.then(function() {} )
 /*
 		run.fnode_promise(data_and_error,t.arr['fnode']['link_list_common'])	.then(function() {} )
@@ -52,4 +51,3 @@ function theme_truck (t)
 }
 
 exports.theme_truck = theme_truck
-

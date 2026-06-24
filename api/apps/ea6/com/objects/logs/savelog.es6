@@ -6,15 +6,14 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 			= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"	);
 
-const 	echo 			= 	require(	cons.NODE_MOD + 'node-echo'								),
-		fs 				= 	require(	'fs'													);	
+const 	echo 			= 	require(	'node-echo'								),
+		fs 				= 	require(	'fs'													);
 
 class savelog
 {
-	
-  constructor() 
+
+  constructor()
   {
 	// Atributos
     this.n 				= 	''							 // class name
@@ -25,14 +24,14 @@ class savelog
     this.lr	 			= 	'\n\r'						 // br
 
 	// Web_debug_change
-//	this.br 			= 	'</br>'	
-	this.br 			= 	'\n\r'	
+//	this.br 			= 	'</br>'
+	this.br 			= 	'\n\r'
 
 
     this.lf				=	':</br>'
 
-    
-  }	
+
+  }
 
 	dd(msg)
 	{
@@ -42,7 +41,7 @@ class savelog
 
 		let file = 'brqx_debug.ddt'
 
-		if (!fs.existsSync(file) ) 
+		if (!fs.existsSync(file) )
 			this.d_start ( msg )
 		else
 		{
@@ -65,21 +64,20 @@ class savelog
 	d_start(msg , letter = 't')
 	{
 		// Debug adding content only
-	    let puting_contents			=	this.n + this.m +  '-' + msg  + '>' 	
+	    let puting_contents			=	this.n + this.m +  '-' + msg  + '>'
         global.GLOBALS['putcont']	=	puting_contents
 
-		let file 					=	'brqx_debug.dd' + letter 	
+		let file 					=	'brqx_debug.dd' + letter
 
-		if (!fs.existsSync(file) ) 
+		if (!fs.existsSync(file) )
 		{
-			fs.appendFileSync(file , global.GLOBALS['putcont']);	    	
+			fs.appendFileSync(file , global.GLOBALS['putcont']);
 	 		fs.chmodSync(file, parseInt('0775',8));  //changed to add the zero
 		}
 		else
-			fs.appendFileSync(file , global.GLOBALS['putcont']);	    	
+			fs.appendFileSync(file , global.GLOBALS['putcont']);
 	}
 
 }	// End Class
 
 exports.savelog = savelog;
-

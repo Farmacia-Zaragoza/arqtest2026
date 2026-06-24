@@ -12,11 +12,11 @@
 //<!DOCTYPE html>
 //<html lang="en">
 //<head>
-//<body> 
+//<body>
 // ------------------------------------------------------------------------------------
 //* DOCTYPE
 //  HTML
-//   HEAD 
+//   HEAD
 //	 BODY
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
@@ -25,13 +25,12 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
-const 	{ html_style } 			= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'						),		
+const 	{ html_style } 			= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'						),
 		{ ifnojs } 				= require(	cons.JS_BASE + 'com/objects/html/ifnojs.es6'							),
 
-		{ hea01_head_truck }	= require(	cons.JS_BASE + 'spc/theme/truck/main_html/hea01_head_truck.es6'		),					
-		{ bdy01_body_truck }	= require(	cons.JS_BASE + 'spc/theme/truck/main_html/bdy01_body_truck.es6'		);					
+		{ hea01_head_truck }	= require(	cons.JS_BASE + 'spc/theme/truck/main_html/hea01_head_truck.es6'		),
+		{ bdy01_body_truck }	= require(	cons.JS_BASE + 'spc/theme/truck/main_html/bdy01_body_truck.es6'		);
 
 
 class htm01_html_truck extends html_style  {
@@ -39,49 +38,49 @@ class htm01_html_truck extends html_style  {
     constructor (     thm						)
 	{
         let tag_type     			= 	'html'
-    	super(				tag_type	)			
+    	super(				tag_type	)
 
-        this.tag_type     			= 	'html'						
+        this.tag_type     			= 	'html'
 
-		this.thm						=	thm							
-		
-		this.ifnojs					=	new ifnojs()					
-		
-		this.n 						=		'htm01_html_truck'	
-		
+		this.thm						=	thm
+
+		this.ifnojs					=	new ifnojs()
+
+		this.n 						=		'htm01_html_truck'
+
     	this.body_01    			=	''
-    
-            		
+
+
 	// Attributes
-	
-		this.img_background		=	''										
-		this.img_logo			=	''										
+
+		this.img_background		=	''
+		this.img_logo			=	''
 
 
 		// Another level fast full page cache
-		
-		this.build_data()												
+
+		this.build_data()
     }
 	//<head>
     create_head()
     {
 		// External Head
-		this.head_01	=	
+		this.head_01	=
 				new hea01_head_truck(this.thm)	// Drupal theme structure
 
-//		this.content			+=  '<HEAD>HOLA</HEAD>' //this.head_01.code					
-		this.code			+=  this.head_01.code					
-			}		
+//		this.content			+=  '<HEAD>HOLA</HEAD>' //this.head_01.code
+		this.code			+=  this.head_01.code
+			}
 
     create_body()
     {
 		// External Div
-		this.body_01	=	
+		this.body_01	=
 				new bdy01_body_truck( this.thm )	// Drupal theme structure
 
-//		this.content			+=  '<BODY>HOLA</BODY>'  //this.body_01.code					
-		this.code				+=  this.body_01.code					
-	}		
+//		this.content			+=  '<BODY>HOLA</BODY>'  //this.body_01.code
+		this.code				+=  this.body_01.code
+	}
 
 
 // <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-.
@@ -93,37 +92,37 @@ class htm01_html_truck extends html_style  {
 
 	create_if_no_js()
 	{
-		this.ifnojs.ifno_oneline('7' , 'lt' , 'no-js lt-ie9 lt-ie8 lt-ie7' )		
-		this.code = this.ifnojs.code 	 			
-		this.ifnojs.ifno_oneline('7' , ''   , 'no-js lt-ie9 lt-ie8')			 	
-		this.code += this.ifnojs.code 	
-		this.ifnojs.ifno_oneline('8' , ''   , 'no-js lt-ie9')				 	
-		this.code += this.ifnojs.code 	
-		this.ifnojs.ifno_complex('8' , 'gt'  	)							 	
-		this.code += this.ifnojs.code 	
-		
+		this.ifnojs.ifno_oneline('7' , 'lt' , 'no-js lt-ie9 lt-ie8 lt-ie7' )
+		this.code = this.ifnojs.code
+		this.ifnojs.ifno_oneline('7' , ''   , 'no-js lt-ie9 lt-ie8')
+		this.code += this.ifnojs.code
+		this.ifnojs.ifno_oneline('8' , ''   , 'no-js lt-ie9')
+		this.code += this.ifnojs.code
+		this.ifnojs.ifno_complex('8' , 'gt'  	)
+		this.code += this.ifnojs.code
+
 	}
 
 
     build_data()
     {
 	// To build content is needed to build block
-		this.code			=	''								
+		this.code			=	''
 
-		this.create_if_no_js() 									
+		this.create_if_no_js()
 
-		this.create_head()										
-		this.create_body()										
+		this.create_head()
+		this.create_body()
 
-		// this.pcreate()											
-		
-		this.code 		+= 	'</html>'							
+		// this.pcreate()
+
+		this.code 		+= 	'</html>'
 
 		// Esta linea no se puede hacer dinamica
-//		doctype='<!DOCTYPE html>'									
+//		doctype='<!DOCTYPE html>'
 
-		// this.dd('Code >' + this.code ) 												
-		
+		// this.dd('Code >' + this.code )
+
 
     }
 

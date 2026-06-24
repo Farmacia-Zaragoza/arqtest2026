@@ -18,17 +18,16 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
 const 	{ html_style } 			= 	require(	cons.JS_BASE  	+ 'com/objects/html/html_style.es6'						),
-		empty 					= 	require(	cons.NODE_MOD  	+ 'is_empty'											),
+		empty 					= 	require(	'is_empty'											),
 		{ flx01_li_flex }		= 	require( 	cons.JS_BASE  	+ 'spc/theme/common/deep_html/slider/flx01_li_flex.es6'	);
 
 
 class flx02_ul_flex extends html_style {
 
-  constructor(	fnode 		= ""			, 
-  				slide_type 	= "slider"		) 
+  constructor(	fnode 		= ""			,
+  				slide_type 	= "slider"		)
   {
     let tag_type 				= "ul"
 
@@ -42,7 +41,7 @@ class flx02_ul_flex extends html_style {
     this.build_data()
   }
 
-  build_data() 
+  build_data()
   {
     this.code 					= ""
     this.content 				= ""
@@ -53,17 +52,17 @@ class flx02_ul_flex extends html_style {
       let _fnode_arr_oim = this.fnode.arr['oim']
 
 	  // 139
-	  // this.p('Images_L '+ this.fnode.arr['such1'].length )		
+	  // this.p('Images_L '+ this.fnode.arr['such1'].length )
 
 	  // 139
 	  // this.p('Num_slides_ul '+ this.fnode.arr['oim'].length )
-	  
-      for (var slide_num in this.fnode.arr['oim']) 
+
+      for (var slide_num in this.fnode.arr['oim'])
       {
         var img_name 			= this.fnode.arr['oim'][slide_num]
         var tit 				= this.fnode.arr['tit'][slide_num]
 
-        if (!empty(img_name)) 
+        if (!empty(img_name))
           {
             var orientation = this.fnode.arr['ori'][slide_num]
 
@@ -74,9 +73,9 @@ class flx02_ul_flex extends html_style {
           }
       }
     }
-    
+
     this.pcreate()
-    
+
     // Ok [17-11-02]
     // this.p('Code : > ' + this.code.length )
   }

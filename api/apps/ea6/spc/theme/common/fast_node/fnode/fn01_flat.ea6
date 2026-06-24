@@ -10,12 +10,11 @@
 //-------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-get_child_properties-  				: Get specific child properties 
+// - d-get_child_properties-  				: Get specific child properties
 // - d-load_child_details-    				: Recover from drupal child properties
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
 const 	{ fnode } 				= require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.es6'						),
 		{ cbool }				= require( 	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'					);
@@ -23,200 +22,200 @@ const 	{ fnode } 				= require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.es
 
 
 class fn01_flat extends fnode {
-           
+
     constructor (   u							=	''				, // 02. U object
 					page_position				=	''				, // 07. Position id
-					stype						=	'flat_fnode'	) // 08. Node Type  
-    {   
+					stype						=	'flat_fnode'	) // 08. Node Type
+    {
 
 		// JERARQUIA DE OBJETOS : url > site > cache > bool
 
 		super()
-		this.n 							=	'fn01_flat::'			
+		this.n 							=	'fn01_flat::'
 
-		this.page_position				=	page_position 										
+		this.page_position				=	page_position
 
 
 		this.b							= 	new cbool()
 
-		this.u 							=	u 													
-		this.s 							=	this.u.s 										
-		this.c 							=	this.u.c 										
-		
-		this.b.copy (this.s.b)													
-		
+		this.u 							=	u
+		this.s 							=	this.u.s
+		this.c 							=	this.u.c
 
-    	this.type						=	'file_structure'					 // Type for structures			
-		this.short_type					=	'FS'						
-    	
-    	
+		this.b.copy (this.s.b)
+
+
+    	this.type						=	'file_structure'					 // Type for structures
+		this.short_type					=	'FS'
+
+
 		// String fnode / node / cica_recuerdo
 		this.ftype 							=	'fnode'															// Fast node type
-		this.stype 							=	stype															// Node subtype			
-		this.type_name						=	this.stype 													
-		
+		this.stype 							=	stype															// Node subtype
+		this.type_name						=	this.stype
+
 
 		this.b.type_user					=	false										 // Different content if is anonymous
-		this.b.type_common					=	true										
+		this.b.type_common					=	true
 		this.b.type_human					= 	false 										 // if is dat file never will be erased on disk
 		this.b.type_translation				= 	false										 // Auto translate contents - Hay que revisarlo
 		this.b.type_ssl						=	true										 // If have urls
 
 
-		this.b.type_taxonomy					=	false 										
-		this.b.type_have_code				=	false										
-		this.b.type_have_properties			=	true										
-		this.b.type_have_specific_properties	=	true										
-		this.b.type_synced					=	false										
+		this.b.type_taxonomy					=	false
+		this.b.type_have_code				=	false
+		this.b.type_have_properties			=	true
+		this.b.type_have_specific_properties	=	true
+		this.b.type_synced					=	false
 
-		//		this.node_have_rsync	=	false										
+		//		this.node_have_rsync	=	false
 
-//		this.rsync_server	=	'ebrqx.com'										
+//		this.rsync_server	=	'ebrqx.com'
 
 		// Type path adjustment
 
 		// fnode / file_structure
-		this.change							=	
-						'/' + this.ftype + '/' + this.type + '/' 	
+		this.change							=
+						'/' + this.ftype + '/' + this.type + '/'
 
 
-		// SSL_DEPENDENT - El contenido sera el mismo para cualquier idioma - Pero distinto por urls o ssl 
+		// SSL_DEPENDENT - El contenido sera el mismo para cualquier idioma - Pero distinto por urls o ssl
 
-		let uri_to_use		= 	this.u.slash_ideal_uri			
-		
-		if (this.u.slash_ideal_uri.substr(0,1) == '/' )		uri_to_use = this.u.slash_ideal_urisubstr(1)   
-		
+		let uri_to_use		= 	this.u.slash_ideal_uri
+
+		if (this.u.slash_ideal_uri.substr(0,1) == '/' )		uri_to_use = this.u.slash_ideal_urisubstr(1)
+
 		// Tipo dependiente de SSL - Independiente del idioma y de la URL. NO CODE
-		
-		this.suffix				=	this.stype			 + '_' + this.u.ssl_page						
-		this.suffix_disk			=	this.suffix				 												
-		this.suffix_lang			=	this.suffix_disk															
 
-		// this.suffix_lang			=	this.suffix 			 + '_' .	this.s.lang						
+		this.suffix				=	this.stype			 + '_' + this.u.ssl_page
+		this.suffix_disk			=	this.suffix
+		this.suffix_lang			=	this.suffix_disk
+
+		// this.suffix_lang			=	this.suffix 			 + '_' .	this.s.lang
 
 		// Lo definimos pero no se va a usar
-   		this.suffix_code 			= 	this.suffix_lang + '.'  + 'code'											
+   		this.suffix_code 			= 	this.suffix_lang + '.'  + 'code'
 
 
-		let arrays_line = 'ide img tit fil fol fis fos fur'   
+		let arrays_line = 'ide img tit fil fol fis fos fur'
 		this.arr['types'] = arrays_line.split(" ");
 
 
 		// Method for disk load and to generate and save content
-		this.generate_load_from_disk_path()													
+		this.generate_load_from_disk_path()
 
 		// /brqx/pers/drupal/v50/fnode/flat/fnode/file_structure/common_ssl_flat_fnode
 
 		// /brqx/pers/drupal/v50/fnode/truck/fnode/file_structure/common_nnn_flat_fnode
-		
-		// this.p('01_Flat_Normla ' + this.load_from_disk_path)								
-		// this.p('01_Flat_Normla ' + this.load_from_disk_lang)							
+
+		// this.p('01_Flat_Normla ' + this.load_from_disk_path)
+		// this.p('01_Flat_Normla ' + this.load_from_disk_lang)
 
 		if (this.s.load == 'drupal')
 		{
-			this.run_from_drupal()															
+			this.run_from_drupal()
 		}
-		else 
+		else
 		{
-			this.run_from_disk()																
+			this.run_from_disk()
 		}
-		
+
 
     }
 
-	// ------------------------------- GET_CHILD_PROPERTIES ------------------------------- 
-    get_child_properties(prop, value) 
-    {   
+	// ------------------------------- GET_CHILD_PROPERTIES -------------------------------
+    get_child_properties(prop, value)
+    {
 
 		// Tenemos un metodo comun para todos los tipos con title - type - path y los arrays
-		// Pendiente de revisar	
+		// Pendiente de revisar
 
-			if ( 	 	prop 	== "ntype"					)		this.node_type					=	value			
-			else if ( 	prop 	== "stype"					)		this.stype						=	value			
-			else if ( 	prop 	== "dtype"					)		this.dtype						=	value			
-			else if (	prop	== "type"					)		this.type						=	value			
+			if ( 	 	prop 	== "ntype"					)		this.node_type					=	value
+			else if ( 	prop 	== "stype"					)		this.stype						=	value
+			else if ( 	prop 	== "dtype"					)		this.dtype						=	value
+			else if (	prop	== "type"					)		this.type						=	value
     }
 
-	// ------------------------------- LOAD_CHILD_DETAILS ------------------------------- 
+	// ------------------------------- LOAD_CHILD_DETAILS -------------------------------
 	load_child_details()
 	{
 		this.m				=	'load_child_details'
-		this.n 							=	'fn01_flat::'			
+		this.n 							=	'fn01_flat::'
 
-		// Necesitamos tener un path para poder generar tambien las rutas a las fotos 
+		// Necesitamos tener un path para poder generar tambien las rutas a las fotos
 
-		// this.p('BEF_RELOAD_FILE_STRUCTURE ' + this.type + '  ' + this.short_type)  
-		
+		// this.p('BEF_RELOAD_FILE_STRUCTURE ' + this.type + '  ' + this.short_type)
+
 		// true == Existe fichero -- No hay que generarlo
 		// false == No usamos cache - Siempre generamos
 
 		if ((this.arr['nfo']['generate_disk'] == false	)  ||
 			(this.special_reload_disk('FS')  				)	)
-		{				
+		{
 			// Aqui hay que chequear la barra
 
-			// this.p('RELOAD_SITE_PATH1 ' + this.u.site_path)  
-			
-			if (this.u.site_path.substr(-1) != '/' )   this.u.site_path += '/'					
+			// this.p('RELOAD_SITE_PATH1 ' + this.u.site_path)
 
-			// this.p('RELOAD_SITE_PATH2 ' + this.s.img_relative_url_folder)  
-						
-			this.path +=  this.u.site_path 									
+			if (this.u.site_path.substr(-1) != '/' )   this.u.site_path += '/'
 
-			if (this.path.substr(-1) != '/' )   this.path += '/'					
+			// this.p('RELOAD_SITE_PATH2 ' + this.s.img_relative_url_folder)
 
-			this.path +=  this.s.img_relative_url_folder									
+			this.path +=  this.u.site_path
 
-			if (this.path.substr(-1) != '/' )   this.path += '/'					
-																				
+			if (this.path.substr(-1) != '/' )   this.path += '/'
+
+			this.path +=  this.s.img_relative_url_folder
+
+			if (this.path.substr(-1) != '/' )   this.path += '/'
+
 			// /ssd/home/ser/zd/main/es/zdom/emp/flat/zd_main_flat/es/photos/2048x1536/
-			// this.p('Flat_Path ' + this.path) 																				 
-	
-			this.path_pointer		=	this.s.img_relative_url_folder																				
+			// this.p('Flat_Path ' + this.path)
 
-			// this.p('Flat_PathPointer ' + this.path_pointer) 																				 
-							
-			this.generate_one_level_directory()																			
-	
-			// Num files 74		
-			// this.p('Num files ' + this.arr['fur'].length )																
-			
-			this.arr['img'] 					= 	this.arr['fur']																
-			
+			this.path_pointer		=	this.s.img_relative_url_folder
+
+			// this.p('Flat_PathPointer ' + this.path_pointer)
+
+			this.generate_one_level_directory()
+
+			// Num files 74
+			// this.p('Num files ' + this.arr['fur'].length )
+
+			this.arr['img'] 					= 	this.arr['fur']
+
 			// Tenemos las imagenes pero las necesitamos en 4 resoluciones
 		}
-		
+
 	}
 
-	// ------------------------------- PREPARE_SPECIFIC_CHILD_PROPERTIES ------------------------------- 
+	// ------------------------------- PREPARE_SPECIFIC_CHILD_PROPERTIES -------------------------------
 
 	prepare_specific_child_properties()
 	{
 		// Drupal fast node type
-		this.arr['properties'].push( 			"type" 		 + this.sep  + this.ftype							)					
+		this.arr['properties'].push( 			"type" 		 + this.sep  + this.ftype							)
 
 
-		this.arr['properties'].push( 			"ntype" 	 + this.sep  + this.ntype							)					
+		this.arr['properties'].push( 			"ntype" 	 + this.sep  + this.ntype							)
 
 		// Fast node type
-		this.arr['properties'].push( 			"stype" 	 + this.sep  + this.stype							)					
+		this.arr['properties'].push( 			"stype" 	 + this.sep  + this.stype							)
 
 		// Drupal node type
-		this.arr['properties'].push( 			"dtype" 	 + this.sep  + this.type							)											
+		this.arr['properties'].push( 			"dtype" 	 + this.sep  + this.type							)
 
 
 		// Drupal path
 
-		this.arr['properties'].push( 			"f_num_files" 		 + this.sep  + this.num_files				)			
+		this.arr['properties'].push( 			"f_num_files" 		 + this.sep  + this.num_files				)
 		this.arr['properties'].push( 			"f_max_files"		 + this.sep  + this.max_files				)
-		this.arr['properties'].push( 			"f_num_folders"		 + this.sep  + this.num_folders			)	
-		this.arr['properties'].push( 			"f_max_folders"		 + this.sep  + this.max_folders			)	
+		this.arr['properties'].push( 			"f_num_folders"		 + this.sep  + this.num_folders			)
+		this.arr['properties'].push( 			"f_max_folders"		 + this.sep  + this.max_folders			)
 
 		// Real disk structure
 		this.arr['properties'].push( 			"f_sub_query_real"	 + this.sep  + this.u.real_sub_query		)
 
 	}
-  
+
 }
 
 exports.fn01_flat = fn01_flat

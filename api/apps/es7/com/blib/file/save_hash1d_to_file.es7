@@ -25,10 +25,10 @@ const   fs           =   require(  'fs'                                    ),
     path         =   require(  'path'                                    ),
     os           =   require(  'os'                                    ),
     util         =   require(  'util'                            ),
-    empty         =   require(  cons.NODE_MOD + 'is-empty'                          ),
-    trim         =   require(  cons.NODE_MOD + 'trim'                            ),
-    mkdirp         =   require(  cons.NODE_MOD + 'mkdirp'                          ),
-	echo 		 = 	require(	cons.NODE_MOD + 'node-echo'									),
+    empty         =   require(  'is-empty'                          ),
+    trim         =   require(  'trim'                            ),
+    mkdirp         =   require(  'mkdirp'                          ),
+	echo 		 = 	require(	'node-echo'									),
    { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'   );
 
 // Ck [19-06-03]

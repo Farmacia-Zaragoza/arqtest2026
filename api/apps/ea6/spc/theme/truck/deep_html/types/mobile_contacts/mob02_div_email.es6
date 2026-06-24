@@ -20,7 +20,6 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 const 	{ html_style } 				= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'										),
 		{ mai02_div_mail_icon }		= require( 	cons.JS_BASE + 'spc/theme/truck/deep_html/types/email/mai02_div_mail_icon.es6'		),
@@ -28,7 +27,7 @@ const 	{ html_style } 				= require(	cons.JS_BASE + 'com/objects/html/html_style
 
 class mob02_div_email extends html_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 			= "div"
 
@@ -52,14 +51,14 @@ class mob02_div_email extends html_style {
 		this.content 			+= this.span_01.code
 	}
 
-	build_data() 														
+	build_data()
 	{
 		this.content 			= ""
 		this.create_span()
 		this.content 			+= this.div_01.code
 		this.content 			+= this.div_02.code
 		this.pcreate()
-		
+
 		// Ok [17-11-02]
 		// this.p('code >' + this.code)
 	}

@@ -5,65 +5,62 @@
 //-------------------------------------------------------------------------------------
 // Methods:
 // - reload               : Reload tame object properties
-// - set_db_architecture  : Set database architecture for current SuperMnu Generation   
-// - create               : Build html final code for dhtml object 
+// - set_db_architecture  : Set database architecture for current SuperMnu Generation
+// - create               : Build html final code for dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
+
+var { printlog } 		= require(	cons.JS_BASE + 'com/objects/logs/printlog.es6'	),
+    { savelog } 		= require(	cons.JS_BASE + 'com/objects/logs/savelog.es6'		);
 
 
-const echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'		)	
-var { printlog } 		= require(	cons.JS_BASE + 'com/objects/logs/printlog.es6'	),		
-    { savelog } 		= require(	cons.JS_BASE + 'com/objects/logs/savelog.es6'		);		
-
-
-class getset  extends printlog { 
+class getset  extends printlog {
 
     constructor(tame = '')
-    { 
+    {
 
 	super()
 	this.n 							= 	'getset::' 									;
-	
+
     this.code                 =   ''    ;   // Full content of html object or other code
 
     this.js_code              =   ''    ;   // JavaScript full generated code for menu
-        
-    this.input_file           =   ''    ;   // Load file for Li styles and contents  
-    
+
+    this.input_file           =   ''    ;   // Load file for Li styles and contents
+
     this.db_architecture      =    1    ;   // Database Drupal architecture
 
     this.tame                 =   ''    ;   // Tag name (div_01 , div_02 ...)
 
     this.debug                =   ''    ;   // Block for debug [TAG]
-        
+
 	this.br 							= 	'</br>'	;
-        
-                
+
+
 	// Commented to test bootstrap
 ///	    this.set_db_architecture();
         this.reload(tame)        ;
-    }    
+    }
 
     reload(tame = ''  )
     {
         if ( tame != "" )
-          this.tame   =   tame                                         ;        
+          this.tame   =   tame                                         ;
 
         if ( this.tame != "" )
           // Debug block for big code
-          this.debug          =   '<['+ this.tame     + ']>'        ;              
-    } 
+          this.debug          =   '<['+ this.tame     + ']>'        ;
+    }
 
-   
+
     show()
     {
-        echo (this.code );   
+        echo (this.code );
     }
 
     shon()
     {
-        echo (this.code + "\n" );   
+        echo (this.code + "\n" );
     }
 };
 

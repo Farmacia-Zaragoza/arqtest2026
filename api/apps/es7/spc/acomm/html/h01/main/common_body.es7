@@ -46,7 +46,7 @@ const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const 	{ html_style } 					= 	require(	cons.JS_BASE 	+ 	'com/objects/html/html_style.es6'				),
 		{ ifnojs }	 					= 	require(	cons.JS_BASE 	+ 	'com/objects/html/ifnojs.es6'					),
-		minify 							= 	require(	cons.NODE_MOD 	+	'html-minifier'									).minify;
+		minify 							= 	require(	'html-minifier'									).minify;
 
 
 class common_body extends html_style  {

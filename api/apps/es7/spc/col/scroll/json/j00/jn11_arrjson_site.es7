@@ -7,7 +7,7 @@
 
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const 	echo 				= 	require(	cons.NODE_MOD   + 'node-echo'										),
+const 	echo 				= 	require(	'node-echo'										),
 		sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
 		{ typejson_array }	= 	require(	cons.JS_OBJ     + 'json/typejson_array.es6'						);
 

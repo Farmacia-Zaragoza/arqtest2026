@@ -9,8 +9,8 @@
 
 var 	cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"		);
 
-const 	glob 				= 	require(	cons.NODE_MOD + 'glob'										),
-		empty 				= 	require(	cons.NODE_MOD + 'is-empty'									),
+const 	glob 				= 	require(	'glob'										),
+		empty 				= 	require(	'is-empty'									),
 		path 				= 	require(	'path'														);
 
 // Php strpos function
@@ -19,7 +19,7 @@ function strpos (haystack, needle, offset) {
   return i === -1 ? false : i;
 }
 
-function match_path(str, path) 
+function match_path(str, path)
 {
 	var full_path_return = ""
 	var arr_complex = Array()
@@ -27,10 +27,10 @@ function match_path(str, path)
 	var last_elem = get_ideal_word(str, 1, arr_complex)
 	if (path.substr(-1) != "/") path += "/"
 
-	if (last_elem != "is_complex") 
+	if (last_elem != "is_complex")
 		arr_matches = glob(path + "*" + last_elem + "*")
-		
-		
+
+
 	/*
 	// glob("**.js", options, function (er, files) {
 	  // files is an array of filenames.
@@ -38,12 +38,12 @@ function match_path(str, path)
 	  // was found, then files is ["**.js"]
 	  // er is an error object or null.
 	})
-	*/		
+	*/
 	// path/simple* - all files and folders in path not recoursive
 	// path/double** - everything in path recoursively
 
 	else //30809*lbufeira*laya*o*aneco
-		//print ('match:: Str ' . $match_str . "\r\n")						
+		//print ('match:: Str ' . $match_str . "\r\n")
 		{
 			var match_str = ""
 
@@ -52,7 +52,7 @@ function match_path(str, path)
 			arr_matches = glob(path + match_str + "*")
 		}
 
-	if (arr_matches.length > 0) //print ('Match ' . $arr_matches[0] . "\r\n")								
+	if (arr_matches.length > 0) //print ('Match ' . $arr_matches[0] . "\r\n")
 		///sata/Fotos/myr/2048x1536/2006/Portugal/b02_Lisboa
 		{
 			full_path_return = arr_matches[0]
@@ -73,7 +73,7 @@ function match_word(str) //a01_Palabra_Loquesea
 		last_elem = ""
 		var num_elems = arr_complex.length - 1
 
-		for (var pos in arr_complex) 
+		for (var pos in arr_complex)
 		{
 			var elem = arr_complex[pos]
 			last_elem += elem
@@ -84,7 +84,7 @@ function match_word(str) //a01_Palabra_Loquesea
 	return last_elem
 }
 
-function get_ideal_word(str, substr = 1, complex_arr = "") 
+function get_ideal_word(str, substr = 1, complex_arr = "")
 {
 	// equivalent - pregsplit
 	var output = str.split("/(-|_)/")
@@ -103,7 +103,7 @@ function get_ideal_word(str, substr = 1, complex_arr = "")
 
 		default:
 			for (var elem of Object.values(output)) {
-				if (!empty(elem)) 
+				if (!empty(elem))
 					complex_arr.push(get_ideal_word(elem, substr))
 			}
 
@@ -115,27 +115,27 @@ function get_ideal_word(str, substr = 1, complex_arr = "")
 }
 
 // Reviewed 2017-11-24
-function sort_query(qri) 
+function sort_query(qri)
 //Recibe una query y la devolvemos ordenada y no repetida
 //Ahora los numeros deben ir al final
 {
 	var original_path_arr = qri.split("/")
-	
+
 	original_path_arr.sort()
 
 	var output_arr = Array()
 	var numbers_arr = Array()
 	var words_arr = Array()
 
-	for (var pos in original_path_arr) 
+	for (var pos in original_path_arr)
 	{
 		var no_trim_elem = original_path_arr[pos]
 		if (!empty(no_trim_elem) )
 		{
 			var elem_spaces = no_trim_elem.replace(/[&|@\/\\#,+()$~%.'":*?<>{}]/g,' ');
-			
+
 			// CON ESTO DEJAMOS SOLO LOS DE INGLES
-			var elem_no_special = elem_spaces.replace(/[^a-zA-Z0-9_-]/g,'');			
+			var elem_no_special = elem_spaces.replace(/[^a-zA-Z0-9_-]/g,'');
 			// 02 - Limpiamos spacios exteriores
 			var elem_trim = elem_no_special.trim()
 			// 03 - Limpiamos espacios interiores
@@ -144,16 +144,16 @@ function sort_query(qri)
 			var pos_repeat
 			var ideal_elem = get_ideal_word(elem, 0)
 
-			if (!output_arr.includes(ideal_elem)) 
+			if (!output_arr.includes(ideal_elem))
 				output_arr.push(ideal_elem)
 		}
 	}
 
 	for (var pos in output_arr) {
 		var elem = output_arr[pos]
-		if (is_numeric(elem)) 
+		if (is_numeric(elem))
 			numbers_arr.push(elem)
-		else 
+		else
 			words_arr.push(elem)
 	}
 

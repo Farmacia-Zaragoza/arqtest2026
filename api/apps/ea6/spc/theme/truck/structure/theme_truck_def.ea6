@@ -8,32 +8,31 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-fnode_promise-  				: Fnode promise function 
+// - d-fnode_promise-  				: Fnode promise function
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"									);
 
-const 	{ theme_truck }			= require(	cons.JS_BASE + 'spc/theme/truck/structure/theme_truck.ea6'							);					
+const 	{ theme_truck }			= require(	cons.JS_BASE + 'spc/theme/truck/structure/theme_truck.ea6'							);
 
 
 function theme_truck_def(data_and_error = '' , t = '') {
   const promise = new Promise(function (resolve, reject) {
 
-	t.thm = new theme_truck(		t.pg		, 
+	t.thm = new theme_truck(		t.pg		,
 	   								t.u		)
 
 	t.p('TRUCK_CREATED')
 	  // Caso de exito
     resolve(t)
-    if (!t) 
+    if (!t)
     {
-		// Aqui igual hay que gestionar datos del objeto		
+		// Aqui igual hay que gestionar datos del objeto
 	    reject(new Error('Problema con la definicion del objeto theme '))
     }
   })
-  
+
   return promise
-          
+
 }
 
 module.exports.theme_truck_def = theme_truck_def

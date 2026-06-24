@@ -24,7 +24,7 @@ const   { index }      =   require(  cons.JS_TYP7  + 'fire/index.es7'           
         { site }           =   require(  cons.JS_TYP7  + 'site/s01_site.es7'           ),
         { uri }            =   require(  cons.JS_TYP7  + 'uri/u01_obj.es7'             ),
         { index_req }      =   require(  cons.JS_TYP7  + 'fire/index_req.es7'                 ),
-        empty              =   require(  cons.NODE_MOD + 'is-empty'                          );
+        empty              =   require(  'is-empty'   );
 
 
 class index_fast extends index

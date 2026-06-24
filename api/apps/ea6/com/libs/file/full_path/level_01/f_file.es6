@@ -1,7 +1,7 @@
 // [DOCHANGED_PHP56_PHP52_NODE]
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2018 )
-// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia 
+// Farmacia Zaragoza - Zaragofarma - Estaestufarmacia
 // ---------------------------------------------------------------------------
 // Brqx 2017 - 22/10/21				Depth:[0N]
 // Version : 0.0.1                  Type :[FUNCTION]
@@ -10,58 +10,58 @@
 // ---------------------------------------------------------------------------
 //  + Crea un fichero basandose en ruta absoluta
 // ---------------------------------------------------------------------------
-// - Funciones 
+// - Funciones
 // ---------------------------------------------------------------------------
-//-- file_put_contents - f_mkdirp 
+//-- file_put_contents - f_mkdirp
 // ---------------------------------------------------------------------------
-// - Requiere 
+// - Requiere
 // ---------------------------------------------------------------------------
-//-- 
+//--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
 var 	cons 		= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"	);
 
 const 	fs 			= 	require(	'fs'													),
-		mkdirp 		= 	require(	cons.NODE_MOD 	+ 	'mkdirp'							),
-		empty 		= 	require(	cons.NODE_MOD 	+	'is_empty'							),
-		echo 		= 	require(	cons.NODE_MOD 	+	'node-echo'							),
-		nlr  		= 	require(	cons.NODE_MOD 	+	'node-line-reader'					);
+		mkdirp 		= 	require(	'mkdirp'							),
+		empty 		= 	require(	'is_empty'							),
+		echo 		= 	require(	'node-echo'							),
+		nlr  		= 	require(	'node-line-reader'					);
 
 // No comments 1.0
 function no_comments(a)
 {
-	return  (a.substr(0,1) != "#" ) 
+	return  (a.substr(0,1) != "#" )
 }
 
 // No comments 2.0
 function is_comment_line(line)
 {
-	// Funcion startsWith 
+	// Funcion startsWith
 	if ( line.lastIndexOf('#', 0) === 0  ||
 	     line.lastIndexOf(' ', 0) === 0  ||
-	     line.lastIndexOf('//', 0) === 0 
-	   ) 
+	     line.lastIndexOf('//', 0) === 0
+	   )
 	   return true
 	return false
-	
+
 }
 
 function is_comment_yaml_line(line)
 {
-	// Funcion startsWith 
+	// Funcion startsWith
 	if ( empty(line.trim()) 			  ||
 		 line.substr(0,1) 		 === '#'  ||
-	     line.trim().substr(0,1) === '_'  || 
-	     line.substr(0,2) 		 === '//'  
-	   ) 
+	     line.trim().substr(0,1) === '_'  ||
+	     line.substr(0,2) 		 === '//'
+	   )
 	   return true
 	return false
 }
 
 function is_title_yaml_line(line)
 {
-	// Funcion startsWith 
-	if ( line.trim().substr(-1,1) === ':') 
+	// Funcion startsWith
+	if ( line.trim().substr(-1,1) === ':')
 	   return true
 	return false
 }
@@ -72,21 +72,21 @@ function is_yaml_level(line, num_pased)
 	// siempre es num menos 1. Puesto que el primer nivel no tiene espacios
 
 	let num =  num_pased -1
-	
+
 	if (num == 0 ) return true
-	
-	// Funcion startsWith 
-	var spaces		= '  '.repeat(num)	
+
+	// Funcion startsWith
+	var spaces		= '  '.repeat(num)
 	var num_yaml 	= num * 2
 
 	// echo ('LINEPA :' + line + '-')
 	// echo ('SPACES :' + spaces + '-')
 	// echo ('SUBSTR :' + line.substr(0, num_yaml) + '-')
 
-	if ( line.substr(0, num_yaml) === spaces ) 
+	if ( line.substr(0, num_yaml) === spaces )
 	   return true
 	return false
-	
+
 }
 
 
@@ -109,30 +109,30 @@ function properties_from_file_async(file_name)
 	var reader = new LineReader(file_name);
 	this.arr	=	Array()
 
-	// echo ('READING') 
+	// echo ('READING')
 
-	// Each execution of nextLine will get a following line of text from the input file 
+	// Each execution of nextLine will get a following line of text from the input file
 	reader.nextLine(function (err, line) {
 
        	console.log('file line: ', line);
-		
-	    if (!err) 
+
+	    if (!err)
 	    {
 			if (!line.startsWith("#") )
-			{ 
+			{
 	        	console.log('file line: ', line);
 				this.arr.push(line)
-	        }	
+	        }
 	    }
-	});	
+	});
 }
 
 function properties_from_file (file_name)
 {
-	// echo ('File to read  ' + file_name ) 
+	// echo ('File to read  ' + file_name )
 	var temp_arr = fs.readFileSync(file_name).toString().split('\n')
 	this.arr = Array()
-	
+
 	for (pos in temp_arr)
 	{
 		line = temp_arr[pos]
@@ -141,9 +141,9 @@ function properties_from_file (file_name)
 		{
 			this.arr.push(line)
 		}
-	
-	}	
-	// echo ('File Length  ' + this.arr.length ) 
+
+	}
+	// echo ('File Length  ' + this.arr.length )
 
 	// Tenemos que devolverlo como objeto. Sino falla. En objetos si funciona pero con funciones y  arrays no
 }
@@ -151,10 +151,10 @@ function properties_from_file (file_name)
 // Get properties in array
 function array_from_file (file_name)
 {
-	// echo ('File to read  ' + file_name ) 
+	// echo ('File to read  ' + file_name )
 	this.arr = fs.readFileSync(file_name).toString().split('\n')
-	
-	// echo ('File Length  ' + array_name.length ) 
+
+	// echo ('File Length  ' + array_name.length )
 
 	// Tenemos que devolverlo como objeto. Sino falla. En objetos si funciona pero con funciones y  arrays no
 }
@@ -191,17 +191,17 @@ function f_mkdirp(folder)
 
 function is_file(file_name)
 {
-return fs.lstatSync(file_name).isFile() 
+return fs.lstatSync(file_name).isFile()
 }
 
 function is_folder(file_name)
 {
-return fs.lstatSync(file_name).isDirectory() 
+return fs.lstatSync(file_name).isDirectory()
 }
 
 function size(filename , help = '') {
 	if (!empty(filename)		&&
-		fs.existsSync(filename) &&  
+		fs.existsSync(filename) &&
 		fs.lstatSync(filename).isFile())
 	{
 	    var stats = fs.statSync(filename)
@@ -230,9 +230,9 @@ function copy(source, target, cb = false) {
   });
   rd.pipe(wr);
 
-  function done(err) 
+  function done(err)
   {
-    if (!cbCalled) 
+    if (!cbCalled)
     {
       cb(err);
       cbCalled = true;

@@ -9,7 +9,6 @@
 // Methods:
 //-------------------------------------------------------------------------------------
 
-var 	cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"		)
 
 const 	{ printlog } 			= 	require(	cons.JS_BASE + 'com/objects/logs/printlog.es6'				)
 
@@ -17,7 +16,7 @@ class params_def extends printlog {
 	constructor() {
 		super()
 		this.n 					= 	"params_defs::"
-		
+
 		this.req				= 	''
 		this.cache_mongo 		= 	false
 		this.cache_disk 		= 	false
@@ -33,10 +32,10 @@ class params_def extends printlog {
 
 		this.live_op			=	''			// scripts | minimized | inline
 		this.sch				=	''			// Mongosee scheme
-		
+
 		this.robot				=	'human'		// Humans | Robot pages
 		this.slan				=	'n'			// No Multilanguage
-		this.env				=	'dev'		// Dev environment				
+		this.env				=	'dev'		// Dev environment
 
 		this.site_name			=	'truck'
 		this.theme_name			=	'truck'

@@ -17,14 +17,13 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
 const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'		),
 		{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'		);
 
 class dli01_div_list extends svg_style {
 
-	constructor(fnode) 
+	constructor(fnode)
 	{
 		let tag_type 			= 	"div"
 
@@ -46,16 +45,16 @@ class dli01_div_list extends svg_style {
 	{
 		this.svg_path			= 	'r_img/lists/'
 		this.svg_name 			= 	"hamburger-toggle.svg"
-		
+
 		this.svg_alt			=	''	 // Pending to compose
-		
+
 		this.create_svg_base()
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
 
 
-	build_data() 
+	build_data()
 	{
 		this.content 			= 	""
 		this.create_svg()
@@ -63,7 +62,7 @@ class dli01_div_list extends svg_style {
 		this.pcreate()
 
 		// Ok [17-11-02]
-		// this.p('code >' + this.code)														
+		// this.p('code >' + this.code)
 
 	}
 

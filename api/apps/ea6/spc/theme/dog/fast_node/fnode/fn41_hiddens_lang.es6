@@ -8,11 +8,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-get_child_properties-  				: Get specific child properties 
+// - d-get_child_properties-  				: Get specific child properties
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"	)
 
 const 	{ fnode } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.es6'		),
 		{ cbool }				= 	require( 	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'	);
@@ -20,105 +19,105 @@ const 	{ fnode } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.e
 
 class fn41_hiddens_lang extends fnode {
 
-           
+
     constructor (   fnode				=	''				, // 02. U object
 					page_position		=	''				, // 07. Position id
-					stype				=	'hidden_langs'	) // 08. Node Type  
-    {   
+					stype				=	'hidden_langs'	) // 08. Node Type
+    {
 
 		super()
-		this.n 							=	'fn41_hiddens_lang::'			
+		this.n 							=	'fn41_hiddens_lang::'
 
-		this.page_position				=	page_position 										
+		this.page_position				=	page_position
 
-		this.fnode						=	fnode														
-		this.u 							=	this.fnode.u 													
-		
-		this.s							=	this.u.s											
-		this.c 							=	this.u.c 										
+		this.fnode						=	fnode
+		this.u 							=	this.fnode.u
+
+		this.s							=	this.u.s
+		this.c 							=	this.u.c
 
 		this.b							= 	new cbool()
-		this.b.copy (this.s.b)													
-		
+		this.b.copy (this.s.b)
 
-    	this.type									=	'hiddens_lang_structure'					 	// Type for structures			
-		this.short_type								=	'HIDL'						
-    	
-    	
+
+    	this.type									=	'hiddens_lang_structure'					 	// Type for structures
+		this.short_type								=	'HIDL'
+
+
 		// String fnode / node / cica_recuerdo
 		this.ftype 									=	'fnode'										// Fast node type
-		this.stype 									=	stype										// Node subtype			
-		this.type_name								=	this.stype 													
-		
+		this.stype 									=	stype										// Node subtype
+		this.type_name								=	this.stype
+
 
 		this.b.type_user							=	false										 // Different content if is anonymous
-		this.b.type_common							=	true										
+		this.b.type_common							=	true
 		this.b.type_human							= 	true 										 // if is dat file never will be erased on disk
-		this.b.type_url								= 	false 										 // 
-		this.b.type_translation						= 	false										
-		this.b.type_translated						= 	true										
+		this.b.type_url								= 	false 										 //
+		this.b.type_translation						= 	false
+		this.b.type_translated						= 	true
 
-		this.b.type_have_taxonomy					=	false 										
-		this.b.type_have_code						=	false										
-		this.b.type_have_properties					=	true										
-		this.b.type_have_specific_properties		=	true										
-		this.b.type_synced							= 	true 										
+		this.b.type_have_taxonomy					=	false
+		this.b.type_have_code						=	false
+		this.b.type_have_properties					=	true
+		this.b.type_have_specific_properties		=	true
+		this.b.type_synced							= 	true
 
 		// this.p('Sync_servers ' + this.u.sync_server_to + ' F ' + this.u.sync_server_from)
 
 		// Type path adjustment
 
 		// fnode / file_structure
-		this.change							=	
-						'/' + this.ftype + '/' + this.type + '/' 	
+		this.change							=
+						'/' + this.ftype + '/' + this.type + '/'
 
-		// LANG_DEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma 
+		// LANG_DEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma
 
-		let uri_to_use		= 	this.u.slash_ideal_uri			
-		
-		if (this.u.slash_ideal_uri.substr(0,1) == '/' )		uri_to_use = this.u.slash_ideal_uri.substr(1) 	  
-		
-		
-		this.suffix					=	this.s.lang + '_' + this.stype					
-		this.suffix_disk			=	this.suffix																
-		this.suffix_lang			=	this.suffix 																
+		let uri_to_use		= 	this.u.slash_ideal_uri
+
+		if (this.u.slash_ideal_uri.substr(0,1) == '/' )		uri_to_use = this.u.slash_ideal_uri.substr(1)
+
+
+		this.suffix					=	this.s.lang + '_' + this.stype
+		this.suffix_disk			=	this.suffix
+		this.suffix_lang			=	this.suffix
 
 
 		// Links information url - target - extended TeXt
-		let arrays_line = 'txt lines lfill lcokw'   
-		
-		this.arr['types'] = arrays_line.split (' ') 	 
+		let arrays_line = 'txt lines lfill lcokw'
+
+		this.arr['types'] = arrays_line.split (' ')
 
 
 		// Method for disk load and to generate and save content
-		this.generate_load_from_disk_path()													
+		this.generate_load_from_disk_path()
 
 		// efile_lines@flat_details
-		
+
 		// No tiene codigo - Es un tipo humano
 		// uri:: - https://node.dbrqx.com/  - L https://node.dbrqx.com/fr/
 
-		// this.p('0L_Lang_Links_LOAD ' + this.load_from_disk_path)								
-		// this.p('0L_Lang_Links_LANG ' + this.load_from_disk_lang)								
-		
+		// this.p('0L_Lang_Links_LOAD ' + this.load_from_disk_path)
+		// this.p('0L_Lang_Links_LANG ' + this.load_from_disk_lang)
+
 
 		if (this.s.load == 'drupal')
 		{
-			this.run_from_drupal()															
+			this.run_from_drupal()
 		}
-		else 
+		else
 		{
-			this.run_from_disk()																
+			this.run_from_disk()
 		}
-		// this.p('RAM_Links ' + this.ram_alias_path			)										
+		// this.p('RAM_Links ' + this.ram_alias_path			)
 
 
     }
 
-    get_child_properties(prop, value) {   
+    get_child_properties(prop, value) {
 
 		// Tenemos un metodo comun para todos los tipos con title - type - path y los arrays
-		// Pendiente de revisar	
+		// Pendiente de revisar
 
 		if 		( prop 	== "facebook_popover"				)	this.s.facebook_popover					=	value
 		else if ( prop 	== "linkedin_popover"				)	this.s.linkedin_popover					=	value
@@ -178,9 +177,9 @@ class fn41_hiddens_lang extends fnode {
 		this.arr['properties'].push( 				"scroll_title"					+ 	this.sep  + this.s.scroll_title						)
 
 		this.arr['properties'].push(				"efile" 			 			+ 	this.sep  + this.efile								)
-		
+
 	}
-  
+
 }
 
 exports.fn41_hiddens_lang = fn41_hiddens_lang

@@ -5,9 +5,9 @@
 //Theme DIV Structure - Peloncita site
 //-------------------------------------------------------------------------------------
 
-//<div data-content="Some text about dev/live" 
-//	   data-header="Dev/live" 
-// 	<img src="img/box/brqx_2017_dev_live_green_050.svg" 
+//<div data-content="Some text about dev/live"
+//	   data-header="Dev/live"
+// 	<img src="img/box/brqx_2017_dev_live_green_050.svg"
 
 //-------------------------------------------------------------------------------------
 //* DIV
@@ -18,13 +18,12 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"							)
 
 const 	{ svg_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'								)
 
 class div01_helper_button_dog extends svg_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 				= 	"div"
 
@@ -32,7 +31,7 @@ class div01_helper_button_dog extends svg_style {
 		this.n 						= 	"div01_helper_button_dog::"
 
 		this.tag_type 				= 	"div"
-		
+
 		this.thm					=	thm
 
 		this.fnode 					= 	this.thm.arr['fnode']['flag_list']
@@ -42,13 +41,13 @@ class div01_helper_button_dog extends svg_style {
 	{
 		this.svg_path				= 	'r_img/box/'
 		this.svg_name 				= 	'brqx_2017_dev_live_green_050.svg'
-		
+
 		this.svg_alt				=	'+'
-		
+
 		this.svg_class				= 	'change-text-size size-plus'
-		
+
 		this.create_svg_base()
-		
+
 	}
 
 	reload( path , name , class 	,	// Mandatory params
@@ -68,21 +67,21 @@ class div01_helper_button_dog extends svg_style {
 		this.data_trigger			=	trigger
 
 		// Mandatory params
-		
+
 		this.class					= 	class
 
 		this.svg_path				= 	path
 		this.svg_name 				= 	name
 
 		// this.svg_class				= 	class
-		
+
 		this.create_svg_base()
 
 		this.pcreate()
 
 		//Ok [17-06-24]
-		this.p('btn1_Code > ' +  this.code)												
-		
+		this.p('btn1_Code > ' +  this.code)
+
 	}
 
 

@@ -17,14 +17,13 @@
 //- reload_contents   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"	)
 
 const 	{ html_style } 			= require(	cons.JS_BASE + '/com/objects/html/html_style.es6'			)
 
 
 class cok01_div_cookies extends html_style {
 
-	constructor(thm = "") 
+	constructor(thm = "")
 	{
 		let tag_type 						= "div"
 
@@ -64,7 +63,7 @@ class cok01_div_cookies extends html_style {
 		this.siv_01.content += this.a_01.code + " "
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.create_cookies()

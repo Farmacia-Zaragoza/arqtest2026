@@ -11,21 +11,20 @@
 //- d-load_child_details-   	  : Load details from disk
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"					)
 
-const 	{ psimple } 			= 	require(	cons.JS_BASE + 'com/objects/drupal/node/psimple.es6'					),					
-		{ cbool } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'					),					
-		{ page_structure } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/node/page_structure.es6'				),					
-		{ theme_dog }			= 	require(	cons.JS_BASE + 'spc/theme/dog/structure/theme_dog.es6'					),					
-		{ fn03_site_common }	= 	require(	cons.JS_BASE + 'spc/theme/common/fast_node/fnode/fn03_site_common.es6'	),					
-		{ fn41_hiddens_lang }	= 	require(	cons.JS_BASE + 'spc/theme/dog/fast_node/fnode/fn41_hiddens_lang.es6'	),					
-		{ htm01_html_dog }		= 	require(	cons.JS_BASE + 'spc/theme/dog/main_html/htm01_html_dog.es6'					),					
-		minify 					= 	require(	cons.NODE_MOD +	'html-minifier'											).minify;
+const 	{ psimple } 			= 	require(	cons.JS_BASE + 'com/objects/drupal/node/psimple.es6'					),
+		{ cbool } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'					),
+		{ page_structure } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/node/page_structure.es6'				),
+		{ theme_dog }			= 	require(	cons.JS_BASE + 'spc/theme/dog/structure/theme_dog.es6'					),
+		{ fn03_site_common }	= 	require(	cons.JS_BASE + 'spc/theme/common/fast_node/fnode/fn03_site_common.es6'	),
+		{ fn41_hiddens_lang }	= 	require(	cons.JS_BASE + 'spc/theme/dog/fast_node/fnode/fn41_hiddens_lang.es6'	),
+		{ htm01_html_dog }		= 	require(	cons.JS_BASE + 'spc/theme/dog/main_html/htm01_html_dog.es6'					),
+		minify 					= 	require(	'html-minifier'											).minify;
 
 
 class pn01_simple extends psimple {
 
-	constructor(u = "", stype = "page") 
+	constructor(u = "", stype = "page")
 	{
 		super()
 		this.n 									= 	"pn01_simple::"
@@ -63,17 +62,17 @@ class pn01_simple extends psimple {
 
 		var uri_to_use = this.u.slash_ideal_uri
 
-		if (this.u.slash_ideal_uri.substr(0, 1) == "/") 
+		if (this.u.slash_ideal_uri.substr(0, 1) == "/")
 			uri_to_use 							= this.u.slash_ideal_uri.substr(1)
 
 		// Nuevo cambio: El codigo live no va a ser el mismo que el codigo normal
 
-		this.suffix 							= uri_to_use + "_" + this.stype + "_" + this.s.env	+ "_" + this.s.live_opt	
-		this.suffix_disk 						= this.suffix 
+		this.suffix 							= uri_to_use + "_" + this.stype + "_" + this.s.env	+ "_" + this.s.live_opt
+		this.suffix_disk 						= this.suffix
 
-		this.suffix_lang 						= this.suffix + '_' + this.s.slan + "_" + this.s.lang 
+		this.suffix_lang 						= this.suffix + '_' + this.s.slan + "_" + this.s.lang
 		this.suffix_code 						= this.suffix_lang + "." + this.u.ssl_page + "page"
-		
+
 		this.generate_load_from_disk_path()
 
 		// this.p('pn01_Path ' + this.load_from_disk_path)
@@ -89,7 +88,7 @@ class pn01_simple extends psimple {
 		this.status = true
 	}
 
-	load_child_details() 
+	load_child_details()
 	{
 		this.m					=	'load_child_details'
 		this.n 					= 	"pn01_simple::"
@@ -98,14 +97,14 @@ class pn01_simple extends psimple {
 
 		this.pg = new page_structure()
 
-		this.thm = new theme_dog(		this.pg		, 
+		this.thm = new theme_dog(		this.pg		,
 		   								this.u		)
 
 		// Cambio importante. Usabamos fnode solo para gestionar valores. Ahora los vamos a poder utilizar mas tarde
-		
+
 		this.thm.arr['fnode']['site_info_common'] = this.fnode
 
-		this.thm.arr['fnode']['site_hiddens_lang'] = 
+		this.thm.arr['fnode']['site_hiddens_lang'] =
 			new fn41_hiddens_lang(this.fnode)
 
 		this.htm = new htm01_html_dog(this.thm)
@@ -114,14 +113,14 @@ class pn01_simple extends psimple {
 		// this.code =	'DISCODE>'
 
 		// This have sense on live sites
-		
+
 		if ( this.thm.b.site_live )
 			this.code = minify(this.htm.code, this.minimize_options)
 		else
 			this.code = this.htm.code
-		
+
 		// this.p('pn01_End_LoadDetails')
-		
+
 	}
 
 }

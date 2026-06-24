@@ -2,10 +2,10 @@
 // Index Truck Node Js app
 // Install problem : npm install --unsafe-perm
 
-const 	echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'		),	
+const 	echo 				= require(	'node-echo'		),
 	  	fs 	 			= require(	'fs'														),
 		path 				= require(	'path'													),
-		rp 	 			= require(	'/brqx/base/react/zcommon/node_modules/fs.realpath'			);
+		rp 	 			= require(	'node_modules/fs.realpath'			);
 
 
 echo("<!doctype html>")
@@ -21,9 +21,9 @@ var PHP_VER = "v52"
 
 // /mnt/ssd/brqx/base/rcode/es6/spc/run/index_truck.es6
 // if (!("base_dir" in global)) base_dir = undefined
-	
 
-var base_dir = 'pepito' 
+
+var base_dir = 'pepito'
 
 // devuelve la carpeta
 // /mnt/ssd/brqx/base/react/zcommon
@@ -65,17 +65,17 @@ s.theme(site_name, theme_name)
 var u = new uri(s)
 GLOBALS.SITE_URL_OBJECT = u
 
-if (cache and 
-	(b.page_download or 
+if (cache and
+	(b.page_download or
 		(c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC"))))) //a. Level 01 - Load only generated files
-	//$u->p('Before p02')	
-	//$u->p('RamGen B ' . true  . '==' . $pnode->status)	
+	//$u->p('Before p02')
+	//$u->p('RamGen B ' . true  . '==' . $pnode->status)
 	{
 		var pnode = new pn02_fast(u)
 	}
 
 if ("A" === "A") if (cache and c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC")) and undefined !== pnode and pnode.status == 1) //Fast node generation - Only load cached pages | structures
-	//print $pnode->code 
+	//print $pnode->code
 	{
 		print("FPC" + pnode.code)
 		var stop_time = Date.now() / 1000 + Date.now() / 1000
@@ -84,9 +84,9 @@ if ("A" === "A") if (cache and c.ram == "noreload" and !(-1 !== c.arr.ram.indexO
 		var time_str = total_time + " segundos "
 	} else if (s.load != "drupal") //B. LOAD PAGE - POSIBLE SECOND CACHE LEVEL : COMPONENTS
 	///ssd/home/ser/zd/main/es/zdom/per/pelona/zd_main_cica/es/rphp/dats/peloncita/
-	//$u->p('Before_pnode_01')											
+	//$u->p('Before_pnode_01')
 	//02.Site object
-	//print ('Index_Fast_End::Generating - pn01_simple ' . $br) 
+	//print ('Index_Fast_End::Generating - pn01_simple ' . $br)
 	{
 		var supermnu_dats = supermnu_libs + "dats/" + theme_name + "/"
 		pnode = new pn01_simple(u)

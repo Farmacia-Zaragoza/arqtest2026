@@ -17,25 +17,24 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var { html_style } 		= require(	'/brqx/base/rcode/es6/com/objects/html/html_style.es6'		)
 
 class tag01_div_peloncita_footer extends html_style  {
 
-		 
-    constructor (	fnode						= 	''			)  		
-    {   
-            this.tag_type     			= 	'div'							
+
+    constructor (	fnode						= 	''			)
+    {
+            this.tag_type     			= 	'div'
 
 
-			this.n 		=	'tag01_tagadelic::'									
-	
-			this.fnode					=	fnode							
+			this.n 		=	'tag01_tagadelic::'
 
-        	super.constructor(this.tag_type)								
-        	
-			this.a_01 					=	new html_style('a') 			
-			
-			this.class 					=	'tagadelic-container'			 
+			this.fnode					=	fnode
+
+        	super.constructor(this.tag_type)
+
+			this.a_01 					=	new html_style('a')
+
+			this.class 					=	'tagadelic-container'
     }
 
 //      <a href="/vis/taglugar/personal/Akureiry" class="tagadelic level3" rel="tag" title="Akureiry"> Akureiry</a>
@@ -44,24 +43,24 @@ class tag01_div_peloncita_footer extends html_style  {
 	    								class_name				= ''			, 	// 02
     									title					= ''			, 	// 03
     									content 				= ''			) 	// 04
-    {   
+    {
 
 		// Gen/vis/taglugar/personal/Akureiry tagadelic level2 Akureiry Akureiry
-		// this.p('Gen' . href . ' ' . class . ' ' . title . ' ' . content)	+=		
-		
-		this.a_01.class			=	class_name 									
-		this.a_01.href 			= 	href 									 
-		this.a_01.title			= 	title 									 
+		// this.p('Gen' . href . ' ' . class . ' ' . title . ' ' . content)	+=
 
-		this.a_01.content		=	content								
-	
-		this.a_01.pcreate()													
-		
-		this.content				=	this.a_01.code						
-		this.pcreate() 														 
+		this.a_01.class			=	class_name
+		this.a_01.href 			= 	href
+		this.a_01.title			= 	title
+
+		this.a_01.content		=	content
+
+		this.a_01.pcreate()
+
+		this.content				=	this.a_01.code
+		this.pcreate()
 
 	}
- 
+
 }
 
 exports.tag01_div_peloncita_footer = tag01_div_peloncita_footer

@@ -13,7 +13,6 @@
 // cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
 
 
-var 		cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"					);
 
 const 		{ model } 			= 	require(	cons.JS_BASE + 'com/objects/fire/f01_model/m01_model.ea6'			);
 
@@ -25,7 +24,7 @@ class truck extends model
 	{
 		// Pasamos la request
 		super(pmt)
-	
+
 		// RUN --> PROCESS
 	}
 

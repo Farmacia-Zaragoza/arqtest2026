@@ -23,7 +23,6 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
 const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'								),
 		{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'								),
@@ -31,7 +30,7 @@ const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.e
 
 class cpt03_div_captcha extends html_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type 		= 	"div"
 		super(tag_type)
@@ -46,7 +45,7 @@ class cpt03_div_captcha extends html_style {
 		this.fnode_site 	= 	this.thm.arr['fnode']['site_info_lang']
 		this.miv_01 		= 	new svg_style("div")
 		this.miv_01.fnode	=	this.fnode
-		
+
 		this.miv_02 		= 	new html_style("div")
 		this.div_01 		= 	new cpt02_div_captcha(this.thm)
 		this.p_01 			= 	new html_style("p")
@@ -78,26 +77,26 @@ class cpt03_div_captcha extends html_style {
 	create_div_01()
 	{
 
-		this.miv_01.content					=		''													
+		this.miv_01.content					=		''
 
-		this.miv_01.class 					=		'media-left'							
+		this.miv_01.class 					=		'media-left'
 
 		this.miv_01.svg_path				= 		'r_img/captcha/'
 		this.miv_01.svg_name 				= 		"truck_cartoon.svg"
-		
+
 		this.miv_01.svg_alt					=		''	 // Pending to compose
-		this.miv_01.svg_class				=		'cartoon-logo'	 
-		
+		this.miv_01.svg_class				=		'cartoon-logo'
+
 		this.miv_01.create_svg_base()
 
-		this.miv_01.pcreate()															
-		
-		this.content						+=		this.miv_01.code											
+		this.miv_01.pcreate()
+
+		this.content						+=		this.miv_01.code
 
 	}
 
 
-	create_p_01() 
+	create_p_01()
 	//<p class="redirecting info">Redirecting... Hold on</p>
 	//<p class="captcha_loading info">Loading... Hold on</p>
 	{
@@ -115,7 +114,7 @@ class cpt03_div_captcha extends html_style {
 		this.content 			+= this.p_01.code
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.create_div_01()
@@ -125,7 +124,7 @@ class cpt03_div_captcha extends html_style {
 		this.pcreate()
 
 		// Ok [18-01-11]
-		// this.p('Code > ' + this.code)										
+		// this.p('Code > ' + this.code)
 	}
 
 }

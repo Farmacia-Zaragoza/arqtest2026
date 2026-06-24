@@ -15,7 +15,6 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 					= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"										);
 
 const 	{ html_style } 				= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'										),
 		{ mob02_div_email }			= 	require( 	cons.JS_BASE + 'spc/theme/truck/deep_html/types/mobile_contacts/mob02_div_email.es6'	),
@@ -24,7 +23,7 @@ const 	{ html_style } 				= 	require(	cons.JS_BASE + 'com/objects/html/html_styl
 
 class mob03_div_flex_mobile extends html_style {
 
-	constructor(thm) 
+	constructor(thm)
 	{
 		let tag_type = "div"
 
@@ -39,15 +38,15 @@ class mob03_div_flex_mobile extends html_style {
 		this.build_data()
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.content = ""
 		this.content += this.div_01.code
 		this.content += this.div_02.code
 		this.pcreate()
 
-		// Ok [17-11-02]		
-		// this.p('code >' + this.code)													
+		// Ok [17-11-02]
+		// this.p('code >' + this.code)
 
 	}
 

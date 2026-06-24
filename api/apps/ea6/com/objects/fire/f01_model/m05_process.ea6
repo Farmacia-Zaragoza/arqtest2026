@@ -11,9 +11,9 @@
 var 		cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
 
 const 		{ model_save } 		= 	require(	cons.JS_BASE + 'com/objects/fire/f01_model/m06_save.ea6'	),
-			mongoose 			= 	require(	cons.NODE_MOD + 'mongoose'									),
-			empty 				= 	require(	cons.NODE_MOD 	+ 'is_empty'								),
-			echo 				= 	require(	cons.NODE_MOD + 'node-echo'									);
+			mongoose 			= 	require(	'mongoose'									),
+			empty 				= 	require(	'is_empty'								),
+			echo 				= 	require(	'node-echo'									);
 
 
 class model_process extends model_save
@@ -22,23 +22,23 @@ class model_process extends model_save
 	{
 		// Pasamos la request
 		super(pmt)
-	
+
 		// RUN --> PROCESS
 	}
 
-	// ------------------------- ASYNC DISCONNECT [STA] ------------------------- 	
-	async disconnect() 
+	// ------------------------- ASYNC DISCONNECT [STA] -------------------------
+	async disconnect()
 	{
 	  	await new Promise(resolve => setTimeout(() => resolve(), 2000));
  		mongoose.disconnect()
 	}
 
-	// ------------------------- PROCESS [STA] ------------------------- 	
+	// ------------------------- PROCESS [STA] -------------------------
 	process()
 	{
-		if ( this.b.ready_to_load				&& 
-			!empty(this.pnode)					&& 
-			this.pnode.b.type_generated			)		
+		if ( this.b.ready_to_load				&&
+			!empty(this.pnode)					&&
+			this.pnode.b.type_generated			)
 		{
 
 			// echo("FPC" )
@@ -49,18 +49,17 @@ class model_process extends model_save
 			this.code = this.pnode.code
 
 			console.log("MONGOCACHE2_" + this.code.length)
-			
+
 			var stop_time = Date.now() / 1000 + Date.now() / 1000
 			var start_time = global.GLOBALS.start_time
 			var total_time = Math.round(stop_time - start_time, 4)
 			var time_str = total_time + " segundos "
-			
-		} 
 
-	
-	} 
+		}
+
+
+	}
 
 } // end Class
 
 exports.model_process = model_process
-

@@ -21,36 +21,35 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 							= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
-const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			),		
+const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			),
 		{ lnk02_css_as_link_truck }		= 	require(	cons.JS_BASE + 'spc/theme/truck/deep_html/types/styles/lnk02_css_as_link_truck.es6'		),
 		{ lnk03_css_minimized_truck }	= 	require(	cons.JS_BASE + 'spc/theme/truck/deep_html/types/styles/lnk03_css_minimized_truck.es6'	),
 		{ lnk04_css_inline_truck }		= 	require(	cons.JS_BASE + 'spc/theme/truck/deep_html/types/styles/lnk04_css_inline_truck.es6'		),
 		{ lnk05_css_inline_truck }		= 	require(	cons.JS_BASE + 'spc/theme/truck/deep_html/types/styles/lnk05_css_inline_multiple_truck.es6'	),
-		{ html_style } 					= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'		)		
+		{ html_style } 					= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'		)
 
 class lnk01_link_truck extends getset  {
- 
+
     constructor (     thm										)
-    {   
+    {
 
-        super()															
+        super()
 
-		this.n							=	'lnk_truck::'					
+		this.n							=	'lnk_truck::'
 
-		this.thm						=	thm								
+		this.thm						=	thm
 
 		// External object
 		this.script_to_load				=	''
 
 		// tag object
-     	this.linktag					= 	''								 
-	
-		this.link_favicon				=	new html_style('link') 		
-		this.link_apple					=	new html_style('link') 		
-	
-		this.build_data()												
+     	this.linktag					= 	''
+
+		this.link_favicon				=	new html_style('link')
+		this.link_apple					=	new html_style('link')
+
+		this.build_data()
 
     }
 
@@ -58,36 +57,36 @@ class lnk01_link_truck extends getset  {
     create_favicon()
     {
 		// Link Icon - ya convertido a buena url
-						
-		this.link_favicon.rel					=	'icon'												
-		this.link_favicon.type					=	'image/png'											
-		this.link_favicon.href					=  	
-				this.thm.u.http_domainbar + 'r_img/icons/favicon.ico'				
 
-		this.link_favicon.pcreate()														
-		
-		this.code						+=	this.link_favicon.code						
-	}		
+		this.link_favicon.rel					=	'icon'
+		this.link_favicon.type					=	'image/png'
+		this.link_favicon.href					=
+				this.thm.u.http_domainbar + 'r_img/icons/favicon.ico'
+
+		this.link_favicon.pcreate()
+
+		this.code						+=	this.link_favicon.code
+	}
 
 	//L[02]  <link rel="apple-touch-icon" href="apple-touch-icon.png">
     create_apple()
     {
-						
-		this.link_apple.rel					=	'apple-touch-icon'									
-		this.link_apple.type					=	'image/png'											
-		this.link_apple.href					=  	
-				this.thm.u.http_domainbar + 'r_img/icons/apple-touch-icon.svg'				
 
-		this.link_apple.pcreate()													
-		
-		this.code						+=	this.link_apple.code						
-	}		
+		this.link_apple.rel					=	'apple-touch-icon'
+		this.link_apple.type					=	'image/png'
+		this.link_apple.href					=
+				this.thm.u.http_domainbar + 'r_img/icons/apple-touch-icon.svg'
+
+		this.link_apple.pcreate()
+
+		this.code						+=	this.link_apple.code
+	}
 
     build_data()
     {
-		
-		this.create_favicon()											
-		this.create_apple()											
+
+		this.create_favicon()
+		this.create_apple()
 
 		// Esta parte puede generarse de muchas formas
 		// 1.como script
@@ -116,11 +115,11 @@ class lnk01_link_truck extends getset  {
 				this.p('wrong_parameter ' + this.thm.s.live_opt )
 		}
 
-		this.code				+=	this.script_to_load.code	
+		this.code				+=	this.script_to_load.code
 
 		// Ok [17-12-17]
-		// this.p('Code : >' + this.code ) 											
-		// this.dd('Code >'  + this.code) 								
+		// this.p('Code : >' + this.code )
+		// this.dd('Code >'  + this.code)
 
     }
 

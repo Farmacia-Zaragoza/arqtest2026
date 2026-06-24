@@ -25,7 +25,7 @@ const   fs           =   require(  'fs'                                         
         path         =   require(  'path'                                                ),
         os           =   require(  'os'                                                  ),
         util         =   require(  'util'                                                ),
-        empty        =   require(  cons.NODE_MOD + 'is-empty'                            );
+        empty        =   require(  'is-empty'                            );
 
 //---------------------------------------------------------------------------------------------
 

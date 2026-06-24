@@ -48,7 +48,7 @@ const 	{ html_style } 		 = 	require(	cons.JS_BASE 	+ 	'com/objects/html/html_sty
 		{ svg_style } 		 = 	require(	cons.JS_BASE  	+ 	'com/objects/html/svg_style.es6'				),
 		{ scr01_js_dog } = 	require(	cons.JS_PER7 	+ 	'dog/dog/html/h01/main/scr01_js_dog.es7'),
 		{ ifnojs }	 		 = 	require(	cons.JS_BASE 	+ 	'com/objects/html/ifnojs.es6'					),
-		minify 				 = 	require(	cons.NODE_MOD 	+	'html-minifier'									).minify;
+		minify 				 = 	require(	'html-minifier'									).minify;
 
 
 class bdy01_body_dog extends html_style  {

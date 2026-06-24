@@ -9,7 +9,7 @@
 var 		cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
 
 const 		{ model_run_mongo } 	= 	require(	cons.JS_BASE 	+ 'spc/theme/truck/model/m02_run_mongo.ea6'		),
-			echo 					= 	require(	cons.NODE_MOD 	+ 'node-echo'									);
+			echo 					= 	require(	'node-echo'									);
 
 
 class model extends model_run_mongo
@@ -18,7 +18,7 @@ class model extends model_run_mongo
 	{
 		// Pasamos la request
 		super(pmt)
-	
+
 		// RUN --> PROCESS
 	}
 
@@ -34,12 +34,11 @@ class model extends model_run_mongo
 		}
 		else
 			await this.run_psimple()
-			
-// 		return await this.code 
+
+// 		return await this.code
 	}
-	
+
 
 } // end Class
 
 exports.model = model
-

@@ -18,24 +18,23 @@
 //- reload_contents       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"	)
 
 const 	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'		)
 
 class li01_menu_dog extends html_style {
 
-	constructor() 
+	constructor()
 	{
 		let tag_type 				= 	"li"
 		super(tag_type)
 		this.n 						= 	"li01_menu_dog::"
-		
+
 		this.class					=	'bottomli text-center'
-		
+
 		this.a_01					=	new html_style('a')
 
 		this.tag_type 				= 	"li"
-		
+
 	}
 
 	reload_contents( mnu_name , mnu_link = '' )
@@ -43,15 +42,15 @@ class li01_menu_dog extends html_style {
 
 		this.a_01.content				=	mnu_name
 		this.a_01.href					=	mnu_link
-		
+
 		this.a_01.pcreate()
 		this.content					=	this.a_01.code
 
 		this.pcreate()
 
 		//Ok [18-01-06]
-		// this.p('li01_Code > ' +  this.code)												
-		
+		// this.p('li01_Code > ' +  this.code)
+
 	}
 
 }

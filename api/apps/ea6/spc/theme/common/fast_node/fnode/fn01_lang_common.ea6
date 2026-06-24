@@ -10,107 +10,106 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
-const 	{ fnode } 				= require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.es6'						),		
+const 	{ fnode } 				= require(	cons.JS_BASE + 'com/objects/drupal/node/fnode.es6'						),
 		{ cbool }				= require( 	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'						);
 
 
 // Flags - Langs - Base
 class fn01_lang_common extends fnode {
 
-           
+
     constructor (   u					=	''				, // 02. U object
 					page_position		=	''				, // 07. Position id
-					stype				=	'lang_common'	) // 08. Node Type  
-    {   
+					stype				=	'lang_common'	) // 08. Node Type
+    {
 
 		super()
-		this.n 							=	'fn01_lang::'			
-		this.page_position				=	page_position 										
+		this.n 							=	'fn01_lang::'
+		this.page_position				=	page_position
 
-		this.u 							=	u 													
-		
+		this.u 							=	u
+
 		this.b							= 	new cbool()
 
-		this.u 							=	u 													
-		this.s 							=	this.u.s 										
-		this.c 							=	this.u.c 										
-				
-		
-		this.b.copy (this.s.b)													
-		
+		this.u 							=	u
+		this.s 							=	this.u.s
+		this.c 							=	this.u.c
+
+
+		this.b.copy (this.s.b)
+
     	this.type				=	'lang_flags'									 // Type for structures
-    	this.short_type		=	'LGFG'						
-    				
+    	this.short_type		=	'LGFG'
+
 
 		// String fnode / node / cica_recuerdo
 		this.ftype 			=	'fnode'															// Fast node type
-		this.stype 			=	stype															// Node subtype			
-		this.type_name		=	this.stype 													
-		
+		this.stype 			=	stype															// Node subtype
+		this.type_name		=	this.stype
+
 
 		this.b.type_user							=	false										 // Different content if is anonymous
 		this.b.type_human							= 	true 										 // if is dat file never will be erased on disk
-		this.b.type_common							=	true										
-		this.b.type_url								= 	false 										 // 
-		this.b.type_translation						= 	false										
-		this.b.type_translated						= 	true										
-		
+		this.b.type_common							=	true
+		this.b.type_url								= 	false 										 //
+		this.b.type_translation						= 	false
+		this.b.type_translated						= 	true
 
-		this.b.type_have_taxonomy					=	false 										
-		this.b.type_have_code						=	false										
-		this.b.type_have_properties					=	true										
-		this.b.type_have_specific_properties		=	true										
-		this.b.type_synced							=	true										
-		
+
+		this.b.type_have_taxonomy					=	false
+		this.b.type_have_code						=	false
+		this.b.type_have_properties					=	true
+		this.b.type_have_specific_properties		=	true
+		this.b.type_synced							=	true
+
 
 		// Type path adjustment
 
 		// fnode / file_structure
-		this.change							=	
-						'/' + this.ftype + '/' + this.type + '/' 	
+		this.change							=
+						'/' + this.ftype + '/' + this.type + '/'
 
-		// LANG_DEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma 
+		// LANG_DEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma
 
-	
-		
-		this.suffix				=	this.s.lang + '_' + this.stype					
-		this.suffix_disk			=	this.suffix																
-		this.suffix_lang			=	this.suffix 																
+
+
+		this.suffix				=	this.s.lang + '_' + this.stype
+		this.suffix_disk			=	this.suffix
+		this.suffix_lang			=	this.suffix
 
 		// Links information url - title - target - extended TeXt
 		//   <a class="pop-container-L active" href="#" data-caption="Click to go to Chienese site">
-    	//       <img src="img/flags/brqx_flag_china_2016_320_200.png"> 
-		
+    	//       <img src="img/flags/brqx_flag_china_2016_320_200.png">
 
-		let arrays_line = 'lan tit'   
-		
-		this.arr['types'] = arrays_line.split (' ') 		 
-		
+
+		let arrays_line = 'lan tit'
+
+		this.arr['types'] = arrays_line.split (' ')
+
 
 		// Method for disk load and to generate and save content
-		this.generate_load_from_disk_path()													
+		this.generate_load_from_disk_path()
 
 		// Es un tipo humano - No tiene codigo
 		// arr_tit_5@Click to go to Russian site
-		// this.p('FlagCom ' + this.load_from_disk_path)								
-		// this.p('FlagLan ' + this.load_from_disk_lang)								
+		// this.p('FlagCom ' + this.load_from_disk_path)
+		// this.p('FlagLan ' + this.load_from_disk_lang)
 
 		// /brqx/pers/drupal/v50/fnode/flat/fnode/phone_structure/common_phone_email
 		// /brqx/pers/drupal/v50/fnode/flat/fnode/phone_structure/common_phone_email_ssl_phs.code
 
 		if (this.s.load == 'drupal')
 		{
-			this.run_from_drupal()															
+			this.run_from_drupal()
 		}
-		else 
+		else
 		{
-			this.run_from_disk()																
+			this.run_from_disk()
 		}
 
-		//this.p('SSD_Phone ' + this.ssd_alias_path	+ this.arr['properties'].length )												
-		// this.p('RAM_Phone ' + this.ram_alias_path	)												
+		//this.p('SSD_Phone ' + this.ssd_alias_path	+ this.arr['properties'].length )
+		// this.p('RAM_Phone ' + this.ram_alias_path	)
 
 		// /ram/home/ser/zd/main/es/zdom/emp/flat/zd_main_flat/es/cache/ssl/flat.dbrqx.com/anonymous/flat/fnode/phone_structure/human/common/common_phone_email
 

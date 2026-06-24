@@ -25,11 +25,10 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var { html_style } 		= require(	'/brqx/base/rcode/es6/com/objects/html/html_style.es6'		)
 
 class sld03_div_recuerdo_middle extends html_style {
 
-	constructor() 
+	constructor()
 	{
 		this.tag_type = "div"
 
@@ -52,7 +51,7 @@ class sld03_div_recuerdo_middle extends html_style {
 		this.clean()
 	}
 
-	create_h2() 
+	create_h2()
 	{
 		this.h2_01.code = ""
 		this.h2_01.content = ""
@@ -65,7 +64,7 @@ class sld03_div_recuerdo_middle extends html_style {
 		this.content += this.h2_01.code
 	}
 
-	create_div() 
+	create_div()
 	{
 		this.div_01.code = ""
 		this.div_01.content = ""
@@ -73,13 +72,13 @@ class sld03_div_recuerdo_middle extends html_style {
 		this.content += this.div_01.code
 	}
 
-	create_ul() 
+	create_ul()
 	{
 		this.ul_01 = new tax02_ul_peloncita(this.fnode.tnode)
 		this.content += this.ul_01.code
 	}
 
-	build_data() 
+	build_data()
 	{
 		this.code = ""
 		this.content = ""

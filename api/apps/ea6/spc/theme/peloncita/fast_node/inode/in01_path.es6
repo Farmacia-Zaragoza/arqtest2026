@@ -13,18 +13,17 @@
 //- d-build_dimensions-                    : Generate dimensions for photo
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const	{ inode } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/node/inode.ea6'				),	
+const	{ inode } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/node/inode.ea6'				),
 		{ cbool }				= 	require( 	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'				);
 
 class in01_path extends inode {
 
-	constructor(	fnode 					= ""							, 
-					resolutions_to_generate = ""							, 
-					glob_file_search 		= "noglob"						, 
-					img_type_save 			= "path"						, 
-					stype 					= "cica_image"					) 
+	constructor(	fnode 					= ""							,
+					resolutions_to_generate = ""							,
+					glob_file_search 		= "noglob"						,
+					img_type_save 			= "path"						,
+					stype 					= "cica_image"					)
 	{
 		super()
 		this.n 					= "in01_path::"
@@ -37,14 +36,14 @@ class in01_path extends inode {
 
 		this.c 					= this.s.c
 
-		
+
 		this.resolutions_to_generate 			= resolutions_to_generate
 		this.type 								= "inode_path"
 		this.short_type 						= "INP"
 		this.glob_method 						= glob_file_search
 		this.img_type_save 						= img_type_save
-		
-		if (this.resolutions_to_generate == "") 
+
+		if (this.resolutions_to_generate == "")
 			this.resolutions_to_generate = "2560x1920 1024x0768 1280x0960 0884x0663 0640x0480 0442x0332 0320x0240 0082x0062 0041x0031"
 
 		var arrays_line = resolutions_to_generate + " " + this.s.img_base_resolution
@@ -55,9 +54,9 @@ class in01_path extends inode {
 		this.arr['mty'] = array_multi_line.split(" ")
 
 		var array_line = array_multi_line + " " + "res oim mty rko qty img-type"
-		
+
 		// this.p('ARRAY_LINE '+ array_line )
-		
+
 		this.arr['types'] = array_line.split(" ")
 
 		this.type 								= stype
@@ -80,7 +79,7 @@ class in01_path extends inode {
 	}
 
 	// ------------------------------- RELOAD CONTENTS -----------------------------------
-	reload_contents(original_image_url_path = "") 
+	reload_contents(original_image_url_path = "")
 	{
 		for (var pos in this.arr['oim'])  		this.arr['oim'].splice(pos,1)
 		for (var pos in this.arr['oic'])  		this.arr['oic'].splice(pos,1)
@@ -105,18 +104,18 @@ class in01_path extends inode {
 		this.suffix_code = this.suffix_lang + ".code"
 
 		this.generate_load_from_disk_path()
-		
+
 		// /brqx/pers/drupal/v50/fnode/truck/img/path/transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0010_ssl_cica_image.img
-		// /brqx/pers/drupal/v50/fnode/truck/img/path/_ssl_cica_image.img		
+		// /brqx/pers/drupal/v50/fnode/truck/img/path/_ssl_cica_image.img
 		// this.p('In01_Image_Path ' + this.load_from_disk_path)
 		// this.p('In01_Image_Code ' + this.load_from_disk_path_code)
 
 
-		if (this.s.load == "drupal") 
+		if (this.s.load == "drupal")
 		{
 			this.run_from_drupal()
-		} 
-		else 
+		}
+		else
 		{
 			this.run_from_disk()
 			//create_paths - get_current_properties_from_disk
@@ -124,7 +123,7 @@ class in01_path extends inode {
 	}
 
 	// ------------------------------- GET_CHILD_PROPERTIES -----------------------------------
-	get_child_properties(prop, value) 
+	get_child_properties(prop, value)
 	{
 		if 		(prop == "name") 		this.image_name = value
 		else if (prop == "type") 		this.img_type_save = value
@@ -139,18 +138,18 @@ class in01_path extends inode {
 		else if (prop == "img-type") 	this.img_type = value
 	}
 
-	load_child_details() 
+	load_child_details()
 	//Si no hay cache debe regnerarlos siempre
 	{
-		if (this.s.load == "drupal" 		|| 
-		   (!this.b.site_cache 				|| 
+		if (this.s.load == "drupal" 		||
+		   (!this.b.site_cache 				||
 		   	this.special_reload_ram("INP") || this.special_reload_disk("INP"))
-		   )  
+		   )
 			{
 				// this.p('ENTER_IN_IMGASSS')
 				this.get_current_imgs()
 				// call to create_resolution_img_no_glob | glob
-				
+
 			}
 	}
 

@@ -13,7 +13,7 @@
 //		<div class="captcha-chat">					(external)
 // ------------------------------------------------------------------------------------
 //* DIV
-//    HEADER 
+//    HEADER
 //    SECTION
 //	  SECTION
 //    FOOTER
@@ -24,11 +24,10 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
-const 	{ html_style } 					= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'										),		
+const 	{ html_style } 					= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'										),
 
-		{ sec01_section_lang_truck }	= 	require(	cons.JS_BASE  + 'spc/theme/truck/main_html/sec01_section_lang_truck.es6'				),					
+		{ sec01_section_lang_truck }	= 	require(	cons.JS_BASE  + 'spc/theme/truck/main_html/sec01_section_lang_truck.es6'				),
 		{ sec02_section_slider_truck }	= 	require(	cons.JS_BASE  + 'spc/theme/truck/main_html/sec02_section_slider_truck.es6'				),
 		{ hdr01_header_truck }			= 	require(	cons.JS_BASE  + 'spc/theme/truck/main_html/hdr01_header_truck.es6'						),
 		{ foo04_footer }				= 	require(	cons.JS_BASE  + 'spc/theme/truck/deep_html/types/footer/foo04_footer.es6'				),
@@ -40,35 +39,35 @@ const 	{ html_style } 					= 	require(	cons.JS_BASE  + 'com/objects/html/html_st
 class ctn01_container_truck extends html_style  {
 
     constructor (     thm						)
-    {   
-        let tag_type     				= 	'div'							
+    {
+        let tag_type     				= 	'div'
 
-       	super(				tag_type	)				
-        this.tag_type   	  			= 	'div'							
+       	super(				tag_type	)
+        this.tag_type   	  			= 	'div'
 
-		this.n							=		'ctn01_truck::'			
+		this.n							=		'ctn01_truck::'
 
 		// Html Objects
-	
+
 	    this.header_01          	 	=	''
-	    this.section_01            		=	'' 
-	    this.section_02            	 	=	'' 
-	    
-	    this.footer_01              	=	'' 
-	
-	    this.div_captcha_01         	=	''    
+	    this.section_01            		=	''
+	    this.section_02            	 	=	''
 
-		this.thm						=	thm							
+	    this.footer_01              	=	''
 
-		this.class	 					=	'container clearfix' 					
+	    this.div_captcha_01         	=	''
 
-		this.fnode						=	this.thm.arr['fnode']['image_list']			
+		this.thm						=	thm
+
+		this.class	 					=	'container clearfix'
+
+		this.fnode						=	this.thm.arr['fnode']['image_list']
 
 		// Tenemos que tener como un mapa del site
-		this.thm.map					= 	'body/container'					
+		this.thm.map					= 	'body/container'
 
-	
-		this.build_data()												
+
+		this.build_data()
 
     }
 
@@ -76,29 +75,29 @@ class ctn01_container_truck extends html_style  {
 	// <section class="lang-grand clearfix">		(external)
   	create_section_01()
     {
-   	 	this.section_01		= 	
+   	 	this.section_01		=
    					new sec01_section_lang_truck( this.thm )	// Drupal theme structure
-   					
-  		// this.content			+=	'SECTION>'											
+
+  		// this.content			+=	'SECTION>'
 
 		// this.p('sec1:codl >' + this.section_01.code.length)
 
   		this.content			+=	this.section_01.code							// 'SECTION>'
-  		  		
+
 	}
 
 	// 	<div class="policy_content">				(external)
 	create_policy()
     {
-   	 	this.section_02		= 	
+   	 	this.section_02		=
    					new cok02_div_policy_cookies( this.thm )
 
   		// $this->content			.=	'SECTION2>'											;
 
 		// this.p('cok1:codl >' + this.section_02.code.length)
-   					   					
+
   		this.content			+=	this.section_02.code							// 'SECTION>'
-  		
+
 	}
 
 
@@ -106,13 +105,13 @@ class ctn01_container_truck extends html_style  {
 	// 	<section class="flex-slider">				(external)
   	create_section_flex()
     {
-   	 	this.section_02		= 	
+   	 	this.section_02		=
    					new sec02_section_slider_truck( this.thm )	// Drupal theme structure
 
-  		// this.content			+=	'SECTION2>'											
-   					   					
+  		// this.content			+=	'SECTION2>'
+
   		this.content			+=	this.section_02.code							// 'SECTION>'
-  		
+
 	}
 
   	create_section_02()
@@ -121,38 +120,38 @@ class ctn01_container_truck extends html_style  {
 
 		if (this.thm.b.page_cookies)
 		{
-			this.create_policy()													
+			this.create_policy()
 		}
 		else
-			this.create_section_flex()													
- 		  		
+			this.create_section_flex()
+
 	}
 
 
 	// <header class="text-center mobile_style">	(external)
   	create_header()
     {
-  		this.header_01		= 	
-  					new hdr01_header_truck(	this.thm	   )	
+  		this.header_01		=
+  					new hdr01_header_truck(	this.thm	   )
 
-		// this.content			+=  'HEADER>'						
+		// this.content			+=  'HEADER>'
 
-		this.content			+=  this.header_01.code				// 'HEADER>'		
-		
+		this.content			+=  this.header_01.code				// 'HEADER>'
+
 	}
 
 
 	//		<footer class="clearfix">					(external)
   	create_footer()
     {
-  		this.footer_01		= 	
+  		this.footer_01		=
   				new foo04_footer(		this.thm				)
 
-		// this.content			+=   'FOOTER>'									
+		// this.content			+=   'FOOTER>'
 		// this.p('foot:codl >' + this.footer_01.code.length)
 
 
-		this.content			+=   this.footer_01.code			 // 'FOOTER>'		
+		this.content			+=   this.footer_01.code			 // 'FOOTER>'
 
 
 	}
@@ -160,36 +159,36 @@ class ctn01_container_truck extends html_style  {
 	// <div class="captcha-chat">					(external)
   	create_div_captcha()
     {
-  		this.div_captcha_01		= 	
+  		this.div_captcha_01		=
   				new cpt04_div_captcha(		this.thm				)
 
-		// this.content			+=   'CAPTCHA>'			 // OK [17-06-25] 		
+		// this.content			+=   'CAPTCHA>'			 // OK [17-06-25]
 
-		this.content			+=   this.div_captcha_01.code			 		
+		this.content			+=   this.div_captcha_01.code
 
 	}
 
     build_data()
     {
-	// Structure Container 
+	// Structure Container
 	// [HEADER] [SECTION] [SECTION] [FOOTER] [CAPTCHA]
 
-		this.content			=	''									
+		this.content			=	''
 
-		this.create_header()											
+		this.create_header()
 
-		this.create_section_01()										
+		this.create_section_01()
 
-		this.create_section_02()										
+		this.create_section_02()
 
-		this.create_footer()											
+		this.create_footer()
 
-		this.create_div_captcha()										
+		this.create_div_captcha()
 
-		this.pcreate()											
+		this.pcreate()
 
 		// Ok [18-01-03]
-		// this.p('code >' + this.code.length )							
+		// this.p('code >' + this.code.length )
 
     }
 

@@ -6,7 +6,7 @@
 //-------------------------------------------------------------------------------------
 //[S_01] <script src="https://cdn.jsdelivr.net/blazy/1.8.2/blazy.min.js" defer></script>
 //[S_02] <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" defer></script>
-																			  
+
 //[S_03] <script> JS CODE </script>
 
 // ------------------------------------------------------------------------------------
@@ -24,114 +24,112 @@
 // - d-join_link-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-var 	cons 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"									);
-
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),		
+const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
 		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									),
 		scpf				= 	require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'	),
 		{ cn01_base } 		= 	require(	cons.JS_BASE + 'spc/theme/common/fast_node/cnode/cn01_base.es6'						),
-		CleanCSS 			= 	require(	cons.NODE_MOD + 'clean-css'															);
+		CleanCSS 			= 	require(	'clean-css'															);
 
 
 class lnk04_css_inline_dog extends html_style  {
 
     constructor (     thm	              						)
-    {   
+    {
     // De momento este metodo de poner todo en un script falla
 
 		let 	tag_name	=	'style'
 		super( tag_name )
 
-		this.n							=	'scr01_dog::'						
+		this.n							=	'scr01_dog::'
 		this.m							=	'constructor'
 
-		this.thm						=	thm							
-		
+		this.thm						=	thm
+
 		this.link_code_path				=	''
 
-		this.build_data()													
+		this.build_data()
 
     }
 
     create_normalize()
     {
 
-		let css_name 					=	'normalize.min.css'									
+		let css_name 					=	'normalize.min.css'
 
-		this.link_code_path				=  	
-				this.thm.u.site_path + 'r_fassets/libs/css/' + css_name						
+		this.link_code_path				=
+				this.thm.u.site_path + 'r_fassets/libs/css/' + css_name
 
 
-		this.content					+=		
+		this.content					+=
 			scpf.file_get_code(this.link_code_path)  + " "
 
-	}		
+	}
 
 
 	//[S_03] <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js" defer></script>
     create_flexslider()
     {
 
-		let css_name 					=	'flexslider.min.css'									
+		let css_name 					=	'flexslider.min.css'
 
-		this.link_code_path				=  	
-				this.thm.u.site_path + 'r_fassets/libs/css/' + css_name						
+		this.link_code_path				=
+				this.thm.u.site_path + 'r_fassets/libs/css/' + css_name
 
 
-		this.content					+=	
+		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "
 
-	}		
+	}
 
 
 	//[S_09] <link src="assets/css/main.css" defer></link>
 	create_main()
     {
 		// External Div
-		let css_name 					=	'main'									
-		
+		let css_name 					=	'main'
+
 		// Live Enviroment
 
-		if ( this.thm.b.site_live ) 		
+		if ( this.thm.b.site_live )
 			css_name					+=	'_live'
 
-		this.link_code_path				=  	
-				this.thm.u.site_path + 'r_cassets/css/' + css_name + '_min.css'						
+		this.link_code_path				=
+				this.thm.u.site_path + 'r_cassets/css/' + css_name + '_min.css'
 
 		this.content					+=	scpf.file_get_code(this.link_code_path)
 
 
 		// this.p('CONTENT_LENGT ' + this.content.length)
 
-	}		
+	}
 
 	//[S_09] <link src="assets/css/product.css" defer></link>
 	create_product()
     {
 		// External Div
-		let css_name 					=	'product'									
-		
+		let css_name 					=	'product'
+
 		// Live Enviroment
 
-		if ( this.thm.b.site_live ) 	
+		if ( this.thm.b.site_live )
 			css_name					+=	'_live'
 
-		this.link_code_path				=  	
-				this.thm.u.site_path + 'r_cassets/css/' + css_name + '_min.css'						
+		this.link_code_path				=
+				this.thm.u.site_path + 'r_cassets/css/' + css_name + '_min.css'
 
 		this.content		+=		scpf.file_get_code(this.link_code_path)
 
 
 		// this.p('CONTENT_LENGT ' + this.content.length)
 
-	}		
+	}
 
 	join_link()
 	{
 
 	  // as command : cleancss main.css -o main_min2.css
 		var cleancss	= new CleanCSS({
-		  inline: ['all'] ,				
+		  inline: ['all'] ,
 	      cleanupCharsets: true, // controls `@charset` moving to the front of a stylesheet; defaults to `true`
 	      normalizeUrls: true, // controls URL normalization; defaults to `true`
 	      optimizeBackground: true, // controls `background` property optimizations; defaults to `true`
@@ -156,16 +154,16 @@ class lnk04_css_inline_dog extends html_style  {
 	      transform: function () {} // defines a callback for fine-grained property optimization; defaults to no-op
   		})
 
-	
+
 		// var result_ugli	= UglifyCSS.minify(this.final_link.content , { compress: false, mangle: true } )
 
 		var result = cleancss.minify(this.content);
-		
+
 		// var result_clean = cleancss
 
 		this.content = result.styles
 
-	
+
 	}
 
 
@@ -176,31 +174,31 @@ class lnk04_css_inline_dog extends html_style  {
 
  		this.charset			=	"utf-8"
 
- 		this.title				=	"css_style" 
+ 		this.title				=	"css_style"
  		this.type				=	"text/css"
-		
+
 		this.create_normalize()
 		this.create_flexslider()
 
-		if ( this.thm.b.site_live )		
-			if (this.thm.b.page_product) 	
+		if ( this.thm.b.site_live )
+			if (this.thm.b.page_product)
 				this.create_product()													;
 			else
 				this.create_main()
 		else
 		{
-			if (this.thm.b.page_product) 	
+			if (this.thm.b.page_product)
 				this.create_product()													;
 			this.create_main()
 
 		}
 
-		// this.join_link()													
+		// this.join_link()
 
-		this.pcreate()									
+		this.pcreate()
 
 		// Ok [17-11-02]
-		// this.p('Code : >' + this.code ) 											
+		// this.p('Code : >' + this.code )
 
     }
 

@@ -13,8 +13,8 @@ var 		cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"
 const 		{ model_process } 	= 	require(	cons.JS_BASE 	+ 'com/objects/fire/f01_model/m05_process.ea6'		),
 			{ pn01_simple } 	= 	require(	cons.JS_BASE 	+ 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'	),
 			{ pn02_fast } 		= 	require(	cons.JS_BASE 	+ 'spc/theme/common/fast_node/pnode/pn02_fast.es6'	),
-			empty 				= 	require(	cons.NODE_MOD 	+ 'is_empty'										),
-			echo 				= 	require(	cons.NODE_MOD 	+ 'node-echo'										);
+			empty 				= 	require(	'is_empty'										),
+			echo 				= 	require(	 'node-echo'										);
 
 
 class model_run_disk extends model_process
@@ -23,7 +23,7 @@ class model_run_disk extends model_process
 	{
 		// Pasamos la request
 		super(pmt)
-	
+
 		// RUN --> PROCESS
 	}
 
@@ -31,7 +31,7 @@ class model_run_disk extends model_process
 	// TO   --> pn02_fast ( try FPC) - (try psimple ) - return code
 
 
-	// ------------------------- RUN_DISK [STA] ------------------------- 	
+	// ------------------------- RUN_DISK [STA] -------------------------
 	run_disk()
 	{
 		// SYNCHRONOUS
@@ -41,9 +41,9 @@ class model_run_disk extends model_process
 			this.pnode = new pn02_fast(this.u)
 		}
 
-		if ( this.b.ready_to_load				&& 
-			!empty(this.pnode)					&& 
-			this.pnode.b.type_generated			)		
+		if ( this.b.ready_to_load				&&
+			!empty(this.pnode)					&&
+			this.pnode.b.type_generated			)
 		{
 
 			// echo("FPC" )
@@ -54,8 +54,8 @@ class model_run_disk extends model_process
 			var start_time = global.GLOBALS.start_time
 			var total_time = Math.round(stop_time - start_time, 4)
 			var time_str = total_time + " segundos "
-		} 
-		else  
+		}
+		else
 		{
 			var supermnu_dats = this.supermnu_libs + "dats/" + this.theme_name + "/"
 
@@ -64,17 +64,16 @@ class model_run_disk extends model_process
 
 			// this.p('SITE_LIVE : ' + this.b.site_live + ' = ' +  false)
 
-			if (this.pnode.status) 
+			if (this.pnode.status)
 			{
 				echo("NOCACHE_" + this.pnode.code.length)
 				// echo("NOCACHE_" + this.pnode.code)
 				// echo(this.pnode.code)
 			}
 		}
-	
+
 	}
 
 } // end Class
 
 exports.model_run_disk = model_run_disk
-

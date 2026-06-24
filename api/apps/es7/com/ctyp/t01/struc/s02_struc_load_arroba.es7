@@ -35,7 +35,7 @@
 const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const { struc_load_folder }        =   require(  cons.JS_TYP7  + 'struc/s03_struc_load_folder.es7'),
-        empty              =   require(  cons.NODE_MOD + 'is-empty'                        ),
+        empty              =   require(  'is-empty'                        ),
 		ffi	               =   require(	cons.JS_LIB7 + 'file/file_load.es7'	),
 		fs 				   =   require(	'fs'												);
 
