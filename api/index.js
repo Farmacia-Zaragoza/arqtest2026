@@ -65,9 +65,10 @@ define("JS_TYF7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'			))
 
 // 3. IMPORTANTE: Cargamos tu lógica compleja (fire.es7)
 // Ajusta la ruta para que apunte a donde hayas subido el archivo en GitHub
-const fireApp = require('./apps/fire.js');
 
 const app = express();
+
+const fireApp = require('./apps/fire.js');
 
 //-------------------------------------------------------------------------------------
 let run_path                =   path.resolve(".")
