@@ -65,7 +65,7 @@ define("JS_TYF7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'			))
 
 // 3. IMPORTANTE: Cargamos tu lógica compleja (fire.es7)
 // Ajusta la ruta para que apunte a donde hayas subido el archivo en GitHub
-const sureapp = require('./apps/fire.es7');
+const fireApp = require('./apps/fire.es7');
 
 const app = express();
 
@@ -106,7 +106,7 @@ app.all('*', (req, res) => {
     // Aquí es donde fire.es7 toma el control
     // Asumiendo que fire.es7 es un router de express o una función (req, res)
 //      res.json({ estado: "Inicio lanzamiento" });
-    return sureapp(req, res);
+    return fireApp(req, res);
 });
 
 // 6. Exportamos la app (Vercel se encarga de "levantarla")
