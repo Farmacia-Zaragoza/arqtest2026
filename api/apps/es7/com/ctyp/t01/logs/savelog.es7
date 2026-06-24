@@ -8,7 +8,6 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
 const fs                   =   require(  'fs'         );
 
