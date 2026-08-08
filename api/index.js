@@ -1,8 +1,11 @@
 // 1. Cargamos las librerías básicas que usaba tu lanzador
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
+
+require('./apps/paths.js'); 
 
 const ROOT = process.cwd();
 global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global;
@@ -118,5 +121,3 @@ app.all('*', (req, res) => {
 
 // 6. Exportamos la app (Vercel se encarga de "levantarla")
 module.exports = app;
-
-

@@ -33,6 +33,11 @@
 //-------------------------------------------------------------------------------------
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+const path = require('path');
+
+define("JS_TYP7", path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
+define("JS_TYF7", path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+define("JS_LIB7", path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 const   { index_fast }    =   require(  path.join(JS_TYP7  , 'fire/index_fast.es7'               ) );
         const { container } = require(  path.join(JS_TYP7  , 'container/c01_cont.es7'            ) );
@@ -231,4 +236,3 @@ class common_model extends index_fast
 } // end Class
 
 exports.common_model = common_model
-
