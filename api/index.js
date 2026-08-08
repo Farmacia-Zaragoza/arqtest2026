@@ -6,11 +6,11 @@ const path = require('path');
 
 const ROOT = process.cwd();
 global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global;
-const global.path = require('path');
+global.path = require('path');
 
-const global.echo = (...args) => console.log(...args);
+global.echo = (...args) => console.log(...args);
 
-const global.removeAccents = (str) => {;
+global.removeAccents = (str) => {;
   if (typeof str !== 'string') return str;
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
