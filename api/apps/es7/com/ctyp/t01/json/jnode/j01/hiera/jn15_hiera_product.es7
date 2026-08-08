@@ -1,3 +1,4 @@
+const path = require(  'path'                                                 );
 // [DOCHANGED_NODE ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Agile Node JS Fast Node Json Array Recursive Class  [V.0.0.1]  (2019-06-13)
@@ -17,7 +18,7 @@ define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 const  fs                       =   require(  'fs'                                                );
        const empty = require(  'is-empty'                          );
        const accents = require(  'remove-accents'                    );
-       const path = require(  'path'                                                 );
+       
        const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
        const { jn16_hiera_json_list_base } = require(path.join(JS_TYP7, 'json/jnode/j01/hiera/jn16_hiera_list_base.es7'))
 

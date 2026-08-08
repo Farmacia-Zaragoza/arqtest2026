@@ -1,3 +1,4 @@
+const   path                =   require('path'                                             );
 define('JS_TYP7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
 define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
@@ -18,7 +19,7 @@ define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 // - d-save_json_parragraph_from_file-   : Generate parragraphs
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const   path                =   require('path'                                             );
+
 
 // Extraes solo las 3 o 4 que vayas a usar en este fichero
 

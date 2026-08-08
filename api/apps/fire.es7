@@ -1,9 +1,10 @@
-define('JS_TYP7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_ES6]
 
 const   path                =   require('path'                                             );
+
+define('JS_TYP7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 const cons = require(path.join(process.cwd(), 'api/apps/es7/com/agen/constants.es7'));
 // const   cons                =   require('./es7_com_agen/constants.es7') ;
@@ -179,4 +180,3 @@ sureapp.use(function(req, res ,  next)
 })
 
 module.exports = sureapp;
-

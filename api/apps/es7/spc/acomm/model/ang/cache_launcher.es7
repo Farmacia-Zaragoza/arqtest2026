@@ -1,3 +1,4 @@
+const path = require('path');
 define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
@@ -31,7 +32,6 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 //- d-no_cache_launcher_code-  : Ejecuta el codigo para sites sin cache
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const path = require('path');
 
 const   { angular_model }   =   require(  path.join(JS_ACO7  , 'model/ang/model.es7'     ) ) ;
         const { fast_uri } = require(  path.join(JS_ACO7  , 'uri/n02/u10_fast_uri.es7'     ) );

@@ -1,3 +1,4 @@
+const path = require(  'path'                                                );
 // [DOCHANGED_ES7_SPACES]
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Agile Node Js - File Operations - ( BRQX NG Arquitectura 2019 )
@@ -21,7 +22,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   fs           =   require(  'fs'                                                  );
-        const path = require(  'path'                                                );
+        
         const os = require(  'os'                                                  );
         const util = require(  'util'                                                );
         const empty = require(  'is-empty'                            );

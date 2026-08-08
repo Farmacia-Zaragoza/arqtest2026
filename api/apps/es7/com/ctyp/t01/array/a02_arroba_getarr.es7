@@ -1,3 +1,4 @@
+const   path                =   require('path'                                             );
 define('JS_TYP7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
 
 // [DOCHANGED_ES6_SPACES]
@@ -23,7 +24,7 @@ define('JS_TYP7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const   path                =   require('path'                                             );
+
 
 const { JS_TYP7 } = require(path.join(process.cwd(),'api/apps/paths.js'));
 const 	{ arroba_mixarr } 		  =  require(path.join(JS_TYP7 , 'array/a03_arroba_mixarr.es7'));
