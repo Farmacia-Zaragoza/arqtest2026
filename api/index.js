@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const path = require('path');
 
 const ROOT = process.cwd();
-const global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global;
+global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global;
 const global.path = require('path');
 
 const global.echo = (...args) => console.log(...args);
