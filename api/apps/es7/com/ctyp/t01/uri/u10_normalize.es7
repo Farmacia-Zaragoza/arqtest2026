@@ -1,3 +1,6 @@
+const path = require('path');
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+
 // [DOCHANGED_NODE_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - URI Class  [V.0.2.0]  (2020-02-05)

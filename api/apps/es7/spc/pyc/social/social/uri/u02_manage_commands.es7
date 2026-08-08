@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Sire Uri Manage Commands  [V.0.0.3]  (2019-11-21)

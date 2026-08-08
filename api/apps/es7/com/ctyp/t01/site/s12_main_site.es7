@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_ES7_SPACES]
 // Updated Langs: +NodeJs,Ruby,Php
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--

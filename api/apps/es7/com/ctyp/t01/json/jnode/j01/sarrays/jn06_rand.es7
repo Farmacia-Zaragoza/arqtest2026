@@ -1,3 +1,6 @@
+const path = require('path');
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+
 // [DOCHANGED_NODE ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Agile Node JS Fast Node Json Array Recursive Class  [V.0.0.1]  (2019-06-13)

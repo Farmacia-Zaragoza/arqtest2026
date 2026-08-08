@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_NODE_ES6_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Architecture Functionality : Uri

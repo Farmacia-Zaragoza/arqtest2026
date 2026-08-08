@@ -1,3 +1,7 @@
+const path = require('path');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+
 // [DOCHANGED_ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Common Model Class  [V.0.0.2]  (2019-05-13)

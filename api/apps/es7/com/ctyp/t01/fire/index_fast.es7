@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_ES6_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Index Lib Fire - Index Sites  [V.0.0.3]  (2019-11-18)

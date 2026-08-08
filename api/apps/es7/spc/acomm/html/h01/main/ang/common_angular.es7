@@ -1,3 +1,6 @@
+const path = require('path');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+
 // [DOCHANGED_SPACES_NODE]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Common Angular Body Class  [V.0.0.1]  (2020-01-01)

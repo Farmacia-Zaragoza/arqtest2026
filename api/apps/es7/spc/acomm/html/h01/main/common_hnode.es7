@@ -1,3 +1,5 @@
+const path = require('path');
+
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node JS Html Div Class  [V.0.0.1]  (2018-08-05)
 // Brqx Group - Agile Farmacia Zaragoza Methodology

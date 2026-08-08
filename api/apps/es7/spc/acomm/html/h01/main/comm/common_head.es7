@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Common Head Class  [V.0.0.1]  (2020-01-03)

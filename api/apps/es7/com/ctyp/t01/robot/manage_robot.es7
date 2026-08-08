@@ -1,3 +1,5 @@
+const path = require('path');
+
 // Updated_Langs:NodeJs+,Ruby,Php
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //TypeJson Json Types Class  [V.0.0.4]  (2019-04-28)

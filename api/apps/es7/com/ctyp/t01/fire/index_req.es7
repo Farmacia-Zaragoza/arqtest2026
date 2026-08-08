@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHECKED_NODE_ES6_PHP_P56]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Indes Request Class  [V.0.0.1]  (2019-07-12)

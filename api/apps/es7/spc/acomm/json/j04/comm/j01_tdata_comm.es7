@@ -1,3 +1,7 @@
+const path = require('path');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - App Broser  [V.0.0.2]  (2019-05-13)

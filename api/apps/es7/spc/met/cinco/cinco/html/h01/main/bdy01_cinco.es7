@@ -1,3 +1,5 @@
+const path = require('path');
+
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Pharmacy Body Class  [V.0.0.4]  (2019-01-22)
 // Brqx Group - Agile Farmacia Zaragoza Methodology

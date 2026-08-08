@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_NODE_ES6_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Site Sure Commands URi Class  [V.0.0.1]  (2019-06-24)

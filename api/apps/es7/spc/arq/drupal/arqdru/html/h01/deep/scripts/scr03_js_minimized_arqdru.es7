@@ -1,3 +1,5 @@
+const path = require('path');
+
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node JS - Farma Scripts Minimized Class  [V.0.0.1]  (2018-02-01)
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]

@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_NODE_ES6_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - URI Page String Class  [V.0.1.5]  (2019-11-19)

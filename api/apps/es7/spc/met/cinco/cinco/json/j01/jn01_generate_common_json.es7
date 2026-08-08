@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_NODE ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Agile Node JS Fast Node Site Process && Generate Common Json Class  [V.0.0.1]  (2019-06-14)

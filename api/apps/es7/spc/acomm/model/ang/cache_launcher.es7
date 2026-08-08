@@ -1,3 +1,6 @@
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+
 // [DOCHANGED_ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - App Model Arqdru  [V.0.0.5]  (2019-11-18)

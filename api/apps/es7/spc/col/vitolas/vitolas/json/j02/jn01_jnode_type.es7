@@ -1,3 +1,5 @@
+const path = require('path');
+
 // [DOCHANGED_NODE ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Agile Node JS JNode_Type Class  [V.0.0.1]  (2019-06-14)

@@ -1,3 +1,6 @@
+const path = require('path');
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+
 // [DOCHANGED_ES6_NODE]
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //BlkJson  Block Json Style Class  [V.0.0.4]  (2019-03-17)

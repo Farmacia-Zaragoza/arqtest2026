@@ -1,3 +1,5 @@
+const path = require('path');
+
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node JS - social Scripts Tag Class  [V.0.0.2]  (2019-03-31)
 // Brqx Group - Agile Farmacia Zaragoza Methodology [ES6]
