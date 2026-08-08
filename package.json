@@ -20,6 +20,7 @@
    "node-echo": "^0.1.0",
    "trim": "^0.0.1"   ,
    "remove-accents": "^0.4.4",
+   "is_empty": "^1.0.1",
     "iconv-lite": "^0.6.3",
 	"urldecode": "^1.0.1",
 	"readdirp": "^3.6.0",
