@@ -33,6 +33,7 @@
 const path = require('path');
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/')); 
 
 const   { common_model }  =   require(  path.join(JS_ACO7  , 'model/comm/common_model.es7'    )  );
         const { site_uri } = require(  path.join(JS_ACO7  , 'uri/n02/u01_site_uri.es7'       )  );
@@ -105,4 +106,3 @@ class angular_model extends common_model
 } // end Class
 
 exports.angular_model = angular_model
-
