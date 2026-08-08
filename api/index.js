@@ -62,17 +62,18 @@ global.define = function(name, value) {
   global[name] = value;
 };
 
-// 4. INTERCEPTOR DIRECTO DE RUTAS:
-// Sustituye el identificador por la cadena de texto de la ruta absoluta directamente
-// Esto evita que CoffeeScript o Node intenten buscar la variable en el scope local.
+// 4. INTERCEPTOR INTELIGENTE Y SEGURO:
+// Reemplaza SOLO la variable cuando está dentro de un path.join(...)
+const pathKeysPattern = Object.keys(APP_PATHS).join('|');
+const joinRegex = new RegExp(`path\\.join\\(\\s*(${pathKeysPattern})\\b`, 'g');
+
 const originalCompile = Module.prototype._compile;
 Module.prototype._compile = function(content, filename) {
   if (filename.endsWith('.es7') || filename.endsWith('.js')) {
-    Object.keys(APP_PATHS).forEach(key => {
-      // Reemplaza la variable por su string literal directamente
-      // Ej: path.join(JS_ACO7, ...) -> path.join("/var/task/api/apps/es7/spc/acomm/", ...)
-      const regex = new RegExp(`\\b${key}\\b`, 'g');
-      content = content.replace(regex, `'${APP_PATHS[key].replace(/\\/g, '/')}'`);
+    // Transforma path.join(JS_TYP7, ...) -> path.join('/var/task/...', ...)
+    content = content.replace(joinRegex, (match, key) => {
+      const cleanPath = APP_PATHS[key].replace(/\\/g, '/');
+      return `path.join('${cleanPath}'`;
     });
   }
   return originalCompile.call(this, content, filename);
