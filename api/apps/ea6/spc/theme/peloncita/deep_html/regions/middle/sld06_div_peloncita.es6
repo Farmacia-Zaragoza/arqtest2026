@@ -221,8 +221,7 @@ class sld06_div_peloncita_middle extends html_style{
 			// this.d('Building No front')										
 						
 			// a. Usuario anonimo intenta acceder a admin
-			if ( 	(this.thm.u.drupal_user_uid == 	0			) and 
-					(this.thm.u.page_type 		== 'private' 	) )
+			if ( 	(this.thm.u.drupal_user_uid == 	0			) && (this.thm.u.page_type 		== 'private' 	) )
 			{
 				// debe cargarse una pagina de error pues un usuario anonimo no tiene permisos						
 				// Generar una pagina partiendo de un node id dado

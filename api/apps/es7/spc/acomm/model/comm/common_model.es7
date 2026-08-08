@@ -161,7 +161,7 @@ class common_model extends index_fast
     // this.p('rcm_Slangs an22 ' +  ' ' + this.uspc.s.cs.lang )
 
     this.commjson.rungen()
-    // Call to process_array_and_generate_json_file ( Call to rungen and later to rungen_json)
+    // Call to process_array_and_generate_json_file ( Call to rungen && later to rungen_json)
 
     // this.p('arqdru comm  YALOSABEMOS ' + this.commjson.s.cs.cache_path )
     // this.p('arqdru Fa ' + this.commjson.s.cs.cache_url )

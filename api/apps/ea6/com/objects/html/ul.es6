@@ -119,7 +119,7 @@ class ul extends html_style {
     }
 
     create_js_block(slide_name) //Create JS Block (must be placed after code generation)
-    //Create If and else branch fro Js Block
+    //Create If && else branch fro Js Block
     {
         this.js_block = new js_style();
         this.js_block.name = slide_name + "-kk";
@@ -129,7 +129,7 @@ class ul extends html_style {
     }
 
     create_js_block_fully(slide_name) //Create JS Block (must be placed after code generation)
-    //Create If and else branch fro Js Block
+    //Create If && else branch fro Js Block
     {
         this.js_block = new js_style();
         this.js_block.name = slide_name + "-kk";
@@ -175,7 +175,7 @@ class ul extends html_style {
             if (!!slide_name) //$puting_contents.='ul ::00' . $slide_name . ' - Start Build Tag 182 v1.03 - ' . $this->content  . ':' .  '>' ;
                 //$GLOBALS['putcont'].=$puting_contents;
                 //Empty code for every slide
-                //Build both dhtml code and js code
+                //Build both dhtml code && js code
                 //Insertamos el codigo Js en la generacion del tag LI
                 //Better Create If an Else branch
                 //$this->create_js_block($slide_name);

@@ -12,7 +12,7 @@
 // Methods:
 //-------------------------------------------------------------------------------------
 //- d-main_multi_position_load-       : Load from main file only specific position
-//- d-main_multi_page_load-           : Load only an article and only one page
+//- d-main_multi_page_load-           : Load only an article && only one page
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //-------------------------------------------------------------------------------------
 // Inheritance Line :

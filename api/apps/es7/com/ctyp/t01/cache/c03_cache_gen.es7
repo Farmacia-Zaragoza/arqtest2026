@@ -108,7 +108,7 @@ class cache_gen extends cache_save {
 
         break;
 
-      // Search and Index type
+      // Search && Index type
       case "idx":
         this.s.cs.cache_subpath   += 'nodef'  + '/'
         this.generate_human_path()

@@ -9,7 +9,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_sheet-          : Prepare file name and process array
+// - d-manage_sheet-          : Prepare file name && process array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd(),'api/apps/paths.js'));

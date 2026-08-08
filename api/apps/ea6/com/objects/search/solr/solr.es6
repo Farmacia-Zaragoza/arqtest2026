@@ -139,7 +139,7 @@ class solr extends foto_search {
 								offset 		= 	0 			, 
 								limit 		= 	5			)			
 	{
-		// Prepara y ejecuta una query con and como parametro
+		// Prepara y ejecuta una query con && como parametro
 		
 		this.p('Q:' + query + ':--')
 

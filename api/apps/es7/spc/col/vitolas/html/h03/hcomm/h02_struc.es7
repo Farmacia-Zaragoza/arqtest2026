@@ -33,7 +33,7 @@ class hcomm_struc extends scomm_defs {
   }
 
   //---------------------------------------------------------------------------------------------
-  // Te define and extend
+  // Te define && extend
   run_cache_to_generate_html()
   {
     this.m                  =   "run_cache"

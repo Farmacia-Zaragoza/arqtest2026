@@ -121,7 +121,7 @@ class parques_search extends search_structure {
 				// Tipo 1 de momento
 				hay_fotos		=	true							
 
-			if ( hay_recuerdos and hay_fotos )
+			if ( hay_recuerdos && hay_fotos )
 			{
 				this.process_path() 									
 				this.process_fotopath() 								

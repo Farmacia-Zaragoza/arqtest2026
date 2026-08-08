@@ -7,7 +7,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_commands-            : Check command type based on uri and site
+// - d-manage_commands-            : Check command type based on uri && site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
@@ -42,7 +42,7 @@ class site_uri_manage_commands extends post_process_commands
 
     // this.p('u02_mcomm_uri_SITEALIAS KB 0 : ' + this.slash_ideal_uri + ' = > ' + this.slash_alias_uri)
 
-    // Manage and sort arguments
+    // Manage && sort arguments
     // Hasta este punto no se conoce dash_sub_query
     this.process_commands()
 

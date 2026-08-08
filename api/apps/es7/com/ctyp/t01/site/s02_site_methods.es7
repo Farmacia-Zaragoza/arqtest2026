@@ -18,7 +18,7 @@
 // - d-add_anchor-               : add anchor to metatag array
 // - d-add_metatag-              : add tag to meta tag array
 // - d-add_anchors_to_metatags-  : Add anchors to metatag array
-// - d-gen_anchors_and_metatags- : Generate strings for anchors and metatags
+// - d-gen_anchors_and_metatags- : Generate strings for anchors && metatags
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 

@@ -101,7 +101,7 @@ class sn01_garland extends snode {
    		this.suffix_code 						= 	this.u.dash_uri + '_code' + '.sea'													
 
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()															
 
 		// Results Foto Results Photos Recuerdos Selecciones Codigos

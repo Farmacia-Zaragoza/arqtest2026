@@ -182,10 +182,10 @@ class bdy01_body_dog extends html_style  {
 
 		this.create_ifnojs()
 
-		// Create Layer and scripts
+		// Create Layer && scripts
 		this.create_imgpath()
 
-		// Create Layer and scripts
+		// Create Layer && scripts
 		this.create_fb()
 
 		// Structure pending  -  [MIDDLE] [LEFT] [RIGHT]

@@ -26,7 +26,7 @@ class getset  extends printlog {
 
     this.js_code              =   ''       // JavaScript full generated code for menu
 
-    this.input_file           =   ''       // Load file for Li styles and contents
+    this.input_file           =   ''       // Load file for Li styles && contents
 
     this.db_architecture      =    1       // Database Drupal architecture
 

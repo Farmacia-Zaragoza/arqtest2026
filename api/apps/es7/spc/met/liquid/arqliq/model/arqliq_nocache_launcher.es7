@@ -18,7 +18,7 @@
 //-------------------------------------------------------------------------------------
 // e-site_mcomm-   : Multi position site to load arrobas
 // e-arroba_jtype- : Arroba Jtype - Json generated base in arroba path
-// e-theme_data-   : Theme class to manage content and html
+// e-theme_data-   : Theme class to manage content && html
 // e-site_uri-     : Url for non cached ( Specific for site)
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--

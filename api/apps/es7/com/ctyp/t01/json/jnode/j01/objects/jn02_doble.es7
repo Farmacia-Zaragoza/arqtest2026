@@ -32,7 +32,7 @@ class jn02_commo_json_doble extends jn03_commo_json_recursive {
     }
 
   //---------------------------------------------------------------------------------------------
-  // Used to generate Left and Right Menus
+  // Used to generate Left && Right Menus
   // Recursive structure
   save_json_sidebar_doble_object_to_file(
             index           ,   // Indice

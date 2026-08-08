@@ -82,7 +82,7 @@ class fn31_cookies extends fnode {
 		// let arrays_line = ''
 		// this.arr['types'] = arrays_line.split(' ')
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()
 
 		// this.p('0C_COOKIES_LOAD ' + this.load_from_disk_path)

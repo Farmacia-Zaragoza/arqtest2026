@@ -90,7 +90,7 @@ class fn01_flat extends fnode {
 		let arrays_line = 'ide img tit fil fol fis fos fur'
 		this.arr['types'] = arrays_line.split(" ");
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()
 
 		// /brqx/pers/drupal/v50/fnode/flat/fnode/file_structure/common_ssl_flat_fnode

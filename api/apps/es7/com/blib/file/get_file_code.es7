@@ -96,7 +96,7 @@ function set_file_array_full(full_file_name_int = '')
 
 //---------------------------------------------------------------------------------------------
 
-// Exist and is not zero size
+// Exist && is not zero size
 function no_zero(full_file_name_int)
 {
   // No es vacio el nombre

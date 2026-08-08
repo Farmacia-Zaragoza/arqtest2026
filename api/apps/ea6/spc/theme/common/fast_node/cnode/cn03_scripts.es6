@@ -66,7 +66,7 @@ class cn03_scripts extends pcomp {
 
    		this.suffix_code 						= 	this.suffix_lang + '_' + this.u.ssl_page + '_code' + '.compo'
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()
 
  		// /brqx/pers/drupal/v50/fnode/peloncita/cica_compo/left.dat

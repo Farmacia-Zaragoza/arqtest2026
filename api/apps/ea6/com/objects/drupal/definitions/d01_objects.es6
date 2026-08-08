@@ -57,7 +57,7 @@ class definitions_objects extends definitions_arrays {
 			
 		this.pg							=	''		
 	
-		// Htm and Htm fast load
+		// Htm && Htm fast load
 		
 		this.htm						=	''		
 	

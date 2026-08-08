@@ -262,7 +262,7 @@ class html_style extends printlog {
 //      this.set_db_architecture()
     }
 
-    // Prepare and create
+    // Prepare && create
     pcreate(new_content  =  '')
     {
       this.create(new_content)

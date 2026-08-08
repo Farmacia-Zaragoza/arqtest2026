@@ -116,7 +116,7 @@ class ul_02 extends html_style {
     }
 
     create_js_block(slide_name) //Create JS Block (must be placed after code generation)
-    //Create If and else branch fro Js Block
+    //Create If && else branch fro Js Block
     {
         this.js_block = new js_style();
         this.js_block.name = slide_name + "-kk";
@@ -126,7 +126,7 @@ class ul_02 extends html_style {
     }
 
     create_js_block_fully(slide_name) //Create JS Block (must be placed after code generation)
-    //Create If and else branch fro Js Block
+    //Create If && else branch fro Js Block
     {
         this.js_block = new js_style();
         this.js_block.name = slide_name + "-kk";

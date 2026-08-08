@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------------------------
 // *Theme Structure
 //-------------------------------------------------------------------------------------
-// Store structure of nodes and files needed in theme
+// Store structure of nodes && files needed in theme
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);

@@ -70,7 +70,7 @@ class struc_attrib extends struc_defs {
 
     this.j.link              =   this.getkeylang( idx.lindex , pos )
 
-    // Both for Objects and arrays
+    // Both for Objects && arrays
 
     this.k.cat               =   this.j.cat
     this.k.child             =   this.j.child

@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------------------------
 // *Theme Nid > Theme Structure 
 //-------------------------------------------------------------------------------------
-// Store structure of nodes and files needed in theme - Only for Drupal
+// Store structure of nodes && files needed in theme - Only for Drupal
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);

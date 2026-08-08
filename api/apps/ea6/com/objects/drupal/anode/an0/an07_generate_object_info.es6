@@ -33,7 +33,7 @@ class anode_generate_object_info extends anode_load_properties_file {
 
 		// this.p('Object_info ' + this.type + '  '  + this.short_type)			
 
-		// 1. Exist code and properties files ssd - ram
+		// 1. Exist code && properties files ssd - ram
 
 		this.arr['nfo']['exist_ram_code'] 				= 	true				
 		this.arr['nfo']['exist_ssd_code'] 				= 	true				

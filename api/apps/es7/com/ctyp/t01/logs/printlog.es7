@@ -94,7 +94,7 @@ class printlog extends savelog
 
     this.level             =   this.get_next_level(pos)
 
-    // Current Index and Subpath
+    // Current Index && Subpath
     this.index             =   index  + 'v' + this.level
     this.subpath           =   subpath  + '/l' + this.level
 

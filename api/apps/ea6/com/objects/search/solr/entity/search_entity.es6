@@ -8,7 +8,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - generate_path_and_array: Generate path and array related to search 
+// - generate_path_and_array: Generate path && array related to search 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 const	{ printlog } 		= require(	'/brqx/base/rcode/es6/com/objects/logs/printlog.es6'						);

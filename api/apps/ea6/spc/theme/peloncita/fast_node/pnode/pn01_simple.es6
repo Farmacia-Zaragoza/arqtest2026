@@ -26,7 +26,7 @@ class pn01_simple extends psimple {
 	//Subtype
 	//Las paginas no tienen sufijo pues van a tener ya la uri
 	//$this->method_to_load 	=	'disk' 														;
-	//Method for disk load and to generate and save content
+	//Method for disk load && to generate && save content
 	//$this->p('PSimple_DIS ' . $this->load_from_disk_path)									;
 	///brqx/pers/drupal/v50/fnode/peloncita/pages/page/front.dat
 	//$this->p('DIS ' . $this->load_from_disk_path   )										;
@@ -76,7 +76,7 @@ class pn01_simple extends psimple {
 	//Drupal theme structure
 	//$this->code 	= 	'NOCODE';
 	{
-		var site_title = "Anupam and Ricardo make cica fully responsive posible V04";
+		var site_title = "Anupam && Ricardo make cica fully responsive posible V04";
 		var background_image = "images/Brqx_FondoVariado_300x200_Image11_i.png";
 		var top_image = "images/brqx_hozdepriegotajoosa_0512x0192.png";
 		var logo_image = "images/brqx_tour_eiffel_logo_04_180_garland.gif";

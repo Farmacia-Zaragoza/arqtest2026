@@ -111,7 +111,7 @@ class uri_lang_aliases extends site_common_commands
         this.rmultispace(this.value_en)
         this.mainitem           = this.result.toLowerCase()
 
-        // Def Num and Def anchor
+        // Def Num && Def anchor
         // EN h tenemos los numeros
         this.manage_pg_anchor(this.hover_en)
 

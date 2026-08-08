@@ -9,7 +9,7 @@
 //Methods: No recuerdo donde lo uso
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
-//class var for drupal and magento{
+//class var for drupal && magento{
 
 
 class dvar {

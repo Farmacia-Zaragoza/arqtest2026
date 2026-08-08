@@ -5,7 +5,7 @@
 // Brqx Group - Agile Farmacia Zaragoza Methodology
 // Spc - Cica_d05 - Home - Index_06 - v0_0_1 [ES7]
 //-------------------------------------------------------------------------------------
-// Fast node load - Manage page and type combinations
+// Fast node load - Manage page && type combinations
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
@@ -58,7 +58,7 @@ class bool_defs extends printlog {
     this.page_search                     = false
     this.page_search_api                 = false				// Generate Json
     this.page_search_rest                = false
-    this.page_search_rest_fast           = false    // Jenerate Rest and Fast Rest
+    this.page_search_rest_fast           = false    // Jenerate Rest && Fast Rest
 
     // Used to manage aliases
     this.page_is_alias                   = false

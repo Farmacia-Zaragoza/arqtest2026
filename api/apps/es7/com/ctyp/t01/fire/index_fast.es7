@@ -6,7 +6,7 @@
 //-------------------------------------------------------------------------------------
 // Used Entities :
 //-------------------------------------------------------------------------------------
-// e-index_req-    : Class to manage real and invented requests
+// e-index_req-    : Class to manage real && invented requests
 // e-printlog-     : Class to manage log messages
 // e-cbool-        : Boolean class
 // e-site-         : Site Class

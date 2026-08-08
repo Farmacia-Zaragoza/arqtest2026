@@ -144,7 +144,7 @@ class rec01_div_peloncita_middle extends html_style  {
 		this.a_01.class 			=		'image-wrapper'
 		this.a_01.content		=		''
 
-		// Create inner images and div
+		// Create inner images && div
 		this.create_imgs()
 
 		this.a_01.class 			+=		' ' + this.img.orientation

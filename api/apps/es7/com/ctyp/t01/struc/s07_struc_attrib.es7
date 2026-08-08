@@ -92,7 +92,7 @@ class struc_attrib extends struc_defs {
     else
       this.j.level = 0
 
-    // Both for Objects and arrays
+    // Both for Objects && arrays
 
     this.k.index             =   this.j.index
 

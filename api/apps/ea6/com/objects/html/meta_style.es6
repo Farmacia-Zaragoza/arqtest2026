@@ -9,7 +9,7 @@
 //- prepare              : Prepare final fields for object creation. Let to have multiple intances with same init values
 //- set_db_architecture  : Set database architecture for current SuperMnu Generation
 //- create               : Build html final code for dhtml object
-//- pcreate              : Prepare and Create dhtml object
+//- pcreate              : Prepare && Create dhtml object
 //- create_class         : Call to create method changing dhtml class property
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
@@ -28,8 +28,8 @@
 //Content field for META Style
 //Full content of html object or other code
 //Used to reload tags properties from dat files
-//Reload and crate content
-//Prepare and create
+//Reload && crate content
+//Prepare && create
 class meta_style {
   constructor(tag_type = "", tame = "") ///        $puting_contents.='htm::Construct Tag 24 v1.01 : ' . $this->tag_type  . ':' . $this->tag_name .  '>' ;
   ///        $GLOBALS['putcont'].=$puting_contents;

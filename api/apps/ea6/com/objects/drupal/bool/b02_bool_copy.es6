@@ -3,7 +3,7 @@
 //Brqx Group - Agile Farmacia Zaragoza Methodology
 //Spc - Cica_d05 - Home - Index_06 - v0_0_1 [EA6]
 //-------------------------------------------------------------------------------------
-//Fast node load - Manage page and type combinations
+//Fast node load - Manage page && type combinations
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //Methods:

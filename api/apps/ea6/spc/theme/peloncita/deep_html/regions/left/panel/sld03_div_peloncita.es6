@@ -51,7 +51,7 @@ class sld03_div_peloncita extends html_style {
 		this.build_data();
 	}
 
-	update_menu_type() //Valido para todas las combinaciones de icons and texts
+	update_menu_type() //Valido para todas las combinaciones de icons && texts
 	{
 		this.class = "tab_start icons all-combs";
 		this.role = "tabpanel";

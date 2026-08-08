@@ -68,7 +68,7 @@ class jn01_gallery extends anode {
    		this.suffix_code 			= 	'gallery' + this.node_id + '_code' + '.json'													
 
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()													
 
  		// /brqx/pers/drupal/v50/fnode/peloncita/nids/n076/787/json_gallery.dat

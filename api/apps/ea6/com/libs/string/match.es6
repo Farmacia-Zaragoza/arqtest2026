@@ -4,7 +4,7 @@
 //Brqx Group - Agile Farmacia Zaragoza Methodology
 //Spc - Cica_d05 - Home - Index_06 - v0_0_1 [COMMON-EA6]
 //-------------------------------------------------------------------------------------
-//Fast node load - Manage page and type combinations
+//Fast node load - Manage page && type combinations
 //-------------------------------------------------------------------------------------
 
 var 	cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"		);
@@ -38,7 +38,7 @@ function match_path(str, path)
 	  // er is an error object or null.
 	})
 	*/
-	// path/simple* - all files and folders in path not recoursive
+	// path/simple* - all files && folders in path not recoursive
 	// path/double** - everything in path recoursively
 
 	else //30809*lbufeira*laya*o*aneco

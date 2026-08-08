@@ -10,9 +10,9 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-check_only_if_is_needed_to_reload_code_ram-	: 	Check reload and reload_type
-// - d-check_only_if_is_needed_to_reload_code_ssd-	: 	Check reload and reload_type
-// - d-check_only_if_is_needed_to_reload_code_disk-	: 	Check reload and reload_type
+// - d-check_only_if_is_needed_to_reload_code_ram-	: 	Check reload && reload_type
+// - d-check_only_if_is_needed_to_reload_code_ssd-	: 	Check reload && reload_type
+// - d-check_only_if_is_needed_to_reload_code_disk-	: 	Check reload && reload_type
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);

@@ -9,7 +9,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-manage_common_commands-            : Check command type based on uri and site
+// - d-manage_common_commands-            : Check command type based on uri && site
 // - d-enable_as_a_product-               : Enable Alias Type to be a product
 // - d-enable_alias_as_a_product-         : Enable Alias Type to be a product
 // - d-enable_alias_as_a_photo-           : Enable Alias Type to be a photo

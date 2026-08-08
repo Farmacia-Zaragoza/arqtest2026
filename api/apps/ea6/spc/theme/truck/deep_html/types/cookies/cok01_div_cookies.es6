@@ -7,7 +7,7 @@
 // <div class="cookies">
 //<div class="container text-center">
 //This website uses cookies to enhance browsing experience. By continuing using this website you accept cookies. Please visit our
-//<a href="cookie.html">Privacy and Cookies Policy page</a> for more information.
+//<a href="cookie.html">Privacy && Cookies Policy page</a> for more information.
 //-------------------------------------------------------------------------------------
 // DIV
 //DIV

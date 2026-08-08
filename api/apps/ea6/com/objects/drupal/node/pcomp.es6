@@ -8,7 +8,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //Methods:
 //-------------------------------------------------------------------------------------
-//- linking_to_ram     		: Update file and linking to ram
+//- linking_to_ram     		: Update file && linking to ram
 //- save_node    				: Save new node checking
 //- force_save_node    		: Save node
 //- prepare_properties			: Update common properties

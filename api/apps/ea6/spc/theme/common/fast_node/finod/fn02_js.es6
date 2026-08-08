@@ -70,7 +70,7 @@ class fn02_js_structure extends anode {
    		this.suffix_code 						= 	'common_type' + '_code' + '.jscode'
 
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()
 
 

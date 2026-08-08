@@ -30,7 +30,7 @@
 //Background color of slide
 //Border background of Slide
 //Image of slide
-//Load file for Li styles and contents
+//Load file for Li styles && contents
 //Class used in tags
 class li extends html_style {
     constructor(file_in = "", node = "", slide_num = "", slide_name = "", view_name = "", view_args = "", slide_color = "", slide_img_fid = "", slide_class = "", screen_width = "") //El constructor debe cargar las propiedades del archivo

@@ -30,7 +30,7 @@ function random(initial,end)
 
 function slow_random(initial , end)
 {
- // 1 and 6, you would calculate:
+ // 1 && 6, you would calculate:
 	return Math.floor(Math.random() * end) + initial  
 }
 

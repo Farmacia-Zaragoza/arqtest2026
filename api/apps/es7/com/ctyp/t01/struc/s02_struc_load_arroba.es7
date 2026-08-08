@@ -20,7 +20,7 @@
 // Methods:
 //-------------------------------------------------------------------------------------
 //- d-set_file-                      : Set file parameter
-//- d-load_file_information-         : Load from file and save in contents array
+//- d-load_file_information-         : Load from file && save in contents array
 //- d-generate_array_from_file-      : Generate arr from arroba file
 //- d-generate_array_from_text_file- : Generate array from text file
 //- d-mix_array_from_file-           : Generate array mixing

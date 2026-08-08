@@ -71,7 +71,7 @@ class foto_search extends search {
 		// this.p('Before process entities ' + this.url_path)
 		// To process entities we need path
 
-		// Process entities and foto entities
+		// Process entities && foto entities
 		this.process_entities() 											
 
 		// Hemos procesado. Los parametros pueden ser incorrectos pero la query esta formada
@@ -193,7 +193,7 @@ class foto_search extends search {
 				// this.p('End Processing recuerdos ')
 				// this.parr(this.arr['qrys'])
 
-				// Generate and sort array	
+				// Generate && sort array	
 			}
 			else if ( hay_fotos		)
 			{

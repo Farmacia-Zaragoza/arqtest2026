@@ -45,7 +45,7 @@ function sync_full_two_filename(	abs_source , abs_target,
 if (is_file(abs_source))
 {
 arr_output = array()														
-return = -1													
+return -1													
 
 cmd='/usr/bin/rsync -avz -e "ssh -oPort=' . port  . ' '  
 cmd.='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '  
@@ -63,7 +63,7 @@ function sync_full_two_filename_to_origin(	abs_source , abs_target,
 
 br =	'</br>'																 
 arr_output = array()														
-return = -1													
+return -1													
 
 cmd='/usr/bin/rsync -avz -e "ssh -oPort=' . port . ' '  
 cmd.='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '  

@@ -10,7 +10,7 @@
 // - set_db_architecture  : Set database architecture for current SuperMnu Generation
 // - clean                : Clean all asigned contents
 // - create               : Build html final code for dhtml object
-// - pcreate              : Prepare and Create dhtml object
+// - pcreate              : Prepare && Create dhtml object
 // - create_class         : Call to create method changing dhtml class property
 // - build_contents       : Recreate contents or dummy value depends depth parameter pased
 // - build_text           : Recreate contents dummy of tame value
@@ -323,7 +323,7 @@ class html_style extends printlog {
 //      this.set_db_architecture()
     }
 
-    // Prepare and create
+    // Prepare && create
     pcreate(new_content	=	'')
     {
       this.prepare()
@@ -760,7 +760,7 @@ class html_style extends printlog {
     {
 	// If depth == ''  : Show full contents
 	// If depth == 0   : Show only structure
-	// If depth <  1   : Show full contents and call inner(depth--)
+	// If depth <  1   : Show full contents && call inner(depth--)
 
 	depth 		= 20  // Nos la inventamos de momento no se usa
 	depth_str='' + depth
@@ -772,7 +772,7 @@ class html_style extends printlog {
 	}
 	else if 	(depth_str == '0' )
 	{
-		// Show only structure (ZERO and EMPTY is the same) - Is not needed this method exist here
+		// Show only structure (ZERO && EMPTY is the same) - Is not needed this method exist here
 //		     puting_contents='UL: depth_empty:' + depth_empty + '>'
 //		     GLOBALS['putcont']+=puting_contents
 

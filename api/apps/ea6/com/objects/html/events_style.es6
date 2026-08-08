@@ -17,7 +17,7 @@
 
 //Imported html styles from files
 //Full content of html object or other code
-//Load file for Li styles and contents
+//Load file for Li styles && contents
 //Our html properties
 //Tag name (theme_div_01 , slide_div_02 ...)
 //Create Event string. There isn't delimiters

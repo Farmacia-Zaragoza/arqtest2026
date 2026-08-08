@@ -113,7 +113,7 @@ class cache_run extends cache_gen {
     }
     else
     {
-    // COMMON PAGES ( Comm and Spec )
+    // COMMON PAGES ( Comm && Spec )
     // ---------------------------------------------------------------------------------------
       // this.p('c02_cr_else ' + this.s.cs.loadtype)
 

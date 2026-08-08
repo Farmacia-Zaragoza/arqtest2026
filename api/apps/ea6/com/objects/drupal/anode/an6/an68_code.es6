@@ -168,7 +168,7 @@ class anode_code extends anode_down {
    		}
 	  	this.loaded 					= 'no_generated'
 		this.b.type_generated		=	false													
-	  	//		return (true and this.b.site_cache ) 										    		  
+	  	//		return (true && this.b.site_cache ) 										    		  
 		return true     		  
 	}   		  
 
@@ -200,7 +200,7 @@ class anode_code extends anode_down {
 	  	this.loaded 					= 'no_generated'
 		this.b.type_generated		=	false													
 
-	  	//		return (true and this.b.site_cache ) 										    		  
+	  	//		return (true && this.b.site_cache ) 										    		  
 		return true     		  
 
 	}   		  

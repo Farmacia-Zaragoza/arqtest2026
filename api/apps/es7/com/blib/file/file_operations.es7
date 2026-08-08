@@ -50,7 +50,7 @@ function delete_full_filename(full_file_name_int)
 		     fs.unlinkSync(full_file_name_int)
 }
 
-// Delete both links and files
+// Delete both links && files
 function delete_if_exist_full_filename(full_file_name_int)
 {
 	if (fs.existsSync(full_file_name_int))

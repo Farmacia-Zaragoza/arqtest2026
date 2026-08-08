@@ -147,7 +147,7 @@ function create_folder_filename (full_file_name_int = '')
         if (!empty(full_file_name_int) )
 		{
 
-	        // Create folder and crate filname
+	        // Create folder && crate filname
 	        let dir = path.dirname (full_file_name_int)
 			br='</br>'
 
@@ -172,7 +172,7 @@ function create_folder_and_filename (full_file_name_int = '')
 {
         if (!empty(full_file_name_int) )
 		{
-	        // Create folder and crate filname
+	        // Create folder && crate filname
 	        dir = path.dirname (full_file_name_int)
 
             create_folder (dir)

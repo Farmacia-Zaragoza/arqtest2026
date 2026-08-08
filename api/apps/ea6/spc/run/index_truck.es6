@@ -63,8 +63,7 @@ s.theme(site_name, theme_name)
 var u = new uri(s)
 GLOBALS.SITE_URL_OBJECT = u
 
-if (cache and
-	(b.page_download or
+if (cache && (b.page_download or
 		(c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC"))))) //a. Level 01 - Load only generated files
 	//$u->p('Before p02')
 	//$u->p('RamGen B ' . true  . '==' . $pnode->status)
@@ -72,7 +71,7 @@ if (cache and
 		var pnode = new pn02_fast(u)
 	}
 
-if ("A" === "A") if (cache and c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC")) and undefined !== pnode and pnode.status == 1) //Fast node generation - Only load cached pages | structures
+if ("A" === "A") if (cache && c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC")) && undefined !== pnode && pnode.status == 1) //Fast node generation - Only load cached pages | structures
 	//print $pnode->code
 	{
 		print("FPC" + pnode.code)

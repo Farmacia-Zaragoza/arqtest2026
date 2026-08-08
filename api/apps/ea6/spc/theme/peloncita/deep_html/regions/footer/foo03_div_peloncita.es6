@@ -49,7 +49,7 @@ class foo03_div_peloncita extends getset {
 		var block_id 			= 7
 		var num_columns 		= 6
 		this.bnode 				= new bn02_tagadelic(this.fnode, block_type, block_id, num_columns)
-		this.foo_01 			= new pla04_footer_peloncita(this.bnode, "Lugares Anupam and Rct")
+		this.foo_01 			= new pla04_footer_peloncita(this.bnode, "Lugares Anupam && Rct")
 		this.code 				= this.foo_01.code
 	}
 

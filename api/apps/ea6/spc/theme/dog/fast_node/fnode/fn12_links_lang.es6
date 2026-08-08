@@ -88,7 +88,7 @@ class fn12_links_lang extends fnode {
 		this.arr['types'] = arrays_line.split (' ')
 
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()
 
 		// efile_lines@flat_details

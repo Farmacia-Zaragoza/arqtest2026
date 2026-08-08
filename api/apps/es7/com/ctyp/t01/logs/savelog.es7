@@ -40,7 +40,7 @@ class savelog
     this.jnode           =  ''
 
       // Search Engine
-      //  We save all terms and main terms
+      //  We save all terms && main terms
 
     // Position Indicator to manage arrays
     this.pos             =   0

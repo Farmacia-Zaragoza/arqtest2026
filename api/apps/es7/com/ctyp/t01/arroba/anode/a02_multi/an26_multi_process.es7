@@ -36,7 +36,7 @@ class anode_multi_process extends anode_run_position {
 
 
   //---------------------------------------------------------------------------------------------
-  // Load 0 (site) 2(regions) and 5 (langs)
+  // Load 0 (site) 2(regions) && 5 (langs)
   main_multi_position_process(positions    = '0 2 5'             )
   {
 

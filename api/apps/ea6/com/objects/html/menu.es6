@@ -64,7 +64,7 @@ class menu extends getset {
 
         for (var sLinea of Object.values(contents)) //Every line have following format :
         //htmlname    @    class    @    style    @   id
-        //Separador must be "@" so styles have colon and pad
+        //Separador must be "@" so styles have colon && pad
         //Obtiene el CN
         {
           var html_arr = sLinea.split("@");

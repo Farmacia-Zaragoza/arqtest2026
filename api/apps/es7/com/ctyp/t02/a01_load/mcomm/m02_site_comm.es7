@@ -64,7 +64,7 @@ class site_mcomm extends scomm_struc {
 
     // this.p('s01_passsed_type ' + this.s.t_sub)
 
-    // Define a(Anode) and run ( load @node and save)
+    // Define a(Anode) && run ( load @node && save)
     this.run_cache()
 
     // this.p('m02_site_commm ' + this.s.ms.default_lang)

@@ -9,7 +9,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-generate_and_enable_common_site_sep : Generate Site and Enable Live/Dev parameters
+// - d-generate_and_enable_common_site_sep : Generate Site && Enable Live/Dev parameters
 // - d-generate_common_site-          : Generate Site
 // - d-generate_common_regions-       : Generate Regions
 // - d-generate_common_symbols-       : Generate Symbols

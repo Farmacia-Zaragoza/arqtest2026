@@ -78,7 +78,7 @@ class rec01_div_peloncita_right_rose extends html_style  {
 	create_div_01()
 	{
 		this.div_01.class 		="link-explanation"
-		this.div_01.content		="Anupam and Brqx - 2005_Esp - Zaragoza - El amor emerge sobre la grandeza del Ebro - España - seleccion"
+		this.div_01.content		="Anupam && Brqx - 2005_Esp - Zaragoza - El amor emerge sobre la grandeza del Ebro - España - seleccion"
 
 		this.div_01.pcreate()
 

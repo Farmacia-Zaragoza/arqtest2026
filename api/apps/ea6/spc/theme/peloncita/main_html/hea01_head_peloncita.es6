@@ -94,7 +94,7 @@ class hea01_head_peloncita extends html_style  {
 			this.create_title()											
 			this.create_links()											
 
-			// Adding drupal head styles and scripts
+			// Adding drupal head styles && scripts
 			this.content +=  this.thm.drupal_head  						
 	 		this.content +=  this.thm.drupal_styles						
 	 		this.content +=  this.thm.drupal_scripts 					

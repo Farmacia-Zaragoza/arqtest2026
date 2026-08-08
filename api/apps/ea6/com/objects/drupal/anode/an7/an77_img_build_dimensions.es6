@@ -12,7 +12,7 @@
 //-------------------------------------------------------------------------------------
 // Methods:
 //-------------------------------------------------------------------------------------
-// - d-build_dimensions- 					: Build Image dimensions and set H and V
+// - d-build_dimensions- 					: Build Image dimensions && set H && V
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);

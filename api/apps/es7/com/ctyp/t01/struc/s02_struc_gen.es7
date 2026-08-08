@@ -95,7 +95,7 @@ class struc_gen extends struc_attrib {
 		{
 			// Enable | Disable to check array elements
 			// ANames Lang: en Name i000v004 pos 0
-            // Set lang arr and tsb
+            // Set lang arr && tsb
 
             // this.p('s02_stru LOADING_aRR ' + arr_name)
             // se define una posicion asociativa para contemplar todos los idiomas en el array all

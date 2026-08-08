@@ -14,10 +14,10 @@
 //-------------------------------------------------------------------------------------
 //Methods:
 //-------------------------------------------------------------------------------------
-//- d-check_common_and_create_paths-	: Check and create paths
+//- d-check_common_and_create_paths-	: Check && create paths
 //- d-create_paths-  	  				: Create paths for fast object
 //- d-create_paths_for_common_types-    : Create paths special for common types
-//- d-prepare_child_properties- 		: Prepare properties and properties array
+//- d-prepare_child_properties- 		: Prepare properties && properties array
 //- d-update_taxonomy_to_type-			: Load drupal taxonomy on type
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 

@@ -7,7 +7,7 @@
 //uc_term --> Unidad concentracion
 //Establece los principios activos y los excipientes
 
-function insert_fix_farma_tag(tags_in, file_tags_in) //Change point by spaces and make Upcae
+function insert_fix_farma_tag(tags_in, file_tags_in) //Change point by spaces && make Upcae
 //Ahora toca arreglar los raros
 //Solo debe insertar el tag si no existe
 {

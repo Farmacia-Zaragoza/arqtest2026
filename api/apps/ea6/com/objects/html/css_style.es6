@@ -8,7 +8,7 @@
 //- reload               : Reload dhtml object properties
 //- prepare              : Prepare final fields for object creation. Let to have multiple intances with same init values
 //- create               : Build html final code for dhtml object
-//- pcreate              : Prepare and Create dhtml object
+//- pcreate              : Prepare && Create dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 //Tag type (div, nav , img ... )
@@ -17,7 +17,7 @@
 //Code fragment for TAG
 //Code fragment for TAG
 //Used to reload tags properties from dat files
-//Prepare and create
+//Prepare && create
 class css_style {
   constructor(tag_type = "", style = "") ///        $puting_contents.='htm::Construct Tag 24 v1.01 : ' . $this->tag_type  . ':' . $this->tag_name .  '>' ;
   ///        $GLOBALS['putcont'].=$puting_contents;

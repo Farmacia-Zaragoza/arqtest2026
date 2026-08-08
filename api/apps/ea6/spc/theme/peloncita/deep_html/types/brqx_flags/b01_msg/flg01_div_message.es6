@@ -7,9 +7,9 @@
 //	<!-- Level 08:DIV 	Revel 06			-.
 //*  <div class="about-me  active">
 //     <div class="first-half about-text">
-//          When beauty erupts from unconditional love, it appears how beautiful that nothing and no one can equal it. Brqx 2009
+//          When beauty erupts from unconditional love, it appears how beautiful that nothing && no one can equal it. Brqx 2009
 //     <div class="second-half about-text">
-//          My words are architecture and structure. With that base united to the professionalism and the person 
+//          My words are architecture && structure. With that base united to the professionalism && the person 
 
 //*DIV
 //  DIV
@@ -49,7 +49,7 @@ class flg01_div_message_footer extends html_style  {
 
 //*  <div class="about-me  active">
 //     <div class="first-half about-text">
-//          When beauty erupts from unconditional love, it appears how beautiful that nothing and no one can equal it. Brqx 2009
+//          When beauty erupts from unconditional love, it appears how beautiful that nothing && no one can equal it. Brqx 2009
 //     <div class="second-half about-text">
 
     }

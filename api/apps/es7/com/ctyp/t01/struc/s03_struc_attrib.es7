@@ -91,7 +91,7 @@ class struc_attrib extends struc_defs {
 
     this.j.otype             =   this.getkeymain( idx.oindex , pos )
 
-    // Both for Objects and arrays
+    // Both for Objects && arrays
 
     this.k.child             =   this.j.child
     this.k.type              =   this.j.type

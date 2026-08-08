@@ -58,7 +58,7 @@ class pn04_mongo extends anode {
 	// --------------------------- [01] ASYNC_RUN [STA] ---------------------------
 	async run()	
 	{
-			// Cacheable for all users - anonymous and authenticated		
+			// Cacheable for all users - anonymous && authenticated		
 //   		if ( this.b.type_cache										&& 
 //   			 this.b.ready_to_load									)
 	//		node_add

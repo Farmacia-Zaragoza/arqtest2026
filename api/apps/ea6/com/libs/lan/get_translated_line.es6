@@ -18,7 +18,7 @@
 //-- 
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-var { f_mkdirp } 			=	require {	'/brqx/base/rcode/es6/com/lib/f_file.es6' }
+var { f_mkdirp } 			=	require('/brqx/base/rcode/es6/com/lib/f_file.es6')
 
 function get_translated_line(	LINE								,	// 01. Linea a traducir
 								TRANS_LINE 						, 	// 02. Linea traducida

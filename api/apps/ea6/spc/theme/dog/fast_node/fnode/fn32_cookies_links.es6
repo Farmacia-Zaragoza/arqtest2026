@@ -81,7 +81,7 @@ class fn32_cookies_links extends fnode {
 		let arrays_line = 'uri tit name'
 		this.arr['types'] = arrays_line.split (' ')
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()
 
 		// this.p('0C_COOKIES_LINKS ' + this.load_from_disk_path)

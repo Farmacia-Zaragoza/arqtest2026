@@ -118,7 +118,7 @@ class jn00_comm_pf extends jn01_comm_pho {
      // Para entenderlo, la generacion actual se base en j ( object ) / k ( array)
      // La generacion interna se bas en el parametro que pasamos
      // "parragraph": {"index": "020v000v001","type": "iparragraph","title": "a.- Architectural Focus","otype": "object","clink": "page/architecture/articles/a000","childrens": false,"pull03": [
-     //  { "index": "0","type": "text","value": "Surely people are not sure what the word \"architecture\" combined with a process of agile development and deployment." }
+     //  { "index": "0","type": "text","value": "Surely people are not sure what the word \"architecture\" combined with a process of agile development && deployment." }
 
      // this.p('j00pf_item ' + index )
      this.j.child = "yes"

@@ -94,7 +94,7 @@ class pn01_simple extends pnode {
 		// Call to parent. Load view code
 		this.load_details()											
 
-		site_title					= 		"Anupam and Ricardo make cica fully responsive posible"		
+		site_title					= 		"Anupam && Ricardo make cica fully responsive posible"		
 		
 	  	background_image			=		'images/Brqx_FondoVariado_300x200_Image11_i.png'
 	  	top_image					=		"images/brqx_hozdepriegotajoosa_0512x0192.png"	 // Top pelona imagen

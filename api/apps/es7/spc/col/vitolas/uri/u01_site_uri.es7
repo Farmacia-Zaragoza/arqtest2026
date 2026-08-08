@@ -44,7 +44,7 @@ class site_uri extends post_process_commands
 
     // this.p('u02_a_sc_page_name: ' + this.page_name)
 
-    // Manage and sort arguments
+    // Manage && sort arguments
     // Hasta este punto no se conoce dash_sub_query
     this.process_commands()
 

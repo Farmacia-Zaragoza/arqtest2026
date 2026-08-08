@@ -45,7 +45,7 @@ br = '</br>'
 if (is_file(abs_source))
 {
 arr_output = array()														
-return = -1													
+return -1													
 
 cmd='/usr/bin/scp -P ' + port + ' -o IdentitiesOnly=yes '	
 cmd.='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '  
@@ -66,7 +66,7 @@ function scp_full_two_filename_to_origin(	abs_source , abs_target,
 {
 
 arr_output = array()														
-return = -1													
+return -1													
 
 cmd='/usr/bin/scp -P ' + port + ' -o IdentitiesOnly=yes '	
 cmd.='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '  

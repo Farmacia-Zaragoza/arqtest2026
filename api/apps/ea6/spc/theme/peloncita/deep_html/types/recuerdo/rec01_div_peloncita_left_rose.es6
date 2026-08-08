@@ -84,7 +84,7 @@ class rec01_div_peloncita_left_rose extends html_style  {
 	create_div_01()
 	{
 		this.div_01.class 		="link-explanation"
-		this.div_01.content		="Anupam and Brqx - Imágenes VivasImágenes PersonalesEnlace Selección 2005-08-24"
+		this.div_01.content		="Anupam && Brqx - Imágenes VivasImágenes PersonalesEnlace Selección 2005-08-24"
 
 		this.div_01.pcreate()
 

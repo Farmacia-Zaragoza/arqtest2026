@@ -133,7 +133,7 @@ class lnk04_css_inline_truck extends html_style  {
 	      optimizeFont: true, // controls `font` property optimizations; defaults to `true`
 	      optimizeFontWeight: true, // controls `font-weight` property optimizations; defaults to `true`
 	      optimizeOutline: true, // controls `outline` property optimizations; defaults to `true`
-	      removeEmpty: true, // controls removing empty rules and nested blocks; defaults to `true`
+	      removeEmpty: true, // controls removing empty rules && nested blocks; defaults to `true`
 	      removeNegativePaddings: true, // controls removing negative paddings; defaults to `true`
 	      removeQuotes: true, // controls removing quotes when unnecessary; defaults to `true`
 	      removeWhitespace: true, // controls removing unused whitespace; defaults to `true`

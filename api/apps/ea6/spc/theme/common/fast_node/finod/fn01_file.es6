@@ -71,7 +71,7 @@ class fn01_file_structure extends anode {
    		this.suffix_code 						= 	this.u.dash_ideal_uri + '_code' + '.svg'
 
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()
 
 		//Setting array types for content type

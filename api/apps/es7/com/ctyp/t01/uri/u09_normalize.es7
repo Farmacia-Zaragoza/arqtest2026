@@ -83,7 +83,7 @@ class uri_normalize extends uri_create {
              if ( numbers.endswithNumber(str_to_manage) )
              {
 
-          	  // This means have numbers and letters  art10
+          	  // This means have numbers && letters  art10
           	  // convert arti0004 --> a4
           	  let firstDigit = str_to_manage.search(/\d/) // will give you the first digit in the string
 

@@ -80,7 +80,7 @@ class pn02_fast extends anode {
 
    		this.suffix_code 			= 	this.suffix_lang + '.' + this.u.ssl_page + 'page'	
 
-		// Method for disk load and to generate and save content
+		// Method for disk load && to generate && save content
 		this.generate_load_from_disk_path()													
 
 		this.p('pn01_Page_Path ' + this.load_from_disk_path_code)
@@ -113,7 +113,7 @@ class pn02_fast extends anode {
 
 				this.run_file()														 											
 			}
-			// Cacheable for all users - anonymous and authenticated		
+			// Cacheable for all users - anonymous && authenticated		
     		else 
 			{
 				// B1. F A S T    P A G E    L O A D 

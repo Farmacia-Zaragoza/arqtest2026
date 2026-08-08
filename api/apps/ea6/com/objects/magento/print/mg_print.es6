@@ -8,7 +8,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-// - p			   	  : Agile print in screen taking class and method 
+// - p			   	  : Agile print in screen taking class && method 
 // - parr		   	  : Print an array of one dimmension - not recursive 
 // - pre		   	  : Print a variable using pre html tag 
 // - prearr		   	  : Print an array using pre html tag 
@@ -86,7 +86,7 @@ class mg_print
 		if(file_exists(__DIR__ + '/../app/etc/local.xml')) 
 		{
     
-		    // Load in the local.xml and retrieve the database settings
+		    // Load in the local.xml && retrieve the database settings
 		    xml = simplexml_load_file(__DIR__ + '/../app/etc/local.xml')
 		    
 		    if(isset(xml.global.resources.default_setup.connection)) {

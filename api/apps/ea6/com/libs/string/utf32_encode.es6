@@ -21,7 +21,7 @@
 //encode function for unicode // for php 5.3
 
 function utf32_encode(str = "", lang_type = "01") 
-//Encode latin langs to html entities acute and so on
+//Encode latin langs to html entities acute && so on
 //[PHP_56]
 {
 	var str_out = ""
@@ -31,7 +31,7 @@ function utf32_encode(str = "", lang_type = "01")
 
 function utf32_decode(str = "", lang_type = "01") 
 //$LINE_LAN = iconv(mb_detect_encoding($text, mb_detect_order(), true), "UTF-8", $text)
-//Encode latin langs to html entities acute and so on
+//Encode latin langs to html entities acute && so on
 {
 	var str_out = ""
 	str_out = html_entity_decode(str)

@@ -15,7 +15,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 // ------------------------------------------------------------------------------------
-// - reload_contents : Update values for local attributes and generate Object
+// - reload_contents : Update values for local attributes && generate Object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 

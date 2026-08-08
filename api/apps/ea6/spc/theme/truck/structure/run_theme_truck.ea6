@@ -4,7 +4,7 @@
 //-------------------------------------------------------------------------------------
 //Theme Structure
 //-------------------------------------------------------------------------------------
-//Store structure of nodes and files needed in theme
+//Store structure of nodes && files needed in theme
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 const	echo 					= require(	'/brqx/base/react/zcommon/node_modules/node-echo'										);

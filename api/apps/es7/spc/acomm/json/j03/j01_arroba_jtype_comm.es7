@@ -187,7 +187,7 @@ class arroba_jtype_comm extends jcomm_struc {
 
     // Crear estructura para el objeto - Depende del tipo de proyecto
     this.create_jnode_type()
-    // --> Call to gen and new jnode_type
+    // --> Call to gen && new jnode_type
     // Crear el objeto
     // Si no hay cache o bien no existe el fichero ---> Generarlo
     // !A || !B =
