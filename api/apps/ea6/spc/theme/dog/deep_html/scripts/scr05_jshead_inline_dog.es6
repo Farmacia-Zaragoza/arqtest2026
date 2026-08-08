@@ -21,13 +21,11 @@
 // - d-join_scripts-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-		UglifyES 			= 	require(	'uglify-es'															),
-		minify 				= 	require(	'html-minifier'														).minify;
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
+		const UglifyES = require(	'uglify-es'															);
+		const minify = require(	'html-minifier'														).minify;
 
 class scr05_jshead_inline_dog extends getset  {
 
@@ -62,14 +60,12 @@ class scr05_jshead_inline_dog extends getset  {
 		this.script_code_path				=
 				this.thm.u.site_path + 'r_fassets/libs/js/' + js_name
 
-
 		this.scr01.content		=		scpf.file_get_code(this.script_code_path)
 		this.scr01.pcreate()
 
 		this.code 				+= 		this.scr01.code
 
 	}
-
 
 }
 

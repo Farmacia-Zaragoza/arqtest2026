@@ -15,13 +15,11 @@
 // - d-process_entities-  
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-
-const	qry 						= require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'							),						
-		empty 						= require(	'/brqx/base/react/zcommon/node_modules/is_empty'								),
-		const { search_structure }		= require(  '/brqx/base/rcode/es6/com/objects/search/solr/search_structure.es6' 			),			
-		const { search }					= require(	'/brqx/base/rcode/es6/com/objects/search/solr/search.es6'						),						
-		const { search_entity_letter }	= require(  '/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6' 	);			
+const	qry 						= require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'							);
+		const empty = require(	'/brqx/base/react/zcommon/node_modules/is_empty'								);
+		const { search_structure } = require(  '/brqx/base/rcode/es6/com/objects/search/solr/search_structure.es6' 			);
+		const { search } = require(	'/brqx/base/rcode/es6/com/objects/search/solr/search.es6'						);
+		const { search_entity_letter } = require(  '/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6' 	);
 
 class foto_search extends search {
 
@@ -35,8 +33,7 @@ class foto_search extends search {
 	
 		this.resolutions_file						=	'resolutions.dat'		
 		this.sendas_file							=	'sendas.dat'			
-	
-	
+
 		// Query strings
 		
 		this.foto_query 							= 	''						
@@ -70,7 +67,6 @@ class foto_search extends search {
 
 		if (!empty(path) ) 
 			this.url_path				=	path								
-
 
 		// this.p('Before process entities ' + this.url_path)
 		// To process entities we need path
@@ -152,9 +148,7 @@ class foto_search extends search {
 			// this.p('Url Path ' + this.url_path )
 			this.arr['ini'] = this.url_path.split("/");
 
-
 			// this.parr(this.foto_resolutions.entity_arr)										
-
 
 			// uri recuerdo/paris		
 			// arr - ini -- Valores iniciales sin filtrar
@@ -236,7 +230,6 @@ class foto_search extends search {
 			q = this.arr['fotoqrys']
 
 		// q es el array de queries a devolver
-
 
 		// Process path con objetos para generar el array de queries
         this.args_arr       		=   this.url_path.split('/')			
@@ -367,7 +360,6 @@ class foto_search extends search {
 		} // ENd Foreach
 		
 	}
-
 
 }
 

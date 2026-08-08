@@ -13,7 +13,7 @@
 
 // Must to be unique
 
-const 	{ model } 			= 	require(	path.join(JS_BASE, 'spc/theme/dog/model/m01_model.ea6'));
+const 	{ model } 			= 	require(path.join(JS_BASE, 'spc/theme/dog/model/m01_model.ea6'))
 
 class dog extends model
 {

@@ -28,9 +28,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { getset }            =  require(path.join(JS_BASE , 'com/objects/html/getset.es6'));
-	   const { html_style }        =  require(path.join(JS_BASE , 'com/objects/html/html_style.es6' ));
-
+const  { getset }            =  require(path.join(JS_BASE , 'com/objects/html/getset.es6'   ));
+	   const { html_style } = require(path.join(JS_BASE , 'com/objects/html/html_style.es6' ));
 
 class lnk02_css_link_arqdru extends getset {
 
@@ -46,7 +45,6 @@ class lnk02_css_link_arqdru extends getset {
         this.s   = this.thm.s
 
         this.b   = this.s.b
-
 
 		this.link_01 = new html_style('link')
 
@@ -87,7 +85,6 @@ class lnk02_css_link_arqdru extends getset {
 
 		let url_awesome = 'https://use.fontawesome.com/releases/v5.7.2/css/'
 
-
 		this.link_01.href = url_awesome + css_name
 
 		// this.link_01.href				=
@@ -97,7 +94,6 @@ class lnk02_css_link_arqdru extends getset {
 
 		this.code += this.link_01.code
 	}
-
 
 	// <link rel="stylesheet" href="styles.821fc87c884b09994238.css">
 	create_style() {
@@ -109,7 +105,6 @@ class lnk02_css_link_arqdru extends getset {
 		this.link_02.type = 'text/css'
 		// this.link_02.as = 'style'
 		this.link_02.rel = 'stylesheet'
-
 
 		let css_name = 'styles.css'
 
@@ -125,7 +120,6 @@ class lnk02_css_link_arqdru extends getset {
 		this.code += this.link_02.code
 	}
 
-
 	create_theme() {
 
 		// this.link_jquery.rel			 	=  'preload'
@@ -135,7 +129,6 @@ class lnk02_css_link_arqdru extends getset {
 		this.link_02.type = 'text/css'
 		// this.link_02.as = 'style'
 		this.link_02.rel = 'stylesheet'
-
 
 		let css_name = 'theme.css'
 
@@ -159,7 +152,6 @@ class lnk02_css_link_arqdru extends getset {
 		// this.link_02.as = 'style'
 		this.link_02.rel = 'stylesheet'
 
-
 		let css_name = 'robot.css'
 
 		let path_pmt = 'dev/assets/'
@@ -172,9 +164,7 @@ class lnk02_css_link_arqdru extends getset {
 		this.code += this.link_02.code
 	}
 
-
 	build_data() {
-
 
      if (this.s.b.robot_page)
 		this.create_robot()

@@ -11,7 +11,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { printlog }     =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'        ))
+const   { printlog }     =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'        )      )
 
 class cache_site extends printlog {
   constructor() {

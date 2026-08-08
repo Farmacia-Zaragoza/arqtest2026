@@ -21,10 +21,9 @@
 
 var 	cons 					= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"							);
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { sec02_process } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/bs/sec02_process.es6'));
-		const { sorted_array } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/structs/sorted_array.es6'));
-
+const 	{ html_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { sec02_process } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/bs/sec02_process.es6'))
+		const { sorted_array } = require(path.join(JS_BASE, 'com/objects/drupal/structs/sorted_array.es6'))
 
 class sec03_yaml_cookies extends sorted_array {
 
@@ -58,7 +57,6 @@ class sec03_yaml_cookies extends sorted_array {
 		this.build_data()
 	}
 
-
 	build_data() 
 	{
 		this.code = ''
@@ -80,15 +78,12 @@ class sec03_yaml_cookies extends sorted_array {
 			// Types 0 sorted_elem dim 0 - ( tit - str - pos - dim) 
 			// this.p('Types ' + i + ' ' + elem.type + ' dim ' + elem.dim )
 
-			
 			// First level - sections
 			// Level SA - Level SE
 			this.elem_01.reprocess(se ,	0 , 0 , this.sa.dim)
 
 			this.code 	+= this.elem_01.code
 		}
-
-
 
 	} // End Method
 

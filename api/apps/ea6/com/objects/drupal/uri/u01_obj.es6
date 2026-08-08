@@ -10,12 +10,11 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ uri_front } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u02_front.es6'));
- 	 	match 				= 	require(	path.join(JS_BASE, 'com/libs/string/match.es6'));
-		urldecode 			= 	require(	'urldecode'								),
-		iconv 				= 	require(	'iconv-lite'							),
-		path	 			= 	require(	'path'													);
-
+const 	{ uri_front } 		= 	require(path.join(JS_BASE, 'com/objects/drupal/uri/u02_front.es6'))
+ 	 	const match = require(path.join(JS_BASE, 'com/libs/string/match.es6'))
+		const urldecode = require(	'urldecode'								);
+		const iconv = require(	'iconv-lite'							);
+		const path = require(	'path'													);
 
 class uri extends uri_front {
 	constructor(	s 						= ""		,	// Site
@@ -54,7 +53,6 @@ class uri extends uri_front {
 
 		if (this.server_protocol 		== "https") isSecure = true
 
-
 		if (isSecure) {
 			this.ssl_page = "ssl"
 			this.http_domain = "https://" + this.domain
@@ -87,7 +85,6 @@ class uri extends uri_front {
 		// fr/hola
 		// this.p('CURRENT_URI ' + this.uri)
 
-
 		// Gestion de metodos via uri --- ENABLED ONE ARGUMENT
 		var pos = this.strpos(this.uri, "@")
 		if (pos !== false)
@@ -103,13 +100,10 @@ class uri extends uri_front {
 
 		if (this.uri.substr(0, 1) != "/") this.uri = '/' + this.uri
 
-
 		// Text Replace Php Idea
 
 		this.replace(				this.uri	, 		"/", "_")
 		this.dash_uri				=	this.result
-
-
 
 		if (this.dash_uri == "_" ||
 			this.dash_uri == "") //A. FRONT PAGE
@@ -166,7 +160,6 @@ class uri extends uri_front {
 				(this.dash_uri == "_cookies_") ||
 				(this.dash_uri == "_policy"  ))
 					this.b.page_cookies = true
-
 
 			// Metodo correcto - Falla Iconv al instalarse en ubuntu
 			// var iconv = new Iconv('UTF-8', 'ASCII//TRANSLIT')

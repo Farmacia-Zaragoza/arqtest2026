@@ -19,8 +19,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { site_common_commands } =   require( path.join(JS_ACO7  , 'uri/u02_site_commands.es7'));
-       const { idx_pointers }        =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'     ));
+const  { site_common_commands } =   require( path.join(JS_ACO7  , 'uri/u02_site_commands.es7' ));
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'     ));
 
 class uri_lang_aliases extends site_common_commands
 {
@@ -46,8 +46,6 @@ class uri_lang_aliases extends site_common_commands
 
      var idx          = new idx_pointers(index)
 
-
-
      let cats         = this.getarr(this.s.ms.main_lang, idx.jindex)                              ;
 
      // Alias definido a000
@@ -56,7 +54,6 @@ class uri_lang_aliases extends site_common_commands
 
      // this.p('u07_site_uri_SITEALIAS: ' + this.old_uri)
      // this.p('u07_site_uri_SITEALIAS: ' + this.uri)
-
 
      // let cats           = this.arr[this.s.ms.main_lang][idx.jindex]
     var iterations           = Object.keys(cats).length - 1
@@ -75,7 +72,6 @@ class uri_lang_aliases extends site_common_commands
       // Obtiene el item en el idioma ( espanol )
       this.item               = this.getkeylang( idx.iindex , pos)
 
-
       this.rmultispace(this.item)
 
       var lower_result        = this.result.toLowerCase()
@@ -88,7 +84,6 @@ class uri_lang_aliases extends site_common_commands
       this.mainitem           = this.getkeymain( idx.iindex , pos)
 
       this.typeitem           = this.getkeymain( idx.dindex , pos)
-
 
       this.rmultispace(this.mainitem)
       this.mainitem           = this.result.toLowerCase()
@@ -106,7 +101,6 @@ class uri_lang_aliases extends site_common_commands
       // gold_rules    ---> load product
       // zh/黄金法则    ---> load product
       // 黄金法则       ---> load product
-
 
       if (!this.b.lang_aliases_already_managed)
       {
@@ -171,7 +165,6 @@ class uri_lang_aliases extends site_common_commands
         }
 */
      }
-
 
      // this.p ('u01_lang_NOTFOUND_ALIAS' + this.uri)
 

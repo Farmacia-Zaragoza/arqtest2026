@@ -13,7 +13,7 @@
 // - d-create_drupal_urls-			  : Create url for drupal bootstrap
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { uri_sets } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u06_sets.es6'))
+const { uri_sets } 			= 	require(path.join(JS_BASE, 'com/objects/drupal/uri/u06_sets.es6'))
 
 class uri_urls extends uri_sets {
 

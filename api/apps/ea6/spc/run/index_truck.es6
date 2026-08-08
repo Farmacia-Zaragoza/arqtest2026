@@ -2,11 +2,10 @@
 // Index Truck Node Js app
 // Install problem : npm install --unsafe-perm
 
-const 	echo 				= require(	'node-echo'		),
-	  	fs 	 			= require(	'fs'														),
-		path 				= require(	'path'													),
-		rp 	 			= require(	'node_modules/fs.realpath'			);
-
+const 	echo 				= require(	'node-echo'		);
+	  	const fs = require(	'fs'														);
+		const path = require(	'path'													);
+		const rp = require(	'node_modules/fs.realpath'			);
 
 echo("<!doctype html>")
 var site_name = "truck"
@@ -21,7 +20,6 @@ var PHP_VER = "v52"
 
 // /mnt/ssd/brqx/base/rcode/es6/spc/run/index_truck.es6
 // if (!("base_dir" in global)) base_dir = undefined
-
 
 var base_dir = 'pepito'
 
@@ -67,7 +65,7 @@ GLOBALS.SITE_URL_OBJECT = u
 
 if (cache and
 	(b.page_download or
-		(c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC"))) //a. Level 01 - Load only generated files
+		(c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC"))))) //a. Level 01 - Load only generated files
 	//$u->p('Before p02')
 	//$u->p('RamGen B ' . true  . '==' . $pnode->status)
 	{

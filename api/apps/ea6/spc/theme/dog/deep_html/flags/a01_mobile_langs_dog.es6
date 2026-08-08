@@ -19,7 +19,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const	{ svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+const	{ svg_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
 
 
 class a01_mobile_langs_dog extends svg_style {

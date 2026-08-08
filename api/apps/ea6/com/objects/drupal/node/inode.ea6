@@ -17,11 +17,11 @@
 
 var 	cons 					= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const	{ anode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'));
-		url 					= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6'));
-		run						= 	require(	path.join(JS_BASE, 'com/pms/arrays/save_array_img_resolutions_in_ram_promise.ea6'));
-		fs						=	require(	'fs'																			),		
-		path					=	require(	'path'																			);		
+const	{ anode } 				= 	require(path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))
+		const url = require(path.join(JS_BASE, 'com/libs/string/url.es6'))
+		const run = require(path.join(JS_BASE, 'com/pms/arrays/save_array_img_resolutions_in_ram_promise.ea6'))
+		const fs = require(	'fs'																			);
+		const path = require(	'path'																			);
 
 class inode extends anode {
 	constructor() {
@@ -46,7 +46,6 @@ class inode extends anode {
 		//   /ssd/truck/1600x1200/
 		// this.p('Image_folder  ' + this.s.img_folder )
 
-		
 		if (this.s.img_folder.substr(-1) != "/") this.s.img_folder += "/"
 
 		this.img_path = this.s.img_folder + path.basename(this.original_image_url_path)
@@ -63,16 +62,15 @@ class inode extends anode {
 				break
 
 			case 2:
-				this.image_name_with_resolution = path.dirname(path.dirname(this.only_image_with_resolution.replace(".", "/"))
+				this.image_name_with_resolution = path.dirname(path.dirname(this.only_image_with_resolution.replace(".", "/")))
 				break
 
 			case 3:
-				this.image_name_with_resolution = path.dirname(path.dirname(path.dirname(this.only_image_with_resolution.replace(".", "/"))
+				this.image_name_with_resolution = path.dirname(path.dirname(path.dirname(this.only_image_with_resolution.replace(".", "/"))))
 				break
 		}
 
 		// this.p('Image_name_without_ext ' + this.image_name_with_resolution )
-
 
 		let image_without_res =  this.image_name_with_resolution.length - 10
 
@@ -155,7 +153,6 @@ class inode extends anode {
 		}
 	}
 
-
 	// -------------------------------- CREATE_ARRAY_IMG_RESOLUTIONS --------------------------------
 	create_array_img_resolutions()
 	{
@@ -173,7 +170,6 @@ class inode extends anode {
 			// this.p ('ori: ' + this.img_path + '  ' + '  dest ' + this.result )
 			// ori: /ssd/truck/1600x1200/transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0139_1600x1200.jpg    
 			// dest /ssd/truck/0184x0245/transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0139_0184x0245.jpg
-
 
 			this.autoreplace(		this.img_url_path		)
 			this.arr['sur'][resolution] =  this.result

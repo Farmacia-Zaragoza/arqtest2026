@@ -35,11 +35,10 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 						= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		empty 								= 	require(	'is_empty'															),
-		const { div01_helper_button_dog }			= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/div01_helper_button_dog.es6'));
-		const { div01_helper_arrow_sizer_dog }	= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/div01_helper_arrow_sizer_dog.es6'));
+const 	{ html_style } 						= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const empty = require(	'is_empty'															);
+		const { div01_helper_button_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/div01_helper_button_dog.es6'))
+		const { div01_helper_arrow_sizer_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/div01_helper_arrow_sizer_dog.es6'))
 
 class div02_helper_dog extends html_style {
 
@@ -76,7 +75,6 @@ class div02_helper_dog extends html_style {
 							this.thm.s.nfo_text_dev_live	, // header - text
 							this.thm.s.nfo_desc_dev_live	) // content
 
-
 		this.content				+=	this.miv_01.code
 	}
 
@@ -95,7 +93,6 @@ class div02_helper_dog extends html_style {
 							this.thm.s.nfo_text_html_php	, // header
 							this.thm.s.nfo_desc_html_php	) // content
 
-
 		this.content				+=	this.miv_01.code
 	}
 
@@ -110,7 +107,6 @@ class div02_helper_dog extends html_style {
 							class							, // class
 							this.thm.s.nfo_text_http_https	, // header
 							this.thm.s.nfo_desc_http_https	) // content
-
 
 		this.content				+=	this.miv_01.code
 	}
@@ -142,7 +138,6 @@ class div02_helper_dog extends html_style {
 							class							, // class
 							this.thm.s.nfo_text_user_human	, // header
 							this.thm.s.nfo_desc_user_human	) // content
-
 
 		this.content				+=	this.miv_01.code
 	}
@@ -187,7 +182,6 @@ class div02_helper_dog extends html_style {
 
 		this.content		+=	this.miv_01.code
 	}
-
 
 	build_data()
 	{

@@ -16,7 +16,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { uri_normalize }     =   require(  path.join(JS_TYP7 , 'uri/u10_normalize.es7'  ));
+const   { uri_normalize }     =   require(  path.join(JS_TYP7 , 'uri/u10_normalize.es7'  )  );
 
 class uri_page_string extends uri_normalize {
 

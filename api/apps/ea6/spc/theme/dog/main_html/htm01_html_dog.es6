@@ -25,13 +25,11 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
+const 	{ html_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { ifnojs } = require(path.join(JS_BASE, 'com/objects/html/ifnojs.es6'))
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { ifnojs } 				= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'));
-
-		const { hea01_head_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/hea01_head_dog.es6'));
-		const { bdy01_body_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/bdy01_body_dog.es6'));
-
+		const { hea01_head_dog } = require(path.join(JS_BASE, 'spc/theme/dog/main_html/hea01_head_dog.es6'))
+		const { bdy01_body_dog } = require(path.join(JS_BASE, 'spc/theme/dog/main_html/bdy01_body_dog.es6'))
 
 class htm01_html_dog extends html_style  {
 
@@ -50,12 +48,10 @@ class htm01_html_dog extends html_style  {
 
     	this.body_01    			=	''
 
-
 	// Attributes
 
 		this.img_background		=	''
 		this.img_logo			=	''
-
 
 		// Another level fast full page cache
 
@@ -82,7 +78,6 @@ class htm01_html_dog extends html_style  {
 		this.code				+=  this.body_01.code
 	}
 
-
 // <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-.
 // <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-.
 // <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-.
@@ -103,7 +98,6 @@ class htm01_html_dog extends html_style  {
 
 	}
 
-
     build_data()
     {
 	// To build content is needed to build block
@@ -122,7 +116,6 @@ class htm01_html_dog extends html_style  {
 //		doctype='<!DOCTYPE html>'
 
 		// this.dd('Code >' + this.code )
-
 
     }
 

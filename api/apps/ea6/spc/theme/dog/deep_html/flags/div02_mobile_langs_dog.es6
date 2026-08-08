@@ -20,10 +20,9 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		empty 						= 	require(	'is_empty'														),
-		const { a01_mobile_langs_dog }	= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/a01_mobile_langs_dog.es6'));
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const empty = require(	'is_empty'														);
+		const { a01_mobile_langs_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/a01_mobile_langs_dog.es6'))
 
 class div02_mobile_langs_dog extends html_style {
 
@@ -42,13 +41,11 @@ class div02_mobile_langs_dog extends html_style {
 		this.div_01					=	new html_style('div')
 		this.div_01.class			=	'lang-wrapper'
 
-
 		this.a_01 					= 	new a01_mobile_langs_dog (this.thm)
 
 		this.fnode 					= 	this.thm.arr['fnode']['flag_list']
 		this.build_data()
 	}
-
 
 	build_data()
 	{

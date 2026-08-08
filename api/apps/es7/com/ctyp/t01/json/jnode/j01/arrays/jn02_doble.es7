@@ -15,15 +15,13 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                            =   require(  'fs'                                  ),
-       empty                         =   require(  'is-empty'                        ),
-       accents                       =   require(  'remove-accents'                    ),
-       const { idx_pointers }              =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn03_comma_json_recursive } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn03_recursive.es7'));
-
+const  fs                            =   require(  'fs'                                  );
+       const empty = require(  'is-empty'                        );
+       const accents = require(  'remove-accents'                    );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn03_comma_json_recursive } = require(path.join(JS_TYP7, 'json/jnode/j01/arrays/jn03_recursive.es7'))
 
 class jn02_comma_json_doble extends jn03_comma_json_recursive {
-
 
   constructor ()
   {
@@ -104,7 +102,6 @@ class jn02_comma_json_doble extends jn03_comma_json_recursive {
 
       if ( (--iterations  >= 0) && (this.b.type_generated) )
         this.j.add_separator()
-
 
      }  // End For
 

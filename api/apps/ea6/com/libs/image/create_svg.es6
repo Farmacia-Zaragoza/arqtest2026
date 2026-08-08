@@ -1,12 +1,11 @@
 //Generacion de imagenes PNG - Color con fondo en Blanco
 
 const 	TextToSVG 			= require(	'/brqx/base/react/zcommon/node_modules/text-to-svg'							),	// dont work
-		fs 					= require(	'fs'																		),
-		path 				= require(	'path'																		),
-		echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'							),
-		Text2svg 			= require(	'/brqx/base/react/zcommon/node_modules/text2svg'							), // dont work
-		logo 				= require(	'/brqx/base/react/zcommon/node_modules/logo.svg'							); // Works
-
+		const fs = require(	'fs'																		);
+		const path = require(	'path'																		);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'							);
+		const Text2svg = require(	'/brqx/base/react/zcommon/node_modules/text2svg'							), // dont work;
+		const logo = require(	'/brqx/base/react/zcommon/node_modules/logo.svg'							); // Works;
 
 function create_svg(text = "PhoNe", 
 					color = "orange", 
@@ -35,8 +34,7 @@ function create_svg(text = "PhoNe",
 			const options = {font: font , logo: text , x: 0, y: 0, fontSize: font_size, anchor: 'top', path : attributes};
 			
 			var svg = logo.generate(options);
-			
-			
+
 			return svg
 		}
 }

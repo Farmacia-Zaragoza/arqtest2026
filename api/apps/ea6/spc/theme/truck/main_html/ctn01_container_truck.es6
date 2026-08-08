@@ -24,17 +24,14 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
+const 	{ html_style } 					= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
-		const { sec01_section_lang_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/sec01_section_lang_truck.es6'));
-		const { sec02_section_slider_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/sec02_section_slider_truck.es6'));
-		const { hdr01_header_truck }			= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/hdr01_header_truck.es6'));
-		const { foo04_footer }				= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo04_footer.es6'));
-		const { cpt04_div_captcha }			= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/captcha/cpt04_div_captcha.es6'));
-		const { cok02_div_policy_cookies }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/cookies/cok02_div_policy_cookies.es6'));
-
-
+		const { sec01_section_lang_truck } = require(path.join(JS_BASE, 'spc/theme/truck/main_html/sec01_section_lang_truck.es6'))
+		const { sec02_section_slider_truck } = require(path.join(JS_BASE, 'spc/theme/truck/main_html/sec02_section_slider_truck.es6'))
+		const { hdr01_header_truck } = require(path.join(JS_BASE, 'spc/theme/truck/main_html/hdr01_header_truck.es6'))
+		const { foo04_footer } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo04_footer.es6'))
+		const { cpt04_div_captcha } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/captcha/cpt04_div_captcha.es6'))
+		const { cok02_div_policy_cookies } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/cookies/cok02_div_policy_cookies.es6'))
 
 class ctn01_container_truck extends html_style  {
 
@@ -66,11 +63,9 @@ class ctn01_container_truck extends html_style  {
 		// Tenemos que tener como un mapa del site
 		this.thm.map					= 	'body/container'
 
-
 		this.build_data()
 
     }
-
 
 	// <section class="lang-grand clearfix">		(external)
   	create_section_01()
@@ -100,8 +95,6 @@ class ctn01_container_truck extends html_style  {
 
 	}
 
-
-
 	// 	<section class="flex-slider">				(external)
   	create_section_flex()
     {
@@ -127,7 +120,6 @@ class ctn01_container_truck extends html_style  {
 
 	}
 
-
 	// <header class="text-center mobile_style">	(external)
   	create_header()
     {
@@ -140,7 +132,6 @@ class ctn01_container_truck extends html_style  {
 
 	}
 
-
 	//		<footer class="clearfix">					(external)
   	create_footer()
     {
@@ -150,9 +141,7 @@ class ctn01_container_truck extends html_style  {
 		// this.content			+=   'FOOTER>'
 		// this.p('foot:codl >' + this.footer_01.code.length)
 
-
 		this.content			+=   this.footer_01.code			 // 'FOOTER>'
-
 
 	}
 

@@ -20,10 +20,8 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		scpf 						= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-
+const 	{ html_style } 				= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
 
 class foo02_a_footer extends html_style{
 
@@ -67,7 +65,6 @@ class foo02_a_footer extends html_style{
 
 		this.svg_01_code = scpf.file_get_svg_code(this.svg_code_path)									 // READ_FILE
 
-
 	}
 
 	create_span_01()
@@ -93,7 +90,6 @@ class foo02_a_footer extends html_style{
 
 		this.create_span_01()
 		this.create_span_02()
-
 
 	}
 

@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                         =   require(  'fs'                                                   ),
-       empty                      =   require(  'is-empty'                             ),
-       accents                    =   require(  'remove-accents'                       ),
-       const { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn01_comma_json_simple } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn01_simple.es7'));
+const  fs                         =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn01_comma_json_simple } = require(path.join(JS_TYP7, 'json/jnode/j01/arrays/jn01_simple.es7'))
 
 // Comm Object
 class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
-
 
   constructor ()
   {
@@ -50,7 +49,6 @@ class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
     }
   }
 
-
   //---------------------------------------------------------------------------------------------
   review_childrens_recursive(
             index                      ,  // 1.Indice
@@ -71,7 +69,6 @@ class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
     // this.p('jn05_rc ' + iterations)
 
     // Hay que hacer una primera pasada limpiando aliases
-
 
     for (var pos in cats)
     {
@@ -118,9 +115,6 @@ class jn05_commo_json_recursive_call extends jn01_comma_json_simple {
         }
         else
           this.j.createspecificpart(current_otype)
-
-
-
 
         this.review_childrens_recursive(
             current_level          ,

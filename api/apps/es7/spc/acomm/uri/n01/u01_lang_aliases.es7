@@ -24,8 +24,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { site_common_commands } =   require( path.join(JS_ACO7  , 'uri/n01/u02_site_commands.es7'));
-       const { idx_pointers }        =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'         ));
+const  { site_common_commands } =   require( path.join(JS_ACO7  , 'uri/n01/u02_site_commands.es7' ));
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'         ));
 
 class uri_lang_aliases extends site_common_commands
 {
@@ -100,7 +100,6 @@ class uri_lang_aliases extends site_common_commands
         this.p('u01_langali E ' + pos + ' elem ' + this.value)
         this.rmultispace_debug(this.value)
 
-
         var lower_result        = this.result.toLowerCase()
 
         this.langitem           = lower_result
@@ -108,7 +107,6 @@ class uri_lang_aliases extends site_common_commands
 
         // Necesitamos gestionar tanto es/item como item
         // Y vamos a quitar los espacios
-
 
         this.rmultispace(this.value_en)
         this.mainitem           = this.result.toLowerCase()
@@ -234,7 +232,6 @@ class uri_lang_aliases extends site_common_commands
           } // END_Nivel 04_If_Match
 
         } // STA_Nivel 03 IF
-
 
      // this.p ('u01_lang_NOTFOUND_ALIAS' + this.uri)
 

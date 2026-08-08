@@ -26,14 +26,12 @@
 // - d-join_scripts-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-		const { cn01_base } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'));
-		UglifyES 			= 	require(	'uglify-es'															),
-		minify 				= 	require(	'html-minifier'														).minify;
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
+		const { cn01_base } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'))
+		const UglifyES = require(	'uglify-es'															);
+		const minify = require(	'html-minifier'														).minify;
 
 class scr04_js_inline_truck extends html_style  {
 
@@ -50,7 +48,6 @@ class scr04_js_inline_truck extends html_style  {
 		this.thm						=	thm
 
 		this.script_code_path			=	''
-
 
 		this.build_data()
 
@@ -81,7 +78,6 @@ class scr04_js_inline_truck extends html_style  {
 
 	}
 
-
 	//[S_03] <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js" defer></script>
     create_flexslider()
     {
@@ -96,7 +92,6 @@ class scr04_js_inline_truck extends html_style  {
 		this.content		+=		scpf.file_get_code(this.script_code_path) + " "
 
 	}
-
 
 	//[S_09] <script src="assets/js/main.js" defer></script>
 	create_main()
@@ -116,7 +111,6 @@ class scr04_js_inline_truck extends html_style  {
 		this.content		+=		scpf.file_get_code(this.script_code_path)
 
 		// this.p('CONTENT_LENGT_JS ' + this.content.length)
-
 
 	}
 
@@ -139,7 +133,6 @@ class scr04_js_inline_truck extends html_style  {
 
 		// this.p('CONTENT_LENGT_JS ' + this.content.length)
 
-
 	}
 
 	join_scripts()
@@ -156,9 +149,7 @@ class scr04_js_inline_truck extends html_style  {
 
 		this.content = result.code
 
-
 	}
-
 
     build_data()
     {

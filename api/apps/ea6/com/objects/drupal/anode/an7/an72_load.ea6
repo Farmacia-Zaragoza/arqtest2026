@@ -16,17 +16,15 @@
 
 var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
-const 	{ anode_loadanypos } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an73_loadanypos.es6'));
-		fs 							= 	require(	'fs'																		),
-		path 						= 	require(	'path'																		),
-		recursive 					= 	require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir-sync'				),
-		sort 						= 	require(	'/brqx/base/react/zcommon/node_modules/sort-array'							),
-		readdirp 					= 	require(	'/brqx/base/react/zcommon/node_modules/readdirp'							),
-		echo	 					= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'							),
-		mat							=	require(	path.join(JS_BASE, 'com/libs/string/match.es6'));
-		url			 				= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6'));
-
-
+const 	{ anode_loadanypos } 		= 	require(path.join(JS_BASE, 'com/objects/drupal/anode/an7/an73_loadanypos.es6'))
+		const fs = require(	'fs'																		);
+		const path = require(	'path'																		);
+		const recursive = require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir-sync'				);
+		const sort = require(	'/brqx/base/react/zcommon/node_modules/sort-array'							);
+		const readdirp = require(	'/brqx/base/react/zcommon/node_modules/readdirp'							);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'							);
+		const mat = require(path.join(JS_BASE, 'com/libs/string/match.es6'))
+		const url = require(path.join(JS_BASE, 'com/libs/string/url.es6'))
 
 class anode_load extends anode_loadanypos {
 
@@ -51,7 +49,6 @@ class anode_load extends anode_loadanypos {
 		if ( fs.existsSync(this.path) &&   fs.lstatSync(this.path).isDirectory() ) 
 		{		
 			// REVISAR ITERATOR
-
 
 			let url_base_path = url.url_with_bar(this.u.site_url + this.path_pointer)
 			
@@ -96,7 +93,6 @@ class anode_load extends anode_loadanypos {
 
 			// /mnt/ssd/brqx/base/react/zcommon/apps/photos/1600x1200/
 			// this.p('Base_path ' + this.path + '  - L ' + arr_files.length )								
-			
 
 			for(pos in arr_files) 
 			{
@@ -110,7 +106,6 @@ class anode_load extends anode_loadanypos {
 				
 				//cica.dbrqx.com/imgs/path
 
-				
 				let url_path  = url_base_path + elemento								 
 
 				// this.p('an72_url_path ' + url_path)								
@@ -135,9 +130,7 @@ class anode_load extends anode_loadanypos {
 				
 				let title_str 							=	''								
 
-
 				let arr_ide_current = ideal_elem.split(",");
-
 
 				// REVISAR FOREACH
 
@@ -180,14 +173,11 @@ class anode_load extends anode_loadanypos {
 				}
 					
 			} // End Foreach
-			
-			
+
 		} // End If
 		
 	}
 
-
-	  
 }
 
 exports.anode_load = anode_load

@@ -16,10 +16,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn01_commo_json_simple }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/objects/jn01_simple.es7'));
-        const { commjson_site }            =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn10_commjson_site.es7'));
-        const { arrajson_site }            =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn11_arrajson_site.es7'));
-
+const   { jn01_commo_json_simple }   =   require(path.join(JS_TYP7, 'json/jnode/j01/objects/jn01_simple.es7'))
+        const { commjson_site } = require(path.join(JS_TYP7, 'json/jnode/j00/jn10_commjson_site.es7'))
+        const { arrajson_site } = require(path.join(JS_TYP7, 'json/jnode/j00/jn11_arrajson_site.es7'))
 
 class jnode extends jn01_commo_json_simple {
   constructor(    arroba  = ''              )
@@ -41,7 +40,6 @@ class jnode extends jn01_commo_json_simple {
     this.u                  =  this.arroba.u
     this.b                  =  this.arroba.b
 
-
     // Common for Any Json - Debe/Puede ser especifico del site
     // Esta parte dudo si se ejecuta
     this.j                  =  new commjson_site(this.s.cs.cache_path)
@@ -50,10 +48,8 @@ class jnode extends jn01_commo_json_simple {
 
     // this.kk                 =  new commjson_site(this.s.cs.cache_path)
 
-
     let index               = 'main'
     let jindex              = 'j' + index
-
 
 	let cats                =  this.gethash_arr(this.s.ms.main_lang, jindex)															;
 

@@ -19,10 +19,8 @@
 // - d-create_link_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class lnk02_css_as_link_truck extends getset  {
 
@@ -60,7 +58,6 @@ class lnk02_css_as_link_truck extends getset  {
 			this.link_normalize.preload				=	'preload'
 			this.link_normalize.as					=	'style'
 		}
-
 
 		let cloudflare_uri					=	"https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/"
 		this.link_normalize.href			=  cloudflare_uri + 'normalize.min.css'
@@ -109,7 +106,6 @@ class lnk02_css_as_link_truck extends getset  {
 			this.link_main.as					=	'style'
 		}
 
-
 		if ( this.thm.b.site_live )		css_name +=	'_live'
 
 		this.link_main.href				=
@@ -137,7 +133,6 @@ class lnk02_css_as_link_truck extends getset  {
 			this.link_product.preload				=	'preload'
 			this.link_product.as					=	'style'
 		}
-
 
 		if ( this.thm.b.site_live )		css_name +=	'_live'
 

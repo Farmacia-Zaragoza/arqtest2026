@@ -18,12 +18,12 @@
 //-- create_full_filename
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-const 	fs 					= require(	'fs'																				),
-		creff 				= require( 	'/brqx/base/rcode/es6/com/libs/file/full_path/level_02/create_full_filename.es6'	),
-		empty 				= require(	'/brqx/base/react/zcommon/node_modules/is-empty'									),
-		recursive			= require(	'/brqx/base/react/zcommon/node_modules/klaw-sync'									),
-		rimraf 				= require(  '/brqx/base/react/zcommon/node_modules/rimraf'										),
-		echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
+const 	fs 					= require(	'fs'																				);
+		const creff = require( 	'/brqx/base/rcode/es6/com/libs/file/full_path/level_02/create_full_filename.es6'	);
+		const empty = require(	'/brqx/base/react/zcommon/node_modules/is-empty'									);
+		const recursive = require(	'/brqx/base/react/zcommon/node_modules/klaw-sync'									);
+		const rimraf = require(  '/brqx/base/react/zcommon/node_modules/rimraf'										);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
 
 function create_file(folder_name, file_name )
 {
@@ -48,7 +48,6 @@ function update_file(folder_name, file_name , DATA)
     full_file_name=folder_name + "/" + file_name
     creff.update_full_filename(full_file_name , DATA)
 }
-
 
 function create_update_file(folder_name, file_name_int , DATA)
 {
@@ -79,7 +78,6 @@ function delete_folder_if_exist(dirPath)
 		rimraf.sync(dirPath)
 	}
 }
-
 
 function delete_folder_content_if_exist(dirPath)
 {
@@ -115,7 +113,6 @@ function delete_folder_content_if_exist(dirPath)
     	// rmdir(dirPath)
 	}
 }
-
 
 module.exports.delete_folder_if_exist 			= 	delete_folder_if_exist
 module.exports.delete_folder_content_if_exist	= 	delete_folder_content_if_exist

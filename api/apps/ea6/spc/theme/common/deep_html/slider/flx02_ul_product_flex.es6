@@ -18,11 +18,10 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { flx01_li_flex }	= 	require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx01_li_flex.es6'));
-		empty 				= 	require(	'is_empty'											),
-		path				= 	require( 	'path'																	);
-
+const 	{ html_style } 		= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { flx01_li_flex } = require(path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx01_li_flex.es6'))
+		const empty = require(	'is_empty'											);
+		const path = require( 	'path'																	);
 
 class flx02_ul_product_flex extends html_style {
 
@@ -48,7 +47,6 @@ class flx02_ul_product_flex extends html_style {
     var sw_active = 0
     var num_elems = this.fnode.arr.oim.length
     var slide_num = path.basename(this.fnode.u.page_iargs)
-
 
 	var max_slides
 

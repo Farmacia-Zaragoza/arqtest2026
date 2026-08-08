@@ -17,11 +17,10 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn11_index_fn }     =   require(  path.join(JS_TYP7, 'json/jindex/j00/jn11_index_fn.es7'));
-	    shtf  			= 	require(  path.join(JS_LIB7, 'file/save_hash_to_file.es7'));
-	    satf  			= 	require(  path.join(JS_LIB7, 'file/save_hash1d_to_file.es7'));
-        empty                 =   require(  'is_empty'                        );
-
+const   { jn11_index_fn }     =   require(path.join(JS_TYP7, 'json/jindex/j00/jn11_index_fn.es7'))
+	    const shtf = require(path.join(JS_LIB7, 'file/save_hash_to_file.es7'))
+	    const satf = require(path.join(JS_LIB7, 'file/save_hash1d_to_file.es7'))
+        const empty = require(  'is_empty'                        );
 
 class jn10_index_pf extends jn11_index_fn {
 
@@ -50,15 +49,12 @@ class jn10_index_pf extends jn11_index_fn {
     // Hay que limpiar el array
     // this.p('j00_comm_pf_Loading File ' + file_to_load)
 
-
     this.word_arr         =   Array()
     var str_aux           =   ''
 
     this.load_file_information(file_to_load)
 
-
     // this.p('jn10idx_LEngth_Array_Pf ' + last_element  )
-
 
     for (var pos in this.contents)
     {
@@ -73,7 +69,6 @@ class jn10_index_pf extends jn11_index_fn {
       this.process_phrase(phrase)
 
       // INDEX (word) VALUE (count)
-
 
     }  // End For
 
@@ -99,7 +94,6 @@ class jn10_index_pf extends jn11_index_fn {
 								this.word_arr						    ,
 								this.s.cs.position						, // 0020
 								this.s.cs.page							) // 1
-
 
   }
 

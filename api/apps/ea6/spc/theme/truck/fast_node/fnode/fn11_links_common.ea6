@@ -13,12 +13,10 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ fnode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { cbool }			= require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+const	{ fnode } 			= require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 class fn11_links_common extends fnode {
-
 
     constructor (   u					=	''				, // 02. U object
 					page_position		=	''				, // 07. Position id
@@ -37,16 +35,13 @@ class fn11_links_common extends fnode {
 		this.b							= 	new cbool()
 		this.b.copy (this.s.b)
 
-
     	this.type						=	'links_common_structure'					 // Type for structures
 		this.short_type					=	'LCKS'
-
 
 		// String fnode / node / cica_recuerdo
 		this.ftype 						=	'fnode'															// Fast node type
 		this.stype 						=	stype															// Node subtype
 		this.type_name					=	this.stype
-
 
 		this.b.type_user							=	false										 // Different content if is anonymous
 		this.b.type_common							=	true
@@ -54,7 +49,6 @@ class fn11_links_common extends fnode {
 		this.b.type_translation						= 	false										 // Auto translate contents - Hay que revisarlo
 		this.b.type_translated						= 	false										 // Different contents for different languages
 		this.b.type_ssl								=	true										 // If have urls
-
 
 		this.b.type_have_taxonomy					=	false
 		this.b.type_have_code						=	false
@@ -77,12 +71,10 @@ class fn11_links_common extends fnode {
 		this.suffix_disk			=	this.suffix
 		this.suffix_lang			=	this.suffix
 
-
 		// Special Tite : FotoCasa
 		// Links information url - title - target - extended TeXt
 		let arrays_line = 'url tit tar lines'
 		this.arr['types'] = arrays_line.split(' ')
-
 
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
@@ -97,9 +89,7 @@ class fn11_links_common extends fnode {
 
 		// /brqx/pers/drupal/v50/fnode/flat/fnode/links_structure/common_flat_links
 
-
 		// this.p('0L_Links_Common_Properties ' + this.arr['properties'].length)
-
 
 		if (this.s.load == 'drupal')
 		{
@@ -130,7 +120,6 @@ class fn11_links_common extends fnode {
 			else if ( prop 	== "cookies_msg_uri"		)		this.cookies_msg_uri			=	value
 
     }
-
 
 	prepare_specific_child_properties()
 	{

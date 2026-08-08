@@ -17,10 +17,10 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	fs 										= require(	'fs'																							),
-		empty 									= require(	'/brqx/base/react/zcommon/node_modules/is-empty'												),
-		const { anode_if_is_correct_save_properties } = require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an34_if_is_correct_save_properties.ea6'));
-		creff 									= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'));
+const 	fs 										= require(	'fs'																							);
+		const empty = require(	'/brqx/base/react/zcommon/node_modules/is-empty'												);
+		const { anode_if_is_correct_save_properties } = require(path.join(JS_BASE, 'com/objects/drupal/anode/an3/an34_if_is_correct_save_properties.ea6'))
+		const creff = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'))
 
 class anode_check_only_if_exist_code extends anode_if_is_correct_save_properties {
             
@@ -29,8 +29,6 @@ class anode_check_only_if_exist_code extends anode_if_is_correct_save_properties
 		super()
 		this.n	=	'anode_check_only_if_exist_code::'											
 	}											
-
-
 
 	check_only_if_exist_code_ram()
 	{
@@ -56,7 +54,6 @@ class anode_check_only_if_exist_code extends anode_if_is_correct_save_properties
 			}	
 		return false 													 		
 	}
-
 
 	check_only_if_exist_code_ssd()
 	{

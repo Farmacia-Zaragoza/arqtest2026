@@ -20,9 +20,8 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { ctn01_container_truck }	= require(	path.join(JS_BASE, 'spc/theme/truck/main_html/ctn01_container_truck.es6'));
+const 	{ html_style } 				= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { ctn01_container_truck } = require(path.join(JS_BASE, 'spc/theme/truck/main_html/ctn01_container_truck.es6'))
 
 class sid01_sidebars_truck extends html_style  {
 
@@ -59,7 +58,6 @@ class sid01_sidebars_truck extends html_style  {
 		this.build_data()
 
     }
-
 
 	// <div class="left-sidebar">
   	create_liv()
@@ -111,7 +109,6 @@ class sid01_sidebars_truck extends html_style  {
 
 		// Pending [17-06-24]
 		// this.p('code >' + this.code.length)
-
 
     }
 

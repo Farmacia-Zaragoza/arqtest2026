@@ -13,13 +13,12 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	{ fnode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { cbool }			= require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+const	{ fnode } 			= require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 // Para poder extender debe haberse incluido antes
 class fn03_links extends fnode {
 
-           
     constructor (   u					=	''				, // 02. U object
 					page_position		=	''				, // 07. Position id
 					stype				=	'flat_links'	) // 08. Node Type  
@@ -36,17 +35,14 @@ class fn03_links extends fnode {
 
 		this.b							= 	new cbool()
 		this.b.copy (this.s.b)													
-		
 
     	this.type						=	'links_structure'					 // Type for structures			
 		this.short_type					=	'LKS'						
-    	
-    	
+
 		// String fnode / node / cica_recuerdo
 		this.ftype 						=	'fnode'															// Fast node type
 		this.stype 						=	stype															// Node subtype			
 		this.type_name					=	this.stype 													
-		
 
 		this.b.type_human						= 	true 										 // if is dat file never will be erased on disk
 
@@ -69,7 +65,6 @@ class fn03_links extends fnode {
 		let base_common = 'common_'																
 		let lang_common = '' 																			
 
-
 		if (this.b.site_multilang) 
 			lang_common	= base_common + this.u.lang_site + '_'
 
@@ -77,16 +72,13 @@ class fn03_links extends fnode {
 
    		this.suffix_lang	= 	lang_common + this.stype										
 
-
    		this.suffix_disk 	= 	this.suffix													
 
    		this.suffix_code 	= 	this.suffix + '_' + this.u.ssl_page + '.' + 'code'		
 
-
 		// Links information url - title - target - extended TeXt
 		arrays_line = 'url tit tar txt lines'   
 		this.arr['types'] = arrays_line.split (' ') 	 
-
 
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()													
@@ -137,7 +129,6 @@ class fn03_links extends fnode {
 			else if ( prop 	== "efile"					)		this.efile							=	value			
 
     }
-
 
 	prepare_specific_child_properties()
 	{

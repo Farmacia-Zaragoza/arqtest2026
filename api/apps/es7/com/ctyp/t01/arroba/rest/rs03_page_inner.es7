@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                   =   require(  'fs'                                                    ),
-       empty                =   require(  'is-empty'                              ),
-       accents              =   require(  'remove-accents'                        ),
-      const { idx_pointers }     =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'));
-      const { rs04_object_list_inner }   =   require(  path.join(JS_TYP7, 'arroba/rest/rs04_list_inner.es7'));
+const  fs                   =   require(  'fs'                                                    );
+       const empty = require(  'is-empty'                              );
+       const accents = require(  'remove-accents'                        );
+      const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'             )    );
+      const { rs04_object_list_inner } = require(path.join(JS_TYP7, 'arroba/rest/rs04_list_inner.es7'))
 
 // Comm Object
 class rs03_object_page_inner extends rs04_object_list_inner {
-
 
   constructor (arroba , rest)
   {
@@ -62,8 +61,6 @@ class rs03_object_page_inner extends rs04_object_list_inner {
       // rs03_page_inner 10  sm_meta_og_description   Shop Порше - быстрая машина
       this.p ('rs03_page_inner ' + '  ' +  this.cat +  '   '  + this.item + ' ' + this.link)
 
-
-
       // this.sheet.index           =   this.get_next_level(index)
       this.sheet.update(this.cat , this.item , this.link , this.photo , this.hover)
       if (this.cat == "parragraph" || this.cat == "parragraph" )
@@ -76,7 +73,6 @@ class rs03_object_page_inner extends rs04_object_list_inner {
     this.rest.add(this.sheet)
 
     // si hay parrafos
-
 
   }
 

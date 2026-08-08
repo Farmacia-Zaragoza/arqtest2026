@@ -33,23 +33,21 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
+const 	{ html_style } 					= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+		const { div21_div_nxm_divs } = require(path.join(JS_BASE, 'spc/theme/common/structures/divs/div21_div_nxm_divs.es6'))
 
-		const { div21_div_nxm_divs }			= 	require(	path.join(JS_BASE, 'spc/theme/common/structures/divs/div21_div_nxm_divs.es6'));
+		const { div01_slider_row_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/row/div01_slider_row_dog.es6'))
 
-		const { div01_slider_row_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/row/div01_slider_row_dog.es6'));
-
-		const { div03_buttons_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/buttons/div03_buttons_dog.es6'));
+		const { div03_buttons_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/buttons/div03_buttons_dog.es6'))
 		// Bottom Menu
-		const { div03_menu_dog }				= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/menu/div03_menu_dog.es6'));
+		const { div03_menu_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/menu/div03_menu_dog.es6'))
 
-		const { zne04_helper_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/zne04_helper_dog.es6'));
+		const { zne04_helper_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/zne04_helper_dog.es6'))
 
-		const { zne02_hiddens_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/hiddens/zne02_hiddens_dog.es6'));
+		const { zne02_hiddens_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/hiddens/zne02_hiddens_dog.es6'))
 
-		const { div03_mobile_langs_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/div03_mobile_langs_dog.es6'));
-
+		const { div03_mobile_langs_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/div03_mobile_langs_dog.es6'))
 
 class ctn01_container_dog extends html_style  {
 
@@ -85,7 +83,6 @@ class ctn01_container_dog extends html_style  {
 		// Tenemos que tener como un mapa del site
 		this.thm.map					= 	'body/container'
 
-
 		this.build_data()
 
     }
@@ -118,7 +115,6 @@ class ctn01_container_dog extends html_style  {
    	 	this.miv_01		=
    					new div21_div_nxm_divs(
 						class_01, class_02 , class_03, 10 )
-
 
 		// Ok
 		// this.p('ctnr_miv:cod >' + this.code)
@@ -175,7 +171,6 @@ class ctn01_container_dog extends html_style  {
 		this.content			+=	this.miv_03.code
 	}
 
-
 	// <div class="row justify-content-center" id="top-row-images"
 	create_bottom_row_images()
 	{
@@ -209,7 +204,6 @@ class ctn01_container_dog extends html_style  {
 		// this.p('sldr_miv:cod >' + this.miv_02.code)
 
 	}
-
 
 	// <div class="row justify-content-center" id="top-row-images"
 	create_happy_dog()

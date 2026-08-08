@@ -26,16 +26,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-
-
-const	fs 					= 	require(	'fs'													),
-		path				= 	require(	'path'																		),
-		empty 				=   require(	'is-empty'							),
-		echo 				= 	require(	'node-echo'							),
-		util 				=   require(	'util'													),
-		os					=	require(	'os'													),
-		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
-		mkdirp 				= 	require(	'mkdirp'							);
+const	fs 					= 	require(	'fs'													);
+		const path = require(	'path'																		);
+		const empty = require(	'is-empty'							);
+		const echo = require(	'node-echo'							);
+		const util = require(	'util'													);
+		const os = require(	'os'													);
+		const { printlog } = require(path.join(JS_BASE, 'com/objects/logs/printlog.es6'))
+		const mkdirp = require(	'mkdirp'							);
 
 // Ok [17-10-21]
 function create_full_filename(full_file_name_int)
@@ -95,7 +93,6 @@ function create_full_filename_with_code(full_file_name_int, passed_code)
 
 	    fs.writeFileSync(full_file_name_int, passed_code)
 
-
 	}
 }
 
@@ -136,7 +133,6 @@ function create_folder (dir)
 
 }
 
-
 function create_folder_filename (full_file_name_int = '')
 {
 		// Crea la ruta del padre
@@ -147,7 +143,6 @@ function create_folder_filename (full_file_name_int = '')
 		// - - - - - - - - - - - - - - - - - - -
 		// { Error: EPERM, Operation not permitted
 		//  at /mnt/ssd/brqx/base/react/zcommon/node_modules/uid-number/uid-number.js:49:16
-
 
         if (!empty(full_file_name_int) )
 		{
@@ -187,10 +182,8 @@ function create_folder_and_filename (full_file_name_int = '')
 
 			fs.chownSync(full_file_name_int, 48 , 48 )
 
-
 		}
 }
-
 
 function create_full_filename_with_array(full_file_name_int = '' , arr_data)
 {
@@ -211,7 +204,6 @@ function create_full_filename_with_array(full_file_name_int = '' , arr_data)
 					// Creamos uno
 					fs.openSync(full_file_name_int, 'w')
 
-
 				for (var DATA of Object.values(arr_data))
 				{
 					// Aqui tenemos que evitar los ctrl M
@@ -222,11 +214,9 @@ function create_full_filename_with_array(full_file_name_int = '' , arr_data)
 				    fs.appendFileSync(full_file_name_int, LNDATA)
 				}
 
-
 			}
 	}
 }
-
 
 // Crea y actualiza ficheros basado en fullpath
 function create_update_full_filename(full_file_name_int = '', DATA)
@@ -249,7 +239,6 @@ function create_update_full_filename(full_file_name_int = '', DATA)
 	}
 }
 
-
 function update_full_filename(full_file_name_int , DATA)
 {
     if ( !empty(full_file_name_int) && !empty(DATA) )
@@ -263,8 +252,6 @@ function update_full_filename(full_file_name_int , DATA)
 		}
 	}
 }
-
-
 
 function update_full_filename_with_array(full_file_name_int , arr_data)
 {
@@ -312,7 +299,6 @@ function is_file(full_file_name_int)
 	return fs.existsSync(full_file_name_int) &&
 		   fs.lstatSync(full_file_name_int).isFile()
 }
-
 
 module.exports.create_full_filename 				= 	create_full_filename
 module.exports.create_folder_filename 				= 	create_folder_filename

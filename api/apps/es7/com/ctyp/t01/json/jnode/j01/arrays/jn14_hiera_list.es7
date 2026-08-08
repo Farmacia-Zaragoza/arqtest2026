@@ -14,23 +14,20 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                        =   require(  'fs'                                                   ),
-       empty                     =   require(  'is-empty'                             ),
-       accents                   =   require(  'remove-accents'                       ),
-       path               =   require(  'path'                                                 ),
-       const { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn00_comm_pf }   =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn00_comm_pf.es7'));
-
+const  fs                        =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const path = require(  'path'                                                 );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn00_comm_pf } = require(path.join(JS_TYP7, 'json/jnode/j00/jn00_comm_pf.es7'))
 
 class jn14_hiera_json_list extends jn00_comm_pf {
-
 
   constructor ()
   {
     super()
     this.n                         =  'jn14_hiera_json_list::'
   }
-
 
   //---------------------------------------------------------------------------------------------
   save_json_hiera_list_array_to_file(
@@ -56,7 +53,6 @@ class jn14_hiera_json_list extends jn00_comm_pf {
       // Para cada uno hay que gestionar hijos
 
       this.cat                 = cats[pos]
-
 
       let next_level           = this.get_next_level(pos)
 

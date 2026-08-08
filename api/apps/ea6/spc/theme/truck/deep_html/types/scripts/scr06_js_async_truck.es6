@@ -21,9 +21,8 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"									);
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));		
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class scr06_js_async_truck extends getset  {
 
@@ -53,7 +52,6 @@ class scr06_js_async_truck extends getset  {
     {
 		this.script_blazy.async				=  	'async'									
 
-
 		let js_name								=	'blazy.min.js'
 
 		this.script_blazy.src				=  	
@@ -80,7 +78,6 @@ class scr06_js_async_truck extends getset  {
 		this.code						+=	this.script_jquery.code						
 	}		
 
-
 	//[S_03] <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js" defer></script>
     create_flexslider()
     {
@@ -96,7 +93,6 @@ class scr06_js_async_truck extends getset  {
 		this.code						+=	this.script_flexslider.code						
 
 	}		
-
 
 	//[S_09] <script src="assets/js/main.js" defer></script>
 	create_main()

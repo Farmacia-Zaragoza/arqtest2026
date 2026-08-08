@@ -19,13 +19,12 @@
 //-- fs - path - echo - request
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-const	fs 					= 	require(	'fs'																		),
-		path				= 	require(	'path'																		),
-		echo 				= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'							),
-		request 			= 	require(	'/brqx/base/react/zcommon/node_modules/request'								),
-		os					=	require(	'os'																		),
-		mkdirp 				= 	require(	'/brqx/base/react/zcommon/node_modules/mkdirp'								);
-		
+const	fs 					= 	require(	'fs'																		);
+		const path = require(	'path'																		);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'							);
+		const request = require(	'/brqx/base/react/zcommon/node_modules/request'								);
+		const os = require(	'os'																		);
+		const mkdirp = require(	'/brqx/base/react/zcommon/node_modules/mkdirp'								);
 
 // Ok [17-10-21]
 function copy_full_filename(abs_source , abs_target)
@@ -62,10 +61,8 @@ function copy_full_filename(abs_source , abs_target)
 			// Creamos uno
 			fs.openSync(abs_target, 'w')
 
-		 
 		fs.copyFileSync(abs_source,abs_target)
 
-							
 	} 
 	else
         console.log("cff::The file dont exist or is not a file : S " + abs_source  + " - T " + abs_target)
@@ -88,7 +85,6 @@ function copy_binary_full_filename(abs_source , abs_target)
 
 			fs.chownSync(dir, 48 , 48 )						
 		}
-	
 
 		if ( fs.existsSync(abs_target) )
 			// Truncamos uno existente
@@ -131,8 +127,6 @@ function copy_binary_from_url(url_source , abs_target)
 
 }
 
-
-
 // Ok [17-10-21]
 function link_full_filename(abs_source , abs_target)
 {
@@ -154,7 +148,6 @@ function link_full_filename(abs_source , abs_target)
         console.log("lff::The file dont exist or is not a file : " + abs_source  + " - T " + abs_target)
 
 }
-
 
 module.exports.copy_full_filename 						=	copy_full_filename 
 module.exports.copy_binary_full_filename				=	copy_binary_full_filename

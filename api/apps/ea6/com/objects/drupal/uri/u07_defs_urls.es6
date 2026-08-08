@@ -11,7 +11,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var { uri_defs_paths } 		= require(	path.join(JS_BASE, 'com/objects/drupal/uri/u08_defs_paths.es6')		)
+var { uri_defs_paths } 		= require(path.join(JS_BASE, 'com/objects/drupal/uri/u08_defs_paths.es6'))
 
 class uri_defs_urls extends uri_defs_paths {
 

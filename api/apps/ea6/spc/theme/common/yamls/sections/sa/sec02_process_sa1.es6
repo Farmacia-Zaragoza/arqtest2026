@@ -20,11 +20,10 @@
 
 var 	cons 						= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"								);
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { sec02_process_tit } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'));
-		const { sec02_process_se2 } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se2.es6'));
-		const { sec02_process_sa2 } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/sa/sec02_process_sa2.es6'));
-
+const 	{ html_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { sec02_process_tit } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'))
+		const { sec02_process_se2 } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se2.es6'))
+		const { sec02_process_sa2 } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/sa/sec02_process_sa2.es6'))
 
 class sec02_process_sa1 extends html_style {
 
@@ -50,7 +49,6 @@ class sec02_process_sa1 extends html_style {
 		this.elem_sa			=	''
 		this.elem_01			=	''
 
-
 	}
 
 	choose_process_sa()
@@ -62,13 +60,11 @@ class sec02_process_sa1 extends html_style {
 		if 			(this.level_sa === 1 ) this.elem_sa			= 	new sec02_process_sa2()
 	}
 
-
 	choose_process_se()
 	{
 		this.m		=	'choose_process_se'
 
 		// this.p('ChoLevel ' + this.level_se)
-
 
 		if 			(this.level_se === 1 ) this.elem_se			= 	new sec02_process_se2()
 	}
@@ -106,7 +102,6 @@ class sec02_process_sa1 extends html_style {
 
 				this.choose_process_sa()
 
-
 				this.elem_sa.reprocess(			this.se 			, 
 											  	this.level_sa + 1 	, 
 											  	this.level_se  		, 
@@ -122,7 +117,6 @@ class sec02_process_sa1 extends html_style {
 				// Ya se el fallo. Hace referencia circular
 
 				this.choose_process_se()
-
 
 				// this.p('Type_Before_Call ' + this.se.type)
 				this.elem_se.reprocess(			this.se 			,   

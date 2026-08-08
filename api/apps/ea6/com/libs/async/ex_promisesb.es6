@@ -19,10 +19,9 @@
 //-- 
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-const 	fs 			= 	require('fs'																					),
-		mkdirp 		= 	require('/brqx/base/react/zcommon/node_modules/mkdirp'											),
-		echo 		= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
-
+const 	fs 			= 	require('fs'																					);
+		const mkdirp = require('/brqx/base/react/zcommon/node_modules/mkdirp'											);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
 
 // No callback example
 
@@ -43,7 +42,6 @@ function addToArray (data, array) {
   return promise
 }
 
-
 function addToArraY (data, array) {
   const promise = new Promise(function (resolve, reject) {
       array.push(data)
@@ -57,7 +55,6 @@ function addToArraY (data, array) {
   
   return promise
 }
-
 
 // Ahora la función addToArray crea un objeto Promise que recibe como parámetros una función con las funciones resolve y reject
 
@@ -91,12 +88,8 @@ addToArray(4, array)
 
   console.log('First Message')
 
-
 // Sincronizacion - Pendiente
 //		Promise.all([pro1, pro2]).then(function() 
 
 // 
-
-
- 
 

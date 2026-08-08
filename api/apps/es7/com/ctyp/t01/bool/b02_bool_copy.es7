@@ -22,7 +22,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { bool_defs }         =   require(  path.join(JS_TYP7 , 'bool/b03_bool_defs.es7' ))
+const   { bool_defs }         =   require(  path.join(JS_TYP7 , 'bool/b03_bool_defs.es7' )   )
 
 class bool_copy extends bool_defs {
   constructor()

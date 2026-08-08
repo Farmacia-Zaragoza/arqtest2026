@@ -26,10 +26,9 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { div02_helper_dog }		= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/div02_helper_dog.es6'));
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { svg_style } = require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { div02_helper_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/div02_helper_dog.es6'))
 
 class div03_helper_dog extends svg_style {
 

@@ -23,14 +23,13 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { svg_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { ifnojs }	 					= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'));
-		const { ctn01_container_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/ctn01_container_dog.es6'));
-		const { scr02_fbjs_script_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr02_fbjs_script_dog.es6'));
-		const { scr01_js_dog }				= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/scr01_js_dog.es6'));
-		minify 							= 	require(	'html-minifier'												).minify;
-
+const 	{ html_style } 					= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { svg_style } = require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { ifnojs } = require(path.join(JS_BASE, 'com/objects/html/ifnojs.es6'))
+		const { ctn01_container_dog } = require(path.join(JS_BASE, 'spc/theme/dog/main_html/ctn01_container_dog.es6'))
+		const { scr02_fbjs_script_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr02_fbjs_script_dog.es6'))
+		const { scr01_js_dog } = require(path.join(JS_BASE, 'spc/theme/dog/main_html/scr01_js_dog.es6'))
+		const minify = require(	'html-minifier'												).minify;
 
 class bdy01_body_dog extends html_style  {
 
@@ -76,12 +75,10 @@ class bdy01_body_dog extends html_style  {
 
 		this.div_01.class 				=		'img-path'
 
-
 		this.div_01.pcreate()
 
 		this.content					+=		this.div_01.code
 	}
-
 
  	// <div id="fb-root"></div>
 	create_fb_layer()
@@ -135,7 +132,6 @@ class bdy01_body_dog extends html_style  {
   		this.script_01		=
   				new scr02_fbjs_script_dog(	this.thm	)
 
-
 		this.content			+=	this.script_01.code
 
 	}
@@ -169,7 +165,6 @@ class bdy01_body_dog extends html_style  {
 
 		this.content 			+= 	this.ifnojs.code
 	}
-
 
   	create_server_footer()
     {
@@ -218,7 +213,6 @@ class bdy01_body_dog extends html_style  {
 		// PENDING
 
 		this.pcreate()
-
 
 		// Ok [18-02-02]
 		// this.p('bdy01:cod ' + this.code)

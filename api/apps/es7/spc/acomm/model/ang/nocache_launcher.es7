@@ -28,12 +28,12 @@
 
 // Must to be unique
 
-const { angular_model }         =   require(  path.join(JS_ACO7  , 'model/ang/model.es7'));
-      const { site_uri }              =   require(  path.join(JS_ACO7  , 'uri/n02/u01_site_uri.es7'));
-      const { arroba_rest }           =   require(  path.join(JS_TYF7  , 'a01_load/lindex/i03_arroba_rest.es7'));
-      const { rs01_object_search_main } =   require(  path.join(JS_TYP7  , 'arroba/rest/rs01_search_main.es7'));
-      const { r02_main }                =   require(  path.join(JS_TYP7  , 'rest/r01_main/r02_main.es7'));
-      const { site_mcomm }              =   require(  path.join(JS_TYF7  , 'a01_load/mcomm/m02_site_comm.es7' ));
+const { angular_model }         =   require(  path.join(JS_ACO7  , 'model/ang/model.es7'                ) );
+      const { site_uri } = require(  path.join(JS_ACO7  , 'uri/n02/u01_site_uri.es7'           ) );
+      const { arroba_rest } = require(  path.join(JS_TYF7  , 'a01_load/lindex/i03_arroba_rest.es7') );
+      const { rs01_object_search_main } = require(  path.join(JS_TYP7  , 'arroba/rest/rs01_search_main.es7' ) );
+      const { r02_main } = require(  path.join(JS_TYP7  , 'rest/r01_main/r02_main.es7'       ) );
+      const { site_mcomm } = require(  path.join(JS_TYF7  , 'a01_load/mcomm/m02_site_comm.es7' ) );
 
 class angular_no_cache extends angular_model
 {
@@ -44,7 +44,6 @@ class angular_no_cache extends angular_model
     super(  pmt )
 
     this.n                =  'angular_no_cache::'
-
 
     // callen/search/wysiwyg/regex/management
     // this.p('nocache_launcher - rest call' + this.ir.uri)
@@ -122,7 +121,6 @@ class angular_no_cache extends angular_model
 
   	this.acontent     =  new arroba_rest(this.arroba)
 
-
     // TESTING
     this.arroba.arr          =  this.acontent.a.arr
 
@@ -131,7 +129,6 @@ class angular_no_cache extends angular_model
     // For product
     // let longi = Object.keys(this.arroba.arr['en']['j020v001']).length -1
     // this.p('cache_arrlen  ' + longi)
-
 
     // ESTO ES PARA UNA LISTA
 
@@ -156,7 +153,6 @@ class angular_no_cache extends angular_model
     this.p('rest output  ' + this.rest.count)
 
   	// Ahora toca generar la respuesta rest
-
 
   }
 

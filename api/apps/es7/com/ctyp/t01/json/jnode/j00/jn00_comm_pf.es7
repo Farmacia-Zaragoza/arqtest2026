@@ -18,10 +18,10 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                    =   require(  'fs'                                        ),
-       const { jn01_comm_pho }     =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn01_comm_pho.es7'));
-       const { idx_pointers }  =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       empty                 =   require(  'is_empty'                     );
+const  fs                    =   require(  'fs'                                        );
+       const { jn01_comm_pho } = require(path.join(JS_TYP7, 'json/jnode/j00/jn01_comm_pho.es7'))
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const empty = require(  'is_empty'                     );
 
 class jn00_comm_pf extends jn01_comm_pho {
 
@@ -61,16 +61,13 @@ class jn00_comm_pf extends jn01_comm_pho {
 	this.j.link = clink
 	this.k.link = clink
 
-
   }
-
 
   //---------------------------------------------------------------------------------------------
   manage_array_parragraphs( type_passed = 'array' ,
                       index = '')
   {
     // this.p('jn00_pf_Type ' + this.k.type )
-
 
     if  ( (this.k.type == "parragraph"  )   ||
           (this.k.type == "iparragraph" )    )
@@ -159,7 +156,6 @@ class jn00_comm_pf extends jn01_comm_pho {
 
     // HAY VECES QUE LOS TEXTOS NO SON IGUALES
 
-
     if ( this.s.cs.lang != "en" && (iterations != iterations_es))
     {
       	cats       = cats_es
@@ -178,7 +174,6 @@ class jn00_comm_pf extends jn01_comm_pho {
     this.anchor_list = ''
     //
     var created_type = true
-
 
     for (var pos in cats)
     {

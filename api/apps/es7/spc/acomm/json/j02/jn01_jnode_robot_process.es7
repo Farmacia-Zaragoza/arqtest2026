@@ -22,8 +22,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn01_general_common_json } =   require(  path.join(JS_ACO7  , 'json/j01/jn01_general_common_json.es7'));
-        const { file_robot }	             = 	 require(  path.join(JS_TYP7  ,  'robot/file_robot.es7'             ));
+const   { jn01_general_common_json } =   require(  path.join(JS_ACO7  , 'json/j01/jn01_general_common_json.es7'  ) );
+        const { file_robot } = require(  path.join(JS_TYP7  ,  'robot/file_robot.es7'             ) );
 
 class jn01_robot_process extends jn01_general_common_json {
 
@@ -61,7 +61,6 @@ class jn01_robot_process extends jn01_general_common_json {
 
       var resolutions_site = this.arr['en']['i000v002'][7] + ' ' +this.arr['en']['i000v002'][8]
 
-
       // this.p('jn02_robot_tit '  + this.s.ms.site_title)
       // this.p('jn02_robot_uri '  + this.s.cs.lang_url  )
       // this.p('jn02_domain_bar ' + this.s.cs.http_domainbar  )
@@ -84,7 +83,6 @@ class jn01_robot_process extends jn01_general_common_json {
 
     let index               = 'main'
     let jindex              = 'j' + index
-
 
 	let cats                =  this.getarr(this.s.ms.main_lang, jindex)															;
 

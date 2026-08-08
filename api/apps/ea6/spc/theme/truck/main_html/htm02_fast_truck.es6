@@ -23,10 +23,8 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 		= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { cn01_base }		= require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'));
-
+const 	{ html_style } 		= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { cn01_base } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'))
 
 class htm02_fast_flat extends html_style  {
 
@@ -59,7 +57,6 @@ class htm02_fast_flat extends html_style  {
 		 this.compo_scripts				=	''
 		 this.compo_left				=	''
 		 this.compo_right				=	''
-
 
 		// Html Objects
 
@@ -152,7 +149,6 @@ class htm02_fast_flat extends html_style  {
 		}
 	}
 
-
   	create_server_footer()
     {
 		// Server information page - No cacheable in blocks
@@ -182,7 +178,6 @@ class htm02_fast_flat extends html_style  {
 		this.row_01.content		+= 	this.div_search.code
 	}
 
-
 	create_row()
 	{
 		// Left Part - 3s
@@ -204,16 +199,13 @@ class htm02_fast_flat extends html_style  {
 
 	}
 
-
 	create_section()
 	{
 	 	// create row
 	  	this.create_row()
 
-
 	 	this.section_01.class 	= 	'container'
 		this.section_01.id		=	'main-content'
-
 
 		this.section_01.pcreate()
 
@@ -252,10 +244,8 @@ class htm02_fast_flat extends html_style  {
 
 		this.content 				+=	this.body_01.code
 
-
 //		this.content 				+=	this.body_01.code
 	}
-
 
     build_data()
     {

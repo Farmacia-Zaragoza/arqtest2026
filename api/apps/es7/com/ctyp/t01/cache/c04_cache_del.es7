@@ -26,8 +26,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { struc }   =   require(  path.join(JS_TYP7  , 'struc/s01_struc.es7'));
-	    fo  		= 	require(  path.join(JS_LIB7  , 'file/file_operations.es7'  ));
+const   { struc }   =   require(  path.join(JS_TYP7  , 'struc/s01_struc.es7'     )    );
+	    const fo = require(  path.join(JS_LIB7  , 'file/file_operations.es7'  )  );
 
 class cache_del extends struc {
   constructor()
@@ -48,12 +48,10 @@ class cache_del extends struc {
       let old_page_type = this.s.cs.page_type
       let old_lang      = this.s.cs.lang
 
-
       this.s.cs.sub            =   'arroba'
       this.s.cs.ext            =   'idx'
       this.s.cs.page_type      =   'idx'
       this.s.cs.lang           =   this.s.ms.main_lang
-
 
       this.gen()
 

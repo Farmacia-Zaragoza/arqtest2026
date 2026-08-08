@@ -20,9 +20,8 @@
 
 var 	cons	 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"					);
 
-const 	{ sec01_section_p } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/structures/sections/sec01_section_p.es6'));
-		const { html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ sec01_section_p } 		= 	require(path.join(JS_BASE, 'spc/theme/common/structures/sections/sec01_section_p.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class sec02_section_h2 extends sec01_section_p {
 
@@ -97,7 +96,6 @@ class sec02_section_h2 extends sec01_section_p {
 		this.h2_01.content = this.passed_title
 		this.h2_01.pcreate()
 		this.content += this.h2_01.code
-		
 
 		var arr_elem = this.element
 
@@ -114,8 +112,6 @@ class sec02_section_h2 extends sec01_section_p {
 				this.create_normal_section_h2(elem, tit)
 		}
 
-
-		
 		this.pcreate()
 	}
 

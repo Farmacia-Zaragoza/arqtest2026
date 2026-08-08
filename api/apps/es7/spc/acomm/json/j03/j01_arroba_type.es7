@@ -30,12 +30,11 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { arroba_jtype_comm } =   require(  path.join(JS_ACO7  , 'json/j03/j01_arroba_jtype_comm.es7'));
-       const { jnode_type_comm }   =   require(  path.join(JS_ACO7  , 'json/j02/jn01_jnode_type_comm.es7'));
-       const { jnode_type_index }  =   require(  path.join(JS_ACO7  , 'json/j02/jn11_jnode_type_index.es7'));
-       const { jnode_type_info }   =   require(  path.join(JS_ACO7  , 'json/j02/jn12_jnode_type_info.es7'));
-	   gfc  			     =   require(  path.join(JS_LIB7, 'file/get_file_code.es7'));
-
+const  { arroba_jtype_comm } =   require(  path.join(JS_ACO7  , 'json/j03/j01_arroba_jtype_comm.es7'   ) );
+       const { jnode_type_comm } = require(  path.join(JS_ACO7  , 'json/j02/jn01_jnode_type_comm.es7'    ) );
+       const { jnode_type_index } = require(  path.join(JS_ACO7  , 'json/j02/jn11_jnode_type_index.es7'   ) );
+       const { jnode_type_info } = require(  path.join(JS_ACO7  , 'json/j02/jn12_jnode_type_info.es7'    ) );
+	   const gfc = require(path.join(JS_LIB7, 'file/get_file_code.es7'))
 
 class arroba_jtype extends arroba_jtype_comm {
   constructor(    arroba           ,
@@ -44,7 +43,6 @@ class arroba_jtype extends arroba_jtype_comm {
     super(arroba, passed_type)
     this.n                  =   "arroba_jtype::"
   }
-
 
   // Con conetent siempre debe generarse
   create_jnode_type_index()
@@ -87,7 +85,6 @@ class arroba_jtype extends arroba_jtype_comm {
 
     this.jtype            =   new jnode_type_info( this.arroba      )
   }
-
 
   //---------------------------------------------------------------------------------------------
 

@@ -11,10 +11,9 @@
 // - generate_path_and_array: Generate path and array related to search 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	{ printlog } 		= require(	'/brqx/base/rcode/es6/com/objects/logs/printlog.es6'						),
-		fs 					= require(	'fs'																		),
-		qry 				= require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'						);
-
+const	{ printlog } 		= require(	'/brqx/base/rcode/es6/com/objects/logs/printlog.es6'						);
+		const fs = require(	'fs'																		);
+		const qry = require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'						);
 
 class search_entity  extends printlog {
 
@@ -28,7 +27,6 @@ class search_entity  extends printlog {
 		super()
 		this.type					=	'es'						    // el tipo puede ser lang - es
 		this.sm_vid					=	''
-			
 
    	// PATH ZONE
 // 			this.years_path						=	this.structure_path_arr['es'] + this.years_file			
@@ -45,8 +43,6 @@ class search_entity  extends printlog {
 		this.path_arr['hi']		=	Array()
 		this.path_arr['ru']		=	Array()
 		this.path_arr['ja']		=	Array()
-
-
 
 	// ARRAY ZONE
 	
@@ -69,7 +65,6 @@ class search_entity  extends printlog {
 	
 		this.sep					=	'@'						
 		this.lf						=	"\n\r" 					
-            
 
 		this.type					=	type													
 		this.file					=	file													
@@ -81,7 +76,6 @@ class search_entity  extends printlog {
 		this.generate_path_and_array()														
 
     }
-
 
 	// ------------------------- GENERATE_PATH_AND_ARRAY----------------------------------
 	generate_path_and_array()
@@ -133,11 +127,9 @@ class search_entity  extends printlog {
 
 		let qry_string		=	''
 
-
 		// entity_arr cambia con cada objeto de busqueda
 		// this.parr(this.entity_arr)
-		
-				
+
 		if (this.type == 'es')
 		{
 			// Unique lang query - Array de strings
@@ -189,7 +181,6 @@ class search_entity  extends printlog {
 			}
 		}
 
-		
 		// this.p('After Insert ' + arg + ' query_string ' + qry_string)
 		// this.parr(arr_qrys)
 

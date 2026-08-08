@@ -6,16 +6,15 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ index_def } 				= 	require(	path.join(JS_BASE, 'com/objects/fire/f02_index/index_def.es6'));
-		const { anode_debug_save_file } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an9/an91_d_debug_save_file.es6'));
-		const { printlog } 				= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
-		const { cbool } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-		const { cache } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/cache/c01_cache.es6'));
-		const { site } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/site/s01_site.es6'));
-		const { uri } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u01_obj.es6'));
-		const { index_req } 				= 	require(	path.join(JS_BASE, 'com/objects/fire/f03_req/index_req.es6'));
-		empty 						= 	require(	'is-empty'													);
-
+const 	{ index_def } 				= 	require(path.join(JS_BASE, 'com/objects/fire/f02_index/index_def.es6'))
+		const { anode_debug_save_file } = require(path.join(JS_BASE, 'com/objects/drupal/anode/an9/an91_d_debug_save_file.es6'))
+		const { printlog } = require(path.join(JS_BASE, 'com/objects/logs/printlog.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
+		const { cache } = require(path.join(JS_BASE, 'com/objects/drupal/cache/c01_cache.es6'))
+		const { site } = require(path.join(JS_BASE, 'com/objects/drupal/site/s01_site.es6'))
+		const { uri } = require(path.join(JS_BASE, 'com/objects/drupal/uri/u01_obj.es6'))
+		const { index_req } = require(path.join(JS_BASE, 'com/objects/fire/f03_req/index_req.es6'))
+		const empty = require(	'is-empty'													);
 
 class index extends index_def
 {
@@ -26,7 +25,6 @@ class index extends index_def
 	super()
 
 	this.pmt 				= 	pmt 				// Parameters
-
 
 	this.req				=	this.pmt.req
 	// Usaremos ir - index request
@@ -48,7 +46,6 @@ class index extends index_def
 	this.site_name 			= "truck"
 	this.theme_name 		= "truck"
 
-
 	global.start_time 		= this.starttimer
 
 	this.puting_contents 	= "index:start:" + this.starttimer + ">"
@@ -65,7 +62,6 @@ class index extends index_def
 	this.s 					= 	new site(this.c)
 	this.s.pmt				=	this.pmt
 	this.s.manage_params()
-
 
 	this.u 					= 	new uri(this.s , this.ir , this.sch)
 	this.u.manage_reload()
@@ -84,7 +80,6 @@ class index extends index_def
   {
 		this.ir.load(this.req)
   }
-
 
 }	// End Class
 

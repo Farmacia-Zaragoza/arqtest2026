@@ -19,8 +19,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { scomm_struc }      =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7'));
-       const { cache_site }       =   require(  path.join(JS_TYP7  , 'site/s10_cache_site.es7'      ));
+const  { scomm_struc }      =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7' ) );
+       const { cache_site } = require(  path.join(JS_TYP7  , 'site/s10_cache_site.es7'      ) );
 
 // Multi positions Load. Generate a new arr
 class site_mcomm extends scomm_struc {
@@ -31,7 +31,6 @@ class site_mcomm extends scomm_struc {
 
     this.n                           =   "site_mcomm::"
     this.m                           =   "cons"
-
 
     this.s					         =   site
     this.b					         =   this.s.b
@@ -46,11 +45,9 @@ class site_mcomm extends scomm_struc {
     let old_page                     = this.s.cs.page
     let old_position                 = this.s.cs.position
 
-
     // Necesitamos multiposition para cargar los valores
     this.s.cs.loadtype               =   'multiposition'
     this.s.cs.lang                   =   this.s.ms.default_lang
-
 
     this.s.b.specs_props             =   true
 
@@ -77,7 +74,6 @@ class site_mcomm extends scomm_struc {
     // this.s.ms.lang          =    this.s.ms.default_lang
     // this.s.cs.lang          =    this.s.ms.default_lang
 
-
     // this.p('m02_scomm_Arroba_Path ' + this.a.s.cs.cache_path)
 
     this.arr                         = this.a.arr
@@ -89,7 +85,6 @@ class site_mcomm extends scomm_struc {
     this.s.cs.position               = old_position
 
   }
-
 
 }
 

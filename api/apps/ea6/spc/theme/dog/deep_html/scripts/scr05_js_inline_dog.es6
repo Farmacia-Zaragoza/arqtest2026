@@ -27,13 +27,11 @@
 // - d-create_objectN-		: 	Create Blazy content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-		UglifyES 			= 	require(	'uglify-es'															),
-		minify 				= 	require(	'html-minifier'														).minify;
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
+		const UglifyES = require(	'uglify-es'															);
+		const minify = require(	'html-minifier'														).minify;
 
 class scr05_js_inline_dog extends getset  {
 
@@ -69,7 +67,6 @@ class scr05_js_inline_dog extends getset  {
 
 		this.script_code_path				=
 				this.thm.u.site_path + 'r_fassets/ilibs/' + js_path
-
 
 		this.scr01.content		=		scpf.file_get_code(this.script_code_path)
 		this.scr01.pcreate()
@@ -211,7 +208,6 @@ class scr05_js_inline_dog extends getset  {
 		this.code 				+= 		this.scr01.code
 	}
 
-
 	//[S_09] <script src="assets/js/main.js" defer></script>
 	create_main()
     {
@@ -224,7 +220,6 @@ class scr05_js_inline_dog extends getset  {
 
 		this.script_code_path				=
 				this.thm.u.site_path + 'r_assets/js/' +js_name + '_min.js'
-
 
 		this.scr01.content		=		scpf.file_get_code(this.script_code_path)
 		this.scr01.pcreate()
@@ -270,7 +265,6 @@ class scr05_js_inline_dog extends getset  {
 		this.content 			= 		result.code
 
 	}
-
 
     build_data()
     {

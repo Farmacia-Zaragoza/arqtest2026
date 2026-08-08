@@ -29,9 +29,9 @@
 
 var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"						)
 
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { div01_hiddens_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/hiddens/div01_hiddens_dog.es6'));
-		const { getset } 					= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { div01_hiddens_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/hiddens/div01_hiddens_dog.es6'))
+		const { getset } = require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
 
 class zne02_hiddens_dog extends getset {
 
@@ -59,9 +59,6 @@ class zne02_hiddens_dog extends getset {
 
 		this.build_data()
 	}
-
-
-
 
 	// <div class="hiddendata text-for-sandbox" text-data="
 	create_sandbox()
@@ -211,7 +208,6 @@ class zne02_hiddens_dog extends getset {
 		this.div_01.pcreate()
 		this.code					+=	this.div_01.code
 
-		
 	}
 
 	// <div class="hiddendata text-for-sandbox" text-data="
@@ -275,7 +271,6 @@ class zne02_hiddens_dog extends getset {
 			var uri_lan				=	this.thm.u.http_domainbar +  current_lan	
 			var class_lan			=	'hiddendata ' + current_lan + '-link'
 
-
 			if (!empty(current_lan)) 
 			{
 				// Every Lang will have different order
@@ -289,7 +284,6 @@ class zne02_hiddens_dog extends getset {
 		}
 		
 	}
-
 
 	build_data() 
 	{
@@ -306,7 +300,6 @@ class zne02_hiddens_dog extends getset {
 		
 		// Create Hidden for langs
 		this.create_lang()
-
 
 		// Ck [18-02-06]
 		// this.p('zne_Code > ' +  this.code)												

@@ -17,9 +17,8 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { div02_menu_dog }			= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/menu/div02_menu_dog.es6'));
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { div02_menu_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/menu/div02_menu_dog.es6'))
 
 class div03_menu_dog extends html_style {
 
@@ -40,7 +39,6 @@ class div03_menu_dog extends html_style {
 		this.div_01.pcreate()
 
 		this.miv_01					=	new div02_menu_dog(this.thm)
-
 
 		this.build_data()
 	}

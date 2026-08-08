@@ -9,9 +9,9 @@
 
 var 	cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"		);
 
-const 	glob 				= 	require(	'glob'										),
-		empty 				= 	require(	'is-empty'									),
-		path 				= 	require(	'path'														);
+const 	glob 				= 	require(	'glob'										);
+		const empty = require(	'is-empty'									);
+		const path = require(	'path'														);
 
 // Php strpos function
 function strpos (haystack, needle, offset) {
@@ -29,7 +29,6 @@ function match_path(str, path)
 
 	if (last_elem != "is_complex")
 		arr_matches = glob(path + "*" + last_elem + "*")
-
 
 	/*
 	// glob("**.js", options, function (er, files) {

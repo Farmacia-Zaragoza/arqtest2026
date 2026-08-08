@@ -18,7 +18,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-var { anode_debug_array } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an8/an89_debug_array.es6'))
+var { anode_debug_array } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an8/an89_debug_array.es6'))
 
 class anode_savenode_disk extends anode_debug_array {
 

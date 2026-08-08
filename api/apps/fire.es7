@@ -22,24 +22,22 @@ var max_articles            =   '3890'                   // Limit parameter
 var cached_site             =  'garldru'
 //-------------------------------------------------------------------------------------
 
-const
-    application_root   =   __dirname,
-    express             =   require( 'express'       ), //Web framework
-    logger              =   require( 'morgan'      ),
-    fs                  =   require( 'fs'        ),
-    favicon             =   require( 'serve-favicon'  ),
-    cookieParser        =   require( 'cookie-parser'  ),
-    bodyParser          =   require( 'body-parser'    ),
-    compression         =   require( 'compression'    ),
-    qs                  =   require( 'querystring'    ),
-    helmet              =   require( 'helmet'                       ),
-    useragent           =   require( 'express-useragent'                 ),
-    const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7'));
-    const { angular}          =   require(path.join(JS_ACO7 , 'model/ang/angular.es7'));
-    const { page_structure }  =   require(path.join(JS_TYP7 , 'page/page_structure.es7'));
+    const application_root = __dirname;
+    const express = require( 'express'       );
+    const logger = require( 'morgan'      );
+    const fs = require( 'fs'        );
+    const favicon = require( 'serve-favicon'  );
+    const cookieParser = require( 'cookie-parser'  );
+    const bodyParser = require( 'body-parser'    );
+    const compression = require( 'compression'    );
+    const qs = require( 'querystring'    );
+    const helmet = require( 'helmet'                       );
+    const useragent = require( 'express-useragent'                 );
+    const { params } = require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
+    const { angular} = require(path.join(JS_ACO7 , 'model/ang/angular.es7')  );
+    const { page_structure } = require(path.join(JS_TYP7 , 'page/page_structure.es7') );
 
-//    { params }          =   require(path.join(JS_TYP7 , 'params/p01_params.es7'));
-
+//    { params }          =   require(path.join(JS_TYP7 , 'params/p01_params.es7')  ),
 
 // Create server
 var sureapp = express()
@@ -84,7 +82,6 @@ sureapp.use(function(req, res ,  next)
     var code =''
     var htmlScheme = ''
 
-
     var obj_server              =    ''                    // _SERVER
 //    var cache                   =   true                  // Cache
     var cache                   =   false                  // Cache
@@ -97,7 +94,6 @@ sureapp.use(function(req, res ,  next)
     var robot                   =   false                  // Human page by default
     var nocode                  =   false                   // Debug parameter
     var max_elems               =   true                   // Limit parameter
-
 
     // EN (English) estara siempre
     var default_lang            =  'es'
@@ -178,6 +174,5 @@ sureapp.use(function(req, res ,  next)
 
    }
 })
-
 
 module.exports = sureapp;

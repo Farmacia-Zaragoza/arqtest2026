@@ -24,9 +24,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { site_defs }    =   require(  path.join(JS_TYP7  , 'site/s03_site_defs.es7'));
-        sort		     =   require(  path.join(JS_LIB7  , 'sort/sort_unique.es7'	));
-
+const   { site_defs }    =   require(  path.join(JS_TYP7  , 'site/s03_site_defs.es7' ) );
+        const sort = require(  path.join(JS_LIB7  , 'sort/sort_unique.es7'	) );
 
 class site_methods extends site_defs {
   constructor() {
@@ -107,7 +106,7 @@ class site_methods extends site_defs {
 
      	  //this.p('s02_mth ' + elem )
 
-          if ((elem != "") && (!arr_meta.includes(elem))      	arr_meta.push(elem)
+          if ((elem != "") && (!arr_meta.includes(elem)))      	arr_meta.push(elem)
 	    }
      }
 
@@ -148,7 +147,6 @@ class site_methods extends site_defs {
      // this.p('s02_mth_ANCH ' + this.cs.anchor_list)
 
   }
-
 
 }
 

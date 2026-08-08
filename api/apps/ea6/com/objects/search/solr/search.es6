@@ -15,11 +15,11 @@
 // - d-process_path_generate_array-    	: Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ search_structure } 		= require(	'/brqx/base/rcode/es6/com/objects/search/solr/search_structure.es6'					),
-		const { search_entity_letter } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6'		),
-		url						 	= require(	'/brqx/base/rcode/es6/com/libs/string/url.es6'										),
-		empty		 				= require(	'/brqx/base/react/zcommon/node_modules/is_empty'									),
-		pad 						= require(	'/brqx/base/react/zcommon/node_modules/pad'											);
+const 	{ search_structure } 		= require(	'/brqx/base/rcode/es6/com/objects/search/solr/search_structure.es6'					);
+		const { search_entity_letter } = require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6'		);
+		const url = require(	'/brqx/base/rcode/es6/com/libs/string/url.es6'										);
+		const empty = require(	'/brqx/base/react/zcommon/node_modules/is_empty'									);
+		const pad = require(	'/brqx/base/react/zcommon/node_modules/pad'											);
 
 class search extends search_structure {
 
@@ -63,8 +63,7 @@ class search extends search_structure {
 		this.entities						=	''							
 		this.years							=	''						
 		this.places							=	''						
-	    
-    
+
     	// this.p('Before_Generate_Entities')
 		this.generate_entities() 										
 
@@ -140,17 +139,14 @@ class search extends search_structure {
 		if (empty(q))
 			q = this.arr['qrys']
 
-
 		// Process path con objetos para generar el array de queries
         this.args_arr       		=   this.url_path.split("/")		
-        	
-		
+
 		let arr_letters 		  	=   Array()								 // Repeat array for letters
 
 		let arr_mini_words		  	=   Array()								 // Repeat array for mini words (por cubo )
 			
 		let pos	=	-1 													
-		
 
 		let cont = 0  
 
@@ -350,7 +346,6 @@ class search extends search_structure {
 
 		// this.parr(this.arr['arg'])
 
-
 		if (Array.isArray(this.arr['arg']))
 		{
 			// sort(this.arr['arg'])				 // sort is a procedure - sort array		
@@ -364,8 +359,7 @@ class search extends search_structure {
 	
 			let arr_size = this.arr['arg'].length  		
 			let cont = 0  
-	
-	
+
 			//foreach (this.arr['arg'] as elem)
 			for (var elem of Object.values(this.arr['arg'])) 
 			{

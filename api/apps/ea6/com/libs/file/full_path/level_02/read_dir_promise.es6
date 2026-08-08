@@ -21,16 +21,15 @@
 // fs-extra maneja promesas
 // fs 					= require(	'/brqx/base/react/zcommon/node_modules/fs-extra'									),
 
-const 	fs 					= require(	'fs'																				),
-		path 				= require(	'path'																				),
-		os 					= require(	'os'																				),
-		empty 				= require(	'is-empty'									),
-		trim 				= require(	'trim'										),
-		mkdirp 				= require(	'mkdirp'										),
-		rr					= require(	'recursive-readdir'							),
-		rs					= require(	'fs-readdir-promise'							),
-		creff 				= require( 	'es6/com/libs/file/full_path/level_02/create_full_filename.es6'	);
-
+const 	fs 					= require(	'fs'																				);
+		const path = require(	'path'																				);
+		const os = require(	'os'																				);
+		const empty = require(	'is-empty'									);
+		const trim = require(	'trim'										);
+		const mkdirp = require(	'mkdirp'										);
+		const rr = require(	'recursive-readdir'							);
+		const rs = require(	'fs-readdir-promise'							);
+		const creff = require( 	'es6/com/libs/file/full_path/level_02/create_full_filename.es6'	);
 
 /*
 async function readdir_promise(full_path_dir = '',result)
@@ -67,9 +66,6 @@ rs(mypath).then(
   }
 );
 
-
-
 //print files
-
 
 //module.exports.readdir_promise 			= readdir_promise

@@ -15,16 +15,15 @@
 
 var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
-const 	fs 							= 	require(	'fs'																		),
-		path 						= 	require(	'path'																		),
-		recursive 					= 	require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir-sync'				),
-		sort 						= 	require(	'/brqx/base/react/zcommon/node_modules/sort-array'							),
-		readdirp 					= 	require(	'/brqx/base/react/zcommon/node_modules/readdirp'							),
-		echo	 					= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'							),
-		mat							=	require(	path.join(JS_BASE, 'com/libs/string/match.es6'));
-		url			 				= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6'));
-		rs							= 	require(	'/brqx/base/react/zcommon/node_modules/fs-readdir-promise'					);
-
+const 	fs 							= 	require(	'fs'																		);
+		const path = require(	'path'																		);
+		const recursive = require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir-sync'				);
+		const sort = require(	'/brqx/base/react/zcommon/node_modules/sort-array'							);
+		const readdirp = require(	'/brqx/base/react/zcommon/node_modules/readdirp'							);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'							);
+		const mat = require(path.join(JS_BASE, 'com/libs/string/match.es6'))
+		const url = require(path.join(JS_BASE, 'com/libs/string/url.es6'))
+		const rs = require(	'/brqx/base/react/zcommon/node_modules/fs-readdir-promise'					);
 
 function generate_directory_promise(data_and_error, t)
 {
@@ -35,7 +34,6 @@ function generate_directory_promise(data_and_error, t)
 	  console.log('Rejected Promise:' + p )
 	  console.log('Rejection:' + err )
 	})
-
 
 	if ( fs.existsSync(t.path) &&   fs.lstatSync(t.path).isDirectory() ) 
 	{		
@@ -79,10 +77,8 @@ function generate_directory_promise(data_and_error, t)
 			 	arr_files.push(	full_elemento	) 									
 			}
 
-
 			// 2.Sort array
 			arr_files = arr_files.sort()
-
 
 			// 3. Iterate array
 			for(var pos in arr_files) 
@@ -105,9 +101,7 @@ function generate_directory_promise(data_and_error, t)
 				// No tiene sentido sin un path - es mas para cica aqui los elementos estan completos
 				let ideal_elem = mat.match_word(elemento) 								
 
-				
 				let title_str 							=	''								
-
 
 				let arr_ide_current = ideal_elem.split(",");
 
@@ -174,7 +168,6 @@ function generate_directory_promise(data_and_error, t)
   
   return promise
 
-	  
 } // End function
 
 module.exports.generate_directory_promise = generate_directory_promise

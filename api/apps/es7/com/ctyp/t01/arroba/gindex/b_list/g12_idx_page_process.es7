@@ -27,8 +27,8 @@ const path = require('path');
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_gindex_sheet_load } =   require(  path.join(JS_TYP7  , 'arroba/gindex/c_sheet/g01_idx_load.es7'));
-       const { idx_pointers }            =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                 ));
+const  { anode_gindex_sheet_load } =   require(  path.join(JS_TYP7  , 'arroba/gindex/c_sheet/g01_idx_load.es7') );
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                 ) );
 
 class anode_gindex_page_process extends anode_gindex_sheet_load {
   constructor()
@@ -65,7 +65,6 @@ class anode_gindex_page_process extends anode_gindex_sheet_load {
     // this.p('j06_Before-pos-bucle1 ' + lang + '  ' + cats.length )
 
     // PROCESAMOS TODA LA LISTA
-
 
     this.arroba_attribs(idx,pos)
 
@@ -105,8 +104,6 @@ class anode_gindex_page_process extends anode_gindex_sheet_load {
       // /brqx/pers/fromfile/farma/fnode/json_lang_structure/l000/fr_cat
 
     } // End If
-
-
 
   }
 

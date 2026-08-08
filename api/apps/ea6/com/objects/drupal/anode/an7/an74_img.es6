@@ -19,13 +19,12 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"												);
 
-const 	{ anode_img_resolutions } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an75_img_resolutions.es6'));
-		echo 							= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'									),
-		fs								=	require(	'fs'																				),		
-		const { execSync }					= 	require(	'child_process'																		),
-		creff 							= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'));
-		cff 							= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/copy_full_filename.es6'));
-
+const 	{ anode_img_resolutions } 		= 	require(path.join(JS_BASE, 'com/objects/drupal/anode/an7/an75_img_resolutions.es6'))
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
+		const fs = require(	'fs'																				);
+		const { execSync } = require(	'child_process'																		);
+		const creff = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'))
+		const cff = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/copy_full_filename.es6'))
 
 class anode_img extends anode_img_resolutions {
 
@@ -66,8 +65,7 @@ class anode_img extends anode_img_resolutions {
 				this.create_resolution_img_no_glob() 					 
 		else 
 				this.create_resolution_img_glob() 					 
-			
-			
+
 	}
 	
 	// ------------------------------ SAVE_ARRAY_IMG_RESOLUTIONS_IN_RAM ------------------------------ 
@@ -104,8 +102,7 @@ class anode_img extends anode_img_resolutions {
 	
 			// Ojo que ya es una carpeta - no podemos usar create_folder_filename
 			// create_folder(folder_ssd)		// Crea carpeta no tiene sentido pues se supone que en SSD tenemos las fotos
-	
-					
+
 			// 2. Actulizamos en RAM (url_src , full_path_dst)
 
 			// /ram/truck/0184x0245/transportes_lucas_rivera_gondolas_transport_truck_madrid_spain_2017_-_0139_1600x1200.jpg
@@ -159,7 +156,6 @@ class anode_img extends anode_img_resolutions {
 					   }
 					
 				} 
-			
 
 			} // End If
 		} // End For

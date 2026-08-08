@@ -28,11 +28,10 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { html_style } 	= 	require(	path.join(JS_TYP7 , 'html/style/html_style.es7'));
-      const { getset } 		= 	require(	path.join(JS_TYP7 , 'html/style/getset.es7'	   ));
+const { html_style } 	= 	require(	path.join(JS_TYP7 , 'html/style/html_style.es7'	)		  );
+      const { getset } = require(	path.join(JS_TYP7 , 'html/style/getset.es7'	   )  );
 
 class common_meta extends getset  {
-
 
     constructor (     thm													)
     {
@@ -52,7 +51,6 @@ class common_meta extends getset  {
 		this.build_data()
     }
 
-
 	//[M_01] <meta charset="utf-8">
     create_meta_charset()
     {
@@ -60,7 +58,6 @@ class common_meta extends getset  {
 		this.meta_charset.pcreate()
 		this.code							+=	this.meta_charset.code
 	}
-
 
 	//[M_02] <meta http-equiv="X-UA-Compatible" content="IE=edge">
     create_meta_equiv()

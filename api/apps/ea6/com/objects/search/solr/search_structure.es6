@@ -13,10 +13,9 @@
 // - d-generate_structure_paths-   : Generate paths 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const		{ printlog } 		= require(	'/brqx/base/rcode/es6/com/objects/logs/printlog.es6'						),
-			empty		 		= require(	'/brqx/base/react/zcommon/node_modules/is_empty'							),
-			echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'							);
-
+const		{ printlog } 		= require(	'/brqx/base/rcode/es6/com/objects/logs/printlog.es6'						);
+			const empty = require(	'/brqx/base/react/zcommon/node_modules/is_empty'							);
+			const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'							);
 
 class search_structure extends printlog {
 
@@ -29,7 +28,6 @@ class search_structure extends printlog {
 	// Solr Class
 		this.solr						=	''									
 
-	
 	// Results object
 		this.res						=	''									
 		this.foto_res					=	''									
@@ -58,8 +56,7 @@ class search_structure extends printlog {
 		this.structure_path_arr['hi']		=	Array()
 		this.structure_path_arr['ru']		=	Array()
 		this.structure_path_arr['ja']		=	Array()
-									
-	
+
 		this.arr							= 	Array()						// Arguments array
 
 		this.arr['ini']						= 	Array()						
@@ -71,7 +68,6 @@ class search_structure extends printlog {
 		this.args_arr						= 	Array()						// Arguments array
 	
 		this.arr_qrys						=	Array()
-
 
 		// Search properties
 		
@@ -96,12 +92,10 @@ class search_structure extends printlog {
 		// Generate arrays for langs structure
         // this.langs_arr       =   explode(":", this.langs_str)
 
-
 		this.langs_arr = this.langs_str.split(":")
 
 		// echo ('Langs ' + this.langs_str + ' - ' + this.langs_arr.length )
-	
-		
+
 		// foreach (this.langs_arr as lang)
 		for (let lang of Object.values(this.langs_arr))
 		{ 

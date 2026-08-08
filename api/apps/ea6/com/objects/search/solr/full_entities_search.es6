@@ -11,11 +11,9 @@
 // - generate_full_entities   	  :  
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	{ search } 					= require(	'/brqx/base/rcode/es6/com/objects/search/solr/search.es6'							),
-		const { search_entity_letter } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6'		),
-		empty		 				= require(	'/brqx/base/react/zcommon/node_modules/is_empty'									);
-
-
+const	{ search } 					= require(	'/brqx/base/rcode/es6/com/objects/search/solr/search.es6'							);
+		const { search_entity_letter } = require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6'		);
+		const empty = require(	'/brqx/base/react/zcommon/node_modules/is_empty'									);
 
 class full_entities_search extends search {
     
@@ -44,7 +42,6 @@ class full_entities_search extends search {
 		let arr_mini_words		  =   Array()								 // Repeat array for mini words (por cubo )
 			
 		let pos	=	-1 													
-		
 
 		let cont = 0  
 		// foreach (this.args_arr as arg)
@@ -221,7 +218,6 @@ class full_entities_search extends search {
 			}
 		}
 	}
-
 
 }
 

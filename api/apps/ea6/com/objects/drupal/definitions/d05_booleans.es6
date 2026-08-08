@@ -16,7 +16,7 @@
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
 
-var { definitions_separators } 		= require(	path.join(JS_BASE, 'com/objects/drupal/definitions/d06_separators.es6')		)
+var { definitions_separators } 		= require(path.join(JS_BASE, 'com/objects/drupal/definitions/d06_separators.es6'))
 
 class definitions_booleans extends definitions_separators {
 

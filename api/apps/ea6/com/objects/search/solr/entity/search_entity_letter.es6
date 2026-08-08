@@ -11,8 +11,8 @@
 // - d-query_letter-	  : Run queries regarding posible letters 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	qry 					= require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'								),						
-		const { search_entity	} 		= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity.es6'		);
+const	qry 					= require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'								);
+		const { search_entity	} = require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity.es6'		);
 
 class search_entity_letter extends search_entity {
             
@@ -103,9 +103,7 @@ class search_entity_letter extends search_entity {
 
 		return status  		
 	}
-	
 
-  
 }
 
 exports.search_entity_letter		=	search_entity_letter

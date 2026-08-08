@@ -13,7 +13,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ uri_paths } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u04_paths.es6'));
+const 	{ uri_paths } 		= 	require(path.join(JS_BASE, 'com/objects/drupal/uri/u04_paths.es6'))
 
 class uri_reload extends uri_paths {
 

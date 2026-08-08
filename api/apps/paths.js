@@ -1,7 +1,7 @@
 const path = require('path');
 const ROOT = process.cwd();
 
-module.exports = {
+const module.exports = {;
     ROOT: ROOT,
     JS_MODEL: path.join(ROOT, 'api/apps/es7'),
     JS_BASE: path.join(ROOT, 'api/apps/es6/'         		    ),

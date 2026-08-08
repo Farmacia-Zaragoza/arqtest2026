@@ -17,7 +17,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_only_save_properties } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an4/an41_only_save_properties.es6'));
+var { anode_only_save_properties } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an4/an41_only_save_properties.es6')),
 	array_key_exists					= require(	'/brqx/base/react/zcommon/node_modules/locutus/php/array/array_key_exists'				);
 
 class anode_prepare_array_properties extends anode_only_save_properties {

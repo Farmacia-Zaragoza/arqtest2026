@@ -21,11 +21,11 @@
 
 var 	cons 		= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"	);
 
-const 	fs 			= 	require(	'fs'													),
-		mkdirp 		= 	require(	'mkdirp'							),
-		empty 		= 	require(	'is_empty'							),
-		echo 		= 	require(	'node-echo'							),
-		nlr  		= 	require(	'node-line-reader'					);
+const 	fs 			= 	require(	'fs'													);
+		const mkdirp = require(	'mkdirp'							);
+		const empty = require(	'is_empty'							);
+		const echo = require(	'node-echo'							);
+		const nlr = require(	'node-line-reader'					);
 
 // No comments 1.0
 function no_comments(a)
@@ -66,7 +66,6 @@ function is_title_yaml_line(line)
 	return false
 }
 
-
 function is_yaml_level(line, num_pased)
 {
 	// siempre es num menos 1. Puesto que el primer nivel no tiene espacios
@@ -89,7 +88,6 @@ function is_yaml_level(line, num_pased)
 
 }
 
-
 // Get File in Array
 function get_content_file (file_name , array_name)
 {
@@ -101,7 +99,6 @@ function get_content_file (file_name , array_name)
 	}
 	array_name = JSON.parse('[' + rawdata + ']');
 }
-
 
 function properties_from_file_async(file_name)
 {

@@ -15,10 +15,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { uri_paths }     =   require(  path.join(JS_BASE , 'com/objects/drupal/uri/u08_paths.es6'  ));
-        match           =   require(  path.join(JS_BASE  , 'com/libs/string/match.es6'));
-        starr           =   require(  path.join(JS_BASE  , 'com/libs/string/string_array.es6'  ));
-
+const   { uri_paths }     =   require(  path.join(JS_BASE , 'com/objects/drupal/uri/u08_paths.es6'  )  );
+        const match = require(  path.join(JS_BASE  , 'com/libs/string/match.es6'         ) );
+        const starr = require(  path.join(JS_BASE  , 'com/libs/string/string_array.es6'  ) );
 
 class uri_fast extends uri_paths {
   constructor(s , ir)
@@ -65,7 +64,6 @@ class uri_fast extends uri_paths {
 
   this.page_command        =  'blanc'
   this.page_name          =  'blanc'
-
 
   // Create Paths for human or for robot
   this.create_paths("page", 'human')

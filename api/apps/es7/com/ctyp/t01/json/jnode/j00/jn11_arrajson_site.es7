@@ -13,9 +13,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	echo 				= 	require(	'node-echo'					),
-		sctf 				= 	require( 	path.join(JS_LIB7, 'file/save_code_to_file.es7'));
-		const { typejson_array }	= 	require(	path.join(JS_TYP7, 'json/jtype/typejson_array.es7'));
+const 	echo 				= 	require(	'node-echo'					);
+		const sctf = require(path.join(JS_LIB7, 'file/save_code_to_file.es7'))
+		const { typejson_array } = require(path.join(JS_TYP7, 'json/jtype/typejson_array.es7'))
 
 class arrajson_site extends typejson_array {
 	constructor(file_name = '')
@@ -57,7 +57,6 @@ class arrajson_site extends typejson_array {
 		this.clean()
 	}
 
-
 	managesearchcommontype(part = false)
 	{
 	   switch(this.type)
@@ -98,7 +97,6 @@ class arrajson_site extends typejson_array {
 
 				break;
 
-
 			case "searchitem":
 				this.add_index(					this.index		)
 				this.add_type(					this.type		)
@@ -111,7 +109,6 @@ class arrajson_site extends typejson_array {
 				this.add_element(    'nature'		,		this.nature		)
 				this.add_element(    'img'		    ,		this.photo		)
 
-
 				this.add_element( 		'mainterms' , this.chain_mainterms	)
 				this.add_lastelement( 		'terms' , this.chain_terms	)
 
@@ -123,6 +120,5 @@ class arrajson_site extends typejson_array {
 	}
 
 }
-
 
 exports.arrajson_site = arrajson_site

@@ -14,13 +14,11 @@
 // - d-marr-				: 	Multi dimensional Arrays print
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	echo 				= 	require(	'node-echo'								),
-		empty 				= 	require(	'is_empty'								),
-		const { savelog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/savelog.es6'));
-	  	os					= 	require(	'os'													),
-	  	fs 					= 	require(	'fs'													);
-
+const 	echo 				= 	require(	'node-echo'								);
+		const empty = require(	'is_empty'								);
+		const { savelog } = require(path.join(JS_BASE, 'com/objects/logs/savelog.es6'))
+	  	const os = require(	'os'													);
+	  	const fs = require(	'fs'													);
 
 class printlog extends savelog
 {
@@ -50,7 +48,6 @@ class printlog extends savelog
 		removeEmptyElements : true
 	}
 
-
   }
 //var application_root 	= __dirname						,
 
@@ -74,7 +71,6 @@ class printlog extends savelog
 	echo(puting_contents)
   	}
 
-
 	// Print new line (creo que pn ya existe)
   	pnn (msg)
   	{
@@ -90,8 +86,6 @@ class printlog extends savelog
 		// arr_no_print.push('lang_flags')
 		// arr_no_print.push('phone_structure')
 		// arr_no_print.push('composition')
-
-
 
 		let puting_contents_line_01	= '+[' + this.type  + '] ' + this.n + this.m
 
@@ -151,7 +145,6 @@ class printlog extends savelog
 			}
 
 	}
-
 
 }	// End Class
 

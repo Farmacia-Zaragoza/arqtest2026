@@ -20,12 +20,11 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { flx03_div_flex_slider }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/slider/flx03_div_flex_slider.es6'));
-		const { flx03_div_flex_carousel }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/slider/flx03_div_flex_carousel.es6'));
-		const { mob03_div_flex_mobile }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/mobile_contacts/mob03_div_mobile.es6'));
-		const { flx02_ul_flex_middle }	= 	require(	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6'));
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { flx03_div_flex_slider } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/slider/flx03_div_flex_slider.es6'))
+		const { flx03_div_flex_carousel } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/slider/flx03_div_flex_carousel.es6'))
+		const { mob03_div_flex_mobile } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/mobile_contacts/mob03_div_mobile.es6'))
+		const { flx02_ul_flex_middle } = require(path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6'))
 
 class sec02_section_slider_truck extends html_style{
 
@@ -34,7 +33,6 @@ class sec02_section_slider_truck extends html_style{
         let tag_type                 		=  'section'
 		super(	tag_type	)
         this.tag_type                 		=  'section'
-
 
         this.n								=	'sec02_section_slider_truck::'
 
@@ -58,7 +56,6 @@ class sec02_section_slider_truck extends html_style{
 
 	   	this.map							=	this.thm.map + 'section/'
 	   	this.thm.map						=	this.map
-
 
 		this.build_data()
 
@@ -96,7 +93,6 @@ class sec02_section_slider_truck extends html_style{
 		this.content 						+=	this.div_03.code
 	}
 
-
 //    <div class="col-sm-3 col-lg-2-point-5 visits-left">
     create_flex()
     {
@@ -105,10 +101,8 @@ class sec02_section_slider_truck extends html_style{
 		this.ul_01							=	new flx02_ul_flex_middle(	this.fnode 		,
 																			this.flex_type )
 
-
 		this.content						=	this.div_row.code
 	}
-
 
     build_data()
     {
@@ -134,8 +128,6 @@ class sec02_section_slider_truck extends html_style{
 
 		// Ok [17-11-02]
 		// this.p('code >' + this.code.length)
-
-
 
 	} // End Build Data
 

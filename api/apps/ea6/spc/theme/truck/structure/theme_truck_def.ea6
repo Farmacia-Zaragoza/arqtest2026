@@ -11,14 +11,12 @@
 // - d-fnode_promise-  				: Fnode promise function
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ theme_truck }			= require(	path.join(JS_BASE, 'spc/theme/truck/structure/theme_truck.ea6'));
-
+const 	{ theme_truck }			= require(path.join(JS_BASE, 'spc/theme/truck/structure/theme_truck.ea6'))
 
 function theme_truck_def(data_and_error = '' , t = '') {
   const promise = new Promise(function (resolve, reject) {
 
-	t.thm = new theme_truck(		t.pg		,
+	const t.thm = new theme_truck(		t.pg;
 	   								t.u		)
 
 	t.p('TRUCK_CREATED')

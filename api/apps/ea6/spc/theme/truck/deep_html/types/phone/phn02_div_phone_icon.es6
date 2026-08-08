@@ -17,7 +17,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const	{ svg_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
+const	{ svg_style } 		= 	require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
 
 
 class phn02_div_phone_icon extends svg_style {

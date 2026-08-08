@@ -18,10 +18,8 @@
 // - d-create_link_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class lnk03_css_minimized_truck extends getset  {
 
@@ -112,7 +110,6 @@ class lnk03_css_minimized_truck extends getset  {
 		this.code								+=	this.link_main.code
 
 	}
-
 
 	//L[06]  <link rel="stylesheet" href="css/product.css">
 	create_product()

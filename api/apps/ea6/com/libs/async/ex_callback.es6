@@ -19,10 +19,9 @@
 //-- 
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-const 	fs 			= 	require('fs'																					),
-		mkdirp 		= 	require('/brqx/base/react/zcommon/node_modules/mkdirp'											),
-		echo 		= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
-
+const 	fs 			= 	require('fs'																					);
+		const mkdirp = require('/brqx/base/react/zcommon/node_modules/mkdirp'											);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
 
 // No callback example
 
@@ -71,13 +70,9 @@ addToArrayB(4, myarray,
 addToArrayA(5, myarray) 
 console.log(myarray)
 
-
 // Cuando se termine de ejecutar la función addToArrayB se ejecutará el callback y nos mostrará el array con el nuevo dato.
 // Aparecera detras del array 123 aunque se ha ejecutado antes
 
 [ 1, 2, 3 ]
 [ 1, 2, 3, 4 ]
-
-
- 
 

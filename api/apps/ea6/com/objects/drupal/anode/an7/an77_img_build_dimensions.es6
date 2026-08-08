@@ -17,11 +17,11 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_img_tagadelic } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an78_img_tagadelic.es6'));
-		creff 							= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'));
-		const { execSync }					= require(	'child_process'																				),
-		isize 							= require(	'/brqx/base/react/zcommon/node_modules/image-size'											),
-		number_format 					= require(	'/brqx/base/react/zcommon/node_modules/locutus/php/strings/number_format'					);
+const 	{ anode_img_tagadelic } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an7/an78_img_tagadelic.es6'))
+		const creff = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'))
+		const { execSync } = require(	'child_process'																				);
+		const isize = require(	'/brqx/base/react/zcommon/node_modules/image-size'											);
+		const number_format = require(	'/brqx/base/react/zcommon/node_modules/locutus/php/strings/number_format'					);
 
 class anode_img_build_dimensions extends anode_img_tagadelic {
 
@@ -99,7 +99,6 @@ class anode_img_build_dimensions extends anode_img_tagadelic {
 		}
 	}
 
-	  
 }
 
 exports.anode_img_build_dimensions = anode_img_build_dimensions

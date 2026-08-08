@@ -19,10 +19,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { scomm_defs } =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s04_defs.es7'));
-       jtest          =   require(  path.join(JS_LIB7  , 'file/json_test.es7'));
-       sctf           =   require(  path.join(JS_LIB7  , 'file/save_code_to_file.es7'  ));
-
+const  { scomm_defs } =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s04_defs.es7' ) );
+       const jtest = require(  path.join(JS_LIB7  , 'file/json_test.es7'          ) );
+       const sctf = require(  path.join(JS_LIB7  , 'file/save_code_to_file.es7'  ) );
 
 class hcomm_struc extends scomm_defs {
   constructor(container)
@@ -65,7 +64,6 @@ class hcomm_struc extends scomm_defs {
   {
     this.m                  =   "generate_cache_summary_structure"
 
-
      //Primero se vacia el fichero SIEMPRE
      sctf.create_new_empty_file(this.s.cs.cache_sum)
      sctf.create_new_empty_file(this.s.cs.cache_err)
@@ -74,7 +72,6 @@ class hcomm_struc extends scomm_defs {
      var line                 = ''
      var file                 = this.s.cs.cache_err
      var http_result_ok       = false
-
 
      if (!this.s.b.robot_page)
      {
@@ -110,7 +107,6 @@ class hcomm_struc extends scomm_defs {
        this.container.s.ms.j_cont_ck_cod = http_struct.code
        this.container.s.ms.j_cont_ck     = this.container.s.ms.j_cont_ck_syn && this.container.s.ms.j_cont_ck_uri
 
-
        http_result_ok  = this.container.s.ms.j_comm_ck  &&  this.container.s.ms.j_spec_ck && this.container.s.ms.j_cont_ck
 
        if ( http_result_ok ) file = this.s.cs.cache_sum
@@ -141,7 +137,6 @@ class hcomm_struc extends scomm_defs {
 
      sctf.update_file_with_code(file, this.container.s.ms.j_spec_line)
 
-
      line = jtest.create_json_line(   this.container.s.ms.j_cont_ck     ,
                                       this.container.s.ms.j_cont_ck_cod ,
                                       this.container.s.ms.j_cont_ck_syn ,
@@ -150,8 +145,6 @@ class hcomm_struc extends scomm_defs {
      this.container.s.ms.j_cont_line = line + ' ' +  this.container.s.ms.j_cont_url
 
      sctf.update_file_with_code(file, this.container.s.ms.j_cont_line)
-
-
 
      sctf.update_file_with_code(file, this.container.s.ms.j_comm_path)
      sctf.update_file_with_code(file, this.container.s.ms.j_spec_path)

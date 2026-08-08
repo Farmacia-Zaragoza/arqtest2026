@@ -18,15 +18,12 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		empty 						= require(	'is_empty'											),
-		const { foo03_div_footer }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo03_div.es6'));
-		const { cok01_div_cookies }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/cookies/cok01_div_cookies.es6'));
-
+const 	{ html_style } 				= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const empty = require(	'is_empty'											);
+		const { foo03_div_footer } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo03_div.es6'))
+		const { cok01_div_cookies } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/cookies/cok01_div_cookies.es6'))
 
 class foo04_footer extends html_style{
-
 
     constructor (   thm										)
    {
@@ -38,7 +35,6 @@ class foo04_footer extends html_style{
 		this.n								= 'foo04_footer::'
 
 		this.fnode							=	''
-
 
 		this.div_02							=	''
 
@@ -52,7 +48,6 @@ class foo04_footer extends html_style{
 
 		this.thm							=	thm
 
-
 		this.fnode_lang						=	this.thm.arr['fnode']['link_list_lang']
 		this.fnode_common					=	this.thm.arr['fnode']['link_list_common']
 
@@ -64,7 +59,6 @@ class foo04_footer extends html_style{
 		this.liv_01							=	new foo03_div_footer(this.thm, 'text-left')
 
 		this.riv_01							=	new foo03_div_footer(this.thm, 'text-right')
-
 
 		this.build_data()
     }
@@ -82,7 +76,6 @@ class foo04_footer extends html_style{
 
 		this.content 	+=	this.div_02.code
 	}
-
 
     build_data()
     {
@@ -107,7 +100,6 @@ class foo04_footer extends html_style{
 
 			this.content 	+=	this.riv_01.code
 
-
 			pos 		=	1 															 // right
 			url			=	this.fnode_common.arr['url'][pos]
 			title		=	this.fnode_common.arr['tit'][pos]
@@ -116,13 +108,11 @@ class foo04_footer extends html_style{
 			if (!empty(this.fnode_lang.arr['txt']))
 				txt		=	this.fnode_lang.arr['txt'][pos]
 
-
 			this.liv_01.reload_contents(url, title , txt , target  )
 
 			this.content 	+=	this.liv_01.code
 
 		}
-
 
 		this.create_div_cookies()
 	 	this.pcreate()

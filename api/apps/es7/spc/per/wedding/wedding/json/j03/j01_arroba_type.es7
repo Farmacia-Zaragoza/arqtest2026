@@ -26,10 +26,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { arroba_jtype }     =   require(  path.join(JS_ACO7, 'json/j03/j01_arroba_type.es7'));
-       const { jnode_type }       =   require(  path.join(JS_PER7, 'wedding/wedding/json/j02/jn01_jnode_type.es7'));
-	   gfc  			    =   require(  path.join(JS_LIB7, 'file/get_file_code.es7'));
-
+const  { arroba_jtype }     =   require(path.join(JS_ACO7, 'json/j03/j01_arroba_type.es7'))
+       const { jnode_type } = require(path.join(JS_PER7, 'wedding/wedding/json/j02/jn01_jnode_type.es7'))
+	   const gfc = require(path.join(JS_LIB7, 'file/get_file_code.es7'))
 
 class arroba_jtype_wedding extends arroba_jtype {
   constructor(    arroba           ,
@@ -61,7 +60,6 @@ class arroba_jtype_wedding extends arroba_jtype {
     this.jtype.manage_switch_page_type()
 
   }
-
 
   //---------------------------------------------------------------------------------------------
   create_jnode_type()

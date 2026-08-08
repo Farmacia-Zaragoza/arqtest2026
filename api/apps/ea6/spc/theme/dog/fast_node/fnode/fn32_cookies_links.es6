@@ -13,12 +13,9 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ fnode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { lnk01_p_strong }	=	require( 	path.join(JS_BASE, 'spc/theme/common/structures/p/lnk01_p_strong.es6'));
-		const { cbool }			= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-
-
+const	{ fnode } 			= 	require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { lnk01_p_strong } = require(path.join(JS_BASE, 'spc/theme/common/structures/p/lnk01_p_strong.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 class fn32_cookies_links extends fnode {
 
@@ -40,16 +37,13 @@ class fn32_cookies_links extends fnode {
 		this.b							= 	new cbool()
 		this.b.copy (this.s.b)
 
-
     	this.type						=	'cookies_links_structure'					 // Type for structures
 		this.short_type					=	'COK-LINKS'
-
 
 		// String fnode / node / cica_recuerdo
 		this.ftype 						=	'fnode'															// Fast node type
 		this.stype 						=	stype															// Node subtype
 		this.type_name					=	this.stype
-
 
 		//Setting array types for content type - Pending
 
@@ -59,7 +53,6 @@ class fn32_cookies_links extends fnode {
 		this.b.type_url							= 	false 										 // Pending
 		this.b.type_translation					= 	false
 		this.b.type_translated					= 	false
-
 
 		this.b.type_have_taxonomy				=	false
 		this.b.type_have_code					=	false
@@ -78,22 +71,18 @@ class fn32_cookies_links extends fnode {
 
 		// LANG_INDEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma
 
-
 		this.suffix				=	this.stype
 		this.suffix_disk		=	this.suffix
 		this.suffix_lang		=	this.suffix
 
    		this.suffix_code 		= 	this.suffix + '.' + this.u.ssl_page + 'cokl'
 
-
 		// Links information url - title - target - extended TeXt
 		let arrays_line = 'uri tit name'
 		this.arr['types'] = arrays_line.split (' ')
 
-
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
-
 
 		// this.p('0C_COOKIES_LINKS ' + this.load_from_disk_path)
 
@@ -108,7 +97,6 @@ class fn32_cookies_links extends fnode {
 		// this.p('RAM_COOKIES ' + this.ram_alias_path			)
     }
 
-
 	run_child_action()
 	{
 		// Convertimos description en un array de lines
@@ -118,7 +106,6 @@ class fn32_cookies_links extends fnode {
 		var link = new lnk01_p_strong()
 
 		let links_code = ''
-
 
 		for (var pos in this.arr['name'])
 		{
@@ -139,7 +126,6 @@ class fn32_cookies_links extends fnode {
 
 		this.code 		= links_code
 	}
-
 
 	prepare_specific_child_properties()
 	{

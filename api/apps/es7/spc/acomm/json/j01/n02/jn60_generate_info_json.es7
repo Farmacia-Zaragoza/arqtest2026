@@ -18,8 +18,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn10_index_site }   =   require(  path.join(JS_ACO7  , 'json/j02/jn10_jnode_index_site.es7'));
-	    shtf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7'));
+const   { jn10_index_site }   =   require(  path.join(JS_ACO7  , 'json/j02/jn10_jnode_index_site.es7' ) );
+	    const shtf = require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7') 	);
 
 class jn60_info_json extends jn10_index_site {
 
@@ -78,7 +78,6 @@ class jn60_info_json extends jn10_index_site {
     this.p('js60_Filter ' + filter)
     // ggggggggggggg
 
-
 	shtf.save_hash_to_file(	    this.s.cs.list[this.s.ms.main_lang]		       ,
 								this.arr[this.s.ms.main_lang]                     ,
                                 filter                             )
@@ -86,9 +85,7 @@ class jn60_info_json extends jn10_index_site {
 								this.arr[this.s.cs.lang]                     ,
                                 filter                             )
 
-
   }
-
 
 }
 

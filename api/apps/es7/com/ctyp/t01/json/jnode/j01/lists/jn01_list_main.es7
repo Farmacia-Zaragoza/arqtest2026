@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                         =   require(  'fs'                                                   ),
-       empty                      =   require(  'is-empty'                             ),
-       accents                    =   require(  'remove-accents'                       ),
-       const { idx_pointers }       =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn02_array_list_inner } =   require(  path.join(JS_TYP7, 'json/jnode/j01/lists/jn02_list_inner.es7'));
+const  fs                         =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn02_array_list_inner } = require(path.join(JS_TYP7, 'json/jnode/j01/lists/jn02_list_inner.es7'))
 
 // Comm Object
 class jn01_object_list_main extends jn02_array_list_inner {
-
 
   constructor ()
   {
@@ -53,16 +52,13 @@ class jn01_object_list_main extends jn02_array_list_inner {
     // ESTO ES LO QUE USA PARA EL NOMBRE DE LOS OBJETOS
     this.j.item        = "articles"
 
-
     // this.p ('j01_list_main ' + idx.hindex + '  ' + this.j.hover)
 
     var enbreadcrumb = this.j.link
 
-
     this.j.link  = this.s.cs.lang_url  +  this.j.link
 
     this.j.index   = this.get_next_level(position)
-
 
     let object_type = "array"
 
@@ -88,7 +84,6 @@ class jn01_object_list_main extends jn02_array_list_inner {
         this.j.end_corch(object_type)
 
       }
-
 
   }
 

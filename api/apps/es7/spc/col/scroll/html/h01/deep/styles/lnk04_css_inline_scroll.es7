@@ -24,10 +24,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
 
 class lnk04_css_inline_scroll extends html_style  {
 
@@ -48,7 +47,6 @@ class lnk04_css_inline_scroll extends html_style  {
 
     }
 
-
 	// <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
     create_style()
     {
@@ -57,11 +55,9 @@ class lnk04_css_inline_scroll extends html_style  {
 		this.link_code_path				=
 				this.thm.u.site_path + '/dev/' + css_name
 
-
 		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "
 	}
-
 
     create_bootstrap()
     {
@@ -70,11 +66,9 @@ class lnk04_css_inline_scroll extends html_style  {
 		this.link_code_path				=
 				this.thm.u.site_path + '/fassets/css/' + css_name
 
-
 		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "
 	}
-
 
     create_fontawesome()
     {
@@ -82,7 +76,6 @@ class lnk04_css_inline_scroll extends html_style  {
 
 		this.link_code_path				=
 				this.thm.u.site_path + '/fassets/css/' + css_name
-
 
 		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "

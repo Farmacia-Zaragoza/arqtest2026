@@ -14,8 +14,8 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	{ fnode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { cbool }			= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+const	{ fnode } 			= 	require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 class fn23_site_lang extends fnode {
 
@@ -32,10 +32,8 @@ class fn23_site_lang extends fnode {
 		this.b										= 	new cbool()
 		this.b.copy (this.s.b)
 
-
     	this.type									=	'site_lang_structure'									 // Type for structures
     	this.short_type								=	'SITE'
-
 
 		// String fnode / node / cica_recuerdo
 		this.ftype 									=	'fnode'															// Fast node type
@@ -49,13 +47,11 @@ class fn23_site_lang extends fnode {
 		this.b.type_translation						= 	false
 		this.b.type_translated						= 	true
 
-
 		this.b.type_have_taxonomy					=	false
 		this.b.type_have_code						=	false
 		this.b.type_have_properties					=	true
 		this.b.type_have_specific_properties		=	true
 		this.b.type_synced							=	true
-
 
 		// Type path adjustment
 
@@ -69,7 +65,6 @@ class fn23_site_lang extends fnode {
 		this.suffix_disk			=	this.suffix
 		this.suffix_lang			=	this.suffix
 
-
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
 
@@ -81,7 +76,6 @@ class fn23_site_lang extends fnode {
 		let arrays_line = 'btn mnu lnk'
 
 		this.arr['types'] = arrays_line.split(' ')
-
 
 		if (this.s.load == 'drupal')
 		{
@@ -109,7 +103,6 @@ class fn23_site_lang extends fnode {
 
 			else if ( prop 	== "meta_author"				)		this.s.meta_author					=	value
 			else if ( prop 	== "meta_desc"					)		this.s.meta_desc					=	value
-
 
 			// Bottom Menu
 			else if ( prop 	== "mnu_hide"						)	this.s.mnu_hide						=	value
@@ -170,7 +163,6 @@ class fn23_site_lang extends fnode {
 		// Bottom Menu
 
 		this.arr['properties'].push( 				"mnu_hide" 			+ this.sep  + this.s.mnu_hide									)
-
 
 		// Information Section
 

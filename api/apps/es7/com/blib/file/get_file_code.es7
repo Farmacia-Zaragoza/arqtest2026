@@ -21,11 +21,11 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   fs           =   require(  'fs'                                                  ),
-        path         =   require(  'path'                                                ),
-        os           =   require(  'os'                                                  ),
-        util         =   require(  'util'                                                ),
-        empty        =   require(  'is-empty'                            );
+const   fs           =   require(  'fs'                                                  );
+        const path = require(  'path'                                                );
+        const os = require(  'os'                                                  );
+        const util = require(  'util'                                                );
+        const empty = require(  'is-empty'                            );
 
 //---------------------------------------------------------------------------------------------
 
@@ -79,7 +79,6 @@ function set_file_array_no_comments(full_file_name_int = '')
 	// Tenemos que devolverlo como objeto. Sino falla. En objetos si funciona pero con funciones y  arrays no
   }
 }
-
 
 //---------------------------------------------------------------------------------------------
 
@@ -136,7 +135,6 @@ function get_file_size(filename)
 
     console.info('SIZEEE  ' + fileSizeInBytes)
 }
-
 
 //---------------------------------------------------------------------------------------------
 module.exports.zero                       = zero

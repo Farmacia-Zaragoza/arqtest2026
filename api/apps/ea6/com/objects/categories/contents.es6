@@ -11,16 +11,14 @@
 // - build_data   	  : Build html final code for object 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	{ full_entities_search } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/full_entities_search.es6'		),
-		path 						= require(	'path'																		),
-		fs 							= require(	'fs'																		);
-
+const	{ full_entities_search } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/full_entities_search.es6'		);
+		const path = require(	'path'																		);
+		const fs = require(	'fs'																		);
 
 //class fnode extends getset {
 
 class contents {
 
-            
     constructor ()	  
     {   
 
@@ -30,8 +28,7 @@ class contents {
 		this.path					=	''								
 		
 		this.path_arr 				=	Array() 				
-	
-	
+
 		// Array ZONE
 	
 		this.arr	 					= Array()						// Solr Queries Array
@@ -63,8 +60,7 @@ class contents {
 		this.lr						=	"\n\r" 					
 	
 		this.q						= ''									 // query for solr
-		
-		
+
 		this.c				=	 new full_entities_search()							
 
 		this.contents_default_file	=  	this.uri_structure_path +  this.img_contents_default		
@@ -108,10 +104,8 @@ class contents {
 
 		//cat::Query pasadacategorias/pais/brasil/taxonomyterm1740:
 		//cat::Query pasadacategorias/codigo/brqx_azu11bra:
-	
 
 	}  
 }
-
 
 exports.contents = contents

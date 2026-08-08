@@ -20,13 +20,13 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var 	{ anode_only_save_language_properties } = require(	path.join(JS_BASE, 'com/objects/drupal/anode/an4/an43_only_save_language_properties.es6'));
+var 	{ anode_only_save_language_properties } = require(path.join(JS_BASE, 'com/objects/drupal/anode/an4/an43_only_save_language_properties.es6')),
 		os										= require(	'os'																							),
 		empty 									= require(	'/brqx/base/react/zcommon/node_modules/is_empty'												),
 		dom 									= require(	'/brqx/base/react/zcommon/node_modules/xmldom'													),
-		scpf 									= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-		cff 									= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/copy_full_filename.es6'));
-		creff 									= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'));
+		scpf 									= require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6')),
+		cff 									= require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/copy_full_filename.es6')),
+		creff 									= require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'))
 
 class anode_only_save_code extends anode_only_save_language_properties {
 

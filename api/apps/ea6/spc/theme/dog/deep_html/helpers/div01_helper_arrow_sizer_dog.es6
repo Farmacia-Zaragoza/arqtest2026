@@ -21,9 +21,8 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		empty 						= 	require(	'is_empty'														),
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const empty = require(	'is_empty'														);
 
 class div01_helper_dog extends svg_style {
 
@@ -77,7 +76,6 @@ class div01_helper_dog extends svg_style {
 		this.content				=	this.zone_01  +	 this.content
 
 	}
-
 
 	build_data()
 	{

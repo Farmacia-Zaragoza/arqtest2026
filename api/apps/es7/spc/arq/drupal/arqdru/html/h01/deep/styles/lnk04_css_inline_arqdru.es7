@@ -24,10 +24,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE , 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE , 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE , 'com/libs/file/full_path/level_02/save_code_properties_filename.es6' ));
-
+const 	{ getset } 			= 	require(	path.join(JS_BASE , 'com/objects/html/getset.es6'									)	);
+		const { html_style } = require(	path.join(JS_BASE , 'com/objects/html/html_style.es6'								)	);
+		const scpf = require( 	path.join(JS_BASE , 'com/libs/file/full_path/level_02/save_code_properties_filename.es6' )	);
 
 class lnk04_css_inline_arqdru extends html_style  {
 
@@ -82,7 +81,6 @@ class lnk04_css_inline_arqdru extends html_style  {
 
 		let url_awesome = 'https://use.fontawesome.com/releases/v5.7.2/css/'
 
-
 		this.link_01.href = url_awesome + css_name
 
 		// this.link_01.href				=
@@ -102,7 +100,6 @@ class lnk04_css_inline_arqdru extends html_style  {
 		this.link_code_path				=
 				this.thm.s.cs.site_path + '/fassets/css/' + css_name
 
-
 		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "
 	}
@@ -115,7 +112,6 @@ class lnk04_css_inline_arqdru extends html_style  {
 		this.link_code_path				=
 				this.thm.s.cs.site_path + '/dev/' + css_name
 
-
 		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "
 	}
@@ -127,7 +123,6 @@ class lnk04_css_inline_arqdru extends html_style  {
 
 		this.link_code_path				=
 				this.thm.s.cs.site_path + '/dev/assets/' + css_name
-
 
 		this.content					+=
 			scpf.file_get_code(this.link_code_path) + " "

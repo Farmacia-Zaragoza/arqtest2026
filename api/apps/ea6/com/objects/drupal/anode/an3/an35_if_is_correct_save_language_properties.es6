@@ -18,7 +18,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_if_is_correct_get_properties } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an37_if_is_correct_get_properties.es6'))
+var { anode_if_is_correct_get_properties } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an3/an37_if_is_correct_get_properties.es6'))
 
 class anode_if_is_correct_save_language_properties extends anode_if_is_correct_get_properties {
             

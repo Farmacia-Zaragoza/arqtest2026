@@ -13,9 +13,8 @@
 // - d-set_alias_for_drupal-		  : Generate drupal paths
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ uri_defs_urls } 		= require(	path.join(JS_BASE, 'com/objects/drupal/uri/u07_defs_urls.es6'))
-		url 					= require(	path.join(JS_BASE, 'com/libs/string/url.es6'))
+const 	{ uri_defs_urls } 		= require(path.join(JS_BASE, 'com/objects/drupal/uri/u07_defs_urls.es6'))
+		const url = require(path.join(JS_BASE, 'com/libs/string/url.es6'))
 
 class uri_sets extends uri_defs_urls {
 
@@ -172,7 +171,6 @@ class uri_sets extends uri_defs_urls {
 			this.is_admin_cacheable		= 	'no'
 			this.page_type				=	'private'
 		}
-
 
 		// Never cache edit or clone pages :
 		// /ram/home/ser/zd/main/es/zdom/per/pelona/zd_main_cica/es/cache/cica.dbrqx.com/anonymous/garsintife/page/human/a/node_76926_edit?destination=admin%2fcontent%2fnode_code

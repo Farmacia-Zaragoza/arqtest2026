@@ -27,7 +27,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { anode_hbranch_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a04_hbranch/an49_process.es7'      ))
+const   { anode_hbranch_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a04_hbranch/an49_process.es7'      )  )
 
 
 class anode_hbranch_load extends anode_hbranch_process {

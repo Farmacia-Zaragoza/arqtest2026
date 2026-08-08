@@ -20,17 +20,15 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-
-const   fs           =   require(  'fs'                                    ),
-    path         =   require(  'path'                                    ),
-    os           =   require(  'os'                                    ),
-    util         =   require(  'util'                            ),
-    empty         =   require(  'is-empty'                          ),
-    trim         =   require(  'trim'                            ),
-    mkdirp         =   require(  'mkdirp'                          ),
-	echo 		 = 	require(	'node-echo'									),
-const   { printlog }         =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
-
+const   fs           =   require(  'fs'                                    );
+    const path = require(  'path'                                    );
+    const os = require(  'os'                                    );
+    const util = require(  'util'                            );
+    const empty = require(  'is-empty'                          );
+    const trim = require(  'trim'                            );
+    const mkdirp = require(  'mkdirp'                          );
+	const echo = require(	'node-echo'									);
+const   { printlog }         =   require(path.join(JS_TYP7, 'logs/printlog.es7'))
 
 // Ck [19-06-03]
 // Save Hash2d_to_file --> Guardamos el contenido del hash de 2dim en el fichero
@@ -80,10 +78,8 @@ function save_hash2d_to_file(full_file_name_int = ''   ,
 
         // echo ('satf_Antes del for en la function ' + Object.entries(arr_properties).length )
 
-
     var DATA = ''
     var ARR_DATA = ''
-
 
     for (var pos in arr_properties)
     {
@@ -93,7 +89,6 @@ function save_hash2d_to_file(full_file_name_int = ''   ,
       else
         ARR_DATA = langs.split(" ")
         // Aqui iteramos los idiomas
-
 
       for (var langpos in ARR_DATA)
       {
@@ -112,11 +107,9 @@ function save_hash2d_to_file(full_file_name_int = ''   ,
       }
     }
 
-
    } // End If Empty File
   } // End If Arr Properties
 
 }
-
 
 module.exports.save_hash2d_to_file           = save_hash2d_to_file

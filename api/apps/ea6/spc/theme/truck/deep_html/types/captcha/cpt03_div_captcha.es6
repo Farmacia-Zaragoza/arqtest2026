@@ -23,10 +23,9 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { cpt02_div_captcha }	= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/captcha/cpt02_div_captcha.es6'));
+const	{ svg_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { cpt02_div_captcha } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/captcha/cpt02_div_captcha.es6'))
 
 class cpt03_div_captcha extends html_style {
 
@@ -56,7 +55,6 @@ class cpt03_div_captcha extends html_style {
 		this.content += this.div_01.code
 	}
 
-
 	create_div_02() {
 		this.miv_02.content 		= ""
 		this.miv_02.class 			= "media-body"
@@ -71,8 +69,6 @@ class cpt03_div_captcha extends html_style {
 		this.miv_02.pcreate()
 		this.content 				+= this.miv_02.code
 	}
-
-
 
 	create_div_01()
 	{
@@ -94,7 +90,6 @@ class cpt03_div_captcha extends html_style {
 		this.content						+=		this.miv_01.code
 
 	}
-
 
 	create_p_01()
 	//<p class="redirecting info">Redirecting... Hold on</p>

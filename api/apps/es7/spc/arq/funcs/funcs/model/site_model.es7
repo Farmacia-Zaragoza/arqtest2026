@@ -24,13 +24,12 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { common_model }  =   require(  path.join(JS_ACO7  , 'model/common_model.es7'));
-        const { site_uri }      =   require(  path.join(JS_ARQ7  , 'funcs/funcs/uri/u01_site_uri.es7'));
-        const { arroba_jtype }  =   require(  path.join(JS_AQD7  , 'arqdru/json/j03/j01_arroba_type.es7'));
-        const { theme_data }    =   require(  path.join(JS_AQD7  , 'arqdru/json/j04/j01_theme_data.es7'  ));
+const   { common_model }  =   require(  path.join(JS_ACO7  , 'model/common_model.es7'              ));
+        const { site_uri } = require(  path.join(JS_ARQ7  , 'funcs/funcs/uri/u01_site_uri.es7'     )    );
+        const { arroba_jtype } = require(  path.join(JS_AQD7  , 'arqdru/json/j03/j01_arroba_type.es7' ));
+        const { theme_data } = require(  path.join(JS_AQD7  , 'arqdru/json/j04/j01_theme_data.es7'  ));
 
 class site_model extends common_model
 {
@@ -55,7 +54,6 @@ class site_model extends common_model
     // Necesitamos que se genere el idioma por defecto tambien
     // this.p('ark_model_First Alias**JA ' + this.specjson.gethash_keylang( 'i000v005' , 1 ) )
 
-
     // Aqui lo que hay que hacer es ver si es front page
     // Solo en este caso tiene sentido mirar alias
     // El problema va a venir con la cache
@@ -72,14 +70,12 @@ class site_model extends common_model
     // En este punto si es un alias conocido no del idioma actual
     // se debera cargar dicho alias y generar la url correspondiente
 
-
     // this.p('arq_model_page C ' + this.arroba.s.cs.page +  ' Lang ' + this.arroba.s.cs.lang )
 
     this.thmdata          =   new theme_data(this.arroba)
 
     this.code             =   this.thmdata.code
   }
-
 
 } // end Class
 

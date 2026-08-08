@@ -12,7 +12,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
-var { uri_defs_common } 		= require(	path.join(JS_BASE, 'com/objects/drupal/uri/u09_defs_common.es6')		)
+var { uri_defs_common } 		= require(path.join(JS_BASE, 'com/objects/drupal/uri/u09_defs_common.es6'))
 
 class uri_defs_paths extends uri_defs_common {
 

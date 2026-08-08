@@ -28,10 +28,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE , 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE , 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE , 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'	));
-
+const 	{ getset } 			= 	require(	path.join(JS_BASE , 'com/objects/html/getset.es6'										));
+		const { html_style } = require(	path.join(JS_BASE , 'com/objects/html/html_style.es6'									));
+		const scpf = require( 	path.join(JS_BASE , 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'	));
 
 class scr05_js_inline_arqdru extends html_style  {
 
@@ -79,7 +78,6 @@ class scr05_js_inline_arqdru extends html_style  {
 		// It is already minimized
 		let js_name							=	'runtime.js'
 
-
 		this.script_code_path				=
 				this.thm.s.ms.site_path + '/dev/' + js_name
 
@@ -102,7 +100,6 @@ class scr05_js_inline_arqdru extends html_style  {
 
 		this.content			+=		scpf.file_get_code(this.script_code_path)
 	}
-
 
 	//[S_02] <script type="text/javascript" src="polyfills.f80b7e6581d9215d226e.js"></script>
     create_polyfills()
@@ -131,7 +128,6 @@ class scr05_js_inline_arqdru extends html_style  {
 
 		this.content			+=		scpf.file_get_code(this.script_code_path)
 	}
-
 
 	//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
     create_main()

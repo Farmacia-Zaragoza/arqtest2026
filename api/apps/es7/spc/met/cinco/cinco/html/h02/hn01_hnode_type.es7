@@ -20,10 +20,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { printlog }          =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
-	   const { common_hnode }      = 	require(	path.join(JS_ACO7, 'html/h01/main/common_hnode.es7'));
-       const { htm01_html_cinco } =   require(  path.join(JS_MET7, 'cinco/cinco/html/h01/main/htm01_cinco.es7'));
-
+const  { printlog }          =   require(path.join(JS_TYP7, 'logs/printlog.es7'))
+	   const { common_hnode } = require(path.join(JS_ACO7, 'html/h01/main/common_hnode.es7'))
+       const { htm01_html_cinco } = require(path.join(JS_MET7, 'cinco/cinco/html/h01/main/htm01_cinco.es7'))
 
 class hnode_type extends printlog {
 
@@ -36,7 +35,6 @@ class hnode_type extends printlog {
     this.s                   =   this.container.s
     this.u                   =   this.container.u
     this.hobject             =   ''
-
 
     // this.p('jntype_Page ' + this.u.page_name + ' P ' + this.s.cache_path)
 
@@ -84,7 +82,6 @@ class hnode_type extends printlog {
     // this.p(this.hobject.code)
 
   }
-
 
 }
 

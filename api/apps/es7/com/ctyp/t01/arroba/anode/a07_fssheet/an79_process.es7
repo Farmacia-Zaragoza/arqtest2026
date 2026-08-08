@@ -30,8 +30,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_run_search }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a08_search/an82_run.es7'));
-       const { idx_pointers }       =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                ));
+const  { anode_run_search }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a08_search/an82_run.es7'  ) );
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                ) );
 
 class anode_fssheet_process extends anode_run_search {
   constructor()
@@ -69,7 +69,6 @@ class anode_fssheet_process extends anode_run_search {
     // Ajustamos la salida para que sea una hoja
     this.arr[lang]['r' + array_index_string] = "sheet"
 
-
     // Le insertamos v001 porque es el valor para las imagenes cuando hay parrafadas
     array_index_string += 'v001'
 
@@ -97,8 +96,6 @@ class anode_fssheet_process extends anode_run_search {
                                   breadcrumb           )
 
     }
-
-
 
   }
 

@@ -20,10 +20,8 @@
 // - d-create_link_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class lnk02_css_link_dog extends getset  {
 
@@ -59,7 +57,6 @@ class lnk02_css_link_dog extends getset  {
 			this.link_jquery.preload		=	'preload'
 			this.link_jquery.as			=	'style'
 		}
-
 
 		let jquery_uri					=
 			"https://code.jquery.com/ui/1.12.1/themes/smoothness/"
@@ -97,7 +94,6 @@ class lnk02_css_link_dog extends getset  {
 		this.code							+=	this.link_bootstrap.code
 	}
 
-
 	//L[06]  <link rel="stylesheet" href="assets/css/style.css">
 	create_main()
     {
@@ -114,7 +110,6 @@ class lnk02_css_link_dog extends getset  {
 			this.link_main.preload			=	'preload'
 			this.link_main.as				=	'style'
 		}
-
 
 		if ( this.thm.b.site_live )
 			css_name 						+=	'_live'
@@ -144,7 +139,6 @@ class lnk02_css_link_dog extends getset  {
 			this.link_product.preload		=	'preload'
 			this.link_product.as			=	'style'
 		}
-
 
 		if ( this.thm.b.site_live )
 			css_name 						+=	'_live'
@@ -231,7 +225,6 @@ class lnk02_css_link_dog extends getset  {
 			if (this.thm.b.page_product)
 				this.create_product()
 			this.create_main()
-
 
 		}
 		// Ok [18-01-11]

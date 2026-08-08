@@ -6,9 +6,8 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	echo 			= 	require(	'node-echo'								),
-		fs 				= 	require(	'fs'													);
+const 	echo 			= 	require(	'node-echo'								);
+		const fs = require(	'fs'													);
 
 class savelog
 {
@@ -27,9 +26,7 @@ class savelog
 //	this.br 			= 	'</br>'
 	this.br 			= 	'\n\r'
 
-
     this.lf				=	':</br>'
-
 
   }
 
@@ -52,7 +49,6 @@ class savelog
 		}
 		global.GLOBALS['putcont']= ''											;
 	}
-
 
 	d(msg)
 	{

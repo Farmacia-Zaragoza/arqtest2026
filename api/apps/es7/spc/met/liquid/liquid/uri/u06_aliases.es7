@@ -12,7 +12,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { site_common_commands } =   require( path.join(JS_SPC7, 'acomm/uri/u01_site_commands.es7'))
+const { site_common_commands } =   require(path.join(JS_SPC7, 'acomm/uri/u01_site_commands.es7'))
 
 
 class uri_aliases extends site_common_commands

@@ -7,11 +7,10 @@
 // - d-save_code_to_mongo- 					: Async method to save code to mongo
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 		{ index } 			= 	require(	path.join(JS_BASE, 'com/objects/fire/f02_index/index.es6'));
-			mongoose 			= 	require(	'mongoose'									),
- 	 		const { idSchema }		= 	require(	path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch'));
-			echo 				= 	require(	'node-echo'									);
+const 		{ index } 			= 	require(path.join(JS_BASE, 'com/objects/fire/f02_index/index.es6'))
+			const mongoose = require(	'mongoose'									);
+ 	 		const { idSchema } = require(path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch'))
+			const echo = require(	'node-echo'									);
 
 class model_save extends index
 {
@@ -42,7 +41,6 @@ class model_save extends index
 		await this.save_code_to_mongo(dont_exist)
 	}
 
-
 	// --------------------------- SAVE_CODE_TO_MONGO ---------------------------
 	async save_code_to_mongo(dont_exist)
 	{
@@ -65,7 +63,6 @@ class model_save extends index
 			// this.p('PAGE ' + this.u.page_name			)
 			// this.p('ID ' + this.u.page_string			)
 
-
 			//  01   02        03     04     05      06      07         08        09      10
 			// _id  site - is_lang - domain - lang - ssl - live_opt -  robot - command - page
 
@@ -83,7 +80,6 @@ class model_save extends index
 									 	   page : this.u.page_name   		,	// 10
 									 	   code : this.code 				});
 
-
 			htmPage.save(function (err) {
 		  	if (!err) console.log('Success!');
 		  	else
@@ -98,8 +94,6 @@ class model_save extends index
 
 		}
 	}
-
-
 
 } // end Class
 

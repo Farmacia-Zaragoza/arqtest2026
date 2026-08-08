@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                             =   require(  'fs'                                                ),
-       empty                          =   require(  'is-empty'                          ),
-       accents                        =   require(  'remove-accents'                    ),
-	   rand	                          = 	 require(  path.join(JS_LIB7, 'rand/rand.es7'));
-       const { idx_pointers }               =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn07_comma_json_doble_call } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn07_doble_call.es7'));
+const  fs                             =   require(  'fs'                                                );
+       const empty = require(  'is-empty'                          );
+       const accents = require(  'remove-accents'                    );
+	   const rand = require(path.join(JS_LIB7, 'rand/rand.es7'))
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn07_comma_json_doble_call } = require(path.join(JS_TYP7, 'json/jnode/j01/arrays/jn07_doble_call.es7'))
 
 class jn06_comma_json_rand extends jn07_comma_json_doble_call {
-
 
   constructor ()
   {
@@ -41,7 +40,6 @@ class jn06_comma_json_rand extends jn07_comma_json_doble_call {
   {
 
     var idx = new idx_pointers(index)
-
 
     let cats          = this.gethash_arr(this.s.ms.main_lang, idx.jindex)                              ;
 
@@ -73,7 +71,6 @@ class jn06_comma_json_rand extends jn07_comma_json_doble_call {
       // Set Json attribs
       this.attribs(idx, pos)
 
-
       // this.p('jn05_rand_Generating ' + ipos + ' ' + last_element +  ' C ' + this.cat )
 
       let next_level           = this.get_next_level(pos)
@@ -87,12 +84,9 @@ class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
       this.links_management(idx , pos)
 
-
       // end add_json block
 
       this.j.index    =   this.index
-
-
 
       // i020v010
       // this.p('jn05 file_to_load ' + this.cat  +  ' I ' + idx.iindex  +  '  '  + this.j.value)
@@ -149,7 +143,6 @@ class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
       if (--iterations  >= 0)
         this.j.add_separator()
-
 
      }  // End For
 

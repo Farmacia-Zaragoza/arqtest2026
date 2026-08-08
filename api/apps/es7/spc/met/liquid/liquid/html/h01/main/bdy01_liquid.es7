@@ -20,12 +20,11 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { svg_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { scr01_js_liquid }				= 	require(	path.join(JS_MET7, 'liquid/liquid/html/h01/main/scr01_js_liquid.es7'));
-		const { ifnojs }	 					= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'));
-		minify 							= 	require(	'html-minifier'									).minify;
-
+const 	{ html_style } 					= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { svg_style } = require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { scr01_js_liquid } = require(path.join(JS_MET7, 'liquid/liquid/html/h01/main/scr01_js_liquid.es7'))
+		const { ifnojs } = require(path.join(JS_BASE, 'com/objects/html/ifnojs.es6'))
+		const minify = require(	'html-minifier'									).minify;
 
 class bdy01_body_liquid extends html_style  {
 
@@ -37,15 +36,12 @@ class bdy01_body_liquid extends html_style  {
 		this.n							=	'bdy_liquid::'
         this.tag_type     				= 	'body'
 
-
 		this.container					=	container
 		this.s                          =   container.s
 		this.u                          =   container.u
 
-
 		// Tenemos que tener como un mapa del site
 		this.container.map					= 	'body/'
-
 
 		// Common Json
 		this.line_comm					=	this.container.s.ms.j_comm_line
@@ -82,7 +78,6 @@ class bdy01_body_liquid extends html_style  {
 
         //this.p('bdy_01_results ' + this.result_comm  + '  ' +  this.result_spec + '  ' +  this.result_cont )
 
-
         var jsons_ok                    =   this.result_comm && this.result_spec && this.result_cont
 
         // Sera false si hay que generar jsons
@@ -92,7 +87,6 @@ class bdy01_body_liquid extends html_style  {
 			this.build_json_wrongs()
 
     }
-
 
 	//   <app-root></app-root>
 	create_approot()
@@ -105,7 +99,6 @@ class bdy01_body_liquid extends html_style  {
 		this.content					+=		this.approot.code
 	}
 
-
   	create_div()
     {
 		this.div_01.id					=	'root'
@@ -113,7 +106,6 @@ class bdy01_body_liquid extends html_style  {
         // this.p('Bdy01_Loading_Data_Type ' + this.container.s.cs.page_name)
 
 		this.div_01.data_type			=	this.container.s.cs.page_name
-
 
 //		let common_json					=	'https://farma.vbrqx.com/ang/json/common.json'
 //		let lang_common_json			=	'https://farma.vbrqx.com/ang/json/langs/en/common.json'
@@ -124,13 +116,11 @@ class bdy01_body_liquid extends html_style  {
 
 		this.div_01.data_content 		=	this.jpath_cont
 
-
 		// this.div_01.data_content 		=	this.jpath_cont
 
 		this.div_01.pcreate()
 		this.content					+=	this.div_01.code
 	}
-
 
   	create_scripts()
     {
@@ -155,8 +145,6 @@ class bdy01_body_liquid extends html_style  {
 
 		this.content 			+= 	this.ifnojs.code
 	}
-
-
 
     build_json_wrongs()
     {
@@ -192,16 +180,13 @@ class bdy01_body_liquid extends html_style  {
 
 		this.create_scripts()
 
-
 		// FINISH BUCLE data-array content
 
 		// Manage Json
 
-
 		// PENDING
 
 		this.pcreate()
-
 
 		// Ok [18-02-02]
 		// this.p('bdy01:cod ' + this.code)

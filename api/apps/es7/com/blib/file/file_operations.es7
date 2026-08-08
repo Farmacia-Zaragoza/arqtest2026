@@ -20,17 +20,16 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   fs           =   require(  'fs'                                                  ),
-        path         =   require(  'path'                                                ),
-        os           =   require(  'os'                                                  ),
-        util         =   require(  'util'                                                ),
-        empty        =   require(  'is-empty'                            ),
-        trim         =   require(  'trim'                                ),
-        mkdirp       =   require(  'mkdirp'                     ),
-        del          =   require(  'del'                        );
+const   fs           =   require(  'fs'                                                  );
+        const path = require(  'path'                                                );
+        const os = require(  'os'                                                  );
+        const util = require(  'util'                                                );
+        const empty = require(  'is-empty'                            );
+        const trim = require(  'trim'                                );
+        const mkdirp = require(  'mkdirp'                     );
+        const del = require(  'del'                        );
 
 //---------------------------------------------------------------------------------------------
-
 
 // Delete only files
 function delete_file_pattern(full_file_pattern_int)
@@ -42,7 +41,6 @@ function delete_file_pattern(full_file_pattern_int)
    del.sync(json_pattern,{force: true})
 
 }
-
 
 // Delete only files
 function delete_full_filename(full_file_name_int)

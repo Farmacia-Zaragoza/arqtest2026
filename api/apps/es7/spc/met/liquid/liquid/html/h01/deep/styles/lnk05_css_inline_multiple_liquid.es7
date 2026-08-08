@@ -31,10 +31,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
 
 class lnk05_css_inline_liquid extends getset  {
 
@@ -60,7 +59,6 @@ class lnk05_css_inline_liquid extends getset  {
 
     }
 
-
 	// <link rel="stylesheet" href="fontawesome_v57_min.css"></head>
     create_fontawesome()
     {
@@ -80,7 +78,6 @@ class lnk05_css_inline_liquid extends getset  {
 		this.code						+=	this.lnk01.code
 
 	}
-
 
 	// <link rel="stylesheet" href="styles.821fc87c884b09994238.css"></head>
     create_style()

@@ -15,15 +15,13 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                         =   require(  'fs'                                                          ),
-       empty                      =   require(  'is-empty'                                    ),
-       accents                    =   require(  'remove-accents'                              ),
-       const { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn10_fs_json_simple } =   require(  path.join(JS_TYP7, 'json/jnode/j01/fs/jn10_fs_simple.es7'));
-
+const  fs                         =   require(  'fs'                                                          );
+       const empty = require(  'is-empty'                                    );
+       const accents = require(  'remove-accents'                              );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn10_fs_json_simple } = require(path.join(JS_TYP7, 'json/jnode/j01/fs/jn10_fs_simple.es7'))
 
 class jn07_comma_json_doble_call extends jn10_fs_json_simple {
-
 
   constructor ()
   {
@@ -45,7 +43,6 @@ class jn07_comma_json_doble_call extends jn10_fs_json_simple {
     var iterations           = Object.keys(cats).length - 1
     // this.p('Before pos bucle ' + cats.length )
 
-
     for (var pos in cats)
     {
       // Set Json attribs
@@ -53,8 +50,6 @@ class jn07_comma_json_doble_call extends jn10_fs_json_simple {
 
       let current_level        = this.j.index
       let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.j.item).toLowerCase()
-
-
 
       // add_json block
       this.rvlash_inner(current_level)
@@ -67,7 +62,6 @@ class jn07_comma_json_doble_call extends jn10_fs_json_simple {
 
       this.j.index             =   this.index
 
-
       if ( (this.k.type == "parragraph"  ) ||  (this.k.type == "iparragraph" ) )
       {
           this.rvtoslash(index)
@@ -79,7 +73,6 @@ class jn07_comma_json_doble_call extends jn10_fs_json_simple {
 
       // fallara cuando pase por aqui
       this.manage_parragraphs('array' , pf_to_load )
-
 
       if (--iterations  >= 0)
         this.j.add_separator()

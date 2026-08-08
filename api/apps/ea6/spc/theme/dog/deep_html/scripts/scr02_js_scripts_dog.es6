@@ -26,10 +26,8 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class scr02_js_scripts_dog extends getset  {
 
@@ -230,7 +228,6 @@ class scr02_js_scripts_dog extends getset  {
 		this.code							+=	this.script_01.code
 	}
 
-
 	//[S_10] <script src="assets/js/main.js" defer></script>
 	create_main()
     {
@@ -247,7 +244,6 @@ class scr02_js_scripts_dog extends getset  {
 
 		this.script_01.src					=
 			this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '.js'
-
 
 		this.script_01.pcreate()
 
@@ -273,7 +269,6 @@ class scr02_js_scripts_dog extends getset  {
 
 		this.script_01.src					=
 			this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '.js'
-
 
 		this.script_01.pcreate()
 

@@ -24,13 +24,12 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { getset }                    =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6'));
-       const { html_style }                =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-       const { scr02_js_scripts_light }   =   require(  path.join(JS_MET7, 'light/light/html/h01/deep/scripts/scr02_js_scripts_light.es7'));
-       const { scr03_js_minimized_light } =   require(  path.join(JS_MET7, 'light/light/html/h01/deep/scripts/scr03_js_minimized_light.es7'));
-       const { scr05_js_inline_light }    =   require(  path.join(JS_MET7, 'light/light/html/h01/deep/scripts/scr05_js_inline_light.es7'));
-       const { scr06_js_async_light }     =   require(  path.join(JS_MET7, 'light/light/html/h01/deep/scripts/scr06_js_async_light.es7'));
-
+const  { getset }                    =   require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+       const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+       const { scr02_js_scripts_light } = require(path.join(JS_MET7, 'light/light/html/h01/deep/scripts/scr02_js_scripts_light.es7'))
+       const { scr03_js_minimized_light } = require(path.join(JS_MET7, 'light/light/html/h01/deep/scripts/scr03_js_minimized_light.es7'))
+       const { scr05_js_inline_light } = require(path.join(JS_MET7, 'light/light/html/h01/deep/scripts/scr05_js_inline_light.es7'))
+       const { scr06_js_async_light } = require(path.join(JS_MET7, 'light/light/html/h01/deep/scripts/scr06_js_async_light.es7'))
 
 class scr01_js_light extends getset  {
 
@@ -48,7 +47,6 @@ class scr01_js_light extends getset  {
 
     this.build_data()
     }
-
 
   build_data()
   {
@@ -72,7 +70,6 @@ class scr01_js_light extends getset  {
         this.p('wrong_parameter ' + this.thm.s.ms.live_opt )
 
       }
-
 
       // MAIN - PRODUCT
      this.code                 +=  this.script_to_load.code

@@ -6,8 +6,8 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
-		path 				= 	require( 'path' 												);
+const 	{ printlog } 		= 	require(path.join(JS_BASE, 'com/objects/logs/printlog.es6'))
+		const path = require( 'path' 												);
 
 class index_def extends printlog
 {

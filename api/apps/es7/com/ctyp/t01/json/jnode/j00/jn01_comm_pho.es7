@@ -17,11 +17,11 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const fs                    =   require(  'fs'                                        ),
-      const { cache }             =   require(  path.join(JS_TYP7, 'cache/c01_cache.es7'));
-      const { idx_pointers }  =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-	  rand	                 = 	 require(  path.join(JS_LIB7, 'rand/rand.es7'));
-      empty                 =   require(  'is_empty'                );
+const fs                    =   require(  'fs'                                        );
+      const { cache } = require(path.join(JS_TYP7, 'cache/c01_cache.es7'))
+      const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+	  const rand = require(path.join(JS_LIB7, 'rand/rand.es7'))
+      const empty = require(  'is_empty'                );
 
 class jn01_comm_pho extends cache {
 
@@ -30,7 +30,6 @@ class jn01_comm_pho extends cache {
     super()
     this.n                   =  'jn01_comm_pho::'
     }
-
 
   //---------------------------------------------------------------------------------------------
   manage_photo( )
@@ -110,7 +109,6 @@ class jn01_comm_pho extends cache {
     let cats                   = this.gethash_arr(this.s.ms.main_lang , idx.jindex)
     var last_element           = cats.length - 1
 
-
     // this.p('LEngth_Array_Pf ' + index + ' N ' + last_element  )
     let cont = 0
     let pf_anchor = ''
@@ -160,12 +158,9 @@ class jn01_comm_pho extends cache {
 
       }
 
-
      }  // End For
 
   }
-
-
 
 }
 

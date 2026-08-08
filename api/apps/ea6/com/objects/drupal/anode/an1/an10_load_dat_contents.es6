@@ -20,10 +20,10 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const	{ anode_translate_contents } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an1/an11_translate_contents.es6'));
-		ffi									= require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'));
-		fs 									= require(	'fs'																				),
-		path 								= require(	'path'																				);
+const	{ anode_translate_contents } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an1/an11_translate_contents.es6'))
+		const ffi = require(path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'))
+		const fs = require(	'fs'																				);
+		const path = require(	'path'																				);
 
 class anode_load_dat_contents extends anode_translate_contents {
 
@@ -64,8 +64,7 @@ class anode_load_dat_contents extends anode_translate_contents {
 	
 				let arr_name 				= '' 								
 				let arr_pos 				= '' 								
-	
-	
+
 				// arr_sua4_4@
 	            let arr_prop				=	arr_divs[0]									
 				let count_arr_divs 			= arr_divs.length
@@ -118,8 +117,7 @@ class anode_load_dat_contents extends anode_translate_contents {
 					// this.p ('Load_SPEC_prop_ ' + prop)																	
 
 					this.get_child_properties(prop, value) // Metodo especifico de cada tipo
-					
-									
+
 	        	}
 	      	} // End foreach    
 
@@ -127,11 +125,9 @@ class anode_load_dat_contents extends anode_translate_contents {
 
 		this.run_child_action()																							
 
-
 		// Hay que preparar las propiedades antes de grabar
 		this.prepare_child_properties() 												
 
-		
 		/// hay que grabar el codigo pero se grabara solo si no es 0
 		// el codigo debe ser solo si tiene codigo
 		this.if_is_correct_save_all() 												

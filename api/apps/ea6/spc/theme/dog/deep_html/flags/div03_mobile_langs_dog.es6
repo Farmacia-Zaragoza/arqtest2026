@@ -27,10 +27,8 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { div02_mobile_langs_dog }	= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/div02_mobile_langs_dog.es6'));
-
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { div02_mobile_langs_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/div02_mobile_langs_dog.es6'))
 
 class div03_mobile_langs_dog extends html_style {
 
@@ -84,7 +82,6 @@ class div03_mobile_langs_dog extends html_style {
 
 		this.content 				+= 	this.div_01.code
 	}
-
 
 	// Works
 

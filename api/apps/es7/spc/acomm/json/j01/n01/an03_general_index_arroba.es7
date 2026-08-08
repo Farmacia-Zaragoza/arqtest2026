@@ -14,7 +14,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { ani01_arroba_recursive } =   require(  path.join(JS_TYP7  , 'arroba/aindex/a01/ani01_recursive.es7' ))
+const  { ani01_arroba_recursive } =   require(  path.join(JS_TYP7  , 'arroba/aindex/a01/ani01_recursive.es7' ) )
 
 class an03_general_index_arroba extends ani01_arroba_recursive {
 

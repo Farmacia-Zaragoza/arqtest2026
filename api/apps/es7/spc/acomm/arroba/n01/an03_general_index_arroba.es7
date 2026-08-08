@@ -14,10 +14,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { a01_idx_list } =   require(  path.join(JS_TYP7  , 'arroba/aindex/b_list/a01_idx_list.es7'));
-	    shtf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7'));
-	    satf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash1d_to_file.es7' ));
-
+const  { a01_idx_list } =   require(  path.join(JS_TYP7  , 'arroba/aindex/b_list/a01_idx_list.es7' ) );
+	    const shtf = require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7' 	) );
+	    const satf = require(  path.join(JS_LIB7  , 'file/save_hash1d_to_file.es7' )	);
 
 class an03_general_index_arroba extends a01_idx_list {
 
@@ -48,7 +47,6 @@ class an03_general_index_arroba extends a01_idx_list {
     // jn20_cat articles - false
     // this.p('an03_DEFINING_ARRAYS_LOAD jn20_cat ' + this.cat + ' PD ' + this.s.b.page_product)
 
-
     // Esta ya generandose el fichero. Aqui habria que igual filtrar las palabras de busqueda primero
 
     // =============================================================================
@@ -66,9 +64,6 @@ class an03_general_index_arroba extends a01_idx_list {
       this.save_arroba_index_page_to_file(
                 this.index                ) // Categories lang/ES Name
 
-
-
-
     }
     else
     {
@@ -83,7 +78,6 @@ class an03_general_index_arroba extends a01_idx_list {
 
     // this.p('an03_GeneringIDX_LOAD    : ' + this.s.cs.idx[this.s.ms.main_lang] )
     // this.p('an03_GeneringIDX_LOADRU  : ' + this.s.cs.lang + ' ' + this.s.cs.idx[this.s.cs.lang] )
-
 
     // GENERATED_NX_INDEX
     // Falta el Lang
@@ -101,8 +95,6 @@ class an03_general_index_arroba extends a01_idx_list {
 								this.s.cs.position					 , // 04. Position
 								''						             , // 05. Page
 								this.s.cs.lang                       ) // 06. Lang
-
-
 
   }
 

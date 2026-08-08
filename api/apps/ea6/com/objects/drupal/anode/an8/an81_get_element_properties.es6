@@ -17,7 +17,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_savenode } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an8/an85_savenode.es6'))
+var { anode_savenode } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an8/an85_savenode.es6'))
 
 
 class anode_get_element_properties  extends anode_savenode{

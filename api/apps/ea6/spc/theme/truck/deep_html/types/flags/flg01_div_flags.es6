@@ -17,10 +17,8 @@
 //- build_data  	 : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { flg02_div_flags }			= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/flags/flg02_div_flags.es6'));
-
+const	{ svg_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { flg02_div_flags } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/flags/flg02_div_flags.es6'))
 
 class flg01_div_flags extends svg_style {
 
@@ -40,7 +38,6 @@ class flg01_div_flags extends svg_style {
 		this.class_name 							= "pop-container-L"
 	}
 
-
 	create_svg()
 	{
 		this.svg_path				= 	'r_img/flags/'
@@ -52,7 +49,6 @@ class flg01_div_flags extends svg_style {
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
-
 
 	reload_contents(flag_lang = "", flag_caption = "", active = "")
 	{

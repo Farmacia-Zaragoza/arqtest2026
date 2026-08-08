@@ -26,11 +26,10 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { cn01_base } 				= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'));
-		const { hdr02_div_header_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/header/hdr02_div.es6'));
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { svg_style } = require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { cn01_base } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'))
+		const { hdr02_div_header_dog } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/header/hdr02_div.es6'))
 
 class hdr01_header_dog extends html_style  {
 
@@ -90,7 +89,6 @@ class hdr01_header_dog extends html_style  {
 		this.content						+=	this.a_01.code
 	}
 
-
 	create_a_right(file_name 	= 'brqx_logo_transporteslucasrivera_2017_transparent_rotated.svg'	)
 	{
 
@@ -113,8 +111,6 @@ class hdr01_header_dog extends html_style  {
 		this.content						+=		this.a_01.code
 
 	}
-
-
 
     create_div()
     {

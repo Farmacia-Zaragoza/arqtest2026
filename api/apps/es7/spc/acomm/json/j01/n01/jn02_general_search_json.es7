@@ -14,7 +14,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { jn01_object_search_main } =   require(  path.join(JS_TYP7  , 'json/jsearch/j01/js01_search_main.es7' ))
+const  { jn01_object_search_main } =   require(  path.join(JS_TYP7  , 'json/jsearch/j01/js01_search_main.es7' ) )
 
 class jn02_general_search_json extends jn01_object_search_main {
 

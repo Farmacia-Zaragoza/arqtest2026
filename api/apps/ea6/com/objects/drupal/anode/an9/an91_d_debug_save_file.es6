@@ -27,7 +27,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { override } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an9/an92_override.es6'))	,
+var { override } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an9/an92_override.es6')),
 	fs 					= require('fs')																				;
 
 class anode_debug_save_file extends override{

@@ -26,9 +26,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class scr06_js_async_war extends getset  {
 
@@ -67,12 +66,10 @@ class scr06_js_async_war extends getset  {
 		this.code							+=	this.script_jquery.code
 	}
 
-
 	//[S_01] <script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script>
     create_runtime()
     {
 		//this.script_runtime.async				=  	'async'
-
 
 		let js_name							=	'runtime.js'
 
@@ -99,7 +96,6 @@ class scr06_js_async_war extends getset  {
 		this.code							+=	this.script_polyfills.code
 	}
 
-
 	//[S_02] <script type="text/javascript" src="polyfills.f80b7e6581d9215d226e.js"></script>
     create_polyfills()
     {
@@ -114,8 +110,6 @@ class scr06_js_async_war extends getset  {
 
 		this.code							+=	this.script_polyfills.code
 	}
-
-
 
 	//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
     create_main()
@@ -132,8 +126,6 @@ class scr06_js_async_war extends getset  {
 		this.code							+=	this.script_main.code
 
 	}
-
-
 
     build_data()
     {

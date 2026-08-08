@@ -24,12 +24,11 @@
 // - d-join_link-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-		const { cn01_base } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'));
-		CleanCSS 			= 	require(	'clean-css'															);
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
+		const { cn01_base } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'))
+		const CleanCSS = require(	'clean-css'															);
 
 class lnk05_css_inline_dog extends getset  {
 
@@ -85,7 +84,6 @@ class lnk05_css_inline_dog extends getset  {
 		this.link_code_path				=
 				this.thm.u.site_path + 'r_fassets/libs/' + bootstrap_path
 
-
 		this.lnk01.content				=	scpf.file_get_code(this.link_code_path)
 		this.lnk01.pcreate()
 
@@ -94,7 +92,6 @@ class lnk05_css_inline_dog extends getset  {
 		this.code						+=	this.lnk01.code
 
 	}
-
 
 	//[S_03] <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js" defer></script>
     create_flex()
@@ -105,10 +102,8 @@ class lnk05_css_inline_dog extends getset  {
 		this.link_code_path				=
 				this.thm.u.site_path + 'r_fassets/ilibs/css/' + css_name
 
-
 		this.lnk01.content				=	scpf.file_get_code(this.link_code_path)
 		this.lnk01.pcreate()
-
 
 		this.code						+=	this.lnk01.code
 
@@ -125,7 +120,6 @@ class lnk05_css_inline_dog extends getset  {
 		this.link_code_path				=
 				this.thm.u.site_path + 'r_fassets/libs/' + googleplus_path
 
-
 		this.lnk01.content				=	scpf.file_get_code(this.link_code_path)
 		this.lnk01.pcreate()
 
@@ -134,7 +128,6 @@ class lnk05_css_inline_dog extends getset  {
 		this.code						+=	this.lnk01.code
 
 	}
-
 
 	//[S_09] <script src="assets/js/main.js" defer></script>
 	create_main()
@@ -155,7 +148,6 @@ class lnk05_css_inline_dog extends getset  {
 		this.lnk01.pcreate()
 
 		// this.p ('CHECK_STYLE_03 ' + this.lnk01.code)
-
 
 		this.code						+=	this.lnk01.code
 
@@ -183,7 +175,6 @@ class lnk05_css_inline_dog extends getset  {
 		this.code						+=	this.lnk01.code
 
 	}
-
 
     build_data()
     {

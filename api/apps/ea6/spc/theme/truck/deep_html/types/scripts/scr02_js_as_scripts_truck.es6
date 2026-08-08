@@ -19,10 +19,8 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class scr02_js_as_scripts_truck extends getset  {
 
@@ -80,7 +78,6 @@ class scr02_js_as_scripts_truck extends getset  {
 		this.code						+=	this.script_jquery.code
 	}
 
-
 	//[S_03] <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js" defer></script>
     create_flexslider()
     {
@@ -96,7 +93,6 @@ class scr02_js_as_scripts_truck extends getset  {
 
 	}
 
-
 	//[S_09] <script src="assets/js/main.js" defer></script>
 	create_main()
     {
@@ -111,7 +107,6 @@ class scr02_js_as_scripts_truck extends getset  {
 
 		this.script_main.src				=
 			this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '.js'
-
 
 		this.script_main.pcreate()
 
@@ -134,7 +129,6 @@ class scr02_js_as_scripts_truck extends getset  {
 
 		this.script_product.src				=
 			this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '.js'
-
 
 		this.script_product.pcreate()
 

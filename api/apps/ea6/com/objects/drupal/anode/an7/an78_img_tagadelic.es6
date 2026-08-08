@@ -17,7 +17,7 @@
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
 
-var { anode_load_one_field } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an79_load_one_field.es6'))
+var { anode_load_one_field } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an7/an79_load_one_field.es6'))
 
 class anode_img_tagadelic extends anode_load_one_field {
 

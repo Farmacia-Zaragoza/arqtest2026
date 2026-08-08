@@ -16,9 +16,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn01_general_common_json } =   require(  path.join(JS_SPC7, 'acomm/json/j01/jn01_general_common_json.es7'));
-        const { objjson_site }            =   require(  path.join(JS_MET7, 'backup/backup/json/j00/jn10_objjson_site.es7'));
-        const { arrjson_site }            =   require(  path.join(JS_MET7, 'backup/backup/json/j00/jn11_arrjson_site.es7'));
+const   { jn01_general_common_json } =   require(path.join(JS_SPC7, 'acomm/json/j01/jn01_general_common_json.es7'))
+        const { objjson_site } = require(path.join(JS_MET7, 'backup/backup/json/j00/jn10_objjson_site.es7'))
+        const { arrjson_site } = require(path.join(JS_MET7, 'backup/backup/json/j00/jn11_arrjson_site.es7'))
 
 class jn02_process_site extends jn01_general_common_json {
 
@@ -39,7 +39,6 @@ class jn02_process_site extends jn01_general_common_json {
     this.a                  =  this.arroba.a
     this.arr                =  this.arroba.a.arr
 
-
     // Common for Any Json - Debe/Puede ser especifico del site
     this.j                  =  new objjson_site(this.s.cs.cache_path)
     this.k                  =  new arrjson_site(this.s.cs.cache_path)
@@ -47,12 +46,9 @@ class jn02_process_site extends jn01_general_common_json {
     let index               = 'main'
     let jindex              = 'j' + index
 
-
 	let cats                =  this.getarr(this.s.ms.main_lang, jindex)															;
 
   }
-
-
 
 }
 

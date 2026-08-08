@@ -26,8 +26,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_fssheet_process }  =   require(  path.join(JS_TYP7, 'arroba/anode/a07_fssheet/an79_process.es7'));
-       const { idx_pointers }       =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
+const  { anode_fssheet_process }  =   require(path.join(JS_TYP7, 'arroba/anode/a07_fssheet/an79_process.es7'))
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
 
 class anode_fsbranch_process extends anode_fssheet_process {
   constructor()
@@ -80,7 +80,6 @@ class anode_fsbranch_process extends anode_fssheet_process {
       {
     // Para cada uno hay que gestionar hijos
 
-
         this.arroba_attribs(idx, pos)
         this.arroba_attribs_main_lang(idx, pos)
 
@@ -93,7 +92,6 @@ class anode_fsbranch_process extends anode_fssheet_process {
 
         // if ( lang == "es" )
         //    this.p ('Processing Lang ES ' + this.s.item )
-
 
         if ( (this.value  != "" ) ||(this.photo != "")  )this.term_process()
 
@@ -141,9 +139,7 @@ class anode_fsbranch_process extends anode_fssheet_process {
 
             right_argument = true
 
-
           }
-
 
         } // End If
 

@@ -18,9 +18,8 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_down } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an6/an69_down.es6'));
-		scpf 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-
+const 	{ anode_down } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an6/an69_down.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
 
 class anode_code extends anode_down {
 
@@ -63,7 +62,6 @@ class anode_code extends anode_down {
 	  	this.loaded 					= 'no_generated'										
 	 	this.b.type_generated			= false													
 
-
 		// /mnt/ram/brqx/base/react/zcommon/apps/cache/nsu/node.dbrqx.com/nouser/truck/page/human/a/simple_front_page_es.sslpage
 		// this.p('CHECKING-CODE_EXIST-review ------------------------- ' )
 
@@ -80,8 +78,7 @@ class anode_code extends anode_down {
 				this.current_file_to_use		=	this.ram_alias_code_lang					
 
 			this.p('an68_File ' + this.current_file_to_use)
-			
-			
+
 			this.code  = scpf.get_file_code(this.current_file_to_use)
 			// 1. Si no hay que generarlo lo obtenemos Existe el codigo
    		 	// this.code = file_get_contents(this.current_file_to_use, true ) // READ_FILE
@@ -164,7 +161,6 @@ class anode_code extends anode_down {
 			if (this.b.site_lang)
 				this.current_file_to_use		=	this.ssd_code_lang
 
-
    		 	this.code = scpf.get_file_code(this.current_file_to_use) // READ_FILE 
    		  	this.loaded 				= 'generated'
 			this.b.type_generated	=	true													
@@ -190,7 +186,6 @@ class anode_code extends anode_down {
 			
 			if (this.b.site_lang)
 				this.current_file_to_use		=	this.load_from_disk_lang_code
-
 
    		 	this.code = scpf.get_file_code(this.current_file_to_use) // READ_FILE 
 

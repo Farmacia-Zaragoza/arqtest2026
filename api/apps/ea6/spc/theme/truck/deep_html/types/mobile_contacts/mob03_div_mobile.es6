@@ -15,11 +15,9 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { mob02_div_email }			= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/mobile_contacts/mob02_div_email.es6'));
-		const { mob02_div_phone }			= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/mobile_contacts/mob02_div_phone.es6'));
-
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { mob02_div_email } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/mobile_contacts/mob02_div_email.es6'))
+		const { mob02_div_phone } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/mobile_contacts/mob02_div_phone.es6'))
 
 class mob03_div_flex_mobile extends html_style {
 

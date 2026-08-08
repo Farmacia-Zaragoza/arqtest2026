@@ -29,12 +29,12 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { getset }             =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6'));
-    const { lnk02_css_link_social }      =   require(  path.join(JS_PYC7, 'social/social/html/h01/deep/styles/lnk02_css_link_social.es7'));
-    const { lnk03_css_minimized_social }    =   require(  path.join(JS_PYC7, 'social/social/html/h01/deep/styles/lnk03_css_minimized_social.es7'));
-    const { lnk04_css_inline_social }    =   require(  path.join(JS_PYC7, 'social/social/html/h01/deep/styles/lnk04_css_inline_social.es7'));
-    const { lnk05_css_inline_social }    =   require(  path.join(JS_PYC7, 'social/social/html/h01/deep/styles/lnk05_css_inline_multiple_social.es7'));
-    const { html_style }           =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+const   { getset }             =   require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+    const { lnk02_css_link_social } = require(path.join(JS_PYC7, 'social/social/html/h01/deep/styles/lnk02_css_link_social.es7'))
+    const { lnk03_css_minimized_social } = require(path.join(JS_PYC7, 'social/social/html/h01/deep/styles/lnk03_css_minimized_social.es7'))
+    const { lnk04_css_inline_social } = require(path.join(JS_PYC7, 'social/social/html/h01/deep/styles/lnk04_css_inline_social.es7'))
+    const { lnk05_css_inline_social } = require(path.join(JS_PYC7, 'social/social/html/h01/deep/styles/lnk05_css_inline_multiple_social.es7'))
+    const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class lnk01_link_social extends getset  {
 
@@ -83,7 +83,6 @@ class lnk01_link_social extends getset  {
     this.code            +=  this.link_favicon.code
   }
 
-
   build_data()
   {
 
@@ -116,11 +115,9 @@ class lnk01_link_social extends getset  {
         this.p('wrong_parameter ' + this.thm.s.ms.live_opt )
       }
 
-
     this.code                +=   this.link_to_load.code
 
     // this.p('CHECKING_OPTIONS [' +  this.thm.s.env + '] ' + this.thm.s.live_opt)
-
 
     // ok link [18-05-05]
     // this.p('lnk01_Code : >' + this.code )

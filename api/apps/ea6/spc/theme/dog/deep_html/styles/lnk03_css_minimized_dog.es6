@@ -19,10 +19,8 @@
 // - d-create_link_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class lnk03_css_minimized_dog extends getset  {
 
@@ -64,7 +62,6 @@ class lnk03_css_minimized_dog extends getset  {
 		this.code							+=	this.link_jquery.code
 	}
 
-
 	//L[05]  <link rel="stylesheet" href="libs/bootstrap4/css/bootstrap.min.css">
     create_bootstrap()
     {
@@ -84,7 +81,6 @@ class lnk03_css_minimized_dog extends getset  {
 
 		this.code								+=	this.link_bootstrap.code
 	}
-
 
 	//L[05]  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.min.css">
     create_flex()
@@ -126,7 +122,6 @@ class lnk03_css_minimized_dog extends getset  {
 		this.code								+=	this.link_googleplus.code
 	}
 
-
 	//L[06]  <link rel="stylesheet" href="css/main.css">
 	create_main()
     {
@@ -154,7 +149,6 @@ class lnk03_css_minimized_dog extends getset  {
 		this.code								+=	this.link_main.code
 
 	}
-
 
 	//L[06]  <link rel="stylesheet" href="css/product.css">
 	create_product()
@@ -193,7 +187,6 @@ class lnk03_css_minimized_dog extends getset  {
 		this.create_main()
 		this.create_flex()
 		this.create_googleplus()
-
 
 		// Pending [17-11-02]
 		// this.p('Code : >' + this.code )

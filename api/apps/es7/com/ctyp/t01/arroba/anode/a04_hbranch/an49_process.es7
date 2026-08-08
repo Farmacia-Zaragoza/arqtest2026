@@ -26,8 +26,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_hsheet_load }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a05_hsheet/an57_load.es7'));
-       const { idx_pointers }       =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                ));
+const  { anode_hsheet_load }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a05_hsheet/an57_load.es7' )  );
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                ) );
 
 class anode_hbranch_process extends anode_hsheet_load {
   constructor()
@@ -66,14 +66,12 @@ class anode_hbranch_process extends anode_hsheet_load {
 
     let cats = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
 
-
   // this.p('j06_Before-pos-bucle1 ' + lang + '  ' + cats.length )
     for (var pos in cats)
     {
       if (!this.b.found_breadcrumb)
       {
     // Para cada uno hay que gestionar hijos
-
 
         this.arroba_attribs(idx, pos)
 
@@ -89,7 +87,6 @@ class anode_hbranch_process extends anode_hsheet_load {
 
         // if ( lang == "es" )
         //    this.p ('Processing Lang ES ' + this.s.item )
-
 
         if ( (this.value  != "" ) ||(this.photo != "")  )this.term_process()
 
@@ -122,7 +119,6 @@ class anode_hbranch_process extends anode_hsheet_load {
                                            new_breadcrumb_lang         ,
                                            new_title                   )
 
-
         } // End If
 
       }
@@ -148,7 +144,6 @@ class anode_hbranch_process extends anode_hsheet_load {
       // PROCESAMIENTO OTRO IDIOMA
 
     // let cats_es = this.gethash_arr(lang, idx.jindex)
-
 
     for (var pos in cats)
     {

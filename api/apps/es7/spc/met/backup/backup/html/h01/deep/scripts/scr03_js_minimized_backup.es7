@@ -25,9 +25,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class scr03_js_minimized_backup extends getset  {
 
@@ -58,7 +57,6 @@ class scr03_js_minimized_backup extends getset  {
 
 		this.script_jquery.defer					=  	'defer'
 
-
 		this.script_jquery.src				=
 			this.thm.s.cs.http_domainbar + 'r_fassets/js/' + js_name
 
@@ -76,7 +74,6 @@ class scr03_js_minimized_backup extends getset  {
 		// It is already minimized
 		let js_name							=	'runtime_min.js'
 
-
 		this.script_01.src					=
 			this.thm.s.cs.http_domainbar + 'dev/' + js_name
 
@@ -92,7 +89,6 @@ class scr03_js_minimized_backup extends getset  {
 		this.script_01.async				=  	''
 
 		let js_name							=	'es2015-polyfills.js'
-
 
 		this.script_01.src					=
 			this.thm.s.cs.http_domainbar + 'dev/' + js_name
@@ -110,7 +106,6 @@ class scr03_js_minimized_backup extends getset  {
 
 		let js_name							=	'polyfills_min.js'
 
-
 		this.script_01.src					=
 			this.thm.s.cs.http_domainbar + 'dev/' + js_name
 
@@ -118,8 +113,6 @@ class scr03_js_minimized_backup extends getset  {
 
 		this.code							+=	this.script_01.code
 	}
-
-
 
 	//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
     create_main()
@@ -128,7 +121,6 @@ class scr03_js_minimized_backup extends getset  {
 
 		let js_name							=	'main_min.js'
 
-
 		this.script_01.src					=
 			this.thm.s.cs.http_domainbar + 'dev/' + js_name
 
@@ -136,7 +128,6 @@ class scr03_js_minimized_backup extends getset  {
 
 		this.code							+=	this.script_01.code
 	}
-
 
     build_data()
     {

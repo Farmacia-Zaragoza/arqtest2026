@@ -14,7 +14,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { struc_defs }    =   require(  path.join(JS_TYP7  , 'struc/s06_struc_defs.es7'  ))
+const   { struc_defs }    =   require(  path.join(JS_TYP7  , 'struc/s06_struc_defs.es7'  )  )
 
 class struc_setarr extends struc_defs {
   constructor() {

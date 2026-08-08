@@ -27,9 +27,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { arqkb_no_cache } =   require(  path.join(JS_ARQ7  , 'kb/arqkb/model/arqkb_nocache_launcher.es7'));
-        const { arqkb_cache }    =   require(  path.join(JS_ARQ7  , 'kb/arqkb/model/arqkb_cache_launcher.es7'));
-        const { printlog }       =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'                       ));
+const   { arqkb_no_cache } =   require(  path.join(JS_ARQ7  , 'kb/arqkb/model/arqkb_nocache_launcher.es7' ));
+        const { arqkb_cache } = require(  path.join(JS_ARQ7  , 'kb/arqkb/model/arqkb_cache_launcher.es7'));
+        const { printlog } = require(  path.join(JS_TYP7  , 'logs/printlog.es7'                       ));
 
 class arqkb extends printlog
 {

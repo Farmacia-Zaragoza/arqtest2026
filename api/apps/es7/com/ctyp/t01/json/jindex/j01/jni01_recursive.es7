@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                 =   require(  'fs'                                                                      ),
-       empty              =   require(  'is-empty'                                                ),
-       accents            =   require(  'remove-accents'                                          ),
-       const { idx_pointers }                =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jni02_json_recursive_call } =   require(  path.join(JS_TYP7, 'json/jindex/j01/jni02_recursive_call.es7'));
+const  fs                 =   require(  'fs'                                                                      );
+       const empty = require(  'is-empty'                                                );
+       const accents = require(  'remove-accents'                                          );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jni02_json_recursive_call } = require(path.join(JS_TYP7, 'json/jindex/j01/jni02_recursive_call.es7'))
 
 // Common Array
 class jni01_json_recursive extends jni02_json_recursive_call {
-
 
   constructor ()
   {
@@ -58,7 +57,6 @@ class jni01_json_recursive extends jni02_json_recursive_call {
       // a0001 .. a0050
       this.cat                 = cats[pos]
 
-
       // this.p('jni_INDEXXXX ' + this.cat)
 
       let next_level           = this.get_next_level(pos)
@@ -86,7 +84,6 @@ class jni01_json_recursive extends jni02_json_recursive_call {
       // Set Json attribs
       this.attribs(idx, pos)
 
-
       this.j.item     =   this.cat
       this.j.link     =   this.clink
       this.j.level    =   depth
@@ -104,7 +101,6 @@ class jni01_json_recursive extends jni02_json_recursive_call {
 
         // Array u Objeto
           let object_type     =  this.k.otype
-
 
           this.review_childrens_index_recursive(
             current_level          ,

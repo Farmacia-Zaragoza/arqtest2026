@@ -14,15 +14,12 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ fnode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		echo 					= 	require(	'node-echo'													),
-		const { cbool }				= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-		const { sec03_yaml_cookies } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/bs/sec03_yaml_cookies.es6'));
-
+const 	{ fnode } 				= 	require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const echo = require(	'node-echo'													);
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
+		const { sec03_yaml_cookies } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/bs/sec03_yaml_cookies.es6'))
 
 class fy01_cookies extends fnode {
-
 
     constructor (   u							=	''				, // 02. U object
 					stype						=	'cookies_yaml'	) // 08. Node Type
@@ -41,19 +38,15 @@ class fy01_cookies extends fnode {
 		this.s 									=	this.u.s
 		this.c 									=	this.u.c
 
-
 		this.b.copy (this.s.b)
-
 
     	this.type								=	'cookies_yaml_structure'					 // Type for structures
 		this.short_type							=	'COK-YML'
-
 
 		// String fnode / node / cica_recuerdo
 		this.ftype					 			=	'fnode'															// Fast node type
 		this.stype 								=	stype															// Node subtype
 		this.type_name							=	this.stype
-
 
 		this.b.type_user						=	false
 		this.b.type_common						=	true
@@ -61,7 +54,6 @@ class fy01_cookies extends fnode {
 		this.b.type_url							= 	false 										 //
 		this.b.type_translation					= 	false
 		this.b.type_translated					= 	true
-
 
 		this.b.type_have_taxonomy				=	false
 		this.b.type_have_code					=	true
@@ -76,14 +68,11 @@ class fy01_cookies extends fnode {
 		this.change								=
 						'/' + this.ftype + '/' + this.type + '/'
 
-
 		// LANG_DEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma
-
 
 		this.suffix								=	this.s.lang + '_' + this.stype
 		this.suffix_disk						=	this.suffix
 		this.suffix_lang						=	this.suffix
-
 
 		// Generated html code
    		this.suffix_code 						= 	this.suffix_lang + '.cyml'
@@ -93,7 +82,6 @@ class fy01_cookies extends fnode {
 
 		// let arrays_line = ''
 		// this.arr['types'] = arrays_line.split (' ')
-
 
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
@@ -125,13 +113,11 @@ class fy01_cookies extends fnode {
 		// print('</pre>')
     }
 
-
 	run_child_action()
 	{
 		// Convertimos description en un array de lines
 
 		let dim = ''
-
 
 		//this.p('RUN_CHILD YAML ')
 

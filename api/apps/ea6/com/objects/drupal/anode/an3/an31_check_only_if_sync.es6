@@ -16,7 +16,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_check_only_if_exist_properties } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an32_check_only_if_exist_properties.es6')		)
+var { anode_check_only_if_exist_properties } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an3/an32_check_only_if_exist_properties.es6'))
 
 class anode_check_only_if_sync extends anode_check_only_if_exist_properties {
             

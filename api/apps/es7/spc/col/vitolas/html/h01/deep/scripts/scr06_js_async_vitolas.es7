@@ -26,9 +26,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class scr06_js_async_vitolas extends getset  {
 
@@ -83,12 +82,10 @@ class scr06_js_async_vitolas extends getset  {
 		this.code							+=	this.script_jquery.code
 	}
 
-
 	//[S_01] <script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script>
     create_runtime()
     {
 		//this.script_runtime.async				=  	'async'
-
 
 		let js_name							=	'runtime.js'
 
@@ -114,7 +111,6 @@ class scr06_js_async_vitolas extends getset  {
 
 		this.code							+=	this.script_polyfills.code
 	}
-
 
 	//[S_03] <script type="text/javascript" src="scripts.24cc8b20c3f290309576.js"></script>
     create_scripts()
@@ -147,8 +143,6 @@ class scr06_js_async_vitolas extends getset  {
 		this.code							+=	this.script_main.code
 
 	}
-
-
 
     build_data()
     {

@@ -35,10 +35,9 @@ JS_ACO7: path.join(ROOT, 'api/apps/es7/spc/acomm/'		),
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			))
 
-
-const   { angular_no_cache } =   require(  path.join(JS_ACO7  , 'model/ang/nocache_launcher.es7') ),
-        const { angular_cache }    =   require(  path.join(JS_ACO7  , 'model/ang/cache_launcher.es7')   ),
-        const { printlog }         =   require(  path.join(JS_TYP7  , 'logs/printlog.es7')              );
+const   { angular_no_cache } =   require(  path.join(JS_ACO7  , 'model/ang/nocache_launcher.es7') );
+        const { angular_cache } = require(  path.join(JS_ACO7  , 'model/ang/cache_launcher.es7')   );
+        const { printlog } = require(  path.join(JS_TYP7  , 'logs/printlog.es7')              );
 
 class angular extends printlog
 {

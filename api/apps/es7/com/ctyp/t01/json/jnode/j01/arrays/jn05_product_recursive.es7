@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                       =   require(  'fs'                                                ),
-       empty                    =   require(  'is-empty'                          ),
-       accents                  =   require(  'remove-accents'                    ),
-       const { idx_pointers }   =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn06_commo_json_recursive_call_product } =   require(  path.join(JS_TYP7, 'json/jnode/j01/objects/jn06_recursive_call_product.es7'));
+const  fs                       =   require(  'fs'                                                );
+       const empty = require(  'is-empty'                          );
+       const accents = require(  'remove-accents'                    );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn06_commo_json_recursive_call_product } = require(path.join(JS_TYP7, 'json/jnode/j01/objects/jn06_recursive_call_product.es7'))
 
 // Common Array
 class jn05_array_product_recursive extends jn06_commo_json_recursive_call_product {
-
 
   constructor ()
   {
@@ -61,21 +60,17 @@ class jn05_array_product_recursive extends jn06_commo_json_recursive_call_produc
       // Set Json attribs
     this.attribs(idx, pos , index, depth)
 
-
     this.p ('j05_prod Position to check B' + pos  + ' Idx ' + idx.jindex )
 
     // llega 03 y debe ser 3
 
-
     // this.p ('j05_prod Position to check (must to show a0001) ' + pos +  ' Cat: ' + this.cat )
-
 
     let current_level        = this.j.index
 
       // add_json block
     this.rvlash_inner(current_level)
     this.j.index               = this.result
-
 
     // jn05_recursive HOVER articles/a24
     // jn05_recursive CLINK https://dog.vbrqx.com/fr/article/a24
@@ -90,7 +85,6 @@ class jn05_array_product_recursive extends jn06_commo_json_recursive_call_produc
 
     let object_type = this.k.otype
 
-
     if ( this.j.child == "yes" )
     {
 
@@ -104,7 +98,6 @@ class jn05_array_product_recursive extends jn06_commo_json_recursive_call_produc
         }
         else
           this.j.createspecificpart(object_type)
-
 
         this.review_childrens_recursive_product(
           current_level          ,
@@ -130,7 +123,6 @@ class jn05_array_product_recursive extends jn06_commo_json_recursive_call_produc
     }
     //if (last_element != pos)
     //   this.j.add_separator()
-
 
   }
 

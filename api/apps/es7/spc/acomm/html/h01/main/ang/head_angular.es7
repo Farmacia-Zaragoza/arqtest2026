@@ -22,10 +22,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { common_head } 	 = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_head.es7'));
-       const { links_angular } = require( path.join(JS_ACO7 , 'html/h01/main/ang/links_angular.es7'));
-       const { common_meta }   = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_meta.es7'   ));
-
+const  { common_head } 	 = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_head.es7'	 )  );
+       const { links_angular } = require( path.join(JS_ACO7 , 'html/h01/main/ang/links_angular.es7'  )  );
+       const { common_meta } = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_meta.es7'   )  );
 
 class head_angular extends common_head  {
 
@@ -47,7 +46,6 @@ class head_angular extends common_head  {
 
     this.content          +=  this.meta_01.code
   }
-
 
   create_links()
   {

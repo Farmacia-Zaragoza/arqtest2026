@@ -25,7 +25,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { scomm_struc }      =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7'      ))
+const  { scomm_struc }      =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7'      )    )
 
 // Multi positions Load from arroba
 class arroba_mcomm extends scomm_struc {

@@ -16,10 +16,10 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const	fs 				= 	require(  'fs'												),
-	    shtf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7'));
-	    satf  			= 	require(  path.join(JS_LIB7  , 'file/save_array_to_file.es7'));
-        const { cache_del }   =   require(  path.join(JS_TYP7  , 'cache/c05_cache_del.es7'      ));
+const	fs 				= 	require(  'fs'												);
+	    const shtf = require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7' 	) );
+	    const satf = require(  path.join(JS_LIB7  , 'file/save_array_to_file.es7' 	) );
+        const { cache_del } = require(  path.join(JS_TYP7  , 'cache/c05_cache_del.es7'      )    );
 
 class cache_save extends cache_del {
   constructor()
@@ -27,7 +27,6 @@ class cache_save extends cache_del {
     super()
     this.n                          =   "cache_save::"
   }
-
 
   // Save the cache files in disk ( pending)
   //---------------------------------------------------------------------------------------------
@@ -56,7 +55,6 @@ class cache_save extends cache_del {
 								this.tsb						)
 
   }
-
 
 }
 

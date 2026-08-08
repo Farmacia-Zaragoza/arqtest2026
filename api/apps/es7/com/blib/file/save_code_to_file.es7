@@ -21,13 +21,13 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   fs           =   require(  'fs'                                                  ),
-        path         =   require(  'path'                                                ),
-        os           =   require(  'os'                                                  ),
-        util         =   require(  'util'                                                ),
-        empty        =   require(  'is-empty'                            ),
-        trim         =   require(  'trim'                                ),
-        mkdirp       =   require(  'mkdirp'                              );
+const   fs           =   require(  'fs'                                                  );
+        const path = require(  'path'                                                );
+        const os = require(  'os'                                                  );
+        const util = require(  'util'                                                );
+        const empty = require(  'is-empty'                            );
+        const trim = require(  'trim'                                );
+        const mkdirp = require(  'mkdirp'                              );
 
 //---------------------------------------------------------------------------------------------
 function create_new_empty_file(full_file_name_int = '')
@@ -80,7 +80,6 @@ function create_file_with_code(full_file_name_int = '' , DATA)
         fs.chownSync(dir, 48 , 48 )
     }
 
-
     // Y si no existe
     if ( fs.existsSync(full_file_name_int) )
       // Truncamos uno existente
@@ -110,7 +109,6 @@ function create_update_full_filename(full_file_name_int = '', DATA)
 		    LNDATA= DATA + os.EOL ;
 			fs.appendFileSync(full_file_name_int,LNDATA)
 
-
 			let user = os.userInfo().username
 			if ( user == 'root ')
 			{
@@ -134,7 +132,6 @@ function create_update_full_filename_no_break_line(full_file_name_int = '', DATA
 		    // LNDATA= DATA + os.EOL
 			fs.appendFileSync(full_file_name_int,DATA)
 
-
 			let user = os.userInfo().username
 			if ( user == 'root ')
 			{
@@ -145,7 +142,6 @@ function create_update_full_filename_no_break_line(full_file_name_int = '', DATA
 		}
 	}
 }
-
 
 //---------------------------------------------------------------------------------------------
 function update_file_with_code(full_file_name_int = '' , DATA)
@@ -218,7 +214,6 @@ function update_file_with_code_no_break_line(full_file_name_int = '' , DATA)
   }
 }
 
-
 // Vamos a insertar aliases
 
 // Ok [19-12-12]
@@ -287,8 +282,6 @@ function file_get_code(full_path_file = '')
 	// return file_get_code_with_name (full_path_file)
 
 }
-
-
 
 //---------------------------------------------------------------------------------------------
 module.exports.create_new_empty_file  = create_new_empty_file

@@ -26,12 +26,11 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"									);
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-		const { cn01_base } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'));
-		CleanCSS 			= 	require(	'clean-css'															);
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
+		const { cn01_base } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'))
+		const CleanCSS = require(	'clean-css'															);
 
 class lnk04_css_inline_truck extends html_style  {
 
@@ -53,7 +52,6 @@ class lnk04_css_inline_truck extends html_style  {
 
     }
 
-
     create_normalize()
     {
 
@@ -62,11 +60,9 @@ class lnk04_css_inline_truck extends html_style  {
 		this.link_code_path				=
 				this.thm.u.site_path + 'r_fassets/libs/css/' + css_name
 
-
 		this.content		+=		scpf.file_get_code(this.link_code_path)  + " "
 
 	}
-
 
 	//[S_03] <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js" defer></script>
     create_flexslider()
@@ -77,11 +73,9 @@ class lnk04_css_inline_truck extends html_style  {
 		this.link_code_path				=
 				this.thm.u.site_path + 'r_fassets/libs/css/' + css_name
 
-
 		this.content		+=		scpf.file_get_code(this.link_code_path) + " "
 
 	}
-
 
 	//[S_09] <link src="assets/css/main.css" defer></link>
 	create_main()
@@ -99,7 +93,6 @@ class lnk04_css_inline_truck extends html_style  {
 		this.p('File_To_Load_Sty ' + this.link_code_path)
 
 		this.content		+=		scpf.file_get_code(this.link_code_path)
-
 
 		// this.p('CONTENT_LENGT ' + this.content.length)
 
@@ -121,7 +114,6 @@ class lnk04_css_inline_truck extends html_style  {
 		this.p('File_To_Load_Sty ' + this.link_code_path)
 
 		this.content		+=		scpf.file_get_code(this.link_code_path)
-
 
 		// this.p('CONTENT_LENGT ' + this.content.length)
 
@@ -157,7 +149,6 @@ class lnk04_css_inline_truck extends html_style  {
 	      transform: function () {} // defines a callback for fine-grained property optimization; defaults to no-op
   		})
 
-
 		// var result_ugli	= UglifyCSS.minify(this.final_link.content , { compress: false, mangle: true } )
 
 		var result = cleancss.minify(this.content);
@@ -166,14 +157,11 @@ class lnk04_css_inline_truck extends html_style  {
 
 		this.content = result.styles
 
-
 	}
-
 
     build_data()
     {
 	// To build content is needed to build block
-
 
  		this.charset			=	"utf-8"
 

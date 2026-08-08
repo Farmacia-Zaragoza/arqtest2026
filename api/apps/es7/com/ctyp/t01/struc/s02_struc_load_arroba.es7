@@ -34,8 +34,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { struc_load_folder }        =   require(  path.join(JS_TYP7  , 'struc/s03_struc_load_folder.es7'));
-		ffi	               =   require(	path.join(JS_LIB7 , 'file/file_load.es7'));
+const { struc_load_folder }        =   require(  path.join(JS_TYP7  , 'struc/s03_struc_load_folder.es7' ));
+		const ffi = require(	path.join(JS_LIB7 , 'file/file_load.es7') 	);
 
 class struc_load_arroba extends struc_load_folder {
   constructor()
@@ -58,7 +58,6 @@ class struc_load_arroba extends struc_load_folder {
     if (file != "")
   		this.file = file
 
-
   	if ( fs.existsSync(	this.file ) )
   	{
 	  // this.p('s01_struc_File ExisT ' + this.file)
@@ -69,7 +68,6 @@ class struc_load_arroba extends struc_load_folder {
       this.b.exist_arroba_structure = true
 
       this.contents = []
-
 
 	    var ff_arr = ''
 
@@ -99,7 +97,6 @@ class struc_load_arroba extends struc_load_folder {
       this.b.exist_arroba_structure = false
     }
   }
-
 
 }
 

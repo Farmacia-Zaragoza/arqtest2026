@@ -20,11 +20,10 @@
 
 var 	cons 					= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"									);
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { sec02_process_tit } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'));
-		const { sec02_process_sa1 } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/sa/sec02_process_sa1.es6'));
-		const { sec02_process_se1 } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se1.es6'));
-
+const 	{ html_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { sec02_process_tit } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'))
+		const { sec02_process_sa1 } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/sa/sec02_process_sa1.es6'))
+		const { sec02_process_se1 } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se1.es6'))
 
 class sec02_process_se_ext extends html_style {
 
@@ -63,14 +62,12 @@ class sec02_process_se_ext extends html_style {
 		this.elem_sa			= 	new sec02_process_sa1()
 	}
 
-
 	choose_process_se()
 	{
 		this.m		=	'choose_process_se_ext'
 
 		this.elem_se			= 	new sec02_process_se1()
 	}
-
 
 	reprocess(elem 		,level_sa = 0  	,level_se = 0  	, maxdim = 0) 
 	{
@@ -85,7 +82,6 @@ class sec02_process_se_ext extends html_style {
 		
 		this.process_se()
 	}
-
 
 	process_se()
 	{
@@ -169,10 +165,7 @@ class sec02_process_se_ext extends html_style {
 
 		}
 
-		 	
-
 	} // End Function
-
 
 } // End Class
 

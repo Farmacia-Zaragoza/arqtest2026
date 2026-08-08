@@ -12,13 +12,10 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ fnode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { cbool } 			= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-
+const 	{ fnode } 			= require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 class fn03_site_common extends fnode {
-
 
     constructor (   u							=	''						, // 02. U object
 					stype						=	'site_common'			) // 08. Node Type
@@ -32,20 +29,16 @@ class fn03_site_common extends fnode {
 		this.s									=	this.u.s				  // Site
 		this.c									=	this.u.c				  // Cache
 
-
 		this.b									= 	new cbool()
 		this.b.copy (this.s.b)												  // Boolean
 
-
     	this.type								=	'site_structure'		  // Type for structures
     	this.short_type							=	'SITE'
-
 
 		// String fnode / node / cica_recuerdo
 		this.ftype 								=	'fnode'					  // Fast node type
 		this.stype 								=	stype					  // Node subtype
 		this.type_name							=	this.stype
-
 
 		this.b.type_user						= 	false
 		this.b.type_human						= 	true 					  // if is dat file never will be erased on disk
@@ -59,13 +52,11 @@ class fn03_site_common extends fnode {
 		this.b.type_have_specific_properties	=	true
 		this.b.type_synced						=	true
 
-
 		// Type path adjustment
 
 		// fnode / file_structure
 		this.change							=
 						'/' + this.ftype + '/' + this.type + '/'
-
 
 		// LANG_URI_SSL_INDEPENDENT - El contenido sera el mismo para cualquier URL o IDIOMA o SEGURIDAD
 
@@ -74,7 +65,6 @@ class fn03_site_common extends fnode {
    		this.suffix_lang						= 	this.suffix
 
    		this.suffix_disk					 	= 	this.suffix
-
 
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
@@ -210,7 +200,6 @@ class fn03_site_common extends fnode {
 		this.arr['properties'].push( 			"allowed_langs"			 + this.sep  + this.s.allowed_langs			)
 
 		this.arr['properties'].push( 			"allowed_commands"		 + this.sep  + this.s.allowed_commands		)
-
 
 		this.arr['properties'].push( 			"drift_code"			 + this.sep  + this.s.drift					)
 

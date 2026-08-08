@@ -13,11 +13,10 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	{ fnode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { cbool }			= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+const	{ fnode } 			= 	require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 class fn31_cookies extends fnode {
-
 
     constructor (   u					=	''				, // 02. U object
 					page_position		=	''				, // 07. Position id
@@ -39,7 +38,6 @@ class fn31_cookies extends fnode {
 
     	this.type						=	'cookies_structure'					 // Type for structures
 		this.short_type					=	'COK'
-
 
 		// String fnode / node / cica_recuerdo
 		this.ftype 						=	'fnode'								// Fast node type
@@ -80,15 +78,12 @@ class fn31_cookies extends fnode {
 
    		this.suffix_code 							= 	this.suffix + '.' + this.u.ssl_page + '_cok'
 
-
 		// Links information url - title - target - extended TeXt
 		// let arrays_line = ''
 		// this.arr['types'] = arrays_line.split(' ')
 
-
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
-
 
 		// this.p('0C_COOKIES_LOAD ' + this.load_from_disk_path)
 

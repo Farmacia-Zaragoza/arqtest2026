@@ -28,9 +28,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { getset } = require(path.join(JS_BASE, 'com/objects/html/getset.es6'));
-	const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const { getset } = require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+	const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class lnk02_css_link_animals extends getset {
 
@@ -82,7 +81,6 @@ class lnk02_css_link_animals extends getset {
 
 		let url_awesome = 'https://use.fontawesome.com/releases/v5.7.2/css/'
 
-
 		this.link_01.href = url_awesome + css_name
 
 		// this.link_01.href				=
@@ -92,7 +90,6 @@ class lnk02_css_link_animals extends getset {
 
 		this.code += this.link_01.code
 	}
-
 
 	create_bootstrap() {
 		let css_name = 'bootstrap.min.css'
@@ -105,7 +102,6 @@ class lnk02_css_link_animals extends getset {
 				"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 
 		let url_bootstrap = 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/'
-
 
 		this.link_01.href =	url_bootstrap + css_name
 
@@ -125,7 +121,6 @@ class lnk02_css_link_animals extends getset {
 		// this.link_02.as = 'style'
 		this.link_02.rel = 'stylesheet'
 
-
 		let css_name = 'main.css'
 
 		let path_pmt = 'dev/static/css/'
@@ -138,7 +133,6 @@ class lnk02_css_link_animals extends getset {
 		this.code += this.link_02.code
 	}
 
-
 	create_theme() {
 
 		// this.link_jquery.rel			 	=  'preload'
@@ -148,7 +142,6 @@ class lnk02_css_link_animals extends getset {
 		this.link_02.type = 'text/css'
 		// this.link_02.as = 'style'
 		this.link_02.rel = 'stylesheet'
-
 
 		let css_name = 'theme.css'
 
@@ -162,7 +155,6 @@ class lnk02_css_link_animals extends getset {
 		this.code += this.link_02.code
 	}
 
-
 	build_data() {
 
 		this.create_bootstrap()
@@ -170,7 +162,6 @@ class lnk02_css_link_animals extends getset {
 		this.create_theme()
 
 		this.create_style()
-
 
 		// Ok [18-05-05]
 		// this.p('Code_lnk02_link : >' + this.code )

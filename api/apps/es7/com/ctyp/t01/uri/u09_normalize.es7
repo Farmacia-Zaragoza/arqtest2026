@@ -15,9 +15,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { uri_create } =   require(  path.join(JS_TYP7  , 'uri/u10_create.es7'));
-        numbers        =   require(  path.join(JS_LIB7  , 'number/numbers.es7'          ));
-
+const   { uri_create } =   require(  path.join(JS_TYP7  , 'uri/u10_create.es7'          )  );
+        const numbers = require(  path.join(JS_LIB7  , 'number/numbers.es7'          )   );
 
 class uri_normalize extends uri_create {
 
@@ -27,13 +26,11 @@ class uri_normalize extends uri_create {
     this.n               =   'uri_normalize::'
   }
 
-
   normalize_uris()
   {
     // TODAS LAS URIS VAN SI BARRAS - NI DELANTERAS NI TRASERAS
 
     var uri_arr_pre          =  Array()
-
 
     uri_arr_pre           =   this.uri.split('/')
 
@@ -42,7 +39,6 @@ class uri_normalize extends uri_create {
     let new_bars_uri        =  ''
 
     let lower_str          =  ''
-
 
     // this.p('u10_Before while ' + uri_arr_pre.length  )
     // Dos pasadas, en la primera normalizamos
@@ -65,7 +61,6 @@ class uri_normalize extends uri_create {
           lower_str      =    str_to_manage
 
           // Podemos gestionar los espacios
-
 
           this.p('u09_without_space_NUNCA_ENTRA ' + this.result)
 
@@ -100,7 +95,6 @@ class uri_normalize extends uri_create {
           	  // Ahora tenemnos a10
               // this.p('u08_Managinnnggg ' + str_to_manage )
 
-
              }
              else
              {
@@ -126,14 +120,12 @@ class uri_normalize extends uri_create {
       }
     }
 
-
     // this.p('u10_AFeter while ' + this.uri_arr.length  )
 
     this.count_uri_arr      =  this.uri_arr.length  - 1
     let cont           =   0
 
     // B. ALMACENAMIENTO - STORAGE
-
 
     for (var pos in this.uri_arr)
     {
@@ -154,7 +146,6 @@ class uri_normalize extends uri_create {
 
       if ( cont > 1  )
         this.uri_arr_lang_command.push(    str_to_manage  )
-
 
       if  ((cont   >=  0           )  &&
          (cont   <   this.count_uri_arr )  )
@@ -179,7 +170,6 @@ class uri_normalize extends uri_create {
 
     // Con slash
     this.slash_uri       =  this.uri
-
 
     // Works : El bucle de dos pasadas funcions en/enciclopedia
     this.p('Generated_Clean_Uri  : ' + this.uri)

@@ -29,8 +29,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_term_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a00_comm/an11_term_process.es7'));
-       const { idx_pointers }       =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                       ));
+const  { anode_term_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a00_comm/an11_term_process.es7'  )  );
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                       ));
 
 class anode_process extends anode_term_process {
   constructor()

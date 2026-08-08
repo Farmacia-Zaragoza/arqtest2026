@@ -9,9 +9,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ blkrobot } 		= 	require(	path.join(JS_TYP7   , 'robot/blkrobot.es7'));
-		sctf 				= 	require( 	path.join(JS_LIB7 	, 'file/save_code_to_file.es7'  ));
-
+const 	{ blkrobot } 		= 	require(	path.join(JS_TYP7   , 'robot/blkrobot.es7'	)							);
+		const sctf = require( 	path.join(JS_LIB7 	, 'file/save_code_to_file.es7'  ));
 
 class file_robot extends blkrobot {
 	constructor(  file_name        = ''   ,
@@ -91,12 +90,10 @@ class file_robot extends blkrobot {
         if (this.resolution == "RESOLUTION")
           this.p('file_robot_RESOLUTIONS B')
 
-
 		this.add_childrens(	this.child				)
 
 		this.clean()
 	}
-
 
 	createcommonpart(object_type)
 	{
@@ -106,7 +103,6 @@ class file_robot extends blkrobot {
 
         if (this.resolution == "RESOLUTION" )
           this.p('file_robot_RESOLUTIONS C')
-
 
 		this.add_childrens(	this.child				)
 
@@ -152,8 +148,6 @@ class file_robot extends blkrobot {
 				this.managecommontype(part)
 		}
 	}
-
-
 
 	managethemeelem(part) 	{	}
 	managebranchelem(part)	{	}

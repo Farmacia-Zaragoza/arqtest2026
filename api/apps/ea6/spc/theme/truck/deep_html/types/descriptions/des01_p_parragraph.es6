@@ -23,11 +23,9 @@
 //- reload_contents   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { mar01_div_marquee }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/marquee/mar01_div_marquee.es6'));
-
+const	{ svg_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { mar01_div_marquee } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/marquee/mar01_div_marquee.es6'))
 
 class des01_div_parragraph extends html_style {
 
@@ -82,7 +80,6 @@ class des01_div_parragraph extends html_style {
 		this.content += this.div_marquee.code
 	}
 
-
 	create_backward()
 	{
 		this.siv_arrow_up.content				=		''
@@ -112,7 +109,6 @@ class des01_div_parragraph extends html_style {
 		this.siv_arrow_down.svg_alt				=		''	 // Pending to compose
 		this.siv_arrow_down.svg_class			=		'arrow_down'
 
-
 		this.siv_arrow_down.create_svg_base()
 
 		this.siv_arrow_down.pcreate()
@@ -122,7 +118,6 @@ class des01_div_parragraph extends html_style {
 		this.siv_forward.pcreate()
 		this.content += this.siv_forward.code
 	}
-
 
 	reload_contents()
 	{

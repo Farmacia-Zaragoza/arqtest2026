@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_img_build_dimensions } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an77_img_build_dimensions.es6'))
+var { anode_img_build_dimensions } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an7/an77_img_build_dimensions.es6'))
 
 
 class anode_img_resolutions_array extends anode_img_build_dimensions {

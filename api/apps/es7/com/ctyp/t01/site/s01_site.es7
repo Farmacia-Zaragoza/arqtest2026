@@ -19,13 +19,12 @@
 // Site > PrintLog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { site_methods } =   require(  path.join(JS_TYP7  , 'site/s02_site_methods.es7'));
-        const { main_site }    =   require(  path.join(JS_TYP7  , 'site/s12_main_site.es7'));
-        const { cache_site }   =   require(  path.join(JS_TYP7  , 'site/s10_cache_site.es7'));
-        const { old_site }     =   require(  path.join(JS_TYP7  , 'site/s11_old_site.es7'      ));
+const   { site_methods } =   require(  path.join(JS_TYP7  , 'site/s02_site_methods.es7'  ) );
+        const { main_site } = require(  path.join(JS_TYP7  , 'site/s12_main_site.es7'     ) );
+        const { cache_site } = require(  path.join(JS_TYP7  , 'site/s10_cache_site.es7'    ) );
+        const { old_site } = require(  path.join(JS_TYP7  , 'site/s11_old_site.es7'      ) );
 
 class site extends site_methods {
   constructor(b = "" )
@@ -77,7 +76,6 @@ class site extends site_methods {
     this.ms.copy_jdata_content ( site_passed.ms)
   }
 
-
   // PENDIENTE
   //---------------------------------------------------------------------------------------------
   f_sync(sync_to = "", sync_from = "")
@@ -105,7 +103,6 @@ class site extends site_methods {
     this.ms.prod        =  this.pmt.prod
     this.ms.prodbranch  =  this.ms.branch +  '/' + this.ms.prod
 
-
     this.ms.site        =  this.pmt.site
 
     // Site to generate cached files
@@ -123,13 +120,11 @@ class site extends site_methods {
     // /brqx/struc/arq/drupal/arqdru/fnode/json_lang_structure/
     // /brqx/cache/arq/drupal/garldru/
 
-
     // Ruta para obtener la informacion (struc)
 	this.ms.contents_path      =	this.ms.base_path  + 'struc/'  + this.ms.prodbranch + '/' + this.ms.site + '/'
 
     // Ruta para almacenar los distintos objetos (cache)
 	this.ms.general_cache_path =	this.ms.base_path  + 'cache/'  + this.ms.prodbranch + '/'+ this.ms.cached_site + '/'
-
 
     // Las imagenes llegaran con r_img
     this.ms.images_path        = this.ms.base_path + 'base/html/designs/' +  this.ms.images_site + '/'
@@ -164,11 +159,9 @@ class site extends site_methods {
 
     this.ms.spec_positions     = this.pmt.spec_positions
 
-
     this.ms.max_articles       = this.pmt.max_articles
 
     // this.p('s01_langs ' + this.allowed_langs)
-
 
     // For develop environment site_inline is false
 

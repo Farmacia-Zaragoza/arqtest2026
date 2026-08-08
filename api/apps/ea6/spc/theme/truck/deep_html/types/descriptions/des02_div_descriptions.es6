@@ -15,9 +15,8 @@
 //- create_div_NN    	: Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { des01_div_parragraph }	= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/descriptions/des01_p_parragraph.es6'));
+const 	{ html_style } 				= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { des01_div_parragraph } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/descriptions/des01_p_parragraph.es6'))
 
 class des02_div_descriptions extends html_style {
 

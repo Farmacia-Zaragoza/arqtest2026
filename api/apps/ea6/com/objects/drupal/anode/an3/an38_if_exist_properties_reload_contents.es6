@@ -19,11 +19,11 @@
 
 var 	cons 								= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"							);
 
-const 	{ anode_prepare_array_properties } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an4/an40_prepare_array_properties.es6'));
-		ffi									= 	require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'));
-		fya									= 	require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_yaml.es6'));
-		echo 								= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'								),
-		fs 									= 	require(	'fs'																			);
+const 	{ anode_prepare_array_properties } 	= 	require(path.join(JS_BASE, 'com/objects/drupal/anode/an4/an40_prepare_array_properties.es6'))
+		const ffi = require(path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'))
+		const fya = require(path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_yaml.es6'))
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'								);
+		const fs = require(	'fs'																			);
 
 class anode_if_exist_properties_reload_contents extends anode_prepare_array_properties {
     
@@ -167,7 +167,6 @@ class anode_if_exist_properties_reload_contents extends anode_prepare_array_prop
 		return false 													 		
 	}
 
-	  
 }
 
 exports.anode_if_exist_properties_reload_contents = anode_if_exist_properties_reload_contents

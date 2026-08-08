@@ -13,10 +13,10 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ fnode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { cbool }			= require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-		const { in01_path } 		= require(	path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/in01_path.es6'));
-		empty 				= require(	'is_empty'								);
+const 	{ fnode } 			= require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
+		const { in01_path } = require(path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/in01_path.es6'))
+		const empty = require(	'is_empty'								);
 
 class fn02_images extends fnode {
 
@@ -34,16 +34,13 @@ class fn02_images extends fnode {
 		this.s 							=	this.u.s
 		this.c 							=	this.u.c
 
-
 		this.b.copy (this.s.b)
 
 		this.type									=	'image_structure'
 		this.short_type							=	'IMS'
 
-
 		this.stype 								=	'images'				 // Subtype
 		this.type_name							=	this.type + this.stype + '_' + this.name
-
 
 		this.b.type_user						=	false			 // Different content if is anonymous
 		this.b.type_common						=	true
@@ -57,7 +54,6 @@ class fn02_images extends fnode {
 		this.b.type_have_properties				=	true
 		this.b.type_have_specific_properties	=	true
 
-
 		//iml - IMage List
 		this.change				=	'/' + this.type + '/' + this.stype + '/'
 
@@ -66,7 +62,6 @@ class fn02_images extends fnode {
 		let uri_to_use		= 	this.u.slash_ideal_uri
 
 		if (this.u.slash_ideal_uri.substr(0,1) == '/' )		uri_to_use = this.u.slash_ideal_uri.substr(1)
-
 
 		// Tipo dependiente de SSL - Independiente del idioma y de la url
 
@@ -79,8 +74,6 @@ class fn02_images extends fnode {
 		// Is not used
    		this.suffix_code 			= 	this.suffix_lang + '.'  + 'code'
 
-
-
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
 
@@ -90,7 +83,6 @@ class fn02_images extends fnode {
 		// res : REsolution X substring  - ori : ORIentation
 
 		var arrays_line = 'rat res rex tit oim ori let qty img-type'
-
 
 		// this.p('Truck_arrays_line_' + arrays_line)
 
@@ -105,7 +97,6 @@ class fn02_images extends fnode {
 
        	// V SLIDER -- ratina1 desktop: ratina2 desktop: ratina1 mobile: ratina2 mobile:
 		// 		       512x682			 1024x1366		  317x423		  634x846
-
 
 		this.arr['let'][this.s.img_base_resolution]		=	'xx'
 
@@ -138,8 +129,6 @@ class fn02_images extends fnode {
 
 		// this.p('Content ' + this.arr['let']['0193x0145'])
 
-
-
 	    // resolutions_to_generate	= '1820x1002 1414x778 0910x0501 0707x0389'
 		let resolutions_to_generate			=
 				horizontal_slider_resolutions  + horizontal_carousel_resolutions
@@ -151,11 +140,9 @@ class fn02_images extends fnode {
 		var res_line	= ''
 		var img_line	= ''
 
-
 		// Inode to use it --. REVIEW LANGS
 		this.inode	=	new in01_path(	this.fnode								,
 										resolutions_to_generate					)
-
 
 		for (var pos in this.arr['res'] )
 		{
@@ -215,7 +202,6 @@ class fn02_images extends fnode {
 			else if ( prop 		== "v_node"				)		this.node_id						=	value
     }
 
-
 	load_child_details()
 	{
 		// this.p('RELOAD_IMAGE_STRUCTURE')
@@ -232,7 +218,6 @@ class fn02_images extends fnode {
 			// this.p('Before_foreach_IMAGES ' + this.fnode.arr['img'].length )
 
 			let cont = 0
-
 
 			// 139
 			// this.p('Images_Len ' + this.fnode.arr['img'].length )
@@ -263,7 +248,6 @@ class fn02_images extends fnode {
 
 				this.inode.reload_contents(img_name)
 
-
 				// this.p('[' + cont + '] '  + this.inode.arr['mty'].length )
 
 				// Image arrays : SIm  SUr SFo SFu RIm RUr RFo RFu
@@ -271,7 +255,6 @@ class fn02_images extends fnode {
 				for (var posi in this.inode.arr['mty'] )
 				{
 					var type			=	this.inode.arr['mty'][posi]
-
 
 					// this.p('Arr_Type ' + type)
 					for (var resolution in this.inode.arr[type])

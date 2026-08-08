@@ -5,12 +5,12 @@ const morgan = require('morgan');
 const path = require('path');
 
 const ROOT = process.cwd();
-global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global
-global.path = require('path');
+const global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global;
+const global.path = require('path');
 
-global.echo = (...args) => console.log(...args);
+const global.echo = (...args) => console.log(...args);
 
-global.removeAccents = (str) => {
+const global.removeAccents = (str) => {;
   if (typeof str !== 'string') return str;
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
@@ -27,8 +27,7 @@ if (typeof global.define !== 'function') {
 }
 
 // Checking long paths
-// const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7'));
-
+// const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
 
 //Constantes GLOBALES
 define("JS_MODEL", 	path.join(global.ROOT, 'api/apps/es7'										))
@@ -57,7 +56,6 @@ define("JS_TST7" , 	path.join(global.ROOT, 'api/apps/es7/spc/tst/'			))
 
 define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			))
 define("JS_AQD7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/drupal/'   ))
-
 
 define("JS_LIB7" , 	path.join(global.ROOT, 'api/apps/es7/com/blib/'			))
 

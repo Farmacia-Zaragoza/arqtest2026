@@ -20,11 +20,9 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { flg03_div_flags } 		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/flg03_div_flags.es6'));
-
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { svg_style } = require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { flg03_div_flags } = require(path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/flg03_div_flags.es6'))
 
 class sec01_section_lang_dog extends html_style{
 
@@ -50,7 +48,6 @@ class sec01_section_lang_dog extends html_style{
 
 	   	this.map							=		this.thm.map + 'section/'
 	   	this.thm.map						=		this.map
-
 
 		this.miv_01 						=		new svg_style('div')
 
@@ -94,7 +91,6 @@ class sec01_section_lang_dog extends html_style{
 		// file_get_svg_code
 	}
 
-
 	create_svg_right()
 	{
 
@@ -116,7 +112,6 @@ class sec01_section_lang_dog extends html_style{
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
-
 
     build_data()
     {

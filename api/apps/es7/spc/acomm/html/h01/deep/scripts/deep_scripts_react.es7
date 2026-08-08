@@ -25,7 +25,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { deep_scripts_base } =   require(  path.join(JS_ACO7 , 'html/h01/deep/scripts/deep_scripts_base.es7'  ))
+const  { deep_scripts_base } =   require(  path.join(JS_ACO7 , 'html/h01/deep/scripts/deep_scripts_base.es7'  ) )
 
 
 class deep_scripts_react extends deep_scripts_base {

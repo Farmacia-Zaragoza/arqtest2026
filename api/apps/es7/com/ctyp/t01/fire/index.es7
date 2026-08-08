@@ -16,7 +16,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { index_def }    =   require(  path.join(JS_TYP7  , 'fire/index_def.es7'              ))
+const   { index_def }    =   require(  path.join(JS_TYP7  , 'fire/index_def.es7'              )    )
 
 
 class index extends index_def

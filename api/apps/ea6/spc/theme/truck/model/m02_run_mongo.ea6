@@ -8,11 +8,10 @@
 
 var 		cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"						);
 
-const 		{ model_run_psimple } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/model/m03_run_psimple.ea6'));
-			const { pn04_mongo } 			= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn04_mongo.ea6'));
-			empty 					= 	require(	'is_empty'											),
-			echo 					= 	require(	'node-echo'											);
-
+const 		{ model_run_psimple } 	= 	require(path.join(JS_BASE, 'spc/theme/truck/model/m03_run_psimple.ea6'))
+			const { pn04_mongo } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn04_mongo.ea6'))
+			const empty = require(	'is_empty'											);
+			const echo = require(	'node-echo'											);
 
 // QUIERO HACER UN ENFOQUE DE PROMESAS GENERADORES Y SINCRONIAS
 
@@ -53,8 +52,6 @@ class model_run_mongo extends model_run_psimple
 
 //		}
 	}
-
-
 
 } // end Class
 

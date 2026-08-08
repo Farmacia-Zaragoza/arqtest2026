@@ -17,10 +17,10 @@
   
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	Solr 				= require(	'/brqx/base/react/zcommon/node_modules/solr-node'								),
-		echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'								),
-		qry 				= require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'							),						
-		const { foto_search } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/foto_search.es6'					);
+const	Solr 				= require(	'/brqx/base/react/zcommon/node_modules/solr-node'								);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'								);
+		const qry = require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'							);
+		const { foto_search } = require(	'/brqx/base/rcode/es6/com/objects/search/solr/foto_search.es6'					);
 
 class solr extends foto_search {
 
@@ -39,8 +39,7 @@ class solr extends foto_search {
 		this.foto_res						=	''													
 
 	// Strings
-	
-	
+
 	// Search properties
 	
 		this.query							=	''						
@@ -52,10 +51,7 @@ class solr extends foto_search {
 		this.incorrect_parms				= 	"false"					 	// Flag de parametros incorrectos
 		this.search_mode					=	'estrict'					// Modo de busqueda e interpretacion de parametros estricto
 
-            
-
 		this.solr_path						=	solr_path													
-
 
 		this.solr			= 	new Solr({
 									host: 'dbrqx.com'		, 
@@ -132,8 +128,6 @@ class solr extends foto_search {
 		if (offset == '') 	offset = 0  
 		if (limit  == '') 	limit = 10  
 
-		
-
 		this.run_query( this.query		, this.res		, offset , limit)	 // Run query in res object
 		this.run_query( this.foto_query	, this.foto_res	, offset , limit)	 // Run query in foto_res object
 		
@@ -152,7 +146,6 @@ class solr extends foto_search {
 		var strQuery = this.solr.query().q(query)
 
 		// how does he response look like?
-
 
 		var res = this.solr.search(strQuery, function (err, result) 
 		{
@@ -199,10 +192,6 @@ class solr extends foto_search {
 
 exports.solr		=	solr
 
-
 // var so = new solr('madrid')
 //so.run()
-
-
-
 

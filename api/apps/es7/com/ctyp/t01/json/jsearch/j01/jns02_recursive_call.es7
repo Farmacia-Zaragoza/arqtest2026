@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                   =   require(  'fs'                                                   ),
-       empty                =   require(  'is-empty'                             ),
-       accents              =   require(  'remove-accents'                       ),
-       const { idx_pointers }     =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn00_search_pf }   =   require(  path.join(JS_TYP7, 'json/jsearch/j00/jn00_search_pf.es7'));
+const  fs                   =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn00_search_pf } = require(path.join(JS_TYP7, 'json/jsearch/j00/jn00_search_pf.es7'))
 
 // Comm Object
 class jns02_json_recursive_call extends jn00_search_pf {
-
 
   constructor ()
   {
@@ -92,14 +91,12 @@ class jns02_json_recursive_call extends jn00_search_pf {
 
       // this.p('jn05_WE_ARE_HERE ' + this.cat)
 
-
       if ( this.j.child == "yes" )
       {
 
         // this.p ("jn05_s_ircsv : Have Childrens: " + this.j.item)
 
         let current_otype = this.j.otype
-
 
         this.review_childrens_search_recursive(
             current_level          ,
@@ -132,8 +129,6 @@ class jns02_json_recursive_call extends jn00_search_pf {
 
             var result = this.search_json_parragraph_from_file(pf_to_load )
 
-
-
             if (result)
             {
               // this.p ('jns02-qry  ' + this.u.slash_sub_query + ' Result ' + result)
@@ -164,7 +159,6 @@ class jns02_json_recursive_call extends jn00_search_pf {
           // this.j.add_separator()
 
           // this.p('jn05_to_load ' +  pf_to_load)
-
 
         }
       }

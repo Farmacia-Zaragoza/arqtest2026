@@ -13,14 +13,11 @@
 // - load_type_details       	: Load all drupal node details
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ pcomp } 				= require(	path.join(JS_BASE, 'com/objects/drupal/node/pcomp.es6'));
-		const { cbool } 				= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-
+const 	{ pcomp } 				= require(path.join(JS_BASE, 'com/objects/drupal/node/pcomp.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 // Para poder extender debe haberse incluido antes
 class cn03_scripts extends pcomp {
-
 
     constructor (	u	 				= 	''				,	// 01. Url Object
     				compo_zone			=	'left'			,	// 02. Zone
@@ -36,7 +33,6 @@ class cn03_scripts extends pcomp {
 		this.s 									=	this.u.s
 		this.c 									=	this.u.c
 
-
 		this.b.copy (this.s.b)
 
 		this.type								=	'composition'
@@ -45,7 +41,6 @@ class cn03_scripts extends pcomp {
 		this.compo_zone							= 	compo_zone
 		this.stype								=	stype 												 // Subtype - cica_image
 		this.type_name							=	this.stype
-
 
 		// NID what views need to load values
 
@@ -60,9 +55,7 @@ class cn03_scripts extends pcomp {
 		this.b.type_have_properties				=	true
 		this.b.type_have_specific_properties	=	true
 
-
 		this.change								=	'/' + this.type +	'/'
-
 
 		// ADDING IS_LANG AND ENV AND LIVE_OPT
 
@@ -71,9 +64,7 @@ class cn03_scripts extends pcomp {
 
 		this.suffix_lang						=	this.suffix + '_' + this.s.slan + "_" +	this.s.lang
 
-
    		this.suffix_code 						= 	this.suffix_lang + '_' + this.u.ssl_page + '_code' + '.compo'
-
 
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
@@ -104,7 +95,6 @@ class cn03_scripts extends pcomp {
             if 	   ( 	prop 		== "c_gen"				)		this.code_generated							=	value
 			else if ( 	prop 		== "b_type"				)		this.bock_type								=	value
 
-
 	}
 
 	// ----- OJO EXTERNAL METHOD - DONT CHANGE NAME
@@ -123,7 +113,6 @@ class cn03_scripts extends pcomp {
 			this.save_node()
 		else
 			this.save_node_disk()
-
 
 	}
 

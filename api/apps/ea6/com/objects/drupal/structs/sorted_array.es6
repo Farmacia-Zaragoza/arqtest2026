@@ -6,13 +6,11 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	echo 				= 	require(	'node-echo'		),
-		empty 				= 	require(	'is_empty'		),
-		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
-	  	os					= 	require(	'os'													),
-	  	fs 					= 	require(	'fs'													);
-
+const 	echo 				= 	require(	'node-echo'		);
+		const empty = require(	'is_empty'		);
+		const { printlog } = require(path.join(JS_BASE, 'com/objects/logs/printlog.es6'))
+	  	const os = require(	'os'													);
+	  	const fs = require(	'fs'													);
 
 class sorted_elem
 {
@@ -26,8 +24,6 @@ class sorted_elem
 		this.dim 	= 	0
   }
 }
-
-
 
 class sorted_array extends printlog
 {
@@ -93,7 +89,6 @@ class sorted_array extends printlog
 		this.dim = mayor_hijo_dim + 1
 	}
 
-
 	// Multiple dimension array print
   marr(dim = 0 ) {
 	// Check if is array
@@ -120,7 +115,6 @@ class sorted_array extends printlog
 		}
 
 	}
-
 
 }	// End Class
 

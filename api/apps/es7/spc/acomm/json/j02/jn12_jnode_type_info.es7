@@ -25,9 +25,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { jn60_info_json }     =   require(  path.join(JS_ACO7  , 'json/j01/n02/jn60_generate_info_json.es7'));
-       const { printlog }          =   require(  path.join(JS_TYP7   , 'logs/printlog.es7'                         ));
-
+const  { jn60_info_json }     =   require(  path.join(JS_ACO7  , 'json/j01/n02/jn60_generate_info_json.es7'  )  );
+       const { printlog } = require(  path.join(JS_TYP7   , 'logs/printlog.es7'                         )  );
 
 class jnode_type_info extends printlog {
   constructor(    arroba           )
@@ -47,7 +46,6 @@ class jnode_type_info extends printlog {
     // Print PATH for JSONS ( Comm - Spec )
     this.p('jn01_type_PageLOAD60 ' + this.s.cs.page_type + ' Pt ' + this.s.cs.cache_path)
 
-
     this.p('j01_jnotype_INFO_60  ' + this.s.ms.lang)
     this.jobject          =   new jn60_info_json(this.arroba)
 
@@ -58,7 +56,6 @@ class jnode_type_info extends printlog {
     // this.p('jn01_jntyp_RUNNING_RUNGEN')
     this.jobject.process_array_and_generate_json_file()
   }
-
 
 }
 

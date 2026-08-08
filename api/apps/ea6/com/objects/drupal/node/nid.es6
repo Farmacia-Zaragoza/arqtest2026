@@ -10,7 +10,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-var	{ printlog } 				= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'))	
+var	{ printlog } 				= 	require(path.join(JS_BASE, 'com/objects/logs/printlog.es6'))
 
 class nid  extends printlog {
 	constructor(folder_dat = "") 

@@ -17,9 +17,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { uri_sorts_kb }    =   require(  path.join(JS_TYP7 , 'uri/u10_sorts_kb.es7'));
-      sort		          =   require(  path.join(JS_LIB7   ,'sort/sort_unique.es7'	 ));
-
+const { uri_sorts_kb }    =   require(  path.join(JS_TYP7 , 'uri/u10_sorts_kb.es7' ) );
+      const sort = require(  path.join(JS_LIB7   ,'sort/sort_unique.es7'	 ) );
 
 class uri_sorts_uri extends uri_sorts_kb {
 
@@ -42,10 +41,8 @@ class uri_sorts_uri extends uri_sorts_kb {
     let new_sash_uri         =  ''
     let new_bars_uri         =  ''
 
-
     let new_dash_args        =  ''
     let new_sash_args        =  ''
-
 
     let cont             =  0
 
@@ -65,7 +62,6 @@ class uri_sorts_uri extends uri_sorts_kb {
       new_dash_uri  +=   str_to_manage
       new_sash_uri  +=   str_to_manage
       new_bars_uri  +=   str_to_manage
-
 
       if ((pos   >=  0           )  &&
          (pos   <   count_no_repe )  )
@@ -130,7 +126,6 @@ class uri_sorts_uri extends uri_sorts_kb {
       // this.p('u09_sorts_slashqry ' +  encodeURIComponent(this.dash_sub_query) )
     }
 
-
     this.page_args               =  new_sash_args
     this.page_iargs              =  new_sash_args
 
@@ -165,7 +160,6 @@ class uri_sorts_uri extends uri_sorts_kb {
         this.p('u09_nuevo_caso ' + this.start_position_array)
 
     }
-
 
     this.slash_ideal_uri        =   slash_ideal_uri
     this.dash_ideal_uri         =   dash_ideal_uri

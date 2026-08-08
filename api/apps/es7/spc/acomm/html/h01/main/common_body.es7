@@ -30,7 +30,6 @@
 //        view: 'list'
 //      }
 
-
 //  </script>
 
 // ------------------------------------------------------------------------------------
@@ -44,9 +43,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE 	, 	'com/objects/html/html_style.es6'));
-		const { ifnojs }	 					= 	require(	path.join(JS_BASE 	, 	'com/objects/html/ifnojs.es6'			));
-
+const 	{ html_style } 					= 	require(	path.join(JS_BASE 	, 	'com/objects/html/html_style.es6'	)			);
+		const { ifnojs } = require(	path.join(JS_BASE 	, 	'com/objects/html/ifnojs.es6'			)		);
 
 class common_body extends html_style  {
 
@@ -58,11 +56,9 @@ class common_body extends html_style  {
 		this.n							=	'common_body::'
         this.tag_type     				= 	'body'
 
-
 		this.container					=	container
 		this.s                          =   container.s
 		this.u                          =   container.u
-
 
 		// Tenemos que tener como un mapa del site
 		this.container.map					= 	'body/'
@@ -88,7 +84,6 @@ class common_body extends html_style  {
 
         //this.p('bdy_01_results ' + this.result_comm  + '  ' +  this.result_spec + '  ' +  this.result_cont )
 
-
         // Sera false si hay que generar jsons
         if (this.container.jsons_ok)
 			this.build_data_ok()
@@ -96,7 +91,6 @@ class common_body extends html_style  {
 			this.build_json_wrongs()
 
     }
-
 
 	//   <app-root></app-root>
 	create_approot()
@@ -108,10 +102,6 @@ class common_body extends html_style  {
 
 		this.content					+=		this.approot.code
 	}
-
-
-
-
 
     // <!--[if lt IE 8]>
     //        <p class="arqdruupgrade">You are using an <strong>outdated</strong> arqdru. Please <a href="http://browsehappy.com/">upgrade your arqdru</a> to improve your experience.</p>

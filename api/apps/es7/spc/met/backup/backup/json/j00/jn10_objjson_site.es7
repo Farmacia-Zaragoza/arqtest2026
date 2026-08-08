@@ -7,7 +7,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ typejson_object }	= 	require(	path.join(JS_OBJ, 'json/typejson_object.es6') )
+const 	{ typejson_object }	= 	require(path.join(JS_OBJ, 'json/typejson_object.es6'))
 
 class objjson_site extends typejson_object {
 	constructor(file_name = '')

@@ -14,14 +14,13 @@
 
 var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
-const 	{ anode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'));
-		const { cbool } 			= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));					
-		creff 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'));
-		scpf 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
-		fs 					= require(	'fs'																					),
-		StreamZip 			= require(	path.join(NODE_MOD, 'node-stream-zip'));
-		empty 				= require(	path.join(NODE_MOD, 'is_empty'));
-
+const 	{ anode } 			= require(path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
+		const creff = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
+		const fs = require(	'fs'																					);
+		const StreamZip = require(path.join(NODE_MOD, 'node-stream-zip'))
+		const empty = require(path.join(NODE_MOD, 'is_empty'))
 
 // Para poder extender debe haberse incluido antes
 class pn02_fast extends anode {
@@ -74,15 +73,13 @@ class pn02_fast extends anode {
 		
 		if (this.u.slash_ideal_uri.substr(0,1) == '/' )		
 			uri_to_use = this.u.slash_ideal_uri.substr(1)   
-		
-		
+
 		this.suffix					=	uri_to_use + '_' + this.stype	+ "_" + this.s.env	+ "_" + this.s.live_opt						
 		this.suffix_disk			=	this.suffix													
 		this.suffix_lang 			= 	this.suffix + '_' + this.s.slan + "_" + this.s.lang 
 
    		this.suffix_code 			= 	this.suffix_lang + '.' + this.u.ssl_page + 'page'	
-	
-		
+
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()													
 
@@ -128,8 +125,7 @@ class pn02_fast extends anode {
 				
 				if (this.b.site_multilang)
 					this.current_file_to_use 	= 	this.ram_alias_code_lang							
-				
-					
+
 		        if ( 	!empty(this.current_file_to_use)				 		&& 
 					    fs.existsSync(this.current_file_to_use) 				&&   
 		 				fs.lstatSync(this.current_file_to_use).isFile()			&& 
@@ -155,7 +151,6 @@ class pn02_fast extends anode {
 
 					// END Streams
 
-		   		  	
 		   		  	// this.code = 'FAST2_CODE'												
 		   		  	// If comment allways will generate page
 
@@ -178,7 +173,6 @@ class pn02_fast extends anode {
 		} // End if Download		
     }
 
-  
 }
 
 exports.pn02_fast = pn02_fast

@@ -21,10 +21,9 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { mar01_div_marquee }		= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/marquee/mar01_div_marquee.es6'));
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { svg_style } = require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { mar01_div_marquee } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/marquee/mar01_div_marquee.es6'))
 
 class mai02_div_mail_address_flex extends html_style {
 
@@ -55,7 +54,6 @@ class mai02_div_mail_address_flex extends html_style {
 
 		this.build_data()
 	}
-
 
 	create_marquee() {
 
@@ -97,7 +95,6 @@ class mai02_div_mail_address_flex extends html_style {
 
 		this.siv_forward.svg_path				= 		'r_img/arrows/'
 		this.siv_forward.svg_name 				= 		"arrow_right.svg"
-
 
 		this.siv_forward.svg_alt				=		''	 // Pending to compose
 

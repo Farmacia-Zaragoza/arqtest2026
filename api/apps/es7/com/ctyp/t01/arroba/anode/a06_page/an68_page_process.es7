@@ -14,9 +14,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-
-const  { anode_run_index_list } =   require(  path.join(JS_TYP7  , 'arroba/anode/a07_index_list/an72_run.es7'));
-       const { idx_pointers }       =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'              ));
+const  { anode_run_index_list } =   require(  path.join(JS_TYP7  , 'arroba/anode/a07_index_list/an72_run.es7'  ) );
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'              )   );
 
 class anode_page_process extends anode_run_index_list {
   constructor()
@@ -25,7 +24,6 @@ class anode_page_process extends anode_run_index_list {
     this.n                        = "anode_page_process::"
 
   }
-
 
   //---------------------------------------------------------------------------------------------
   // Will process only one page
@@ -36,7 +34,6 @@ class anode_page_process extends anode_run_index_list {
 
     this.m               =    'page_process'
 
-
     this.rvlash( current_subpath )
 	let index         = this.result
 
@@ -44,7 +41,6 @@ class anode_page_process extends anode_run_index_list {
 	// this.p('an10_Proc Lang : ' + lang + ' Path ' +  current_subpath + ' Ind ' + index)
 
     var idx = new idx_pointers(index)
-
 
     pos = this.s.cs.page
 
@@ -63,7 +59,6 @@ class anode_page_process extends anode_run_index_list {
     this.s.cs.founded_type    = this.ntype
 
     // this.p('an10_BEFORE CHILD' + this.item + ' + ' + this.child )
-
 
     if (this.item != "")
     {

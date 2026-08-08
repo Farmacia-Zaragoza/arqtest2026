@@ -18,14 +18,13 @@
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-const 	fs 					= require(	'fs'																				),
-		path 				= require(	'path'																				),
-		os 					= require(	'os'																				),
-		empty 				= require(	'is-empty'									),
-		trim 				= require(	'trim'										),
-		mkdirp 				= require(	'mkdirp'										),
-		creff 				= require( 	'com/libs/file/full_path/level_02/create_full_filename.es6'	);
-
+const 	fs 					= require(	'fs'																				);
+		const path = require(	'path'																				);
+		const os = require(	'os'																				);
+		const empty = require(	'is-empty'									);
+		const trim = require(	'trim'										);
+		const mkdirp = require(	'mkdirp'										);
+		const creff = require( 	'com/libs/file/full_path/level_02/create_full_filename.es6'	);
 
 // Ok [17-10-22]
 function save_update_properties_to_file(fich = '' , arr_properties = '')
@@ -40,7 +39,6 @@ function save_properties_to_file(fich = '' , arr_properties = '')
 		if (!empty(fich))
 			creff.create_full_filename_with_array(	fich 		, arr_properties	)
 }
-
 
 // Ok [17-10-22]
 function save_code_to_file(fich = '', code = '')
@@ -80,8 +78,6 @@ function save_binary_code_to_file(fich = '', code = '')
 
 	fs.writeFileSync(fich, code)
 }
-
-
 
 // Pendiente de entender contexto
 function save_properties_to_file_with_check(fich = '' , file_path = '', arr_properties = '')
@@ -154,8 +150,6 @@ function file_get_code_with_name(full_path_file = '')
 	svg_name		+= file_get_code_clean (full_path_file)
 	return svg_name
 }
-
-
 
 module.exports.save_properties_to_file 			= save_properties_to_file
 module.exports.save_update_properties_to_file	= save_update_properties_to_file

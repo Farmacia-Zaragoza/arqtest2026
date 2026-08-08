@@ -18,15 +18,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                         =   require(  'fs'                                                   ),
-       empty                      =   require(  'is-empty'                             ),
-       accents                    =   require(  'remove-accents'                       ),
-       const { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn06_comma_json_rand } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn06_rand.es7'));
+const  fs                         =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn06_comma_json_rand } = require(path.join(JS_TYP7, 'json/jnode/j01/arrays/jn06_rand.es7'))
 
 // Comm Object
 class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
-
 
   constructor ()
   {
@@ -55,7 +54,6 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
     //this.p('jn06 rc ' + this.arr['en']['j020v020']['1'] )
     //this.p('jn06_rc ' + last_element)
 
-
     for (var pos in cats)
     {
        // Se pone a false siempre pues hay casos que no queremos generar
@@ -73,7 +71,6 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
       // Parametros recursividad
       let current_level        = this.j.index
       let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.j.item).toLowerCase()
-
 
       // this.p ('jn06_rcp ' + pos + '  ' + current_level + ' - ' +  this.j.item )
 
@@ -125,7 +122,6 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
             depth +1            ,
             this.j.otype          )
 
-
         if (parent_otype == "array")           this.k.end_pull(current_otype)
         else          this.j.end_pull(current_otype)
 
@@ -141,7 +137,6 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
 
           // Si se genera un tipo interno y el tipo generado se gestiona internamente
       }
-
 
       // this.p('jn06_rcsv - Anchor page name _DGG ' + this.s.cs.page_name + ' J ' + this.j.item + '-')
       // this.p('jn06_rcsv - pageseps _DGG ' + this.s.cs.pagesep_list)
@@ -165,7 +160,6 @@ class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {
          this.b.type_generated = true
 
       }
-
 
       if ( (--iterations  >= 0) && (this.b.type_generated) )
         this.j.add_separator()

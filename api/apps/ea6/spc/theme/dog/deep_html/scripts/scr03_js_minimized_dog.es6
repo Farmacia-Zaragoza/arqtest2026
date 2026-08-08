@@ -24,10 +24,8 @@
 // - d-create_script_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class scr03_js_minimized_dog extends getset  {
 
@@ -82,7 +80,6 @@ class scr03_js_minimized_dog extends getset  {
 
 		this.code							+=	this.script_01.code
 	}
-
 
 	//[S_03] <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
     create_popper()
@@ -205,7 +202,6 @@ class scr03_js_minimized_dog extends getset  {
 		this.code							+=	this.script_01.code
 	}
 
-
 	//[S_10] <script src="assets/js/product.js" defer></script>
 	create_product()
     {
@@ -219,7 +215,6 @@ class scr03_js_minimized_dog extends getset  {
 
 		this.script_01.src				=
 				this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '_min.js'
-
 
 		this.script_01.pcreate()
 
@@ -240,7 +235,6 @@ class scr03_js_minimized_dog extends getset  {
 
 		this.script_01.src				=
 				this.thm.u.http_domainbar + 'r_assets/js/' + js_name + '_min.js'
-
 
 		this.script_01.pcreate()
 

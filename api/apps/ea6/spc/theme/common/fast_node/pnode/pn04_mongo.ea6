@@ -10,17 +10,16 @@
 
 var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const 	{ anode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'));
-		const { cbool } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));					
-		const { pn02_fast } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn02_fast.es6'));
-		const { pn01_simple } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'));
- 		const { idSchema }		= 	require(	path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch'));
-		run					= 	require(	path.join(JS_BASE, 'com/pms/mongo/save_code_mongo_promise.ea6'));
-		fs 					= 	require(	'fs'																					),
-		mongoose 			= 	require(	'/brqx/base/react/zcommon/node_modules/mongoose'										),
-		echo 				= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'										),
-		empty 				= 	require(	'/brqx/base/react/zcommon/node_modules/is_empty'										);
-
+const 	{ anode } 			= 	require(path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
+		const { pn02_fast } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn02_fast.es6'))
+		const { pn01_simple } = require(path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'))
+ 		const { idSchema } = require(path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch'))
+		const run = require(path.join(JS_BASE, 'com/pms/mongo/save_code_mongo_promise.ea6'))
+		const fs = require(	'fs'																					);
+		const mongoose = require(	'/brqx/base/react/zcommon/node_modules/mongoose'										);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'										);
+		const empty = require(	'/brqx/base/react/zcommon/node_modules/is_empty'										);
 
 // Para poder extender debe haberse incluido antes
 class pn04_mongo extends anode {
@@ -87,7 +86,6 @@ class pn04_mongo extends anode {
 
 			this.pages = await this.u.sch.find().byPageId(this.u.page_string ) 
 
-
 			// Gestionamos el estado de la consulta
 			await this.manage_status()		   		  									
 
@@ -96,7 +94,6 @@ class pn04_mongo extends anode {
 //		} // End if 		
     }
 	// --------------------------- [01] ASYNC_RUN [END] -----------------------------
-
 
 	// --------------------------- [02] MANAGE_STATUS [STA] ------------------------- 
 	async manage_status()
@@ -115,7 +112,6 @@ class pn04_mongo extends anode {
 //									 this.u.page_command 	+ '  ' +
 //			 						 this.u.dash_uri  + ' LEN ' + this.pages.code.length)		
 
-	
 			this.b.type_generated	=	true		
 			
 			this.code = this.pages.code
@@ -144,7 +140,6 @@ class pn04_mongo extends anode {
 
 		// this.p("PNO_STATUS_" + this.pnode.status)
 
-
 		if ( !empty(this.pnode)					&& 
 			 this.pnode.b.type_generated			)		
 		{
@@ -154,7 +149,6 @@ class pn04_mongo extends anode {
 			// echo("FPC" )
 
 			this.code = this.pnode.code
-
 
 			this.p("CACHEDISK_" + this.pnode.code.length)
 
@@ -188,7 +182,6 @@ class pn04_mongo extends anode {
 				// echo("NOCACHE_" + this.pnode.code)
 				// echo(this.pnode.code)
 
-
 				var t = this
 				var data_and_error = ''
 	
@@ -199,8 +192,7 @@ class pn04_mongo extends anode {
 
 			}
 		}
-		
-		
+
 	}
 
 	// --------------------------- SAVE_CODE_TO_MONGO ---------------------------
@@ -240,7 +232,6 @@ class pn04_mongo extends anode {
 			// this.p('PAGE ' + this.u.page_name			)
 			// this.p('ID ' + this.u.page_string			)
 
-
 			//  01   02        03     04     05      06      07      08       09
 			// _id  site - is_lang - domain - lang - ssl - robot - command - page
 		
@@ -258,7 +249,6 @@ class pn04_mongo extends anode {
 									 	   page : this.u.page_name   		,	// 09
 									 	   code : this.code 				});
 
-			
 			htmPage.save(function (err) {
 		  	if (!err) console.log('Success!');
 		  	else
@@ -274,7 +264,6 @@ class pn04_mongo extends anode {
 		}		 	
 	}
 
-
 	// ------------------------- ASYNC DISCONNECT [STA] ------------------------- 	
 	async disconnect() 
 	{
@@ -282,7 +271,6 @@ class pn04_mongo extends anode {
  		mongoose.disconnect()
 	}
 
-  
 }
 
 exports.pn04_mongo = pn04_mongo

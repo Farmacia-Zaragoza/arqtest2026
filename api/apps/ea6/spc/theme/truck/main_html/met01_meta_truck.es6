@@ -20,12 +20,10 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ getset } 			= require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+const 	{ getset } 			= require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class met01_meta_truck extends getset  {
-
 
     constructor (     thm													)
     {
@@ -33,8 +31,6 @@ class met01_meta_truck extends getset  {
 		super()
 
 		this.n								=	'met01_truck::'
-
-
 
 		this.thm							=	thm
 
@@ -50,7 +46,6 @@ class met01_meta_truck extends getset  {
 		this.build_data()
     }
 
-
 	//[M_01] <meta charset="utf-8">
     create_meta_charset()
     {
@@ -58,7 +53,6 @@ class met01_meta_truck extends getset  {
 		this.meta_charset.pcreate()
 		this.code							+=	this.meta_charset.code
 	}
-
 
 	//[M_02] <meta http-equiv="X-UA-Compatible" content="IE=edge">
     create_meta_equiv()

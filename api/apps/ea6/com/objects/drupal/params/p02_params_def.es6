@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------------------
 
 
-const 	{ printlog } 			= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6')				)
+const 	{ printlog } 			= 	require(path.join(JS_BASE, 'com/objects/logs/printlog.es6'))
 
 class params_def extends printlog {
 	constructor() {

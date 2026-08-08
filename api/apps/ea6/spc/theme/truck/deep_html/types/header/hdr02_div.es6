@@ -24,9 +24,8 @@
 // - build_data   	  : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+const	{ svg_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class hdr02_div_header_truck extends html_style{
 
@@ -38,7 +37,6 @@ class hdr02_div_header_truck extends html_style{
 		this.n								= '	hdr02_header_truck::'
 
 		this.span_01						=	''
-
 
 		this.link_title						=	''
 
@@ -59,7 +57,6 @@ class hdr02_div_header_truck extends html_style{
 		this.build_data()
     }
 
-
 	create_svg()
 	{
 
@@ -69,7 +66,6 @@ class hdr02_div_header_truck extends html_style{
 
 		this.span_02.svg_path				= 	'r_img/symbols/'
 		this.span_02.svg_name 				= 	"plus_icon.svg"
-
 
 		this.span_02.svg_alt				=	''	 // Pending to compose
 

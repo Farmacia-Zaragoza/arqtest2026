@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                         =   require(  'fs'                                                   ),
-       empty                      =   require(  'is-empty'                             ),
-       accents                    =   require(  'remove-accents'                       ),
-       const { idx_pointers }       =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn02_object_search_inner } =   require(  path.join(JS_TYP7, 'json/jsearch/j01/js02_search_inner.es7'));
+const  fs                         =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn02_object_search_inner } = require(path.join(JS_TYP7, 'json/jsearch/j01/js02_search_inner.es7'))
 
 // Comm Object
 class jn01_object_search_main extends jn02_object_search_inner {
-
 
   constructor ()
   {
@@ -51,7 +50,6 @@ class jn01_object_search_main extends jn02_object_search_inner {
     this.j.clean()
     this.k.clean()
 
-
     // Needed to have articles name
 
     this.j.item       = 'articles'
@@ -75,7 +73,6 @@ class jn01_object_search_main extends jn02_object_search_inner {
 
     this.j.index   = this.get_next_level(position)
 
-
     var enbreadcrumb = ''
     //       this.j.index             =   this.index
 
@@ -98,7 +95,6 @@ class jn01_object_search_main extends jn02_object_search_inner {
           // articles
           // this.p ("jn01_Procesando Hijo " + this.cat )
 
-
           this.j.createspecificpart(object_type)
 
           // Escribir la parte
@@ -113,7 +109,6 @@ class jn01_object_search_main extends jn02_object_search_inner {
           this.j.end_corch(object_type)
 
       }
-
 
   }
 

@@ -14,23 +14,20 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                        =   require(  'fs'                                                   ),
-       empty                     =   require(  'is-empty'                             ),
-       accents                   =   require(  'remove-accents'                       ),
-       path               =   require(  'path'                                                 ),
-       const { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn15_array_hiera_product }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/hiera/jn15_hiera_product.es7'));
-
+const  fs                        =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const path = require(  'path'                                                 );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn15_array_hiera_product } = require(path.join(JS_TYP7, 'json/jnode/j01/hiera/jn15_hiera_product.es7'))
 
 class jn14_hiera_json_list extends jn15_array_hiera_product {
-
 
   constructor ()
   {
     super()
     this.n                         =  'jn14_hiera_json_list::'
   }
-
 
   //---------------------------------------------------------------------------------------------
   save_json_hiera_list_array_to_file(
@@ -72,7 +69,6 @@ class jn14_hiera_json_list extends jn15_array_hiera_product {
 
     this.j.hover       =  title
 
-
     this.j.value        =  category
 
       // Procesa atributos del site ( se hace en arroba - aqui habria que eliminarlo)
@@ -81,7 +77,6 @@ class jn14_hiera_json_list extends jn15_array_hiera_product {
     this.k.copyvalues(this.j)
 
     let object_type = "array"
-
 
     // this.p ("jn15_hiera_product_Procesando Hijo Nivel Inicial " + this.j.otype  )
         // Array u Objeto

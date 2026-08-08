@@ -15,12 +15,11 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_taxonomy } 	= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an09_taxonomy.es6')						),
-		fs 					= require(	'fs'																				);
+const 	{ anode_taxonomy } 	= require(path.join(JS_BASE, 'com/objects/drupal/anode/an0/an09_taxonomy.es6'))
+		const fs = require(	'fs'																				);
 
 // enfoque de promesas aplazado
 //		fs 					= require(	'/brqx/base/react/zcommon/node_modules/fs-extra'									);
-
 
 class anode_load_properties_file extends anode_taxonomy {
 

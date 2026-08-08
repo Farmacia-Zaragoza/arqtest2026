@@ -30,9 +30,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { struc_pho }        =   require(  path.join(JS_TYP7  , 'struc/s04_struc_pho.es7'));
-      const { idx_pointers }          =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'));
-      ffi                  =   require(path.join(JS_LIB7 , 'file/file_load.es7' ));
+const { struc_pho }        =   require(  path.join(JS_TYP7  , 'struc/s04_struc_pho.es7'  ));
+      const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'  )              );
+      const ffi = require(path.join(JS_LIB7 , 'file/file_load.es7' ));
 
 class struc_load_folder extends struc_pho {
   constructor()
@@ -104,7 +104,6 @@ class struc_load_folder extends struc_pho {
     let ahover            = this.gethash_arr(this.s.ms.main_lang , idx.hindex)
     let alink             = this.gethash_arr(this.s.ms.main_lang , idx.lindex)
 
-
     var iterations        = Object.keys(cats).length - 1
 
     // this.p('s03_stru_num ' + iterations)
@@ -135,7 +134,6 @@ class struc_load_folder extends struc_pho {
 
       }
 
-
     }
 
     cats              = this.gethash_arr(this.s.ms.main_lang, idx.jindex)
@@ -153,8 +151,6 @@ class struc_load_folder extends struc_pho {
 
       var elem = this.folder_contents[pos]
 
-
-
       var arr_pos = pos
       let curr_pos = arr_pos + lang
 
@@ -170,7 +166,6 @@ class struc_load_folder extends struc_pho {
       // this.p('s03_stru_NOFILE ' + arr_name_j + '   P  ' + arr_pos)
 
 		  this.sethash_lang_arr_pos('all' , idx.jindex , curr_pos , value)
-
 
     	if ( (info.includes(elem)) || (alink.includes(elem)) )
     	{
@@ -228,7 +223,6 @@ class struc_load_folder extends struc_pho {
 
     // this.p('s03_stru_num ajust ' + iterations + ' I ' + idx.jindex )
 
-
   }
 
   //---------------------------------------------------------------------------------------------
@@ -249,8 +243,6 @@ class struc_load_folder extends struc_pho {
     let ahover            = this.gethash_arr(lang , idx.hindex)
     let alink             = this.gethash_arr(lang , idx.lindex)
 
-
-
     // this.p('s03_stru_num ' + iterations)
 
     // this.parr(this.folder_contents)
@@ -261,7 +253,6 @@ class struc_load_folder extends struc_pho {
     var type  = 'bclink'
     var local_breadcrumb = ''
     var child = 'yes'
-
 
     // ahora tenemos que iterar folder contents insertando
 
@@ -276,8 +267,6 @@ class struc_load_folder extends struc_pho {
         var arr_pos = pos
         let curr_pos = arr_pos + lang
 
-
-
     	if ( (info.includes(elem)) || (alink.includes(elem)) )
     	{
           this.arroba_attribs_main_lang(idx, pos)
@@ -289,7 +278,6 @@ class struc_load_folder extends struc_pho {
           hover = ahover[pos]
 
           link  = alink[pos]
-
 
         // this.p('s03_stru_FOLDER ' + arr_name_i + '  P ' + elem)
 
@@ -332,7 +320,6 @@ class struc_load_folder extends struc_pho {
                   breadcrumb = 'fs'     )
   {
 
-
     var idx = new idx_pointers(index)
 
     // this.p('s03_stru_num ' + iterations)
@@ -371,7 +358,6 @@ class struc_load_folder extends struc_pho {
       // this.p('s03_stru_NOFILE ' + arr_name_j + '   P  ' + arr_pos)
 
 		  this.sethash_lang_arr_pos('all' , idx.jindex , curr_pos , value)
-
 
       value = elem
       hover = elem

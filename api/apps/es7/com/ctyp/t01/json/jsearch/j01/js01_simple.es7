@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                   =   require(  'fs'                                                   ),
-       empty                =   require(  'is-empty'                             ),
-       accents              =   require(  'remove-accents'                       ),
-       const { idx_pointers }     =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn00_search_pf }   =   require(  path.join(JS_TYP7, 'json/jsearch/j00/jn00_search_pf.es7'));
+const  fs                   =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn00_search_pf } = require(path.join(JS_TYP7, 'json/jsearch/j00/jn00_search_pf.es7'))
 
 // Comm Object
 class js01_simple_search extends jn00_search_pf {
-
 
   constructor ()
   {
@@ -48,7 +47,6 @@ class js01_simple_search extends jn00_search_pf {
     this.cats                   = this.getarr(this.s.ms.main_lang , idx.jindex)
 
     this.info                   = this.getarr(this.s.ms.main_lang , idx.iindex)
-
 
     // Object.keys(myObj).length
     var last_element           = Object.keys(this.cats).length - 1
@@ -123,7 +121,6 @@ class js01_simple_search extends jn00_search_pf {
       // We dont put sm_meta_og_description
       var iterations           = Object.keys(articles_arr).length - 1
 
-
       for (var pos in articles_arr)
       {
 
@@ -142,16 +139,13 @@ class js01_simple_search extends jn00_search_pf {
         this.clink    =  this.getkeylang( idx.lindex , article_num)
         this.cat      =  this.getkeylang( idx.jindex , article_num)
 
-
         // this.p('js0_StartSearch ' + pos + '  ' + this.clink + '    ' + this.cat)
         // js0_StartSearch 8  en/article/a10    a0010
-
 
         // end add_json block
 
         this.j.clean()
         this.k.clean()
-
 
         this.j.index    =   this.index
 
@@ -166,7 +160,6 @@ class js01_simple_search extends jn00_search_pf {
         this.k.copyvalues(this.j)
 
         // this.p('jn05_WE_ARE_HERE ' + this.cat)
-
 
               // this.p ('jns02-qry  ' + this.u.slash_sub_query + ' Result ' + result)
 
@@ -188,7 +181,6 @@ class js01_simple_search extends jn00_search_pf {
       // this.j.add_separator()
 
           // this.p('jn05_to_load ' +  pf_to_load)
-
 
     } // End For
 

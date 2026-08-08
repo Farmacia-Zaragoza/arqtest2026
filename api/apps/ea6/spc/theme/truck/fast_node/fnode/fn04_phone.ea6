@@ -13,14 +13,12 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ fnode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { svg01_svg }		= require( 	path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/sv01_svg.es6'));
-		const { cbool }			= require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+const	{ fnode } 			= require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { svg01_svg } = require(path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/sv01_svg.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 // Para poder extender debe haberse incluido antes
 class fn04_phone extends fnode {
-
 
     constructor (   u					=	''				, // 02 + U object
 					page_position		=	''				, // 07 + Position id
@@ -44,12 +42,10 @@ class fn04_phone extends fnode {
     	this.type						=	'phone_structure'									 // Type for structures
     	this.short_type					=	'PHS'
 
-
 		// String fnode / node / cica_recuerdo
 		this.ftype 						=	'fnode'															// Fast node type
 		this.stype 						=	stype															// Node subtype
 		this.type_name					=	this.stype
-
 
 		this.b.type_human						= 	true 										 // if is dat file never will be erased on disk
 
@@ -60,7 +56,6 @@ class fn04_phone extends fnode {
 		this.b.type_have_specific_properties	=	true
 		this.b.type_synced						=	true
 
-
 		// Type path adjustment
 
 		// fnode / file_structure
@@ -69,7 +64,6 @@ class fn04_phone extends fnode {
 
 		let base_common = 'common_'
 		let lang_common = ''
-
 
 		if (this.b.site_multilang)
 			lang_common	= base_common + this.u.lang_site + '_'
@@ -81,8 +75,6 @@ class fn04_phone extends fnode {
    		this.suffix_disk 	= 	this.suffix
 
    		this.suffix_code 	= 	this.suffix + '_' + this.u.ssl_page + '_phs' +  '.' + 'code'
-
-
 
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
@@ -128,7 +120,6 @@ class fn04_phone extends fnode {
 			else if ( prop 	== "phone_adv"				)		this.phone_adv					=	value
 			else if ( prop 	== "email_adv"				)		this.email_adv					=	value
 
-
 			// PNG Zone
 			else if ( prop 	== "phone_img_path"				)		this.phone_img_relative_path		=	value
 			else if ( prop 	== "email_img_path"				)		this.email_img_relative_path		=	value
@@ -144,7 +135,6 @@ class fn04_phone extends fnode {
 			else if ( prop 	== "phone_svg_path"				)		this.phone_svg_absolute_path		=	value
 			else if ( prop 	== "email_svg_path"				)		this.email_svg_absolute_path		=	value
 
-
 			else if ( prop 	== "phone_alt"				)		this.phone_alt					=	value
 			else if ( prop 	== "email_alt"				)		this.email_alt					=	value
 			else if ( prop 	== "color"					)		this.color						=	value
@@ -154,9 +144,7 @@ class fn04_phone extends fnode {
 			else if ( prop 	== "original_color"			)		this.original_color				=	value
 			else if ( prop 	== "target_color"			)		this.target_color					=	value
 
-
     }
-
 
     run_child_action()
     {
@@ -180,13 +168,10 @@ class fn04_phone extends fnode {
 
 			this.phone_svg_absolute_path	= 	this.svg.ram_alias_code_path
 
-
 			this.replace(	this.email_num , '#', '@')
 			let email_num	= this.result
 
 			// this.p('Phone_Numm ' + this.email_num  + ' EE ' + email_num)
-
-
 
 			this.svg 	=	new sv01_svg(	this.u 			,
 											email_num			,
@@ -198,14 +183,12 @@ class fn04_phone extends fnode {
 
 			this.email_svg_absolute_path	= 	this.svg.ram_alias_code_path
 
-
 		}
 		else if (this.text_img_type == 'png')
 		{
 
 			this.phone_img_absolute_path = this.u.site_path + '/' + this.phone_img_relative_path
 			this.email_img_absolute_path = this.u.site_path + '/' + this.email_img_relative_path
-
 
 			// if ((this.phone_img_relative_path != ''	) and
 			//	(!is_file(this.phone_img_absolute_path))	)
@@ -216,7 +199,6 @@ class fn04_phone extends fnode {
 			//	create_png(this.email_num, this.color,this.font , this.font_size , this.email_img_absolute_path)
 
 		}
-
 
 		// I M A G E    Z O N E   -   Vamos con los cambios de color
 		// --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==
@@ -253,7 +235,6 @@ class fn04_phone extends fnode {
 			}
 		}
 
-
 	}
 	load_child_details()
 	{
@@ -266,7 +247,6 @@ class fn04_phone extends fnode {
 			(this.special_reload_ram('LS')  	  )	)
 		{
 			// Aqui hay que chequear la barra
-
 
 			// Tenemos las imagenes pero las necesitamos en 4 resoluciones
 		}
@@ -302,7 +282,6 @@ class fn04_phone extends fnode {
 
 		this.arr['properties'].push(				"phone_svg_path" 	 + this.sep  + this.phone_svg_absolute_path		)
 		this.arr['properties'].push(				"email_svg_path" 	 + this.sep  + this.email_svg_absolute_path		)
-
 
 		this.arr['properties'].push(				"color" 			 + this.sep  + this.color						)
 		this.arr['properties'].push(				"font" 				 + this.sep  + this.font						)

@@ -16,10 +16,9 @@
 // - build_text           : Recreate contents dummy of tame value
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	echo 				= 	require(	'node-echo'								),
-		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
-		const { savelog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/savelog.es6'));
+const 	echo 				= 	require(	'node-echo'								);
+		const { printlog } = require(path.join(JS_BASE, 'com/objects/logs/printlog.es6'))
+		const { savelog } = require(path.join(JS_BASE, 'com/objects/logs/savelog.es6'))
 
 class html_style extends printlog {
 
@@ -87,7 +86,6 @@ class html_style extends printlog {
 	this.data_flex_src					=	''
 	this.data_flex_src_small			=	''
 
-
 	// New Twitter Dat attributes
 	this.data_lang						=	''
 	this.data_height					=	''
@@ -149,7 +147,6 @@ class html_style extends printlog {
 	this.percents						=	''			//
 	this.resnumbers						=	''			//
 
-
     this.adds           				=   ''     // Code fragment for TAG
 
     this.debug          				=   ''     // Block for debug [TAG]
@@ -203,7 +200,6 @@ class html_style extends printlog {
 	this.f_data_flex_src				=	''
 	this.f_data_flex_src_small			=	''
 
-
 	// New Twitter Dat attributes
 	this.f_data_lang					=	''
 	this.f_data_height					=	''
@@ -255,7 +251,6 @@ class html_style extends printlog {
 	this.f_viewbox						=	''
 	this.f_xml_space					=	''
 
-
 	// Meta Attributes
 	this.f_http_equiv					=	''
 	this.f_mcontent						=	''			// Meta Content
@@ -267,18 +262,15 @@ class html_style extends printlog {
 	this.f_percents						=	''			//
 	this.f_resnumbers					=	''			//
 
-
     this.f_adds         				=   ''     // Code fragment for TAG
 
     // Our html properties
     this.f_tame         				=   ''     // Tag name (div_01 , div_02 ...)
 
-
     this.content        				=   ''     // Inner content of html object
     this.code           				=   ''     // Full content of html object or other code
 
     this.page_position					= 	''		// Position of object in page - Could be top - left - rigth - bottom
-
 
     this.js_code        				=   ''     // Full separation Html Code from Javascript Code
 
@@ -315,7 +307,6 @@ class html_style extends printlog {
 	  if ( src   != ""		)	this.src          = '' +   src
 	  if ( name  != ""		)	this.name         = '' +   name
 	  if ( value != ""		)	this.value        = '' +   value
-
 
 	  // Allways must to have tame value
 	  if ( tame == ""		)	tame = tag_type
@@ -457,7 +448,6 @@ class html_style extends printlog {
       this.f_percents					=	''	+ this.percents
       this.f_resnumbers					=	''	+ this.resnumbers
 
-
       this.f_adds           			=   '' + this.adds
 
       // Our properties
@@ -510,7 +500,6 @@ class html_style extends printlog {
 
       this.f_data_flex_src				=	''
       this.f_data_flex_src_small		=	''
-
 
       this.data_background    			=   ''
       this.data_src    					=   ''
@@ -569,7 +558,6 @@ class html_style extends printlog {
       this.viewbox						=	''
       this.xml_space					=	''
 
-
 	// Meta Attributes
       this.http_equiv					=	''
       this.mcontent						=	''
@@ -587,7 +575,6 @@ class html_style extends printlog {
 //      this.tame          	 			=   '' + this.tame
 
     }
-
 
     create(new_content	='')
     {
@@ -607,7 +594,6 @@ class html_style extends printlog {
 
         if ( this.f_defer    		   				!= '' ) str    +=  ' ' 								+ this.f_defer
 
-
         if ( this.f_id          					!= '' ) str    +=  ' id="'            				+ this.f_id           				+ '"'
         if ( this.f_class       					!= '' ) str    +=  ' class="'         				+ this.f_class        				+ '"'
         if ( this.f_src         					!= '' ) str    +=  ' src="'           				+ this.f_src          				+ '"'
@@ -616,7 +602,6 @@ class html_style extends printlog {
         if ( this.f_value       					!= '' ) str    +=  ' value="'         				+ this.f_value        				+ '"'
         if ( this.f_title       					!= '' ) str    +=  ' title="'         				+ this.f_title        				+ '"'
         if ( this.f_type       						!= '' ) str    +=  ' type="'         				+ this.f_type        					+ '"'
-
 
         if ( this.f_data_title  					!= '' ) str    +=  ' data-title="'    				+ this.f_data_title   				+ '"'
         if ( this.f_name        					!= '' ) str    +=  ' name="'          				+ this.f_name         				+ '"'
@@ -657,7 +642,6 @@ class html_style extends printlog {
         if ( this.f_data_lightbox					!= '' ) str    +=  ' data-lightbox="'				+ this.f_data_lightbox				+ '"'
         if ( this.f_data_flex_src					!= '' ) str    +=  ' data-flex-src="'				+ this.f_data_flex_src				+ '"'
         if ( this.f_data_flex_src_small				!= '' ) str    +=  ' data-flex-src-small="'			+ this.f_data_flex_src_small			+ '"'
-
 
 	// New Twitter Dat attributes
         if ( this.f_data_lang						!= '' ) str    +=	' data-lang="'					+ this.f_data_lang 					+ '"'
@@ -710,7 +694,6 @@ class html_style extends printlog {
 	    if ( this.f_viewbox							!= '' ) str    +=	' viewBox="'					+ this.f_viewbox						+ '"'
 	    if ( this.f_xml_space						!= '' ) str    +=	' xml-space="'					+ this.f_xml_space						+ '"'
 
-
 	    if ( this.f_http_equiv						!= '' ) str    +=	' http-equiv="'					+ this.f_http_equiv					+ '"'
 	    if ( this.f_mcontent						!= '' ) str    +=	' content="'					+ this.f_mcontent						+ '"'
 
@@ -739,7 +722,6 @@ class html_style extends printlog {
 
         if ( this.f_defer        					!= '' ) str    +=            						  this.f_defer
 
-
         if ( this.tag_type == "hidden" || this.tag_type == "img" || this.tag_type == "input"  || this.tag_type == "meta" || this.tag_type == "link")
           str    +='/>'
         else
@@ -754,7 +736,6 @@ class html_style extends printlog {
 
 //      puting_contents='html :code ' +   this.tag_type + ':' + this.code    +  '>'
 //      GLOBALS['putcont']+=puting_contents
-
 
     }
 
@@ -815,7 +796,6 @@ class html_style extends printlog {
 
 	// Commented to test bootstrap
 
-
     show()
     {
         echo ( this.code )
@@ -825,7 +805,6 @@ class html_style extends printlog {
     {
         echo ( this.code + "\n" )
     }
-
 
 }
 

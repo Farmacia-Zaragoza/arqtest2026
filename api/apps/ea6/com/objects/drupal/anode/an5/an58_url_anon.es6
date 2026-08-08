@@ -17,7 +17,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_update_common_after_bootstrap } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an5/an59_common_url_after_bootstrap.es6'))
+const 	{ anode_update_common_after_bootstrap } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an5/an59_common_url_after_bootstrap.es6'))
 
 class anode_update_common_url extends anode_update_common_after_bootstrap {
 

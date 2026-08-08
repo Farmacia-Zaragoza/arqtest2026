@@ -9,8 +9,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const    { robot }     =   require(  path.join(JS_TYP7   , 'robot/robot.es7'));
-         const { strings }   =   require(  path.join(JS_TYP7   , 'string/s01_strings.es7'      )) ;
+const    { robot }     =   require(  path.join(JS_TYP7   , 'robot/robot.es7'             )  );
+         const { strings } = require(  path.join(JS_TYP7   , 'string/s01_strings.es7'      )  ) ;
 
 class manage_robot extends robot {
   constructor(file_name = '')
@@ -38,7 +38,6 @@ class manage_robot extends robot {
       case "zone":
         this.managethemeelem(part)
         break;
-
 
       case "parragraph":
         this.add_index(          this.index    )
@@ -70,7 +69,6 @@ class manage_robot extends robot {
         this.l.content         = this.site_title + ' - ' + this.value
         this.l.href            = this.link
         this.l.title           = this.site_title + ' - ' + this.item + ' - ' + this.hover
-
 
         break;
 
@@ -130,7 +128,6 @@ class manage_robot extends robot {
         this.l.title           = this.item
 
         this.type              = 'link'
-
 
         break;
 
@@ -222,7 +219,6 @@ class manage_robot extends robot {
         this.l.href            = this.link
         this.l.title           = this.item
 
-
         this.type            = 'link'
         // Es correcto en principio no hay que hacer nada
         break;
@@ -240,7 +236,6 @@ class manage_robot extends robot {
 
         this.type            = 'link'
         break;
-
 
       // Inner image link
       case "innerimglink":
@@ -316,7 +311,6 @@ class manage_robot extends robot {
 
         break
 
-
       case "bgimage":
         this.add_index(              this.index    )
         this.add_type(              this.type    )
@@ -372,7 +366,6 @@ class manage_robot extends robot {
           this.l.href            = this.link
 
         break ;
-
 
       case "breakpoint":
         this.add_index(              this.index    )
@@ -440,7 +433,6 @@ class manage_robot extends robot {
         var anchor_pos = this.strpos(this.value, "#")
 
         if (anchor_pos != false)          this.manage_rbt_anchors()
-
 
     }
   }

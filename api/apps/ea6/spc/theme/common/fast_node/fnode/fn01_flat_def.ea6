@@ -14,7 +14,7 @@
 function def_promise(data_and_error = '' , t = '') {
   const promise = new Promise(function (resolve, reject) {
 
-	t.pnode = new pn01_simple(t.u)
+	const t.pnode = new pn01_simple(t.u);
 
 	console.log('A_Created_Structure - Se imprime y aun se esta ejecutando el primer paso')
 

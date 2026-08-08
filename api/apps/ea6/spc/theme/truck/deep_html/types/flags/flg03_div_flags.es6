@@ -9,7 +9,6 @@
 //  <div class="flags">
 //  <img src="img/flags/trucks_mini_flags_marker.svg" alt="background">
 
-
 //DIV
 //  DIV - (external)
 //  SVG
@@ -20,11 +19,9 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { flg02_div_flags }			= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/flags/flg02_div_flags.es6'));
-
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { svg_style } = require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { flg02_div_flags } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/flags/flg02_div_flags.es6'))
 
 class flg03_div_flags extends html_style {
 
@@ -52,7 +49,6 @@ class flg03_div_flags extends html_style {
 		// this.content 			+= 	'LANG_CONTAINER >'
 		this.content 				+= 	this.div_01.code
 	}
-
 
 	// Works
 	// <img src="http://truck.dbrqx.com/index2/img/flags/trucks_mini_flags_marker.svg" alt="background"

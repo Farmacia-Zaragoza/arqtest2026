@@ -6,14 +6,12 @@
 // d-run_psimple-		: Fire simple page (no cache)
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
 var 		cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"					);
 
-const 		{ model_run_disk } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/model/m04_run_disk.ea6'));
-			const { pn01_simple } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'));
-			run					= 	require(	path.join(JS_BASE, 'com/pms/mongo/save_code_mongo_promise.ea6'));
-			echo 				= 	require(	'node-echo'											);
-
+const 		{ model_run_disk } 	= 	require(path.join(JS_BASE, 'spc/theme/truck/model/m04_run_disk.ea6'))
+			const { pn01_simple } = require(path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'))
+			const run = require(path.join(JS_BASE, 'com/pms/mongo/save_code_mongo_promise.ea6'))
+			const echo = require(	'node-echo'											);
 
 // QUIERO HACER UN ENFOQUE DE PROMESAS GENERADORES Y SINCRONIAS
 
@@ -49,7 +47,6 @@ class model_run_psimple extends model_run_disk
 			// echo("NOCACHE_" + this.pnode.code)
 			// echo(this.pnode.code)
 
-
 			var t = this
 			var data_and_error = ''
 
@@ -61,7 +58,6 @@ class model_run_psimple extends model_run_disk
 		}
 
 	}
-
 
 } // end Class
 

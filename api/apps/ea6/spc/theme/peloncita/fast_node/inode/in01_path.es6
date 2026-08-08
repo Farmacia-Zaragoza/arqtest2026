@@ -13,9 +13,8 @@
 //- d-build_dimensions-                    : Generate dimensions for photo
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ inode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/inode.ea6'));
-		const { cbool }				= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+const	{ inode } 				= 	require(path.join(JS_BASE, 'com/objects/drupal/node/inode.ea6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 class in01_path extends inode {
 
@@ -35,7 +34,6 @@ class in01_path extends inode {
 		this.b.copy(this.s.b)
 
 		this.c 					= this.s.c
-
 
 		this.resolutions_to_generate 			= resolutions_to_generate
 		this.type 								= "inode_path"
@@ -88,7 +86,6 @@ class in01_path extends inode {
 		for (var pos in this.arr['sfu']) 		this.arr['sfu'].splice(pos,1)
 		for (var pos in this.arr['properties']) this.arr['properties'].splice(pos,1)
 
-
 		this.original_image_url_path = original_image_url_path
 
 		// 4s
@@ -109,7 +106,6 @@ class in01_path extends inode {
 		// /brqx/pers/drupal/v50/fnode/truck/img/path/_ssl_cica_image.img
 		// this.p('In01_Image_Path ' + this.load_from_disk_path)
 		// this.p('In01_Image_Code ' + this.load_from_disk_path_code)
-
 
 		if (this.s.load == "drupal")
 		{
@@ -152,7 +148,6 @@ class in01_path extends inode {
 
 			}
 	}
-
 
 	prepare_specific_child_properties() //Generate properties array
 	{

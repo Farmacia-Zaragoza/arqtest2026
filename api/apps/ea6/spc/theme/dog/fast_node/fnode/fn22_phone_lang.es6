@@ -15,11 +15,11 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	{ fnode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		empty 				= 	require(	 'is_empty'										),
-		pngjs 				= 	require(  	 'pngjs'											),
-		const { sv01_svg }		= 	require(	path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/sv01_svg.es6'));
-		const { cbool }			= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+const	{ fnode } 			= 	require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const empty = require(	 'is_empty'										);
+		const pngjs = require(  	 'pngjs'											);
+		const { sv01_svg } = require(path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/sv01_svg.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 class fn22_phone_lang extends fnode {
 
@@ -48,12 +48,10 @@ class fn22_phone_lang extends fnode {
     	this.type									=	'phone_structure'									 // Type for structures
     	this.short_type								=	'PHSL'
 
-
 		// String fnode / node / cica_recuerdo
 		this.ftype 									=	'fnode'															// Fast node type
 		this.stype 									=	stype															// Node subtype
 		this.type_name								=	this.stype
-
 
 		this.b.type_user							=	false										 // Different content if is anonymous
 		this.b.type_human							= 	true 										 // if is dat file never will be erased on disk
@@ -62,13 +60,11 @@ class fn22_phone_lang extends fnode {
 		this.b.type_translation						= 	false
 		this.b.type_translated						= 	false
 
-
 		this.b.type_have_taxonomy					=	false
 		this.b.type_have_code						=	false
 		this.b.type_have_properties					=	true
 		this.b.type_have_specific_properties		=	true
 		this.b.type_synced							=	true
-
 
 		// Type path adjustment
 
@@ -78,11 +74,9 @@ class fn22_phone_lang extends fnode {
 
 		// LANG_DEPENDENT - El contenido sera el mismo para cualquier URL - Usuario -pero dentro del mismo idioma
 
-
 		this.suffix							=	this.s.lang + '_' + this.stype
 		this.suffix_disk					=	this.suffix
 		this.suffix_lang					=	this.suffix
-
 
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
@@ -90,8 +84,6 @@ class fn22_phone_lang extends fnode {
 		// Es un tipo humano - No tiene codigo
 		// this.p('DIS_PhonePath ' + this.load_from_disk_path)
 		// this.p('DIS_LhoneLang ' + this.load_from_disk_lang)
-
-
 
 		if (this.s.load == 'drupal')
 		{
@@ -102,7 +94,6 @@ class fn22_phone_lang extends fnode {
 			this.run_from_disk()
 		}
 		// this.p('RAM_Phone ' + this.ram_alias_path	)
-
 
     }
 
@@ -116,7 +107,6 @@ class fn22_phone_lang extends fnode {
 
 			// is contact | contacto
 			else if ( prop 	== "email_contact"			)		this.email_contact					=	value
-
 
     }
 

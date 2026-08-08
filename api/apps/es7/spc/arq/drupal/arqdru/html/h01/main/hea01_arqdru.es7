@@ -21,11 +21,10 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { html_style }        =   require(  path.join(JS_BASE , 'com/objects/html/html_style.es6'));
-        const { ifnojs }            =   require(  path.join(JS_BASE , 'com/objects/html/ifnojs.es6'));
-        const { lnk01_link_arqdru } =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/main/lnk01_link_arqdru.es7'));
-        const { met01_meta_arqdru } =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/main/met01_meta_arqdru.es7'   ));
-
+const   { html_style }        =   require(  path.join(JS_BASE , 'com/objects/html/html_style.es6'       )   );
+        const { ifnojs } = require(  path.join(JS_BASE , 'com/objects/html/ifnojs.es6'          )  );
+        const { lnk01_link_arqdru } = require(  path.join(JS_AQD7 , 'arqdru/html/h01/main/lnk01_link_arqdru.es7'   ) );
+        const { met01_meta_arqdru } = require(  path.join(JS_AQD7 , 'arqdru/html/h01/main/met01_meta_arqdru.es7'   ) );
 
 class hea01_head_arqdru extends html_style  {
 
@@ -37,7 +36,6 @@ class hea01_head_arqdru extends html_style  {
 
     this.tag_type             =   'head'
     this.n              =  'hea01_head::'
-
 
     this.meta_01          =  ''
 
@@ -64,7 +62,6 @@ class hea01_head_arqdru extends html_style  {
       this.build_json_head()
 
     }
-
 
   //   <div id="logo">
     create_metas()
@@ -100,7 +97,6 @@ class hea01_head_arqdru extends html_style  {
     this.content          +=  this.base_01.code
   }
 
-
     create_links()
     {
     // External links
@@ -126,11 +122,9 @@ class hea01_head_arqdru extends html_style  {
       this.pcreate()
   }
 
-
   build_data()
   {
       let head_code = ''
-
 
       this.create_metas()
       this.create_title()
@@ -141,7 +135,6 @@ class hea01_head_arqdru extends html_style  {
       this.pcreate()
 
   }
-
 
 }
 

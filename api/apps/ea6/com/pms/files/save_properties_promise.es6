@@ -15,17 +15,16 @@
 
 var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
-const 	fs 							= 	require(	'fs'																		),
-		path 						= 	require(	'path'																		),
-		recursive 					= 	require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir-sync'				),
-		sort 						= 	require(	'/brqx/base/react/zcommon/node_modules/sort-array'							),
-		readdirp 					= 	require(	'/brqx/base/react/zcommon/node_modules/readdirp'							),
-		echo	 					= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'							),
-		mat							=	require(	path.join(JS_BASE, 'com/libs/string/match.es6'));
-		url			 				= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6'));
-		rs							= 	require(	'/brqx/base/react/zcommon/node_modules/fs-readdir-promise'					),
-		run  						= 	require(	path.join(JS_BASE, 'com/pms/folders/generate_directory_promise.ea6'));	
-
+const 	fs 							= 	require(	'fs'																		);
+		const path = require(	'path'																		);
+		const recursive = require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir-sync'				);
+		const sort = require(	'/brqx/base/react/zcommon/node_modules/sort-array'							);
+		const readdirp = require(	'/brqx/base/react/zcommon/node_modules/readdirp'							);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'							);
+		const mat = require(path.join(JS_BASE, 'com/libs/string/match.es6'))
+		const url = require(path.join(JS_BASE, 'com/libs/string/url.es6'))
+		const rs = require(	'/brqx/base/react/zcommon/node_modules/fs-readdir-promise'					);
+		const run = require(path.join(JS_BASE, 'com/pms/folders/generate_directory_promise.ea6'))
 
 function save_properties_promise(data_and_error = '' , t = '' )
 {
@@ -62,8 +61,6 @@ function save_code_promise(data_and_error = '' , t = '' )
   return promise
 	  
 } // End function
-
-
 
 module.exports.save_properties_promise = save_properties_promise
 module.exports.save_code_promise = save_code_promise

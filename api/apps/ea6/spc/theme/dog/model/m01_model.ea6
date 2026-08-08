@@ -6,10 +6,8 @@
 // d-run-options-			: 	Run mongo options
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 		{ model_run_mongo } 	= 	require(	path.join(JS_BASE, 'spc/theme/dog/model/m02_run_mongo.ea6'));
-			echo 					= 	require(	'node-echo'									);
-
+const 		{ model_run_mongo } 	= 	require(path.join(JS_BASE, 'spc/theme/dog/model/m02_run_mongo.ea6'))
+			const echo = require(	'node-echo'									);
 
 class model extends model_run_mongo
 {
@@ -36,7 +34,6 @@ class model extends model_run_mongo
 
 // 		return await this.code
 	}
-
 
 } // end Class
 

@@ -14,9 +14,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { uri_page_string }     =   require(  path.join(JS_TYP7, 'uri/u08_page_string.es7'))  )
-		sort		       =   require(  path.join(JS_LIB  , 'sort/sort_unique.es6'	));
-
+const   { uri_page_string }     =   require(path.join(JS_TYP7, 'uri/u08_page_string.es7')))
+		const sort = require(  path.join(JS_LIB  , 'sort/sort_unique.es6'	)	  );
 
 class uri_sorts extends uri_page_string {
 
@@ -40,15 +39,12 @@ class uri_sorts extends uri_page_string {
     let new_sash_uri         =  ''
     let new_bars_uri         =  ''
 
-
     let new_dash_args        =  ''
     let new_sash_args        =  ''
-
 
     let cont             =  0
 
     //this.p('u06-sort_lenen : ' + this.uri_args_sorted.length )
-
 
     // article/a01    --> [1]
     // es/article/a01 --> [2]
@@ -63,7 +59,6 @@ class uri_sorts extends uri_page_string {
       new_dash_uri  +=   str_to_manage
       new_sash_uri  +=   str_to_manage
       new_bars_uri  +=   str_to_manage
-
 
       if ((pos   >=  0           )  &&
          (pos   <   count_no_repe )  )
@@ -92,11 +87,9 @@ class uri_sorts extends uri_page_string {
 
     }
 
-
     this.slash_sub_query         =   new_sash_uri
     this.dash_sub_query          =   new_dash_uri
     this.bars_sub_query          =   new_bars_uri.slice(0,-1)
-
 
     this.page_args          =  new_sash_args
     this.page_iargs          =  new_sash_args
@@ -133,12 +126,10 @@ class uri_sorts extends uri_page_string {
 
     }
 
-
     this.slash_ideal_uri        =   slash_ideal_uri
     this.dash_ideal_uri         =   dash_ideal_uri
 
     this.bar_slash_ideal_uri    =  "/" +  slash_ideal_uri
-
 
     // this.p('u05_idioma   : ' + this.s.lang )
     // this.p('u05_comando  : ' + this.page_command )

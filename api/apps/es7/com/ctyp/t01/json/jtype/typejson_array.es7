@@ -9,9 +9,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ blkjson_array } 	= 	require(	path.join(JS_TYP7, 'json/jtype/blkjson_array.es7'));
-		sctf 				= 	require( 	path.join(JS_LIB7, 'file/save_code_to_file.es7'));
-
+const 	{ blkjson_array } 	= 	require(path.join(JS_TYP7, 'json/jtype/blkjson_array.es7'))
+		const sctf = require(path.join(JS_LIB7, 'file/save_code_to_file.es7'))
 
 class typejson_array extends blkjson_array {
 	constructor(file_name = '')
@@ -53,7 +52,6 @@ class typejson_array extends blkjson_array {
 		this.clean()
 	}
 
-
 	createcommonpart(object_type)
 	{
 		// Add {
@@ -70,7 +68,6 @@ class typejson_array extends blkjson_array {
 			this.add_pull(		this.level , '['				)
 		else
 			this.add_pull(		this.level , '{'				)
-
 
 		sctf.create_update_full_filename(this.full_path, this.content)
 		this.clean()
@@ -100,7 +97,6 @@ class typejson_array extends blkjson_array {
 			this.add_lastelement( 	'clink'	, this.link		)
 
 	}
-
 
 }
 

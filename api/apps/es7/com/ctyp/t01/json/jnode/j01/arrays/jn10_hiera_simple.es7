@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                 =   require(  'fs'                                                   ),
-       empty              =   require(  'is-empty'                             ),
-       accents            =   require(  'remove-accents'                       ),
-       path               =   require(  'path'                                                 ),
-       const { idx_pointers }   =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn14_hiera_json_list }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn14_hiera_list.es7'));
+const  fs                 =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const path = require(  'path'                                                 );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn14_hiera_json_list } = require(path.join(JS_TYP7, 'json/jnode/j01/arrays/jn14_hiera_list.es7'))
 
 class jn10_hiera_json_simple extends jn14_hiera_json_list {
-
 
   constructor ()
   {
@@ -71,8 +70,6 @@ class jn10_hiera_json_simple extends jn14_hiera_json_list {
       // Aqui no entra
       // this.p ('j22_simple ' + current_level + ' Ind ' + this.index)
 
-
-
       // end add_json block
 
       this.j.clean()
@@ -90,7 +87,6 @@ class jn10_hiera_json_simple extends jn14_hiera_json_list {
 
       if (this.clink != "" )
         this.j.link     =   parent_breadcrumb + this.clink  + concat_to_links
-
 
       //---------------------------------------------------------------------------------------------
 
@@ -124,7 +120,6 @@ class jn10_hiera_json_simple extends jn14_hiera_json_list {
            var int_lnk = ''
            let current_otype = this.j.otype
 
-
            for (var pos in arr_lnk)
            {
 			 this.j.item  = arr_lnk[pos]
@@ -139,7 +134,6 @@ class jn10_hiera_json_simple extends jn14_hiera_json_list {
 			   // this.p ('jn06_poslnkB ' + this.j.item)
 			 }
 		   }
-
 
          // Vamos a iterarlo para generar las urls con estos links
            // Desactivamos el tipo para ficheros robot
@@ -157,7 +151,6 @@ class jn10_hiera_json_simple extends jn14_hiera_json_list {
       }
 
       //---------------------------------------------------------------------------------------------
-
 
       // Este metodo lo vamos a tener que ajustar pues hay atributos que siempre se copian
       this.k.copyvalues(this.j)

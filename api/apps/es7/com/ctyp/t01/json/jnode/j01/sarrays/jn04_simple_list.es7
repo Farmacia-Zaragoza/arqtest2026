@@ -14,22 +14,20 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                        =   require(  'fs'                                                   ),
-       empty                     =   require(  'is-empty'                             ),
-       accents                   =   require(  'remove-accents'                       ),
-       const { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')                ),
-       const { jn05_array_product_recursive } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn05_product_recursive.es7'));
+const  fs                        =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn05_array_product_recursive } = require(path.join(JS_TYP7, 'json/jnode/j01/arrays/jn05_product_recursive.es7'))
 
 // Pendiente de cambiar
 class jn04_comma_json_simple_list extends jn05_array_product_recursive {
-
 
   constructor ()
   {
     super()
     this.n                         =  'jn04_comma_json_simple_list::'
   }
-
 
 }
 

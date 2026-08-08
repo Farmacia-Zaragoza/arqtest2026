@@ -7,15 +7,13 @@
 //Store structure of nodes and files needed in theme
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	echo 					= require(	'/brqx/base/react/zcommon/node_modules/node-echo'										),
-		const { theme_structure }		= require( 	path.join(JS_BASE, 'com/objects/drupal/theme/t01_structure.es6'));
+const	echo 					= require(	'/brqx/base/react/zcommon/node_modules/node-echo'										);
+		const { theme_structure } = require(path.join(JS_BASE, 'com/objects/drupal/theme/t01_structure.es6'))
 		// Promises
-		run 					= require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'));
-		const { cbool }				= require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-		const { categories }			= require( 	path.join(JS_BASE, 'com/objects/categories/categories.es6'));
-		const { contents }			= require( 	path.join(JS_BASE, 'com/objects/categories/contents.es6'));
-
+		const run = require(path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
+		const { categories } = require(path.join(JS_BASE, 'com/objects/categories/categories.es6'))
+		const { contents } = require(path.join(JS_BASE, 'com/objects/categories/contents.es6'))
 
 function theme_truck (t)
 {
@@ -46,7 +44,6 @@ function theme_truck (t)
 
 	}) // End promise
 */
-
 
 }
 

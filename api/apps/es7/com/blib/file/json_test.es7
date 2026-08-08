@@ -21,12 +21,10 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   gfc  			     =   require(  path.join(JS_LIB7, 'file/get_file_code.es7'));
-        validator            =   require(  'is-my-json-valid'            ),
-        syncrequest          =   require(  'sync-request'             ),
-        fs                   =   require(  'fs'                                                  );
-
-
+const   gfc  			     =   require(path.join(JS_LIB7, 'file/get_file_code.es7'))
+        const validator = require(  'is-my-json-valid'            );
+        const syncrequest = require(  'sync-request'             );
+        const fs = require(  'fs'                                                  );
 
 //---------------------------------------------------------------------------------------------
 // VAmos a tratarla como una clase
@@ -93,7 +91,6 @@ function jsontest(file_path)
 		console.info('s01_string JSON ERRONEO '  + file_path)
 	}
 
-
     return result
 }
 
@@ -112,7 +109,6 @@ function  create_json_line(check , code , ck_syn , ck_url)
   return line
 
 }
-
 
 //---------------------------------------------------------------------------------------------
 module.exports.jsontest                       = jsontest

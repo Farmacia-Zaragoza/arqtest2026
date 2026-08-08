@@ -19,10 +19,9 @@
 //-- 
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-const 	fs 			= 	require('fs'																					),
-		mkdirp 		= 	require('/brqx/base/react/zcommon/node_modules/mkdirp'											),
-		echo 		= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
-
+const 	fs 			= 	require('fs'																					);
+		const mkdirp = require('/brqx/base/react/zcommon/node_modules/mkdirp'											);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'									);
 
 // No callback example
 
@@ -41,7 +40,6 @@ function addToArray (data, array) {
   return promise;
 }
 
-
 async function processData (data, array) {
   try {
     const result = await addToArray(data, array);
@@ -52,9 +50,7 @@ async function processData (data, array) {
   }
 }
 
-
 const array = [1, 2, 3];
-
 
 processData(4, array)
 // [1,2,3,4]

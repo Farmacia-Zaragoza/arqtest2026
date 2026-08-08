@@ -18,7 +18,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_if_exist_properties_reload_contents } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an38_if_exist_properties_reload_contents.es6')		)
+var { anode_if_exist_properties_reload_contents } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an3/an38_if_exist_properties_reload_contents.es6'))
 
 class anode_if_is_correct_get_properties extends anode_if_exist_properties_reload_contents {
             

@@ -14,7 +14,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { uri_lang_aliases } =   require( path.join(JS_ACO7, 'uri/u01_lang_aliases.es7'))
+const { uri_lang_aliases } =   require(path.join(JS_ACO7, 'uri/u01_lang_aliases.es7'))
 
 class site_sure_commands extends uri_lang_aliases {
 

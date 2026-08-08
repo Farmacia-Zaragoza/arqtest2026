@@ -14,17 +14,15 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                       =   require(  'fs'                                                ),
-       empty                    =   require(  'is-empty'                          ),
-       accents                  =   require(  'remove-accents'                    ),
-       path               =   require(  'path'                                                 ),
-       const { idx_pointers }   =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn16_hiera_json_list_base }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/hiera/jn16_hiera_list_base.es7'));
-
+const  fs                       =   require(  'fs'                                                );
+       const empty = require(  'is-empty'                          );
+       const accents = require(  'remove-accents'                    );
+       const path = require(  'path'                                                 );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn16_hiera_json_list_base } = require(path.join(JS_TYP7, 'json/jnode/j01/hiera/jn16_hiera_list_base.es7'))
 
 // Common Array
 class jn15_array_hiera_product extends jn16_hiera_json_list_base {
-
 
   constructor ()
   {
@@ -49,8 +47,6 @@ class jn15_array_hiera_product extends jn16_hiera_json_list_base {
     // "clink": "en/article/a06",
     // "childrens": true,"pull02": {
    // "parragraph": {"index": "020v006v001","": true,"pull03": [
-
-
 
     var parent_pos = parseInt(index.substr(-3))
     var parent_index = index.substr(0,index.length -4)
@@ -78,9 +74,7 @@ class jn15_array_hiera_product extends jn16_hiera_json_list_base {
     // this.j.otype       = "object"
     // this.k.otype       = "object"
 
-
     this.j.value        =  cat
-
 
       // Procesa atributos del site ( se hace en arroba - aqui habria que eliminarlo)
     // this.process_site_values()                          ;
@@ -89,13 +83,11 @@ class jn15_array_hiera_product extends jn16_hiera_json_list_base {
 
     let object_type = "object"
 
-
     // this.p ("jn15_hiera_product_Procesando Hijo Nivel Inicial " + this.j.otype  )
         // Array u Objeto
 
           // this.p ("jn05_ircsv : Generating ARray")
     this.k.createspecificpart(object_type)
-
 
     this.save_json_hiera_simple_array_to_file(
           index                  ,  // 01. Index
@@ -107,9 +99,7 @@ class jn15_array_hiera_product extends jn16_hiera_json_list_base {
           object_type            ,  // 06. Object Type
           concat_to_links        )  // 07. Concat
 
-
     this.k.end_pull(object_type)
-
 
   }
 

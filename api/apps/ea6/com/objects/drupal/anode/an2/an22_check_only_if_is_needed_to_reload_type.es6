@@ -17,7 +17,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_check_only_if_is_needed_to_reload_code } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an2/an23_check_only_if_is_needed_to_reload_code.es6'))
+var { anode_check_only_if_is_needed_to_reload_code } 		= require(path.join(JS_BASE, 'com/objects/drupal/anode/an2/an23_check_only_if_is_needed_to_reload_code.es6'))
 
 
 class anode_check_only_if_is_needed_to_reload_type extends anode_check_only_if_is_needed_to_reload_code {

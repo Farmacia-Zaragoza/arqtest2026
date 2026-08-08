@@ -16,8 +16,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { cache }             =   require(  path.join(JS_TYP7, 'cache/c01_cache.es7'));
-        empty                 =   require(  'is_empty'              );
+const   { cache }             =   require(path.join(JS_TYP7, 'cache/c01_cache.es7'))
+        const empty = require(  'is_empty'              );
 
 class jn11_index_fn extends cache {
 
@@ -41,7 +41,6 @@ class jn11_index_fn extends cache {
 
     // Ojo con el error
     // jn50_idx_json::review_childrens_search_rcsv - jn10_Word some => function some() { [native code] }1
-
 
     // Este es el minimo que se leera como argumento de Arroba Dat
     if (word.length >= 3)
@@ -70,7 +69,6 @@ class jn11_index_fn extends cache {
     var uri_arr_pre       =   Array()
     var uri_arr_int       =   Array()
 
-
     uri_arr_pre           =   this.phrase.split(' ')
 
     var str_aux           =   ''
@@ -86,7 +84,6 @@ class jn11_index_fn extends cache {
        str_aux = uri_arr_pre[pos].toLowerCase()
        // Ahrase $:L[https://drupalarchitecture.com/en/article/a000@Example en paragraph with regular expresions]
        // jn50_idx_json::review_childrens_search_rcsv - jn11_CLEAN   L https   drupalarchitecture.com en article a000 Example
-
 
 	   this.replace(str_aux , "/\r|\n/|:|\\$|\\[|\\]|@|\\/|-|=|_|\\(|\\)|\\.|\'|\#" , " "	)
 

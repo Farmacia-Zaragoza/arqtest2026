@@ -25,9 +25,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { getset } = require(path.join(JS_BASE, 'com/objects/html/getset.es6'));
-	const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const { getset } = require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+	const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class scr02_js_scripts_vitolas extends getset {
 
@@ -49,7 +48,6 @@ class scr02_js_scripts_vitolas extends getset {
 		this.build_data()
 
 	}
-
 
 	//[S_01] <script src="http://vitolas.vbrqx.com/dev/cassets/js/jquery-3.3.11.min.js"></script>
 	//[S_01]<script src="https://code.jquery.com/jquery-3.3.11.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -78,7 +76,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		// this.script_01.defer = 'defer'
 
-
 		this.script_01.integrity	= 	""
 		this.script_01.src =
 			"https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"
@@ -88,7 +85,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		this.code += this.script_01.code
 	}
-
 
 	//[S_01] <script type="text/javascript" src="runtime.js"></script>
 	create_runtime() {
@@ -103,7 +99,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		this.script_02.src =
 			this.thm.s.cs.http_domainbar + path_pmt + js_name
-
 
 		this.script_02.pcreate()
 
@@ -123,9 +118,6 @@ class scr02_js_scripts_vitolas extends getset {
 		let path_pmt = 'dev/'
 		// let	path_pmt							=	'ang/vx/'
 
-
-
-
 		this.script_03.src =
 			this.thm.s.cs.http_domainbar + path_pmt + js_name
 
@@ -133,7 +125,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		this.code += this.script_03.code
 	}
-
 
 	//[S_02] <script type="text/javascript" src="polyfills.js"></script>
 	create_polyfills() {
@@ -148,7 +139,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		// DomainBAr http://vitolas.vbrqx.com/ang/vx/favicon.ico
 
-
 		this.script_02.src =
 			this.thm.s.cs.http_domainbar + path_pmt + js_name
 
@@ -156,7 +146,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		this.code += this.script_02.code
 	}
-
 
 	//[S_02] <script type="text/javascript" src="polyfills.js"></script>
 	create_scripts() {
@@ -171,7 +160,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		// DomainBAr http://vitolas.vbrqx.com/ang/vx/favicon.ico
 
-
 		this.script_02.src =
 			this.thm.s.cs.http_domainbar + path_pmt + js_name
 
@@ -179,7 +167,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		this.code += this.script_02.code
 	}
-
 
 	//[S_04] <script type="text/javascript" src="main.d05ea5aaed6e4704fb1e.js"></script>
 	create_main() {
@@ -192,7 +179,6 @@ class scr02_js_scripts_vitolas extends getset {
 		let path_pmt = 'dev/'
 		// let	path_pmt							=	'ang/vx/'
 
-
 		this.script_02.src =
 			this.thm.s.cs.http_domainbar + path_pmt + js_name
 
@@ -200,7 +186,6 @@ class scr02_js_scripts_vitolas extends getset {
 
 		this.code += this.script_02.code
 	}
-
 
 	build_data() {
 		this.create_jquery()

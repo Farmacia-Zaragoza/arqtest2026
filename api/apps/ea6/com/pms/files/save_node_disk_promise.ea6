@@ -15,17 +15,16 @@
 
 var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
-const 	fs 							= 	require(	'fs'																		),
-		path 						= 	require(	'path'																		),
-		recursive 					= 	require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir-sync'				),
-		sort 						= 	require(	'/brqx/base/react/zcommon/node_modules/sort-array'							),
-		readdirp 					= 	require(	'/brqx/base/react/zcommon/node_modules/readdirp'							),
-		echo	 					= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'							),
-		mat							=	require(	path.join(JS_BASE, 'com/libs/string/match.es6'));
-		url			 				= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6'));
-		rs							= 	require(	'/brqx/base/react/zcommon/node_modules/fs-readdir-promise'					),
-		run  						= 	require(	path.join(JS_BASE, 'com/pms/folders/generate_directory_promise.ea6'));	
-
+const 	fs 							= 	require(	'fs'																		);
+		const path = require(	'path'																		);
+		const recursive = require(	'/brqx/base/react/zcommon/node_modules/recursive-readdir-sync'				);
+		const sort = require(	'/brqx/base/react/zcommon/node_modules/sort-array'							);
+		const readdirp = require(	'/brqx/base/react/zcommon/node_modules/readdirp'							);
+		const echo = require(	'/brqx/base/react/zcommon/node_modules/node-echo'							);
+		const mat = require(path.join(JS_BASE, 'com/libs/string/match.es6'))
+		const url = require(path.join(JS_BASE, 'com/libs/string/url.es6'))
+		const rs = require(	'/brqx/base/react/zcommon/node_modules/fs-readdir-promise'					);
+		const run = require(path.join(JS_BASE, 'com/pms/folders/generate_directory_promise.ea6'))
 
 function save_node_disk_promise(t)
 {
@@ -53,7 +52,6 @@ function save_node_disk_promise(t)
 
 		t.path_pointer		=	t.s.img_relative_url_folder																				
 
-		
 		// Llamamos aqui a la promesa
 		
 		var data_and_error = '' 
@@ -71,8 +69,6 @@ function save_node_disk_promise(t)
 			t.prepare_specific_child_properties()
 			t.prepare_array_properties()
 
-
-			
 			t.if_is_correct_save_all()								
 
 			t.p('Promises_Prepared ' + t.type)

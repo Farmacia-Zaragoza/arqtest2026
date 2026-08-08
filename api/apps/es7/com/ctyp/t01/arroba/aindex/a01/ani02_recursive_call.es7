@@ -14,12 +14,11 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { idx_pointers }     =   require(   path.join(JS_TYP7 , 'logs/idx_pointers.es7'));
-       const { an10_index_pf }   =   require(   path.join(JS_TYP7 , 'arroba/aindex/a00/an10_index_pf.es7'   ));
+const  { idx_pointers }     =   require(   path.join(JS_TYP7 , 'logs/idx_pointers.es7'                ));
+       const { an10_index_pf } = require(   path.join(JS_TYP7 , 'arroba/aindex/a00/an10_index_pf.es7'   ));
 
 // Comm Object
 class ani02_arroba_recursive_call extends an10_index_pf {
-
 
   constructor ()
   {
@@ -89,14 +88,12 @@ class ani02_arroba_recursive_call extends an10_index_pf {
       this.p('jni02_INDEXXXX ' + this.j.value)
       // this.p('jn05_WE_ARE_HERE ' + this.cat)
 
-
       if ( this.j.child == "yes" )
       {
 
         // this.p ("jn05_s_ircsv : Have Childrens: " + this.j.item)
 
         let current_otype = this.j.otype
-
 
         this.review_childrens_index_recursive(
             current_level          ,
@@ -135,7 +132,6 @@ class ani02_arroba_recursive_call extends an10_index_pf {
           // this.j.add_separator()
 
           // this.p('jn05_to_load ' +  pf_to_load)
-
 
         }
       }

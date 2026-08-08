@@ -15,15 +15,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                                 =   require(  'fs'                                  ),
-       empty                              =   require(  'is-empty'                                      ),
-       accents                            =   require(  'remove-accents'                                ),
-       const { idx_pointers }                   =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn05_commo_json_recursive_call } =   require(  path.join(JS_TYP7, 'json/jnode/j01/objects/jn05_recursive_call.es7'));
+const  fs                                 =   require(  'fs'                                  );
+       const empty = require(  'is-empty'                                      );
+       const accents = require(  'remove-accents'                                );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn05_commo_json_recursive_call } = require(path.join(JS_TYP7, 'json/jnode/j01/objects/jn05_recursive_call.es7'))
 
 // Common Objects
 class jn04_commo_json_doble_call extends jn05_commo_json_recursive_call {
-
 
     constructor ()
     {
@@ -54,10 +53,8 @@ class jn04_commo_json_doble_call extends jn05_commo_json_recursive_call {
       // Set Json attribs
       this.attribs(idx, pos , index , depth)
 
-
       let current_level        = this.j.index
       let current_enbreadcrumb = enbreadcrumb + '/' + accents.remove (this.j.item).toLowerCase()
-
 
       // this.rvlash_inner(current_level)
       // this.index               =  this.result
@@ -65,7 +62,6 @@ class jn04_commo_json_doble_call extends jn05_commo_json_recursive_call {
         // this.p('Parrafete a cargar ' + pf_to_load )
 
       this.manage_array_parragraphs(parent_otype , this.j.index )
-
 
       if ( (--iterations  >= 0) && (this.b.type_generated) )
         this.j.add_separator()

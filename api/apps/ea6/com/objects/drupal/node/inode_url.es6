@@ -15,9 +15,8 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const	{ anode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))	
-		path					=	require(	'path' 																)	;	
-
+const	{ anode } 				= 	require(path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))
+		const path = require(	'path' 																)	;
 
 class inode_url extends anode {
 		constructor(url_img = "", img_type_save = "path") 
@@ -45,7 +44,6 @@ class inode_url extends anode {
 			this.ssd_path = ssd_base_dir + url_relativa
 			this.ram_path = ram_base_dir + ram_url_relativa
 			this.file_path = this.ram_path
-
 
 			this.str.replace(				this.url_ssd	, 		"files/", "firam/")
 			var ram_img			=	this.str.result						

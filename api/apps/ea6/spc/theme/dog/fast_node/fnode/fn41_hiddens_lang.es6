@@ -12,13 +12,10 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ fnode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
-		const { cbool }				= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-
+const 	{ fnode } 				= 	require(path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
 
 class fn41_hiddens_lang extends fnode {
-
 
     constructor (   fnode				=	''				, // 02. U object
 					page_position		=	''				, // 07. Position id
@@ -39,16 +36,13 @@ class fn41_hiddens_lang extends fnode {
 		this.b							= 	new cbool()
 		this.b.copy (this.s.b)
 
-
     	this.type									=	'hiddens_lang_structure'					 	// Type for structures
 		this.short_type								=	'HIDL'
-
 
 		// String fnode / node / cica_recuerdo
 		this.ftype 									=	'fnode'										// Fast node type
 		this.stype 									=	stype										// Node subtype
 		this.type_name								=	this.stype
-
 
 		this.b.type_user							=	false										 // Different content if is anonymous
 		this.b.type_common							=	true
@@ -77,17 +71,14 @@ class fn41_hiddens_lang extends fnode {
 
 		if (this.u.slash_ideal_uri.substr(0,1) == '/' )		uri_to_use = this.u.slash_ideal_uri.substr(1)
 
-
 		this.suffix					=	this.s.lang + '_' + this.stype
 		this.suffix_disk			=	this.suffix
 		this.suffix_lang			=	this.suffix
-
 
 		// Links information url - target - extended TeXt
 		let arrays_line = 'txt lines lfill lcokw'
 
 		this.arr['types'] = arrays_line.split (' ')
-
 
 		// Method for disk load and to generate and save content
 		this.generate_load_from_disk_path()
@@ -100,7 +91,6 @@ class fn41_hiddens_lang extends fnode {
 		// this.p('0L_Lang_Links_LOAD ' + this.load_from_disk_path)
 		// this.p('0L_Lang_Links_LANG ' + this.load_from_disk_lang)
 
-
 		if (this.s.load == 'drupal')
 		{
 			this.run_from_drupal()
@@ -110,7 +100,6 @@ class fn41_hiddens_lang extends fnode {
 			this.run_from_disk()
 		}
 		// this.p('RAM_Links ' + this.ram_alias_path			)
-
 
     }
 

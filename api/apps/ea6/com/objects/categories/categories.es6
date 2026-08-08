@@ -11,10 +11,8 @@
 // - build_data   	  : Build html final code for object 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-
-const	{ full_entities_search } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/full_entities_search.es6'				),
-		const { contents } 				= require(	'/brqx/base/rcode/es6/com/objects/categories/contents.es6'							);
+const	{ full_entities_search } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/full_entities_search.es6'				);
+		const { contents } = require(	'/brqx/base/rcode/es6/com/objects/categories/contents.es6'							);
 
 class categories {
 
@@ -26,7 +24,6 @@ class categories {
    		this.path					=	''								
 	
 		this.path_arr 				=	Array() 				
-
 
 		// Array ZONE
 
@@ -99,8 +96,6 @@ class categories {
 
 		//cat::Query pasadacategorias/pais/brasil/taxonomyterm1740:
 		//cat::Query pasadacategorias/codigo/brqx_azu11bra:
-		
-
 
 	}  
 }

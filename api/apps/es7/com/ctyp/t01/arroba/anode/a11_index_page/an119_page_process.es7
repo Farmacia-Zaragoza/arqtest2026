@@ -14,9 +14,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-
-const  { cache }              =   require(  path.join(JS_TYP7  , 'cache/c01_cache.es7'));
-       const { idx_pointers }       =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'           ));
+const  { cache }              =   require(  path.join(JS_TYP7  , 'cache/c01_cache.es7'     )   );
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'           )       );
 
 class anode_index_page_process extends cache {
   constructor()
@@ -35,7 +34,6 @@ class anode_index_page_process extends cache {
 
     this.m               =    'current_index_page_process'
 
-
     this.rvlash( current_subpath )
 	let index         = this.result
 
@@ -46,7 +44,6 @@ class anode_index_page_process extends cache {
 
     this.arroba_attribs(idx, this.s.cs.page , index , current_subpath)
     this.s.cs.founded_type    = this.ntype
-
 
     // a0001 - yes
     // this.p('an89_pp_' + this.item + ' + ' + this.child )
@@ -64,7 +61,6 @@ class anode_index_page_process extends cache {
 		// l020/l000
         // l020/l001
 		// this.p('an79_New subpath: ' + this.item +  'P ' + new_subpath)
-
 
         // Hay que iterar todos los atributos de la pagina
 		this.current_index_list_process(	lang                        ,

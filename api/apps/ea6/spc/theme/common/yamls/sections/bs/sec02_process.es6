@@ -20,13 +20,12 @@
 
 var 	cons 						= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"											);
 
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { sec02_process_tit } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'));
-		const { sec02_process_se } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se.es6'));
-		const { sec02_process_sa } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/sa/sec02_process_sa.es6'));
-		const { sec02_process_se_ext } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se_ext.es6'));
-		empty 						= 	require(	path.join(NODE_MOD, 'is_empty'));
-
+const 	{ html_style } 				= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { sec02_process_tit } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'))
+		const { sec02_process_se } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se.es6'))
+		const { sec02_process_sa } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/sa/sec02_process_sa.es6'))
+		const { sec02_process_se_ext } = require(path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se_ext.es6'))
+		const empty = require(path.join(NODE_MOD, 'is_empty'))
 
 class sec02_process extends html_style {
 
@@ -71,13 +70,11 @@ class sec02_process extends html_style {
 		if 			(this.level_sa === 0 ) this.elem_sa			= 	new sec02_process_sa()
 	}
 
-
 	choose_process_se()
 	{
 		this.m		=	'choose_process_se'
 
 		// this.p('ChoLevel ' + this.level_se)
-
 
 		if 			(this.level_se === 0 ) this.elem_se			= 	new sec02_process_se()
 	}
@@ -87,7 +84,6 @@ class sec02_process extends html_style {
 		this.m		=	'choose_process_se_ext'
 
 		// this.p('ChoLevel ' + this.level_se)
-
 
 		if 			(this.level_se === 0 ) this.elem_se			= 	new sec02_process_se_ext()
 	}
@@ -114,7 +110,6 @@ class sec02_process extends html_style {
 	process_children()
 	{
 		this.m					=	'process_children'
-
 
 		// SORTED ELEMS - (tit - str - pos - dim)
 		// this.p('Process_children ' + this.se.type + ' Str ' + this.se.str + ' Tit ' + this.se.tit)
@@ -235,7 +230,6 @@ class sec02_process extends html_style {
 		this.pcreate()
 
 	} // End Function
-	
 
 } // End Class
 

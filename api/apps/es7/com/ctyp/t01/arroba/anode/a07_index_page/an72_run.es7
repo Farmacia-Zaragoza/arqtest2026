@@ -17,7 +17,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_gindex_main_load }  =   require(  path.join(JS_TYP7  , 'arroba/gindex/a_main/g01_idx_load.es7'    ))
+const  { anode_gindex_main_load }  =   require(  path.join(JS_TYP7  , 'arroba/gindex/a_main/g01_idx_load.es7'    )  )
 
 class anode_run_index_page extends anode_gindex_main_load {
   constructor()

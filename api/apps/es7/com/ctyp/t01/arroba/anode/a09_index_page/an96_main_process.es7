@@ -16,8 +16,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_index_page_load }   =   require(  path.join(JS_TYP7  , 'arroba/anode/a09_index_page/an87_page_load.es7'));
-       const { idx_pointers } =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'     ));
+const  { anode_index_page_load }   =   require(  path.join(JS_TYP7  , 'arroba/anode/a09_index_page/an87_page_load.es7'  )  );
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'     )    );
 
 class anode_main_index_page_process extends anode_index_page_load {
   constructor()
@@ -26,7 +26,6 @@ class anode_main_index_page_process extends anode_index_page_load {
 
     this.n                        = "anode_main_index_page_process::"
   }
-
 
   //---------------------------------------------------------------------------------------------
   // Procesa Solo la primera posicion y la primera pagina
@@ -54,7 +53,6 @@ class anode_main_index_page_process extends anode_index_page_load {
     }
 
   }
-
 
 }
 

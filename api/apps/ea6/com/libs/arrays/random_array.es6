@@ -74,7 +74,7 @@ function slow_uniq_random(num_min = 0, num_max = 100, word_repeat = "repeat", nu
 					cont++
 				} else //Not repeat case
 				{
-					if (!(-1 !== arr.indexOf(rand)) {
+					if (!(-1 !== arr.indexOf(rand))) {
 						arr.push(rand)
 						random_line += rand + " "
 						cont++

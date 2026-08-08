@@ -21,11 +21,10 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_hbranch_load }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a04_hbranch/an47_load.es7'));
-       const { idx_pointers }           =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'       ));
+const  { anode_hbranch_load }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a04_hbranch/an47_load.es7' )  );
+       const { idx_pointers } = require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'       ) );
 
 class anode_hierarchical_main_process extends anode_hbranch_load {
   constructor()
@@ -34,7 +33,6 @@ class anode_hierarchical_main_process extends anode_hbranch_load {
 
     this.n                        = "anode_hierarchical_main_process::"
   }
-
 
   //---------------------------------------------------------------------------------------------
   // Procesa Solo la primera posicion o la pasada
@@ -69,7 +67,6 @@ class anode_hierarchical_main_process extends anode_hbranch_load {
 
     file_structure_path = current_subpath
 
-
     // this.p('an46_jnod_Pos: ' + this.s.cs.position + ' Item : ' + this.item + ' Child: ' + this.child)
 
     if ( this.child == "yes" )
@@ -77,7 +74,6 @@ class anode_hierarchical_main_process extends anode_hbranch_load {
       // this.p('an46_Cat Lang : ' + this.s.ms.lang + ' Item '  + this.item + ' Pat: ' + current_subpath)
       // cache::main_hierarchical_process - an36_Cat Lang : en Cat hierarchical_kb Pat: l040
       // cache::main_hierarchical_process - an36_Cat Lang : es Cat hierarchical_kb Pat: l040
-
 
       // this.p('an46_call_to_hierarchical_structure ' + this.s.cs.slash_hierarchi)
       // this.p('an46_init_path ' + init_subpath)
@@ -91,7 +87,6 @@ class anode_hierarchical_main_process extends anode_hbranch_load {
       let saved_current_subpath     = current_subpath
       let saved_breadcrumb          = breadcrumb
       let saved_breadcrumb_lang     = breadcrumb_lang
-
 
       this.current_hbranch_load(this.s.ms.lang      , // en
                                      array_index_string  , //
@@ -117,7 +112,6 @@ class anode_hierarchical_main_process extends anode_hbranch_load {
     }
 
   }
-
 
 }
 

@@ -14,9 +14,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { uri_create } =   require(  path.join(JS_TYP7  , 'uri/u14_create.es7'));
-        numbers        =   require(  path.join(JS_LIB7  , 'number/numbers.es7'          ));
-
+const   { uri_create } =   require(  path.join(JS_TYP7  , 'uri/u14_create.es7'          )  );
+        const numbers = require(  path.join(JS_LIB7  , 'number/numbers.es7'          )   );
 
 class uri_normalize extends uri_create {
 
@@ -26,7 +25,6 @@ class uri_normalize extends uri_create {
     this.n               =   'uri_normalize::'
   }
 
-
   normalize_uris()
   {
     // TODAS LAS URIS VAN SI BARRAS - NI DELANTERAS NI TRASERAS
@@ -34,7 +32,6 @@ class uri_normalize extends uri_create {
     this.m               = 'normalize_uris'
 
     var uri_arr_pre          =  Array()
-
 
     uri_arr_pre           =   this.uri.split('/')
 
@@ -45,7 +42,6 @@ class uri_normalize extends uri_create {
 
     // ANTES DE ANALIZAR URI
     // this.parr(uri_arr_pre)
-
 
     let new_dash_uri        =  ''
     let new_sash_uri        =  ''
@@ -167,7 +163,6 @@ class uri_normalize extends uri_create {
             // utf_urldecode     = utf8_decode(urldecode(args))
             // lower_str       =   iconv("utf-8", "ascii//TRANSLIT", lower_str_noutf)
 
-
             // this.p('U13_NORM_Putting ' + lower_str)
             this.uri_arr.push(      lower_str    )
 
@@ -215,7 +210,6 @@ class uri_normalize extends uri_create {
       if ( cont > 1  )
         this.uri_arr_lang_command.push(    str_to_manage  )
 
-
       if  ((cont   >=  0           )  &&
          (cont   <   this.count_uri_arr )  )
       {
@@ -229,7 +223,6 @@ class uri_normalize extends uri_create {
 
     // [END_01_FOR]
     }
-
 
     // Array limpio
     // Dash (guiones) - Bars ( barras | )
@@ -249,7 +242,6 @@ class uri_normalize extends uri_create {
 
     if (!this.b.robot_page)
        this.robot_uri    =   this.uri + '/rbt'
-
 
   // END_METHOD
 

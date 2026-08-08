@@ -13,13 +13,13 @@
 
 // Must to be unique
 
-const 	{ pn01_simple } 	= require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'));
-		run						= require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'));
-		def_page  				= require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple_def.ea6'));
-		const { pn02_fast } 		= require(	path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn02_fast.es6'));
-		empty 				= require(	'is_empty'									),
-		trim 				= require(	'trim'										),
-		echo 				= require(	'node-echo'									);
+const 	{ pn01_simple } 	= require(path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'))
+		const run = require(path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fnode_promise.ea6'))
+		const def_page = require(path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple_def.ea6'))
+		const { pn02_fast } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn02_fast.es6'))
+		const empty = require(	'is_empty'									);
+		const trim = require(	'trim'										);
+		const echo = require(	'node-echo'									);
 
 // QUIERO HACER UN ENFOQUE DE PROMESAS
 // PRIMERO NECESITO UN SISTEMA NO OOP
@@ -82,6 +82,5 @@ function truck(t	= '' )
 		}
 
 } // End Constructor
-
 
 module.exports.truck = truck

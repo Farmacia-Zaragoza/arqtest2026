@@ -19,10 +19,9 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { mai02_div_mail_icon }			= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai02_div_mail_icon.es6'));
-		const { mai02_div_mail_address_flex } = 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai02_div_mail_address_flex.es6'));
+const 	{ html_style } 					= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { mai02_div_mail_icon } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai02_div_mail_icon.es6'))
+		const { mai02_div_mail_address_flex } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai02_div_mail_address_flex.es6'))
 
 // NOTA: ESTE EMAIL ES ELS QUE ESTA EN EL FLEX SLIDER. NO EL DEL MOBILE CONTACTS
 

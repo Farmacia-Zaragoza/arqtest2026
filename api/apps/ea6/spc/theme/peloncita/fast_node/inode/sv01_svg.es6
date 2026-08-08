@@ -15,11 +15,10 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const	{ anode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'));
-		const { cbool }			= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
-		svg 				= require( 	path.join(JS_BASE, 'com/libs/image/create_svg.es6'));
-		empty 				= require( 	'is-empty'										);
-
+const	{ anode } 			= require(path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))
+		const { cbool } = require(path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))
+		const svg = require(path.join(JS_BASE, 'com/libs/image/create_svg.es6'))
+		const empty = require( 	'is-empty'										);
 
 class sv01_svg extends anode {
 
@@ -52,7 +51,6 @@ class sv01_svg extends anode {
 		this.ntype 				= "svg"
 		this.stype 				= stype
 		this.type_name 			= this.stype
-
 
 		this.b.type_user 						= false
 		this.b.type_human 						= false
@@ -162,7 +160,6 @@ class sv01_svg extends anode {
 
 			// if (!empty(this.code))
 			// 		this.p('SV01_SVG_GENERATED ' + this.code.length)
-
 
 		// this.p('sv01_font '  +  this.font + ' Text ' + this.text)
 

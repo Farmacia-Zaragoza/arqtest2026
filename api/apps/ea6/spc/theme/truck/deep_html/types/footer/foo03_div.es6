@@ -20,10 +20,9 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { foo02_a_footer }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo02_a.es6'));
-		scpf 						= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
+const 	{ html_style } 				= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { foo02_a_footer } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo02_a.es6'))
+		const scpf = require(path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
 
 class foo03_div_footer extends html_style{
 
@@ -31,7 +30,6 @@ class foo03_div_footer extends html_style{
 					alignment 	=	'text-center'				)
    {
         let tag_type                 		= 	'div'
-
 
         super(tag_type)
 
@@ -49,7 +47,6 @@ class foo03_div_footer extends html_style{
 
 		this.thm							=	thm
 
-
 		// this.p('site_path_footer03' . this.fnode.u.site_path 	)
 
 		this.class 						=
@@ -64,7 +61,6 @@ class foo03_div_footer extends html_style{
 		this.span_02 						= 	new html_style('span')
 		this.span_02.class  				= 	'link-description'
 
-
     }
 
 	create_span_02()
@@ -75,7 +71,6 @@ class foo03_div_footer extends html_style{
 
 		this.span_01.content 	+= 	this.span_02.code
 	}
-
 
 	create_span()
 	{

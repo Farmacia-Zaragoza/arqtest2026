@@ -15,14 +15,12 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { ifnojs } 				= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'));
-		const { met01_meta_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/met01_meta_dog.es6'));
-		const { lnk01_link_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/lnk01_link_dog.es6'));
-		minify 					= 	require(	'html-minifier'										).minify,
-		const { cn03_scripts }		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn03_scripts.es6'));
-
+const 	{ html_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { ifnojs } = require(path.join(JS_BASE, 'com/objects/html/ifnojs.es6'))
+		const { met01_meta_dog } = require(path.join(JS_BASE, 'spc/theme/dog/main_html/met01_meta_dog.es6'))
+		const { lnk01_link_dog } = require(path.join(JS_BASE, 'spc/theme/dog/main_html/lnk01_link_dog.es6'))
+		const minify = require(	'html-minifier'										).minify;
+		const { cn03_scripts } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn03_scripts.es6'))
 
 class hea01_head_dog extends html_style  {
 
@@ -51,7 +49,6 @@ class hea01_head_dog extends html_style  {
 
 		this.fnode						=	this.thm.arr['fnode']['site_info_lang']
 
-
 		// Head can't have tame
 		this.tame						=	''
 
@@ -62,7 +59,6 @@ class hea01_head_dog extends html_style  {
 		this.build_data()
 
     }
-
 
 	// 	<div id="logo">
   	create_metas()
@@ -85,7 +81,6 @@ class hea01_head_dog extends html_style  {
 
 		this.content					+=  this.title_01.code
 	}
-
 
   	create_links()
     {
@@ -111,7 +106,6 @@ class hea01_head_dog extends html_style  {
 	{
 		let head_code = ''
 
-
 		this.compo_head	= new cn03_scripts(this.thm.u , 'head')
 
 //		print 'htm01_- Check head - ' . this.compo_head.ram_alias_code_path . '<br>'
@@ -130,12 +124,10 @@ class hea01_head_dog extends html_style  {
 	 		this.content += this.thm.drupal_styles
 	 		this.content += this.thm.drupal_scripts
 
-
 			var result = minify(this.content, this.minimize_options)
 			// this.p('MINIMIZED ' + this.content.length + '  to  ' + result.length )
 
 			// this.p('RESULT ' + result)
-
 
 			this.pcreate()
 

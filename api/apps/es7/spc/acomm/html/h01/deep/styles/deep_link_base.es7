@@ -28,8 +28,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { html_style } 	=  require(	path.join(JS_TYP7 , 'html/style/html_style.es7'));
-      const { getset }        =  require( path.join(JS_TYP7 , 'html/style/getset.es7'     ));
+const { html_style } 	=  require(	path.join(JS_TYP7 , 'html/style/html_style.es7'	  )   );
+      const { getset } = require( path.join(JS_TYP7 , 'html/style/getset.es7'     )   );
 
 class deep_link_base extends getset {
 
@@ -85,7 +85,6 @@ class deep_link_base extends getset {
 
 		let url_materialize = 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/'
 
-
 		this.link_01.href = url_materialize + css_name
 
 		// this.link_01.href				=
@@ -109,7 +108,6 @@ class deep_link_base extends getset {
 
 		let url_awesome = 'https://use.fontawesome.com/releases/v5.7.2/css/'
 
-
 		this.link_01.href = url_awesome + css_name
 
 		// this.link_01.href				=
@@ -119,7 +117,6 @@ class deep_link_base extends getset {
 
 		this.code += this.link_01.code
 	}
-
 
 	create_bootstrap() {
 		let css_name = 'bootstrap.min.css'
@@ -132,7 +129,6 @@ class deep_link_base extends getset {
 				"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 
 		let url_bootstrap = 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/'
-
 
 		this.link_01.href =	url_bootstrap + css_name
 
@@ -159,7 +155,6 @@ class deep_link_base extends getset {
 
 		this.code += this.link_02.code
 	}
-
 
 	create_theme() {
 
@@ -204,7 +199,6 @@ class deep_link_base extends getset {
 		this.link_02.type = 'text/css'
 		// this.link_02.as = 'style'
 		this.link_02.rel = 'stylesheet'
-
 
 		let css_name = 'robot.css'
 

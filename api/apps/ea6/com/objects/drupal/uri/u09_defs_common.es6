@@ -11,7 +11,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ strings } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/strings/s01_strings.es6'));
+const 	{ strings } 		= 	require(path.join(JS_BASE, 'com/objects/drupal/strings/s01_strings.es6'))
 
 class uri_defs_common extends strings {
 

@@ -17,9 +17,8 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+const	{ svg_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class dli01_div_list extends svg_style {
 
@@ -40,7 +39,6 @@ class dli01_div_list extends svg_style {
 		this.build_data()
 	}
 
-
 	create_svg()
 	{
 		this.svg_path			= 	'r_img/lists/'
@@ -52,7 +50,6 @@ class dli01_div_list extends svg_style {
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
-
 
 	build_data()
 	{

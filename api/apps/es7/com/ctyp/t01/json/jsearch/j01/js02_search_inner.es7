@@ -16,15 +16,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                   =   require(  'fs'                                                   ),
-       empty                =   require(  'is-empty'                             ),
-       accents              =   require(  'remove-accents'                       ),
-       const { idx_pointers }     =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn03_search_lang } =   require(  path.join(JS_TYP7, 'json/jsearch/j01/js03_search_lang.es7'));
+const  fs                   =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn03_search_lang } = require(path.join(JS_TYP7, 'json/jsearch/j01/js03_search_lang.es7'))
 
 // Comm Object
 class jn02_object_search_inner extends jn03_search_lang {
-
 
   constructor ()
   {
@@ -78,7 +77,6 @@ class jn02_object_search_inner extends jn03_search_lang {
       // We dont put sm_meta_og_description
       var iterations           = Object.keys(articles_arr).length - 1
 
-
       for (var pos in articles_arr)
       {
 
@@ -110,7 +108,6 @@ class jn02_object_search_inner extends jn03_search_lang {
 
         // this.p('jn05_WE_ARE_HERE ' + this.cat)
 
-
               // this.p ('jns02-qry  ' + this.u.slash_sub_query + ' Result ' + result)
 
               // Debe usar hover link y cont
@@ -124,7 +121,6 @@ class jn02_object_search_inner extends jn03_search_lang {
        if (--iterations  >= 0)
         this.j.add_separator()
      }
-
 
     } // End For
 

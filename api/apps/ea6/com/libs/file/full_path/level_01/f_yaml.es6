@@ -21,16 +21,14 @@
 
 var 	cons 		= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"						)
 
-const 	fs 					= 	require(	'fs'																),
-		mkdirp 				= 	require(	'mkdirp'											),
-		echo 				= 	require(	'node-echo'										),
-		empty 				= 	require(	'is-empty'										),
-		f_file				=	require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'));
-		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
-		const { sorted_array } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/structs/sorted_array.es6'));
-		nlr  				= 	require(	'node-line-reader'								);
-
-
+const 	fs 					= 	require(	'fs'																);
+		const mkdirp = require(	'mkdirp'											);
+		const echo = require(	'node-echo'										);
+		const empty = require(	'is-empty'										);
+		const f_file = require(path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'))
+		const { printlog } = require(path.join(JS_BASE, 'com/objects/logs/printlog.es6'))
+		const { sorted_array } = require(path.join(JS_BASE, 'com/objects/drupal/structs/sorted_array.es6'))
+		const nlr = require(	'node-line-reader'								);
 
 function yaml_from_file (file_name)
 {
@@ -43,7 +41,6 @@ function yaml_from_file (file_name)
 	this.aux_2 		= ''		// Array_Nivel 2
 	this.aux_3 		= ''		// Array_Nivel 3
 	this.aux_4 		= ''		// Array_Nivel 4
-
 
 	var title 		= 	''
 	var trim_line	=	''
@@ -101,7 +98,6 @@ function yaml_from_file (file_name)
 						this.aux_3 = new sorted_array()
 						this.level[3] 		= 	false
 					}
-
 
 					let title_line = trim_line.substr(0,trim_line.length -1)
 					this.aux_2.add( title_line  , this.aux_3 )
@@ -227,7 +223,6 @@ function yaml_from_file (file_name)
 
 					if (this.level[2])   this.level[2] 		= 	false
 
-
 					if (empty(this.aux_1))
 					{
 						this.aux_1 = new sorted_array()
@@ -274,7 +269,6 @@ function yaml_from_file (file_name)
 			}
 		}
 
-
 	}
 	// echo ('File Length  ' + this.arr.num )
 
@@ -283,6 +277,5 @@ function yaml_from_file (file_name)
 	// this.arr.marr()
 
 }
-
 
 module.exports.yaml_from_file = yaml_from_file

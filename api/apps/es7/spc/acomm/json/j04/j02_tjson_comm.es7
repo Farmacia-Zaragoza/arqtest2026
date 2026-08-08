@@ -17,8 +17,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { printlog }        =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'));
-        const { container }       =   require(  path.join(JS_TYP7  , 'container/c01_cont.es7'        ));
+const   { printlog }        =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'             ));
+        const { container } = require(  path.join(JS_TYP7  , 'container/c01_cont.es7'        ));
 
 class tjson_comm extends printlog
 {
@@ -26,7 +26,6 @@ class tjson_comm extends printlog
   {
     super()
     this.n                  =   "theme_json::"
-
 
     this.arroba             =   arroba
 
@@ -45,10 +44,8 @@ class tjson_comm extends printlog
     // Con content siempre se genera el fichero pues se supone que nunca sera comun a otras paginas
     this.jcontent.rungen_content()
 
-
     this.jcontent.s.ms.j_cont_path        =  this.jcontent.s.cs.cache_path
     this.jcontent.s.ms.j_cont_url         =  this.jcontent.s.cs.http_domainbar + this.jcontent.s.cs.cache_url
-
 
     this.arroba.copy ( this.jcontent)
 

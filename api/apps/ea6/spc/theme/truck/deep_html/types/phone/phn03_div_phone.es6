@@ -21,10 +21,9 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { phn02_div_phone_icon }	= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn02_div_phone_icon.es6'));
-		const { phn02_div_phone_address }	= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn02_div_phone_address.es6'));
+const 	{ html_style } 				= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { phn02_div_phone_icon } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn02_div_phone_icon.es6'))
+		const { phn02_div_phone_address } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn02_div_phone_address.es6'))
 
 // NOTA: ESTE PHONE ES ELS QUE ESTA EN EL FLEX SLIDER. NO EL DEL MOBILE CONTACTS
 

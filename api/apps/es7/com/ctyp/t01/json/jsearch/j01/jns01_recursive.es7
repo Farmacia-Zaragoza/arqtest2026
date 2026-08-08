@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                 =   require(  'fs'                                                                      ),
-       empty              =   require(  'is-empty'                                                ),
-       accents            =   require(  'remove-accents'                                          ),
-       const { idx_pointers }                =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jns02_json_recursive_call } =   require(  path.join(JS_TYP7, 'json/jsearch/j01/jns02_recursive_call.es7'));
+const  fs                 =   require(  'fs'                                                                      );
+       const empty = require(  'is-empty'                                                );
+       const accents = require(  'remove-accents'                                          );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jns02_json_recursive_call } = require(path.join(JS_TYP7, 'json/jsearch/j01/jns02_recursive_call.es7'))
 
 // Common Array
 class jns01_json_recursive extends jns02_json_recursive_call {
-
 
   constructor ()
   {
@@ -45,7 +44,6 @@ class jns01_json_recursive extends jns02_json_recursive_call {
     let cats         = this.getarr(this.s.ms.main_lang, idx.jindex)                              ;
 
     var last_element           = Object.keys(cats).length - 1
-
 
     // Necesito una varible global para saber cuando poner mas comas
     this.separator             = false
@@ -80,11 +78,9 @@ class jns01_json_recursive extends jns02_json_recursive_call {
       // Set Json attribs
       this.attribs(idx, pos)
 
-
       this.j.item     =   this.cat
       this.j.link     =   this.clink
       this.j.level    =   depth
-
 
       this.k.copyvalues(this.j)
 
@@ -95,7 +91,6 @@ class jns01_json_recursive extends jns02_json_recursive_call {
 
         // Array u Objeto
           let object_type     =  this.k.otype
-
 
           this.review_childrens_search_recursive(
             current_level          ,

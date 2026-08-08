@@ -23,9 +23,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
-		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class lnk03_css_minimized_seo extends getset  {
 
@@ -58,7 +57,6 @@ class lnk03_css_minimized_seo extends getset  {
 		this.link_01.as					=	'style'
 		this.link_01.rel				=	'stylesheet'
 
-
 		let css_name 						=	'styles_min.css'
 
 		this.link_01.href			 	=
@@ -82,7 +80,6 @@ class lnk03_css_minimized_seo extends getset  {
 		this.link_01.as					=	'style'
 		this.link_01.rel				=	'stylesheet'
 
-
 		let css_name 					=	'fontawesome_v57_min.css'
 
 		this.link_01.href			 	=
@@ -104,7 +101,6 @@ class lnk03_css_minimized_seo extends getset  {
 		this.link_01.as					=	'style'
 		this.link_01.rel				=	'stylesheet'
 
-
 		let css_name 					=	'bootstrap_v413_min.css'
 
 		this.link_01.href			 	=
@@ -115,14 +111,12 @@ class lnk03_css_minimized_seo extends getset  {
 		this.code							+=	this.link_01.code
 	}
 
-
     build_data()
     {
 
 		this.create_bootstrap()
 		this.create_fontawesome()
 		this.create_style()
-
 
 		// Pending [17-11-02]
 		this.p('Code : >' + this.code )

@@ -8,9 +8,8 @@
 
 var 		cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
 
-const 		{ model_run_mongo } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/model/m02_run_mongo.ea6'));
-			echo 					= 	require(	'node-echo'									);
-
+const 		{ model_run_mongo } 	= 	require(path.join(JS_BASE, 'spc/theme/truck/model/m02_run_mongo.ea6'))
+			const echo = require(	'node-echo'									);
 
 class model extends model_run_mongo
 {
@@ -37,7 +36,6 @@ class model extends model_run_mongo
 
 // 		return await this.code
 	}
-
 
 } // end Class
 

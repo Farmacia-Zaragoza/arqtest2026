@@ -8,8 +8,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { html_style } 	= 	require(	path.join(JS_TYP7 , 'html/style/html_style.es7'));
-      const { json_copy }     =   require(  path.join(JS_TYP7 , 'json/jtype/json_copy.es7'                 ));
+const { html_style } 	= 	require(	path.join(JS_TYP7 , 'html/style/html_style.es7'			)  );
+      const { json_copy } = require(  path.join(JS_TYP7 , 'json/jtype/json_copy.es7'                 )    );
 
 class robot  extends json_copy {
   constructor()
@@ -58,9 +58,7 @@ class robot  extends json_copy {
         let uri_arr_pre          =   right_str.split('@')
         right_str                =   uri_arr_pre[1]
 
-
       }
-
 
       if ( anchor_pos !== false)
       {
@@ -75,7 +73,6 @@ class robot  extends json_copy {
 
         let count_positions      =  uri_arr_pre.length -1
 
-
         if ( count_positions == 1)
         {
           let str = uri_arr_pre[1]
@@ -88,7 +85,6 @@ class robot  extends json_copy {
           // Lo lo insertamos
           this.p('s04_sgt_anchor ' + pf_anchor)
 
-
         }
 
         // Es una taxonomia
@@ -99,14 +95,11 @@ class robot  extends json_copy {
 
           this.p ('s07_value_metatag_ '  + str)
 
-
-
           this.value = uri_arr_pre[0]
 
           this.p ('s07_value_metatag_ '  + pf_anchor)
 
           this.p ('s07_value_metatag_ '  + this.value)
-
 
 	    }
 
@@ -137,10 +130,7 @@ class robot  extends json_copy {
 
       }
 
-
   }
-
-
 
   create(name = "")
   {
@@ -155,7 +145,6 @@ class robot  extends json_copy {
        this.code = this.l.code
     }
   }
-
 
   add_element(name , pair_code = '')   {  }
 

@@ -17,10 +17,8 @@
 //- build_data  	 : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
-		const { cpt03_div_captcha }	= 	require( 	'/brqx/base/rcode/es6/spc/theme/truck/deep_html/types/captcha/cpt03_div_captcha.es6'	);
-
+const	{ svg_style } 			= 	require(path.join(JS_BASE, 'com/objects/html/svg_style.es6'))
+		const { cpt03_div_captcha } = require( 	'/brqx/base/rcode/es6/spc/theme/truck/deep_html/types/captcha/cpt03_div_captcha.es6'	);
 
 class cpt01_button_captcha extends svg_style {
 
@@ -51,9 +49,6 @@ class cpt01_button_captcha extends svg_style {
 		// this will call to svg_inline or svg_external depends of site options
 		// file_get_svg_code
 	}
-
-
-
 
 	reload_data(button_name = "", button_class = "", button_alt = "")
 	{

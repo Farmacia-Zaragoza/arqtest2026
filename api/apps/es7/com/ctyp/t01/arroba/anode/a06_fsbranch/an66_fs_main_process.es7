@@ -21,11 +21,10 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_fsbranch_load }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a06_fsbranch/an67_load.es7'));
-       const { idx_pointers }           =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'      ));
+const  { anode_fsbranch_load }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a06_fsbranch/an67_load.es7' )  );
+       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'      )  );
 
 class anode_fs_main_process extends anode_fsbranch_load {
   constructor()
@@ -34,7 +33,6 @@ class anode_fs_main_process extends anode_fsbranch_load {
 
     this.n                        = "anode_fs_main_process::"
   }
-
 
   //---------------------------------------------------------------------------------------------
   // Procesa Solo la primera posicion o la pasada
@@ -52,7 +50,6 @@ class anode_fs_main_process extends anode_fsbranch_load {
 
     this.arroba_attribs(idx, this.s.cs.position)
 
-
     // Vamos a ir avanzando por la estructura y esta sera la base
     // kb
     var breadcrumb      = this.breadcrumb
@@ -69,7 +66,6 @@ class anode_fs_main_process extends anode_fsbranch_load {
 
     file_structure_path = current_subpath
 
-
     // this.p('an46_jnod_Pos: ' + this.s.cs.position + ' Item : ' + this.item + ' Child: ' + this.child)
 
     if ( this.child == "yes" )
@@ -77,7 +73,6 @@ class anode_fs_main_process extends anode_fsbranch_load {
       // this.p('an46_Cat Lang : ' + this.s.ms.lang + ' Item '  + this.item + ' Pat: ' + current_subpath)
       // cache::main_hierarchical_process - an36_Cat Lang : en Cat hierarchical_kb Pat: l040
       // cache::main_hierarchical_process - an36_Cat Lang : es Cat hierarchical_kb Pat: l040
-
 
       // this.p('an46_call_to_hierarchical_structure ' + this.s.cs.slash_hierarchi)
       // this.p('an46_init_path ' + init_subpath)
@@ -92,12 +87,10 @@ class anode_fs_main_process extends anode_fsbranch_load {
       let saved_breadcrumb          = breadcrumb
       let saved_uri_depth           = uri_depth
 
-
       this.p('an66_main_p I ' + array_index_string)
       this.p('an66_main_p F ' + file_structure_path)
       this.p('an66_main_p S ' + current_subpath)
       this.p('an66_main_p C ' + breadcrumb)
-
 
       if ( this.s.ms.lang == "en" )
       {
@@ -127,7 +120,6 @@ class anode_fs_main_process extends anode_fsbranch_load {
     }
 
   }
-
 
 }
 

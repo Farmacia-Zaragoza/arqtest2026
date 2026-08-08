@@ -19,12 +19,11 @@ const   path                =   require('path'                                  
 
 // Extraes solo las 3 o 4 que vayas a usar en este fichero
 
-const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd(), 'api/apps/paths.js'));
+const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const   { an11_index_fn }     =   require(path.join(JS_TYP7 , 'arroba/aindex/a00/an11_index_fn.es7'));
-	    shtf  			= 	require(path.join(JS_LIB7 , 'file/save_hash_to_file.es7'));
-	    satf  			= 	require(path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	));
-
+const   { an11_index_fn }     =   require(path.join(JS_TYP7 , 'arroba/aindex/a00/an11_index_fn.es7' ));
+	    const shtf = require(path.join(JS_LIB7 , 'file/save_hash_to_file.es7' 	));
+	    const satf = require(path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	));
 
 class an10_index_pf extends an11_index_fn {
 
@@ -43,15 +42,12 @@ class an10_index_pf extends an11_index_fn {
     // Hay que limpiar el array
     // this.p('j00_comm_pf_Loading File ' + file_to_load)
 
-
     this.word_arr         =   Array()
     var str_aux           =   ''
 
     this.load_file_information(file_to_load)
 
-
     // this.p('jn10idx_LEngth_Array_Pf ' + last_element  )
-
 
     for (var pos in this.contents)
     {
@@ -66,7 +62,6 @@ class an10_index_pf extends an11_index_fn {
       this.process_phrase(phrase)
 
       // INDEX (word) VALUE (count)
-
 
     }  // End For
 
@@ -92,7 +87,6 @@ class an10_index_pf extends an11_index_fn {
 								this.word_arr						    ,
 								this.s.cs.position						, // 0020
 								this.s.cs.page							) // 1
-
 
   }
 

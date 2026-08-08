@@ -25,16 +25,13 @@
 //- create_div_NN    : Create div_NN   dhtml object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 					= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		const { flx02_ul_product_flex }		= require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_product_flex.es6'));
-		const { flx02_ul_flex }				= require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6'));
-		const { mai03_div_email }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai03_div_mail.es6'));
-		const { phn03_div_phone }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn03_div_phone.es6'));
-		const { dli01_div_list }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/desc_list/dli01_desc_list.es6'));
-		const { des02_div_descriptions }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/descriptions/des02_div_descriptions.es6'));
-
-
+const 	{ html_style } 					= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const { flx02_ul_product_flex } = require(path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_product_flex.es6'))
+		const { flx02_ul_flex } = require(path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6'))
+		const { mai03_div_email } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai03_div_mail.es6'))
+		const { phn03_div_phone } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn03_div_phone.es6'))
+		const { dli01_div_list } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/desc_list/dli01_desc_list.es6'))
+		const { des02_div_descriptions } = require(path.join(JS_BASE, 'spc/theme/truck/deep_html/types/descriptions/des02_div_descriptions.es6'))
 
 class flx03_div_flex_slider extends html_style {
 
@@ -52,7 +49,6 @@ class flx03_div_flex_slider extends html_style {
 		this.fnode 							= this.thm.arr['fnode']['image_list']
 		this.id 							= "flex-slider-H"
 		this.class 							= "flexslider"
-
 
 		this.ul_01							= 	''
 

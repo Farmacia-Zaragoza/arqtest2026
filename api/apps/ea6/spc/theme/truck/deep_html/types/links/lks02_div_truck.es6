@@ -15,10 +15,8 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-
-const 	{ html_style } 		= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
-		rnd 				= require( 	path.join(JS_BASE, 'com/libs/arrays/random_array.es6'));
-
+const 	{ html_style } 		= require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+		const rnd = require(path.join(JS_BASE, 'com/libs/arrays/random_array.es6'))
 
 class lks02_div_links_truck extends html_style {
 	constructor(thm)

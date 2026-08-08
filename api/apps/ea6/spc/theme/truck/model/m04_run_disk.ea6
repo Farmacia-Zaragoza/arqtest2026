@@ -10,12 +10,11 @@
 
 var 		cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"					);
 
-const 		{ model_process } 	= 	require(	path.join(JS_BASE, 'com/objects/fire/f01_model/m05_process.ea6'));
-			const { pn01_simple } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'));
-			const { pn02_fast } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn02_fast.es6'));
-			empty 				= 	require(	'is_empty'										),
-			echo 				= 	require(	 'node-echo'										);
-
+const 		{ model_process } 	= 	require(path.join(JS_BASE, 'com/objects/fire/f01_model/m05_process.ea6'))
+			const { pn01_simple } = require(path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'))
+			const { pn02_fast } = require(path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn02_fast.es6'))
+			const empty = require(	'is_empty'										);
+			const echo = require(	 'node-echo'										);
 
 class model_run_disk extends model_process
 {
@@ -29,7 +28,6 @@ class model_run_disk extends model_process
 
 	// FROM --> run_options
 	// TO   --> pn02_fast ( try FPC) - (try psimple ) - return code
-
 
 	// ------------------------- RUN_DISK [STA] -------------------------
 	run_disk()

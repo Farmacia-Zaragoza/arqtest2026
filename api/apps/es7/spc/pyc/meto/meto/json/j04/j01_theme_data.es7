@@ -18,10 +18,10 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { tdata_asign }                =   require(  path.join(JS_PYC7, 'meto/meto/json/j04/j11_tdata_asign.es7'));
-       const { arroba_mcomm }               =   require(  path.join(JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7'));
-       const { jn01_checking_search_words } =   require(  path.join(JS_TYP7, 'json/jsearch/j02/jn01_check_words.es7'));
-       const { theme_json }                 =   require(  path.join(JS_PYC7, 'meto/meto/json/j04/j02_theme_json.es7')) ;
+const  { tdata_asign }                =   require(path.join(JS_PYC7, 'meto/meto/json/j04/j11_tdata_asign.es7'))
+       const { arroba_mcomm } = require(path.join(JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7'))
+       const { jn01_checking_search_words } = require(path.join(JS_TYP7, 'json/jsearch/j02/jn01_check_words.es7'))
+       const { theme_json } = require(path.join(JS_PYC7, 'meto/meto/json/j04/j02_theme_json.es7'))
 
 class theme_data extends tdata_asign
 {
@@ -60,7 +60,6 @@ class theme_data extends tdata_asign
         this.u            =  this.arroba.u
         this.arroba.s.cs.loadtype = 'full'
 
-
         this.acontent     =  new arroba_mcomm(this.arroba, '20')
 
         this.arr          =  this.arroba.arr
@@ -89,7 +88,6 @@ class theme_data extends tdata_asign
         }
         // sino hay que enviar a home
 
-
         break;;
 
       default:
@@ -98,7 +96,6 @@ class theme_data extends tdata_asign
         // this.p('j01_PHERE_Page_type ' + this.arroba.s.cs.page_type )
         // this.p('j01_PHERE_Page_numb ' + this.arroba.s.cs.position )
         // this.p('j01_PHERE_Page_numb ' + this.arroba.s.cs.page )
-
 
         // this.p('arq_model_lang D ' + this.arroba.s.cs.lang )
 

@@ -18,13 +18,13 @@
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-const	mat					= require('libs/string/match.es6'			),
-		path 				= require(	'path'														),
-		fs 					= require(	'fs'														),
-		os					= require(	'os'														),
-		empty	 			= require(	'is_empty'			),
-		is_numeric 			= require(	'isnumeric'			),
-		ucfirst 			= require(	'ucfirst'				);
+const	mat					= require('libs/string/match.es6'			);
+		const path = require(	'path'														);
+		const fs = require(	'fs'														);
+		const os = require(	'os'														);
+		const empty = require(	'is_empty'			);
+		const is_numeric = require(	'isnumeric'			);
+		const ucfirst = require(	'ucfirst'				);
 
 // Javascript always passes by value. However, if you pass an object to a function, the "value" is really a reference to that objec
 
@@ -65,7 +65,6 @@ function process_results_array(	query_docs 						,
 	}
 }
 
-
 function process_generate_results_array(	query_docs 			,
 											arr 				,
 											index_arr = 'rst'	)
@@ -90,9 +89,6 @@ function process_generate_results_array(	query_docs 			,
 		arr[index_arr][id]	=	path_alias
 	}
 }
-
-
-
 
 // Generate solr query string
 function generate_query(arr_qrys , query , method = 'OR')
@@ -121,8 +117,6 @@ function generate_query(arr_qrys , query , method = 'OR')
 
 	this.result = query
 }
-
-
 
 function create_solr_query_field(	qry_string	=	''			,
 									qry_name 	=	''			,
@@ -153,7 +147,6 @@ function create_solr_query_field(	qry_string	=	''			,
 
 }
 
-
 function create_solr_query_field_num(	qry_string	=	''			,
 										qry_name 	=	''			,
 										arg		=	''			)
@@ -166,7 +159,6 @@ function create_solr_query_field_num(	qry_string	=	''			,
 		this.result = qry_string
 }
 
-
 // content is a file converted as string. Not a file converted as array
 function exist_in_content(	content 			= 	''				,
 							string_to_search	=	''				)
@@ -177,7 +169,6 @@ function exist_in_content(	content 			= 	''				,
 	return false
 
 }
-
 
 // Comprueba si existe en el array la cadena
 function exist_in_array(	arr 							,
@@ -226,7 +217,6 @@ function exist_in_array(	arr 							,
 
 }
 
-
 // Comprueba la cadena en todos los arrays
 function exist_in_array_langs(	arr_langs 						,
 								string_to_search			= '',
@@ -236,7 +226,6 @@ function exist_in_array_langs(	arr_langs 						,
 	// No Son arrays de dos dimensiones. Son arrays de arrays para poder reutilizar funciones
 	// 1. Primer array / dimension - El idioma
 	// 2. Segundo array / dimension - El termino
-
 
 	let c=0
 	//foreach (arr_langs as key=>int_arr)
@@ -260,8 +249,6 @@ function exist_in_array_langs(	arr_langs 						,
 	return false
 
 }
-
-
 
 // aqui pasamos un array
 // qry.exist_in_array_resolutions(	this.arr['ini'] , this.foto_resolutions.entity_arr	)

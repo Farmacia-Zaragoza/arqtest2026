@@ -14,15 +14,14 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  fs                         =   require(  'fs'                                                   ),
-       empty                      =   require(  'is-empty'                             ),
-       accents                    =   require(  'remove-accents'                       ),
-       const { idx_pointers }       =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
-       const { jn01_array_anchor_main } =   require(  path.join(JS_TYP7, 'json/jnode/j01/anchors/jn01_anchor_main.es7'));
+const  fs                         =   require(  'fs'                                                   );
+       const empty = require(  'is-empty'                             );
+       const accents = require(  'remove-accents'                       );
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn01_array_anchor_main } = require(path.join(JS_TYP7, 'json/jnode/j01/anchors/jn01_anchor_main.es7'))
 
 // Comm Object
 class jn11_object_allinone_main extends jn01_array_anchor_main {
-
 
   constructor ()
   {
@@ -63,7 +62,6 @@ class jn11_object_allinone_main extends jn01_array_anchor_main {
 
     this.j.index   = this.get_next_level(position)
 
-
      let object_type = "array"
 
      var current_level = this.j.index
@@ -83,11 +81,9 @@ class jn11_object_allinone_main extends jn01_array_anchor_main {
                 this.index                , // Index of array
                 this.arroba.j.categories  ) // Categories lang/ES Name
 
-
         this.j.end_corch(object_type)
 
       }
-
 
   }
 
