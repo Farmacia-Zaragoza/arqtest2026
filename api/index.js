@@ -16,10 +16,10 @@ global.removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
-// 3. Función define() flexible y robusta para asignación global
+// 3. Función define() ultra-robusta que inyecta directamente en global
 global.define = function(name, value) {
+  global[name] = value;
   try {
-    global[name] = value;
     Object.defineProperty(global, name, {
       value: value,
       enumerable: true,
@@ -31,10 +31,7 @@ global.define = function(name, value) {
   }
 };
 
-// Checking long paths
-// const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
-
-// 4. PRECARGA DE TODAS LAS CONSTANTES GLOBALES (Evita ERR_INVALID_ARG_TYPE en todo el proyecto)
+// 4. PRECARGA DE TODAS LAS CONSTANTES GLOBALES
 define("JS_MODEL" , path.join(global.ROOT, 'api/apps/es7/'));
 define("JS_BASE"  , path.join(global.ROOT, 'api/apps/es6/'));
 define("JS_OBJ"   , path.join(global.ROOT, 'api/apps/es6/com/objects/'));
@@ -70,7 +67,21 @@ define("JS_TYP7"  , path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
 // Functional Types
 define("JS_TYF7"  , path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 
-// 5. Variables de entorno y utilidades
+// 5. Verificación de seguridad de constantes globales
+const constantsList = [
+  'JS_MODEL','JS_BASE','JS_OBJ','JS_LIB','JS_THM','JS_THC','JS_BASE7',
+  'JS_COM7','JS_SPC7','JS_ARQ7','JS_COL7','JS_EMP7','JS_MET7','JS_PDT7',
+  'JS_PER7','JS_PRO7','JS_PYC7','JS_SRV7','JS_TST7','JS_ACO7','JS_AQD7',
+  'JS_LIB7','JS_TYP7','JS_TYF7'
+];
+
+constantsList.forEach(c => {
+  if (!global[c]) {
+    console.warn(`[WARN] Constante global no inicializada: ${c}`);
+  }
+});
+
+// 6. Variables de entorno y utilidades
 let run_path = path.resolve(".");
 let a_ruta   = run_path.split('/');
 let a_len    = a_ruta.length - 1;
@@ -93,7 +104,7 @@ var application_root = __dirname,
 
 global['GLOBALS'] = [];
 
-// 6. Carga de la aplicación principal
+// 7. Carga de la aplicación principal
 const app = express();
 const fireApp = require('./apps/fire.es7');
 
