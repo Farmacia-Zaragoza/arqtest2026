@@ -28,7 +28,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   { common_angular }  =   require( path.join(JS_ACO7  , 'html/h01/main/ang/common_angular.es7'  ))        ,
-		{ scripts_angular }	=	require( path.join(JS_ACO7  , 'html/h01/main/ang/scripts_angular.es7'   ));
+		const { scripts_angular }	=	require( path.join(JS_ACO7  , 'html/h01/main/ang/scripts_angular.es7'   ));
 
 
 class body_angular extends common_angular  {

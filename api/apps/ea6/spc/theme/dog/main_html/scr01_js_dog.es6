@@ -28,12 +28,12 @@
 
 
 const 	{ getset } 						= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'),
-		{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
-		{ scr02_js_scripts_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr02_js_scripts_dog.es6'),
-		{ scr03_js_minimized_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr03_js_minimized_dog.es6'),
-		{ scr05_js_inline_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr05_js_inline_dog.es6'),
-		{ scr06_js_async_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr06_js_async_dog.es6'),
-		{ cn03_scripts } 				= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn03_scripts.es6'));
+		const { html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+		const { scr02_js_scripts_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr02_js_scripts_dog.es6'),
+		const { scr03_js_minimized_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr03_js_minimized_dog.es6'),
+		const { scr05_js_inline_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr05_js_inline_dog.es6'),
+		const { scr06_js_async_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr06_js_async_dog.es6'),
+		const { cn03_scripts } 				= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn03_scripts.es6'));
 
 
 class scr01_js_dog extends getset  {

@@ -29,7 +29,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  { anode_run_multi } =   require(  path.join(JS_TYP7  , 'arroba/anode/a02_multi/an22_run.es7'),
-       { idx_pointers }    =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'     ));
+       const { idx_pointers }    =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'     ));
 
 class anode_main_full_process extends anode_run_multi {
   constructor()

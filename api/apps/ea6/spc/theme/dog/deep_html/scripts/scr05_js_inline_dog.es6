@@ -29,7 +29,7 @@
 
 
 const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'),
-		{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+		const { html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
 		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'),
 		UglifyES 			= 	require(	'uglify-es'															),
 		minify 				= 	require(	'html-minifier'														).minify;

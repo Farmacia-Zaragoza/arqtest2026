@@ -21,8 +21,8 @@
 
 const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
 		empty 						= require(	'is_empty'											),
-		{ foo03_div_footer }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo03_div.es6'),
-		{ cok01_div_cookies }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/cookies/cok01_div_cookies.es6'));
+		const { foo03_div_footer }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo03_div.es6'),
+		const { cok01_div_cookies }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/cookies/cok01_div_cookies.es6'));
 
 
 class foo04_footer extends html_style{

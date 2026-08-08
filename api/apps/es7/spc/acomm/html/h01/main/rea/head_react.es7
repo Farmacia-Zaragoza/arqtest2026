@@ -23,8 +23,8 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  { common_head } 	 = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_head.es7'),
-       { links_react } = require( path.join(JS_ACO7 , 'html/h01/main/rea/links_react.es7'),
-       { common_meta }   = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_meta.es7'   ));
+       const { links_react } = require( path.join(JS_ACO7 , 'html/h01/main/rea/links_react.es7'),
+       const { common_meta }   = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_meta.es7'   ));
 
 
 class head_react extends common_head  {

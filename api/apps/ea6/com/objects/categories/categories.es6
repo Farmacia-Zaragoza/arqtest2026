@@ -14,7 +14,7 @@
 
 
 const	{ full_entities_search } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/full_entities_search.es6'				),
-		{ contents } 				= require(	'/brqx/base/rcode/es6/com/objects/categories/contents.es6'							);
+		const { contents } 				= require(	'/brqx/base/rcode/es6/com/objects/categories/contents.es6'							);
 
 class categories {
 

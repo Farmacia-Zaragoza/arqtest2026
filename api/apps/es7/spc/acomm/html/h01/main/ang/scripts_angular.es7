@@ -19,7 +19,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   { deep_scripts_angular } =   require(  path.join(JS_ACO7 , 'html/h01/deep/scripts/deep_scripts_angular.es7'),
-        { common_scripts}        =   require(  path.join(JS_ACO7 , 'html/h01/main/comm/common_scripts.es7'  ));
+        const { common_scripts}        =   require(  path.join(JS_ACO7 , 'html/h01/main/comm/common_scripts.es7'  ));
 
 
 class scripts_angular extends common_scripts  {

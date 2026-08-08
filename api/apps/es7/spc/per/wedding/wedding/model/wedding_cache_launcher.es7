@@ -28,8 +28,8 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   { site_model }    =   require(  path.join(JS_PER7, 'wedding/wedding/model/site_model.es7'),
-        { fast_uri }      =   require(  path.join(JS_ACO7, 'uri/n02/u10_fast_uri.es7'),
-        { site_mcomm }    =   require(  path.join(JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'));
+        const { fast_uri }      =   require(  path.join(JS_ACO7, 'uri/n02/u10_fast_uri.es7'),
+        const { site_mcomm }    =   require(  path.join(JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'));
 
 class wedding_cache extends site_model
 {

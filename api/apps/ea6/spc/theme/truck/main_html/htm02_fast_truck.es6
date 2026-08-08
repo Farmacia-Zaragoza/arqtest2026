@@ -25,7 +25,7 @@
 
 
 const 	{ html_style } 		= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
-		{ cn01_base }		= require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'));
+		const { cn01_base }		= require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'));
 
 
 class htm02_fast_flat extends html_style  {

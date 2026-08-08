@@ -18,8 +18,8 @@ const  fs                 =   require(  'fs'                                    
        empty              =   require(  'is-empty'                             ),
        accents            =   require(  'remove-accents'                       ),
        path               =   require(  'path'                                                 ),
-       { idx_pointers }   =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
-       { jn14_hiera_json_list }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn14_hiera_list.es7'));
+       const { idx_pointers }   =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
+       const { jn14_hiera_json_list }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn14_hiera_list.es7'));
 
 class jn10_hiera_json_simple extends jn14_hiera_json_list {
 

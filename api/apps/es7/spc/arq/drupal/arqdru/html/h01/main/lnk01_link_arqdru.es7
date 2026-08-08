@@ -30,11 +30,11 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   { getset }                 =   require(  path.join(JS_BASE , 'com/objects/html/getset.es6'),
-    { lnk02_css_link_arqdru }      =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/styles/lnk02_css_link_arqdru.es7'),
-    { lnk03_css_minimized_arqdru } =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/styles/lnk03_css_minimized_arqdru.es7'),
-    { lnk04_css_inline_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/styles/lnk04_css_inline_arqdru.es7'),
-    { lnk05_css_inline_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/styles/lnk05_css_inline_multiple_arqdru.es7'),
-    { html_style }                 =   require(  path.join(JS_BASE , 'com/objects/html/html_style.es6'                 ));
+    const { lnk02_css_link_arqdru }      =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/styles/lnk02_css_link_arqdru.es7'),
+    const { lnk03_css_minimized_arqdru } =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/styles/lnk03_css_minimized_arqdru.es7'),
+    const { lnk04_css_inline_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/styles/lnk04_css_inline_arqdru.es7'),
+    const { lnk05_css_inline_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/styles/lnk05_css_inline_multiple_arqdru.es7'),
+    const { html_style }                 =   require(  path.join(JS_BASE , 'com/objects/html/html_style.es6'                 ));
 
 class lnk01_link_arqdru extends getset  {
 

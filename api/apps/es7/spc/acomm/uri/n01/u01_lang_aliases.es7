@@ -25,7 +25,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  { site_common_commands } =   require( path.join(JS_ACO7  , 'uri/n01/u02_site_commands.es7'),
-       { idx_pointers }        =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'         ));
+       const { idx_pointers }        =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'         ));
 
 class uri_lang_aliases extends site_common_commands
 {

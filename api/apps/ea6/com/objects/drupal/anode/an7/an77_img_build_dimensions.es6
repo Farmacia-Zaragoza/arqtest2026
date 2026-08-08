@@ -19,7 +19,7 @@ var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"		
 
 const 	{ anode_img_tagadelic } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an78_img_tagadelic.es6'),
 		creff 							= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'),
-		{ execSync }					= require(	'child_process'																				),
+		const { execSync }					= require(	'child_process'																				),
 		isize 							= require(	'/brqx/base/react/zcommon/node_modules/image-size'											),
 		number_format 					= require(	'/brqx/base/react/zcommon/node_modules/locutus/php/strings/number_format'					);
 

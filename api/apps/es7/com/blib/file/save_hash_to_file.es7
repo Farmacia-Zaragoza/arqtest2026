@@ -29,7 +29,7 @@ const   fs           =   require(  'fs'                                    ),
   	echo 	    	 = 	require(	'node-echo'									),
     trim         =   require(  'trim'                            ),
     mkdirp       =   require(  'mkdirp'                          ),
-    { printlog }         =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
+    const { printlog }         =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
 
 
 // Ck [19-06-03]

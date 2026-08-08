@@ -27,7 +27,7 @@ var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6
 
 const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
 		empty 						= 	require(	path.join(NODE_MOD, 'is_empty'),
-		{ li01_menu_dog }			= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/menu/li01_menu_dog.es6'));
+		const { li01_menu_dog }			= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/menu/li01_menu_dog.es6'));
 
 class div02_menu_dog extends html_style {
 

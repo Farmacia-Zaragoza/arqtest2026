@@ -20,7 +20,7 @@
 const	Solr 				= require(	'/brqx/base/react/zcommon/node_modules/solr-node'								),
 		echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'								),
 		qry 				= require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'							),						
-		{ foto_search } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/foto_search.es6'					);
+		const { foto_search } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/foto_search.es6'					);
 
 class solr extends foto_search {
 

@@ -17,21 +17,22 @@ function recorrer(dir) {
       } else if (stat.isFile() && EXTENSIONES.includes(path.extname(el))) {
         let contenido = fs.readFileSync(ruta, 'utf8');
 
-        // Busca cualquier variante de paths.js seguido de 1 solo paréntesis y punto y coma, ignorando espacios
-        if (contenido.includes('paths.js')) {
-          const nuevo = contenido.replace(/paths\.js(['"])\s*\)\s*;/g, "paths.js$1));");
+        // Detecta líneas que empiezan con { ... } = require(...) sin const/let/var
+        const nuevo = contenido.replace(
+          /^(\s*)(\{[^}]+\}\s*=\s*require\()/gm,
+          '$1const $2'
+        );
 
-          if (contenido !== nuevo) {
-            fs.writeFileSync(ruta, nuevo, 'utf8');
-            arreglados++;
-            console.log(`✅ Arreglado paths.js en: ${path.basename(ruta)}`);
-          }
+        if (contenido !== nuevo) {
+          fs.writeFileSync(ruta, nuevo, 'utf8');
+          arreglados++;
+          console.log(`✅ Añadido 'const' a desestructuración en: ${path.basename(ruta)}`);
         }
       }
     } catch (e) {}
   });
 }
 
-console.log('⚡ Limpiando paths.js en el resto de archivos...');
+console.log('⚡ Corrigiendo desestructuraciones sin const...');
 recorrer(__dirname);
-console.log(`\n🎉 Total de archivos ajustados: ${arreglados}`);
+console.log(`\n🎉 Total de archivos arreglados: ${arreglados}`);

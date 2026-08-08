@@ -30,8 +30,8 @@
 var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"						)
 
 const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
-		{ div01_hiddens_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/hiddens/div01_hiddens_dog.es6'),
-		{ getset } 					= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
+		const { div01_hiddens_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/hiddens/div01_hiddens_dog.es6'),
+		const { getset } 					= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
 
 class zne02_hiddens_dog extends getset {
 

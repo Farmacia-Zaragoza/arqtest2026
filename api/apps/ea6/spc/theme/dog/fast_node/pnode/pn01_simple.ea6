@@ -13,12 +13,12 @@
 
 
 const 	{ psimple } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/psimple.es6'),
-		{ cbool } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),
-		{ page_structure } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/page_structure.es6'),
-		{ theme_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/structure/theme_dog.es6'),
-		{ fn03_site_common }	= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn03_site_common.es6'),
-		{ fn41_hiddens_lang }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn41_hiddens_lang.es6'),
-		{ htm01_html_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/htm01_html_dog.es6'),
+		const { cbool } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),
+		const { page_structure } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/page_structure.es6'),
+		const { theme_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/structure/theme_dog.es6'),
+		const { fn03_site_common }	= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn03_site_common.es6'),
+		const { fn41_hiddens_lang }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn41_hiddens_lang.es6'),
+		const { htm01_html_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/htm01_html_dog.es6'),
 		minify 					= 	require(	'html-minifier'											).minify;
 
 

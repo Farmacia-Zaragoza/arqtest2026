@@ -16,7 +16,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  { d03_idx_fn } =    require(  path.join(JS_TYP7 , 'arroba/aindex/d_pf/d03_idx_fn.es7'),
-       { idx_pointers }  =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'                     ));
+       const { idx_pointers }  =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'                     ));
 
 
 class d02_idx_arr extends d03_idx_fn {

@@ -12,7 +12,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 const	{ search } 					= require(	'/brqx/base/rcode/es6/com/objects/search/solr/search.es6'							),
-		{ search_entity_letter } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6'		),
+		const { search_entity_letter } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6'		),
 		empty		 				= require(	'/brqx/base/react/zcommon/node_modules/is_empty'									);
 
 

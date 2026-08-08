@@ -24,7 +24,7 @@ const	fs 					= 	require(	'fs'														),
 		empty 				=   require(	'is-empty'									),
 		util 				=   require(	'util'														),
 		os					=	require(	'os'														),
-    { printlog }         =   require(  path.join(JS_TYP7  , 'logs/printlog.es7' ));
+    const { printlog }         =   require(  path.join(JS_TYP7  , 'logs/printlog.es7' ));
 
 // Ok [19-05-11]
 

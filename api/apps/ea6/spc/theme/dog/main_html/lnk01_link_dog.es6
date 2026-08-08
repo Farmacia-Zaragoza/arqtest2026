@@ -28,14 +28,14 @@
 
 
 const 	{ getset } 						= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'),
-		{ lnk02_css_link_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/styles/lnk02_css_link_dog.es6'),
-		{ lnk03_css_minimized_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/styles/lnk03_css_minimized_dog.es6'),
-		{ lnk04_css_inline_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/styles/lnk04_css_inline_dog.es6'),
-		{ lnk05_css_inline_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/styles/lnk05_css_inline_multiple_dog.es6'),
-		{ scr02_jshead_script_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr02_jshead_script_dog.es6'),
-		{ scr03_jshead_minimized_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr03_jshead_minimized_dog.es6'),
-		{ scr05_jshead_inline_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr05_jshead_inline_dog.es6'),
-		{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+		const { lnk02_css_link_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/styles/lnk02_css_link_dog.es6'),
+		const { lnk03_css_minimized_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/styles/lnk03_css_minimized_dog.es6'),
+		const { lnk04_css_inline_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/styles/lnk04_css_inline_dog.es6'),
+		const { lnk05_css_inline_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/styles/lnk05_css_inline_multiple_dog.es6'),
+		const { scr02_jshead_script_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr02_jshead_script_dog.es6'),
+		const { scr03_jshead_minimized_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr03_jshead_minimized_dog.es6'),
+		const { scr05_jshead_inline_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/scripts/scr05_jshead_inline_dog.es6'),
+		const { html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 
 class lnk01_link_dog extends getset  {
 

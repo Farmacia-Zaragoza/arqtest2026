@@ -22,7 +22,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  { scomm_defs }      =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s04_defs.es7'     ) ),
-       { jnode }           =   require(    path.join(JS_TYP7  , 'json/jnode/j02/j01_jnode.es7'  ) );
+       const { jnode }           =   require(    path.join(JS_TYP7  , 'json/jnode/j02/j01_jnode.es7'  ) );
 
 
 // Simple Common - Will Load only common information

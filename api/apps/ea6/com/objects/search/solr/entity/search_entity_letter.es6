@@ -12,7 +12,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 const	qry 					= require(	'/brqx/base/rcode/es6/com/libs/search/solr/queries.es6'								),						
-		{ search_entity	} 		= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity.es6'		);
+		const { search_entity	} 		= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity.es6'		);
 
 class search_entity_letter extends search_entity {
             

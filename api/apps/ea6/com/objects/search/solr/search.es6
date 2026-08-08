@@ -16,7 +16,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 const 	{ search_structure } 		= require(	'/brqx/base/rcode/es6/com/objects/search/solr/search_structure.es6'					),
-		{ search_entity_letter } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6'		),
+		const { search_entity_letter } 	= require(	'/brqx/base/rcode/es6/com/objects/search/solr/entity/search_entity_letter.es6'		),
 		url						 	= require(	'/brqx/base/rcode/es6/com/libs/string/url.es6'										),
 		empty		 				= require(	'/brqx/base/react/zcommon/node_modules/is_empty'									),
 		pad 						= require(	'/brqx/base/react/zcommon/node_modules/pad'											);

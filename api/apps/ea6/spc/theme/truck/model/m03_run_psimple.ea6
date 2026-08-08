@@ -10,7 +10,7 @@
 var 		cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"					);
 
 const 		{ model_run_disk } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/model/m04_run_disk.ea6'),
-			{ pn01_simple } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'),
+			const { pn01_simple } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'),
 			run					= 	require(	path.join(JS_BASE, 'com/pms/mongo/save_code_mongo_promise.ea6'),
 			echo 				= 	require(	'node-echo'											);
 

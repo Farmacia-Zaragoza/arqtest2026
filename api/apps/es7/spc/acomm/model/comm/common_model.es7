@@ -37,9 +37,9 @@
 
 
 const   { index_fast }    =   require(  path.join(JS_TYP7  , 'fire/index_fast.es7'),
-        { container }     =   require(  path.join(JS_TYP7  , 'container/c01_cont.es7'),
-        { arroba_mcomm }  =   require(  path.join(JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7'),
-        { arroba_scomm }  =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7'),
+        const { container }     =   require(  path.join(JS_TYP7  , 'container/c01_cont.es7'),
+        const { arroba_mcomm }  =   require(  path.join(JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7'),
+        const { arroba_scomm }  =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7'),
         fs                =   require(  'fs'                                                ),
      		gfc  			  =   require(  path.join(JS_LIB7        , 'file/get_file_code.es7' 	         ));
 

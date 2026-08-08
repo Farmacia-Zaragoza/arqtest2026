@@ -28,8 +28,8 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  { common_html } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_html.es7'),
-		{ hea01_head_animals }	= 	require(	path.join(JS_PER7, 'animals/animals/html/h01/main/hea01_animals.es7'),
-		{ bdy01_body_animals }	= 	require(	path.join(JS_PER7, 'animals/animals/html/h01/main/bdy01_animals.es7'));
+		const { hea01_head_animals }	= 	require(	path.join(JS_PER7, 'animals/animals/html/h01/main/hea01_animals.es7'),
+		const { bdy01_body_animals }	= 	require(	path.join(JS_PER7, 'animals/animals/html/h01/main/bdy01_animals.es7'));
 
 
 class htm01_html_animals extends common_html  {

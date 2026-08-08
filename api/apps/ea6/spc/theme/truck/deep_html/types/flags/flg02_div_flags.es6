@@ -21,7 +21,7 @@ var 	cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"
 
 const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
 		empty 					= 	require(	'is_empty'														),
-		{ flg01_div_flags }		= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/flags/flg01_div_flags.es6'));
+		const { flg01_div_flags }		= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/flags/flg01_div_flags.es6'));
 
 class flg02_div_flags extends html_style {
 

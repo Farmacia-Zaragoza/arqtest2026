@@ -17,8 +17,8 @@ define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 const  fs                         =   require(  'fs'                                                   ),
        empty                      =   require(  'is-empty'                             ),
        accents                    =   require(  'remove-accents'                       ),
-       { idx_pointers }       =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
-       { jn01_array_anchor_main } =   require(  path.join(JS_TYP7, 'json/jnode/j01/anchors/jn01_anchor_main.es7'));
+       const { idx_pointers }       =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
+       const { jn01_array_anchor_main } =   require(  path.join(JS_TYP7, 'json/jnode/j01/anchors/jn01_anchor_main.es7'));
 
 // Comm Object
 class jn11_object_allinone_main extends jn01_array_anchor_main {

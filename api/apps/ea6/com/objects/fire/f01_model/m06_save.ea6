@@ -10,7 +10,7 @@
 
 const 		{ index } 			= 	require(	path.join(JS_BASE, 'com/objects/fire/f02_index/index.es6'),
 			mongoose 			= 	require(	'mongoose'									),
- 	 		{ idSchema }		= 	require(	path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch'));
+ 	 		const { idSchema }		= 	require(	path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch'));
 			echo 				= 	require(	'node-echo'									);
 
 class model_save extends index

@@ -7,13 +7,13 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 const 	{ index_def } 				= 	require(	path.join(JS_BASE, 'com/objects/fire/f02_index/index_def.es6'),
-		{ anode_debug_save_file } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an9/an91_d_debug_save_file.es6'),
-		{ printlog } 				= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'),
-		{ cbool } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),
-		{ cache } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/cache/c01_cache.es6'),
-		{ site } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/site/s01_site.es6'),
-		{ uri } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u01_obj.es6'),
-		{ index_req } 				= 	require(	path.join(JS_BASE, 'com/objects/fire/f03_req/index_req.es6'),
+		const { anode_debug_save_file } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an9/an91_d_debug_save_file.es6'),
+		const { printlog } 				= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'),
+		const { cbool } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),
+		const { cache } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/cache/c01_cache.es6'),
+		const { site } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/site/s01_site.es6'),
+		const { uri } 					= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u01_obj.es6'),
+		const { index_req } 				= 	require(	path.join(JS_BASE, 'com/objects/fire/f03_req/index_req.es6'),
 		empty 						= 	require(	'is-empty'													);
 
 

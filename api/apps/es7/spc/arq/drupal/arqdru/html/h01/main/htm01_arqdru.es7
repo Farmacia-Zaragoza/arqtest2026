@@ -28,11 +28,11 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const 	{ html_style } 			= 	require(	path.join(JS_BASE , 'com/objects/html/html_style.es6'),
-		{ ifnojs } 				= 	require(	path.join(JS_BASE , 'com/objects/html/ifnojs.es6'),
-		{ hnode } 				= 	require(	path.join(JS_TYP7 , 'html/hnode/h01_hnode.es7'),
-		{ hea01_head_arqdru }	= 	require(	path.join(JS_AQD7 , 'arqdru/html/h01/main/hea01_arqdru.es7'),
-		{ bdy01_body_arqdru }	= 	require(	path.join(JS_AQD7 , 'arqdru/html/h01/main/bdy01_arqdru.es7'),
-		{ common_robot }	    = 	require(	path.join(JS_ACO7 , 'html/h01/main/common_robot.es7'		));
+		const { ifnojs } 				= 	require(	path.join(JS_BASE , 'com/objects/html/ifnojs.es6'),
+		const { hnode } 				= 	require(	path.join(JS_TYP7 , 'html/hnode/h01_hnode.es7'),
+		const { hea01_head_arqdru }	= 	require(	path.join(JS_AQD7 , 'arqdru/html/h01/main/hea01_arqdru.es7'),
+		const { bdy01_body_arqdru }	= 	require(	path.join(JS_AQD7 , 'arqdru/html/h01/main/bdy01_arqdru.es7'),
+		const { common_robot }	    = 	require(	path.join(JS_ACO7 , 'html/h01/main/common_robot.es7'		));
 
 
 class htm01_html_arqdru extends hnode  {

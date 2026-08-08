@@ -26,8 +26,8 @@ const 	fs 					= 	require(	'fs'																),
 		echo 				= 	require(	'node-echo'										),
 		empty 				= 	require(	'is-empty'										),
 		f_file				=	require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'),
-		{ printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'),
-		{ sorted_array } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/structs/sorted_array.es6'),
+		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'),
+		const { sorted_array } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/structs/sorted_array.es6'),
 		nlr  				= 	require(	'node-line-reader'								);
 
 

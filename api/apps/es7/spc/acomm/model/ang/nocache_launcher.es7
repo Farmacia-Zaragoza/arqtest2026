@@ -29,11 +29,11 @@
 // Must to be unique
 
 const { angular_model }         =   require(  path.join(JS_ACO7  , 'model/ang/model.es7'),
-      { site_uri }              =   require(  path.join(JS_ACO7  , 'uri/n02/u01_site_uri.es7'),
-      { arroba_rest }           =   require(  path.join(JS_TYF7  , 'a01_load/lindex/i03_arroba_rest.es7'),
-      { rs01_object_search_main } =   require(  path.join(JS_TYP7  , 'arroba/rest/rs01_search_main.es7'),
-      { r02_main }                =   require(  path.join(JS_TYP7  , 'rest/r01_main/r02_main.es7'),
-      { site_mcomm }              =   require(  path.join(JS_TYF7  , 'a01_load/mcomm/m02_site_comm.es7' ));
+      const { site_uri }              =   require(  path.join(JS_ACO7  , 'uri/n02/u01_site_uri.es7'),
+      const { arroba_rest }           =   require(  path.join(JS_TYF7  , 'a01_load/lindex/i03_arroba_rest.es7'),
+      const { rs01_object_search_main } =   require(  path.join(JS_TYP7  , 'arroba/rest/rs01_search_main.es7'),
+      const { r02_main }                =   require(  path.join(JS_TYP7  , 'rest/r01_main/r02_main.es7'),
+      const { site_mcomm }              =   require(  path.join(JS_TYF7  , 'a01_load/mcomm/m02_site_comm.es7' ));
 
 class angular_no_cache extends angular_model
 {
