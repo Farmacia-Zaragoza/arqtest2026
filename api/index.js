@@ -1,121 +1,110 @@
 // 1. Cargamos las librerías básicas que usaba tu lanzador
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 
+// 2. Garantizar ROOT en el proceso global desde el primer instante
 const ROOT = process.cwd();
-global.ROOT = ROOT; // <--- Debes asignarla explícitamente al global;
-global.path = require('path');
+global.ROOT = ROOT;
+global.path = path;
 
 global.echo = (...args) => console.log(...args);
 
-global.removeAccents = (str) => {;
+global.removeAccents = (str) => {
   if (typeof str !== 'string') return str;
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
-if (typeof global.define !== 'function') {
-    global.define = function(name, value) {
-        Object.defineProperty(global, name, {
-            value: value,
-            enumerable: true,
-            writable: false,
-            configurable: true
-        });
-    };
-}
+// 3. Función define() flexible y robusta para asignación global
+global.define = function(name, value) {
+  try {
+    global[name] = value;
+    Object.defineProperty(global, name, {
+      value: value,
+      enumerable: true,
+      writable: true,
+      configurable: true
+    });
+  } catch (e) {
+    global[name] = value;
+  }
+};
 
 // Checking long paths
 // const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
 
-//Constantes GLOBALES
-define("JS_MODEL", 	path.join(global.ROOT, 'api/apps/es7'										))
-define("JS_BASE" ,	path.join(global.ROOT, 'api/apps/es6/'						))
-define("JS_OBJ" , 	path.join(global.ROOT, 'api/apps/es6/com/objects/'			))
-define("JS_LIB" , 	path.join(global.ROOT, 'api/apps/es6/com/libs/'			))
+// 4. PRECARGA DE TODAS LAS CONSTANTES GLOBALES (Evita ERR_INVALID_ARG_TYPE en todo el proyecto)
+define("JS_MODEL" , path.join(global.ROOT, 'api/apps/es7/'));
+define("JS_BASE"  , path.join(global.ROOT, 'api/apps/es6/'));
+define("JS_OBJ"   , path.join(global.ROOT, 'api/apps/es6/com/objects/'));
+define("JS_LIB"   , path.join(global.ROOT, 'api/apps/es6/com/libs/'));
 
-define("JS_THM" , 	path.join(global.ROOT, 'api/apps/es6/spc/theme/'			))
-define("JS_THC" ,   path.join(global.ROOT, 'api/apps/es6/spc/theme/common/'	))
+define("JS_THM"   , path.join(global.ROOT, 'api/apps/es6/spc/theme/'));
+define("JS_THC"   , path.join(global.ROOT, 'api/apps/es6/spc/theme/common/'));
 
 // ES7 constants
-define("JS_BASE7" ,	path.join(global.ROOT, 'api/apps/es7/'						))
-define("JS_COM7" , 	path.join(global.ROOT, 'api/apps/es7/com/'			))
-define("JS_SPC7" , 	path.join(global.ROOT, 'api/apps/es7/spc/'			))
+define("JS_BASE7" , path.join(global.ROOT, 'api/apps/es7/'));
+define("JS_COM7"  , path.join(global.ROOT, 'api/apps/es7/com/'));
+define("JS_SPC7"  , path.join(global.ROOT, 'api/apps/es7/spc/'));
 
-define("JS_ARQ7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/'			))
-define("JS_COL7" , 	path.join(global.ROOT, 'api/apps/es7/spc/col/'			))
-define("JS_EMP7" , 	path.join(global.ROOT, 'api/apps/es7/spc/emp/'			))
-define("JS_MET7" , 	path.join(global.ROOT, 'api/apps/es7/spc/met/'			))
-define("JS_PDT7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pdt/'			))
-define("JS_PER7" , 	path.join(global.ROOT, 'api/apps/es7/spc/per/'			))
-define("JS_PRO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pro/'			))
-define("JS_PYC7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pyc/'			))
-define("JS_SRV7" , 	path.join(global.ROOT, 'api/apps/es7/spc/srv/'			))
-define("JS_TST7" , 	path.join(global.ROOT, 'api/apps/es7/spc/tst/'			))
+define("JS_ARQ7"  , path.join(global.ROOT, 'api/apps/es7/spc/arq/'));
+define("JS_COL7"  , path.join(global.ROOT, 'api/apps/es7/spc/col/'));
+define("JS_EMP7"  , path.join(global.ROOT, 'api/apps/es7/spc/emp/'));
+define("JS_MET7"  , path.join(global.ROOT, 'api/apps/es7/spc/met/'));
+define("JS_PDT7"  , path.join(global.ROOT, 'api/apps/es7/spc/pdt/'));
+define("JS_PER7"  , path.join(global.ROOT, 'api/apps/es7/spc/per/'));
+define("JS_PRO7"  , path.join(global.ROOT, 'api/apps/es7/spc/pro/'));
+define("JS_PYC7"  , path.join(global.ROOT, 'api/apps/es7/spc/pyc/'));
+define("JS_SRV7"  , path.join(global.ROOT, 'api/apps/es7/spc/srv/'));
+define("JS_TST7"  , path.join(global.ROOT, 'api/apps/es7/spc/tst/'));
 
-define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			))
-define("JS_AQD7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/drupal/'   ))
+define("JS_ACO7"  , path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+define("JS_AQD7"  , path.join(global.ROOT, 'api/apps/es7/spc/arq/drupal/'));
 
-define("JS_LIB7" , 	path.join(global.ROOT, 'api/apps/es7/com/blib/'			))
+define("JS_LIB7"  , path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // Structured Types
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+define("JS_TYP7"  , path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
 
-// Functional Types -
-define("JS_TYF7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'			))
+// Functional Types
+define("JS_TYF7"  , path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 
-// 2. Simulamos las variables de entorno que calculabas con path.split
-// En Vercel las rutas son fijas, así que forzamos los valores
-// const site = process.env.SITE_NAME || 'mi-sitio-pro';
+// 5. Variables de entorno y utilidades
+let run_path = path.resolve(".");
+let a_ruta   = run_path.split('/');
+let a_len    = a_ruta.length - 1;
 
-// 3. IMPORTANTE: Cargamos tu lógica compleja (fire.es7)
-// Ajusta la ruta para que apunte a donde hayas subido el archivo en GitHub
+var branch = a_ruta[a_len - 2] || 'arq';
+var prod   = a_ruta[a_len - 1] || 'garldru';
+var site   = a_ruta[a_len]     || 'default';
 
+var prodbranch = branch + '/' + prod + '/';
+
+var application_root = __dirname,
+    http        = require('http'),
+    https       = require('https'),
+    http2       = require('http2'),
+    tls         = require('tls'),
+    logger      = require('morgan'),
+    fs          = require('fs'),
+    yargs       = require('yargs'),
+    constants   = require('constants');
+
+global['GLOBALS'] = [];
+
+// 6. Carga de la aplicación principal
 const app = express();
-
 const fireApp = require('./apps/fire.es7');
 
-//-------------------------------------------------------------------------------------
-let run_path                =   path.resolve(".")
-let a_ruta                  =   run_path.split('/')
-let a_len                   =   a_ruta.length -1
-//-------------------------------------------------------------------------------------
-var branch                  =   a_ruta[a_len - 2 ]        // Architecture Branch  (arq)
-var prod                    =   a_ruta[a_len - 1 ]        // Architecture product (garldru)
-var site                    =   a_ruta[a_len ]            // Architecture product (garldru)
-
-var prodbranch              =   branch + '/' + prod + '/'
-
-var
-    application_root = __dirname,
-    http 		= require('http'),
-    https 		= require('https'),
-    http2 		= require('http2'),
-  	tls 		= require('tls'),
-    logger 		= require('morgan'),
-    fs 			= require('fs'),
-	  yargs 		= require('yargs'),
-	  constants	= require('constants');
-
-    // Manera segura de inicializarla en Node 24  --> FALLA
-// var globalThis.GLOBALS = globalThis.GLOBALS || [];
-
-global['GLOBALS'] = []
-
-// 4. Configuramos el middleware que ya tenías
+// Middleware
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// 5. El "Puente": Redirigimos todo el tráfico a tu lógica fire.es7
+// Puente a la lógica principal
 app.all('*', (req, res) => {
-    // Aquí es donde fire.es7 toma el control
-    // Asumiendo que fire.es7 es un router de express o una función (req, res)
-//      res.json({ estado: "Inicio lanzamiento" });
-    return fireApp(req, res);
+  return fireApp(req, res);
 });
 
-// 6. Exportamos la app (Vercel se encarga de "levantarla")
 module.exports = app;
