@@ -24,7 +24,7 @@
 const   path                =   require('path'                                             );
 
 const { JS_TYP7 } = require(path.join(process.cwd()),'api/apps/paths.js'));
-const 	{ arroba_mixarr } 		  =  require(path.join(JS_TYP7 , 'array/a03_arroba_mixarr.es7')));
+const 	{ arroba_mixarr } 		  =  require(path.join(JS_TYP7 , 'array/a03_arroba_mixarr.es7'));
 
 
 class arroba_getarr extends arroba_mixarr {

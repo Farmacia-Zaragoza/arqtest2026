@@ -13,13 +13,13 @@
 // - d-review_childrens_doble_array-                   : 2nd level function
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                         =   require(  'fs'                                                          ),
        empty                      =   require(  'is-empty'                                    ),
        accents                    =   require(  'remove-accents'                              ),
-       { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'))),
-       { jn10_fs_json_simple } =   require(  path.join(JS_TYP7, 'json/jnode/j01/fs/jn10_fs_simple.es7')));
+       { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')),
+       { jn10_fs_json_simple } =   require(  path.join(JS_TYP7, 'json/jnode/j01/fs/jn10_fs_simple.es7'));
 
 
 class jn07_comma_json_doble_call extends jn10_fs_json_simple {

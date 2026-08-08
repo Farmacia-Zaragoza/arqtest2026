@@ -30,9 +30,9 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { uri_ports }   =   require(  path.join(JS_TYP7   , 'uri/u02_ports.es7'        )))
+const   { uri_ports }   =   require(  path.join(JS_TYP7   , 'uri/u02_ports.es7'        ))
 
 
 class uri extends uri_ports {

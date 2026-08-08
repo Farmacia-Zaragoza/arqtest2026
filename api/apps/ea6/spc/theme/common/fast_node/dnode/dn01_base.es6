@@ -15,7 +15,7 @@
 
 
 
-var { pcomp } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/dnode.es6')))
+var { pcomp } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/dnode.es6'))
 
 // Para poder extender debe haberse incluido antes
 class dn01_base extends dnode {

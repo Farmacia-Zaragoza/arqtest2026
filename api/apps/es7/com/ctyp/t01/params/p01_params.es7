@@ -12,9 +12,9 @@
 
 const   path                =   require('path'                                             );
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ params_def } 		  =  require(path.join(JS_TYP7 , 'params/p02_params_def.es7')));
+const 	{ params_def } 		  =  require(path.join(JS_TYP7 , 'params/p02_params_def.es7'));
 
 class params extends params_def {
 	constructor(	req 			= 	''								, 	// 01. Request

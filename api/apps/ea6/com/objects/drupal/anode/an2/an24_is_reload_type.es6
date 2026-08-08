@@ -16,7 +16,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_special_reload_type } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an2/an25_special_reload_type.es6'))),
+var { anode_special_reload_type } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an2/an25_special_reload_type.es6')),
 	in_array 							= require(	'/brqx/base/react/zcommon/node_modules/in_array'										);
 
 class anode_is_reload_type extends anode_special_reload_type {

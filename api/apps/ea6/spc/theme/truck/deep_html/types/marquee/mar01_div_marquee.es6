@@ -22,7 +22,7 @@
 
 
 
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')));
+const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 
 class mar01_div_marquee extends html_style {
 

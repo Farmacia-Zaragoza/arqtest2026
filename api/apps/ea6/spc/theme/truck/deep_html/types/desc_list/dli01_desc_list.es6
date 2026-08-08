@@ -18,8 +18,8 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'))),
-		{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')));
+const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6')),
+		{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 
 class dli01_div_list extends svg_style {
 

@@ -27,45 +27,45 @@ if (typeof global.define !== 'function') {
 }
 
 // Checking long paths
-// const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')));
+// const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7'));
 
 
 //Constantes GLOBALES
-define("JS_MODEL", 	path.join(global.ROOT, 'api/apps/es7'										)))
-define("JS_BASE" ,	path.join(global.ROOT, 'api/apps/es6/'						)))
-define("JS_OBJ" , 	path.join(global.ROOT, 'api/apps/es6/com/objects/'			)))
-define("JS_LIB" , 	path.join(global.ROOT, 'api/apps/es6/com/libs/'			)))
+define("JS_MODEL", 	path.join(global.ROOT, 'api/apps/es7'										))
+define("JS_BASE" ,	path.join(global.ROOT, 'api/apps/es6/'						))
+define("JS_OBJ" , 	path.join(global.ROOT, 'api/apps/es6/com/objects/'			))
+define("JS_LIB" , 	path.join(global.ROOT, 'api/apps/es6/com/libs/'			))
 
-define("JS_THM" , 	path.join(global.ROOT, 'api/apps/es6/spc/theme/'			)))
-define("JS_THC" ,   path.join(global.ROOT, 'api/apps/es6/spc/theme/common/'	)))
+define("JS_THM" , 	path.join(global.ROOT, 'api/apps/es6/spc/theme/'			))
+define("JS_THC" ,   path.join(global.ROOT, 'api/apps/es6/spc/theme/common/'	))
 
 // ES7 constants
-define("JS_BASE7" ,	path.join(global.ROOT, 'api/apps/es7/'						)))
-define("JS_COM7" , 	path.join(global.ROOT, 'api/apps/es7/com/'			)))
-define("JS_SPC7" , 	path.join(global.ROOT, 'api/apps/es7/spc/'			)))
+define("JS_BASE7" ,	path.join(global.ROOT, 'api/apps/es7/'						))
+define("JS_COM7" , 	path.join(global.ROOT, 'api/apps/es7/com/'			))
+define("JS_SPC7" , 	path.join(global.ROOT, 'api/apps/es7/spc/'			))
 
-define("JS_ARQ7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/'			)))
-define("JS_COL7" , 	path.join(global.ROOT, 'api/apps/es7/spc/col/'			)))
-define("JS_EMP7" , 	path.join(global.ROOT, 'api/apps/es7/spc/emp/'			)))
-define("JS_MET7" , 	path.join(global.ROOT, 'api/apps/es7/spc/met/'			)))
-define("JS_PDT7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pdt/'			)))
-define("JS_PER7" , 	path.join(global.ROOT, 'api/apps/es7/spc/per/'			)))
-define("JS_PRO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pro/'			)))
-define("JS_PYC7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pyc/'			)))
-define("JS_SRV7" , 	path.join(global.ROOT, 'api/apps/es7/spc/srv/'			)))
-define("JS_TST7" , 	path.join(global.ROOT, 'api/apps/es7/spc/tst/'			)))
+define("JS_ARQ7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/'			))
+define("JS_COL7" , 	path.join(global.ROOT, 'api/apps/es7/spc/col/'			))
+define("JS_EMP7" , 	path.join(global.ROOT, 'api/apps/es7/spc/emp/'			))
+define("JS_MET7" , 	path.join(global.ROOT, 'api/apps/es7/spc/met/'			))
+define("JS_PDT7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pdt/'			))
+define("JS_PER7" , 	path.join(global.ROOT, 'api/apps/es7/spc/per/'			))
+define("JS_PRO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pro/'			))
+define("JS_PYC7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pyc/'			))
+define("JS_SRV7" , 	path.join(global.ROOT, 'api/apps/es7/spc/srv/'			))
+define("JS_TST7" , 	path.join(global.ROOT, 'api/apps/es7/spc/tst/'			))
 
-define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			)))
-define("JS_AQD7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/drupal/'   )))
+define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			))
+define("JS_AQD7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/drupal/'   ))
 
 
-define("JS_LIB7" , 	path.join(global.ROOT, 'api/apps/es7/com/blib/'			)))
+define("JS_LIB7" , 	path.join(global.ROOT, 'api/apps/es7/com/blib/'			))
 
 // Structured Types
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 // Functional Types -
-define("JS_TYF7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'			)))
+define("JS_TYF7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'			))
 
 // 2. Simulamos las variables de entorno que calculabas con path.split
 // En Vercel las rutas son fijas, así que forzamos los valores

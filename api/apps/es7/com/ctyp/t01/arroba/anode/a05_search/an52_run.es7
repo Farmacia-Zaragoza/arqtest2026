@@ -26,9 +26,9 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { anode_main_page_process } =   require( path.join(JS_TYP7  , 'arroba/anode/a06_page/an62_main_process.es7' )))
+const   { anode_main_page_process } =   require( path.join(JS_TYP7  , 'arroba/anode/a06_page/an62_main_process.es7' ))
 
 class anode_run_search extends anode_main_page_process {
   constructor()

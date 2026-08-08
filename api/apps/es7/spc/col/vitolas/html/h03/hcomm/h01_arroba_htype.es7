@@ -15,10 +15,10 @@
 // Jcomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { hcomm_struc }      =   require(  path.join(JS_SPC7, 'vitolas/html/h03/hcomm/h02_struc.es7'))),
-       { cache_site }       =   require(  path.join(JS_TYP7, 'site/s10_cache_site.es7')));
+const  { hcomm_struc }      =   require(  path.join(JS_SPC7, 'vitolas/html/h03/hcomm/h02_struc.es7')),
+       { cache_site }       =   require(  path.join(JS_TYP7, 'site/s10_cache_site.es7'));
 
 class arroba_htype extends hcomm_struc {
   constructor(    container  )

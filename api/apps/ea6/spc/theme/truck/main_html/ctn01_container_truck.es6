@@ -25,14 +25,14 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
 
-		{ sec01_section_lang_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/sec01_section_lang_truck.es6'))),
-		{ sec02_section_slider_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/sec02_section_slider_truck.es6'))),
-		{ hdr01_header_truck }			= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/hdr01_header_truck.es6'))),
-		{ foo04_footer }				= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo04_footer.es6'))),
-		{ cpt04_div_captcha }			= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/captcha/cpt04_div_captcha.es6'))),
-		{ cok02_div_policy_cookies }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/cookies/cok02_div_policy_cookies.es6')));
+		{ sec01_section_lang_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/sec01_section_lang_truck.es6')),
+		{ sec02_section_slider_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/sec02_section_slider_truck.es6')),
+		{ hdr01_header_truck }			= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/hdr01_header_truck.es6')),
+		{ foo04_footer }				= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo04_footer.es6')),
+		{ cpt04_div_captcha }			= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/captcha/cpt04_div_captcha.es6')),
+		{ cok02_div_policy_cookies }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/cookies/cok02_div_policy_cookies.es6'));
 
 
 

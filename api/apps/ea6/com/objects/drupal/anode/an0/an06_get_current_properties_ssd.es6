@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_generate_object_info } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an07_generate_object_info.es6')))
+var { anode_generate_object_info } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an07_generate_object_info.es6'))
 
 class anode_get_current_properties_ssd extends anode_generate_object_info {
 

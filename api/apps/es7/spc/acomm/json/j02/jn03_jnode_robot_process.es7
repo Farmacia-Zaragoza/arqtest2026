@@ -20,10 +20,10 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn01_general_common_json } =   require(  path.join(JS_ACO7  , 'json/j01/n01/jn01_general_common_json.es7' ))),
-        { file_robot }	             = 	 require(  path.join(JS_TYP7  , 'robot/file_robot.es7'              )));
+const   { jn01_general_common_json } =   require(  path.join(JS_ACO7  , 'json/j01/n01/jn01_general_common_json.es7' )),
+        { file_robot }	             = 	 require(  path.join(JS_TYP7  , 'robot/file_robot.es7'              ));
 
 class jn01_robot_process extends jn01_general_common_json {
 

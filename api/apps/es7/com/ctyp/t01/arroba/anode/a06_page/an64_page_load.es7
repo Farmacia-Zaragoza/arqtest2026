@@ -12,9 +12,9 @@
 //- d-page_load-                   : Load information for current page only
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { anode_page_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a06_page/an68_page_process.es7'     )))
+const   { anode_page_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a06_page/an68_page_process.es7'     ))
 
 
 class anode_page_load extends anode_page_process {

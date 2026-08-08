@@ -17,7 +17,7 @@
 
 const 	echo 				= 	require(	'node-echo'								),
 		empty 				= 	require(	'is_empty'								),
-		{ savelog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/savelog.es6'))),
+		{ savelog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/savelog.es6')),
 	  	os					= 	require(	'os'													),
 	  	fs 					= 	require(	'fs'													);
 

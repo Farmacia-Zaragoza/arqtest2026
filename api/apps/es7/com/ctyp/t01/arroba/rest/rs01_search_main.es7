@@ -18,9 +18,9 @@
 
 const path = require('path');
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { rs02_object_search_inner } =   require(  path.join(JS_TYP7  , 'arroba/rest/rs02_search_inner.es7' )));
+const  { rs02_object_search_inner } =   require(  path.join(JS_TYP7  , 'arroba/rest/rs02_search_inner.es7' ));
 
 // Comm Object
 class rs01_object_search_main extends rs02_object_search_inner {

@@ -10,8 +10,8 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ uri_front } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u02_front.es6'))),
- 	 	match 				= 	require(	path.join(JS_BASE, 'com/libs/string/match.es6'))),
+const 	{ uri_front } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u02_front.es6')),
+ 	 	match 				= 	require(	path.join(JS_BASE, 'com/libs/string/match.es6')),
 		urldecode 			= 	require(	'urldecode'								),
 		iconv 				= 	require(	'iconv-lite'							),
 		path	 			= 	require(	'path'													);

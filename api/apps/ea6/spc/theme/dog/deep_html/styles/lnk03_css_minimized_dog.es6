@@ -20,8 +20,8 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'))),
-		{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')));
+const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6')),
+		{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 
 
 class lnk03_css_minimized_dog extends getset  {

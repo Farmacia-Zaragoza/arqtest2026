@@ -22,15 +22,15 @@
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { printlog }          =   require(  path.join(JS_TYP7, 'logs/printlog.es7'))),
-       { jn01_common_json }  =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn01_generate_common_json.es7'))),
-       { jn02_policy_json }  =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn02_generate_policy_json.es7'))),
-       { jn03_product_json } =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn03_generate_product_json.es7'))),
-       { jn04_teasers_json } =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn04_generate_teasers_json.es7'))),
-       { jn05_rands_json }   =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn05_generate_rands_json.es7'))),
-       { jn06_list_json }    =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn06_generate_list_json.es7')));
+const  { printlog }          =   require(  path.join(JS_TYP7, 'logs/printlog.es7')),
+       { jn01_common_json }  =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn01_generate_common_json.es7')),
+       { jn02_policy_json }  =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn02_generate_policy_json.es7')),
+       { jn03_product_json } =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn03_generate_product_json.es7')),
+       { jn04_teasers_json } =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn04_generate_teasers_json.es7')),
+       { jn05_rands_json }   =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn05_generate_rands_json.es7')),
+       { jn06_list_json }    =   require(  path.join(JS_SPC7, 'vitolas/json/j01/jn06_generate_list_json.es7'));
 
 
 

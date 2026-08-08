@@ -21,10 +21,10 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { hcomm_struc }        =   require(  path.join(JS_ACO7  , 'html/h03/h03_struc_comm.es7'       ))),
-       { hnode_type_angular } =   require(  path.join(JS_ACO7  , 'html/h02/hn01_hnode_type_angular.es7' )));
+const  { hcomm_struc }        =   require(  path.join(JS_ACO7  , 'html/h03/h03_struc_comm.es7'       )),
+       { hnode_type_angular } =   require(  path.join(JS_ACO7  , 'html/h02/hn01_hnode_type_angular.es7' ));
 
 class arroba_htype_angular extends hcomm_struc {
   constructor(    container  )

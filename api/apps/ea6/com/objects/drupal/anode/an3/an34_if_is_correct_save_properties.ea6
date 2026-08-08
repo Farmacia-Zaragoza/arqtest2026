@@ -20,9 +20,9 @@
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
 const 	{ anode_if_is_correct_save_language_properties } 	= 
-						require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an35_if_is_correct_save_language_properties.es6'))),
+						require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an35_if_is_correct_save_language_properties.es6')),
 
-		run					= require(	path.join(JS_BASE, 'com/pms/files/save_properties_promise.es6')));
+		run					= require(	path.join(JS_BASE, 'com/pms/files/save_properties_promise.es6'));
 
 
 class anode_if_is_correct_save_properties extends anode_if_is_correct_save_language_properties {

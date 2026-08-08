@@ -14,8 +14,8 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ uri_defs_urls } 		= require(	path.join(JS_BASE, 'com/objects/drupal/uri/u07_defs_urls.es6')))
-		url 					= require(	path.join(JS_BASE, 'com/libs/string/url.es6')))
+const 	{ uri_defs_urls } 		= require(	path.join(JS_BASE, 'com/objects/drupal/uri/u07_defs_urls.es6'))
+		url 					= require(	path.join(JS_BASE, 'com/libs/string/url.es6'))
 
 class uri_sets extends uri_defs_urls {
 

@@ -18,11 +18,11 @@
 // e-htm01_html_animals-     : html dynamic generation code class
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { printlog }          =   require(  path.join(JS_TYP7, 'logs/printlog.es7'))),
-	   { common_hnode }      = 	require(	path.join(JS_ACO7, 'html/h01/main/common_hnode.es7'))),
-       { htm01_html_animals } =   require(  path.join(JS_PER7, 'animals/animals/html/h01/main/htm01_animals.es7')));
+const  { printlog }          =   require(  path.join(JS_TYP7, 'logs/printlog.es7')),
+	   { common_hnode }      = 	require(	path.join(JS_ACO7, 'html/h01/main/common_hnode.es7')),
+       { htm01_html_animals } =   require(  path.join(JS_PER7, 'animals/animals/html/h01/main/htm01_animals.es7'));
 
 
 class hnode_type extends printlog {

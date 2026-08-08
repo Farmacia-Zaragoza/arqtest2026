@@ -25,11 +25,11 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { common_html } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_html.es7'))),
-		{ hea01_head_cinco }	= 	require(	path.join(JS_MET7, 'cinco/cinco/html/h01/main/hea01_cinco.es7'))),
-		{ bdy01_body_cinco }	= 	require(	path.join(JS_MET7, 'cinco/cinco/html/h01/main/bdy01_cinco.es7')));
+const  { common_html } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_html.es7')),
+		{ hea01_head_cinco }	= 	require(	path.join(JS_MET7, 'cinco/cinco/html/h01/main/hea01_cinco.es7')),
+		{ bdy01_body_cinco }	= 	require(	path.join(JS_MET7, 'cinco/cinco/html/h01/main/bdy01_cinco.es7'));
 
 
 class htm01_html_cinco extends common_html  {

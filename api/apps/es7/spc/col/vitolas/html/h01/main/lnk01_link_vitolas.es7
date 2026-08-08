@@ -27,14 +27,14 @@
 // - build_data     : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { getset }             =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6'))),
-    { lnk02_css_link_vitolas }      =   require(  path.join(JS_SPC7, 'vitolas/html/h01/deep/styles/lnk02_css_link_vitolas.es7'))),
-    { lnk03_css_minimized_vitolas }    =   require(  path.join(JS_SPC7, 'vitolas/html/h01/deep/styles/lnk03_css_minimized_vitolas.es7'))),
-    { lnk04_css_inline_vitolas }    =   require(  path.join(JS_SPC7, 'vitolas/html/h01/deep/styles/lnk04_css_inline_vitolas.es7'))),
-    { lnk05_css_inline_vitolas }    =   require(  path.join(JS_SPC7, 'vitolas/html/h01/deep/styles/lnk05_css_inline_multiple_vitolas.es7'))),
-    { html_style }           =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6')));
+const   { getset }             =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6')),
+    { lnk02_css_link_vitolas }      =   require(  path.join(JS_SPC7, 'vitolas/html/h01/deep/styles/lnk02_css_link_vitolas.es7')),
+    { lnk03_css_minimized_vitolas }    =   require(  path.join(JS_SPC7, 'vitolas/html/h01/deep/styles/lnk03_css_minimized_vitolas.es7')),
+    { lnk04_css_inline_vitolas }    =   require(  path.join(JS_SPC7, 'vitolas/html/h01/deep/styles/lnk04_css_inline_vitolas.es7')),
+    { lnk05_css_inline_vitolas }    =   require(  path.join(JS_SPC7, 'vitolas/html/h01/deep/styles/lnk05_css_inline_multiple_vitolas.es7')),
+    { html_style }           =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 
 class lnk01_link_vitolas extends getset  {
 

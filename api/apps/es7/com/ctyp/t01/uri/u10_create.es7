@@ -12,9 +12,9 @@
 // - d-create_cache_urls-               : Create cache urls
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { uri_defs }     =   require(  path.join(JS_TYP7  , 'uri/u11_defs.es7'  )))
+const   { uri_defs }     =   require(  path.join(JS_TYP7  , 'uri/u11_defs.es7'  ))
 
 class uri_create extends uri_defs {
 

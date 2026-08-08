@@ -119,7 +119,7 @@ class js_style {
     str += "var width=screen.width;";
     str += "if(width<=" + this.width + "){ " + "\n";
     str += "var mnu =$(\"#" + this.name + "\").val(); . \"\n\" ";
-    str += "$(\".\"+mnu).html(mnu.slice(0, mnu.indexOf(\"_\")));";
+    str += "$(\".\"+mnu).html(mnu.slice(0, mnu.indexOf(\"_\"));";
     str += "}";
     str += "else{" + "\n";
     str += "var mnu =$(\"#" + this.name + "\").val(); . \"\n\" ";
@@ -133,7 +133,7 @@ class js_style {
   {
     var str_if = "";
     str_if += "var mnu =$(\"#" + this.name + "\").val();" + "\n";
-    str_if += "$(\".\"+mnu).html(mnu.slice(0, mnu.indexOf(\"_\")));" + "\n";
+    str_if += "$(\".\"+mnu).html(mnu.slice(0, mnu.indexOf(\"_\"));" + "\n";
     var str_el = "";
     str_el += "var mnu =$(\"#" + this.name + "\").val();" + "\n";
     str_el += "$(\".\"+mnu).html(mnu);";

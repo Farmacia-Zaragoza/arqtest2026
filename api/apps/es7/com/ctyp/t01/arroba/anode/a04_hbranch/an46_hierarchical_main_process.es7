@@ -22,10 +22,10 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_hbranch_load }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a04_hbranch/an47_load.es7' ))),
-       { idx_pointers }           =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'       )));
+const  { anode_hbranch_load }  =   require(  path.join(JS_TYP7  , 'arroba/anode/a04_hbranch/an47_load.es7' )),
+       { idx_pointers }           =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'       ));
 
 class anode_hierarchical_main_process extends anode_hbranch_load {
   constructor()

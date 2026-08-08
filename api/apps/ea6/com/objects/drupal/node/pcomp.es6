@@ -18,7 +18,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const	{ anode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6')))	
+const	{ anode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))	
 
 class pcomp extends anode {
 	constructor() {

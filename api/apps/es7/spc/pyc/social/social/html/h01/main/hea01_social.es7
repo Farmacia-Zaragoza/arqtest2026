@@ -20,11 +20,11 @@
 // - create_links     : Generate Link Information
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { common_head } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_head.es7'))),
-        { lnk01_link_social }    =   require(  path.join(JS_PYC7, 'social/social/html/h01/main/lnk01_link_social.es7'))),
-        { met01_meta_social }    =   require(  path.join(JS_PYC7, 'social/social/html/h01/main/met01_meta_social.es7')));
+const  { common_head } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_head.es7')),
+        { lnk01_link_social }    =   require(  path.join(JS_PYC7, 'social/social/html/h01/main/lnk01_link_social.es7')),
+        { met01_meta_social }    =   require(  path.join(JS_PYC7, 'social/social/html/h01/main/met01_meta_social.es7'));
 
 class hea01_head_social extends common_head  {
 

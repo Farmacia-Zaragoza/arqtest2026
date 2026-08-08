@@ -16,7 +16,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_run_from_disk } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an04_run_from_disk.es6')))
+var { anode_run_from_disk } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an04_run_from_disk.es6'))
 
 class anode_get_current_properties extends anode_run_from_disk {
 

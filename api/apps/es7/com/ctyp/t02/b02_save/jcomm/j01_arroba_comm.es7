@@ -15,9 +15,9 @@
 // Jcomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { jcomm_struc }      =   require(  path.join(JS_TYF7, 'b02_save/jcomm/j02_struc.es7')))
+const  { jcomm_struc }      =   require(  path.join(JS_TYF7, 'b02_save/jcomm/j02_struc.es7'))
 
 class arroba_jcomm extends jcomm_struc {
   constructor(    arroba  )

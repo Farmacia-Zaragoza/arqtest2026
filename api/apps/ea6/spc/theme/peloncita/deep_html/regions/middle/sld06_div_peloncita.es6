@@ -22,7 +22,7 @@
 
 // or arraymap or iterator_to_array dont exist in php 5.2
 //innerHTML(node) {
-//    return implode(array_map([node.ownerDocument,"saveHTML"],iterator_to_array(node.childNodes)))
+//    return implode(array_map([node.ownerDocument,"saveHTML"],iterator_to_array(node.childNodes))
 //}
 
 

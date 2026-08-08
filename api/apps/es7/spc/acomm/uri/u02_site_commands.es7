@@ -16,9 +16,9 @@
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { common_post_process_commands } =   require( path.join(JS_ACO7 , 'uri/u03_common_post_process_commands.es7' )))
+const { common_post_process_commands } =   require( path.join(JS_ACO7 , 'uri/u03_common_post_process_commands.es7' ))
 
 class site_common_commands extends common_post_process_commands {
 

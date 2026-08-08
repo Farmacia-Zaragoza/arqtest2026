@@ -20,9 +20,9 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
-		{ phn02_div_phone_icon }	= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn02_div_phone_icon.es6'))),
-		{ phn02_div_phone_address }	= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn02_div_phone_address.es6')));
+const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
+		{ phn02_div_phone_icon }	= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn02_div_phone_icon.es6')),
+		{ phn02_div_phone_address }	= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn02_div_phone_address.es6'));
 
 
 class mob02_div_phone extends html_style {

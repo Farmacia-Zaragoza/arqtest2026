@@ -3,7 +3,7 @@
 function same_as(str_in = "", model_phrase = "") //Si es may devolvera mayusculas
 //print "Model - " . $model_phrase . "\n\r"   
 {
-	var model = utf8_clean_for_file(utf8_clean_for_file_upper(strtok(model_phrase, " ")))
+	var model = utf8_clean_for_file(utf8_clean_for_file_upper(strtok(model_phrase, " "))
 	var char_02 = ""
 	var char_01 = model[0]
 	if (model.length > 1) char_02 = model[1]

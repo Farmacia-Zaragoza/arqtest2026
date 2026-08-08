@@ -15,9 +15,9 @@
 
 const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd()),'api/apps/paths.js'));
 
-const   { d02_idx_arr }     =   require(  path.join(JS_TYP7 , 'arroba/aindex/d_pf/d02_idx_arr.es7' ))),
-	    shtf  			= 	require(  path.join(JS_LIB7 , 'file/save_hash_to_file.es7' 	))),
-	    satf  			= 	require(  path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	)));
+const   { d02_idx_arr }     =   require(  path.join(JS_TYP7 , 'arroba/aindex/d_pf/d02_idx_arr.es7' )),
+	    shtf  			= 	require(  path.join(JS_LIB7 , 'file/save_hash_to_file.es7' 	)),
+	    satf  			= 	require(  path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	));
 
 
 class d01_idx_pf extends d02_idx_arr {

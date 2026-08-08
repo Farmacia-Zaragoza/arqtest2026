@@ -22,14 +22,14 @@
 // - d-create_marquee-    : Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { getset }                 =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6'))),
-    { html_style }                 =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
-    { scr02_js_scripts_wedding }   =   require(  path.join(JS_PER7, 'wedding/wedding/html/h01/deep/scripts/scr02_js_scripts_wedding.es7'))),
-    { scr03_js_minimized_wedding } =   require(  path.join(JS_PER7, 'wedding/wedding/html/h01/deep/scripts/scr03_js_minimized_wedding.es7'))),
-    { scr05_js_inline_wedding }    =   require(  path.join(JS_PER7, 'wedding/wedding/html/h01/deep/scripts/scr05_js_inline_wedding.es7'))),
-    { scr06_js_async_wedding }     =   require(  path.join(JS_PER7, 'wedding/wedding/html/h01/deep/scripts/scr06_js_async_wedding.es7')));
+const   { getset }                 =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6')),
+    { html_style }                 =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6')),
+    { scr02_js_scripts_wedding }   =   require(  path.join(JS_PER7, 'wedding/wedding/html/h01/deep/scripts/scr02_js_scripts_wedding.es7')),
+    { scr03_js_minimized_wedding } =   require(  path.join(JS_PER7, 'wedding/wedding/html/h01/deep/scripts/scr03_js_minimized_wedding.es7')),
+    { scr05_js_inline_wedding }    =   require(  path.join(JS_PER7, 'wedding/wedding/html/h01/deep/scripts/scr05_js_inline_wedding.es7')),
+    { scr06_js_async_wedding }     =   require(  path.join(JS_PER7, 'wedding/wedding/html/h01/deep/scripts/scr06_js_async_wedding.es7'));
 
 
 class scr01_js_wedding extends getset  {

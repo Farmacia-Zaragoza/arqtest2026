@@ -12,13 +12,13 @@
 // - d-save_json_array_list_inner-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  'is-empty'                             ),
        accents                   =   require(  'remove-accents'                       ),
-       { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'))),
-       { jn11_object_allinone_main } =   require(  path.join(JS_TYP7, 'json/jnode/j01/lists/jn11_allinone_main.es7')));
+       { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')),
+       { jn11_object_allinone_main } =   require(  path.join(JS_TYP7, 'json/jnode/j01/lists/jn11_allinone_main.es7'));
 
 
 // Pendiente de cambiar

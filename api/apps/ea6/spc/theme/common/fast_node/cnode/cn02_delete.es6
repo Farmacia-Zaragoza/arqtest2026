@@ -13,7 +13,7 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ pcomp } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/pcomp.es6')))
+const 	{ pcomp } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/pcomp.es6'))
 
 
 // Para poder extender debe haberse incluido antes

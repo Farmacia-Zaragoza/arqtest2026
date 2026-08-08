@@ -32,9 +32,9 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { struc_gen_text }   =   require(  path.join(JS_TYP7  , 'struc/s03_struc_gen_text.es7'   )))
+const   { struc_gen_text }   =   require(  path.join(JS_TYP7  , 'struc/s03_struc_gen_text.es7'   ))
 
 
 class struc_gen_arroba extends struc_gen_text {

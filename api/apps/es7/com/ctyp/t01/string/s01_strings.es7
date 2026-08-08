@@ -20,9 +20,9 @@
 // @String >
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { strings_defs }       =   require(  path.join(JS_TYP7  , 'string/s02_defs.es7'    )))
+const   { strings_defs }       =   require(  path.join(JS_TYP7  , 'string/s02_defs.es7'    ))
 
 
 class strings extends strings_defs
@@ -215,7 +215,7 @@ class strings extends strings_defs
     const expression = /\\"([^]+)\\"/g;
     let groups;
 
-    while ((groups = expression.exec(str)))
+    while ((groups = expression.exec(str))
       str = str.replace(groups[0], `"${groups[1]}"`);
 
     return str;

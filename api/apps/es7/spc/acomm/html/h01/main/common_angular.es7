@@ -52,9 +52,9 @@
 // - create_parameter_scripts  : Create script code for angular
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { common_body }     =   require( path.join(JS_ACO7  , 'html/h01/main/common_body.es7' )))
+const   { common_body }     =   require( path.join(JS_ACO7  , 'html/h01/main/common_body.es7' ))
 
 
 class common_angular extends common_body  {

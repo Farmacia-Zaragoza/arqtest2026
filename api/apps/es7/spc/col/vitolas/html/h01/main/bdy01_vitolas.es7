@@ -42,12 +42,12 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
-		{ svg_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'))),
-		{ scr01_js_vitolas }				= 	require(	path.join(JS_SPC7, 'vitolas/html/h01/main/scr01_js_vitolas.es7'))),
-		{ ifnojs }	 					= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'))),
+const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
+		{ svg_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6')),
+		{ scr01_js_vitolas }				= 	require(	path.join(JS_SPC7, 'vitolas/html/h01/main/scr01_js_vitolas.es7')),
+		{ ifnojs }	 					= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6')),
 		minify 							= 	require(	'html-minifier'									).minify;
 
 

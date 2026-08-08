@@ -14,9 +14,9 @@
 
 const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd()),'api/apps/paths.js'));
 
-const  satf  			 = 	require(  path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	))),
-       { idx_pointers }  =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'   ))),
-       { c01_idx_sheet } =   require(  path.join(JS_TYP7 , 'arroba/aindex/c_sheet/c01_idx_sheet.es7'  )));
+const  satf  			 = 	require(  path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	)),
+       { idx_pointers }  =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'   )),
+       { c01_idx_sheet } =   require(  path.join(JS_TYP7 , 'arroba/aindex/c_sheet/c01_idx_sheet.es7'  ));
 
 class a03_idx_manage extends c01_idx_sheet {
 

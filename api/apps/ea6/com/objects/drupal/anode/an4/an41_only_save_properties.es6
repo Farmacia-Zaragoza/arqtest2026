@@ -19,11 +19,11 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_only_save_code } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an4/an42_only_save_code.es6'))),
+var { anode_only_save_code } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an4/an42_only_save_code.es6')),
 	fs 								= require(	'fs'				)															,
-	cff  							= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'))),
-	cpf  							= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/copy_full_filename.es6'))),
-	scpf  							= require( 	path.join(JS_BASE, 'com/libs//file/full_path/level_02/save_code_properties_filename.es6')));
+	cff  							= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6')),
+	cpf  							= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/copy_full_filename.es6')),
+	scpf  							= require( 	path.join(JS_BASE, 'com/libs//file/full_path/level_02/save_code_properties_filename.es6'));
 
 
 class anode_only_save_properties extends anode_only_save_code {

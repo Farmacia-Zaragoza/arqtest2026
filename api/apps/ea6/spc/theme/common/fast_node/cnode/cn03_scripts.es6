@@ -14,8 +14,8 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ pcomp } 				= require(	path.join(JS_BASE, 'com/objects/drupal/node/pcomp.es6'))),
-		{ cbool } 				= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6')));
+const 	{ pcomp } 				= require(	path.join(JS_BASE, 'com/objects/drupal/node/pcomp.es6')),
+		{ cbool } 				= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
 
 
 // Para poder extender debe haberse incluido antes

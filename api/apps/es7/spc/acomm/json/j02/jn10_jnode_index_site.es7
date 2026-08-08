@@ -8,9 +8,9 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { an03_general_index_arroba } =   require(  path.join(JS_ACO7  , 'arroba/n01/an03_general_index_arroba.es7' )))
+const { an03_general_index_arroba } =   require(  path.join(JS_ACO7  , 'arroba/n01/an03_general_index_arroba.es7' ))
 
 class jn10_index_site extends an03_general_index_arroba {
 

@@ -17,7 +17,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_manage_code_type } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an4/an49_manage_code_type_path.es6')))
+var { anode_manage_code_type } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an4/an49_manage_code_type_path.es6'))
 
 class anode_only_save_language_properties extends anode_manage_code_type {
 

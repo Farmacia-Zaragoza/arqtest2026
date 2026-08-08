@@ -16,12 +16,12 @@
 // Arroba_JType     : Generic type to create json files
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { tdata_asign }                =   require(  path.join(JS_MET7, 'cinco/cinco/json/j04/j11_tdata_asign.es7'))),
-       { arroba_mcomm }               =   require(  path.join(JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7'))),
-       { jn01_checking_search_words } =   require(  path.join(JS_TYP7, 'json/jsearch/j02/jn01_check_words.es7'))),
-       { theme_json }                 =   require(  path.join(JS_MET7, 'cinco/cinco/json/j04/j02_theme_json.es7'))) ;
+const  { tdata_asign }                =   require(  path.join(JS_MET7, 'cinco/cinco/json/j04/j11_tdata_asign.es7')),
+       { arroba_mcomm }               =   require(  path.join(JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7')),
+       { jn01_checking_search_words } =   require(  path.join(JS_TYP7, 'json/jsearch/j02/jn01_check_words.es7')),
+       { theme_json }                 =   require(  path.join(JS_MET7, 'cinco/cinco/json/j04/j02_theme_json.es7')) ;
 
 class theme_data extends tdata_asign
 {

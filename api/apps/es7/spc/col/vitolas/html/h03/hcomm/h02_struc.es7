@@ -14,10 +14,10 @@
 // Scomm > Cache
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { scomm_defs }      =   require(  path.join(JS_TYF7, 'a01_load/scomm/s04_defs.es7'))),
-       { hnode_type }      =   require(    path.join(JS_SPC7, 'vitolas/html/h02/hn01_hnode_type.es7'))),
+const  { scomm_defs }      =   require(  path.join(JS_TYF7, 'a01_load/scomm/s04_defs.es7')),
+       { hnode_type }      =   require(    path.join(JS_SPC7, 'vitolas/html/h02/hn01_hnode_type.es7')),
        fs                  =   require(  'fs'                                               );
 
 

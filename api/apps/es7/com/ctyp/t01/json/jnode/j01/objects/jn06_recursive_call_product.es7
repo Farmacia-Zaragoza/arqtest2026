@@ -16,13 +16,13 @@
 // - d-review_childrens_recursive_product-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                         =   require(  'fs'                                                   ),
        empty                      =   require(  'is-empty'                             ),
        accents                    =   require(  'remove-accents'                       ),
-       { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'))),
-       { jn06_comma_json_rand } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn06_rand.es7')));
+       { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')),
+       { jn06_comma_json_rand } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn06_rand.es7'));
 
 // Comm Object
 class jn06_commo_json_recursive_call_product extends jn06_comma_json_rand {

@@ -21,9 +21,9 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
-		{ foo02_a_footer }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo02_a.es6'))),
-		scpf 						= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6')));
+const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
+		{ foo02_a_footer }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/footer/foo02_a.es6')),
+		scpf 						= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
 
 class foo03_div_footer extends html_style{
 

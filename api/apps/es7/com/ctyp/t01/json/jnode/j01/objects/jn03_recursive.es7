@@ -12,10 +12,10 @@
 // - d-save_json_sidebar_recursive_object_to_file-          : Generate Recursive JSon
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { idx_pointers }       =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'))),
-       { jn04_commo_json_doble_call } =   require(  path.join(JS_TYP7, 'json/jnode/j01/objects/jn04_doble_call.es7')));
+const  { idx_pointers }       =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')),
+       { jn04_commo_json_doble_call } =   require(  path.join(JS_TYP7, 'json/jnode/j01/objects/jn04_doble_call.es7'));
 
 // Comm Object
 class jn03_commo_json_recursive extends jn04_commo_json_doble_call {

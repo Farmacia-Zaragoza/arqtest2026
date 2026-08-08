@@ -24,9 +24,9 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'))),
-		{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
-		{ mar01_div_marquee }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/marquee/mar01_div_marquee.es6')));
+const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6')),
+		{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
+		{ mar01_div_marquee }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/marquee/mar01_div_marquee.es6'));
 
 
 class des01_div_parragraph extends html_style {

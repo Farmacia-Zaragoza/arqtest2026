@@ -18,7 +18,7 @@
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 
 const  fs           =   require(  'fs'                                    ),
@@ -28,7 +28,7 @@ const  fs           =   require(  'fs'                                    ),
        empty        =   require(  'is-empty'                          ),
        trim         =   require(  'trim'                            ),
        mkdirp       =   require(  'mkdirp'                          ),
-    { printlog }         =   require(  path.join(JS_TYP7, 'logs/printlog.es7')));
+    { printlog }         =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
 
 
 function save_array_to_file(full_file_name_int = '' , arr_data)

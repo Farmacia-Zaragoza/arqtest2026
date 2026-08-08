@@ -25,11 +25,11 @@
 // - create_body  	 : Generate body
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { common_html } 	= 	require(	path.join(JS_ACO7 , 'html/h01/main/comm/common_html.es7'		))),
-	   { head_react }	= 	require(	path.join(JS_ACO7 , 'html/h01/main/rea/head_react.es7'	))),
-	   { body_react }	= 	require(	path.join(JS_ACO7 , 'html/h01/main/rea/body_react.es7'	)));
+const  { common_html } 	= 	require(	path.join(JS_ACO7 , 'html/h01/main/comm/common_html.es7'		)),
+	   { head_react }	= 	require(	path.join(JS_ACO7 , 'html/h01/main/rea/head_react.es7'	)),
+	   { body_react }	= 	require(	path.join(JS_ACO7 , 'html/h01/main/rea/body_react.es7'	));
 
 
 class htm_react extends common_html  {

@@ -17,7 +17,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_get_current_properties_ssd } 	= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an06_get_current_properties_ssd.es6')));
+const 	{ anode_get_current_properties_ssd } 	= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an06_get_current_properties_ssd.es6'));
 
 
 class anode_get_current_properties_disk extends anode_get_current_properties_ssd {

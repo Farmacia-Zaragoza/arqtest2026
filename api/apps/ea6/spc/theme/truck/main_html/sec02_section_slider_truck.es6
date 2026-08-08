@@ -21,11 +21,11 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
-		{ flx03_div_flex_slider }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/slider/flx03_div_flex_slider.es6'))),
-		{ flx03_div_flex_carousel }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/slider/flx03_div_flex_carousel.es6'))),
-		{ mob03_div_flex_mobile }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/mobile_contacts/mob03_div_mobile.es6'))),
-		{ flx02_ul_flex_middle }	= 	require(	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6')));
+const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
+		{ flx03_div_flex_slider }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/slider/flx03_div_flex_slider.es6')),
+		{ flx03_div_flex_carousel }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/slider/flx03_div_flex_carousel.es6')),
+		{ mob03_div_flex_mobile }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/mobile_contacts/mob03_div_mobile.es6')),
+		{ flx02_ul_flex_middle }	= 	require(	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6'));
 
 class sec02_section_slider_truck extends html_style{
 

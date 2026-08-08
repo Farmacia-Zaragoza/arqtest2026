@@ -7,10 +7,10 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ blkjson_array } 	= 	require(	path.join(JS_TYP7, 'json/jtype/blkjson_array.es7'))),
-		sctf 				= 	require( 	path.join(JS_LIB7, 'file/save_code_to_file.es7')));
+const 	{ blkjson_array } 	= 	require(	path.join(JS_TYP7, 'json/jtype/blkjson_array.es7')),
+		sctf 				= 	require( 	path.join(JS_LIB7, 'file/save_code_to_file.es7'));
 
 
 class typejson_array extends blkjson_array {

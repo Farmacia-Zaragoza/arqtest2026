@@ -21,9 +21,9 @@ const   path                =   require('path'                                  
 
 const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd()),'api/apps/paths.js'));
 
-const   { an11_index_fn }     =   require(path.join(JS_TYP7 , 'arroba/aindex/a00/an11_index_fn.es7' ))),
-	    shtf  			= 	require(path.join(JS_LIB7 , 'file/save_hash_to_file.es7' 	))),
-	    satf  			= 	require(path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	)));
+const   { an11_index_fn }     =   require(path.join(JS_TYP7 , 'arroba/aindex/a00/an11_index_fn.es7' )),
+	    shtf  			= 	require(path.join(JS_LIB7 , 'file/save_hash_to_file.es7' 	)),
+	    satf  			= 	require(path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	));
 
 
 class an10_index_pf extends an11_index_fn {

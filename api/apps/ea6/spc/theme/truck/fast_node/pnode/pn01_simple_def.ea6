@@ -12,7 +12,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ pn01_simple } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6')));
+const 	{ pn01_simple } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/pnode/pn01_simple.ea6'));
 
 
 function pn01_simple_def(data_and_error = '' , t = '') {

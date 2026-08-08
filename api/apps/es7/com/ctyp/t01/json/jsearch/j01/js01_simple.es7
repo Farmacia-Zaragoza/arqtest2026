@@ -12,13 +12,13 @@
 // - d-review_childrens_recursive_object-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                   =   require(  'fs'                                                   ),
        empty                =   require(  'is-empty'                             ),
        accents              =   require(  'remove-accents'                       ),
-       { idx_pointers }     =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'))),
-       { jn00_search_pf }   =   require(  path.join(JS_TYP7, 'json/jsearch/j00/jn00_search_pf.es7')));
+       { idx_pointers }     =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')),
+       { jn00_search_pf }   =   require(  path.join(JS_TYP7, 'json/jsearch/j00/jn00_search_pf.es7'));
 
 // Comm Object
 class js01_simple_search extends jn00_search_pf {

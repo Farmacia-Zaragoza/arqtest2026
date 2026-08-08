@@ -10,9 +10,9 @@
 // - d-post_process_commands-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { site_sure_commands } =   require( path.join(JS_PYC7, 'war/arqwar/uri/u05_sure_commands.es7')))
+const { site_sure_commands } =   require( path.join(JS_PYC7, 'war/arqwar/uri/u05_sure_commands.es7'))
 
 
 class post_process_commands extends site_sure_commands

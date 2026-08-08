@@ -15,12 +15,12 @@
 // - d-manage_photo_name-   : Generate parragraphs
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const fs                    =   require(  'fs'                                        ),
-      { cache }             =   require(  path.join(JS_TYP7, 'cache/c01_cache.es7'))),
-      { idx_pointers }  =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'))),
-	  rand	                 = 	 require(  path.join(JS_LIB7, 'rand/rand.es7'))),
+      { cache }             =   require(  path.join(JS_TYP7, 'cache/c01_cache.es7')),
+      { idx_pointers }  =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')),
+	  rand	                 = 	 require(  path.join(JS_LIB7, 'rand/rand.es7')),
       empty                 =   require(  'is_empty'                );
 
 class jn01_comm_pho extends cache {

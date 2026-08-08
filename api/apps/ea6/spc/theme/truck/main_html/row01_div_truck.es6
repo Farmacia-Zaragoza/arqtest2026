@@ -21,7 +21,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 		= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')))
+const 	{ html_style } 		= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class row01_div_flat extends html_style{
 

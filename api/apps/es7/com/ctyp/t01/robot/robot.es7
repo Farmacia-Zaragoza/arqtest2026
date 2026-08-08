@@ -6,10 +6,10 @@
 // Inheritance Line : copy - def - printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { html_style } 	= 	require(	path.join(JS_TYP7 , 'html/style/html_style.es7'			))),
-      { json_copy }     =   require(  path.join(JS_TYP7 , 'json/jtype/json_copy.es7'                 )));
+const { html_style } 	= 	require(	path.join(JS_TYP7 , 'html/style/html_style.es7'			)),
+      { json_copy }     =   require(  path.join(JS_TYP7 , 'json/jtype/json_copy.es7'                 ));
 
 class robot  extends json_copy {
   constructor()

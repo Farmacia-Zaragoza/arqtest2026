@@ -19,8 +19,8 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'))),
-		{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')));
+const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6')),
+		{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 
 
 class scr06_js_async_truck extends getset  {

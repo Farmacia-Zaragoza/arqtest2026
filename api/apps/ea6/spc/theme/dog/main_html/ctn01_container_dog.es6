@@ -34,21 +34,21 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
 
-		{ div21_div_nxm_divs }			= 	require(	path.join(JS_BASE, 'spc/theme/common/structures/divs/div21_div_nxm_divs.es6'))),
+		{ div21_div_nxm_divs }			= 	require(	path.join(JS_BASE, 'spc/theme/common/structures/divs/div21_div_nxm_divs.es6')),
 
-		{ div01_slider_row_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/row/div01_slider_row_dog.es6'))),
+		{ div01_slider_row_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/row/div01_slider_row_dog.es6')),
 
-		{ div03_buttons_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/buttons/div03_buttons_dog.es6'))),
+		{ div03_buttons_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/buttons/div03_buttons_dog.es6')),
 		// Bottom Menu
-		{ div03_menu_dog }				= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/menu/div03_menu_dog.es6'))),
+		{ div03_menu_dog }				= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/menu/div03_menu_dog.es6')),
 
-		{ zne04_helper_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/zne04_helper_dog.es6'))),
+		{ zne04_helper_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/zne04_helper_dog.es6')),
 
-		{ zne02_hiddens_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/hiddens/zne02_hiddens_dog.es6'))),
+		{ zne02_hiddens_dog }			= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/hiddens/zne02_hiddens_dog.es6')),
 
-		{ div03_mobile_langs_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/div03_mobile_langs_dog.es6')));
+		{ div03_mobile_langs_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/div03_mobile_langs_dog.es6'));
 
 
 class ctn01_container_dog extends html_style  {

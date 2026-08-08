@@ -16,10 +16,10 @@
 // - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn10_index_site }   =   require(  path.join(JS_ACO7  , 'json/j02/jn10_jnode_index_site.es7' ))),
-	    shtf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7')));
+const   { jn10_index_site }   =   require(  path.join(JS_ACO7  , 'json/j02/jn10_jnode_index_site.es7' )),
+	    shtf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7'));
 
 class jn60_info_json extends jn10_index_site {
 

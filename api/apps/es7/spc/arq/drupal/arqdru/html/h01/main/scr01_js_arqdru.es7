@@ -22,14 +22,14 @@
 // - d-create_marquee-    : Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   { getset }             =   require(  path.join(JS_BASE , 'com/objects/html/getset.es6'                    )),
     { html_style }           =   require(  path.join(JS_BASE , 'com/objects/html/html_style.es6'                  )),
-    { scr02_js_scripts_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/scripts/scr02_js_scripts_arqdru.es7'   ))),
-    { scr03_js_minimized_arqdru }  =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/scripts/scr03_js_minimized_arqdru.es7' ))),
-    { scr05_js_inline_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/scripts/scr05_js_inline_arqdru.es7'  ))),
-    { scr06_js_async_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/scripts/scr06_js_async_arqdru.es7'     )));
+    { scr02_js_scripts_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/scripts/scr02_js_scripts_arqdru.es7'   )),
+    { scr03_js_minimized_arqdru }  =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/scripts/scr03_js_minimized_arqdru.es7' )),
+    { scr05_js_inline_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/scripts/scr05_js_inline_arqdru.es7'  )),
+    { scr06_js_async_arqdru }    =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/deep/scripts/scr06_js_async_arqdru.es7'     ));
 
 
 class scr01_js_arqdru extends getset  {

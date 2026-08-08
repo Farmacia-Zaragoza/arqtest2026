@@ -24,17 +24,17 @@
 // FEATURE-METATAGS_GENERATION - FEATURE_ANCHOR_GENERATION - FEATURE-LOAD_ARROBA_CONTENT
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { tindex_comm }               =   require(  path.join(JS_ACO7  , 'json/j04/comm/j10_dindex_comm.es7'  ))),
-      { jn01_checking_search_words } =   require(  path.join(JS_TYP7  , 'json/jsearch/j02/jn01_check_words.es7' ))),
-      { idx_pointers }               =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                ))),
-      { arroba_mcomm }               =   require(  path.join(JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7' ))),
-      { arroba_scomm }               =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7' ))),
-      { arroba_sprod }               =   require(  path.join(JS_TYF7  , 'a01_load/sprod/p01_arroba_prod.es7' ))),
-      { arroba_search }              =   require(  path.join(JS_TYF7  , 'a01_load/lindex/i02_arroba_search.es7'))),
-      { arroba_hiera }               =   require(  path.join(JS_TYF7  , 'a01_load/hiera/h01_arroba_hiera.es7'))),
-      { arroba_fs }                  =   require(  path.join(JS_TYF7  , 'a01_load/fs/h01_arroba_fs.es7')));
+const  { tindex_comm }               =   require(  path.join(JS_ACO7  , 'json/j04/comm/j10_dindex_comm.es7'  )),
+      { jn01_checking_search_words } =   require(  path.join(JS_TYP7  , 'json/jsearch/j02/jn01_check_words.es7' )),
+      { idx_pointers }               =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'                )),
+      { arroba_mcomm }               =   require(  path.join(JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7' )),
+      { arroba_scomm }               =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7' )),
+      { arroba_sprod }               =   require(  path.join(JS_TYF7  , 'a01_load/sprod/p01_arroba_prod.es7' )),
+      { arroba_search }              =   require(  path.join(JS_TYF7  , 'a01_load/lindex/i02_arroba_search.es7')),
+      { arroba_hiera }               =   require(  path.join(JS_TYF7  , 'a01_load/hiera/h01_arroba_hiera.es7')),
+      { arroba_fs }                  =   require(  path.join(JS_TYF7  , 'a01_load/fs/h01_arroba_fs.es7'));
 
 class tdata_comm extends tindex_comm
 {

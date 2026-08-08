@@ -13,7 +13,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const	{ pnode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/pnode.es6')))	
+const	{ pnode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/pnode.es6'))	
 
 class psimple extends pnode {
 

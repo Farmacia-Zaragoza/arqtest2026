@@ -12,9 +12,9 @@
 // - d-generate_common_search-     : Common method to search articles
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { jns01_json_recursive } =   require(  path.join(JS_TYP7  , 'json/jsearch/j01/jns01_recursive.es7' )))
+const  { jns01_json_recursive } =   require(  path.join(JS_TYP7  , 'json/jsearch/j01/jns01_recursive.es7' ))
 
 class jn02_general_search_json extends jns01_json_recursive {
 

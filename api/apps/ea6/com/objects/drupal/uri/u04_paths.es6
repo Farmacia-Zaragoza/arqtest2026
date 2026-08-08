@@ -14,7 +14,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var { uri_urls } 		= require(	path.join(JS_BASE, 'com/objects/drupal/uri/u05_urls.es6')))
+var { uri_urls } 		= require(	path.join(JS_BASE, 'com/objects/drupal/uri/u05_urls.es6'))
 
 class uri_paths extends uri_urls {
 

@@ -6,9 +6,9 @@
 //- d-copyvalues             : Copy json values
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { json_def }     =   require(  path.join(JS_TYP7, 'json/jtype/json_def.es7')));
+const   { json_def }     =   require(  path.join(JS_TYP7, 'json/jtype/json_def.es7'));
 
 
 class json_copy  extends json_def {

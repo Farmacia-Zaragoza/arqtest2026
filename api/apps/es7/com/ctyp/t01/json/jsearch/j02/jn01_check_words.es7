@@ -12,9 +12,9 @@
 // - d-are_words_right_for_search-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { cache }             =   require(  path.join(JS_TYP7, 'cache/c01_cache.es7')));
+const   { cache }             =   require(  path.join(JS_TYP7, 'cache/c01_cache.es7'));
 
 
 // Pendiente de cambiar

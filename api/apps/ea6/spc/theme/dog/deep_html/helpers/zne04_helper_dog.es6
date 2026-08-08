@@ -23,10 +23,10 @@
 //- build_data       : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
-		{ svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'))),
-		{ getset } 					= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'))),
-		{ a01_mobile_langs_dog }	= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/a01_mobile_langs_dog.es6')));
+const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
+		{ svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6')),
+		{ getset } 					= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6')),
+		{ a01_mobile_langs_dog }	= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/a01_mobile_langs_dog.es6'));
 
 class zne04_helper_dog extends getset {
 

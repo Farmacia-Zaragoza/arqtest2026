@@ -7,10 +7,10 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const    { robot }     =   require(  path.join(JS_TYP7   , 'robot/robot.es7'             ))),
-         { strings }   =   require(  path.join(JS_TYP7   , 'string/s01_strings.es7'      ))) ;
+const    { robot }     =   require(  path.join(JS_TYP7   , 'robot/robot.es7'             )),
+         { strings }   =   require(  path.join(JS_TYP7   , 'string/s01_strings.es7'      )) ;
 
 class manage_robot extends robot {
   constructor(file_name = '')

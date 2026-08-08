@@ -15,9 +15,9 @@
 // Scomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { scomm_struc }        =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7'  )))
+const  { scomm_struc }        =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7'  ))
 
 // Simple Common - Will Load only product information of article passed
 class arroba_lindex extends scomm_struc {

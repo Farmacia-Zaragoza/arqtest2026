@@ -16,9 +16,9 @@
 //
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { tdata_comm }       =   require(  path.join(JS_SPC7, 'acomm/json/j04/j01_tdata_comm.es7')))
+const  { tdata_comm }       =   require(  path.join(JS_SPC7, 'acomm/json/j04/j01_tdata_comm.es7'))
 
 class tdata_asign extends tdata_comm
 {

@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_load_properties_file } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an08_load_properties_file.es6')))
+var { anode_load_properties_file } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an08_load_properties_file.es6'))
 
 class anode_generate_object_info extends anode_load_properties_file {
 
