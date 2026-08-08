@@ -24,11 +24,11 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { getset }                 =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6')),
-    { html_style }                 =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6')),
-    { scr02_js_scripts_animals }   =   require(  path.join(JS_PER7, 'animals/animals/html/h01/deep/scripts/scr02_js_scripts_animals.es7')),
-    { scr03_js_minimized_animals } =   require(  path.join(JS_PER7, 'animals/animals/html/h01/deep/scripts/scr03_js_minimized_animals.es7')),
-    { scr05_js_inline_animals }    =   require(  path.join(JS_PER7, 'animals/animals/html/h01/deep/scripts/scr05_js_inline_animals.es7')),
+const   { getset }                 =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6'),
+    { html_style }                 =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+    { scr02_js_scripts_animals }   =   require(  path.join(JS_PER7, 'animals/animals/html/h01/deep/scripts/scr02_js_scripts_animals.es7'),
+    { scr03_js_minimized_animals } =   require(  path.join(JS_PER7, 'animals/animals/html/h01/deep/scripts/scr03_js_minimized_animals.es7'),
+    { scr05_js_inline_animals }    =   require(  path.join(JS_PER7, 'animals/animals/html/h01/deep/scripts/scr05_js_inline_animals.es7'),
     { scr06_js_async_animals }     =   require(  path.join(JS_PER7, 'animals/animals/html/h01/deep/scripts/scr06_js_async_animals.es7'));
 
 

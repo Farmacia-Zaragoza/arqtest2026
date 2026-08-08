@@ -28,9 +28,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { common_model }     =   require(  path.join(JS_ACO7, 'model/comm/common_model.es7')),
-        { arroba_jtype_dog } =   require(  path.join(JS_PER7, 'dog/dog/json/j03/j01_arroba_type.es7')),
-        { site_uri }         =   require(  path.join(JS_ACO7, 'uri/n02/u01_site_uri.es7')),
+const   { common_model }     =   require(  path.join(JS_ACO7, 'model/comm/common_model.es7'),
+        { arroba_jtype_dog } =   require(  path.join(JS_PER7, 'dog/dog/json/j03/j01_arroba_type.es7'),
+        { site_uri }         =   require(  path.join(JS_ACO7, 'uri/n02/u01_site_uri.es7'),
         { theme_data }       =   require(  path.join(JS_PER7, 'dog/dog/json/j04/j01_theme_data.es7'));
 
 class site_model extends common_model

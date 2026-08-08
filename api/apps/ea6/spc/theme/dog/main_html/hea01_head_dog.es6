@@ -16,10 +16,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
-		{ ifnojs } 				= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6')),
-		{ met01_meta_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/met01_meta_dog.es6')),
-		{ lnk01_link_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/lnk01_link_dog.es6')),
+const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+		{ ifnojs } 				= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'),
+		{ met01_meta_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/met01_meta_dog.es6'),
+		{ lnk01_link_dog }		= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/lnk01_link_dog.es6'),
 		minify 					= 	require(	'html-minifier'										).minify,
 		{ cn03_scripts }		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn03_scripts.es6'));
 

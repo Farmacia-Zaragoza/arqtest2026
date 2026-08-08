@@ -19,7 +19,7 @@ var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"		
 
 const 	fs 										= require(	'fs'																							),
 		empty 									= require(	'/brqx/base/react/zcommon/node_modules/is-empty'												),
-		{ anode_if_is_correct_save_properties } = require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an34_if_is_correct_save_properties.ea6')),
+		{ anode_if_is_correct_save_properties } = require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an34_if_is_correct_save_properties.ea6'),
 		creff 									= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'));
 
 class anode_check_only_if_exist_code extends anode_if_is_correct_save_properties {

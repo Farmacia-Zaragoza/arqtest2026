@@ -19,8 +19,8 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                    =   require(  'fs'                                        ),
-       { jn01_comm_pho }     =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn01_comm_pho.es7')),
-       { idx_pointers }  =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')),
+       { jn01_comm_pho }     =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn01_comm_pho.es7'),
+       { idx_pointers }  =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
        empty                 =   require(  'is_empty'                     );
 
 class jn00_comm_pf extends jn01_comm_pho {

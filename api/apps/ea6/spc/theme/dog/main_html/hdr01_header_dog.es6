@@ -27,9 +27,9 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
-		{ svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6')),
-		{ cn01_base } 				= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6')),
+const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+		{ svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'),
+		{ cn01_base } 				= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn01_base.es6'),
 		{ hdr02_div_header_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/deep_html/header/hdr02_div.es6'));
 
 class hdr01_header_dog extends html_style  {

@@ -15,7 +15,7 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ pcomp } 				= require(	path.join(JS_BASE, 'com/objects/drupal/node/pcomp.es6')),
+const 	{ pcomp } 				= require(	path.join(JS_BASE, 'com/objects/drupal/node/pcomp.es6'),
 		{ cbool } 				= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
 
 

@@ -30,7 +30,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { scomm_defs }      =   require(  path.join(JS_TYF7 , 'a01_load/scomm/s04_defs.es7'  )),
+const  { scomm_defs }      =   require(  path.join(JS_TYF7 , 'a01_load/scomm/s04_defs.es7'),
        { anode }           =   require(  path.join(JS_TYP7 , 'arroba/anode/a00_comm/an01_anode.es7' ));
 
 

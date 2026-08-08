@@ -21,8 +21,8 @@
 
 var 	cons 					= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"							);
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
-		{ sec02_process } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/bs/sec02_process.es6')),
+const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+		{ sec02_process } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/bs/sec02_process.es6'),
 		{ sorted_array } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/structs/sorted_array.es6'));
 
 

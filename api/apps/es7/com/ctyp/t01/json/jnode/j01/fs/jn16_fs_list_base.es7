@@ -18,7 +18,7 @@ const  fs                        =   require(  'fs'                             
        empty                     =   require(  'is-empty'                             ),
        accents                   =   require(  'remove-accents'                       ),
        path               =   require(  'path'                                                 ),
-       { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')),
+       { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
        { jn10_hiera_json_simple } =   require(  path.join(JS_TYP7, 'json/jnode/j01/hiera/jn10_hiera_simple.es7'));
 
 class jn16_fs_json_list_base extends jn10_hiera_json_simple {

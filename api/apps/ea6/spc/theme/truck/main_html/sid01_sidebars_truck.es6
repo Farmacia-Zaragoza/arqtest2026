@@ -21,7 +21,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
+const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
 		{ ctn01_container_truck }	= require(	path.join(JS_BASE, 'spc/theme/truck/main_html/ctn01_container_truck.es6'));
 
 class sid01_sidebars_truck extends html_style  {

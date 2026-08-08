@@ -13,9 +13,9 @@
 // - create_div_NN    : Create div_NN   dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ fnode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6')),
-		{ cbool }			= require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6')),
-		{ in01_path } 		= require(	path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/in01_path.es6')),
+const 	{ fnode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'),
+		{ cbool }			= require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),
+		{ in01_path } 		= require(	path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/in01_path.es6'),
 		empty 				= require(	'is_empty'								);
 
 class fn02_images extends fnode {

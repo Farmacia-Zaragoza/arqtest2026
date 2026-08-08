@@ -23,7 +23,7 @@
 
 const   path                =   require('path'                                             );
 
-const { JS_TYP7 } = require(path.join(process.cwd()),'api/apps/paths.js'));
+const { JS_TYP7 } = require(path.join(process.cwd(), 'api/apps/paths.js'));
 const 	{ strings } 		  =  require(path.join(JS_TYP7 , 'string/s01_strings.es7'));
 
 

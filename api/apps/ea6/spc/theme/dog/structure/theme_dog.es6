@@ -23,7 +23,7 @@ const	echo 					= 	require(	'node-echo'												),
 		{ fy01_cookies } 	    = 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fy01_cookies.es6')		),
 		{ fn31_cookies }      	= 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn31_cookies.es6')		),
 
-		{ fn32_cookies_links }  = 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn32_cookies_links.es6')),
+		{ fn32_cookies_links }  = 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn32_cookies_links.es6'),
 
 		{ cbool }				= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6')					),
 		{ categories }			= 	require( 	path.join(JS_BASE, 'com/objects/categories/categories.es6')					),

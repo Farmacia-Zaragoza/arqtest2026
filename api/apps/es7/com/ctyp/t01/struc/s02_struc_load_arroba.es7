@@ -34,7 +34,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { struc_load_folder }        =   require(  path.join(JS_TYP7  , 'struc/s03_struc_load_folder.es7' )),
+const { struc_load_folder }        =   require(  path.join(JS_TYP7  , 'struc/s03_struc_load_folder.es7'),
 		ffi	               =   require(	path.join(JS_LIB7 , 'file/file_load.es7'));
 
 class struc_load_arroba extends struc_load_folder {

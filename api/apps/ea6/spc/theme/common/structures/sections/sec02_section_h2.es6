@@ -20,7 +20,7 @@
 
 var 	cons	 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"					);
 
-const 	{ sec01_section_p } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/structures/sections/sec01_section_p.es6')),
+const 	{ sec01_section_p } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/structures/sections/sec01_section_p.es6'),
 		{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 
 

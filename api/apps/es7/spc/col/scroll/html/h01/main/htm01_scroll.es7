@@ -27,8 +27,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { common_html } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_html.es7')),
-		{ hea01_head_scroll }	= 	require(	path.join(JS_SPC7, 'scroll/html/h01/main/hea01_scroll.es7')),
+const  { common_html } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_html.es7'),
+		{ hea01_head_scroll }	= 	require(	path.join(JS_SPC7, 'scroll/html/h01/main/hea01_scroll.es7'),
 		{ bdy01_body_scroll }	= 	require(	path.join(JS_SPC7, 'scroll/html/h01/main/bdy01_scroll.es7'));
 
 

@@ -14,7 +14,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { uri_create } =   require(  path.join(JS_TYP7  , 'uri/u11_create.es7'           )),
+const   { uri_create } =   require(  path.join(JS_TYP7  , 'uri/u11_create.es7'),
         numbers        =   require(  path.join(JS_LIB7  , 'number/numbers.es7'           ));
 
 

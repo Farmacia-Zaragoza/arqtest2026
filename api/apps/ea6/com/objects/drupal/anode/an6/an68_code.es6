@@ -18,7 +18,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_down } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an6/an69_down.es6')),
+const 	{ anode_down } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an6/an69_down.es6'),
 		scpf 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
 
 

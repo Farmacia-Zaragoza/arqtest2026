@@ -18,7 +18,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { printlog }             =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'                   )),
+const  { printlog }             =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'),
        { arroba_htype_angular } =   require(  path.join(JS_ACO7  , 'html/h03/h01_arroba_htype_angular.es7' ));
 
 class theme_angular extends printlog

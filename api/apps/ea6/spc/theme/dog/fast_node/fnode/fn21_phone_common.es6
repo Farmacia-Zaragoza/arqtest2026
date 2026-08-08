@@ -16,12 +16,12 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ fnode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6')),
-		{ cbool }			= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6')),
+const 	{ fnode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'),
+		{ cbool }			= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),
 		empty 				= 	require(	'is_empty'															),
 		pngjs 				= 	require(  	'pngjs'																),
-		{ sv01_svg }		= 	require(	path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/sv01_svg.es6')),
-		creff 				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6')),
+		{ sv01_svg }		= 	require(	path.join(JS_BASE, 'spc/theme/peloncita/fast_node/inode/sv01_svg.es6'),
+		creff 				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'),
 		scpf 				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
 
 

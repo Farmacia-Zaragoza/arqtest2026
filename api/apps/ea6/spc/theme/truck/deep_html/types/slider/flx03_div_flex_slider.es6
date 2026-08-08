@@ -26,12 +26,12 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 					= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
-		{ flx02_ul_product_flex }		= require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_product_flex.es6')),
-		{ flx02_ul_flex }				= require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6')),
-		{ mai03_div_email }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai03_div_mail.es6')),
-		{ phn03_div_phone }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn03_div_phone.es6')),
-		{ dli01_div_list }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/desc_list/dli01_desc_list.es6')),
+const 	{ html_style } 					= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+		{ flx02_ul_product_flex }		= require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_product_flex.es6'),
+		{ flx02_ul_flex }				= require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6'),
+		{ mai03_div_email }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai03_div_mail.es6'),
+		{ phn03_div_phone }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/phone/phn03_div_phone.es6'),
+		{ dli01_div_list }				= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/desc_list/dli01_desc_list.es6'),
 		{ des02_div_descriptions }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/descriptions/des02_div_descriptions.es6'));
 
 

@@ -23,7 +23,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { hcomm_struc }      =   require(  path.join(JS_ACO7  , 'html/h03/h03_struc_comm.es7'     )),
+const  { hcomm_struc }      =   require(  path.join(JS_ACO7  , 'html/h03/h03_struc_comm.es7'),
        { hnode_type_react } =   require(  path.join(JS_ACO7  , 'html/h02/hn02_hnode_type_react.es7' ));
 
 class arroba_htype_react extends hcomm_struc {

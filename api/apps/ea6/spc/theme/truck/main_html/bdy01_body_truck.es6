@@ -27,12 +27,12 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')),
-		{ ifnojs }	 				= require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6')),
-		{ sid01_sidebars_truck }	= require(	path.join(JS_BASE, 'spc/theme/truck/main_html/sid01_sidebars_truck.es6')),
-		{ scr01_js_truck }			= require(	path.join(JS_BASE, 'spc/theme/truck/main_html/scr01_js_truck.es6')),
-		{ lks02_div_links_truck }	= require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/links/lks02_div_truck.es6')),
-		{ lnk03_css_minimized_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/styles/lnk03_css_minimized_truck.es6')),
+const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+		{ ifnojs }	 				= require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'),
+		{ sid01_sidebars_truck }	= require(	path.join(JS_BASE, 'spc/theme/truck/main_html/sid01_sidebars_truck.es6'),
+		{ scr01_js_truck }			= require(	path.join(JS_BASE, 'spc/theme/truck/main_html/scr01_js_truck.es6'),
+		{ lks02_div_links_truck }	= require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/links/lks02_div_truck.es6'),
+		{ lnk03_css_minimized_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/styles/lnk03_css_minimized_truck.es6'),
 		scpf 						= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
 
 

@@ -18,7 +18,7 @@
 
 var 	cons	 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"							);
 
-const 	{ getset } 						= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6')),		
+const 	{ getset } 						= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'),		
 		{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 
 class lnk01_p_strong extends html_style {

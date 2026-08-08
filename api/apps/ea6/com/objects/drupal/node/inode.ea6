@@ -17,9 +17,9 @@
 
 var 	cons 					= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const	{ anode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6')),
-		url 					= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6')),
-		run						= 	require(	path.join(JS_BASE, 'com/pms/arrays/save_array_img_resolutions_in_ram_promise.ea6')),
+const	{ anode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'),
+		url 					= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6'),
+		run						= 	require(	path.join(JS_BASE, 'com/pms/arrays/save_array_img_resolutions_in_ram_promise.ea6'),
 		fs						=	require(	'fs'																			),		
 		path					=	require(	'path'																			);		
 
