@@ -54,19 +54,18 @@ global.define = function(name, value) {
   global[name] = value;
 };
 
-// 4. INTERCEPTOR LIMPIO DE ERRORES SINTÁCTICOS:
-// Reemplaza las variables libres en invocaciones path.join(...) por referencias explícitas a global.
-const keysRegex = new RegExp(`\\b(${Object.keys(APP_PATHS).join('|')})\\b`, 'g');
+// 4. INTERCEPTOR FLEXIBLE UNIVERSAL:
+// Busca cualquier ocurrencia de las constantes dentro de llamadas a path.join
+// sin importar espacios, pestañas o formatos.
+const pathKeysPattern = Object.keys(APP_PATHS).join('|');
+const replaceRegex = new RegExp(`path\\.join\\(\\s*(${pathKeysPattern})\\b`, 'g');
 
 const originalCompile = Module.prototype._compile;
 Module.prototype._compile = function(content, filename) {
   if (filename.endsWith('.es7') || filename.endsWith('.js')) {
-    // Si la llamada usa la variable sola en path.join(JS_XYZ, ...), le anteponemos "global."
-    content = content.replace(/path\.join\(\s*([A-Z0-9_]+)\b/g, (match, p1) => {
-      if (APP_PATHS[p1]) {
-        return `path.join(global.${p1}`;
-      }
-      return match;
+    // Convierte path.join( JS_ACO7  en path.join( global.JS_ACO7
+    content = content.replace(replaceRegex, (match, p1) => {
+      return `path.join(global.${p1}`;
     });
   }
   return originalCompile.call(this, content, filename);
