@@ -17,8 +17,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { hcomm_struc }      =   require(  path.join(JS_PER7, 'dog/dog/html/h03/hcomm/h02_struc.es7'),
-       const { cache_site }       =   require(  path.join(JS_TYP7, 'site/s10_cache_site.es7'),
+const  { hcomm_struc }      =   require(  path.join(JS_PER7, 'dog/dog/html/h03/hcomm/h02_struc.es7'));
+       const { cache_site }       =   require(  path.join(JS_TYP7, 'site/s10_cache_site.es7'));
         fs 					= require(	'fs'																						),
 		scpf 				= require(  path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
 

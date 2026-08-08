@@ -20,8 +20,8 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const	{ anode_translate_contents } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an1/an11_translate_contents.es6'),
-		ffi									= require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'),
+const	{ anode_translate_contents } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an1/an11_translate_contents.es6'));
+		ffi									= require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'));
 		fs 									= require(	'fs'																				),
 		path 								= require(	'path'																				);
 

@@ -17,9 +17,9 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn11_index_fn }     =   require(  path.join(JS_TYP7, 'json/jindex/j00/jn11_index_fn.es7'),
-	    shtf  			= 	require(  path.join(JS_LIB7, 'file/save_hash_to_file.es7'),
-	    satf  			= 	require(  path.join(JS_LIB7, 'file/save_hash1d_to_file.es7'),
+const   { jn11_index_fn }     =   require(  path.join(JS_TYP7, 'json/jindex/j00/jn11_index_fn.es7'));
+	    shtf  			= 	require(  path.join(JS_LIB7, 'file/save_hash_to_file.es7'));
+	    satf  			= 	require(  path.join(JS_LIB7, 'file/save_hash1d_to_file.es7'));
         empty                 =   require(  'is_empty'                        );
 
 

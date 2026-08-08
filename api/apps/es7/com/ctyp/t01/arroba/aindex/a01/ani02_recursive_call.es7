@@ -14,7 +14,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { idx_pointers }     =   require(   path.join(JS_TYP7 , 'logs/idx_pointers.es7'),
+const  { idx_pointers }     =   require(   path.join(JS_TYP7 , 'logs/idx_pointers.es7'));
        const { an10_index_pf }   =   require(   path.join(JS_TYP7 , 'arroba/aindex/a00/an10_index_pf.es7'   ));
 
 // Comm Object

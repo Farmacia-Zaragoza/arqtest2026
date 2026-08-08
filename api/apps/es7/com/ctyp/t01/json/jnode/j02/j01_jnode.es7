@@ -16,8 +16,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn01_commo_json_simple }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/objects/jn01_simple.es7'),
-        const { commjson_site }            =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn10_commjson_site.es7'),
+const   { jn01_commo_json_simple }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/objects/jn01_simple.es7'));
+        const { commjson_site }            =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn10_commjson_site.es7'));
         const { arrajson_site }            =   require(  path.join(JS_TYP7, 'json/jnode/j00/jn11_arrajson_site.es7'));
 
 

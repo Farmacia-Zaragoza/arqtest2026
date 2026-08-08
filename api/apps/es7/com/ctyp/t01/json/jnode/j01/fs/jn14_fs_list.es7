@@ -18,7 +18,7 @@ const  fs                        =   require(  'fs'                             
        empty                     =   require(  'is-empty'                             ),
        accents                   =   require(  'remove-accents'                       ),
        path               =   require(  'path'                                                 ),
-       const { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
+       const { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
        const { jn15_array_fs_product }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/fs/jn15_fs_product.es7'));
 
 

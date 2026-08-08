@@ -21,7 +21,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 					= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+const 	{ html_style } 					= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 		const { cpt01_button_captcha }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/captcha/cpt01_button_captcha.es6'));
 
 

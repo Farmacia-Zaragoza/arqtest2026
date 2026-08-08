@@ -14,7 +14,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const	{ inode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/inode.ea6'),
+const	{ inode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/inode.ea6'));
 		const { cbool }				= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
 
 class in01_path extends inode {

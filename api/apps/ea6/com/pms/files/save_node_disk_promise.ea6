@@ -21,8 +21,8 @@ const 	fs 							= 	require(	'fs'																		),
 		sort 						= 	require(	'/brqx/base/react/zcommon/node_modules/sort-array'							),
 		readdirp 					= 	require(	'/brqx/base/react/zcommon/node_modules/readdirp'							),
 		echo	 					= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'							),
-		mat							=	require(	path.join(JS_BASE, 'com/libs/string/match.es6'),
-		url			 				= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6'),
+		mat							=	require(	path.join(JS_BASE, 'com/libs/string/match.es6'));
+		url			 				= 	require( 	path.join(JS_BASE, 'com/libs/string/url.es6'));
 		rs							= 	require(	'/brqx/base/react/zcommon/node_modules/fs-readdir-promise'					),
 		run  						= 	require(	path.join(JS_BASE, 'com/pms/folders/generate_directory_promise.ea6'));	
 

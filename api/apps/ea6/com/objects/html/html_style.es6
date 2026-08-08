@@ -18,7 +18,7 @@
 
 
 const 	echo 				= 	require(	'node-echo'								),
-		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'),
+		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
 		const { savelog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/savelog.es6'));
 
 class html_style extends printlog {

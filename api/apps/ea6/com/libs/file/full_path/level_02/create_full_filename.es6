@@ -34,7 +34,7 @@ const	fs 					= 	require(	'fs'													),
 		echo 				= 	require(	'node-echo'							),
 		util 				=   require(	'util'													),
 		os					=	require(	'os'													),
-		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'),
+		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
 		mkdirp 				= 	require(	'mkdirp'							);
 
 // Ok [17-10-21]

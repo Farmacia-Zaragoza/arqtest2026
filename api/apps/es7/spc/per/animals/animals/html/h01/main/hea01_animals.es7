@@ -21,8 +21,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { common_head } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_head.es7'),
-        const { lnk01_link_animals }    =   require(  path.join(JS_PER7, 'animals/animals/html/h01/main/lnk01_link_animals.es7'),
+const  { common_head } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_head.es7'));
+        const { lnk01_link_animals }    =   require(  path.join(JS_PER7, 'animals/animals/html/h01/main/lnk01_link_animals.es7'));
         const { met01_meta_animals }    =   require(  path.join(JS_PER7, 'animals/animals/html/h01/main/met01_meta_animals.es7'));
 
 

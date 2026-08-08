@@ -19,7 +19,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 		empty 					= 	require(	'is_empty'											),
 		const { flx01_li_flex }		= 	require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx01_li_flex.es6'));
 

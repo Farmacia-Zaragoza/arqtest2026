@@ -17,7 +17,7 @@ define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 const  fs                         =   require(  'fs'                                                   ),
        empty                      =   require(  'is-empty'                             ),
        accents                    =   require(  'remove-accents'                       ),
-       const { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
+       const { idx_pointers }           =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
        const { jn01_comma_json_simple } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn01_simple.es7'));
 
 // Comm Object

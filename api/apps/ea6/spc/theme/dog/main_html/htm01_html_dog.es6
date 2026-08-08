@@ -26,10 +26,10 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
-		const { ifnojs } 				= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'),
+const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+		const { ifnojs } 				= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'));
 
-		const { hea01_head_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/hea01_head_dog.es6'),
+		const { hea01_head_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/hea01_head_dog.es6'));
 		const { bdy01_body_dog }	= 	require(	path.join(JS_BASE, 'spc/theme/dog/main_html/bdy01_body_dog.es6'));
 
 

@@ -21,7 +21,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 		empty 						= 	require(	'is_empty'														),
 		const { a01_mobile_langs_dog }	= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/flags/a01_mobile_langs_dog.es6'));
 

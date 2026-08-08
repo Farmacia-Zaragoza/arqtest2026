@@ -10,7 +10,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var { printlog } 		= require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'),
+var { printlog } 		= require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
     const { savelog } 		= require(	path.join(JS_BASE, 'com/objects/logs/savelog.es6'));
 
 

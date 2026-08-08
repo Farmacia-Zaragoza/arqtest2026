@@ -13,7 +13,7 @@
 // - d-prepare_specific_child_properties- 	: Prepare properties to save in array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const	{ fnode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'),
+const	{ fnode } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/fnode.es6'));
 		const { cbool }			= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
 
 class fn31_cookies extends fnode {

@@ -10,8 +10,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { jn02_general_search_json } =   require(  path.join(JS_ACO7, 'json/j01/jn02_general_search_json.es7'),
-        const { objjson_site }            =   require(  path.join(JS_PER7, 'dog/dog/json/j00/jn10_objjson_site.es7'),
+const  { jn02_general_search_json } =   require(  path.join(JS_ACO7, 'json/j01/jn02_general_search_json.es7'));
+        const { objjson_site }            =   require(  path.join(JS_PER7, 'dog/dog/json/j00/jn10_objjson_site.es7'));
         const { arrjson_site }            =   require(  path.join(JS_PER7, 'dog/dog/json/j00/jn11_arrjson_site.es7'));
 
 class jn03_search_site extends jn02_general_search_json {

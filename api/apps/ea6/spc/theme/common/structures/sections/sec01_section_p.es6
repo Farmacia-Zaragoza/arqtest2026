@@ -18,7 +18,7 @@
 
 var 	cons	 				= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"					);
 
-const 	{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+const 	{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 		  dim 	 			= 	require(	path.join(JS_BASE, 'com/libs/arrays/countdim.es6'));
 
 class sec01_section_p extends html_style {

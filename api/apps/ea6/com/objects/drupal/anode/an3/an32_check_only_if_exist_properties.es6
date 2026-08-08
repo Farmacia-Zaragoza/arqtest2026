@@ -17,8 +17,8 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_check_only_if_exist_code } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an33_check_only_if_exist_code.es6'),
-	creff 									= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'),
+var { anode_check_only_if_exist_code } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an33_check_only_if_exist_code.es6'));
+	creff 									= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'));
 	empty 									= require(	'/brqx/base/react/zcommon/node_modules/is-empty'),
 	fs										= require(	'fs');	
 

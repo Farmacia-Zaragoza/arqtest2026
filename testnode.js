@@ -17,22 +17,22 @@ function recorrer(dir) {
       } else if (stat.isFile() && EXTENSIONES.includes(path.extname(el))) {
         let contenido = fs.readFileSync(ruta, 'utf8');
 
-        // Detecta líneas que empiezan con { ... } = require(...) sin const/let/var
+        // Reemplaza comas finales en llamadas require(path.join(...)), por punto y coma
         const nuevo = contenido.replace(
-          /^(\s*)(\{[^}]+\}\s*=\s*require\()/gm,
-          '$1const $2'
+          /(require\s*\(\s*path\.join\([^)]+\)\s*),/g,
+          '$1);'
         );
 
         if (contenido !== nuevo) {
           fs.writeFileSync(ruta, nuevo, 'utf8');
           arreglados++;
-          console.log(`✅ Añadido 'const' a desestructuración en: ${path.basename(ruta)}`);
+          console.log(`✅ Cambiada coma final por punto y coma en: ${path.basename(ruta)}`);
         }
       }
     } catch (e) {}
   });
 }
 
-console.log('⚡ Corrigiendo desestructuraciones sin const...');
+console.log('⚡ Corregiendo cierres con comas...');
 recorrer(__dirname);
-console.log(`\n🎉 Total de archivos arreglados: ${arreglados}`);
+console.log(`\n🎉 Completado. Se modificaron ${arreglados} archivos.`);

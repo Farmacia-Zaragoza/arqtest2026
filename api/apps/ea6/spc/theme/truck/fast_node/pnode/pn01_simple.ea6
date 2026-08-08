@@ -13,12 +13,12 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ psimple } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/psimple.es6'),
-		const { cbool } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),
-		const { page_structure } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/page_structure.es6'),
-		const { fn03_site_common }	= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn03_site_common.ea6'),
-		const { theme_truck }			= 	require(	path.join(JS_BASE, 'spc/theme/truck/structure/theme_truck.ea6'),
-		const { htm01_html_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/htm01_html_truck.es6'),
+const 	{ psimple } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/psimple.es6'));
+		const { cbool } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+		const { page_structure } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/page_structure.es6'));
+		const { fn03_site_common }	= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn03_site_common.ea6'));
+		const { theme_truck }			= 	require(	path.join(JS_BASE, 'spc/theme/truck/structure/theme_truck.ea6'));
+		const { htm01_html_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/main_html/htm01_html_truck.es6'));
 		minify 					= 	require(	'html-minifier'											).minify;
 
 

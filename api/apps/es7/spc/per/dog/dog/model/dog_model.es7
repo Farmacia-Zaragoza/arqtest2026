@@ -28,7 +28,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   { dog_no_cache } =   require(  path.join(JS_PER7, 'dog/dog/model/dog_nocache_launcher.es7') ),
-        const { dog_cache }    =   require(  path.join(JS_PER7, 'dog/dog/model/dog_cache_launcher.es7'),
+        const { dog_cache }    =   require(  path.join(JS_PER7, 'dog/dog/model/dog_cache_launcher.es7'));
         const { printlog }         =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
 
 class dog extends printlog

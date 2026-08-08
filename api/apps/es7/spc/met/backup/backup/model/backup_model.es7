@@ -28,7 +28,7 @@
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   { backup_no_cache } =   require(  path.join(JS_MET7, 'backup/backup/model/backup_nocache_launcher.es7') ),
-        const { backup_cache }    =   require(  path.join(JS_MET7, 'backup/backup/model/backup_cache_launcher.es7'),
+        const { backup_cache }    =   require(  path.join(JS_MET7, 'backup/backup/model/backup_cache_launcher.es7'));
         const { printlog }        =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
 
 class backup extends printlog

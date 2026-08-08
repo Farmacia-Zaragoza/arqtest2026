@@ -29,13 +29,13 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ getset } 						= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'),
-		const { html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
-		const { scr02_js_as_scripts_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr02_js_as_scripts_truck.es6'),
-		const { scr03_js_minimized_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr03_js_minimized_truck.es6'),
-		const { scr04_js_inline_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr04_js_inline_truck.es6'),
-		const { scr05_js_inline_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr05_js_inline_multiple_truck.es6'),
-		const { scr06_js_async_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr06_js_async_truck.es6'),
+const 	{ getset } 						= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'));
+		const { html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+		const { scr02_js_as_scripts_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr02_js_as_scripts_truck.es6'));
+		const { scr03_js_minimized_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr03_js_minimized_truck.es6'));
+		const { scr04_js_inline_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr04_js_inline_truck.es6'));
+		const { scr05_js_inline_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr05_js_inline_multiple_truck.es6'));
+		const { scr06_js_async_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/scripts/scr06_js_async_truck.es6'));
 		const { cn03_scripts } 				= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/cnode/cn03_scripts.es6'));
 
 

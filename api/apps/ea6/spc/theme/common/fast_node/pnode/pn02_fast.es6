@@ -14,12 +14,12 @@
 
 var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
-const 	{ anode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'),
-		const { cbool } 			= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),					
-		creff 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'),
-		scpf 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'),
+const 	{ anode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'));
+		const { cbool } 			= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));					
+		creff 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'));
+		scpf 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
 		fs 					= require(	'fs'																					),
-		StreamZip 			= require(	path.join(NODE_MOD, 'node-stream-zip'),
+		StreamZip 			= require(	path.join(NODE_MOD, 'node-stream-zip'));
 		empty 				= require(	path.join(NODE_MOD, 'is_empty'));
 
 

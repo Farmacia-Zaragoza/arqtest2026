@@ -16,7 +16,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { common_link }         =   require(  path.join(JS_ACO7, 'html/h01/main/common_link.es7'),
+const  { common_link }         =   require(  path.join(JS_ACO7, 'html/h01/main/common_link.es7'));
        const { common_link_react } =   require(  path.join(JS_ACO7, 'html/h01/deep/styles/common_link_react.es7'));
 
 class lnk01_link_scroll extends common_link  {

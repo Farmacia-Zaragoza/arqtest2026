@@ -24,11 +24,11 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { getset }                    =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6'),
-       const { html_style }                =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6'),
-       const { scr02_js_scripts_backup }   =   require(  path.join(JS_MET7, 'backup/backup/html/h01/deep/scripts/scr02_js_scripts_backup.es7'),
-       const { scr03_js_minimized_backup } =   require(  path.join(JS_MET7, 'backup/backup/html/h01/deep/scripts/scr03_js_minimized_backup.es7'),
-       const { scr05_js_inline_backup }    =   require(  path.join(JS_MET7, 'backup/backup/html/h01/deep/scripts/scr05_js_inline_backup.es7'),
+const  { getset }                    =   require(  path.join(JS_BASE, 'com/objects/html/getset.es6'));
+       const { html_style }                =   require(  path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+       const { scr02_js_scripts_backup }   =   require(  path.join(JS_MET7, 'backup/backup/html/h01/deep/scripts/scr02_js_scripts_backup.es7'));
+       const { scr03_js_minimized_backup } =   require(  path.join(JS_MET7, 'backup/backup/html/h01/deep/scripts/scr03_js_minimized_backup.es7'));
+       const { scr05_js_inline_backup }    =   require(  path.join(JS_MET7, 'backup/backup/html/h01/deep/scripts/scr05_js_inline_backup.es7'));
        const { scr06_js_async_backup }     =   require(  path.join(JS_MET7, 'backup/backup/html/h01/deep/scripts/scr06_js_async_backup.es7'));
 
 

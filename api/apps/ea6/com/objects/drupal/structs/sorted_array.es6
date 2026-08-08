@@ -9,7 +9,7 @@
 
 const 	echo 				= 	require(	'node-echo'		),
 		empty 				= 	require(	'is_empty'		),
-		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'),
+		const { printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'));
 	  	os					= 	require(	'os'													),
 	  	fs 					= 	require(	'fs'													);
 

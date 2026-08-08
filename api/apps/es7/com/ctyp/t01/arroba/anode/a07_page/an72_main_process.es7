@@ -20,7 +20,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { anode_page_load }   =   require(  path.join(JS_TYP7  , 'arroba/anode/a07_page/an74_page_load.es7'),
+const  { anode_page_load }   =   require(  path.join(JS_TYP7  , 'arroba/anode/a07_page/an74_page_load.es7'));
        const { idx_pointers }      =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'    ));
 
 class anode_main_page_process extends anode_page_load {

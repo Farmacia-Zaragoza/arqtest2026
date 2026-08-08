@@ -8,7 +8,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 		{ index } 			= 	require(	path.join(JS_BASE, 'com/objects/fire/f02_index/index.es6'),
+const 		{ index } 			= 	require(	path.join(JS_BASE, 'com/objects/fire/f02_index/index.es6'));
 			mongoose 			= 	require(	'mongoose'									),
  	 		const { idSchema }		= 	require(	path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch'));
 			echo 				= 	require(	'node-echo'									);

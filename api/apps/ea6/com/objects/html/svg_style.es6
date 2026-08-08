@@ -9,7 +9,7 @@
 // - create_svg_base	  : Create or image or svg based on site params
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
+const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
 		scpf 					= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'));
 
 

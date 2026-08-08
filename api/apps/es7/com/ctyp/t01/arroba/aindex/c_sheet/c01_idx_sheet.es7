@@ -25,7 +25,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { idx_pointers }     =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'),
+const  { idx_pointers }     =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'));
        const { d01_idx_pf }       =   require(  path.join(JS_TYP7 , 'arroba/aindex/d_pf/d01_idx_pf.es7'    ));
 
 class c01_idx_sheet extends d01_idx_pf {

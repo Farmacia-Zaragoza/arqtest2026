@@ -7,7 +7,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 		{ model_run_mongo } 	= 	require(	path.join(JS_BASE, 'spc/theme/dog/model/m02_run_mongo.ea6'),
+const 		{ model_run_mongo } 	= 	require(	path.join(JS_BASE, 'spc/theme/dog/model/m02_run_mongo.ea6'));
 			echo 					= 	require(	'node-echo'									);
 
 

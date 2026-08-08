@@ -22,7 +22,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { jn50_idx_json }     =   require(  path.join(JS_ACO7  , 'json/j01/n02/jn50_generate_idx_json.es7'),
+const  { jn50_idx_json }     =   require(  path.join(JS_ACO7  , 'json/j01/n02/jn50_generate_idx_json.es7'));
        const { printlog }          =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'                        ));
 
 

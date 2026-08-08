@@ -20,8 +20,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { printlog }          =   require(  path.join(JS_TYP7, 'logs/printlog.es7'),
-	   const { common_hnode }      = 	require(	path.join(JS_ACO7, 'html/h01/main/common_hnode.es7'),
+const  { printlog }          =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
+	   const { common_hnode }      = 	require(	path.join(JS_ACO7, 'html/h01/main/common_hnode.es7'));
        const { htm01_html_dog } =   require(  path.join(JS_PER7, 'dog/dog/html/h01/main/htm01_dog.es7'));
 
 

@@ -10,7 +10,7 @@
 
 var 		cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
 
-const 		{ model_save } 		= 	require(	path.join(JS_BASE, 'com/objects/fire/f01_model/m06_save.ea6'),
+const 		{ model_save } 		= 	require(	path.join(JS_BASE, 'com/objects/fire/f01_model/m06_save.ea6'));
 			mongoose 			= 	require(	'mongoose'									),
 			empty 				= 	require(	'is_empty'								),
 			echo 				= 	require(	'node-echo'									);

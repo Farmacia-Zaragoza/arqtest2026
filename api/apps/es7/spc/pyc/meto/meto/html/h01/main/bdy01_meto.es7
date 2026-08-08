@@ -20,10 +20,10 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
-		const { svg_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'),
-		const { scr01_js_meto }				= 	require(	path.join(JS_PYC7, 'meto/meto/html/h01/main/scr01_js_meto.es7'),
-		const { ifnojs }	 					= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'),
+const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+		const { svg_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'));
+		const { scr01_js_meto }				= 	require(	path.join(JS_PYC7, 'meto/meto/html/h01/main/scr01_js_meto.es7'));
+		const { ifnojs }	 					= 	require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'));
 		minify 							= 	require(	'html-minifier'									).minify;
 
 

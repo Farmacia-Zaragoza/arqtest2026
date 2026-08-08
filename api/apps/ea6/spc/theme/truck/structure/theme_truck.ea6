@@ -11,24 +11,24 @@
 
 
 const	echo 					= 	require(	'node-echo'												),
-		const { theme_structure }		= 	require( 	path.join(JS_BASE, 'com/objects/drupal/theme/t01_structure.es6'),
-		const { fn01_flat } 			= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn01_flat.ea6'),
-		const { fn02_images } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn02_images.ea6'),
+		const { theme_structure }		= 	require( 	path.join(JS_BASE, 'com/objects/drupal/theme/t01_structure.es6'));
+		const { fn01_flat } 			= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn01_flat.ea6'));
+		const { fn02_images } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn02_images.ea6'));
 
-		const { fn01_lang_common } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn01_lang_common.ea6'),
-		const { fn11_links_common } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn11_links_common.ea6'),
-		const { fn12_links_lang }   	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn12_links_lang.ea6'),
-		const { fn21_phone_common }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn21_phone_common.ea6'),
-		const { fn22_phone_lang } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn22_phone_lang.ea6'),
-		const { fn23_site_lang }      = 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn23_site_lang.ea6'),
+		const { fn01_lang_common } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn01_lang_common.ea6'));
+		const { fn11_links_common } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn11_links_common.ea6'));
+		const { fn12_links_lang }   	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn12_links_lang.ea6'));
+		const { fn21_phone_common }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn21_phone_common.ea6'));
+		const { fn22_phone_lang } 	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn22_phone_lang.ea6'));
+		const { fn23_site_lang }      = 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn23_site_lang.ea6'));
 
-		const { fy01_cookies } 	    = 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fy01_cookies.ea6'),
-		const { fn31_cookies }      	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn31_cookies.ea6'),
+		const { fy01_cookies } 	    = 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fy01_cookies.ea6'));
+		const { fn31_cookies }      	= 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn31_cookies.ea6'));
 
-		const { fn32_cookies_links }  = 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn32_cookies_links.ea6'),
+		const { fn32_cookies_links }  = 	require(	path.join(JS_BASE, 'spc/theme/truck/fast_node/fnode/fn32_cookies_links.ea6'));
 
-		const { cbool }				= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'),
-		const { categories }			= 	require( 	path.join(JS_BASE, 'com/objects/categories/categories.es6'),
+		const { cbool }				= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'));
+		const { categories }			= 	require( 	path.join(JS_BASE, 'com/objects/categories/categories.es6'));
 		const { contents }			= 	require( 	path.join(JS_BASE, 'com/objects/categories/contents.es6'));
 
 

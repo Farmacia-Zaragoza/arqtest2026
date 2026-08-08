@@ -2,7 +2,7 @@
 
 const   path                =   require('path'                                             );
 
-const cons = require(path.join(process.cwd(), 'api/apps/es7/com/agen/constants.es7'));
+const cons = require(path.join(process.cwd()); 'api/apps/es7/com/agen/constants.es7'));
 // const   cons                =   require('./es7_com_agen/constants.es7') ;
 //-------------------------------------------------------------------------------------
 let run_path                =   path.resolve(".")
@@ -34,11 +34,11 @@ const
     qs                  =   require( 'querystring'    ),
     helmet              =   require( 'helmet'                       ),
     useragent           =   require( 'express-useragent'                 ),
-    const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7'),
-    const { angular}          =   require(path.join(JS_ACO7 , 'model/ang/angular.es7'),
+    const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7'));
+    const { angular}          =   require(path.join(JS_ACO7 , 'model/ang/angular.es7'));
     const { page_structure }  =   require(path.join(JS_TYP7 , 'page/page_structure.es7'));
 
-//    { params }          =   require(path.join(JS_TYP7 , 'params/p01_params.es7'),
+//    { params }          =   require(path.join(JS_TYP7 , 'params/p01_params.es7'));
 
 
 // Create server

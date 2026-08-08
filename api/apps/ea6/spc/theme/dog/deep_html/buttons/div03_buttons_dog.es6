@@ -22,8 +22,8 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'),
-		const { div01_button_circle_dog }		= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/buttons/div01_button_circle_dog.es6'),
+const 	{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'));
+		const { div01_button_circle_dog }		= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/buttons/div01_button_circle_dog.es6'));
 		const { div02_buttons_dog }			= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/buttons/div02_buttons_dog.es6'));
 
 class div03_buttons_dog extends html_style {

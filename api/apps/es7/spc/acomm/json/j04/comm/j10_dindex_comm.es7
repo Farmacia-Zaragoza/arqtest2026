@@ -24,8 +24,8 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const { printlog }                   =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'),
-      const { idx_pointers }          =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'),
+const { printlog }                   =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'));
+      const { idx_pointers }          =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'));
       const { arroba_lindex }              =   require(  path.join(JS_TYF7  , 'a01_load/lindex/i01_arroba_lindex.es7' ));
 
 class tindex_comm extends printlog

@@ -18,7 +18,7 @@ const  fs                        =   require(  'fs'                             
        empty                     =   require(  'is-empty'                             ),
        accents                   =   require(  'remove-accents'                       ),
        path               =   require(  'path'                                                 ),
-       const { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'),
+       const { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'));
        const { jn15_array_hiera_product }   =   require(  path.join(JS_TYP7, 'json/jnode/j01/hiera/jn15_hiera_product.es7'));
 
 

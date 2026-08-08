@@ -23,7 +23,7 @@
 
 define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { tdata_comm }       =   require(  path.join(JS_ACO7  , 'json/j04/comm/j01_tdata_comm.es7'),
+const  { tdata_comm }       =   require(  path.join(JS_ACO7  , 'json/j04/comm/j01_tdata_comm.es7'));
        const { theme_json }       =   require(  path.join(JS_ACO7  , 'json/j04/ang/j02_theme_json.es7'  )) ;
 
 
