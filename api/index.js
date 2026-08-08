@@ -45,7 +45,7 @@ const APP_PATHS = {
   JS_TYF7:  path.join(ROOT, 'api/apps/es7/com/ctyp/t02/')
 };
 
-// Asignar al ámbito global
+// Registrar en el objeto global
 Object.keys(APP_PATHS).forEach(key => {
   global[key] = APP_PATHS[key];
 });
@@ -54,17 +54,17 @@ global.define = function(name, value) {
   global[name] = value;
 };
 
-// 4. INTERCEPTOR MAGICO PARA COFFEESCRIPT / NODE:
-// Inyecta las variables locales dinámicamente al compilar cada archivo .es7 / .js
+// 4. INTERCEPTOR INTELIGENTE:
+// Asigna a variables globales dinámicamente sin redeclarar identificadores locales
 const headerInjection = Object.keys(APP_PATHS)
-  .map(k => `var ${k} = global.${k} || "${APP_PATHS[k]}";`)
+  .map(k => `if (typeof ${k} === 'undefined') { var ${k} = global.${k}; }`)
   .join('\n') + '\n';
 
 const originalCompile = Module.prototype._compile;
 Module.prototype._compile = function(content, filename) {
   if (filename.endsWith('.es7') || filename.endsWith('.js')) {
-    // Si el archivo no tiene ya la inyección, se la ponemos al principio
-    if (!content.includes('var JS_ACO7 =')) {
+    // Evitamos re-inyectar si ya fue modificado
+    if (!content.includes('global.JS_ACO7')) {
       content = headerInjection + content;
     }
   }
