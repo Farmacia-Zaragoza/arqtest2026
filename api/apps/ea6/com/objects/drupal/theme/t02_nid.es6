@@ -10,7 +10,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const 	{ theme_debug_array } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/theme/t03_debug_array.es6'				),
+const 	{ theme_debug_array } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/theme/t03_debug_array.es6'))),
 		empty 						=   require(	'/brqx/base/react/zcommon/node_modules/is-empty'								);				
 
 class theme_nid extends theme_debug_array {

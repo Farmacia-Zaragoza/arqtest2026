@@ -12,9 +12,9 @@
 // - d-sure_commands-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { uri }             =   require(    cons.JS_TYP7    + 'uri/u01_obj.es7'            )
+const   { uri }             =   require(    path.join(JS_TYP7    , 'uri/u01_obj.es7'            )))
 
 class site_common_sure_commands extends uri {
 

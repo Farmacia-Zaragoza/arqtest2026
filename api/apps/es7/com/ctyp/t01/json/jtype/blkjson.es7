@@ -8,11 +8,11 @@
 //- d-end_pull             : End pull level to json structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
 const   echo           =   require(  'node-echo'                          ),
-        sctf 				= 	require( 	cons.JS_LIB7 	+ 'file/save_code_to_file.es7'),
-        { manage_json }       =   require(  cons.JS_TYP7     + 'json/jtype/manage_json.es7' );
+        sctf 				= 	require( 	path.join(JS_LIB7, 'file/save_code_to_file.es7'))),
+        { manage_json }       =   require(  path.join(JS_TYP7, 'json/jtype/manage_json.es7')));
 
 
 class blkjson extends manage_json {

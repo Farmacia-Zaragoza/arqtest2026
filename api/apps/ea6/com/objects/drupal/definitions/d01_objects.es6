@@ -16,7 +16,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-var { definitions_arrays } 		= require(	cons.JS_BASE + 'com/objects/drupal/definitions/d02_arrays.es6'		)
+var { definitions_arrays } 		= require(	path.join(JS_BASE, 'com/objects/drupal/definitions/d02_arrays.es6')		)
 
 class definitions_objects extends definitions_arrays {
 	

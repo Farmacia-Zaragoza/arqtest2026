@@ -26,11 +26,11 @@
 // - d-create_objectN-		: 	Create Blazy content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const 	{ getset } 			= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
-		{ html_style } 		= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									),
-		scpf				= 	require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'	);
+const 	{ getset } 			= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'))),
+		{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		scpf				= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6')));
 
 
 class scr05_js_inline_dog extends html_style  {

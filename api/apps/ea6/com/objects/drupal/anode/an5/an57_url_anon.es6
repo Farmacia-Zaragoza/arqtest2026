@@ -17,7 +17,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const { anode_update_common_url } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an5/an58_url_anon.es6'		)
+const { anode_update_common_url } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an5/an58_url_anon.es6')))
 
 
 class anode_url_anon extends anode_update_common_url {

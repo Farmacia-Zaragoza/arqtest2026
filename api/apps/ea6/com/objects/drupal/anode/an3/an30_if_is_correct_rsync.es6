@@ -16,7 +16,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_check_only_if_sync } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an3/an31_check_only_if_sync.es6'		)
+var { anode_check_only_if_sync } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an3/an31_check_only_if_sync.es6')))
 
 class anode_if_is_correct_sync extends anode_check_only_if_sync {
             

@@ -20,7 +20,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_debug_print_screen } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an9/an90_p_debug_print_screen.es6'		)
+var { anode_debug_print_screen } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an9/an90_p_debug_print_screen.es6')))
 
 class anode_debug_array extends anode_debug_print_screen {
 

@@ -28,14 +28,11 @@
 // @Struc > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const { struc_pho }        =   require(  cons.JS_TYP7  + 'struc/s04_struc_pho.es7'),
-      empty                =   require(  'is-empty'                        ),
-      { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
-      readdirp             =   require( 'readdirp'),
-      ffi                  =   require(cons.JS_LIB7 + 'file/file_load.es7'),
-      fs                   =   require('fs');
+const { struc_pho }        =   require(  path.join(JS_TYP7  , 'struc/s04_struc_pho.es7'  ))),
+      { idx_pointers }          =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'  ))),
+      ffi                  =   require(path.join(JS_LIB7 , 'file/file_load.es7' )));
 
 class struc_load_folder extends struc_pho {
   constructor()

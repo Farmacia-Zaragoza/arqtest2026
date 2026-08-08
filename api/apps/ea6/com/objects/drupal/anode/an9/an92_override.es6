@@ -18,7 +18,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const { strings } 		= require(	cons.JS_BASE + 'com/objects/drupal/strings/s01_strings.es6'		)
+const { strings } 		= require(	path.join(JS_BASE, 'com/objects/drupal/strings/s01_strings.es6')		)
 
 class override extends strings {
 		

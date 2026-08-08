@@ -16,7 +16,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_nouser } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an5/an52_nouser.es6'		)
+var { anode_nouser } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an5/an52_nouser.es6')))
 
 
 class anode_anon extends anode_nouser {

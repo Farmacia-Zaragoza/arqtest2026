@@ -26,11 +26,11 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 			= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'						),
-		{ ifnojs } 				= require(	cons.JS_BASE + 'com/objects/html/ifnojs.es6'							),
+const 	{ html_style } 			= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ ifnojs } 				= require(	path.join(JS_BASE, 'com/objects/html/ifnojs.es6'))),
 
-		{ hea01_head_truck }	= require(	cons.JS_BASE + 'spc/theme/truck/main_html/hea01_head_truck.es6'		),
-		{ bdy01_body_truck }	= require(	cons.JS_BASE + 'spc/theme/truck/main_html/bdy01_body_truck.es6'		);
+		{ hea01_head_truck }	= require(	path.join(JS_BASE, 'spc/theme/truck/main_html/hea01_head_truck.es6'))),
+		{ bdy01_body_truck }	= require(	path.join(JS_BASE, 'spc/theme/truck/main_html/bdy01_body_truck.es6')));
 
 
 class htm01_html_truck extends html_style  {

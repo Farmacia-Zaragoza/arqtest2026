@@ -19,9 +19,9 @@
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   gfc  			     =   require(  cons.JS_LIB7  + 'file/get_file_code.es7' 	 ),
+const   gfc  			     =   require(  path.join(JS_LIB7, 'file/get_file_code.es7'))),
         validator            =   require(  'is-my-json-valid'            ),
         syncrequest          =   require(  'sync-request'             ),
         fs                   =   require(  'fs'                                                  );

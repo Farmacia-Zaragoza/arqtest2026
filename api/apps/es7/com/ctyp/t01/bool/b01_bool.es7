@@ -10,9 +10,9 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const 	{ bool_copy } 			= 	require(	cons.JS_TYP7 + 'bool/b02_bool_copy.es7'	)
+const 	{ bool_copy } 			= 	require(	path.join(JS_TYP7 , 'bool/b02_bool_copy.es7' )))
 
 // Change to cbool to be the same than php
 class cbool extends bool_copy {

@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const { anode_img } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an7/an74_img.es6'		)
+const { anode_img } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an74_img.es6')))
 
 
 class anode_loadanypos extends anode_img {

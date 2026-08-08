@@ -20,11 +20,11 @@
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { jn01_robot_process }       =   require(  cons.JS_ACO7  + 'json/j02/jn01_jnode_robot_process.es7'  ),
-        { objjson_site }             =   require(  cons.JS_AQD7  + 'arqdru/json/j00/jn10_objjson_site.es7'  ),
-        { arrjson_site }             =   require(  cons.JS_AQD7  + 'arqdru/json/j00/jn11_arrjson_site.es7'  );
+const   { jn01_robot_process }       =   require(  path.join(JS_ACO7  , 'json/j02/jn01_jnode_robot_process.es7'  )),
+        { objjson_site }             =   require(  path.join(JS_AQD7  , 'arqdru/json/j00/jn10_objjson_site.es7'  )),
+        { arrjson_site }             =   require(  path.join(JS_AQD7  , 'arqdru/json/j00/jn11_arrjson_site.es7'  ));
 
 class jn02_process_site extends jn01_robot_process {
 

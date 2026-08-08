@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_auth } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an5/an50_auth.es6'		),
+var { anode_auth } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an5/an50_auth.es6'))),
 	path 				= require(	'path'																	);
 
 

@@ -29,11 +29,10 @@
 // @Struc_pho > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const { struc_gen_arroba } =   require(  cons.JS_TYP7  + 'struc/s03_struc_gen_arroba.es7'),
-	  rand	               =   require(  cons.JS_LIB7 + 'rand/rand.es7' 	           ),
-      fs 				   =   require(	'fs'												);
+const { struc_gen_arroba } =   require(  path.join(JS_TYP7  , 'struc/s03_struc_gen_arroba.es7'  ))),
+	  rand	               =   require(  path.join(JS_LIB7 , 'rand/rand.es7' 	         )));
 
 class struc_pho extends struc_gen_arroba {
   constructor()

@@ -12,13 +12,10 @@
 // - d-gen_rest_list_inner-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const  fs                   =   require(  'fs'                                                   ),
-       empty                =   require(  'is-empty'                             ),
-       accents              =   require(  'remove-accents'                       ),
-       { idx_pointers }     =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
-       { rs00_rest_pf }     =   require(  cons.JS_TYP7  + 'arroba/rest/rs00_rest_pf.es7'  );
+const  { idx_pointers }     =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'         ))),
+       { rs00_rest_pf }     =   require(  path.join(JS_TYP7  , 'arroba/rest/rs00_rest_pf.es7'  )));
 
 // List Object
 class rs04_object_list_inner extends rs00_rest_pf {

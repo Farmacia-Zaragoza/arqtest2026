@@ -25,11 +25,11 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const  { common_html } 			= 	require(	cons.JS_ACO7 + 'html/h01/main/common_html.es7'			      ),
-		{ hea01_head_meto }	= 	require(	cons.JS_PYC7 + 'meto/meto/html/h01/main/hea01_meto.es7'		),
-		{ bdy01_body_meto }	= 	require(	cons.JS_PYC7 + 'meto/meto/html/h01/main/bdy01_meto.es7'		);
+const  { common_html } 			= 	require(	path.join(JS_ACO7, 'html/h01/main/common_html.es7'))),
+		{ hea01_head_meto }	= 	require(	path.join(JS_PYC7, 'meto/meto/html/h01/main/hea01_meto.es7'))),
+		{ bdy01_body_meto }	= 	require(	path.join(JS_PYC7, 'meto/meto/html/h01/main/bdy01_meto.es7')));
 
 
 class htm01_html_meto extends common_html  {

@@ -18,7 +18,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'										),
+const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'))),
 		{ cpt03_div_captcha }	= 	require( 	'/brqx/base/rcode/es6/spc/theme/truck/deep_html/types/captcha/cpt03_div_captcha.es6'	);
 
 

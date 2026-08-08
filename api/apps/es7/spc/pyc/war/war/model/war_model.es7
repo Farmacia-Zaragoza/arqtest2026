@@ -23,11 +23,11 @@
 
 // cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { war_no_cache }    =   require(  cons.JS_PYC7  + 'war/war/model/war_nocache_launcher.es7' ),
-        { war_cache }       =   require(  cons.JS_PYC7  + 'war/war/model/war_cache_launcher.es7'),
-        { printlog }        =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                       );
+const   { war_no_cache }    =   require(  path.join(JS_PYC7, 'war/war/model/war_nocache_launcher.es7') ),
+        { war_cache }       =   require(  path.join(JS_PYC7, 'war/war/model/war_cache_launcher.es7')),
+        { printlog }        =   require(  path.join(JS_TYP7, 'logs/printlog.es7'));
 
 class war extends printlog
 {

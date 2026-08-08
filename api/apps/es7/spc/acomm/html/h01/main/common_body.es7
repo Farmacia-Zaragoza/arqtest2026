@@ -42,11 +42,10 @@
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const 	{ html_style } 					= 	require(	cons.JS_BASE 	+ 	'com/objects/html/html_style.es6'				),
-		{ ifnojs }	 					= 	require(	cons.JS_BASE 	+ 	'com/objects/html/ifnojs.es6'					),
-		minify 							= 	require(	'html-minifier'									).minify;
+const 	{ html_style } 					= 	require(	path.join(JS_BASE 	, 	'com/objects/html/html_style.es6'	))),
+		{ ifnojs }	 					= 	require(	path.join(JS_BASE 	, 	'com/objects/html/ifnojs.es6'			)));
 
 
 class common_body extends html_style  {
@@ -148,6 +147,24 @@ class common_body extends html_style  {
 
     }
 
+}
+
+// Pendiente 2026 - Cambio quitando html-minifier
+async function procesarHtml(htmlSucio) {
+  try {
+    // 2. Ejecuta la minificación de forma asíncrona
+    const htmlMinificado = await minify(htmlSucio, {
+      collapseWhitespace: true,
+      removeComments: true,
+      minifyJS: true,
+      minifyCSS: true
+    });
+
+    return htmlMinificado;
+  } catch (error) {
+    console.error('Error minificando HTML:', error);
+    return htmlSucio; // Devuelve el HTML original si falla
+  }
 }
 
 exports.common_body = common_body

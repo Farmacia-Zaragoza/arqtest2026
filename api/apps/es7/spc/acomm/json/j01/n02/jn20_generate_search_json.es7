@@ -12,9 +12,9 @@
 // - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { jn04_search_site }   =   require(  cons.JS_ACO7  + 'json/j02/jn04_jnode_search_site.es7'   );
+const   { jn04_search_site }   =   require(  path.join(JS_ACO7  , 'json/j02/jn04_jnode_search_site.es7'  )));
 
 class jn20_search_json extends jn04_search_site {
 

@@ -15,12 +15,10 @@
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const { uri_page_string } =   require(  cons.JS_TYP7 + 'uri/u12_page_string.es7' ),
-      fs                  =   require(  'fs'                                     ),
-      sort		          =   require(  cons.JS_LIB  + 'sort/sort_unique.es6'	 );
-
+const { uri_page_string } =   require(  path.join(JS_TYP7 , 'uri/u12_page_string.es7' ))),
+      sort		          =   require(  path.join(JS_LIB  , 'sort/sort_unique.es6'	)));
 
 class uri_sorts extends uri_page_string {
 

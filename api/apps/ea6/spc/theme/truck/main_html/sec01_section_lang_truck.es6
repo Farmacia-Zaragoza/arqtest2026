@@ -22,9 +22,9 @@
 
 
 
-const 	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'										),
-		{ svg_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'										),
-		{ flg03_div_flags } 		= 	require(	cons.JS_BASE  + 'spc/theme/truck/deep_html/types/flags/flg03_div_flags.es6'				);
+const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ svg_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'))),
+		{ flg03_div_flags } 		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/flags/flg03_div_flags.es6')));
 
 
 class sec01_section_lang_truck extends html_style{

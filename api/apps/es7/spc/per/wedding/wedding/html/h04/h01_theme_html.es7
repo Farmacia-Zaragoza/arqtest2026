@@ -16,10 +16,10 @@
 // Arroba_HType     : Generic html type
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const  { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                  ),
-       { arroba_htype }     =   require(  cons.JS_PER7  + 'wedding/wedding/html/h03/hcomm/h01_arroba_htype.es7' );
+const  { printlog }         =   require(  path.join(JS_TYP7, 'logs/printlog.es7')                  ),
+       { arroba_htype }     =   require(  path.join(JS_PER7, 'wedding/wedding/html/h03/hcomm/h01_arroba_htype.es7'));
 
 class theme_html extends printlog
 {

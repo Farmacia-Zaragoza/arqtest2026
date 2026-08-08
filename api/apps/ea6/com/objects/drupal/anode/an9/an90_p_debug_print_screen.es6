@@ -27,7 +27,7 @@ const echo 				= require(	'/brqx/base/react/zcommon/node_modules/node-echo'		)
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
 
-var { anode_debug_save_file } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an9/an91_d_debug_save_file.es6'		)
+var { anode_debug_save_file } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an9/an91_d_debug_save_file.es6')))
 
 class anode_debug_print_screen extends anode_debug_save_file{
 

@@ -24,8 +24,7 @@ const	mat					= require('libs/string/match.es6'			),
 		os					= require(	'os'														),
 		empty	 			= require(	'is_empty'			),
 		is_numeric 			= require(	'isnumeric'			),
-		ucfirst 			= require(	'ucfirst'				),
-		echo 				= require(	'node-echo'			);
+		ucfirst 			= require(	'ucfirst'				);
 
 // Javascript always passes by value. However, if you pass an object to a function, the "value" is really a reference to that objec
 

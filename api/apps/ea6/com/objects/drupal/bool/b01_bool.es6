@@ -12,7 +12,7 @@
 
 var 	cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"			);
 
-const 	{ bool_copy } 			= 	require(	cons.JS_BASE + 'com/objects/drupal/bool/b02_bool_copy.es6'		)
+const 	{ bool_copy } 			= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b02_bool_copy.es6')))
 
 // Change to cbool to be the same than php
 class cbool extends bool_copy {

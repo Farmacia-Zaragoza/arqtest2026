@@ -10,7 +10,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-var { theme_nid } 		= require(	cons.JS_BASE + 'com/objects/drupal/theme/t02_nid.es6'		)
+var { theme_nid } 		= require(	path.join(JS_BASE, 'com/objects/drupal/theme/t02_nid.es6')		)
 
 class theme_structure extends theme_nid {
 

@@ -13,9 +13,9 @@
 // - d-manage_general_commands-       : Call to manage commands
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { uri_commands_methods }    =   require(  cons.JS_TYP7  + 'uri/u09_commands_methods.es7'        )
+const   { uri_commands_methods }    =   require(  path.join(JS_TYP7  , 'uri/u09_commands_methods.es7'     )))
 
 class uri_manage_commands extends uri_commands_methods {
 

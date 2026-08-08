@@ -15,9 +15,9 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const	{ anode } 			= require(	cons.JS_BASE 	+ 'com/objects/drupal/anode/an0/an01_obj.es6'		),
-		{ cbool }			= require(	cons.JS_BASE 	+ 'com/objects/drupal/bool/b01_bool.es6'			),
-		svg 				= require( 	cons.JS_BASE 	+ 'com/libs/image/create_svg.es6'					),
+const	{ anode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))),
+		{ cbool }			= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))),
+		svg 				= require( 	path.join(JS_BASE, 'com/libs/image/create_svg.es6'))),
 		empty 				= require( 	'is-empty'										);
 
 

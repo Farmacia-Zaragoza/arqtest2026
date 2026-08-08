@@ -20,12 +20,12 @@
 
 var 	cons 						= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"											);
 
-const 	{ html_style } 				= 	require(	cons.JS_BASE 	+ 'com/objects/html/html_style.es6'												),
-		{ sec02_process_tit } 		= 	require(	cons.JS_BASE 	+ 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'				),
-		{ sec02_process_se } 		= 	require(	cons.JS_BASE 	+ 'spc/theme/common/yamls/sections/se/sec02_process_se.es6'		),
-		{ sec02_process_sa } 		= 	require(	cons.JS_BASE 	+ 'spc/theme/common/yamls/sections/sa/sec02_process_sa.es6'		),
-		{ sec02_process_se_ext } 	= 	require(	cons.JS_BASE 	+ 	'spc/theme/common/yamls/sections/se/sec02_process_se_ext.es6'	);
-		empty 						= 	require(	cons.NODE_MOD 	+	'is_empty'																	);
+const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ sec02_process_tit } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'))),
+		{ sec02_process_se } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se.es6'))),
+		{ sec02_process_sa } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/sa/sec02_process_sa.es6'))),
+		{ sec02_process_se_ext } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se_ext.es6')));
+		empty 						= 	require(	path.join(NODE_MOD, 'is_empty')));
 
 
 class sec02_process extends html_style {

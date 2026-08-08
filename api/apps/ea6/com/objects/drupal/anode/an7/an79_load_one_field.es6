@@ -16,7 +16,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_generate_load_from_disk } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an8/an80_generate_load_from_disk.es6'		)
+var { anode_generate_load_from_disk } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an8/an80_generate_load_from_disk.es6')))
 
 
 class anode_load_one_field extends anode_generate_load_from_disk {

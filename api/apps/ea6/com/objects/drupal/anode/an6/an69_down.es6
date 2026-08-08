@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_search } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an7/an70_search.es6'		),
+const 	{ anode_search } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an70_search.es6'))),
 		path 					= require(	'path'																		);
 
 

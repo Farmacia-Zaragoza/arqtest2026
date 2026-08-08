@@ -14,13 +14,13 @@
 
 var 	cons 						= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"							);
 
-const 	{ anode } 			= require(	cons.JS_BASE + 'com/objects/drupal/anode/an0/an01_obj.es6'								),
-		{ cbool } 			= require(	cons.JS_BASE + 'com/objects/drupal/bool/b01_bool.es6'									),					
-		creff 				= require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/create_full_filename.es6'				),
-		scpf 				= require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'		),
+const 	{ anode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6'))),
+		{ cbool } 			= require(	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6'))),					
+		creff 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'))),
+		scpf 				= require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))),
 		fs 					= require(	'fs'																					),
-		StreamZip 			= require(	cons.NODE_MOD +  'node-stream-zip'									),
-		empty 				= require(	cons.NODE_MOD +  'is_empty'										);
+		StreamZip 			= require(	path.join(NODE_MOD, 'node-stream-zip'))),
+		empty 				= require(	path.join(NODE_MOD, 'is_empty')));
 
 
 // Para poder extender debe haberse incluido antes

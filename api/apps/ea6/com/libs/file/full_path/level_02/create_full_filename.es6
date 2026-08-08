@@ -24,7 +24,7 @@
 // -   Asynchronously
 // -   As a stream
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
 
 
@@ -34,7 +34,7 @@ const	fs 					= 	require(	'fs'													),
 		echo 				= 	require(	'node-echo'							),
 		util 				=   require(	'util'													),
 		os					=	require(	'os'													),
-		{ printlog } 		= 	require(	cons.JS_BASE + 'com/objects/logs/printlog.es6'			),
+		{ printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6'))),
 		mkdirp 				= 	require(	'mkdirp'							);
 
 // Ok [17-10-21]

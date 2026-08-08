@@ -22,8 +22,8 @@
 
 
 
-const 	{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'						),
-		{ flx02_ul_flex }		= 	require( 	cons.JS_BASE  + 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6'	);
+const 	{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ flx02_ul_flex }		= 	require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx02_ul_flex.es6')));
 
 class flx03_div_flex_carousel extends html_style {
 

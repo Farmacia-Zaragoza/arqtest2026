@@ -19,12 +19,12 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"												);
 
-const 	{ anode_img_resolutions } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/anode/an7/an75_img_resolutions.es6'				),
+const 	{ anode_img_resolutions } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an7/an75_img_resolutions.es6'))),
 		echo 							= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'									),
 		fs								=	require(	'fs'																				),		
 		{ execSync }					= 	require(	'child_process'																		),
-		creff 							= 	require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/create_full_filename.es6'			),
-		cff 							= 	require( 	cons.JS_BASE + 'com/libs/file/full_path/level_02/copy_full_filename.es6'			);
+		creff 							= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/create_full_filename.es6'))),
+		cff 							= 	require( 	path.join(JS_BASE, 'com/libs/file/full_path/level_02/copy_full_filename.es6')));
 
 
 class anode_img extends anode_img_resolutions {

@@ -25,9 +25,9 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { anode_fsbranch_process } =   require(  cons.JS_TYP7  + 'arroba/anode/a06_fsbranch/an69_process.es7'        )
+const   { anode_fsbranch_process } =   require(  path.join(JS_TYP7, 'arroba/anode/a06_fsbranch/an69_process.es7')))
 
 
 class anode_fsbranch_load extends anode_fsbranch_process {

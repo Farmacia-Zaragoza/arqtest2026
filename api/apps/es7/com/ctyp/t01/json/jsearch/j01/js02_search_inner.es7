@@ -14,13 +14,13 @@
 // FEATURES-SEARCH_QUERY_FEATURE
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
 const  fs                   =   require(  'fs'                                                   ),
        empty                =   require(  'is-empty'                             ),
        accents              =   require(  'remove-accents'                       ),
-       { idx_pointers }     =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
-       { jn03_search_lang } =   require(  cons.JS_TYP7  + 'json/jsearch/j01/js03_search_lang.es7');
+       { idx_pointers }     =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7'))),
+       { jn03_search_lang } =   require(  path.join(JS_TYP7, 'json/jsearch/j01/js03_search_lang.es7')));
 
 // Comm Object
 class jn02_object_search_inner extends jn03_search_lang {

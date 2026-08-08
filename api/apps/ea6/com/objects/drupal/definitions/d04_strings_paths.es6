@@ -20,7 +20,7 @@
 
 var 	cons 					= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"				)
 
-const { definitions_booleans } 	= 	require(	cons.JS_BASE + 'com/objects/drupal/definitions/d05_booleans.es6'	)
+const { definitions_booleans } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/definitions/d05_booleans.es6')	)
 
 
 class definitions_strings_paths extends definitions_booleans {

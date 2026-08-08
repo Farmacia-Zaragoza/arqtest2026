@@ -26,8 +26,8 @@
 
 const   path                =   require('path'                                             );
 
-const { JS_TYP7 } = require(path.join(process.cwd(),'api/apps/paths.js'));
-const 	{ arroba_getarr } 		  =  require(path.join(JS_TYP7 , 'array/a02_arroba_getarr.es7'));
+const { JS_TYP7 } = require(path.join(process.cwd()),'api/apps/paths.js'));
+const 	{ arroba_getarr } 		  =  require(path.join(JS_TYP7 , 'array/a02_arroba_getarr.es7')));
 
 console.log('arroba_setarr' . JS_TYP7);
 

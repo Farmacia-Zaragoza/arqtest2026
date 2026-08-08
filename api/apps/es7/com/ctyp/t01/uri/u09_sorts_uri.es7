@@ -15,10 +15,10 @@
 // FEATURES-STRANGE_LANG
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const { uri_sorts_kb }    =   require(  cons.JS_TYP7 + 'uri/u10_sorts_kb.es7' ),
-      sort		          =   require(  cons.JS_LIB7  + 'sort/sort_unique.es7'	 );
+const { uri_sorts_kb }    =   require(  path.join(JS_TYP7 , 'uri/u10_sorts_kb.es7' ))),
+      sort		          =   require(  path.join(JS_LIB7   ,'sort/sort_unique.es7'	 )));
 
 
 class uri_sorts_uri extends uri_sorts_kb {

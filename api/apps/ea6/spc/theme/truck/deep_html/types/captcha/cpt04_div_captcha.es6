@@ -20,9 +20,9 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const	{ svg_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/svg_style.es6'								),
-		{ html_style } 			= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'								),
-		{ cpt03_div_captcha }	= 	require( 	cons.JS_BASE  + 'spc/theme/truck/deep_html/types/captcha/cpt03_div_captcha.es6'	);
+const	{ svg_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/svg_style.es6'))),
+		{ html_style } 			= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ cpt03_div_captcha }	= 	require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/captcha/cpt03_div_captcha.es6')));
 
 
 class cpt04_div_captcha extends html_style {

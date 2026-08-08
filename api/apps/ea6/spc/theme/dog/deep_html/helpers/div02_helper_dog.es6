@@ -36,10 +36,10 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 						= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'									),
+const 	{ html_style } 						= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
 		empty 								= 	require(	'is_empty'															),
-		{ div01_helper_button_dog }			= 	require( 	cons.JS_BASE  + 'spc/theme/dog/deep_html/helpers/div01_helper_button_dog.es6'		),
-		{ div01_helper_arrow_sizer_dog }	= 	require( 	cons.JS_BASE  + 'spc/theme/dog/deep_html/helpers/div01_helper_arrow_sizer_dog.es6'	);
+		{ div01_helper_button_dog }			= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/div01_helper_button_dog.es6'))),
+		{ div01_helper_arrow_sizer_dog }	= 	require( 	path.join(JS_BASE, 'spc/theme/dog/deep_html/helpers/div01_helper_arrow_sizer_dog.es6')));
 
 class div02_helper_dog extends html_style {
 

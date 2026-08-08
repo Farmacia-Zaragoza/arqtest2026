@@ -21,14 +21,14 @@
 // - d-create_marquee-		: Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'										),
-		{ html_style } 					= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'									),
-		{ scr02_js_scripts_scroll }		= 	require(	cons.JS_SPC7 + 'scroll/html/h01/deep/scripts/scr02_js_scripts_scroll.es7'			),
-		{ scr03_js_minimized_scroll }	= 	require(	cons.JS_SPC7 + 'scroll/html/h01/deep/scripts/scr03_js_minimized_scroll.es7'			),
-		{ scr05_js_inline_scroll }		= 	require(	cons.JS_SPC7 + 'scroll/html/h01/deep/scripts/scr05_js_inline_scroll.es7'	),
-		{ scr06_js_async_scroll }		= 	require(	cons.JS_SPC7 + 'scroll/html/h01/deep/scripts/scr06_js_async_scroll.es7'				);
+const 	{ getset } 						= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'))),
+		{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ scr02_js_scripts_scroll }		= 	require(	path.join(JS_SPC7, 'scroll/html/h01/deep/scripts/scr02_js_scripts_scroll.es7'))),
+		{ scr03_js_minimized_scroll }	= 	require(	path.join(JS_SPC7, 'scroll/html/h01/deep/scripts/scr03_js_minimized_scroll.es7'))),
+		{ scr05_js_inline_scroll }		= 	require(	path.join(JS_SPC7, 'scroll/html/h01/deep/scripts/scr05_js_inline_scroll.es7'))),
+		{ scr06_js_async_scroll }		= 	require(	path.join(JS_SPC7, 'scroll/html/h01/deep/scripts/scr06_js_async_scroll.es7')));
 
 
 class scr01_js_scroll extends getset  {

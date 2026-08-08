@@ -11,23 +11,23 @@
 
 
 const	echo 					= 	require(	'node-echo'												),
-		{ theme_structure }		= 	require( 	cons.JS_BASE  + 'com/objects/drupal/theme/t01_structure.es6'			),
-		{ fn01_flat } 			= 	require(	cons.JS_BASE  + 'spc/theme/common/fast_node/fnode/fn01_flat.es6'		),
-		{ fn02_images } 		= 	require(	cons.JS_BASE  + 'spc/theme/common/fast_node/fnode/fn02_images.es6'		),
+		{ theme_structure }		= 	require( 	path.join(JS_BASE, 'com/objects/drupal/theme/t01_structure.es6')			),
+		{ fn01_flat } 			= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn01_flat.es6')		),
+		{ fn02_images } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn02_images.es6')		),
 
-		{ fn01_lang_common } 	= 	require(	cons.JS_BASE  + 'spc/theme/common/fast_node/fnode/fn01_lang_common.es6'	),
-		{ fn11_links_common } 	= 	require(	cons.JS_BASE  + 'spc/theme/dog/fast_node/fnode/fn11_links_common.es6'	),
-		{ fn12_links_lang }   	= 	require(	cons.JS_BASE  + 'spc/theme/dog/fast_node/fnode/fn12_links_lang.es6'	),
-		{ fn23_site_lang }      = 	require(	cons.JS_BASE  + 'spc/theme/dog/fast_node/fnode/fn23_site_lang.es6'  	),
+		{ fn01_lang_common } 	= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fn01_lang_common.es6')	),
+		{ fn11_links_common } 	= 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn11_links_common.es6')	),
+		{ fn12_links_lang }   	= 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn12_links_lang.es6')	),
+		{ fn23_site_lang }      = 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn23_site_lang.es6')  	),
 
-		{ fy01_cookies } 	    = 	require(	cons.JS_BASE  + 'spc/theme/common/fast_node/fnode/fy01_cookies.es6'		),
-		{ fn31_cookies }      	= 	require(	cons.JS_BASE  + 'spc/theme/dog/fast_node/fnode/fn31_cookies.es6'		),
+		{ fy01_cookies } 	    = 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/fnode/fy01_cookies.es6')		),
+		{ fn31_cookies }      	= 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn31_cookies.es6')		),
 
-		{ fn32_cookies_links }  = 	require(	cons.JS_BASE  + 'spc/theme/dog/fast_node/fnode/fn32_cookies_links.es6'),
+		{ fn32_cookies_links }  = 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/fnode/fn32_cookies_links.es6')),
 
-		{ cbool }				= 	require( 	cons.JS_BASE  + 'com/objects/drupal/bool/b01_bool.es6'					),
-		{ categories }			= 	require( 	cons.JS_BASE  + 'com/objects/categories/categories.es6'					),
-		{ contents }			= 	require( 	cons.JS_BASE  + 'com/objects/categories/contents.es6'					);
+		{ cbool }				= 	require( 	path.join(JS_BASE, 'com/objects/drupal/bool/b01_bool.es6')					),
+		{ categories }			= 	require( 	path.join(JS_BASE, 'com/objects/categories/categories.es6')					),
+		{ contents }			= 	require( 	path.join(JS_BASE, 'com/objects/categories/contents.es6'));
 
 
 class theme_dog extends theme_structure {

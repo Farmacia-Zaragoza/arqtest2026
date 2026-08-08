@@ -12,7 +12,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ theme_truck }			= require(	cons.JS_BASE + 'spc/theme/truck/structure/theme_truck.ea6'							);
+const 	{ theme_truck }			= require(	path.join(JS_BASE, 'spc/theme/truck/structure/theme_truck.ea6')));
 
 
 function theme_truck_def(data_and_error = '' , t = '') {

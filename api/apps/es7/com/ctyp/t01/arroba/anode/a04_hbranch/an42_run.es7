@@ -30,9 +30,9 @@
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { anode_hierarchical_main_process } =   require( cons.JS_TYP7  + 'arroba/anode/a04_hbranch/an46_hierarchical_main_process.es7'  )
+const   { anode_hierarchical_main_process } =   require( path.join(JS_TYP7  , 'arroba/anode/a04_hbranch/an46_hierarchical_main_process.es7' )))
 
 class anode_run_hierarchical extends anode_hierarchical_main_process {
   constructor()

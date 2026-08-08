@@ -12,7 +12,7 @@
 
 var 	cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const { bool_defs } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/bool/b03_bool_defs.es6'		)
+const { bool_defs } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/bool/b03_bool_defs.es6')		)
 
 class bool_copy extends bool_defs {
 	constructor() 

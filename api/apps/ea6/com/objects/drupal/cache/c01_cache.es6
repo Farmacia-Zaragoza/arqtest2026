@@ -14,7 +14,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"				);
 
-const 	{ cache_defs } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/cache/c02_cache_defs.es6'	);
+const 	{ cache_defs } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/cache/c02_cache_defs.es6'));
 
 class cache extends cache_defs {
 	constructor(b = "", disk = "reload", ssd = "reload", ram = "reload", search = "reload") 

@@ -15,7 +15,7 @@
 
 var 	cons 							= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_load_dat_contents } 	= require(	cons.JS_BASE + 'com/objects/drupal/anode/an1/an10_load_dat_contents.es6'		)
+const 	{ anode_load_dat_contents } 	= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an1/an10_load_dat_contents.es6')))
 
 class anode_taxonomy extends anode_load_dat_contents {
 

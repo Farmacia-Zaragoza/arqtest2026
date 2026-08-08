@@ -15,12 +15,12 @@
 // H_Type > S_Type > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const  { hcomm_struc }      =   require(  cons.JS_PER7  + 'wedding/wedding/html/h03/hcomm/h02_struc.es7'),
-       { cache_site }       =   require(  cons.JS_TYP7    + 'site/s10_cache_site.es7'         ),
+const  { hcomm_struc }      =   require(  path.join(JS_PER7, 'wedding/wedding/html/h03/hcomm/h02_struc.es7'))),
+       { cache_site }       =   require(  path.join(JS_TYP7, 'site/s10_cache_site.es7'))),
         fs 					= require(	'fs'																						),
-		scpf 				= require(  cons.JS_BASE  + 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'	);
+		scpf 				= require(  path.join(JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6')));
 
 class arroba_htype extends hcomm_struc {
   constructor(    container  )

@@ -18,8 +18,8 @@
 //- build_data   	  : Build html final code for object
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const 	{ html_style } 		= 	require(	cons.JS_BASE  	+ 'com/objects/html/html_style.es6'						),
-		{ flx01_li_flex }	= 	require( 	cons.JS_BASE  	+ 'spc/theme/common/deep_html/slider/flx01_li_flex.es6'	),
+const 	{ html_style } 		= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ flx01_li_flex }	= 	require( 	path.join(JS_BASE, 'spc/theme/common/deep_html/slider/flx01_li_flex.es6'))),
 		empty 				= 	require(	'is_empty'											),
 		path				= 	require( 	'path'																	);
 

@@ -18,11 +18,11 @@
 // Theme Html       : Type to create html code
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { tjson_comm }      =   require(  cons.JS_SPC7  + 'acomm/json/j04/j02_tjson_comm.es7'   ),
-        { theme_html }      =   require(  cons.JS_PYC7  + 'meto/meto/html/h04/h01_theme_html.es7'  ),
-        { arroba_jtype }    =   require(  cons.JS_PYC7  + 'meto/meto/json/j03/j01_arroba_type.es7' );
+const   { tjson_comm }      =   require(  path.join(JS_SPC7, 'acomm/json/j04/j02_tjson_comm.es7'))),
+        { theme_html }      =   require(  path.join(JS_PYC7, 'meto/meto/html/h04/h01_theme_html.es7'))),
+        { arroba_jtype }    =   require(  path.join(JS_PYC7, 'meto/meto/json/j03/j01_arroba_type.es7')));
 
 class theme_json extends tjson_comm
 {

@@ -14,10 +14,10 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const { r02_product_sheet }  =   require(  cons.JS_TYP7  + 'rest/r02_inner/r02_product_sheet.es7' );
-// const { printlog }   =   require(  cons.JS_TYP7  + 'logs/printlog.es7'        );
+const { r02_product_sheet }  =   require(  path.join(JS_TYP7  , 'rest/r02_inner/r02_product_sheet.es7'  )));
+// const { printlog }   =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'     )));
 
 class r12_product_sheet_pf extends r02_product_sheet {
   constructor() {

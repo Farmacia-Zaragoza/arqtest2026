@@ -14,7 +14,7 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-var	{ inode } 				= 	require(	cons.JS_BASE + 'com/objects/drupal/node/inode.ea6'	)
+var	{ inode } 				= 	require(	path.join(JS_BASE, 'com/objects/drupal/node/inode.ea6')))
 
 class in02_simple extends inode {
 

@@ -12,11 +12,11 @@
 // - d-generate_common_index-      : Common method to index articles
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const  { a01_idx_list } =   require(  cons.JS_TYP7  + 'arroba/aindex/b_list/a01_idx_list.es7' ),
-	    shtf  			= 	require(  cons.JS_LIB7  + 'file/save_hash_to_file.es7' 	),
-	    satf  			= 	require(  cons.JS_LIB7  + 'file/save_hash1d_to_file.es7' 	);
+const  { a01_idx_list } =   require(  path.join(JS_TYP7  , 'arroba/aindex/b_list/a01_idx_list.es7' ))),
+	    shtf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7' 	))),
+	    satf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash1d_to_file.es7' )));
 
 
 class an03_general_index_arroba extends a01_idx_list {

@@ -12,9 +12,9 @@
 // - d-post_process_common_commands-            : Command post process for any site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const { site_common_sure_commands } =   require( cons.JS_ACO7 + 'uri/n01/u04_sure_commands.es7' )
+const { site_common_sure_commands } =   require( path.join(JS_ACO7 , 'uri/n01/u04_sure_commands.es7' )))
 
 class common_post_process_commands extends site_common_sure_commands {
 

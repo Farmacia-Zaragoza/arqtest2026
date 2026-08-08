@@ -5,9 +5,9 @@
 //- event_create             : Create event jquery method
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { typejson_object }  =   require( cons.JS_TYP7 + 'json/jtype/typejson_object.es7' )
+const   { typejson_object }  =   require( path.join(JS_TYP7 , 'json/jtype/typejson_object.es7' ) )
 
 class objjson_site extends typejson_object {
   constructor(file_name = '')

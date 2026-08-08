@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_load } 		= 	require(	cons.JS_BASE + '/com/objects/drupal/anode/an7/an72_load.ea6'					);
+const 	{ anode_load } 		= 	require(	path.join(JS_BASE, '/com/objects/drupal/anode/an7/an72_load.ea6')));
 
 
 class anode_file extends anode_load {

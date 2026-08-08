@@ -19,12 +19,12 @@
 // - build_data     : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { html_style }        =   require(  cons.JS_BASE + 'com/objects/html/html_style.es6'          ),
-        { ifnojs }            =   require(  cons.JS_BASE + 'com/objects/html/ifnojs.es6'            ),
-        { lnk01_link_arqdru } =   require(  cons.JS_AQD7 + 'arqdru/html/h01/main/lnk01_link_arqdru.es7'    ),
-        { met01_meta_arqdru } =   require(  cons.JS_AQD7 + 'arqdru/html/h01/main/met01_meta_arqdru.es7'    );
+const   { html_style }        =   require(  path.join(JS_BASE , 'com/objects/html/html_style.es6'       ))),
+        { ifnojs }            =   require(  path.join(JS_BASE , 'com/objects/html/ifnojs.es6'          ))),
+        { lnk01_link_arqdru } =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/main/lnk01_link_arqdru.es7'   ))),
+        { met01_meta_arqdru } =   require(  path.join(JS_AQD7 , 'arqdru/html/h01/main/met01_meta_arqdru.es7'   )));
 
 
 class hea01_head_arqdru extends html_style  {

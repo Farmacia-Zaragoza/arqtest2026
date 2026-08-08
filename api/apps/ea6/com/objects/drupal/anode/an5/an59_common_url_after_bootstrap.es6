@@ -16,7 +16,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const { anode_code } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an6/an68_code.es6'		)
+const { anode_code } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an6/an68_code.es6')))
 
 class anode_update_common_after_bootstrap extends anode_code {
 

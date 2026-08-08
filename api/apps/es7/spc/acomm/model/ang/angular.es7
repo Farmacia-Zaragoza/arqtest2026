@@ -28,11 +28,17 @@
 
 // Must to be unique
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+const path = require('path');
 
-const   { angular_no_cache } =   require(  cons.JS_ACO7  + 'model/ang/nocache_launcher.es7'),
-        { angular_cache }    =   require(  cons.JS_ACO7  + 'model/ang/cache_launcher.es7'  ),
-        { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                      );
+JS_ACO7: path.join(ROOT, 'api/apps/es7/spc/acomm/'		),
+
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			))
+
+
+const   { angular_no_cache } =   require(  path.join(JS_ACO7  , 'model/ang/nocache_launcher.es7') ),
+        { angular_cache }    =   require(  path.join(JS_ACO7  , 'model/ang/cache_launcher.es7')   ),
+        { printlog }         =   require(  path.join(JS_TYP7  , 'logs/printlog.es7')              );
 
 class angular extends printlog
 {

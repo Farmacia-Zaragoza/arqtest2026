@@ -20,10 +20,10 @@
 
 var 	cons 						= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.es6"								);
 
-const 	{ html_style } 				= 	require(	cons.JS_BASE 	+ 'com/objects/html/html_style.es6'									),
-		{ sec02_process_tit } 		= 	require(	cons.JS_BASE 	+ 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'	),
-		{ sec02_process_se1 } 		= 	require(	cons.JS_BASE 	+ 	'spc/theme/common/yamls/sections/se/sec02_process_se1.es6'		),
-		{ sec02_process_sa1 } 		= 	require(	cons.JS_BASE 	+ 	'spc/theme/common/yamls/sections/sa/sec02_process_sa1.es6'		);
+const 	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ sec02_process_tit } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/base/gen/sec02_process_tit.es6'))),
+		{ sec02_process_se1 } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/se/sec02_process_se1.es6'))),
+		{ sec02_process_sa1 } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/yamls/sections/sa/sec02_process_sa1.es6')));
 
 
 class sec02_process_se extends html_style {

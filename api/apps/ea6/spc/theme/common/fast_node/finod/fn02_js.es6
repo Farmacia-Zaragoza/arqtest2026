@@ -14,7 +14,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ anode } 			= require(	cons.JS_BASE + 'com/objects/drupal/anode/an0/an01_obj.es6'							);
+const 	{ anode } 			= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an01_obj.es6')));
 
 
 

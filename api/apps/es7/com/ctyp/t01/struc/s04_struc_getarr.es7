@@ -14,9 +14,9 @@
 // - d-getkeymain-          : Get key for main lang
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { struc_setarr }  =   require(  cons.JS_TYP7  + 'struc/s05_struc_setarr.es7'    )
+const   { struc_setarr }  =   require(  path.join(JS_TYP7  , 'struc/s05_struc_setarr.es7'  )))
 
 class struc_getarr extends struc_setarr {
   constructor() {

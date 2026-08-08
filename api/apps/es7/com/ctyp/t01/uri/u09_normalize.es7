@@ -13,11 +13,10 @@
 // - d-create_drupal_paths-        : Create path for drupal bootstrap
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { uri_create } =   require(  cons.JS_TYP7  + 'uri/u10_create.es7'           ),
-        numbers        =   require(  cons.JS_LIB7  + 'number/numbers.es7'             ),
-        empty          =   require(  'is_empty' );
+const   { uri_create } =   require(  path.join(JS_TYP7  , 'uri/u10_create.es7'          ))),
+        numbers        =   require(  path.join(JS_LIB7  , 'number/numbers.es7'          )));
 
 
 class uri_normalize extends uri_create {

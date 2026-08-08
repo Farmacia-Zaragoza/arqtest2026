@@ -11,7 +11,7 @@
 
 var 	cons 				= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-const 	{ printlog } 		= 	require(	cons.JS_BASE + 'com/objects/logs/printlog.es6'		)
+const 	{ printlog } 		= 	require(	path.join(JS_BASE, 'com/objects/logs/printlog.es6')))
 
 class theme_debug_array extends printlog {
 

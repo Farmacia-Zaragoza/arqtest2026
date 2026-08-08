@@ -14,7 +14,7 @@
 
 
 
-const 		{ model } 			= 	require(	cons.JS_BASE + 'com/objects/fire/f01_model/m01_model.ea6'			);
+const 		{ model } 			= 	require(	path.join(JS_BASE, 'com/objects/fire/f01_model/m01_model.ea6')));
 
 // QUIERO HACER UN ENFOQUE DE PROMESAS GENERADORES Y SINCRONIAS
 

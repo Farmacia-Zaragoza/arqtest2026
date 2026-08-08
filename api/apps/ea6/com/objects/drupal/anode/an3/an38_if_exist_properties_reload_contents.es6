@@ -19,9 +19,9 @@
 
 var 	cons 								= 	require(	"/brqx/base/rcode/ea6/com/libs/general/constants.ess"							);
 
-const 	{ anode_prepare_array_properties } 	= 	require(	cons.JS_BASE + 'com/objects/drupal/anode/an4/an40_prepare_array_properties.es6'	),
-		ffi									= 	require(	cons.JS_BASE + 'com/libs/file/full_path/level_01/f_file.es6'					),
-		fya									= 	require(	cons.JS_BASE + 'com/libs/file/full_path/level_01/f_yaml.es6'					),
+const 	{ anode_prepare_array_properties } 	= 	require(	path.join(JS_BASE, 'com/objects/drupal/anode/an4/an40_prepare_array_properties.es6'))),
+		ffi									= 	require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_file.es6'))),
+		fya									= 	require(	path.join(JS_BASE, 'com/libs/file/full_path/level_01/f_yaml.es6'))),
 		echo 								= 	require(	'/brqx/base/react/zcommon/node_modules/node-echo'								),
 		fs 									= 	require(	'fs'																			);
 

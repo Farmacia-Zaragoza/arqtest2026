@@ -19,7 +19,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"								);
 
-var { definitions_strings_paths } 		= require(	cons.JS_BASE + 'com/objects/drupal/definitions/d04_strings_paths.es6'		)
+var { definitions_strings_paths } 		= require(	path.join(JS_BASE, 'com/objects/drupal/definitions/d04_strings_paths.es6')		)
 
 class definitions_strings extends definitions_strings_paths {
 

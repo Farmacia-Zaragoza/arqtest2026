@@ -27,13 +27,13 @@
 
 // Must to be unique
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { common_model }  =   require(  cons.JS_SPC7  + 'acomm/model/common_model.es7'        ),
-        { site_mcomm }    =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m02_site_comm.es7'    ),
-        { arroba_jtype }  =   require(  cons.JS_AQD7  + 'arqdru/json/j03/j01_arroba_type.es7' ),
-        { theme_data }    =   require(  cons.JS_AQD7  + 'arqdru/json/j04/j01_theme_data.es7'  ),
-        { site_uri }      =   require(  cons.JS_MET7  + 'liquid/arqliq/uri/u01_site_uri.es7'          );
+const   { common_model }  =   require(  path.join(JS_SPC7, 'acomm/model/common_model.es7'))),
+        { site_mcomm }    =   require(  path.join(JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'))),
+        { arroba_jtype }  =   require(  path.join(JS_AQD7, 'arqdru/json/j03/j01_arroba_type.es7'))),
+        { theme_data }    =   require(  path.join(JS_AQD7, 'arqdru/json/j04/j01_theme_data.es7'))),
+        { site_uri }      =   require(  path.join(JS_MET7, 'liquid/arqliq/uri/u01_site_uri.es7')));
 
 class arqliq_no_cache extends common_model
 {

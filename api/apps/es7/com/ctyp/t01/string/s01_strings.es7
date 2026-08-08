@@ -20,10 +20,9 @@
 // @String >
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { strings_defs }       =   require(  cons.JS_TYP7  + 'string/s02_defs.es7'      ),
-       accents            =   require(  'remove-accents'   );
+const   { strings_defs }       =   require(  path.join(JS_TYP7  , 'string/s02_defs.es7'    )))
 
 
 class strings extends strings_defs
@@ -158,7 +157,16 @@ class strings extends strings_defs
         this.result     = decodeURI(this.result)
       else
       {
-        this.result     = accents.remove (this.result).toLowerCase()
+        // Ajuste 2026
+        // Validamos que exista y lo convertimos a texto por si llega un número
+        if (this.result) {
+          this.result = String(this.result)
+            .normalize('NFD')     // Separa las letras de sus acentos
+            .replace(/[\u0300-\u036f]/g, '')  // Elimina los símbolos de acentos del mapa Unicode
+            .toLowerCase();
+        } else {
+          this.result = ''; // Valor por defecto si viene vacío, null o undefined
+        }
 
       }
       // this.p('s01_sin_20 C s : ' + decodeURI(this.result) )

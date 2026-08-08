@@ -15,7 +15,7 @@
 
 var 	cons 						= 	require(	"/brqx/base/rcode/es6/com/libs/general/constants.es6"	)
 
-const	{ html_style } 				= 	require(	cons.JS_BASE  + 'com/objects/html/html_style.es6'		)
+const	{ html_style } 				= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')))
 
 
 class div01_hiddens_dog extends html_style {

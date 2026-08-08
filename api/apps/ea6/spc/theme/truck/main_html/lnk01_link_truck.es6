@@ -22,12 +22,12 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ getset } 						= 	require(	cons.JS_BASE + 'com/objects/html/getset.es6'			),
-		{ lnk02_css_as_link_truck }		= 	require(	cons.JS_BASE + 'spc/theme/truck/deep_html/types/styles/lnk02_css_as_link_truck.es6'		),
-		{ lnk03_css_minimized_truck }	= 	require(	cons.JS_BASE + 'spc/theme/truck/deep_html/types/styles/lnk03_css_minimized_truck.es6'	),
-		{ lnk04_css_inline_truck }		= 	require(	cons.JS_BASE + 'spc/theme/truck/deep_html/types/styles/lnk04_css_inline_truck.es6'		),
-		{ lnk05_css_inline_truck }		= 	require(	cons.JS_BASE + 'spc/theme/truck/deep_html/types/styles/lnk05_css_inline_multiple_truck.es6'	),
-		{ html_style } 					= 	require(	cons.JS_BASE + 'com/objects/html/html_style.es6'		)
+const 	{ getset } 						= 	require(	path.join(JS_BASE, 'com/objects/html/getset.es6'))),
+		{ lnk02_css_as_link_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/styles/lnk02_css_as_link_truck.es6'))),
+		{ lnk03_css_minimized_truck }	= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/styles/lnk03_css_minimized_truck.es6'))),
+		{ lnk04_css_inline_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/styles/lnk04_css_inline_truck.es6'))),
+		{ lnk05_css_inline_truck }		= 	require(	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/styles/lnk05_css_inline_multiple_truck.es6'))),
+		{ html_style } 					= 	require(	path.join(JS_BASE, 'com/objects/html/html_style.es6')))
 
 class lnk01_link_truck extends getset  {
 

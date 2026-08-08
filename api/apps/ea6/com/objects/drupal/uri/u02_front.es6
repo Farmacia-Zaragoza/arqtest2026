@@ -13,7 +13,7 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ uri_reload } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/uri/u03_reload.es6'		);
+const 	{ uri_reload } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/uri/u03_reload.es6')));
 
 class uri_front extends uri_reload {
 

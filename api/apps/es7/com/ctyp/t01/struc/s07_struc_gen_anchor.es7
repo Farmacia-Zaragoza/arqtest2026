@@ -26,9 +26,9 @@
 // FEATURE FEATURE-ANCHOR-MANAGEMENT
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { struc_gen_mix }   =   require(  cons.JS_TYP7  + 'struc/s08_struc_gen_mix.es7'      )
+const   { struc_gen_mix }   =   require(  path.join(JS_TYP7  , 'struc/s08_struc_gen_mix.es7'   )))
 
 class struc_gen_anchor extends struc_gen_mix {
   constructor()

@@ -28,11 +28,11 @@
 //- d-no_cache_launcher_code-  : Ejecuta el codigo para sites sin cache
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+const path = require('path');
 
-const   { angular_model }   =   require(  cons.JS_ACO7  + 'model/ang/model.es7'     ),
-        { fast_uri }        =   require(  cons.JS_ACO7  + 'uri/n02/u10_fast_uri.es7'     ),
-        { site_mcomm }      =   require(  cons.JS_TYF7  + 'a01_load/mcomm/m02_site_comm.es7');
+const   { angular_model }   =   require(  path.join(JS_ACO7  , 'model/ang/model.es7'     ))) ,
+        { fast_uri }        =   require(  path.join(JS_ACO7  , 'uri/n02/u10_fast_uri.es7'     ))) ,
+        { site_mcomm }      =   require(  path.join(JS_TYF7  , 'a01_load/mcomm/m02_site_comm.es7' )));
 
 class angular_cache extends angular_model
 {

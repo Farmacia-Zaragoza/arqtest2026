@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-var { anode_get_current_properties } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an0/an03_get_current_properties.es6'		)
+var { anode_get_current_properties } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an03_get_current_properties.es6')))
 
 class anode_run_from_drupal extends anode_get_current_properties {
 

@@ -19,10 +19,10 @@
 // - build_data     : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const { html_style } 	= 	require(	cons.JS_TYP7 + 'html/style/html_style.es7'			  ),
-      { ifnojs }      =   require(  cons.JS_TYP7 + 'html/style/ifnojs.es7'            );
+const { html_style } 	= 	require(	path.join(JS_TYP7 , 'html/style/html_style.es7'			))),
+      { ifnojs }      =   require(  path.join(JS_TYP7 , 'html/style/ifnojs.es7'         )));
 
 class common_head extends html_style  {
 

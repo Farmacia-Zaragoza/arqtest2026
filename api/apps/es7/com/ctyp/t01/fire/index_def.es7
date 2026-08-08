@@ -6,9 +6,9 @@
 // Node Js ES6 - Server with express - http/2
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { strings_defs }     =   require(  cons.JS_TYP7 + 'string/s02_defs.es7'      );
+const   { strings_defs }     =   require(  path.join(JS_TYP7 , 'string/s02_defs.es7'    )   );
 
 class index_def extends strings_defs
 {

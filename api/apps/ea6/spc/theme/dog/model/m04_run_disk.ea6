@@ -9,9 +9,9 @@
 // Must to be unique
 
 
-const 		{ model_process } 	= 	require(	cons.JS_BASE 	+ 'com/objects/fire/f01_model/m05_process.ea6'		),
-			{ pn01_simple } 	= 	require(	cons.JS_BASE 	+ 'spc/theme/dog/fast_node/pnode/pn01_simple.ea6'	),
-			{ pn02_fast } 		= 	require(	cons.JS_BASE 	+ 'spc/theme/common/fast_node/pnode/pn02_fast.es6'	),
+const 		{ model_process } 	= 	require(	path.join(JS_BASE, 'com/objects/fire/f01_model/m05_process.ea6'))),
+			{ pn01_simple } 	= 	require(	path.join(JS_BASE, 'spc/theme/dog/fast_node/pnode/pn01_simple.ea6'))),
+			{ pn02_fast } 		= 	require(	path.join(JS_BASE, 'spc/theme/common/fast_node/pnode/pn02_fast.es6'))),
 			empty 				= 	require(	'is_empty'										),
 			echo 				= 	require(	'node-echo'										);
 

@@ -22,9 +22,9 @@
 // - d-create_marquee-    : Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { getset } 		= 	require(	cons.JS_TYP7 + 'html/style/getset.es7'	)
+const   { getset } 		= 	require(	path.join(JS_TYP7 , 'html/style/getset.es7' )	)
 
 
 

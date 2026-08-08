@@ -8,9 +8,9 @@
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 		{ index } 			= 	require(	cons.JS_BASE + 'com/objects/fire/f02_index/index.es6'		),
+const 		{ index } 			= 	require(	path.join(JS_BASE, 'com/objects/fire/f02_index/index.es6'))),
 			mongoose 			= 	require(	'mongoose'									),
- 	 		{ idSchema }		= 	require(	cons.JS_BASE + 'com/libs/mongo/schemes/html.sch'									);
+ 	 		{ idSchema }		= 	require(	path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch')));
 			echo 				= 	require(	'node-echo'									);
 
 class model_save extends index

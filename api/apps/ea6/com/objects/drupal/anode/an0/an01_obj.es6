@@ -23,7 +23,7 @@
 
 var 	cons 							= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"						);
 
-const 	{ anode_run_from_drupal } 		= require(	cons.JS_BASE + 'com/objects/drupal/anode/an0/an02_run_from_drupal.es6'		)
+const 	{ anode_run_from_drupal } 		= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an02_run_from_drupal.es6')		)
 
 class anode extends anode_run_from_drupal {
 	constructor() 

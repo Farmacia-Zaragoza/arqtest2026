@@ -14,9 +14,9 @@
 // - d-manage_uri_page_number-         : Generate right page number argument
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { uri_normalize }     =   require(  cons.JS_TYP7 + 'uri/u13_normalize.es7'    );
+const   { uri_normalize }     =   require(  path.join(JS_TYP7 , 'uri/u13_normalize.es7'  )));
 
 class uri_page_string extends uri_normalize {
 

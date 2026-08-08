@@ -23,10 +23,12 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+const path = require('path');
 
-const  { anode_gindex_page_load } =   require(  cons.JS_TYP7  + 'arroba/gindex/b_list/g11_idx_page_load.es7'),
-       { idx_pointers }            =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'               );
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
+
+const  { anode_gindex_page_load } =   require(  path.join(JS_TYP7  , 'arroba/gindex/b_list/g11_idx_page_load.es7' ))),
+       { idx_pointers }            =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'             )));
 
 class anode_gindex_list_process extends anode_gindex_page_load {
   constructor()

@@ -20,12 +20,12 @@
 // - d-load_page_content-            : Check command type based on uri and site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const  { printlog }         =   require(  cons.JS_TYP7  + 'logs/printlog.es7'                  ),
-       { arroba_scomm }     =   require(  cons.JS_TYF7  + 'a01_load/scomm/s01_arroba_comm.es7' ),
-       { arroba_sprod }     =   require(  cons.JS_TYF7  + 'a01_load/sprod/p01_arroba_prod.es7' ),
-       { arroba_hiera }     =   require(  cons.JS_TYF7  + 'a01_load/hiera/h01_arroba_hiera.es7');
+const  { printlog }         =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'                  ))),
+       { arroba_scomm }     =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7' ))),
+       { arroba_sprod }     =   require(  path.join(JS_TYF7  , 'a01_load/sprod/p01_arroba_prod.es7' ))),
+       { arroba_hiera }     =   require(  path.join(JS_TYF7  , 'a01_load/hiera/h01_arroba_hiera.es7' )));
 
 class tdata_comm extends printlog
 {

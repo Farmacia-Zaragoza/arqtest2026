@@ -19,9 +19,9 @@
 // - d-generate_common_product-       : Generate Product for No anchor content
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const   { jn01_commo_json_simple }   =   require(  cons.JS_TYP7  + 'json/jnode/j01/objects/jn01_simple.es7' )
+const   { jn01_commo_json_simple }   =   require(  path.join(JS_TYP7  , 'json/jnode/j01/objects/jn01_simple.es7' )))
 
 class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
 

@@ -25,11 +25,11 @@
 // - create_body  	 : Generate body
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-const  { common_html } 	= 	require(	cons.JS_ACO7 + 'html/h01/main/comm/common_html.es7'			),
-	   { head_angular }	= 	require(	cons.JS_ACO7 + 'html/h01/main/ang/head_angular.es7'	),
-	   { body_angular }	= 	require(	cons.JS_ACO7 + 'html/h01/main/ang/body_angular.es7'	);
+const  { common_html } 	= 	require(	path.join(JS_ACO7 , 'html/h01/main/comm/common_html.es7'	))),
+	   { head_angular }	= 	require(	path.join(JS_ACO7 , 'html/h01/main/ang/head_angular.es7'	 ))),
+	   { body_angular }	= 	require(	path.join(JS_ACO7 , 'html/h01/main/ang/body_angular.es7'	 )));
 
 
 class htm_angular extends common_html  {

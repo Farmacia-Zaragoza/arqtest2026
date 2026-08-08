@@ -14,7 +14,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/es6/com/libs/general/constants.ess"				);
 
-const 	{ site_defs } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/site/s02_site_defs.es6'		);
+const 	{ site_defs } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/site/s02_site_defs.es6'));
 
 class site extends site_defs {
 	constructor(c = "", 

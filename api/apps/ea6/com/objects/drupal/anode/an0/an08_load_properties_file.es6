@@ -15,7 +15,7 @@
 
 var 	cons 				= 	require("/brqx/base/rcode/ea6/com/libs/general/constants.ess"								);
 
-const 	{ anode_taxonomy } 	= require(	cons.JS_BASE + 'com/objects/drupal/anode/an0/an09_taxonomy.es6'						),
+const 	{ anode_taxonomy } 	= require(	path.join(JS_BASE, 'com/objects/drupal/anode/an0/an09_taxonomy.es6')						),
 		fs 					= require(	'fs'																				);
 
 // enfoque de promesas aplazado

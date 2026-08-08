@@ -25,11 +25,11 @@
 
 // Must to be unique
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   { garldru_no_cache } =   require( cons.JS_AQD7  + 'garldru/model/garldru_nocache_launcher.es7'),
-        { garldru_cache }    =   require( cons.JS_AQD7  + 'garldru/model/garldru_cache_launcher.es7'  ),
-        { printlog }         =   require( cons.JS_TYP7  + 'logs/printlog.es7'                         );
+const   { garldru_no_cache } =   require( path.join(JS_AQD7  , 'garldru/model/garldru_nocache_launcher.es7')),
+        { garldru_cache }    =   require( path.join(JS_AQD7  , 'garldru/model/garldru_cache_launcher.es7'  )),
+        { printlog }         =   require( path.join(JS_TYP7  , 'logs/printlog.es7'                         ));
 
 class garldru extends printlog
 {

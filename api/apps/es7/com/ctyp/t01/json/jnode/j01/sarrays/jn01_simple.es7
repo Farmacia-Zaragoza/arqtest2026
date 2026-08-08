@@ -12,13 +12,13 @@
 // - d-save_json_simple_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                        =   require(  'fs'                                                   ),
        empty                     =   require(  'is-empty'                             ),
        accents                   =   require(  'remove-accents'                       ),
-       { idx_pointers }          =   require(  cons.JS_TYP7  + 'logs/idx_pointers.es7'                ),
-       { jn02_comma_json_doble } =   require(  cons.JS_TYP7  + 'json/jnode/j01/arrays/jn02_doble.es7' );
+       { idx_pointers }          =   require(  path.join(JS_TYP7, 'logs/idx_pointers.es7')                ),
+       { jn02_comma_json_doble } =   require(  path.join(JS_TYP7, 'json/jnode/j01/arrays/jn02_doble.es7'));
 
 // Pendiente de cambiar
 class jn01_comma_json_simple extends jn02_comma_json_doble {

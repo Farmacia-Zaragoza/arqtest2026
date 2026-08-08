@@ -21,9 +21,9 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ html_style } 				= require(	cons.JS_BASE + 'com/objects/html/html_style.es6'										),
-		{ mai02_div_mail_icon }		= require( 	cons.JS_BASE + 'spc/theme/truck/deep_html/types/email/mai02_div_mail_icon.es6'		),
-		{ mai02_div_mail_address }	= require( 	cons.JS_BASE + 'spc/theme/truck/deep_html/types/email/mai02_div_mail_address.es6'		);
+const 	{ html_style } 				= require(	path.join(JS_BASE, 'com/objects/html/html_style.es6'))),
+		{ mai02_div_mail_icon }		= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai02_div_mail_icon.es6'))),
+		{ mai02_div_mail_address }	= require( 	path.join(JS_BASE, 'spc/theme/truck/deep_html/types/email/mai02_div_mail_address.es6')));
 
 class mob02_div_email extends html_style {
 

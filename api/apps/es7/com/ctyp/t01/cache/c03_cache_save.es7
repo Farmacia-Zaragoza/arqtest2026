@@ -14,12 +14,12 @@
 //- d-main_full_content_cache_save-    : Save cache content
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
 const	fs 				= 	require(  'fs'												),
-	    shtf  			= 	require(  cons.JS_LIB7  + 'file/save_hash_to_file.es7' 	),
-	    satf  			= 	require(  cons.JS_LIB7  + 'file/save_array_to_file.es7' 	),
-        { cache_del }   =   require(  cons.JS_TYP7  + 'cache/c04_cache_del.es7'         );
+	    shtf  			= 	require(  path.join(JS_LIB7  , 'file/save_hash_to_file.es7' ))),
+	    satf  			= 	require(  path.join(JS_LIB7  , 'file/save_array_to_file.es7' 	))),
+        { cache_del }   =   require(  path.join(JS_TYP7  , 'cache/c04_cache_del.es7'       )));
 
 class cache_save extends cache_del {
   constructor()

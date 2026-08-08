@@ -11,9 +11,9 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-const 	{ params_def } 		= 	require(	cons.JS_BASE + 'com/objects/drupal/params/p02_params_def.es6'	),
+const 	{ params_def } 		= 	require(	path.join(JS_BASE, 'com/objects/drupal/params/p02_params_def.es6'))),
 		mongoose 			= 	require(	'mongoose'									),
- 		{ idSchema }		= 	require(	cons.JS_BASE 	+ 	'com/libs/mongo/schemes/html.sch'			);
+ 		{ idSchema }		= 	require(	path.join(JS_BASE, 'com/libs/mongo/schemes/html.sch')));
 
 class params extends params_def {
 	constructor(	req 			= 	''								, 	// 01. Request

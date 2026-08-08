@@ -16,9 +16,9 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
-//const { printlog }   =   require(  cons.JS_TYP7  + 'logs/printlog.es7'        ),
+//const { printlog }   =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'      ))),
 
 class r02_main  {
   constructor() {

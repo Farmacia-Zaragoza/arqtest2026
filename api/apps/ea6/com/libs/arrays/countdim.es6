@@ -21,7 +21,7 @@
 //Recibe un array e intelientenement lo ordena eliminando duplicados
 //Ojo que es funcion 52 - 56
 
-const { JS_TYP7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			)))
 
 
 const 	echo 		= 	require(	'node-echo'										);
