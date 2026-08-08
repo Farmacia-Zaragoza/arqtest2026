@@ -18,7 +18,7 @@
     "express-useragent": "^1.0.15",
     "is-empty": "^1.2.0",
    "node-echo": "^0.1.0",
-   "trim": "^1.1.1"   ,
+   "trim": "^0.0.1"   ,
     "iconv-lite": "^0.6.3",
 	"urldecode": "^1.0.1",
 	"readdirp": "^3.6.0",
