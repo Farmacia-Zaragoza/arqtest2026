@@ -31,7 +31,7 @@
 const path = require('path');
 
 // 1. Obtener la raíz del proyecto
-const ROOT = global.ROOT || process.cwd();
+const ROOT = process.cwd();
 
 const JS_ACO7 = path.join(ROOT, 'api/apps/es7/spc/acomm/');
 const JS_TYP7 = path.join(ROOT, 'api/apps/es7/com/ctyp/t01/');
