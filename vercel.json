@@ -1,10 +1,7 @@
 {
   "functions": {
     "api/**/*.*": {
-      "includeFiles": [
-        "api/apps/**",
-        "node_modules/is-empty/**"
-      ]
+      "includeFiles": "{api/apps/**,node_modules/is-empty/**}"
     }
   },
   "routes": [
