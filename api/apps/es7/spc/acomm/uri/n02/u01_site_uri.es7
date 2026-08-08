@@ -1,15 +1,5 @@
 const path = require('path');
 
-// 1. Obtener la raíz del proyecto
-const ROOT = global.ROOT || process.cwd();
-
-// 2. Definir tanto en define() global como en constante local
-define('JS_ACO7', path.join(ROOT, 'api/apps/es7/spc/acomm/'));
-define("JS_TYP7", path.join(ROOT, 'api/apps/es7/com/ctyp/t01/'));
-
-const JS_ACO7 = path.join(ROOT, 'api/apps/es7/spc/acomm/');
-const JS_TYP7 = path.join(ROOT, 'api/apps/es7/com/ctyp/t01/');
-
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Site Uri Class  [V.0.0.2]  (2019-05-13)
@@ -36,4 +26,4 @@ class site_uri extends site_uri_manage_commands
 
 } // end Class
 
-exports.site_uri = site_uri
+exports.site_uri = site_uri;
