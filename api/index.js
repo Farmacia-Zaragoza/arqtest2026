@@ -45,27 +45,34 @@ const APP_PATHS = {
   JS_TYF7:  path.join(ROOT, 'api/apps/es7/com/ctyp/t02/')
 };
 
-// Asignar al ámbito global explícito de Node.js
+// Registrar de forma indestructible en global
 Object.keys(APP_PATHS).forEach(key => {
   global[key] = APP_PATHS[key];
+  try {
+    Object.defineProperty(global, key, {
+      value: APP_PATHS[key],
+      writable: true,
+      enumerable: true,
+      configurable: true
+    });
+  } catch(e) {}
 });
 
 global.define = function(name, value) {
   global[name] = value;
 };
 
-// 4. INTERCEPTOR FLEXIBLE UNIVERSAL:
-// Busca cualquier ocurrencia de las constantes dentro de llamadas a path.join
-// sin importar espacios, pestañas o formatos.
-const pathKeysPattern = Object.keys(APP_PATHS).join('|');
-const replaceRegex = new RegExp(`path\\.join\\(\\s*(${pathKeysPattern})\\b`, 'g');
-
+// 4. INTERCEPTOR DIRECTO DE RUTAS:
+// Sustituye el identificador por la cadena de texto de la ruta absoluta directamente
+// Esto evita que CoffeeScript o Node intenten buscar la variable en el scope local.
 const originalCompile = Module.prototype._compile;
 Module.prototype._compile = function(content, filename) {
   if (filename.endsWith('.es7') || filename.endsWith('.js')) {
-    // Convierte path.join( JS_ACO7  en path.join( global.JS_ACO7
-    content = content.replace(replaceRegex, (match, p1) => {
-      return `path.join(global.${p1}`;
+    Object.keys(APP_PATHS).forEach(key => {
+      // Reemplaza la variable por su string literal directamente
+      // Ej: path.join(JS_ACO7, ...) -> path.join("/var/task/api/apps/es7/spc/acomm/", ...)
+      const regex = new RegExp(`\\b${key}\\b`, 'g');
+      content = content.replace(regex, `'${APP_PATHS[key].replace(/\\/g, '/')}'`);
     });
   }
   return originalCompile.call(this, content, filename);
