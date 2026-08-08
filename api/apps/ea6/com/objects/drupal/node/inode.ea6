@@ -67,7 +67,7 @@ class inode extends anode {
 				break
 
 			case 3:
-				this.image_name_with_resolution = path.dirname(path.dirname(path.dirname(this.only_image_with_resolution.replace(".", "/")))
+				this.image_name_with_resolution = path.dirname(path.dirname(path.dirname(this.only_image_with_resolution.replace(".", "/"))
 				break
 		}
 

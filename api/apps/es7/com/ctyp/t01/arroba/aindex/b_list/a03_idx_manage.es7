@@ -12,7 +12,7 @@
 // - d-manage_sheet-          : Prepare file name and process array
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd()); 'api/apps/paths.js'));
+const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd(), 'api/apps/paths.js'));
 
 const  satf  			 = 	require(  path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7'));
        const { idx_pointers }  =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'));

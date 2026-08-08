@@ -67,7 +67,7 @@ GLOBALS.SITE_URL_OBJECT = u
 
 if (cache and
 	(b.page_download or
-		(c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC")))) //a. Level 01 - Load only generated files
+		(c.ram == "noreload" and !(-1 !== c.arr.ram.indexOf("FPC"))) //a. Level 01 - Load only generated files
 	//$u->p('Before p02')
 	//$u->p('RamGen B ' . true  . '==' . $pnode->status)
 	{

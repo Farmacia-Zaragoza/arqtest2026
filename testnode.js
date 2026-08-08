@@ -14,25 +14,38 @@ function recorrer(dir) {
       const stat = fs.statSync(ruta);
       if (stat.isDirectory() && el !== 'node_modules' && !el.startsWith('.')) {
         recorrer(ruta);
-      } else if (stat.isFile() && EXTENSIONES.includes(path.extname(el))) {
+      } else if (stat.isFile() && EXTENSIONES.includes(path.extname(el)) {
         let contenido = fs.readFileSync(ruta, 'utf8');
+        let cambiado = false;
 
-        // Reemplaza comas finales en llamadas require(path.join(...)), por punto y coma
-        const nuevo = contenido.replace(
-          /(require\s*\(\s*path\.join\([^)]+\)\s*),/g,
-          '$1);'
-        );
+        // 1. Corrige el punto y coma dentro de path.join(process.cwd(),
+        if (contenido.includes('path.join(process.cwd(),')) {
+          contenido = contenido.replaceAll('path.join(process.cwd(),', 'path.join(process.cwd(),');
+          cambiado = true;
+        }
 
-        if (contenido !== nuevo) {
-          fs.writeFileSync(ruta, nuevo, 'utf8');
+        // 2. Corrige variantes con espacios en path.join( process.cwd() );
+        if (contenido.includes('path.join(process.cwd(),')) {
+          contenido = contenido.replaceAll('path.join(process.cwd(),', 'path.join(process.cwd(),');
+          cambiado = true;
+        }
+
+        // 3. Corrige paréntesis triples al final )) por ))
+        if (contenido.includes('))')) {
+          contenido = contenido.replaceAll('))', '))');
+          cambiado = true;
+        }
+
+        if (cambiado) {
+          fs.writeFileSync(ruta, contenido, 'utf8');
           arreglados++;
-          console.log(`✅ Cambiada coma final por punto y coma en: ${path.basename(ruta)}`);
+          console.log(`✅ Arreglado en disco: ${path.basename(ruta)}`);
         }
       }
     } catch (e) {}
   });
 }
 
-console.log('⚡ Corregiendo cierres con comas...');
+console.log('⚡ Aplicando corrección directa...');
 recorrer(__dirname);
-console.log(`\n🎉 Completado. Se modificaron ${arreglados} archivos.`);
+console.log(`\n🎉 Total de archivos reparados: ${arreglados}`);
