@@ -18,7 +18,6 @@
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   fs           =   require(  'fs'                                    );
     const path = require(  'path'                                    );
@@ -29,6 +28,9 @@ const   fs           =   require(  'fs'                                    );
     const trim = require(  'trim'                            );
     const mkdirp = require(  'mkdirp'                          );
     const { printlog } = require(path.join(JS_TYP7, 'logs/printlog.es7'))
+
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+
 
 // Ck [19-06-03]
 // Save Hash_to_file --> Guardamos el contenido del hash de 1dim en el fichero
@@ -136,4 +138,3 @@ function save_hash_to_file(full_file_name_int = ''   ,
 }
 
 module.exports.save_hash_to_file           = save_hash_to_file
-
