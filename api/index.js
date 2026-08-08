@@ -45,7 +45,7 @@ const APP_PATHS = {
   JS_TYF7:  path.join(ROOT, 'api/apps/es7/com/ctyp/t02/')
 };
 
-// Registrar en el objeto global
+// Asignar al ámbito global explícito de Node.js
 Object.keys(APP_PATHS).forEach(key => {
   global[key] = APP_PATHS[key];
 });
@@ -54,19 +54,20 @@ global.define = function(name, value) {
   global[name] = value;
 };
 
-// 4. INTERCEPTOR INTELIGENTE:
-// Asigna a variables globales dinámicamente sin redeclarar identificadores locales
-const headerInjection = Object.keys(APP_PATHS)
-  .map(k => `if (typeof ${k} === 'undefined') { var ${k} = global.${k}; }`)
-  .join('\n') + '\n';
+// 4. INTERCEPTOR LIMPIO DE ERRORES SINTÁCTICOS:
+// Reemplaza las variables libres en invocaciones path.join(...) por referencias explícitas a global.
+const keysRegex = new RegExp(`\\b(${Object.keys(APP_PATHS).join('|')})\\b`, 'g');
 
 const originalCompile = Module.prototype._compile;
 Module.prototype._compile = function(content, filename) {
   if (filename.endsWith('.es7') || filename.endsWith('.js')) {
-    // Evitamos re-inyectar si ya fue modificado
-    if (!content.includes('global.JS_ACO7')) {
-      content = headerInjection + content;
-    }
+    // Si la llamada usa la variable sola en path.join(JS_XYZ, ...), le anteponemos "global."
+    content = content.replace(/path\.join\(\s*([A-Z0-9_]+)\b/g, (match, p1) => {
+      if (APP_PATHS[p1]) {
+        return `path.join(global.${p1}`;
+      }
+      return match;
+    });
   }
   return originalCompile.call(this, content, filename);
 };
