@@ -1,3 +1,5 @@
+const path = require('path');
+
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 // Agile Node Js - Farma AQR - AGILE ( BRQX NG Arquitectura 2019 )
 // Farmacia Zaragoza - Zaragofarma - Estaestufarmacia
