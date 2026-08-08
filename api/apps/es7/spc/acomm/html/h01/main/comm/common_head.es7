@@ -125,3 +125,4 @@ class common_head extends html_style  {
 }
 
 exports.common_head = common_head
+

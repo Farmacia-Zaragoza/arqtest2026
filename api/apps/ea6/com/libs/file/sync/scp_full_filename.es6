@@ -74,3 +74,4 @@ cmd.= user + '@' + server + ':' + abs_target + ' ' + abs_source  + ' 2>&1'
 ret = exec(cmd , &arr_output, &return) 				
 
 }
+

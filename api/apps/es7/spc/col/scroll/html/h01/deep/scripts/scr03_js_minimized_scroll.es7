@@ -145,3 +145,4 @@ class scr03_js_minimized_scroll extends getset  {
 }
 
 exports.scr03_js_minimized_scroll = scr03_js_minimized_scroll
+

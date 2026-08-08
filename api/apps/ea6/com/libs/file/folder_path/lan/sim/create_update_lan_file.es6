@@ -36,3 +36,4 @@ function create_update_lan_file(folder_path= '', file_name='fichero' , DATA='dat
 }
 
 
+

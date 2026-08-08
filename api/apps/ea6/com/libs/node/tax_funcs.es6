@@ -139,3 +139,4 @@ function cck_update_taxonomy(nid, field_name, term_name) //echo "<pre>";
     node_save(node);
     drupal_set_message("Node updated successfully", "status");
 };
+

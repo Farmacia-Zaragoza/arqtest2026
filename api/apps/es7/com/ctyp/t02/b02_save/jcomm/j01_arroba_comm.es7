@@ -56,3 +56,4 @@ class arroba_jcomm extends jcomm_struc {
 }
 
 exports.arroba_jcomm = arroba_jcomm
+

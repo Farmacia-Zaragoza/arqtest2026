@@ -55,3 +55,4 @@ class vitolas extends common_model
 } // end Class
 
 exports.vitolas = vitolas
+

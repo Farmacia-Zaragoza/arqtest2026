@@ -121,3 +121,4 @@ class hdr02_div_header_truck extends html_style{
 }
 
 exports.hdr02_div_header_truck = hdr02_div_header_truck
+

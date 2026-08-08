@@ -56,3 +56,4 @@ class jcomm_struc extends scomm_defs {
 }
 
 exports.jcomm_struc = jcomm_struc
+

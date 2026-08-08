@@ -88,3 +88,4 @@ class cpt04_div_captcha extends html_style {
 }
 
 exports.cpt04_div_captcha = cpt04_div_captcha
+

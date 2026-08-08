@@ -77,3 +77,4 @@ class jnode_type extends jnode_type_comm {
 }
 
 exports.jnode_type = jnode_type
+

@@ -82,3 +82,4 @@ class issues_cache extends site_model
 } // end Class
 
 exports.issues_cache = issues_cache
+

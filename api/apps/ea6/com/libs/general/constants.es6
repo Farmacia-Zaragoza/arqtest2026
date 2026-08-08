@@ -28,3 +28,4 @@ function define(name, value) {
 
 //Constantes GLOBALES
 define("JS_MODEL", 	'es6'										)						;
+

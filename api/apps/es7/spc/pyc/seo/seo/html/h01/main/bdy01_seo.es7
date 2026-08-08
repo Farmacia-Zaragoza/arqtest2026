@@ -198,3 +198,4 @@ class bdy01_body_seo extends html_style  {
 }
 
 exports.bdy01_body_seo = bdy01_body_seo
+

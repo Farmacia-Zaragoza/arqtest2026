@@ -100,3 +100,4 @@ class in02_simple extends inode {
 }
 
 exports.in02_simple = in02_simple
+

@@ -85,3 +85,4 @@ class a01_mobile_langs_dog extends svg_style {
 }
 
 exports.a01_mobile_langs_dog = a01_mobile_langs_dog
+

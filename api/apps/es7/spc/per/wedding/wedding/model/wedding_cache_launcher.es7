@@ -78,3 +78,4 @@ class wedding_cache extends site_model
 } // end Class
 
 exports.wedding_cache = wedding_cache
+

@@ -44,3 +44,4 @@ class blkjson_object extends blkjson {
 }
 
 exports.blkjson_object = blkjson_object
+

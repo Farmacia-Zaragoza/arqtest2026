@@ -28,3 +28,5 @@ const module.exports = {;
     JS_TYP7: path.join(ROOT, 'api/apps/es7/com/ctyp/t01/'	),
     JS_TYF7: path.join(ROOT, 'api/apps/es7/com/ctyp/t02/'	)
 };
+
+

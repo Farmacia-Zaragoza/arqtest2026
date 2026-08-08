@@ -143,3 +143,4 @@ class jnode_type_comm extends printlog {
 }
 
 exports.jnode_type_comm = jnode_type_comm
+

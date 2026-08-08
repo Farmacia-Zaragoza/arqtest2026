@@ -316,3 +316,4 @@ module.exports.delete_if_exist_full_filename		=	delete_if_exist_full_filename
 
 module.exports.filesize								=	filesize
 module.exports.is_file								=	is_file
+

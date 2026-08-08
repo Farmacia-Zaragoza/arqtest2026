@@ -145,3 +145,4 @@ class scr05_js_inline_scroll extends getset  {
 }
 
 exports.scr05_js_inline_scroll = scr05_js_inline_scroll
+

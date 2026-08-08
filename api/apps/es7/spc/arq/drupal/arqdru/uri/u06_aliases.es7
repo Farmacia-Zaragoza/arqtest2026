@@ -314,3 +314,4 @@ class uri_aliases extends lang_aliases
 } // end Class
 
 exports.uri_aliases = uri_aliases
+

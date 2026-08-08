@@ -68,3 +68,4 @@ class garlwed_no_cache extends site_model
 } // end Class
 
 exports.garlwed_no_cache = garlwed_no_cache
+

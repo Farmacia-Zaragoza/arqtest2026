@@ -52,3 +52,4 @@ class jn03_product_wedding_json extends jn02_process_site {
 }
 
 exports.jn03_product_wedding_json = jn03_product_wedding_json
+

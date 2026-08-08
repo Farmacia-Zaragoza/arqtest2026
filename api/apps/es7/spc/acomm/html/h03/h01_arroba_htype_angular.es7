@@ -56,3 +56,4 @@ class arroba_htype_angular extends hcomm_struc {
 }
 
 exports.arroba_htype_angular = arroba_htype_angular
+

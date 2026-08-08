@@ -190,3 +190,4 @@ class uri_sorts_uri extends uri_sorts_kb {
 }
 
 exports.uri_sorts_uri = uri_sorts_uri
+

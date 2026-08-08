@@ -145,3 +145,4 @@ class scr06_js_async_wedding extends getset  {
 }
 
 exports.scr06_js_async_wedding = scr06_js_async_wedding
+

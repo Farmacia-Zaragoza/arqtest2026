@@ -162,3 +162,4 @@ class scr06_js_async_scroll extends getset  {
 }
 
 exports.scr06_js_async_scroll = scr06_js_async_scroll
+

@@ -64,3 +64,4 @@ class arqsoc_no_cache extends site_model
 } // end Class
 
 exports.arqsoc_no_cache = arqsoc_no_cache
+

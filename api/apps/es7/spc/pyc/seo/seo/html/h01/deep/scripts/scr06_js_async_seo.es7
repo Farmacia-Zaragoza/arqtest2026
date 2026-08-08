@@ -145,3 +145,4 @@ class scr06_js_async_seo extends getset  {
 }
 
 exports.scr06_js_async_seo = scr06_js_async_seo
+

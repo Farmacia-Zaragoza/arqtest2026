@@ -65,3 +65,4 @@ class pla02_div_peloncita_footer extends html_style {
    }
 
 }
+

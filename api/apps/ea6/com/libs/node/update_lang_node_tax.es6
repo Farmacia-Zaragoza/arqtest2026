@@ -37,3 +37,4 @@ function brqx_update_lang_node_with_tax(sNodo, lang = "en") //$sNodo='451';
 			cck_update_taxonomy(sNodo, field_name, field_value);
 		}
 };
+

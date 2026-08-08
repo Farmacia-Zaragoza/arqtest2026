@@ -140,3 +140,4 @@ class jni01_json_recursive extends jni02_json_recursive_call {
 }
 
 exports.jni01_json_recursive = jni01_json_recursive
+

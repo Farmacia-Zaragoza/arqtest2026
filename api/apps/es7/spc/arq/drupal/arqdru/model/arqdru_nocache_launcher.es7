@@ -81,3 +81,4 @@ class arqdru_no_cache extends site_model
 } // end Class
 
 exports.arqdru_no_cache = arqdru_no_cache
+

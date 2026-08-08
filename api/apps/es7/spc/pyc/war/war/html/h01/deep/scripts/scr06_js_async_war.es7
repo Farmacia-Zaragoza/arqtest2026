@@ -145,3 +145,4 @@ class scr06_js_async_war extends getset  {
 }
 
 exports.scr06_js_async_war = scr06_js_async_war
+

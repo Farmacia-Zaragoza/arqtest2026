@@ -94,3 +94,4 @@ class rs01_object_search_main extends rs02_object_search_inner {
 }
 
 exports.rs01_object_search_main = rs01_object_search_main
+

@@ -203,3 +203,4 @@ class lnk02_css_as_link_truck extends getset  {
 } // End class
 
 exports.lnk02_css_as_link_truck = lnk02_css_as_link_truck
+

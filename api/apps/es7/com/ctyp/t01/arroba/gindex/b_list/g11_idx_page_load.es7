@@ -111,3 +111,4 @@ class anode_gindex_page_load extends anode_gindex_page_process {
 }
 
 exports.anode_gindex_page_load = anode_gindex_page_load
+

@@ -155,3 +155,4 @@ class rs02_object_search_inner extends rs03_object_page_inner {
 }
 
 exports.rs02_object_search_inner = rs02_object_search_inner
+

@@ -120,3 +120,4 @@ class struc_gen_mix extends struc_attrib {
 }
 
 exports.struc_gen_mix = struc_gen_mix
+

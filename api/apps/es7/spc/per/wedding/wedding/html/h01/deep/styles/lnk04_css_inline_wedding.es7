@@ -156,3 +156,4 @@ class lnk04_css_inline_wedding extends html_style  {
 }
 
 exports.lnk04_css_inline_wedding = lnk04_css_inline_wedding
+

@@ -205,3 +205,4 @@ class uri_sorts extends uri_page_string {
 }
 
 exports.uri_sorts = uri_sorts
+

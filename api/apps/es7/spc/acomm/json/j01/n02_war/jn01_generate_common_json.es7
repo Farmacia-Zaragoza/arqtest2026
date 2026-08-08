@@ -76,3 +76,4 @@ class jn01_common_json extends jn02_process_site {
 }
 
 exports.jn01_common_json = jn01_common_json
+

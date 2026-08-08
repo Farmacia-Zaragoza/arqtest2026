@@ -90,3 +90,4 @@ class jn01_object_list_main extends jn02_array_list_inner {
 }
 
 exports.jn01_object_list_main = jn01_object_list_main
+

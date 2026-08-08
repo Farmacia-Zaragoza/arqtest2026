@@ -170,3 +170,4 @@ class jni02_json_recursive_call extends jn10_index_pf {
 }
 
 exports.jni02_json_recursive_call = jni02_json_recursive_call
+

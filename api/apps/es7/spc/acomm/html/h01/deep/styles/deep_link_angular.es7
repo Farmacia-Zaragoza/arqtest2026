@@ -62,3 +62,4 @@ class deep_link_angular extends deep_link_base {
 } // End class
 
 exports.deep_link_angular = deep_link_angular
+

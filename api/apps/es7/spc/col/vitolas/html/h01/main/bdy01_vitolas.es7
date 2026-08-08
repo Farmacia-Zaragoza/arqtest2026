@@ -201,3 +201,4 @@ class bdy01_body_vitolas extends html_style  {
 }
 
 exports.bdy01_body_vitolas = bdy01_body_vitolas
+

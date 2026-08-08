@@ -365,3 +365,4 @@ class foto_search extends search {
 
 exports.foto_search 			= foto_search
 
+

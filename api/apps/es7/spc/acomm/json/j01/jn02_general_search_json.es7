@@ -58,3 +58,4 @@ class jn02_general_search_json extends jns01_json_recursive {
 }
 
 exports.jn02_general_search_json = jn02_general_search_json
+

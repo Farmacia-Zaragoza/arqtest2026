@@ -227,3 +227,4 @@ class bdy01_body_truck extends html_style  {
 }
 
 exports.bdy01_body_truck = bdy01_body_truck
+

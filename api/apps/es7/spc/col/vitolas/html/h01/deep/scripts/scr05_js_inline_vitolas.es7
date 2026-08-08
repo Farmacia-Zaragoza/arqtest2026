@@ -145,3 +145,4 @@ class scr05_js_inline_vitolas extends getset  {
 }
 
 exports.scr05_js_inline_vitolas = scr05_js_inline_vitolas
+

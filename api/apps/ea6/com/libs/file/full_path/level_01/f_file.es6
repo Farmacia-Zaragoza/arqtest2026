@@ -249,3 +249,4 @@ module.exports.file_get_contents 	= 	file_get_contents
 // Objetos
 module.exports.array_from_file 		= 	array_from_file
 module.exports.properties_from_file = 	properties_from_file
+

@@ -89,3 +89,4 @@ class js_events extends js_style {
     }
 
 };
+

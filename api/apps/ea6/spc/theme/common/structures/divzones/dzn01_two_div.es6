@@ -40,3 +40,4 @@ class dzn01_two_div extends html_style {
 	}
 
 };
+

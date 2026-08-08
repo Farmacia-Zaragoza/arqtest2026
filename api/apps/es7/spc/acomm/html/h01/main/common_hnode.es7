@@ -73,3 +73,4 @@ class common_hnode extends printlog  {
 }
 
 exports.common_hnode = common_hnode
+

@@ -71,3 +71,4 @@ class blkrobot extends manage_robot {
 }
 
 exports.blkrobot = blkrobot
+

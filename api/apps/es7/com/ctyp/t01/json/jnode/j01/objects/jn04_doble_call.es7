@@ -73,3 +73,4 @@ class jn04_commo_json_doble_call extends jn05_commo_json_recursive_call {
 }
 
 exports.jn04_commo_json_doble_call = jn04_commo_json_doble_call
+

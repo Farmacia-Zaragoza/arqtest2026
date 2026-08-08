@@ -87,3 +87,4 @@ class dom extends getset {
 		}
 
 };
+

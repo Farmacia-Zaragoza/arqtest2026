@@ -47,3 +47,4 @@ class scripts_react extends common_scripts  {
 }
 
 exports.scripts_react = scripts_react
+

@@ -58,3 +58,4 @@ class jnode_type_index extends printlog {
 }
 
 exports.jnode_type_index = jnode_type_index
+

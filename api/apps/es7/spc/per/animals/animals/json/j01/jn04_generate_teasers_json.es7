@@ -46,3 +46,4 @@ class jn04_teasers_json extends jn02_process_site {
 }
 
 exports.jn04_teasers_json = jn04_teasers_json
+

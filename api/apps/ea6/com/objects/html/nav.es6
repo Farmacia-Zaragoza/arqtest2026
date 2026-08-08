@@ -98,3 +98,4 @@ class nav extends html_style {
     }
 
 };
+

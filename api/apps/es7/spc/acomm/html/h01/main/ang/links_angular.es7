@@ -41,3 +41,4 @@ class links_angular extends common_link  {
 }
 
 exports.links_angular = links_angular
+

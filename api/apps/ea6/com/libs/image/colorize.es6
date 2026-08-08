@@ -52,3 +52,4 @@ function colorize_inner(img_src, img_dst, target_col) //Values for orange initia
 	imagealphablending(img_dst, false);
 	imagesavealpha(img_dst, true);
 };
+

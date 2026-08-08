@@ -54,3 +54,4 @@ class angular extends printlog
 } // end Class
 
 exports.angular = angular
+

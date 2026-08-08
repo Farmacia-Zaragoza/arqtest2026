@@ -162,3 +162,4 @@ class scr03_js_minimized_truck extends getset  {
 }
 
 exports.scr03_js_minimized_truck = scr03_js_minimized_truck
+

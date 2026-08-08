@@ -18,3 +18,4 @@ function brqx_save_lang_type(field_list, node_type = "pg", lang = "en") //print 
 		brqx_save_lang_node_without_tax(sNodo, vFields, lang);
 	}
 };
+

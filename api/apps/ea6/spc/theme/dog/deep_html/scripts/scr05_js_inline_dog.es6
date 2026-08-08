@@ -303,3 +303,4 @@ class scr05_js_inline_dog extends getset  {
 }
 
 exports.scr05_js_inline_dog = scr05_js_inline_dog
+

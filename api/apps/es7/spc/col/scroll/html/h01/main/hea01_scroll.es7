@@ -56,3 +56,4 @@ class hea01_head_scroll extends common_head  {
 }
 
 exports.hea01_head_scroll = hea01_head_scroll
+

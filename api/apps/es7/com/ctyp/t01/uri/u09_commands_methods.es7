@@ -165,3 +165,4 @@ class uri_commands_methods extends uri_sorts {
 }
 
 exports.uri_commands_methods = uri_commands_methods
+

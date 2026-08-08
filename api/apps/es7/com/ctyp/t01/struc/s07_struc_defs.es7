@@ -45,3 +45,4 @@ class struc_defs extends arroba_setarr {
 }
 
 exports.struc_defs = struc_defs
+

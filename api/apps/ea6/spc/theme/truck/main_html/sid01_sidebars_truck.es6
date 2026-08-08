@@ -115,3 +115,4 @@ class sid01_sidebars_truck extends html_style  {
 }
 
 exports.sid01_sidebars_truck = sid01_sidebars_truck
+

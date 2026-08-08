@@ -75,3 +75,4 @@ class cinco_cache extends site_model
 } // end Class
 
 exports.cinco_cache = cinco_cache
+

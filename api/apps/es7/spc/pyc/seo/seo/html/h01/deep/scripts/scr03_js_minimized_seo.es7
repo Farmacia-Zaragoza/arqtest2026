@@ -147,3 +147,4 @@ class scr03_js_minimized_seo extends getset  {
 }
 
 exports.scr03_js_minimized_seo = scr03_js_minimized_seo
+

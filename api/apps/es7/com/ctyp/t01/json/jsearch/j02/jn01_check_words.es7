@@ -103,3 +103,4 @@ class jn01_checking_search_words extends cache {
 }
 
 exports.jn01_checking_search_words = jn01_checking_search_words
+

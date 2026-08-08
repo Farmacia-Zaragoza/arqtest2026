@@ -164,3 +164,4 @@ class lnk05_css_inline_truck extends getset  {
 }
 
 exports.lnk05_css_inline_truck = lnk05_css_inline_truck
+

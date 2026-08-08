@@ -138,3 +138,4 @@ class fn12_links_lang extends fnode {
 }
 
 exports.fn12_links_lang = fn12_links_lang
+

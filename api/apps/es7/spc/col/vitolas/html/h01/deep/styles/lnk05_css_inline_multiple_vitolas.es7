@@ -134,3 +134,4 @@ class lnk05_css_inline_vitolas extends getset  {
 }
 
 exports.lnk05_css_inline_vitolas = lnk05_css_inline_vitolas
+

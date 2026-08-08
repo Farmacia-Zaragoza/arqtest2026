@@ -204,3 +204,4 @@ class fn23_site_lang extends fnode {
 }
 
 exports.fn23_site_lang = fn23_site_lang
+

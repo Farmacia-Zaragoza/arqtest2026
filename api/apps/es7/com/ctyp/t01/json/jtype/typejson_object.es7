@@ -105,3 +105,4 @@ class typejson_object extends blkjson_object {
 }
 
 exports.typejson_object = typejson_object
+

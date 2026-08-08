@@ -165,3 +165,4 @@ class scr05_js_inline_seo extends html_style  {
 }
 
 exports.scr05_js_inline_seo = scr05_js_inline_seo
+

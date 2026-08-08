@@ -126,3 +126,4 @@ class lnk03_css_minimized_animals extends getset  {
 }
 
 exports.lnk03_css_minimized_animals = lnk03_css_minimized_animals
+

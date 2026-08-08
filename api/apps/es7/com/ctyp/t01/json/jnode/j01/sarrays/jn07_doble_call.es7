@@ -34,3 +34,4 @@ class jn07_comma_json_doble_call extends jn00_comm_pf {
 }
 
 exports.jn07_comma_json_doble_call = jn07_comma_json_doble_call
+

@@ -40,3 +40,4 @@ class fzn01_two_div extends getset {
 	}
 
 };
+

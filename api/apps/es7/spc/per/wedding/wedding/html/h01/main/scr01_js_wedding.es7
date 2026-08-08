@@ -81,3 +81,4 @@ class scr01_js_wedding extends getset  {
 }
 
 exports.scr01_js_wedding = scr01_js_wedding
+

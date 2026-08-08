@@ -107,3 +107,4 @@ class foo03_div_footer extends html_style{
 }
 
 exports.foo03_div_footer = foo03_div_footer
+

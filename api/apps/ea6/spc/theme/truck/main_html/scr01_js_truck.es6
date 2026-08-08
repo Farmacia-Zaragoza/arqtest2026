@@ -249,3 +249,4 @@ class scr01_js_truck extends getset  {
 }
 
 exports.scr01_js_truck = scr01_js_truck
+

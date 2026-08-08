@@ -124,3 +124,4 @@ class lnk01_link_truck extends getset  {
 }
 
 exports.lnk01_link_truck = lnk01_link_truck
+

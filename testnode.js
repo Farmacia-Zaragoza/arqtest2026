@@ -46,3 +46,4 @@ function recorrer(dir) {
 
 console.log('🔍 Buscando detalle de los primeros errores pendientes...');
 recorrer(__dirname);
+

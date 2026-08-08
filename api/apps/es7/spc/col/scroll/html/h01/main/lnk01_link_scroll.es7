@@ -42,3 +42,4 @@ class lnk01_link_scroll extends common_link  {
 }
 
 exports.lnk01_link_scroll = lnk01_link_scroll
+

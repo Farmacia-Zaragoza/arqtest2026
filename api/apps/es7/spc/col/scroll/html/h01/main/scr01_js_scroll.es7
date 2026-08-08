@@ -88,3 +88,4 @@ class scr01_js_scroll extends getset  {
 }
 
 exports.scr01_js_scroll = scr01_js_scroll
+

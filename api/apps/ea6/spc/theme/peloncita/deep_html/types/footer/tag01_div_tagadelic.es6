@@ -64,3 +64,4 @@ class tag01_div_peloncita_footer extends html_style  {
 }
 
 exports.tag01_div_peloncita_footer = tag01_div_peloncita_footer
+

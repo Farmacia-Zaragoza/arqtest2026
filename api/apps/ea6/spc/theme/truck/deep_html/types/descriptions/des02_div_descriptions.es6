@@ -61,3 +61,4 @@ class des02_div_descriptions extends html_style {
 }
 
 exports.des02_div_descriptions = des02_div_descriptions
+

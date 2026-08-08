@@ -103,3 +103,4 @@ class hnode_type_react extends printlog {
 }
 
 exports.hnode_type_react = hnode_type_react
+

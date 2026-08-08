@@ -67,3 +67,4 @@ function process_colon_file(full_file_name_col, sep_int = ":") //Sabemos que son
 
     rename(full_file_name_new, full_file_name_col);
 };
+

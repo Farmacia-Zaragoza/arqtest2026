@@ -64,3 +64,4 @@ class htm01_html_social extends common_html  {
 }
 
 exports.htm01_html_social = htm01_html_social
+

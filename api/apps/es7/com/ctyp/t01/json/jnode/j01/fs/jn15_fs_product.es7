@@ -106,3 +106,4 @@ class jn15_array_fs_product extends jn16_fs_json_list_base {
 }
 
 exports.jn15_array_fs_product = jn15_array_fs_product
+

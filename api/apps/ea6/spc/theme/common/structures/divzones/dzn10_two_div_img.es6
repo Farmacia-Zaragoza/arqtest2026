@@ -41,3 +41,4 @@ class dzn10_two_div_img extends getset {
 	}
 
 };
+

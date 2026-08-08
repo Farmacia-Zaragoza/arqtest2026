@@ -28,3 +28,4 @@ function brqx_save_lang_node_without_tax(sNodo, vFields, lang = "en") //$sNodo='
 			brqx_save_lang_node(sNodo, lang);
 		}
 };
+

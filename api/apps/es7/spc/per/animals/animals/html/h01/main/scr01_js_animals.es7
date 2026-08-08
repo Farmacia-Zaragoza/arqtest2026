@@ -81,3 +81,4 @@ class scr01_js_animals extends getset  {
 }
 
 exports.scr01_js_animals = scr01_js_animals
+

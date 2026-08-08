@@ -79,3 +79,4 @@ class jn02_policy_json extends jn02_process_site {
 }
 
 exports.jn02_policy_json = jn02_policy_json
+

@@ -16,3 +16,4 @@ function remove_chars_from_word(str_to_edit_remove = "", str_to_add = "", str_to
 		str_to_edit_remove = str_replace(str_to_search, "", str_to_edit_remove)
 		str_to_edit_remove += str_to_add
 }
+

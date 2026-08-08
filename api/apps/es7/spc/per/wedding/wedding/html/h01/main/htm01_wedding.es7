@@ -64,3 +64,4 @@ class htm01_html_wedding extends common_html  {
 }
 
 exports.htm01_html_wedding = htm01_html_wedding
+

@@ -62,3 +62,4 @@ class jn03_general_index_json extends jni01_json_recursive {
 }
 
 exports.jn03_general_index_json = jn03_general_index_json
+

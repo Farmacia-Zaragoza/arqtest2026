@@ -104,3 +104,4 @@ class uri_page_string extends uri_normalize {
 }
 
 exports.uri_page_string = uri_page_string
+

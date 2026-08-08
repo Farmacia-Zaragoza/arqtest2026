@@ -65,3 +65,4 @@ class htm01_html_vitolas extends common_html  {
 }
 
 exports.htm01_html_vitolas = htm01_html_vitolas
+

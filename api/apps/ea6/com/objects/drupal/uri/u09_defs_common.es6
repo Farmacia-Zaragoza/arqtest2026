@@ -106,3 +106,4 @@ class uri_defs_common extends strings {
 }
 
 exports.uri_defs_common = uri_defs_common
+

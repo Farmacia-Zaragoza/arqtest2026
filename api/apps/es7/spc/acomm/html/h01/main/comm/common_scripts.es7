@@ -48,3 +48,4 @@ class common_scripts extends getset  {
 }
 
 exports.common_scripts = common_scripts
+

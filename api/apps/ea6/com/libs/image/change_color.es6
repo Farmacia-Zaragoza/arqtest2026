@@ -68,3 +68,4 @@ function change_color(img_src, img_dst, changeR, changeG, changeB, targetR, targ
 		}
 	}
 };
+

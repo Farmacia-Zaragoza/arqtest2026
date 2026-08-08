@@ -77,3 +77,4 @@ class anode_index_page_process extends cache {
 }
 
 exports.anode_index_page_process = anode_index_page_process
+

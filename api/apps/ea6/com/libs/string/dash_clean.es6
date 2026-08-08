@@ -26,3 +26,4 @@ function linefeed_clean(str_in) //Reemplazamos los saltos de elinea
 	var no_nr = eregi_replace("[\n|\r|\n\r]", "", str_in);
 	return no_nr;
 };
+

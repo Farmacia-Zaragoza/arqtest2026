@@ -11,3 +11,4 @@ function check_type_separator(linea_entrada, separator, num_line_parrafo) //Depe
           } else aliena_sep = ucfirst(aliena_sep);
      linea_entrada = aliena_sep;
 };
+

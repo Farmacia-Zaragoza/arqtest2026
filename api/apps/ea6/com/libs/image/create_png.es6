@@ -36,3 +36,4 @@ function create_png(text = "PhoNe", color = "orange", font = "arial.ttf", font_s
 	if (is_writeable(img_path)) imagepng(img, img_path, 9);
 	imagedestroy(img);
 };
+

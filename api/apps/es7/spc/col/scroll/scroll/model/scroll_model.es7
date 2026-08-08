@@ -56,3 +56,4 @@ class scroll extends common_model
 } // end Class
 
 exports.scroll = scroll
+

@@ -69,3 +69,4 @@ class scomm_defs extends cache {
 }
 
 exports.scomm_defs = scomm_defs
+

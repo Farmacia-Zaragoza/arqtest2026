@@ -206,3 +206,4 @@ class div02_helper_dog extends html_style {
 }
 
 exports.div03_helper_dog = div03_helper_dog
+

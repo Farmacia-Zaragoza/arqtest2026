@@ -140,3 +140,4 @@ class arroba_jtype extends arroba_jtype_comm {
 }
 
 exports.arroba_jtype = arroba_jtype
+

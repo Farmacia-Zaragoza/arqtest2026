@@ -85,3 +85,4 @@ class common_robot extends common_body  {
 }
 
 exports.common_robot = common_robot
+

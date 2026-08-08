@@ -52,3 +52,4 @@ class div10_div_img extends html_style {
 		}
 
 };
+

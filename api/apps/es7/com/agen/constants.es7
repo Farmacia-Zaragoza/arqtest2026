@@ -73,3 +73,4 @@ if (!String.prototype.hasOwnProperty('bCode')) {
     enumerable: false    // No aparecerá en bucles for...in
   });
 }
+

@@ -81,3 +81,4 @@ class scr01_js_cinco extends getset  {
 }
 
 exports.scr01_js_cinco = scr01_js_cinco
+

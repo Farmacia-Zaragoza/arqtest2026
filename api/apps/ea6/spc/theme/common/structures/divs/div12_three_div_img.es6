@@ -34,3 +34,4 @@ class div12_three_div_img extends html_style {
 		}
 
 };
+

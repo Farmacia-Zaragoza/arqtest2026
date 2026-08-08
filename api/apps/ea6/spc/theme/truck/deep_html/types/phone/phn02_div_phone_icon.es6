@@ -65,3 +65,4 @@ class phn02_div_phone_icon extends svg_style {
 }
 
 exports.phn02_div_phone_icon = phn02_div_phone_icon
+

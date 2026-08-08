@@ -55,3 +55,4 @@ class bdy01_body_arqdru extends common_angular  {
 }
 
 exports.bdy01_body_arqdru = bdy01_body_arqdru
+

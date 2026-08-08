@@ -70,3 +70,4 @@ class arroba_scomm extends scomm_struc {
 }
 
 exports.arroba_scomm = arroba_scomm
+

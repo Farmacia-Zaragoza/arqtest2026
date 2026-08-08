@@ -58,3 +58,4 @@ class head_react extends common_head  {
 }
 
 exports.head_react = head_react
+

@@ -114,3 +114,4 @@ class a02_idx_page extends a03_idx_manage {
 }
 
 exports.a02_idx_page = a02_idx_page
+

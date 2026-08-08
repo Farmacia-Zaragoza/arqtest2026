@@ -131,3 +131,4 @@ class lnk01_link_war extends getset  {
 }
 
 exports.lnk01_link_war = lnk01_link_war
+

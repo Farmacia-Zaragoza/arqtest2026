@@ -95,3 +95,4 @@ class jquery_tag {
   }
 
 };
+

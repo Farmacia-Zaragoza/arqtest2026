@@ -141,3 +141,4 @@ class hcomm_struc extends scomm_defs {
 }
 
 exports.hcomm_struc = hcomm_struc
+

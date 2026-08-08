@@ -70,3 +70,4 @@ class scr05_jshead_inline_dog extends getset  {
 }
 
 exports.scr05_jshead_inline_dog = scr05_jshead_inline_dog
+

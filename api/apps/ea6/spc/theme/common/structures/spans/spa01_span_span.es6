@@ -41,3 +41,4 @@ class spa01_span_span extends html_style {
 		}
 
 };
+

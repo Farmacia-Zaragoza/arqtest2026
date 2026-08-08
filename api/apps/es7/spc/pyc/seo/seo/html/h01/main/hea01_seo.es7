@@ -55,3 +55,4 @@ class hea01_head_seo extends common_head  {
 }
 
 exports.hea01_head_seo = hea01_head_seo
+

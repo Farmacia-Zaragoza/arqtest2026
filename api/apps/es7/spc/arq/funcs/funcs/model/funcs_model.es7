@@ -49,3 +49,4 @@ class funcs extends printlog
 } // end Class
 
 exports.funcs = funcs
+

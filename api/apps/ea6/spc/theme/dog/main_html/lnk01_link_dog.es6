@@ -164,3 +164,4 @@ class lnk01_link_dog extends getset  {
 }
 
 exports.lnk01_link_dog = lnk01_link_dog
+

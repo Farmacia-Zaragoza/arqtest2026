@@ -79,3 +79,4 @@ class div01_button_circle_dog extends html_style {
 }
 
 exports.div01_button_circle_dog = div01_button_circle_dog
+

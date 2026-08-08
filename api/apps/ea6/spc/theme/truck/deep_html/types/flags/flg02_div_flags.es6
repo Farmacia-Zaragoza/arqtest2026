@@ -93,3 +93,4 @@ class flg02_div_flags extends html_style {
 }
 
 exports.flg02_div_flags = flg02_div_flags
+

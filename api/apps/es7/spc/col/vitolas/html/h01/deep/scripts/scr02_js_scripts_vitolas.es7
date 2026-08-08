@@ -206,3 +206,4 @@ class scr02_js_scripts_vitolas extends getset {
 }
 
 exports.scr02_js_scripts_vitolas = scr02_js_scripts_vitolas
+

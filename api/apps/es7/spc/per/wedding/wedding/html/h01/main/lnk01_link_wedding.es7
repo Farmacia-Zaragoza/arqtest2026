@@ -131,3 +131,4 @@ class lnk01_link_wedding extends getset  {
 }
 
 exports.lnk01_link_wedding = lnk01_link_wedding
+

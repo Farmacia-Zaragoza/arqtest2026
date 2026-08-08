@@ -178,3 +178,4 @@ class rec01_div_peloncita_middle extends html_style  {
 }
 
 exports.rec01_div_peloncita_middle = rec01_div_peloncita_middle
+

@@ -57,3 +57,4 @@ function get_random_image(folder_source , img_full_path)
 
 
 exports.get_random_image = get_random_image
+

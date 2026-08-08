@@ -65,3 +65,4 @@ class arroba_hiera extends scomm_struc {
 }
 
 exports.arroba_hiera = arroba_hiera
+

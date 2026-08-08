@@ -55,3 +55,4 @@ class site_sure_commands extends site_common_commands {
 }
 
 exports.site_sure_commands = site_sure_commands
+

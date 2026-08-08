@@ -196,3 +196,4 @@ class lnk03_css_minimized_dog extends getset  {
 }
 
 exports.lnk03_css_minimized_dog = lnk03_css_minimized_dog
+

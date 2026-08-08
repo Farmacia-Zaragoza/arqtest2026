@@ -67,3 +67,4 @@ class garldru_no_cache extends site_model
 } // end Class
 
 exports.garldru_no_cache = garldru_no_cache
+

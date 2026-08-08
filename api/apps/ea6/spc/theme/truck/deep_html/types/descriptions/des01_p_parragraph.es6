@@ -135,3 +135,4 @@ class des01_div_parragraph extends html_style {
 }
 
 exports.des01_div_parragraph = des01_div_parragraph
+

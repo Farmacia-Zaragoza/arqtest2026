@@ -64,3 +64,4 @@ class htm01_html_dog extends common_html  {
 }
 
 exports.htm01_html_dog = htm01_html_dog
+

@@ -56,3 +56,4 @@ class arroba_htype_react extends hcomm_struc {
 }
 
 exports.arroba_htype_react = arroba_htype_react
+

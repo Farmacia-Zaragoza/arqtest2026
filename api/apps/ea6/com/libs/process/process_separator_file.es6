@@ -24,3 +24,4 @@ function process_separator_file(file_name_ext, sep_ext_blank = "") //Sabemos que
      process_intelligent_point(file_name_ext, sep_ext_point, sep_ext_blank);
      process_line_feeds(file_name_ext);
 };
+

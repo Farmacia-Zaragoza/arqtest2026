@@ -153,3 +153,4 @@ module.exports.copy_full_filename 						=	copy_full_filename
 module.exports.copy_binary_full_filename				=	copy_binary_full_filename
 module.exports.copy_binary_from_url						=	copy_binary_from_url
 module.exports.link_full_filename						=	link_full_filename
+

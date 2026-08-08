@@ -55,3 +55,4 @@ class hea01_head_war extends common_head  {
 }
 
 exports.hea01_head_war = hea01_head_war
+

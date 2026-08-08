@@ -169,3 +169,4 @@ class lnk03_css_minimized_truck extends getset  {
 }
 
 exports.lnk03_css_minimized_truck = lnk03_css_minimized_truck
+

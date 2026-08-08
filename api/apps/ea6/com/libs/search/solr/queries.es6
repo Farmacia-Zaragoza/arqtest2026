@@ -301,3 +301,4 @@ module.exports.exist_in_array					= 	exist_in_array
 module.exports.exist_in_array_langs				= 	exist_in_array_langs
 module.exports.exist_in_array_resolutions		= 	exist_in_array_resolutions
 module.exports.load_array_file_in_array_master	=	load_array_file_in_array_master
+

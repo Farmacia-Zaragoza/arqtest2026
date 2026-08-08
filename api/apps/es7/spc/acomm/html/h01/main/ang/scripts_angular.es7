@@ -47,3 +47,4 @@ class scripts_angular extends common_scripts  {
 }
 
 exports.scripts_angular = scripts_angular
+

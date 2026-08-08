@@ -82,3 +82,4 @@ class arqkb_cache extends site_model
 } // end Class
 
 exports.arqkb_cache = arqkb_cache
+

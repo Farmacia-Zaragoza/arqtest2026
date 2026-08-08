@@ -88,3 +88,4 @@ class scr01_js_vitolas extends getset  {
 }
 
 exports.scr01_js_vitolas = scr01_js_vitolas
+

@@ -85,3 +85,4 @@ class scomm_struc extends scomm_defs {
 }
 
 exports.scomm_struc = scomm_struc
+

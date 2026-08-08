@@ -88,3 +88,4 @@ class pn01_simple extends psimple {
 	}
 
 };
+

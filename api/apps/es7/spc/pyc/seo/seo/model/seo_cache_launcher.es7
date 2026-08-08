@@ -87,3 +87,4 @@ class seo_cache extends site_model
 } // end Class
 
 exports.seo_cache = seo_cache
+

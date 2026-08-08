@@ -165,3 +165,4 @@ class scr05_js_inline_meto extends html_style  {
 }
 
 exports.scr05_js_inline_meto = scr05_js_inline_meto
+

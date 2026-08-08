@@ -40,3 +40,4 @@ class div01_div_div extends html_style {
 	}
 
 };
+

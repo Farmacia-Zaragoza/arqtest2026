@@ -31,3 +31,4 @@ function endswithNumber(myString) {
 
 module.exports.hasNumber           = hasNumber
 module.exports.endswithNumber      = endswithNumber
+

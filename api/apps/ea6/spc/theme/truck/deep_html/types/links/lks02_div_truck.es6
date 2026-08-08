@@ -70,3 +70,4 @@ class lks02_div_links_truck extends html_style {
 }
 
 exports.lks02_div_links_truck = lks02_div_links_truck
+

@@ -107,3 +107,4 @@ class div03_helper_dog extends svg_style {
 }
 
 exports.div03_helper_dog = div03_helper_dog
+

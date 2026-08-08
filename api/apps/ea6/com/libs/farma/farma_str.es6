@@ -48,3 +48,4 @@ function process_farma_str(sLinea_int, pa_term, ccpa_raw, linea_C)
     var ccpa_raw_space = locale_str_tolower(sfinal).trim()
     ccpa_raw = str_replace(sep_space, sep_underscore, ccpa_raw_space)
 }
+

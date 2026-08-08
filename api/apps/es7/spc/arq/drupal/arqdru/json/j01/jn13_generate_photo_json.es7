@@ -50,3 +50,4 @@ class jn13_photo_json extends jn02_process_site {
 }
 
 exports.jn13_photo_json = jn13_photo_json
+

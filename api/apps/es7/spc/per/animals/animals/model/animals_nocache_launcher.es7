@@ -84,3 +84,4 @@ class animals_no_cache extends site_model
 } // end Class
 
 exports.animals_no_cache = animals_no_cache
+

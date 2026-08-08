@@ -165,3 +165,4 @@ class scr05_js_inline_social extends html_style  {
 }
 
 exports.scr05_js_inline_social = scr05_js_inline_social
+

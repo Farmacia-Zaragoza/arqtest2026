@@ -113,3 +113,4 @@ class uri_paths extends uri_urls {
 }
 
 exports.uri_paths = uri_paths
+

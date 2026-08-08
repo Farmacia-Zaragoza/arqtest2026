@@ -55,3 +55,4 @@ class jn03_search_site extends jn02_general_search_json {
 }
 
 exports.jn03_search_site = jn03_search_site
+

@@ -90,3 +90,4 @@ class jn11_object_allinone_main extends jn01_array_anchor_main {
 }
 
 exports.jn11_object_allinone_main = jn11_object_allinone_main
+

@@ -282,3 +282,4 @@ class htm02_fast_flat extends html_style  {
 }
 
 exports.htm02_fast_flat = htm02_fast_flat
+

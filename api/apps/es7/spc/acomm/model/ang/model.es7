@@ -105,3 +105,4 @@ class angular_model extends common_model
 } // end Class
 
 exports.angular_model = angular_model
+

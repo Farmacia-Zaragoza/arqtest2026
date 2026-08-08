@@ -48,3 +48,4 @@ class jn06_list_json extends jn02_process_site {
 }
 
 exports.jn06_list_json = jn06_list_json
+

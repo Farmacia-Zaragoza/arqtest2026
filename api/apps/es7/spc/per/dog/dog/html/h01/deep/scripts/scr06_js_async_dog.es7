@@ -145,3 +145,4 @@ class scr06_js_async_dog extends getset  {
 }
 
 exports.scr06_js_async_dog = scr06_js_async_dog
+

@@ -206,3 +206,4 @@ function update_node(node, selector, parragraph) //echo "Selector-" . $selector 
       break;
   }
 };
+

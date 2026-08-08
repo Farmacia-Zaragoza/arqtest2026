@@ -47,3 +47,4 @@ class wedding extends printlog
 } // end Class
 
 exports.wedding = wedding
+

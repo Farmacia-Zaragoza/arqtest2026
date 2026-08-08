@@ -49,3 +49,4 @@ class arqcin extends printlog
 } // end Class
 
 exports.arqcin = arqcin
+

@@ -89,3 +89,4 @@ class anode_index_page_load extends anode_index_page_process {
 }
 
 exports.anode_index_page_load = anode_index_page_load
+

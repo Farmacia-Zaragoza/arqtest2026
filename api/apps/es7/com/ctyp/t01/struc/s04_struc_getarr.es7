@@ -147,3 +147,4 @@ class struc_getarr extends struc_setarr {
 }
 
 exports.struc_getarr = struc_getarr
+

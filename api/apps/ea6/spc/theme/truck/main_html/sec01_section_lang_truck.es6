@@ -130,3 +130,4 @@ class sec01_section_lang_truck extends html_style{
 }
 
 exports.sec01_section_lang_truck = sec01_section_lang_truck
+

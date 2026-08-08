@@ -37,3 +37,4 @@ function utf32_decode(str = "", lang_type = "01")
 	str_out = html_entity_decode(str)
 	return str_out
 }
+

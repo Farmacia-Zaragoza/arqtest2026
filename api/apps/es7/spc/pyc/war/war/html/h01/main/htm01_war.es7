@@ -63,3 +63,4 @@ class htm01_html_war extends common_html  {
 }
 
 exports.htm01_html_war = htm01_html_war
+

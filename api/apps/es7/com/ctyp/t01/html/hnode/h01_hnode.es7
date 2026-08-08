@@ -66,3 +66,4 @@ class hnode extends html_style {
 }
 
 exports.hnode = hnode
+

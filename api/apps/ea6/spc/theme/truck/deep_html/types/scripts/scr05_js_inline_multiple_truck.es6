@@ -196,3 +196,4 @@ class scr05_js_inline_truck extends getset  {
 }
 
 exports.scr05_js_inline_truck = scr05_js_inline_truck
+

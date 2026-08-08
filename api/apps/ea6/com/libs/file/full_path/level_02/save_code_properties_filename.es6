@@ -158,3 +158,4 @@ module.exports.save_binary_code_to_file			= save_binary_code_to_file
 
 module.exports.file_get_code 					= file_get_code
 module.exports.file_get_svg_code 				= file_get_svg_code
+

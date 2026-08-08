@@ -63,3 +63,4 @@ class arqseo_no_cache extends site_model
 } // end Class
 
 exports.arqseo_no_cache = arqseo_no_cache
+

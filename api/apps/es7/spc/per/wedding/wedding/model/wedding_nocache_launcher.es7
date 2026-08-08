@@ -86,3 +86,4 @@ class wedding_no_cache extends site_model
 } // end Class
 
 exports.wedding_no_cache = wedding_no_cache
+

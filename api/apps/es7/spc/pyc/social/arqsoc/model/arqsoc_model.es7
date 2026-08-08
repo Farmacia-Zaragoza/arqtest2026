@@ -49,3 +49,4 @@ class arqsoc extends printlog
 } // end Class
 
 exports.arqsoc = arqsoc
+

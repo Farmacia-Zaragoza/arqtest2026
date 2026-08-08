@@ -102,3 +102,4 @@ class uri_manage_commands extends uri_commands_methods {
 }
 
 exports.uri_manage_commands = uri_manage_commands
+

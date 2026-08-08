@@ -105,3 +105,4 @@ function process_intelligent_point(full_file_name_col, sep_int = ".", end_line_p
 
     rename(full_file_name_new, full_file_name_col);
 };
+

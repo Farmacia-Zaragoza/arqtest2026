@@ -58,3 +58,4 @@ class jnode extends jn01_commo_json_simple {
 }
 
 exports.jnode = jnode
+

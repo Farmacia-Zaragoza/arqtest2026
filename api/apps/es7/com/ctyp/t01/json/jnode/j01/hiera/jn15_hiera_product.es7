@@ -106,3 +106,4 @@ class jn15_array_hiera_product extends jn16_hiera_json_list_base {
 }
 
 exports.jn15_array_hiera_product = jn15_array_hiera_product
+

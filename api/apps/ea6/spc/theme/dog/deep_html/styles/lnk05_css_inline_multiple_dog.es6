@@ -193,3 +193,4 @@ class lnk05_css_inline_dog extends getset  {
 }
 
 exports.lnk05_css_inline_dog = lnk05_css_inline_dog
+

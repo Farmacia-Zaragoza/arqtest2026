@@ -86,3 +86,4 @@ class dog_no_cache extends site_model
 } // end Class
 
 exports.dog_no_cache = dog_no_cache
+

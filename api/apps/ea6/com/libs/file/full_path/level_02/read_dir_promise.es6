@@ -69,3 +69,4 @@ rs(mypath).then(
 //print files
 
 //module.exports.readdir_promise 			= readdir_promise
+

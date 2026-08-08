@@ -42,3 +42,4 @@ class theme_angular extends printlog
 } // end Class
 
 exports.theme_angular = theme_angular
+

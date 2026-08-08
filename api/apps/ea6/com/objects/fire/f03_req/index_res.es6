@@ -40,3 +40,4 @@ class index_res extends printlog
 
 exports.index_res = index_res
 
+

@@ -130,3 +130,4 @@ class lnk01_link_vitolas extends getset  {
 }
 
 exports.lnk01_link_vitolas = lnk01_link_vitolas
+

@@ -92,3 +92,4 @@ class arroba_jtype_social extends arroba_jtype {
 }
 
 exports.arroba_jtype_social = arroba_jtype_social
+

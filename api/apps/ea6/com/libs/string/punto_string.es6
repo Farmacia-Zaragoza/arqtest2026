@@ -31,3 +31,4 @@ function is_needed_create_line_feed(car_ant, car_actual, car_sig) //El caracter 
 
     return needed_new_line
 }
+

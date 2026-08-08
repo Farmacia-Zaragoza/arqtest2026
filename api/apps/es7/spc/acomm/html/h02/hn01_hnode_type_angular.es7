@@ -95,3 +95,4 @@ class hnode_type_angular extends printlog {
 }
 
 exports.hnode_type_angular = hnode_type_angular
+

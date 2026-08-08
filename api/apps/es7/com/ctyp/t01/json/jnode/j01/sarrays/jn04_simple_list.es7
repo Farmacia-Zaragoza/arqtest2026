@@ -32,3 +32,4 @@ class jn04_comma_json_simple_list extends jn05_array_product_recursive {
 }
 
 exports.jn04_comma_json_simple_list = jn04_comma_json_simple_list
+

@@ -129,3 +129,4 @@ class jn02_object_search_inner extends jn03_search_lang {
 }
 
 exports.jn02_object_search_inner = jn02_object_search_inner
+

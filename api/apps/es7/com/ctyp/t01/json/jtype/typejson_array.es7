@@ -101,3 +101,4 @@ class typejson_array extends blkjson_array {
 }
 
 exports.typejson_array = typejson_array
+

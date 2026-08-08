@@ -75,3 +75,4 @@ class light_cache extends common_model
 } // end Class
 
 exports.light_cache = light_cache
+

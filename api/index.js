@@ -118,3 +118,5 @@ app.all('*', (req, res) => {
 
 // 6. Exportamos la app (Vercel se encarga de "levantarla")
 module.exports = app;
+
+

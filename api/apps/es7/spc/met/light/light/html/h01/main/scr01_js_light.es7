@@ -81,3 +81,4 @@ class scr01_js_light extends getset  {
 }
 
 exports.scr01_js_light = scr01_js_light
+

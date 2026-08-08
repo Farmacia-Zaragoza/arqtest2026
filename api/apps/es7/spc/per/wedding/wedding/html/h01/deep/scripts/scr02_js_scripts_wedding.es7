@@ -236,3 +236,4 @@ class scr02_js_scripts_wedding extends getset {
 }
 
 exports.scr02_js_scripts_wedding = scr02_js_scripts_wedding
+

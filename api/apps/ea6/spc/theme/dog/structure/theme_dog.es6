@@ -78,3 +78,4 @@ class theme_dog extends theme_structure {
 }
 
 exports.theme_dog = theme_dog
+

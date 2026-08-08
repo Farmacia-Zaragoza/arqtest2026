@@ -33,3 +33,4 @@ class div11_two_div_img extends html_style {
 		}
 
 };
+

@@ -131,3 +131,4 @@ class lnk01_link_light extends getset  {
 }
 
 exports.lnk01_link_light = lnk01_link_light
+

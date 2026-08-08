@@ -64,3 +64,4 @@ class htm01_html_liquid extends common_html  {
 }
 
 exports.htm01_html_liquid = htm01_html_liquid
+

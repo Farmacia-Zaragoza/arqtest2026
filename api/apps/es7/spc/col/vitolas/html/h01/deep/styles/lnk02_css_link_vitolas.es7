@@ -148,3 +148,4 @@ class lnk02_css_link_vitolas extends getset {
 } // End class
 
 exports.lnk02_css_link_vitolas = lnk02_css_link_vitolas
+

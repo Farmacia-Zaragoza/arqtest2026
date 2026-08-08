@@ -230,3 +230,4 @@ class arroba_jtype_comm extends jcomm_struc {
 }
 
 exports.arroba_jtype_comm = arroba_jtype_comm
+

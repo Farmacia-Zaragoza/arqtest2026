@@ -47,3 +47,4 @@ class jn05_rands_json extends jn02_process_site {
 }
 
 exports.jn05_rands_json = jn05_rands_json
+

@@ -137,3 +137,4 @@ class lnk05_css_inline_social extends getset  {
 }
 
 exports.lnk05_css_inline_social = lnk05_css_inline_social
+

@@ -62,3 +62,4 @@ function process_string_to_vars(uri = "", pos = "", method = "", beg_pg = "", en
 
 	uri = uri_search
 }
+

@@ -128,3 +128,4 @@ class lnk01_link_social extends getset  {
 }
 
 exports.lnk01_link_social = lnk01_link_social
+

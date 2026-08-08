@@ -101,3 +101,4 @@ class struc_load_arroba extends struc_load_folder {
 }
 
 exports.struc_load_arroba = struc_load_arroba
+

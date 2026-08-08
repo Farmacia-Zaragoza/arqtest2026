@@ -152,3 +152,4 @@ class jn01_general_common_json extends jn11_general_common_simple_methods_json {
 }
 
 exports.jn01_general_common_json = jn01_general_common_json
+

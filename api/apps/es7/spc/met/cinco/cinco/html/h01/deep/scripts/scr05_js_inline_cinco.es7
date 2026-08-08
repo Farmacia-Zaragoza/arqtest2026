@@ -165,3 +165,4 @@ class scr05_js_inline_cinco extends html_style  {
 }
 
 exports.scr05_js_inline_cinco = scr05_js_inline_cinco
+

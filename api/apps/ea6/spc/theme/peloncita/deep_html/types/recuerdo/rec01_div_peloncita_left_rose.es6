@@ -131,3 +131,4 @@ class rec01_div_peloncita_left_rose extends html_style  {
 }
 
 exports.rec01_div_peloncita_left_rose = rec01_div_peloncita_left_rose
+

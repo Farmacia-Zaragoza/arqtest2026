@@ -236,3 +236,4 @@ class scr02_js_scripts_light extends getset {
 }
 
 exports.scr02_js_scripts_light = scr02_js_scripts_light
+

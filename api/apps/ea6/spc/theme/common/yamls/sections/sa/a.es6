@@ -28,3 +28,4 @@ aa[4] = 2
 
 
 for (var pos in aa) 	console.log (aa[pos])
+

@@ -194,3 +194,4 @@ class lnk04_css_inline_dog extends html_style  {
 }
 
 exports.lnk04_css_inline_dog = lnk04_css_inline_dog
+

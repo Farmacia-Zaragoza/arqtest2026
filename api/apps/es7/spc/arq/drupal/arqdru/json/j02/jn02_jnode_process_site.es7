@@ -48,3 +48,4 @@ class jn02_process_site extends jn01_robot_process {
 }
 
 exports.jn02_process_site = jn02_process_site
+

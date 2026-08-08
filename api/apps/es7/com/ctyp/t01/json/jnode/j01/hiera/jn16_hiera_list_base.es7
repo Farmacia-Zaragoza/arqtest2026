@@ -88,3 +88,4 @@ class jn16_hiera_json_list_base extends jn01_object_list_main {
 }
 
 exports.jn16_hiera_json_list_base = jn16_hiera_json_list_base
+

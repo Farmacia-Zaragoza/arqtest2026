@@ -64,3 +64,4 @@ class htm01_html_light extends common_html  {
 }
 
 exports.htm01_html_light = htm01_html_light
+

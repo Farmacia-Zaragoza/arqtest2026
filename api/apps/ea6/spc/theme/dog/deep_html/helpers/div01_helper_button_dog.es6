@@ -88,3 +88,4 @@ class div01_helper_button_dog extends svg_style {
 }
 
 exports.div01_helper_button_dog = div01_helper_button_dog
+

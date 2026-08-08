@@ -156,3 +156,4 @@ class lnk04_css_inline_cinco extends html_style  {
 }
 
 exports.lnk04_css_inline_cinco = lnk04_css_inline_cinco
+

@@ -88,3 +88,4 @@ class uri_defs_urls extends uri_defs_paths {
 }
 
 exports.uri_defs_urls = uri_defs_urls
+

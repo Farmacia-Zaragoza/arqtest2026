@@ -146,3 +146,4 @@ class bool_copy extends bool_defs {
 }
 
 exports.bool_copy = bool_copy
+

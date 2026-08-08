@@ -169,3 +169,4 @@ module.exports.match_word		=	match_word
 module.exports.get_ideal_word	=	get_ideal_word
 module.exports.sort_query		=	sort_query
 module.exports.strpos			=	strpos
+

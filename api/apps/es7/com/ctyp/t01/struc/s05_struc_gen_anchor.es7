@@ -162,3 +162,4 @@ class struc_gen_anchor extends struc_gen_mix {
 }
 
 exports.struc_gen_anchor = struc_gen_anchor
+

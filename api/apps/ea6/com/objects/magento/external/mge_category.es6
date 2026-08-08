@@ -62,3 +62,4 @@ class mge_category extends mgi_category
 	}			
 }
  
+

@@ -72,3 +72,4 @@ class jn01_commo_json_simple extends jn02_commo_json_doble {
 }
 
 exports.jn01_commo_json_simple = jn01_commo_json_simple
+

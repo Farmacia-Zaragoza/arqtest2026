@@ -107,3 +107,4 @@ class vn02_list extends vsimple {
 	}
 
 }
+

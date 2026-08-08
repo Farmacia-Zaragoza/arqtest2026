@@ -74,3 +74,4 @@ class flx02_ul_product_flex extends html_style {
 }
 
 exports.flx02_ul_product_flex = flx02_ul_product_flex
+

@@ -62,3 +62,4 @@ class mai02_div_mail_icon extends svg_style {
 }
 
 exports.mai02_div_mail_icon = mai02_div_mail_icon
+

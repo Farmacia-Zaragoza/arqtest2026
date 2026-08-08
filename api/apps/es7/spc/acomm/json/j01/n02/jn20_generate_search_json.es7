@@ -47,3 +47,4 @@ class jn20_search_json extends jn04_search_site {
 }
 
 exports.jn20_search_json = jn20_search_json
+

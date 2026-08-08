@@ -116,3 +116,4 @@ class struc_gen_arroba extends struc_gen_text {
 }
 
 exports.struc_gen_arroba = struc_gen_arroba
+

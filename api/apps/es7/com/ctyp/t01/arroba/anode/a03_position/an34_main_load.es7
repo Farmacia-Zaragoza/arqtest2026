@@ -55,3 +55,4 @@ class anode_main_position_load extends anode_main_position_process {
 }
 
 exports.anode_main_position_load = anode_main_position_load
+

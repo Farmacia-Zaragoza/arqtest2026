@@ -53,3 +53,4 @@ class flx03_div_flex_middle extends html_style {
 	}
 
 }
+

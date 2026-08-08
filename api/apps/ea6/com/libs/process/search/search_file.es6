@@ -51,3 +51,4 @@ $sw_search=true;
 
 return $sw_search;    
 }
+

@@ -106,3 +106,4 @@ class a01_idx_list extends a02_idx_page {
 }
 
 exports.a01_idx_list = a01_idx_list
+

@@ -164,3 +164,4 @@ class scr02_js_as_scripts_truck extends getset  {
 }
 
 exports.scr02_js_as_scripts_truck = scr02_js_as_scripts_truck
+

@@ -88,3 +88,4 @@ class cok02_div_policy_cookies extends html_style{
 }
 
 exports.cok02_div_policy_cookies = cok02_div_policy_cookies
+

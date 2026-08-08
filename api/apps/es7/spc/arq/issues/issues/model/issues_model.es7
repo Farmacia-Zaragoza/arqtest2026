@@ -47,3 +47,4 @@ class issues extends printlog
 } // end Class
 
 exports.issues = issues
+

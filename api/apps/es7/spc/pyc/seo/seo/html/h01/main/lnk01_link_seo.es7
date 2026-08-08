@@ -131,3 +131,4 @@ class lnk01_link_seo extends getset  {
 }
 
 exports.lnk01_link_seo = lnk01_link_seo
+

@@ -108,3 +108,4 @@ class rs03_object_page_inner extends rs04_object_list_inner {
 }
 
 exports.rs03_object_page_inner = rs03_object_page_inner
+

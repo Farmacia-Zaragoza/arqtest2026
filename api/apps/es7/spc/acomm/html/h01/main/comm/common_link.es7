@@ -82,3 +82,4 @@ class common_link extends getset  {
 }
 
 exports.common_link = common_link
+

@@ -236,3 +236,4 @@ class scr02_js_scripts_seo extends getset {
 }
 
 exports.scr02_js_scripts_seo = scr02_js_scripts_seo
+

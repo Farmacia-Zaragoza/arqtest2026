@@ -128,3 +128,4 @@ class struc_attrib extends struc_defs {
 }
 
 exports.struc_attrib = struc_attrib
+

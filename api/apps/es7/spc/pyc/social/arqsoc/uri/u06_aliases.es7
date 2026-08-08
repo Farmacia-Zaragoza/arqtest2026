@@ -99,3 +99,4 @@ class uri_aliases extends site_common_commands
 } // end Class
 
 exports.uri_aliases = uri_aliases
+

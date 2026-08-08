@@ -87,3 +87,4 @@ class fn06_infolan extends fnode {
 	}
 
 }
+

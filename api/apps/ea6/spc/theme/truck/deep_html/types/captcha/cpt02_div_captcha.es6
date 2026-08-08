@@ -95,3 +95,4 @@ class cpt02_div_captcha extends html_style {
 }
 
 exports.cpt02_div_captcha = cpt02_div_captcha
+

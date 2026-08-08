@@ -90,3 +90,4 @@ class arroba_jtype_wedding extends arroba_jtype {
 }
 
 exports.arroba_jtype_wedding = arroba_jtype_wedding
+

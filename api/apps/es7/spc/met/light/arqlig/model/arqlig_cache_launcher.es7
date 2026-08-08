@@ -124,3 +124,4 @@ class arqlig_cache extends common_model
 } // end Class
 
 exports.arqlig_cache = arqlig_cache
+

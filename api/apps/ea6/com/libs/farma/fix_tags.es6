@@ -25,3 +25,4 @@ function insert_fix_farma_tag(tags_in, file_tags_in) //Change point by spaces &&
                   update_full_filename(file_tags_in, tags_in);
    }
 }
+

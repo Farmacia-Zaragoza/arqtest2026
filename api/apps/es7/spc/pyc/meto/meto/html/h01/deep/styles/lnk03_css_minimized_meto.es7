@@ -126,3 +126,4 @@ class lnk03_css_minimized_meto extends getset  {
 }
 
 exports.lnk03_css_minimized_meto = lnk03_css_minimized_meto
+

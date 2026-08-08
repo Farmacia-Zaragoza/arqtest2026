@@ -86,3 +86,4 @@ class angular_cache extends angular_model
 } // end Class
 
 exports.angular_cache = angular_cache
+

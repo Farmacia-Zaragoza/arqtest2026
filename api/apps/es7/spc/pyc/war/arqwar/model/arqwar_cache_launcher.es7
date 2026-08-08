@@ -78,3 +78,4 @@ class arqwar_cache extends site_model
 } // end Class
 
 exports.arqwar_cache = arqwar_cache
+

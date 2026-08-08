@@ -84,3 +84,4 @@ class jn02_array_list_inner extends jn11_object_allinone_main {
 }
 
 exports.jn02_array_list_inner = jn02_array_list_inner
+

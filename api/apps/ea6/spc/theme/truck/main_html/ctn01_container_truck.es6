@@ -184,3 +184,4 @@ class ctn01_container_truck extends html_style  {
 }
 
 exports.ctn01_container_truck = ctn01_container_truck
+

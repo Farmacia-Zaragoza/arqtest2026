@@ -76,3 +76,4 @@ class tindex_comm extends printlog
 } // end Class
 
 exports.tindex_comm = tindex_comm
+

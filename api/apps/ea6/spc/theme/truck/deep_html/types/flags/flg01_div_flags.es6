@@ -82,3 +82,4 @@ class flg01_div_flags extends svg_style {
 }
 
 exports.flg01_div_flags = flg01_div_flags
+

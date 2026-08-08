@@ -116,3 +116,4 @@ class uri_front extends uri_process_commands {
 }
 
 exports.uri_front = uri_front
+

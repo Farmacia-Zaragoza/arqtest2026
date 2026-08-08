@@ -60,3 +60,4 @@ class anode_main_index_page_load extends anode_main_index_page_process {
 }
 
 exports.anode_main_index_page_load = anode_main_index_page_load
+

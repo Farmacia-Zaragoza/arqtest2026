@@ -64,3 +64,4 @@ class jn11_spec_json extends jn02_process_site {
 }
 
 exports.jn11_spec_json = jn11_spec_json
+

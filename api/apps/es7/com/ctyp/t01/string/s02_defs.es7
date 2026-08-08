@@ -63,3 +63,4 @@ class strings_defs extends printlog
 }
 
 exports.strings_defs = strings_defs
+

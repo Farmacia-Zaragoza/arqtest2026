@@ -90,3 +90,4 @@ class jn60_info_json extends jn10_index_site {
 }
 
 exports.jn60_info_json = jn60_info_json
+

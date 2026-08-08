@@ -39,3 +39,4 @@ class definitions_separators extends printlog  {
 }
 
 exports.definitions_separators = definitions_separators
+

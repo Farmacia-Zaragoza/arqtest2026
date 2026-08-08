@@ -96,3 +96,4 @@ class events_style {
     }
 
 };
+

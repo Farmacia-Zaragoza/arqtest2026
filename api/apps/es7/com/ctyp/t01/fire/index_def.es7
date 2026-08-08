@@ -39,3 +39,4 @@ class index_def extends strings_defs
 }  // End Class
 
 exports.index_def = index_def
+

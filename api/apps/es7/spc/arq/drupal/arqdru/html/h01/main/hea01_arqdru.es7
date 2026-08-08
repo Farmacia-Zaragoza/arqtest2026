@@ -139,3 +139,4 @@ class hea01_head_arqdru extends html_style  {
 }
 
 exports.hea01_head_arqdru = hea01_head_arqdru
+

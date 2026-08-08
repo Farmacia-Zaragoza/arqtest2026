@@ -43,3 +43,4 @@ function process_string(str_in) //
 		word_started = false
 	}
 }
+

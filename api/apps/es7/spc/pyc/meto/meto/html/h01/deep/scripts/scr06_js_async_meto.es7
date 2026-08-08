@@ -145,3 +145,4 @@ class scr06_js_async_meto extends getset  {
 }
 
 exports.scr06_js_async_meto = scr06_js_async_meto
+

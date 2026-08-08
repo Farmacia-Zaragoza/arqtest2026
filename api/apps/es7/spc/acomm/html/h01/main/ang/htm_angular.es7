@@ -67,3 +67,4 @@ class htm_angular extends common_html  {
 }
 
 exports.htm_angular = htm_angular
+

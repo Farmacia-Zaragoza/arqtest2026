@@ -292,3 +292,4 @@ module.exports.update_file_with_code_no_break_line       = update_file_with_code
 module.exports.create_update_full_filename_no_break_line = create_update_full_filename_no_break_line
 module.exports.create_update_full_filename = create_update_full_filename
 module.exports.file_get_code 					= file_get_code
+

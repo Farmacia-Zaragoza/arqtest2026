@@ -50,3 +50,4 @@ class jn03_product_json extends jn02_process_site {
 }
 
 exports.jn03_product_json = jn03_product_json
+

@@ -84,3 +84,4 @@ function brqx_save_tax_farm(node, term_results) //Iteramos entre las categorias 
     }
   }
 };
+

@@ -196,3 +196,4 @@ class lnk04_css_inline_truck extends html_style  {
 }
 
 exports.lnk04_css_inline_truck = lnk04_css_inline_truck
+

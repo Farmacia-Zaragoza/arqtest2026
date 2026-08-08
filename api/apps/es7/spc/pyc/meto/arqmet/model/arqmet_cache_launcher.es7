@@ -85,3 +85,4 @@ class arqmet_cache extends common_model
 } // end Class
 
 exports.arqmet_cache = arqmet_cache
+

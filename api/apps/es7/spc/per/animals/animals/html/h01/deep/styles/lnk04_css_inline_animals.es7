@@ -156,3 +156,4 @@ class lnk04_css_inline_animals extends html_style  {
 }
 
 exports.lnk04_css_inline_animals = lnk04_css_inline_animals
+

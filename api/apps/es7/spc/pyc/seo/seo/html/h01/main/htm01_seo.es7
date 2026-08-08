@@ -64,3 +64,4 @@ class htm01_html_seo extends common_html  {
 }
 
 exports.htm01_html_seo = htm01_html_seo
+

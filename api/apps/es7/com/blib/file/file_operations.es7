@@ -61,3 +61,4 @@ function delete_if_exist_full_filename(full_file_name_int)
 module.exports.delete_full_filename  = delete_full_filename
 module.exports.delete_if_exist_full_filename  = delete_if_exist_full_filename
 module.exports.delete_file_pattern = delete_file_pattern
+

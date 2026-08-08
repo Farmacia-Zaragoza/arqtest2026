@@ -33,3 +33,4 @@ function update_lan_file(folder_path = '', file_name='fichero' , DATA='datos')
     update_full_filename(full_file_name , DATA)
 }
 
+

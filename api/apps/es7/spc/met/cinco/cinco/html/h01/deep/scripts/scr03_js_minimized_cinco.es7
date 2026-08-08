@@ -147,3 +147,4 @@ class scr03_js_minimized_cinco extends getset  {
 }
 
 exports.scr03_js_minimized_cinco = scr03_js_minimized_cinco
+

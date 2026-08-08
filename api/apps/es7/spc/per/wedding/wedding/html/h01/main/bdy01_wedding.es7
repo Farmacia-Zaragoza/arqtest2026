@@ -221,3 +221,4 @@ class bdy01_body_wedding extends html_style  {
 }
 
 exports.bdy01_body_wedding = bdy01_body_wedding
+

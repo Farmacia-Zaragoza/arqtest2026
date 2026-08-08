@@ -48,3 +48,4 @@ class jn04_search_site extends jn02_general_search_json {
 }
 
 exports.jn04_search_site = jn04_search_site
+

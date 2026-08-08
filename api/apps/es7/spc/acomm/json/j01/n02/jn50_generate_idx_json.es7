@@ -52,3 +52,4 @@ class jn50_idx_json extends jn10_index_site {
 }
 
 exports.jn50_idx_json = jn50_idx_json
+

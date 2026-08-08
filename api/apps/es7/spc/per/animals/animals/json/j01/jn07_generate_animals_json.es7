@@ -48,3 +48,4 @@ class jn07_animals_json extends jn02_process_site {
 }
 
 exports.jn07_animals_json = jn07_animals_json
+

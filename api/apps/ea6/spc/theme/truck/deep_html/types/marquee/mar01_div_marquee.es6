@@ -72,3 +72,4 @@ class mar01_div_marquee extends html_style {
 }
 
 exports.mar01_div_marquee = mar01_div_marquee
+

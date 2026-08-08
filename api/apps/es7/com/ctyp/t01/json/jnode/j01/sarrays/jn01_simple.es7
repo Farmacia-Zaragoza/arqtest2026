@@ -32,3 +32,4 @@ class jn01_comma_json_simple extends jn02_comma_json_doble {
 }
 
 exports.jn01_comma_json_simple = jn01_comma_json_simple
+

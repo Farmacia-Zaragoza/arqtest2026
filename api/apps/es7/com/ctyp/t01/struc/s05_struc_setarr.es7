@@ -99,3 +99,4 @@ class struc_setarr extends struc_defs {
 }
 
 exports.struc_setarr = struc_setarr
+

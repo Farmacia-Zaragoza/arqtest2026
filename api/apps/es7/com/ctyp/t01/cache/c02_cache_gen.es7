@@ -247,3 +247,4 @@ class cache_gen extends cache_save {
 }
 
 exports.cache_gen = cache_gen
+

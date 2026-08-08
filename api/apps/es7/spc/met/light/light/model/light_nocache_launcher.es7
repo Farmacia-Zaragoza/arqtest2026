@@ -92,3 +92,4 @@ class light_no_cache extends common_model
 } // end Class
 
 exports.light_no_cache = light_no_cache
+

@@ -83,3 +83,4 @@ class jn02_array_anchor_inner extends jn00_comm_pf {
 }
 
 exports.jn02_array_anchor_inner = jn02_array_anchor_inner
+

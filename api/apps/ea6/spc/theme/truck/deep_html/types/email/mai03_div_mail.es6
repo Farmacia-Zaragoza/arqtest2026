@@ -65,3 +65,4 @@ class mai03_div_email extends html_style {
 }
 
 exports.mai03_div_email = mai03_div_email
+

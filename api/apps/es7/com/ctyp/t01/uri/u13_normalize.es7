@@ -250,3 +250,4 @@ class uri_normalize extends uri_create {
 }
 
 exports.uri_normalize = uri_normalize
+

@@ -80,3 +80,4 @@ class animals_cache extends common_model
 } // end Class
 
 exports.animals_cache = animals_cache
+

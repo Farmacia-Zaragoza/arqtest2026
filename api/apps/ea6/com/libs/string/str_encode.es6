@@ -38,3 +38,4 @@ function encode(str) //big endian
 
     return res
 }
+

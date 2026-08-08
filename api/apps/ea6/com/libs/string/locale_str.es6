@@ -48,3 +48,4 @@ function strspecial_to_dash(string) {
     return string.replace(convert_from, convert_to);
   }
 };
+

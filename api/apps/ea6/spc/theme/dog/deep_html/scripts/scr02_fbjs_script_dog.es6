@@ -58,3 +58,4 @@ class scr02_fbjs_script_dog extends getset  {
 }
 
 exports.scr02_fbjs_script_dog  = scr02_fbjs_script_dog
+

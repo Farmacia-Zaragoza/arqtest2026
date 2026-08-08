@@ -56,3 +56,4 @@ class scr03_jshead_minimized_dog extends getset  {
 }
 
 exports.scr03_jshead_minimized_dog = scr03_jshead_minimized_dog
+

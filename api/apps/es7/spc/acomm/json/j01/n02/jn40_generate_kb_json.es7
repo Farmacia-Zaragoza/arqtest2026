@@ -51,3 +51,4 @@ class jn40_kb_json extends jn02_process_site {
 }
 
 exports.jn40_kb_json = jn40_kb_json
+

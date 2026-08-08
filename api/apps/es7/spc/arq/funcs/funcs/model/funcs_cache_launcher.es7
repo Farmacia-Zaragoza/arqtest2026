@@ -79,3 +79,4 @@ class funcs_cache extends site_model
 } // end Class
 
 exports.funcs_cache = funcs_cache
+

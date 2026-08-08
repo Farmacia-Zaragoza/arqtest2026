@@ -82,3 +82,4 @@ class fast_uri extends site_uri_manage_commands
 } // end Class
 
 exports.fast_uri = fast_uri
+

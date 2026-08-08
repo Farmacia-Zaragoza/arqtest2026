@@ -126,3 +126,4 @@ class lnk03_css_minimized_vitolas extends getset  {
 }
 
 exports.lnk03_css_minimized_vitolas = lnk03_css_minimized_vitolas
+

@@ -176,3 +176,4 @@ class struc_gen extends struc_attrib {
 }
 
 exports.struc_gen = struc_gen
+

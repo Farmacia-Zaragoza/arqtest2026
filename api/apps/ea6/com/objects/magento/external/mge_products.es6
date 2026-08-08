@@ -120,3 +120,4 @@ class mge_products extends mgi_products
 
 }
  
+

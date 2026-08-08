@@ -189,3 +189,4 @@ class js01_simple_search extends jn00_search_pf {
 }
 
 exports.js01_simple_search = js01_simple_search
+

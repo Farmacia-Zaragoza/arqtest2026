@@ -124,3 +124,4 @@ class rs00_rest_pf extends struc_attrib {
 }
 
 exports.rs00_rest_pf = rs00_rest_pf
+

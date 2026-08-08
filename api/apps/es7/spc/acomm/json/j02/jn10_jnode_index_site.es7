@@ -44,3 +44,4 @@ class jn10_index_site extends an03_general_index_arroba {
 }
 
 exports.jn10_index_site = jn10_index_site
+

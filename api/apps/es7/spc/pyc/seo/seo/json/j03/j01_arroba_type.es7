@@ -93,3 +93,4 @@ class arroba_jtype_seo extends arroba_jtype {
 }
 
 exports.arroba_jtype_seo = arroba_jtype_seo
+

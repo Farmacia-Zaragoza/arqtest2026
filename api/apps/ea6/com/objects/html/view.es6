@@ -54,3 +54,4 @@ class view extends getset {
   }
 
 };
+

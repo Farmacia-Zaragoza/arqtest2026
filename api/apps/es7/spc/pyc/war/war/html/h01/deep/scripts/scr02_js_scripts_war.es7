@@ -236,3 +236,4 @@ class scr02_js_scripts_war extends getset {
 }
 
 exports.scr02_js_scripts_war = scr02_js_scripts_war
+

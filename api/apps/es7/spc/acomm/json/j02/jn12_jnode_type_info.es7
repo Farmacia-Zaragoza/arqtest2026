@@ -60,3 +60,4 @@ class jnode_type_info extends printlog {
 }
 
 exports.jnode_type_info = jnode_type_info
+

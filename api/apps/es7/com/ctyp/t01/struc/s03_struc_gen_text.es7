@@ -106,3 +106,4 @@ class struc_gen_text extends struc_gen_mix {
 }
 
 exports.struc_gen_text = struc_gen_text
+

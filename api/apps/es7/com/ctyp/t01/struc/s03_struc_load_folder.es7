@@ -403,3 +403,4 @@ class struc_load_folder extends struc_pho {
 }
 
 exports.struc_load_folder = struc_load_folder
+

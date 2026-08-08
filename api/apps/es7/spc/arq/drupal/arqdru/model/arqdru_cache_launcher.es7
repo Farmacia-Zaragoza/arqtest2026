@@ -83,3 +83,4 @@ class arqdru_cache extends site_model
 } // end Class
 
 exports.arqdru_cache = arqdru_cache
+

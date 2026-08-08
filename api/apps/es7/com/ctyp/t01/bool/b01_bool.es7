@@ -50,3 +50,4 @@ class cbool extends bool_copy {
 }
 
 exports.cbool = cbool
+

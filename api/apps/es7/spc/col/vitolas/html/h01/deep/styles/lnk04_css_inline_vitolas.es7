@@ -103,3 +103,4 @@ class lnk04_css_inline_vitolas extends html_style  {
 }
 
 exports.lnk04_css_inline_vitolas = lnk04_css_inline_vitolas
+

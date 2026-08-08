@@ -147,3 +147,4 @@ class scr03_js_minimized_liquid extends getset  {
 }
 
 exports.scr03_js_minimized_liquid = scr03_js_minimized_liquid
+

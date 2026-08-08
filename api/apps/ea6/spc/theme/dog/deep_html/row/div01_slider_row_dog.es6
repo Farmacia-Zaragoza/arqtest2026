@@ -95,3 +95,4 @@ class div01_slider_row_dog extends html_style {
 }
 
 exports.div01_slider_row_dog = div01_slider_row_dog
+

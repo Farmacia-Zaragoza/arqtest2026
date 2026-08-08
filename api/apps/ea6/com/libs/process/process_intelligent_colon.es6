@@ -60,3 +60,4 @@ function process_intelligent_colon(full_file_name_col, sep_colon = ":") //Hay qu
 
     rename(full_file_name_new, full_file_name_col);
 };
+

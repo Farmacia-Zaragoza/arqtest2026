@@ -140,3 +140,4 @@ class bool_defs extends printlog {
 }
 
 exports.bool_defs = bool_defs
+

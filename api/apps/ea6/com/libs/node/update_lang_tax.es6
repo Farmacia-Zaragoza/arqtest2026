@@ -11,3 +11,4 @@ function brqx_update_lang_tax(node_type = "pg", lang = "en") //print ('NODOs:  '
     brqx_update_lang_node_with_tax(sNodo, lang);
   }
 };
+

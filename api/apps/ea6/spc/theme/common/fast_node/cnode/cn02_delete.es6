@@ -96,3 +96,4 @@ class cn02_delete extends pcomp {
 }
 
 exports.cn02_delete = cn02_delete
+

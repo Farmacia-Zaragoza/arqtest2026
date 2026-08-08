@@ -161,3 +161,4 @@ class scr06_js_async_truck extends getset  {
 }
 
 exports.scr06_js_async_truck = scr06_js_async_truck
+

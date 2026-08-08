@@ -92,3 +92,4 @@ class arroba_jtype_war extends arroba_jtype_comm {
 }
 
 exports.arroba_jtype_war = arroba_jtype_war
+

@@ -279,3 +279,4 @@ function yaml_from_file (file_name)
 }
 
 module.exports.yaml_from_file = yaml_from_file
+

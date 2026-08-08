@@ -85,3 +85,4 @@ class site_common_sure_commands extends uri {
 }
 
 exports.site_common_sure_commands = site_common_sure_commands
+

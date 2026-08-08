@@ -92,3 +92,4 @@ class jn14_hiera_json_list extends jn00_comm_pf {
 }
 
 exports.jn14_hiera_json_list = jn14_hiera_json_list
+

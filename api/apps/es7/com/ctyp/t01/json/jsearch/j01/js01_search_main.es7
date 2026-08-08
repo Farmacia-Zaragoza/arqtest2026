@@ -115,3 +115,4 @@ class jn01_object_search_main extends jn02_object_search_inner {
 }
 
 exports.jn01_object_search_main = jn01_object_search_main
+

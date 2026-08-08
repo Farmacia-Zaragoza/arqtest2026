@@ -92,3 +92,4 @@ class div01_button_dog extends html_style {
 }
 
 exports.div01_button_dog = div01_button_dog
+

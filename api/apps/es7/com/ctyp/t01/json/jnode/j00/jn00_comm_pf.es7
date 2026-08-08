@@ -212,3 +212,4 @@ class jn00_comm_pf extends jn01_comm_pho {
 }
 
 exports.jn00_comm_pf = jn00_comm_pf
+

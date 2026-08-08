@@ -47,3 +47,4 @@ class dog extends printlog
 } // end Class
 
 exports.dog = dog
+

@@ -238,3 +238,4 @@ function check_translated_line($INPUT_LINE, $SUBCODE, &$MAIN_TRAN)
     return  $check_translated;
 }
 
+

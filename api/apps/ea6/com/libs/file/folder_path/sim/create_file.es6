@@ -116,3 +116,4 @@ function delete_folder_content_if_exist(dirPath)
 
 module.exports.delete_folder_if_exist 			= 	delete_folder_if_exist
 module.exports.delete_folder_content_if_exist	= 	delete_folder_content_if_exist
+

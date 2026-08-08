@@ -75,3 +75,4 @@ class mge_product extends mgi_print
 	
 }
  
+

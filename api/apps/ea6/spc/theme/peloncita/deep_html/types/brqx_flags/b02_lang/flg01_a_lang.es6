@@ -56,3 +56,4 @@ class flg01_a_lang_footer extends html_style  {
  
 }
 
+

@@ -236,3 +236,4 @@ class scr02_js_scripts_animals extends getset {
 }
 
 exports.scr02_js_scripts_animals = scr02_js_scripts_animals
+

@@ -63,3 +63,4 @@ module.exports.substr_count 		= substr_count
 module.exports.points_count 		= points_count
 module.exports.strpos 				= strpos
 module.exports.replace 				= replace
+

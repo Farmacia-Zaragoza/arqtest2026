@@ -126,3 +126,4 @@ class lnk03_css_minimized_wedding extends getset  {
 }
 
 exports.lnk03_css_minimized_wedding = lnk03_css_minimized_wedding
+

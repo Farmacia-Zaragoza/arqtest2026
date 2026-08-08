@@ -12,3 +12,4 @@ function update_cck_terms(nid, node_type, cck_field, new_value) //To develop
 	auto_nodetitle_set_title(node);
 	node_save(node);
 };
+

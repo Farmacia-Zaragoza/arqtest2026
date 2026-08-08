@@ -79,3 +79,4 @@ class arqcin_no_cache extends common_model
 } // end Class
 
 exports.arqcin_no_cache = arqcin_no_cache
+

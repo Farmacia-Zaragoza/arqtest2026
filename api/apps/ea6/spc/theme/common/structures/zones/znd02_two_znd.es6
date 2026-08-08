@@ -41,3 +41,4 @@ class znd02_two_div extends getset {
 		}
 
 };
+

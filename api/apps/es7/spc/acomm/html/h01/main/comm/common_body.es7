@@ -162,3 +162,4 @@ class common_body extends html_style  {
 }
 
 exports.common_body = common_body
+

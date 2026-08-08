@@ -139,3 +139,4 @@ class mai02_div_mail_address_flex extends html_style {
 }
 
 exports.mai02_div_mail_address_flex = mai02_div_mail_address_flex
+

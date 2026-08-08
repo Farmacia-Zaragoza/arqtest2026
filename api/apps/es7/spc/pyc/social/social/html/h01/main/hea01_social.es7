@@ -58,3 +58,4 @@ class hea01_head_social extends common_head  {
 }
 
 exports.hea01_head_social = hea01_head_social
+

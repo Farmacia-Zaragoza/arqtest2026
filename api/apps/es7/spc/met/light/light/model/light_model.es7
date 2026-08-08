@@ -47,3 +47,4 @@ class light extends printlog
 } // end Class
 
 exports.light = light
+

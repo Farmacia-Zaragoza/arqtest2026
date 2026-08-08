@@ -21,3 +21,4 @@ function same_as(str_in = "", model_phrase = "") //Si es may devolvera mayuscula
 			return str_in
 		}
 }
+

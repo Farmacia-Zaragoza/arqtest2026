@@ -126,3 +126,4 @@ class lnk03_css_minimized_scroll extends getset  {
 }
 
 exports.lnk03_css_minimized_scroll = lnk03_css_minimized_scroll
+

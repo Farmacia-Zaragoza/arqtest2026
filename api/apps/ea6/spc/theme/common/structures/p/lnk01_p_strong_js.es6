@@ -57,3 +57,4 @@ class lnk01_p_strong extends html_style {
 	}
 
 };
+

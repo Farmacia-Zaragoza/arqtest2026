@@ -112,3 +112,4 @@ class jn11_index_fn extends cache {
 }
 
 exports.jn11_index_fn = jn11_index_fn
+

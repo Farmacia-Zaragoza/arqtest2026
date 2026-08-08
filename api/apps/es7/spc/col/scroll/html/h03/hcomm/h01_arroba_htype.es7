@@ -54,3 +54,4 @@ class arroba_htype extends hcomm_struc {
 }
 
 exports.arroba_htype = arroba_htype
+

@@ -186,3 +186,4 @@ class scr04_js_inline_truck extends html_style  {
 }
 
 exports.scr04_js_inline_truck = scr04_js_inline_truck
+

@@ -165,3 +165,4 @@ class scr05_js_inline_light extends html_style  {
 }
 
 exports.scr05_js_inline_light = scr05_js_inline_light
+

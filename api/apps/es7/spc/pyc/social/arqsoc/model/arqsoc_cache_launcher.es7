@@ -80,3 +80,4 @@ class arqsoc_cache extends site_model
 } // end Class
 
 exports.arqsoc_cache = arqsoc_cache
+

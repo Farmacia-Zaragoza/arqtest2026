@@ -49,3 +49,4 @@ class arqseo extends printlog
 } // end Class
 
 exports.arqseo = arqseo
+

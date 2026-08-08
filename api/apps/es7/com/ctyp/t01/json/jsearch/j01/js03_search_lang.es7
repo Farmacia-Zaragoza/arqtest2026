@@ -102,3 +102,4 @@ class jn03_search_lang extends jn00_search_pf {
 }
 
 exports.jn03_search_lang = jn03_search_lang
+

@@ -48,3 +48,4 @@ class jquery_style {
     }
 
 };
+

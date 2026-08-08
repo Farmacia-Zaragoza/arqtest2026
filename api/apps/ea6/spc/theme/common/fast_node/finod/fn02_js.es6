@@ -146,3 +146,4 @@ class fn02_js_structure extends anode {
 }
 
 exports.fn02_js_structure = fn02_js_structure
+

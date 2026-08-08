@@ -134,3 +134,4 @@ class sec02_section_slider_truck extends html_style{
 }
 
 exports.sec02_section_slider_truck = sec02_section_slider_truck
+

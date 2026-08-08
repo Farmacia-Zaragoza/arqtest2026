@@ -113,3 +113,4 @@ class svg_style extends html_style {
 }
 
 exports.svg_style = svg_style
+

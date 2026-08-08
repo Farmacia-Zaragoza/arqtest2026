@@ -80,3 +80,4 @@ class work_cache extends site_model
 } // end Class
 
 exports.work_cache = work_cache
+

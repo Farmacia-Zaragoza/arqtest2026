@@ -122,3 +122,4 @@ class htm01_html_truck extends html_style  {
 }
 
 exports.htm01_html_truck = htm01_html_truck
+

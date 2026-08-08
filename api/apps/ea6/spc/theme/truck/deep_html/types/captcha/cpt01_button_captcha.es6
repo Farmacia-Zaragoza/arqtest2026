@@ -73,3 +73,4 @@ class cpt01_button_captcha extends svg_style {
 }
 
 exports.cpt01_button_captcha = cpt01_button_captcha
+

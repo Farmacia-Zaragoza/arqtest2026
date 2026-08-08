@@ -63,3 +63,4 @@ class rs04_object_list_inner extends rs00_rest_pf {
 }
 
 exports.rs04_object_list_inner = rs04_object_list_inner
+

@@ -189,3 +189,4 @@ class scr02_js_scripts_arqdru extends getset {
 }
 
 exports.scr02_js_scripts_arqdru = scr02_js_scripts_arqdru
+

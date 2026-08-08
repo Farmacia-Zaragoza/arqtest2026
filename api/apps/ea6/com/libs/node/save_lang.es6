@@ -58,3 +58,4 @@ function brqx_save_lang_node(nid, lang = "en") //Guardamos el nodo que llega com
   auto_nodetitle_set_title(node);
   node_save(node);
 };
+

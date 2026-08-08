@@ -72,3 +72,4 @@ class uri_fast extends uri_paths {
 }
 
 exports.uri_fast = uri_fast
+

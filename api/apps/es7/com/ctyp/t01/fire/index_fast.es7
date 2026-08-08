@@ -76,3 +76,4 @@ class index_fast extends index
 }  // End Class
 
 exports.index_fast = index_fast
+

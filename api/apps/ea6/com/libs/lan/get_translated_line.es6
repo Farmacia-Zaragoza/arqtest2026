@@ -140,3 +140,4 @@ else if (!search_lan_file(FULL_LANG_FILE, line ,TRANS_LINE, sep_int))
 	TRANS_LINE = TRANS_LINE_TO_WRITE;
 }
 
+

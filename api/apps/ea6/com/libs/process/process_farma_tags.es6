@@ -63,3 +63,4 @@ function process_farma_tags(line_tags, file_tags) //Proceso de los tags del fich
 
     return tags_updated;
 };
+

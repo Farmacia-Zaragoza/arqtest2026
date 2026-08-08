@@ -58,3 +58,4 @@ class head_angular extends common_head  {
 }
 
 exports.head_angular = head_angular
+

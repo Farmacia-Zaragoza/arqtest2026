@@ -98,3 +98,4 @@ function sort_unique_min_len(passed_array,min_len = 3)
 
 module.exports.sort_unique 				= 	sort_unique
 module.exports.sort_unique_min_len		= 	sort_unique_min_len
+

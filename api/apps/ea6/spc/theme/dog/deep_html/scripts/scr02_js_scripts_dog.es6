@@ -311,3 +311,4 @@ class scr02_js_scripts_dog extends getset  {
 }
 
 exports.scr02_js_scripts_dog = scr02_js_scripts_dog
+

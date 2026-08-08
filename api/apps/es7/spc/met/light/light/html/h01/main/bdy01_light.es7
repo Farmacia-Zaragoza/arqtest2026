@@ -198,3 +198,4 @@ class bdy01_body_light extends html_style  {
 }
 
 exports.bdy01_body_light = bdy01_body_light
+
