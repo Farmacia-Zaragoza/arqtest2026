@@ -56,17 +56,18 @@ global.define = function(name, value) {
 };
 
 // Constructor del bloque de inyección para la cabecera de cada archivo
+// Asignamos directamente al objeto global en lugar de usar la palabra clave "var"
 const injectedHeader = Object.keys(APP_PATHS)
-  .map(key => `var ${key} = ${JSON.stringify(APP_PATHS[key])};`)
+  .map(key => `global.${key} = global.${key} || ${JSON.stringify(APP_PATHS[key])};`)
   .join('\n') + '\n';
 
 // 4. INTERCEPTOR INMUNIZADOR:
-// Inyecta las variables en la parte superior del archivo antes de compilarlo
+// Inyecta las asignaciones globales seguras en la parte superior del archivo antes de compilarlo
 require.extensions['.es7'] = function(module, filename) {
   let content = fs.readFileSync(filename, 'utf8');
 
   // Solo inyectamos si no tiene ya la inyección añadida
-  if (!content.includes('var JS_ACO7 =')) {
+  if (!content.includes('global.JS_ACO7 =')) {
     content = injectedHeader + content;
   }
 
