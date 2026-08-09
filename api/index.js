@@ -1,3 +1,8 @@
+process.on('uncaughtException', (err) => {
+  console.log('💥 ERRORES DETECTADOS EN SERVIDOR:');
+  console.log(err.message);
+  console.log(err.stack);
+});
 // 1. Librerías básicas
 const express = require('express');
 const bodyParser = require('body-parser');
