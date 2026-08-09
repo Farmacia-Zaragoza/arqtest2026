@@ -46,7 +46,7 @@ const APP_PATHS = {
   JS_TYF7:  path.join(ROOT, 'api/apps/es7/com/ctyp/t02/')
 };
 
-// Asignar al ámbito global
+// Asignar al ámbito global de Node
 Object.keys(APP_PATHS).forEach(key => {
   global[key] = APP_PATHS[key];
 });
@@ -55,23 +55,21 @@ global.define = function(name, value) {
   global[name] = value;
 };
 
-// 4. INTERCEPTOR EN EL MANEJADOR DE EXTENSIONES (Bypassea a CoffeeScript)
-const pathKeysPattern = Object.keys(APP_PATHS).join('|');
-const joinRegex = new RegExp(`path\\.join\\(\\s*(${pathKeysPattern})\\b`, 'g');
+// Constructor del bloque de inyección para la cabecera de cada archivo
+const injectedHeader = Object.keys(APP_PATHS)
+  .map(key => `var ${key} = ${JSON.stringify(APP_PATHS[key])};`)
+  .join('\n') + '\n';
 
-// Interceptamos la extensión .es7 directamente en el cargador de módulos de Node
-const originalExtensionHandler = require.extensions['.es7'] || require.extensions['.js'];
-
+// 4. INTERCEPTOR INMUNIZADOR:
+// Inyecta las variables en la parte superior del archivo antes de compilarlo
 require.extensions['.es7'] = function(module, filename) {
   let content = fs.readFileSync(filename, 'utf8');
 
-  // Reemplazamos path.join(JS_ACO7, ...) por path.join('/var/task/api/...', ...)
-  content = content.replace(joinRegex, (match, key) => {
-    const cleanPath = APP_PATHS[key].replace(/\\/g, '/');
-    return `path.join('${cleanPath}'`;
-  });
+  // Solo inyectamos si no tiene ya la inyección añadida
+  if (!content.includes('var JS_ACO7 =')) {
+    content = injectedHeader + content;
+  }
 
-  // Compilamos directamente en el módulo
   module._compile(content, filename);
 };
 
