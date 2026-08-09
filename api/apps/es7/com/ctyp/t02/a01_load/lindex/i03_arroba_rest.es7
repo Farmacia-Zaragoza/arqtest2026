@@ -1,5 +1,7 @@
 const path = require('path');
-define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+
+global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 
 // [DOCHANGED_ES6_SPACES]
 // Updated_Langs:+NodeJs,Ruby,Php
@@ -18,32 +20,29 @@ define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 // Scomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
-
-const  { scomm_struc }        =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7' )  )
+const { scomm_struc } = require( path.join(global.JS_TYF7, 'a01_load/scomm/s03_struc.es7') );
 
 // Simple Common - Will Load only product information of article passed
 class arroba_rest extends scomm_struc {
   constructor(arroba)
   {
-
     super()
 
-    this.n                  =   "arroba_rest::"
-    this.m                  =   "cons"
+    this.n                   =   "arroba_rest::"
+    this.m                   =   "cons"
 
-    this.arroba             =   arroba
-    this.arr                =   this.arroba.arr
+    this.arroba              =   arroba
+    this.arr                 =   this.arroba.arr
 
-    this.u					=   this.arroba.u
+    this.u                   =   this.arroba.u
 
-    this.a                  =   ''
+    this.a                   =   ''
 
-    this.s					=   this.arroba.s
-    this.b					=   this.s.b
+    this.s                   =   this.arroba.s
+    this.b                   =   this.s.b
 
     // Type ssl - possible ssl
-    this.s.b.type_ssl       =   true
+    this.s.b.type_ssl        =   true
 
     this.s.b.language_already_loaded = false
 
@@ -57,42 +56,22 @@ class arroba_rest extends scomm_struc {
 
     // Tenemos el indice
     this.gen_idx_path()
-    // call to gen()
-
-
-    // Llama a generar el anode. Pero cuando se ha generado la ruta de cache
-
 
     this.p('i01_arrest_LOADING SECOND  :'      + '  Pth ' + this.s.ms.main_lang)
 
-    this.s.b.page_debug     = true
+    this.s.b.page_debug      = true
 
     this.run_cache()
-    // Call to gen() - anode.new()  - a.run() [page - position - multiposition - hierarchical ]
 
-    this.m                  =  'cons'
+    this.m                   =  'cons'
 
     this.p('i01_arrest_LOADING_EN  :'      + '  Pth ' + this.s.cs.idx[this.s.ms.main_lang])
     this.p('i01_arrest_LOADING_ES  :'      + '  Pth ' + this.s.cs.idx[this.s.cs.lang])
 
-    // this.p('i01_arrest_LOADING  :'      + '  Pth ' + this.s.cs.product[this.s.cs.lang])
     this.p('i01_arrest_LOADING EN  :'      + '  Pth ' + this.s.cs.list[this.s.ms.main_lang])
     this.p('i01_arrest_LOADING ES :'       + '  Pth ' + this.s.cs.list[this.s.cs.lang])
-
-    // this.p('i01_arrest_LOADING  :'      + '  Pth ' + this.s.cs.cache_path)
-
-    // let longi = Object.keys(this.a.arr['en']['nxj020']).length -1
-    // this.p('i01_arrest_ARRcache_arrlen  ' + longi)
-
-
-    // this.p('i01_arrindex_load ' +  this.s.cs.loadtype + '  Pty ' + this.s.cs.page_type)
-
-    // /brqx/pers/cache/arqdru/
-    // uritype/comm/product/nohuman/nouser/nocode/notrans/nosync/
-    // es_page_20_a1_arroba
   }
 
 }
 
-exports.arroba_rest = arroba_rest
-
+exports.arroba_rest = arroba_rest;

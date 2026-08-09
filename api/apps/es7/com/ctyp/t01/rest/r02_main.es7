@@ -1,5 +1,7 @@
 const path = require('path');
 
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
+
 // [DOCHANGED_ES6_SPACES]
 // Updated Langs: +NodeJs,Ruby,Php
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -18,28 +20,23 @@ const path = require('path');
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+const { r01_sheet } = require( path.join(global.JS_TYP7, 'rest/r01_sheet.es7') );
 
-//const { printlog }   =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'     )   ),
-const { r01_sheet }  =   require(  path.join(JS_TYP7  , 'rest/r01_sheet.es7'     )   );
-
-class r02_main  {
+class r02_main {
   constructor() {
-    // super()
-    this.n                          =   "r02_main::"
+    this.n       = "r02_main::"
 
-    this.arr         =   Array()
-    this.result      =   false
-    this.count       =   0
+    this.arr     = Array()
+    this.result  = false
+    this.count   = 0
 
-    this.item        =   new r01_sheet()
+    this.item    = new r01_sheet()
   }
 
   add(sheet){
-  	this.arr.push(sheet)
+    this.arr.push(sheet)
   }
 
 }
 
-exports.r02_main = r02_main
-
+exports.r02_main = r02_main;

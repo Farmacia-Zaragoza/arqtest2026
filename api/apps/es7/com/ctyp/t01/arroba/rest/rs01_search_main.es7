@@ -18,13 +18,12 @@
 
 const path = require('path');
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 
-const  { rs02_object_search_inner } =   require(  path.join(JS_TYP7  , 'arroba/rest/rs02_search_inner.es7' )  );
+const { rs02_object_search_inner } = require( path.join(global.JS_TYP7, 'arroba/rest/rs02_search_inner.es7') );
 
 // Comm Object
 class rs01_object_search_main extends rs02_object_search_inner {
-
 
   constructor (arroba , rest)
   {
@@ -34,7 +33,7 @@ class rs01_object_search_main extends rs02_object_search_inner {
 
   //---------------------------------------------------------------------------------------------
   // Recursive structure
-  gen_rest_search_main(  position   = '020'   )
+  gen_rest_search_main( position = '020' )
   {
 
     // 020
@@ -46,52 +45,35 @@ class rs01_object_search_main extends rs02_object_search_inner {
     else
       this.rest.child      = "yes"
 
-
     this.rest.type       = "bclink"
 
     // hmain
     if ( this.b.page_search)
       this.rest.hover      = "Seach hover " + this.u.bars_sub_query
 
-    // this.rest.breadcrumb = ''
-
-    // en/search/wysiwyg/regex/management
-    // this.p ('j01_list_main ' + this.rest.item + '  ' + this.rest.hover)
-    // this.p ('j01_list_mainURI ' + '  ' + this.u.uri )
-
     this.rest.link    = this.u.uri
 
     this.rest.index   = this.get_next_level(position)
 
+    var current_level = this.index
 
-    //       this.j.index             =   this.index
+    this.p('rs01_Ssearch_mai RESU ' + this.rest.child)
 
-      // Procesa atributos del site ( se hace en arroba - aqui habria que eliminarlo)
-      // this.process_site_values()                          ;
-
-     var current_level = this.index
-
-     this.p('rs01_Ssearch_mai RESU ' + this.rest.child)
-
-     if ( this.rest.child == "yes" )
-     {
-       if (     this.s.b.page_search)  this.gen_rest_search_inner(  position           )
-       else
-       {
-         // this.p('rs01_Ssearch_mai ' + this.s.cs.loadtype)
-    	 switch(this.s.cs.loadtype)
-    	 {
-    	   case "position":  this.gen_rest_list_inner()  ;     break ;
-    	   case "page":      this.gen_rest_page_inner()      ;      break ;
-	     }
-
-	   }
-
+    if ( this.rest.child == "yes" )
+    {
+      if ( this.s.b.page_search)  this.gen_rest_search_inner( position )
+      else
+      {
+        switch(this.s.cs.loadtype)
+        {
+          case "position":  this.gen_rest_list_inner()  ;      break ;
+          case "page":      this.gen_rest_page_inner()      ;      break ;
+        }
       }
+    }
 
   }
 
 }
 
-exports.rs01_object_search_main = rs01_object_search_main
-
+exports.rs01_object_search_main = rs01_object_search_main;
