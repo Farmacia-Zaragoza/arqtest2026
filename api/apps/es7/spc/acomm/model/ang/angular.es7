@@ -24,34 +24,23 @@
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-// cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
-
-// Must to be unique
-
 const path = require('path');
 
-JS_ACO7: path.join(ROOT, 'api/apps/es7/spc/acomm/'		),
-
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
-define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			))
-
-const   { angular_no_cache } =   require(  path.join(JS_ACO7  , 'model/ang/nocache_launcher.es7') );
-        const { angular_cache } = require(  path.join(JS_ACO7  , 'model/ang/cache_launcher.es7')   );
-        const { printlog } = require(  path.join(JS_TYP7  , 'logs/printlog.es7')              );
+const { angular_no_cache } = require( path.join(global.JS_ACO7, 'model/ang/nocache_launcher.es7') );
+const { angular_cache }    = require( path.join(global.JS_ACO7, 'model/ang/cache_launcher.es7') );
+const { printlog }         = require( path.join(global.JS_TYP7, 'logs/printlog.es7') );
 
 class angular extends printlog
 {
   constructor(pmt = '' )
   {
-
     super()
 
-    this.n                =  'angular::'
+    this.n = 'angular::'
 
     if (pmt.cache)        this.model          = new angular_cache(    pmt  )
     else                  this.model          = new angular_no_cache( pmt  )
   }
 } // end Class
 
-exports.angular = angular
-
+exports.angular = angular;
