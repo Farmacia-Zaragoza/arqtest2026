@@ -38,8 +38,8 @@ class angular extends printlog
 
     this.n = 'angular::'
 
-    if (pmt.cache)        this.model          = new angular_cache(    pmt  )
-    else                  this.model          = new angular_no_cache( pmt  )
+    if (pmt && pmt.cache)  this.model = new angular_cache( pmt )
+    else                   this.model = new angular_no_cache( pmt )
   }
 } // end Class
 
