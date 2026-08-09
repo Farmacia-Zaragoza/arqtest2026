@@ -33,21 +33,29 @@ function processDirectory(directory) {
         let content = fs.readFileSync(fullPath, 'utf8');
         let originalContent = content;
 
-        // 1. Eliminar residuos de require(path.join(..., 'paths.js'))
+        // 1. Limpiar residuos de require paths.js viejos
         content = content.replace(/.*paths\.js.*\n?/g, '');
-        content = content.replace(/(?:const|let|var)\s*\{\s*JS_[A-Z0-9_]+\s*\}\s*=\s*require\([^)]*\);?/gs, '');
 
-        // 2. Reemplazar define("JS_XYZ", ...) o define('JS_XYZ', ...) por global.JS_XYZ = ...
-        content = content.replace(/define\s*\(\s*['"](JS_[A-Z0-9_]+)['"]\s*,\s*/g, 'global.$1 = ');
-        content = content.replace(/(global\.JS_[A-Z0-9_]+\s*=\s*path\.join\([^)]+\))\s*\);?/g, '$1;');
+        // 2. Convertir require desestructurados propensos a fallo:
+        // Ejemplo: const { mi_clase } = require('...') -> const _m_0 = require('...'); const mi_clase = _m_0.mi_clase || _m_0;
+        let counter = 0;
+        content = content.replace(/(?:const|let|var)\s*\{\s*([a-zA-Z0-9_]+)\s*\}\s*=\s*require\(([^)]+)\);?/g, (match, varName, reqPath) => {
+          counter++;
+          const modVar = `_mod_safe_${counter}`;
+          return `const ${modVar} = require(${reqPath}); const ${varName} = ${modVar}.${varName} || ${modVar};`;
+        });
 
-        // 3. Reemplazar variables de ruta sin 'global.' en los require / path.join
-        content = content.replace(/path\.join\s*\(\s*(JS_[A-Z0-9_]+)\b/g, 'path.join(global.$1');
-        content = content.replace(/path\.join\s*\(\s*(ROOT)\b/g, 'path.join(global.$1');
+        // 3. Garantizar exportación doble al final si existe exports.nombre = nombre
+        const exportMatch = content.match(/exports\.([a-zA-Z0-9_]+)\s*=\s*\1;?/);
+        if (exportMatch) {
+          const className = exportMatch[1];
+          if (!content.includes(`module.exports = ${className}`)) {
+            content += `\nmodule.exports = ${className};\nmodule.exports.${className} = ${className};\n`;
+          }
+        }
 
         if (content !== originalContent) {
           fs.writeFileSync(fullPath, content, 'utf8');
-          console.log(`[CORREGIDO] ${path.relative(__dirname, fullPath)}`);
           archivosModificados++;
         }
       } catch (e) {}
@@ -55,10 +63,12 @@ function processDirectory(directory) {
   }
 }
 
-console.log("🚀 Limpiando residuos y arreglando sintaxis...");
+console.log("🚀 Iniciando blindaje masivo de módulos y herencias en todo el proyecto...");
 if (fs.existsSync(targetDir)) {
   processDirectory(targetDir);
-  console.log(`\n✅ ¡Proceso finalizado!`);
+  console.log(`\n✅ ¡Proceso finalizado con éxito!`);
   console.log(`📊 Archivos escaneados: ${totalArchivos}`);
-  console.log(`✨ Archivos corregidos: ${archivosModificados}`);
+  console.log(`✨ Archivos blindados automáticamente: ${archivosModificados}`);
+} else {
+  console.error(`❌ No se encontró la carpeta: ${targetDir}`);
 }

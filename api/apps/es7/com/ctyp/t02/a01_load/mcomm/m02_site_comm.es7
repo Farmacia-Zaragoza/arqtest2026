@@ -23,8 +23,8 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 // Site_Mcomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { scomm_struc } = require( path.join(global.JS_TYF7, 'a01_load/scomm/s03_struc.es7') );
-const { cache_site }  = require( path.join(global.JS_TYP7, 'site/s10_cache_site.es7') );
+const _mod_safe_1 = require( path.join(global.JS_TYF7, 'a01_load/scomm/s03_struc.es7'); const scomm_struc = _mod_safe_1.scomm_struc || _mod_safe_1; );
+const _mod_safe_2 = require( path.join(global.JS_TYP7, 'site/s10_cache_site.es7'); const cache_site = _mod_safe_2.cache_site || _mod_safe_2; );
 
 // Multi positions Load. Generate a new arr
 class site_mcomm extends scomm_struc {
@@ -79,3 +79,6 @@ class site_mcomm extends scomm_struc {
 }
 
 exports.site_mcomm = site_mcomm;
+
+module.exports = site_mcomm;
+module.exports.site_mcomm = site_mcomm;

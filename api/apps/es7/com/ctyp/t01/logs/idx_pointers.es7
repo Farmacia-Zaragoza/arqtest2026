@@ -61,3 +61,6 @@ class idx_pointers
 
 exports.idx_pointers = idx_pointers
 
+
+module.exports = idx_pointers;
+module.exports.idx_pointers = idx_pointers;

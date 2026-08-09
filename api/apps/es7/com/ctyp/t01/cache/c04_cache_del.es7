@@ -29,7 +29,7 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { struc }   =   require(  path.join(global.JS_TYP7  , 'struc/s01_struc.es7'     )    );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'struc/s01_struc.es7'     ); const struc = _mod_safe_1.struc || _mod_safe_1;    );
 	    const fo = require(  path.join(global.JS_LIB7  , 'file/file_operations.es7'  )  );
 
 class cache_del extends struc {
@@ -84,3 +84,6 @@ class cache_del extends struc {
 
 exports.cache_del = cache_del
 
+
+module.exports = cache_del;
+module.exports.cache_del = cache_del;

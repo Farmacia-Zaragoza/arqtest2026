@@ -20,7 +20,7 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { scomm_struc }        =   require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s03_struc.es7'  ) )
+const _mod_safe_1 = require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s03_struc.es7'  ); const scomm_struc = _mod_safe_1.scomm_struc || _mod_safe_1; )
 
 // Hierarchical strucure
 class arroba_hiera extends scomm_struc {
@@ -69,3 +69,6 @@ class arroba_hiera extends scomm_struc {
 
 exports.arroba_hiera = arroba_hiera
 
+
+module.exports = arroba_hiera;
+module.exports.arroba_hiera = arroba_hiera;

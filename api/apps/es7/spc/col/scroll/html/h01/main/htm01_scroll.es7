@@ -32,9 +32,9 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { common_html } 			= 	require(path.join(global.JS_ACO7, 'html/h01/main/common_html.es7'))
-		const { hea01_head_scroll } = require(path.join(global.JS_SPC7, 'scroll/html/h01/main/hea01_scroll.es7'))
-		const { bdy01_body_scroll } = require(path.join(global.JS_SPC7, 'scroll/html/h01/main/bdy01_scroll.es7'))
+const _mod_safe_1 = require(path.join(global.JS_ACO7, 'html/h01/main/common_html.es7'); const common_html = _mod_safe_1.common_html || _mod_safe_1;)
+		const _mod_safe_2 = require(path.join(global.JS_SPC7, 'scroll/html/h01/main/hea01_scroll.es7'); const hea01_head_scroll = _mod_safe_2.hea01_head_scroll || _mod_safe_2;)
+		const _mod_safe_3 = require(path.join(global.JS_SPC7, 'scroll/html/h01/main/bdy01_scroll.es7'); const bdy01_body_scroll = _mod_safe_3.bdy01_body_scroll || _mod_safe_3;)
 
 class htm01_html_scroll extends common_html  {
 
@@ -71,3 +71,6 @@ class htm01_html_scroll extends common_html  {
 
 exports.htm01_html_scroll = htm01_html_scroll
 
+
+module.exports = htm01_html_scroll;
+module.exports.htm01_html_scroll = htm01_html_scroll;

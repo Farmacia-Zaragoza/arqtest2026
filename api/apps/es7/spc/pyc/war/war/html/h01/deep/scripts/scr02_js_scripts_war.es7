@@ -27,8 +27,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { getset } = require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'))
-	const { html_style } = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'))
+const _mod_safe_1 = require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'); const getset = _mod_safe_1.getset || _mod_safe_1;)
+	const _mod_safe_2 = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'); const html_style = _mod_safe_2.html_style || _mod_safe_2;)
 
 class scr02_js_scripts_war extends getset {
 
@@ -239,3 +239,6 @@ class scr02_js_scripts_war extends getset {
 
 exports.scr02_js_scripts_war = scr02_js_scripts_war
 
+
+module.exports = scr02_js_scripts_war;
+module.exports.scr02_js_scripts_war = scr02_js_scripts_war;

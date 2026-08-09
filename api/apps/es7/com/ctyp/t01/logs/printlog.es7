@@ -22,7 +22,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { savelog }     =   require( path.join(global.JS_TYP7, 'logs/savelog.es7' )      );
+const _mod_safe_1 = require( path.join(global.JS_TYP7, 'logs/savelog.es7' ); const savelog = _mod_safe_1.savelog || _mod_safe_1;      );
 
 
 class printlog extends savelog
@@ -164,3 +164,6 @@ class printlog extends savelog
 
 exports.printlog = printlog
 
+
+module.exports = printlog;
+module.exports.printlog = printlog;

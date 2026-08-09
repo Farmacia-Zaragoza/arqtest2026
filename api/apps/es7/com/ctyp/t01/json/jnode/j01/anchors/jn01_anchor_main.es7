@@ -19,8 +19,8 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 const  fs                         =   require(  'fs'                                                   );
        const empty = require(  'is-empty'                             );
        const accents = require(  'remove-accents'                       );
-       const { idx_pointers } = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'))
-       const { jn02_array_anchor_inner } = require(path.join(global.JS_TYP7, 'json/jnode/j01/anchors/jn02_anchor_inner.es7'))
+       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j01/anchors/jn02_anchor_inner.es7'); const jn02_array_anchor_inner = _mod_safe_2.jn02_array_anchor_inner || _mod_safe_2;)
 
 // Comm Object
 class jn01_array_anchor_main extends jn02_array_anchor_inner {
@@ -78,3 +78,6 @@ class jn01_array_anchor_main extends jn02_array_anchor_inner {
 
 exports.jn01_array_anchor_main = jn01_array_anchor_main
 
+
+module.exports = jn01_array_anchor_main;
+module.exports.jn01_array_anchor_main = jn01_array_anchor_main;

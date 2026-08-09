@@ -18,7 +18,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { struc_setarr }  =   require(  path.join(global.JS_TYP7  , 'struc/s05_struc_setarr.es7'  )  )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'struc/s05_struc_setarr.es7'  ); const struc_setarr = _mod_safe_1.struc_setarr || _mod_safe_1;  )
 
 class struc_getarr extends struc_setarr {
   constructor() {
@@ -150,3 +150,6 @@ class struc_getarr extends struc_setarr {
 
 exports.struc_getarr = struc_getarr
 
+
+module.exports = struc_getarr;
+module.exports.struc_getarr = struc_getarr;

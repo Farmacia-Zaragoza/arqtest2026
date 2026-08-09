@@ -31,12 +31,12 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { getset }             =   require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'))
-    const { lnk02_css_link_wedding } = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/deep/styles/lnk02_css_link_wedding.es7'))
-    const { lnk03_css_minimized_wedding } = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/deep/styles/lnk03_css_minimized_wedding.es7'))
-    const { lnk04_css_inline_wedding } = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/deep/styles/lnk04_css_inline_wedding.es7'))
-    const { lnk05_css_inline_wedding } = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/deep/styles/lnk05_css_inline_multiple_wedding.es7'))
-    const { html_style } = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'))
+const _mod_safe_1 = require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'); const getset = _mod_safe_1.getset || _mod_safe_1;)
+    const _mod_safe_2 = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/deep/styles/lnk02_css_link_wedding.es7'); const lnk02_css_link_wedding = _mod_safe_2.lnk02_css_link_wedding || _mod_safe_2;)
+    const _mod_safe_3 = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/deep/styles/lnk03_css_minimized_wedding.es7'); const lnk03_css_minimized_wedding = _mod_safe_3.lnk03_css_minimized_wedding || _mod_safe_3;)
+    const _mod_safe_4 = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/deep/styles/lnk04_css_inline_wedding.es7'); const lnk04_css_inline_wedding = _mod_safe_4.lnk04_css_inline_wedding || _mod_safe_4;)
+    const _mod_safe_5 = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/deep/styles/lnk05_css_inline_multiple_wedding.es7'); const lnk05_css_inline_wedding = _mod_safe_5.lnk05_css_inline_wedding || _mod_safe_5;)
+    const _mod_safe_6 = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'); const html_style = _mod_safe_6.html_style || _mod_safe_6;)
 
 class lnk01_link_wedding extends getset  {
 
@@ -134,3 +134,6 @@ class lnk01_link_wedding extends getset  {
 
 exports.lnk01_link_wedding = lnk01_link_wedding
 
+
+module.exports = lnk01_link_wedding;
+module.exports.lnk01_link_wedding = lnk01_link_wedding;

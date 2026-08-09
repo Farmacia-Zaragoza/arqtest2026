@@ -27,9 +27,9 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { war_no_cache }    =   require(path.join(global.JS_PYC7, 'war/war/model/war_nocache_launcher.es7'))
-        const { war_cache } = require(path.join(global.JS_PYC7, 'war/war/model/war_cache_launcher.es7'))
-        const { printlog } = require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
+const _mod_safe_1 = require(path.join(global.JS_PYC7, 'war/war/model/war_nocache_launcher.es7'); const war_no_cache = _mod_safe_1.war_no_cache || _mod_safe_1;)
+        const _mod_safe_2 = require(path.join(global.JS_PYC7, 'war/war/model/war_cache_launcher.es7'); const war_cache = _mod_safe_2.war_cache || _mod_safe_2;)
+        const _mod_safe_3 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3;)
 
 class war extends printlog
 {
@@ -48,3 +48,6 @@ class war extends printlog
 
 exports.war = war
 
+
+module.exports = war;
+module.exports.war = war;

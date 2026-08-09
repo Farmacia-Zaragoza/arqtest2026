@@ -23,9 +23,9 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { tjson_comm }      =   require(  path.join(global.JS_ACO7  , 'json/j04/comm/j02_tjson_comm.es7' )  );
-        const { theme_angular } = require(  path.join(global.JS_ACO7  , 'html/h04/h01_theme_angular.es7'  ));
-        const { arroba_jtype } = require(  path.join(global.JS_ACO7  , 'json/j03/j01_arroba_type.es7'   ));
+const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j04/comm/j02_tjson_comm.es7' ); const tjson_comm = _mod_safe_1.tjson_comm || _mod_safe_1;  );
+        const _mod_safe_2 = require(  path.join(global.JS_ACO7  , 'html/h04/h01_theme_angular.es7'  ); const theme_angular = _mod_safe_2.theme_angular || _mod_safe_2;);
+        const _mod_safe_3 = require(  path.join(global.JS_ACO7  , 'json/j03/j01_arroba_type.es7'   ); const arroba_jtype = _mod_safe_3.arroba_jtype || _mod_safe_3;);
 
 class theme_json extends tjson_comm
 {
@@ -57,3 +57,6 @@ class theme_json extends tjson_comm
 
 exports.theme_json = theme_json
 
+
+module.exports = theme_json;
+module.exports.theme_json = theme_json;

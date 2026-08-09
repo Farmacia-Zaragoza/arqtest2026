@@ -16,7 +16,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { uri_front }     =   require(  path.join(global.JS_TYP7 , 'uri/u06_front.es7'  )  );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u06_front.es7'  ); const uri_front = _mod_safe_1.uri_front || _mod_safe_1;  );
 
 class uri_robot extends uri_front {
 
@@ -34,3 +34,6 @@ class uri_robot extends uri_front {
 
 exports.uri_robot = uri_robot
 
+
+module.exports = uri_robot;
+module.exports.uri_robot = uri_robot;

@@ -19,8 +19,8 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-//const   { cache }             =   require(path.join(global.JS_TYP7, 'cache/c01_cache.es7')),
-const   { jn01_general_common_json } =   require(path.join(global.JS_ACO7, 'json/j01/n01/jn01_general_common_json.es7'))
+//const _mod_safe_1 = require(path.join(global.JS_TYP7, 'cache/c01_cache.es7'); const cache = _mod_safe_1.cache || _mod_safe_1;),
+const _mod_safe_2 = require(path.join(global.JS_ACO7, 'json/j01/n01/jn01_general_common_json.es7'); const jn01_general_common_json = _mod_safe_2.jn01_general_common_json || _mod_safe_2;)
         const empty = require(  'is_empty'                             );
 
 class jn00_search_pf extends jn01_general_common_json {
@@ -99,3 +99,6 @@ class jn00_search_pf extends jn01_general_common_json {
 
 exports.jn00_search_pf = jn00_search_pf
 
+
+module.exports = jn00_search_pf;
+module.exports.jn00_search_pf = jn00_search_pf;

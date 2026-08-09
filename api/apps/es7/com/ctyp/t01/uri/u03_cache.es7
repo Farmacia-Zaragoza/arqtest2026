@@ -20,7 +20,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { uri_anchor }     =   require(  path.join(global.JS_TYP7 , 'uri/u04_anchor.es7'  )  );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u04_anchor.es7'  ); const uri_anchor = _mod_safe_1.uri_anchor || _mod_safe_1;  );
 
 class uri_cache extends uri_anchor {
 
@@ -100,3 +100,6 @@ class uri_cache extends uri_anchor {
 
 exports.uri_cache = uri_cache
 
+
+module.exports = uri_cache;
+module.exports.uri_cache = uri_cache;

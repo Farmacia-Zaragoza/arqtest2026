@@ -36,7 +36,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { struc_attrib }   =   require(  path.join(global.JS_TYP7  , 'struc/s03_struc_attrib.es7'   )   )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'struc/s03_struc_attrib.es7'   ); const struc_attrib = _mod_safe_1.struc_attrib || _mod_safe_1;   )
 
 
 class struc_gen extends struc_attrib {
@@ -179,3 +179,6 @@ class struc_gen extends struc_attrib {
 
 exports.struc_gen = struc_gen
 
+
+module.exports = struc_gen;
+module.exports.struc_gen = struc_gen;

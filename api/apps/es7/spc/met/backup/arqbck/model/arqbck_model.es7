@@ -29,9 +29,9 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { arqbck_no_cache } =  require(path.join(global.JS_MET7, 'backup/arqbck/model/arqbck_nocache_launcher.es7'))
-       const { arqbck_cache } = require(path.join(global.JS_MET7, 'backup/arqbck/model/arqbck_cache_launcher.es7'))
-       const { printlog } = require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
+const _mod_safe_1 = require(path.join(global.JS_MET7, 'backup/arqbck/model/arqbck_nocache_launcher.es7'); const arqbck_no_cache = _mod_safe_1.arqbck_no_cache || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_MET7, 'backup/arqbck/model/arqbck_cache_launcher.es7'); const arqbck_cache = _mod_safe_2.arqbck_cache || _mod_safe_2;)
+       const _mod_safe_3 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3;)
 
 class arqbck extends printlog
 {
@@ -52,3 +52,6 @@ class arqbck extends printlog
 
 exports.arqbck = arqbck
 
+
+module.exports = arqbck;
+module.exports.arqbck = arqbck;

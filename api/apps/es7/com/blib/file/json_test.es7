@@ -118,3 +118,6 @@ module.exports.jsontest                       = jsontest
 module.exports.jsonuritest                    = jsonuritest
 module.exports.create_json_line               = create_json_line
 
+
+module.exports = jsontest;
+module.exports.jsontest = jsontest;

@@ -27,8 +27,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { idx_pointers }     =   require(  path.join(global.JS_TYP7 , 'logs/idx_pointers.es7'                ));
-       const { d01_idx_pf } = require(  path.join(global.JS_TYP7 , 'arroba/aindex/d_pf/d01_idx_pf.es7'    ));
+const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'logs/idx_pointers.es7'                ); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;);
+       const _mod_safe_2 = require(  path.join(global.JS_TYP7 , 'arroba/aindex/d_pf/d01_idx_pf.es7'    ); const d01_idx_pf = _mod_safe_2.d01_idx_pf || _mod_safe_2;);
 
 class c01_idx_sheet extends d01_idx_pf {
 
@@ -101,3 +101,6 @@ class c01_idx_sheet extends d01_idx_pf {
 
 exports.c01_idx_sheet = c01_idx_sheet
 
+
+module.exports = c01_idx_sheet;
+module.exports.c01_idx_sheet = c01_idx_sheet;

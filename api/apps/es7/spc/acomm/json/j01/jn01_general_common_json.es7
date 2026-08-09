@@ -25,7 +25,7 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { jn11_general_common_simple_methods_json } =   require(  path.join(global.JS_ACO7  , 'json/j01/jn11_general_common_simple_methods_json.es7' ) )
+const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j01/jn11_general_common_simple_methods_json.es7' ); const jn11_general_common_simple_methods_json = _mod_safe_1.jn11_general_common_simple_methods_json || _mod_safe_1; )
 
 class jn01_general_common_json extends jn11_general_common_simple_methods_json {
 
@@ -156,3 +156,6 @@ class jn01_general_common_json extends jn11_general_common_simple_methods_json {
 
 exports.jn01_general_common_json = jn01_general_common_json
 
+
+module.exports = jn01_general_common_json;
+module.exports.jn01_general_common_json = jn01_general_common_json;

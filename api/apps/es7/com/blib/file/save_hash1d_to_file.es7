@@ -29,7 +29,7 @@ const   fs           =   require(  'fs'                                    );
     const trim = require(  'trim'                            );
     const mkdirp = require(  'mkdirp'                          );
 	const echo = require(	'node-echo'									);
-   const { printlog } = require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
+   const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_1.printlog || _mod_safe_1;)
 
 // Ck [19-06-03]
 // Save Hash2d_to_file --> Guardamos el contenido del hash de 2dim en el fichero
@@ -139,3 +139,6 @@ function save_hash1d_to_file(full_file_name_int = ''       , // 01. File
 
 module.exports.save_hash1d_to_file           = save_hash1d_to_file
 
+
+module.exports = save_hash1d_to_file;
+module.exports.save_hash1d_to_file = save_hash1d_to_file;

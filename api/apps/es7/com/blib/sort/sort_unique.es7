@@ -26,7 +26,7 @@ const	fs 					= 	require(	'fs'														);
 		const empty = require(	'is-empty'									);
 		const util = require(	'util'														);
 		const os = require(	'os'														);
-    const { printlog } = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7' )  );
+    const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7' ); const printlog = _mod_safe_1.printlog || _mod_safe_1;  );
 
 // Ok [19-05-11]
 
@@ -101,3 +101,6 @@ function sort_unique_min_len(passed_array,min_len = 3)
 module.exports.sort_unique 				= 	sort_unique
 module.exports.sort_unique_min_len		= 	sort_unique_min_len
 
+
+module.exports = sort_unique;
+module.exports.sort_unique = sort_unique;

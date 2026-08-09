@@ -17,7 +17,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { strings }       =   require(  path.join(global.JS_TYP7  , 'string/s01_strings.es7'   )   )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'string/s01_strings.es7'   ); const strings = _mod_safe_1.strings || _mod_safe_1;   )
 
 
 class site_defs extends strings {
@@ -52,3 +52,6 @@ class site_defs extends strings {
 
 exports.site_defs = site_defs
 
+
+module.exports = site_defs;
+module.exports.site_defs = site_defs;

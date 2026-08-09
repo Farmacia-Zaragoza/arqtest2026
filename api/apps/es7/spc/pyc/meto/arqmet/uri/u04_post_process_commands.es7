@@ -14,7 +14,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { site_sure_commands } =   require(path.join(global.JS_PYC7, 'meto/arqmet/uri/u05_sure_commands.es7'))
+const _mod_safe_1 = require(path.join(global.JS_PYC7, 'meto/arqmet/uri/u05_sure_commands.es7'); const site_sure_commands = _mod_safe_1.site_sure_commands || _mod_safe_1;)
 
 
 class post_process_commands extends site_sure_commands
@@ -54,3 +54,6 @@ class post_process_commands extends site_sure_commands
 
 exports.post_process_commands = post_process_commands
 
+
+module.exports = post_process_commands;
+module.exports.post_process_commands = post_process_commands;

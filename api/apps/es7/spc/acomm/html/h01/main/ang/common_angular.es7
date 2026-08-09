@@ -56,8 +56,8 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { common_body }    =   require( path.join(global.JS_ACO7  , 'html/h01/main/comm/common_body.es7'  ) );
-      const { car_loader } = require( path.join(global.JS_ACO7  , 'html/h01/deep/loader/car_loader.es7' ) );
+const _mod_safe_1 = require( path.join(global.JS_ACO7  , 'html/h01/main/comm/common_body.es7'  ); const common_body = _mod_safe_1.common_body || _mod_safe_1; );
+      const _mod_safe_2 = require( path.join(global.JS_ACO7  , 'html/h01/deep/loader/car_loader.es7' ); const car_loader = _mod_safe_2.car_loader || _mod_safe_2; );
 
 class common_angular extends common_body  {
 
@@ -167,3 +167,6 @@ class common_angular extends common_body  {
 
 exports.common_angular = common_angular
 
+
+module.exports = common_angular;
+module.exports.common_angular = common_angular;

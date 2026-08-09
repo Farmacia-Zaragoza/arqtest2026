@@ -10,7 +10,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { json_def }     =   require(path.join(global.JS_TYP7, 'json/jtype/json_def.es7'))
+const _mod_safe_1 = require(path.join(global.JS_TYP7, 'json/jtype/json_def.es7'); const json_def = _mod_safe_1.json_def || _mod_safe_1;)
 
 
 class json_copy  extends json_def {
@@ -72,3 +72,6 @@ class json_copy  extends json_def {
 
 exports.json_copy = json_copy
 
+
+module.exports = json_copy;
+module.exports.json_copy = json_copy;

@@ -17,7 +17,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { uri_process_commands }    =   require(  path.join(global.JS_TYP7  , 'uri/u07_process_commands.es7'     )   )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'uri/u07_process_commands.es7'     ); const uri_process_commands = _mod_safe_1.uri_process_commands || _mod_safe_1;   )
 
 class uri_front extends uri_process_commands {
 
@@ -106,3 +106,6 @@ class uri_front extends uri_process_commands {
 
 exports.uri_front = uri_front
 
+
+module.exports = uri_front;
+module.exports.uri_front = uri_front;

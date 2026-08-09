@@ -24,8 +24,8 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { scomm_defs }      =   require(path.join(global.JS_TYF7, 'a01_load/scomm/s04_defs.es7'))
-       const { hnode_type } = require(path.join(global.JS_PYC7, 'war/war/html/h02/hn01_hnode_type.es7'))
+const _mod_safe_1 = require(path.join(global.JS_TYF7, 'a01_load/scomm/s04_defs.es7'); const scomm_defs = _mod_safe_1.scomm_defs || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_PYC7, 'war/war/html/h02/hn01_hnode_type.es7'); const hnode_type = _mod_safe_2.hnode_type || _mod_safe_2;)
        const jtest = require(path.join(global.JS_LIB7, 'file/json_test.es7'))
        const sctf = require(path.join(global.JS_LIB7, 'file/save_code_to_file.es7'))
 
@@ -146,3 +146,6 @@ class hcomm_struc extends scomm_defs {
 
 exports.hcomm_struc = hcomm_struc
 
+
+module.exports = hcomm_struc;
+module.exports.hcomm_struc = hcomm_struc;

@@ -22,7 +22,7 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { jn10_index_site }   =   require(  path.join(global.JS_ACO7  , 'json/j02/jn10_jnode_index_site.es7' ) );
+const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j02/jn10_jnode_index_site.es7' ); const jn10_index_site = _mod_safe_1.jn10_index_site || _mod_safe_1; );
 	    const shtf = require(  path.join(global.JS_LIB7  , 'file/save_hash_to_file.es7') 	);
 
 class jn60_info_json extends jn10_index_site {
@@ -95,3 +95,6 @@ class jn60_info_json extends jn10_index_site {
 
 exports.jn60_info_json = jn60_info_json
 
+
+module.exports = jn60_info_json;
+module.exports.jn60_info_json = jn60_info_json;

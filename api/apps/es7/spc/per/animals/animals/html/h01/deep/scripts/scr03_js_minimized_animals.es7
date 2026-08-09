@@ -27,8 +27,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const 	{ getset } 			= 	require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'))
-		const { html_style } = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'))
+const _mod_safe_1 = require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'); const getset = _mod_safe_1.getset || _mod_safe_1;)
+		const _mod_safe_2 = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'); const html_style = _mod_safe_2.html_style || _mod_safe_2;)
 
 class scr03_js_minimized_animals extends getset  {
 
@@ -150,3 +150,6 @@ class scr03_js_minimized_animals extends getset  {
 
 exports.scr03_js_minimized_animals = scr03_js_minimized_animals
 
+
+module.exports = scr03_js_minimized_animals;
+module.exports.scr03_js_minimized_animals = scr03_js_minimized_animals;

@@ -30,7 +30,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { anode_main_page_process } =   require( path.join(global.JS_TYP7  , 'arroba/anode/a07_page/an72_main_process.es7' ) )
+const _mod_safe_1 = require( path.join(global.JS_TYP7  , 'arroba/anode/a07_page/an72_main_process.es7' ); const anode_main_page_process = _mod_safe_1.anode_main_page_process || _mod_safe_1; )
 
 class anode_run_search extends anode_main_page_process {
   constructor()
@@ -158,3 +158,6 @@ class anode_run_search extends anode_main_page_process {
 
 exports.anode_run_search = anode_run_search
 
+
+module.exports = anode_run_search;
+module.exports.anode_run_search = anode_run_search;

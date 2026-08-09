@@ -24,9 +24,9 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { common_head } 			= 	require(path.join(global.JS_ACO7, 'html/h01/main/common_head.es7'))
-        const { lnk01_link_liquid } = require(path.join(global.JS_MET7, 'liquid/liquid/html/h01/main/lnk01_link_liquid.es7'))
-        const { met01_meta_liquid } = require(path.join(global.JS_MET7, 'liquid/liquid/html/h01/main/met01_meta_liquid.es7'))
+const _mod_safe_1 = require(path.join(global.JS_ACO7, 'html/h01/main/common_head.es7'); const common_head = _mod_safe_1.common_head || _mod_safe_1;)
+        const _mod_safe_2 = require(path.join(global.JS_MET7, 'liquid/liquid/html/h01/main/lnk01_link_liquid.es7'); const lnk01_link_liquid = _mod_safe_2.lnk01_link_liquid || _mod_safe_2;)
+        const _mod_safe_3 = require(path.join(global.JS_MET7, 'liquid/liquid/html/h01/main/met01_meta_liquid.es7'); const met01_meta_liquid = _mod_safe_3.met01_meta_liquid || _mod_safe_3;)
 
 class hea01_head_liquid extends common_head  {
 
@@ -59,3 +59,6 @@ class hea01_head_liquid extends common_head  {
 
 exports.hea01_head_liquid = hea01_head_liquid
 
+
+module.exports = hea01_head_liquid;
+module.exports.hea01_head_liquid = hea01_head_liquid;

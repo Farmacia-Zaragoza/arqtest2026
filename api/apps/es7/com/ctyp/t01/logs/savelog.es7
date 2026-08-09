@@ -210,3 +210,6 @@ class savelog
 
 exports.savelog          = savelog;
 
+
+module.exports = savelog;
+module.exports.savelog = savelog;

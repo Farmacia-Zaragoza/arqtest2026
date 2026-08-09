@@ -63,3 +63,6 @@ module.exports.delete_full_filename  = delete_full_filename
 module.exports.delete_if_exist_full_filename  = delete_if_exist_full_filename
 module.exports.delete_file_pattern = delete_file_pattern
 
+
+module.exports = delete_full_filename;
+module.exports.delete_full_filename = delete_full_filename;

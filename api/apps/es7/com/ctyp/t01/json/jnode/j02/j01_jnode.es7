@@ -18,9 +18,9 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { jn01_commo_json_simple }   =   require(path.join(global.JS_TYP7, 'json/jnode/j01/objects/jn01_simple.es7'))
-        const { commjson_site } = require(path.join(global.JS_TYP7, 'json/jnode/j00/jn10_commjson_site.es7'))
-        const { arrajson_site } = require(path.join(global.JS_TYP7, 'json/jnode/j00/jn11_arrajson_site.es7'))
+const _mod_safe_1 = require(path.join(global.JS_TYP7, 'json/jnode/j01/objects/jn01_simple.es7'); const jn01_commo_json_simple = _mod_safe_1.jn01_commo_json_simple || _mod_safe_1;)
+        const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j00/jn10_commjson_site.es7'); const commjson_site = _mod_safe_2.commjson_site || _mod_safe_2;)
+        const _mod_safe_3 = require(path.join(global.JS_TYP7, 'json/jnode/j00/jn11_arrajson_site.es7'); const arrajson_site = _mod_safe_3.arrajson_site || _mod_safe_3;)
 
 class jnode extends jn01_commo_json_simple {
   constructor(    arroba  = ''              )
@@ -61,3 +61,6 @@ class jnode extends jn01_commo_json_simple {
 
 exports.jnode = jnode
 
+
+module.exports = jnode;
+module.exports.jnode = jnode;

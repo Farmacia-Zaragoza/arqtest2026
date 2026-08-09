@@ -14,7 +14,7 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 const   sctf  			 = 	require(  path.join(global.JS_LIB7  , 'file/save_code_to_file.es7' 	)     );
-        const { manage_robot } = require(  path.join(global.JS_TYP7  , 'robot/manage_robot.es7'   )  );
+        const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'robot/manage_robot.es7'   ); const manage_robot = _mod_safe_1.manage_robot || _mod_safe_1;  );
 
 class blkrobot extends manage_robot {
   constructor(file_name = '')
@@ -75,3 +75,6 @@ class blkrobot extends manage_robot {
 
 exports.blkrobot = blkrobot
 
+
+module.exports = blkrobot;
+module.exports.blkrobot = blkrobot;

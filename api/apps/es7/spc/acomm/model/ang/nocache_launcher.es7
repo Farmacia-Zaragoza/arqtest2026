@@ -86,3 +86,6 @@ class angular_no_cache extends angular_model
 } // end Class
 
 exports.angular_no_cache = angular_no_cache;
+
+module.exports = angular_no_cache;
+module.exports.angular_no_cache = angular_no_cache;

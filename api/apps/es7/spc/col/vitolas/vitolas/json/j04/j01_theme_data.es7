@@ -23,12 +23,12 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { tdata_comm }       =   require(path.join(global.JS_SPC7, 'acomm/json/j04/j01_tdata_comm.es7'))
-       const { arroba_scomm } = require(path.join(global.JS_TYF7, 'a01_load/scomm/s01_arroba_comm.es7'))
-       const { arroba_sprod } = require(path.join(global.JS_TYF7, 'a01_load/sprod/p01_arroba_prod.es7'))
-       const { arroba_ecomm } = require(path.join(global.JS_TYF7, 'a01_load/ecomm/e01_arroba_empty.es7'))
+const _mod_safe_1 = require(path.join(global.JS_SPC7, 'acomm/json/j04/j01_tdata_comm.es7'); const tdata_comm = _mod_safe_1.tdata_comm || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_TYF7, 'a01_load/scomm/s01_arroba_comm.es7'); const arroba_scomm = _mod_safe_2.arroba_scomm || _mod_safe_2;)
+       const _mod_safe_3 = require(path.join(global.JS_TYF7, 'a01_load/sprod/p01_arroba_prod.es7'); const arroba_sprod = _mod_safe_3.arroba_sprod || _mod_safe_3;)
+       const _mod_safe_4 = require(path.join(global.JS_TYF7, 'a01_load/ecomm/e01_arroba_empty.es7'); const arroba_ecomm = _mod_safe_4.arroba_ecomm || _mod_safe_4;)
 
-       const { theme_json } = require(path.join(global.JS_SPC7, 'vitolas/json/j04/j02_theme_json.es7'))
+       const _mod_safe_5 = require(path.join(global.JS_SPC7, 'vitolas/json/j04/j02_theme_json.es7'); const theme_json = _mod_safe_5.theme_json || _mod_safe_5;)
 
 class theme_data extends tdata_comm
 {
@@ -73,3 +73,6 @@ class theme_data extends tdata_comm
 
 exports.theme_data = theme_data
 
+
+module.exports = theme_data;
+module.exports.theme_data = theme_data;

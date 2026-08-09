@@ -27,7 +27,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { anode_multi_process } =   require( path.join(global.JS_TYP7  , 'arroba/anode/a02_multi/an26_multi_process.es7' ) );
+const _mod_safe_1 = require( path.join(global.JS_TYP7  , 'arroba/anode/a02_multi/an26_multi_process.es7' ); const anode_multi_process = _mod_safe_1.anode_multi_process || _mod_safe_1; );
 
 
 class anode_multi_load extends anode_multi_process {
@@ -127,3 +127,6 @@ class anode_multi_load extends anode_multi_process {
 
 exports.anode_multi_load = anode_multi_load
 
+
+module.exports = anode_multi_load;
+module.exports.anode_multi_load = anode_multi_load;

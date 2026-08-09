@@ -21,8 +21,8 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 const  fs                            =   require(  'fs'                                                       );
        const empty = require(  'is-empty'                                 );
        const accents = require(  'remove-accents'                           );
-       const { idx_pointers } = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'))
-       const { jn03_commo_json_recursive } = require(path.join(global.JS_TYP7, 'json/jnode/j01/objects/jn03_recursive.es7'))
+       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j01/objects/jn03_recursive.es7'); const jn03_commo_json_recursive = _mod_safe_2.jn03_commo_json_recursive || _mod_safe_2;)
 
 // Common Objects
 class jn02_commo_json_doble extends jn03_commo_json_recursive {
@@ -103,3 +103,6 @@ class jn02_commo_json_doble extends jn03_commo_json_recursive {
 
 exports.jn02_commo_json_doble = jn02_commo_json_doble
 
+
+module.exports = jn02_commo_json_doble;
+module.exports.jn02_commo_json_doble = jn02_commo_json_doble;

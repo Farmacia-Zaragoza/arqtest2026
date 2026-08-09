@@ -23,8 +23,8 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { scomm_defs }      =   require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s04_defs.es7'     ) );
-       const { jnode } = require(    path.join(global.JS_TYP7  , 'json/jnode/j02/j01_jnode.es7'  ) );
+const _mod_safe_1 = require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s04_defs.es7'     ); const scomm_defs = _mod_safe_1.scomm_defs || _mod_safe_1; );
+       const _mod_safe_2 = require(    path.join(global.JS_TYP7  , 'json/jnode/j02/j01_jnode.es7'  ); const jnode = _mod_safe_2.jnode || _mod_safe_2; );
 
 // Simple Common - Will Load only common information
 class jcomm_struc extends scomm_defs {
@@ -60,3 +60,6 @@ class jcomm_struc extends scomm_defs {
 
 exports.jcomm_struc = jcomm_struc
 
+
+module.exports = jcomm_struc;
+module.exports.jcomm_struc = jcomm_struc;

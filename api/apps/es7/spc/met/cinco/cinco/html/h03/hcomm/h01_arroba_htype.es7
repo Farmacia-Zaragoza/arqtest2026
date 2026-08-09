@@ -19,7 +19,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { hcomm_struc }      =   require(path.join(global.JS_MET7, 'cinco/cinco/html/h03/hcomm/h02_struc.es7'))
+const _mod_safe_1 = require(path.join(global.JS_MET7, 'cinco/cinco/html/h03/hcomm/h02_struc.es7'); const hcomm_struc = _mod_safe_1.hcomm_struc || _mod_safe_1;)
 
 class arroba_htype extends hcomm_struc {
   constructor(    container  )
@@ -65,3 +65,6 @@ class arroba_htype extends hcomm_struc {
 
 exports.arroba_htype = arroba_htype
 
+
+module.exports = arroba_htype;
+module.exports.arroba_htype = arroba_htype;

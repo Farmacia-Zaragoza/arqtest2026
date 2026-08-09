@@ -85,3 +85,6 @@ class angular_model extends common_model
 
 exports.angular_model = angular_model;
 exports.model = angular_model;
+
+module.exports = angular_model;
+module.exports.angular_model = angular_model;

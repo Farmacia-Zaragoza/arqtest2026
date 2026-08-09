@@ -30,7 +30,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { struc_gen_mix }   =   require(  path.join(global.JS_TYP7  , 'struc/s08_struc_gen_mix.es7'   )   )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'struc/s08_struc_gen_mix.es7'   ); const struc_gen_mix = _mod_safe_1.struc_gen_mix || _mod_safe_1;   )
 
 class struc_gen_anchor extends struc_gen_mix {
   constructor()
@@ -199,3 +199,6 @@ class struc_gen_anchor extends struc_gen_mix {
 
 exports.struc_gen_anchor = struc_gen_anchor
 
+
+module.exports = struc_gen_anchor;
+module.exports.struc_gen_anchor = struc_gen_anchor;

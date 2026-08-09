@@ -16,7 +16,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { jn01_object_search_main } =   require(  path.join(global.JS_TYP7  , 'json/jsearch/j01/js01_search_main.es7' ) )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'json/jsearch/j01/js01_search_main.es7' ); const jn01_object_search_main = _mod_safe_1.jn01_object_search_main || _mod_safe_1; )
 
 class jn02_general_search_json extends jn01_object_search_main {
 
@@ -61,3 +61,6 @@ class jn02_general_search_json extends jn01_object_search_main {
 
 exports.jn02_general_search_json = jn02_general_search_json
 
+
+module.exports = jn02_general_search_json;
+module.exports.jn02_general_search_json = jn02_general_search_json;

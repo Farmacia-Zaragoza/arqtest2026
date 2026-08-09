@@ -21,8 +21,8 @@ const  fs                             =   require(  'fs'                        
        const empty = require(  'is-empty'                          );
        const accents = require(  'remove-accents'                    );
 	   const rand = require(path.join(global.JS_LIB7, 'rand/rand.es7'))
-       const { idx_pointers } = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'))
-       const { jn07_comma_json_doble_call } = require(path.join(global.JS_TYP7, 'json/jnode/j01/arrays/jn07_doble_call.es7'))
+       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j01/arrays/jn07_doble_call.es7'); const jn07_comma_json_doble_call = _mod_safe_2.jn07_comma_json_doble_call || _mod_safe_2;)
 
 class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
@@ -155,3 +155,6 @@ class jn06_comma_json_rand extends jn07_comma_json_doble_call {
 
 exports.jn06_comma_json_rand = jn06_comma_json_rand
 
+
+module.exports = jn06_comma_json_rand;
+module.exports.jn06_comma_json_rand = jn06_comma_json_rand;

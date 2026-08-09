@@ -12,7 +12,7 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 const 	echo 				= 	require(	'node-echo'										);
 		const sctf = require(path.join(global.JS_LIB7, 'file/save_code_to_file.es7'))
-		const { typejson_object } = require(path.join(global.JS_OBJ, 'json/typejson_object.es6'))
+		const _mod_safe_1 = require(path.join(global.JS_OBJ, 'json/typejson_object.es6'); const typejson_object = _mod_safe_1.typejson_object || _mod_safe_1;)
 
 class objjson_site extends typejson_object {
 	constructor(file_name = '')
@@ -206,3 +206,6 @@ class objjson_site extends typejson_object {
 
 exports.objjson_site = objjson_site
 
+
+module.exports = objjson_site;
+module.exports.objjson_site = objjson_site;

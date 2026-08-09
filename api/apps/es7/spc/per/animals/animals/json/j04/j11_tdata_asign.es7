@@ -21,7 +21,7 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { tdata_comm }       =   require(path.join(global.JS_ACO7, 'json/j04/j01_tdata_comm.es7'))
+const _mod_safe_1 = require(path.join(global.JS_ACO7, 'json/j04/j01_tdata_comm.es7'); const tdata_comm = _mod_safe_1.tdata_comm || _mod_safe_1;)
 
 class tdata_asign extends tdata_comm
 {
@@ -101,3 +101,6 @@ class tdata_asign extends tdata_comm
 
 exports.tdata_asign = tdata_asign
 
+
+module.exports = tdata_asign;
+module.exports.tdata_asign = tdata_asign;

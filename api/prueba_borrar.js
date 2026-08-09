@@ -27,7 +27,7 @@ if (typeof global.define !== 'function') {
 }
 
 // Checking long paths
-// const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
+// const _mod_safe_1 = require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7'); const params = _mod_safe_1.params || _mod_safe_1;  );
 
 //Constantes GLOBALES
 global.JS_MODEL = path.join(global.ROOT, 'api/apps/es7'										);

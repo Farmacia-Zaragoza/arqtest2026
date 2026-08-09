@@ -17,7 +17,7 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { jn04_search_site }   =   require(  path.join(global.JS_ACO7  , 'json/j02/jn04_jnode_search_site.es7'  ) );
+const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j02/jn04_jnode_search_site.es7'  ); const jn04_search_site = _mod_safe_1.jn04_search_site || _mod_safe_1; );
 
 class jn20_search_json extends jn04_search_site {
 
@@ -51,3 +51,6 @@ class jn20_search_json extends jn04_search_site {
 
 exports.jn20_search_json = jn20_search_json
 
+
+module.exports = jn20_search_json;
+module.exports.jn20_search_json = jn20_search_json;

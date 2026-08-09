@@ -19,7 +19,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { uri_page_string } =   require(  path.join(global.JS_TYP7 , 'uri/u09_page_string.es7' ) );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u09_page_string.es7' ); const uri_page_string = _mod_safe_1.uri_page_string || _mod_safe_1; );
       const sort = require(  path.join(global.JS_LIB  , 'sort/sort_unique.es6'	) );
 
 class uri_sorts extends uri_page_string {
@@ -207,3 +207,6 @@ class uri_sorts extends uri_page_string {
 
 exports.uri_sorts = uri_sorts
 
+
+module.exports = uri_sorts;
+module.exports.uri_sorts = uri_sorts;

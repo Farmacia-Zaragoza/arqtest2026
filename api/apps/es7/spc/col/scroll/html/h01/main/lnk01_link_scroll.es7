@@ -19,8 +19,8 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { common_link }         =   require(path.join(global.JS_ACO7, 'html/h01/main/common_link.es7'))
-       const { common_link_react } = require(path.join(global.JS_ACO7, 'html/h01/deep/styles/common_link_react.es7'))
+const _mod_safe_1 = require(path.join(global.JS_ACO7, 'html/h01/main/common_link.es7'); const common_link = _mod_safe_1.common_link || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_ACO7, 'html/h01/deep/styles/common_link_react.es7'); const common_link_react = _mod_safe_2.common_link_react || _mod_safe_2;)
 
 class lnk01_link_scroll extends common_link  {
 
@@ -46,3 +46,6 @@ class lnk01_link_scroll extends common_link  {
 
 exports.lnk01_link_scroll = lnk01_link_scroll
 
+
+module.exports = lnk01_link_scroll;
+module.exports.lnk01_link_scroll = lnk01_link_scroll;

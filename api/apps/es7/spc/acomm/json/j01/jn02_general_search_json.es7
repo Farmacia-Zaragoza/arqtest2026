@@ -16,7 +16,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { jns01_json_recursive } =   require(  path.join(global.JS_TYP7  , 'json/jsearch/j01/jns01_recursive.es7' ) )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'json/jsearch/j01/jns01_recursive.es7' ); const jns01_json_recursive = _mod_safe_1.jns01_json_recursive || _mod_safe_1; )
 
 class jn02_general_search_json extends jns01_json_recursive {
 
@@ -61,3 +61,6 @@ class jn02_general_search_json extends jns01_json_recursive {
 
 exports.jn02_general_search_json = jn02_general_search_json
 
+
+module.exports = jn02_general_search_json;
+module.exports.jn02_general_search_json = jn02_general_search_json;

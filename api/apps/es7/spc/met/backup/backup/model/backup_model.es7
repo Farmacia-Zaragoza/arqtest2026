@@ -29,9 +29,9 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { backup_no_cache } =   require(path.join(global.JS_MET7, 'backup/backup/model/backup_nocache_launcher.es7'))
-        const { backup_cache } = require(path.join(global.JS_MET7, 'backup/backup/model/backup_cache_launcher.es7'))
-        const { printlog } = require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
+const _mod_safe_1 = require(path.join(global.JS_MET7, 'backup/backup/model/backup_nocache_launcher.es7'); const backup_no_cache = _mod_safe_1.backup_no_cache || _mod_safe_1;)
+        const _mod_safe_2 = require(path.join(global.JS_MET7, 'backup/backup/model/backup_cache_launcher.es7'); const backup_cache = _mod_safe_2.backup_cache || _mod_safe_2;)
+        const _mod_safe_3 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3;)
 
 class backup extends printlog
 {
@@ -50,3 +50,6 @@ class backup extends printlog
 
 exports.backup = backup
 
+
+module.exports = backup;
+module.exports.backup = backup;

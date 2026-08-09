@@ -19,7 +19,7 @@ const path = require('path');
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 
-const   { cache }             =   require(  require(  path.join(global.JS_TYP7 , 'cache/c01_cache.es7'     )));
+const _mod_safe_1 = require(  require(  path.join(global.JS_TYP7 , 'cache/c01_cache.es7'     ); const cache = _mod_safe_1.cache || _mod_safe_1;));
 
 class d03_idx_fn extends cache {
 
@@ -222,3 +222,6 @@ class d03_idx_fn extends cache {
 
 exports.d03_idx_fn = d03_idx_fn
 
+
+module.exports = d03_idx_fn;
+module.exports.d03_idx_fn = d03_idx_fn;

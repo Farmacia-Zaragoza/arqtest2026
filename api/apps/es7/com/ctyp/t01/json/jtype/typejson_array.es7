@@ -12,7 +12,7 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const 	{ blkjson_array } 	= 	require(path.join(global.JS_TYP7, 'json/jtype/blkjson_array.es7'))
+const _mod_safe_1 = require(path.join(global.JS_TYP7, 'json/jtype/blkjson_array.es7'); const blkjson_array = _mod_safe_1.blkjson_array || _mod_safe_1;)
 		const sctf = require(path.join(global.JS_LIB7, 'file/save_code_to_file.es7'))
 
 class typejson_array extends blkjson_array {
@@ -105,3 +105,6 @@ class typejson_array extends blkjson_array {
 
 exports.typejson_array = typejson_array
 
+
+module.exports = typejson_array;
+module.exports.typejson_array = typejson_array;

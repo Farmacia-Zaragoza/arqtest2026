@@ -14,7 +14,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { post_process_commands } =   require(path.join(global.JS_MET7, 'cinco/arqcin/uri/u04_post_process_commands.es7'))
+const _mod_safe_1 = require(path.join(global.JS_MET7, 'cinco/arqcin/uri/u04_post_process_commands.es7'); const post_process_commands = _mod_safe_1.post_process_commands || _mod_safe_1;)
 
 
 class site_uri_manage_commands extends post_process_commands
@@ -155,3 +155,6 @@ class site_uri_manage_commands extends post_process_commands
 
 exports.site_uri_manage_commands = site_uri_manage_commands
 
+
+module.exports = site_uri_manage_commands;
+module.exports.site_uri_manage_commands = site_uri_manage_commands;

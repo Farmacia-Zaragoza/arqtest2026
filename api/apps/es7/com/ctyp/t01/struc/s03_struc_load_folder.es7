@@ -33,8 +33,8 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { struc_pho }        =   require(  path.join(global.JS_TYP7  , 'struc/s04_struc_pho.es7'  ));
-      const { idx_pointers } = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'  )              );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'struc/s04_struc_pho.es7'  ); const struc_pho = _mod_safe_1.struc_pho || _mod_safe_1;);
+      const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'  ); const idx_pointers = _mod_safe_2.idx_pointers || _mod_safe_2;              );
       const ffi = require(path.join(global.JS_LIB7 , 'file/file_load.es7' ));
 
 class struc_load_folder extends struc_pho {
@@ -407,3 +407,6 @@ class struc_load_folder extends struc_pho {
 
 exports.struc_load_folder = struc_load_folder
 
+
+module.exports = struc_load_folder;
+module.exports.struc_load_folder = struc_load_folder;

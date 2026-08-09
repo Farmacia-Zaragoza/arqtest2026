@@ -30,15 +30,15 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { tindex_comm }               =   require(  path.join(global.JS_ACO7  , 'json/j04/comm/j10_dindex_comm.es7'  ));
-      const { jn01_checking_search_words } = require(  path.join(global.JS_TYP7  , 'json/jsearch/j02/jn01_check_words.es7' ));
-      const { idx_pointers } = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'                ));
-      const { arroba_mcomm } = require(  path.join(global.JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7' ));
-      const { arroba_scomm } = require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7' ));
-      const { arroba_sprod } = require(  path.join(global.JS_TYF7  , 'a01_load/sprod/p01_arroba_prod.es7' ));
-      const { arroba_search } = require(  path.join(global.JS_TYF7  , 'a01_load/lindex/i02_arroba_search.es7') );
-      const { arroba_hiera } = require(  path.join(global.JS_TYF7  , 'a01_load/hiera/h01_arroba_hiera.es7'));
-      const { arroba_fs } = require(  path.join(global.JS_TYF7  , 'a01_load/fs/h01_arroba_fs.es7'));
+const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j04/comm/j10_dindex_comm.es7'  ); const tindex_comm = _mod_safe_1.tindex_comm || _mod_safe_1;);
+      const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'json/jsearch/j02/jn01_check_words.es7' ); const jn01_checking_search_words = _mod_safe_2.jn01_checking_search_words || _mod_safe_2;);
+      const _mod_safe_3 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'                ); const idx_pointers = _mod_safe_3.idx_pointers || _mod_safe_3;);
+      const _mod_safe_4 = require(  path.join(global.JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7' ); const arroba_mcomm = _mod_safe_4.arroba_mcomm || _mod_safe_4;);
+      const _mod_safe_5 = require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7' ); const arroba_scomm = _mod_safe_5.arroba_scomm || _mod_safe_5;);
+      const _mod_safe_6 = require(  path.join(global.JS_TYF7  , 'a01_load/sprod/p01_arroba_prod.es7' ); const arroba_sprod = _mod_safe_6.arroba_sprod || _mod_safe_6;);
+      const _mod_safe_7 = require(  path.join(global.JS_TYF7  , 'a01_load/lindex/i02_arroba_search.es7'); const arroba_search = _mod_safe_7.arroba_search || _mod_safe_7; );
+      const _mod_safe_8 = require(  path.join(global.JS_TYF7  , 'a01_load/hiera/h01_arroba_hiera.es7'); const arroba_hiera = _mod_safe_8.arroba_hiera || _mod_safe_8;);
+      const _mod_safe_9 = require(  path.join(global.JS_TYF7  , 'a01_load/fs/h01_arroba_fs.es7'); const arroba_fs = _mod_safe_9.arroba_fs || _mod_safe_9;);
 
 class tdata_comm extends tindex_comm
 {
@@ -170,3 +170,6 @@ class tdata_comm extends tindex_comm
 
 exports.tdata_comm = tdata_comm
 
+
+module.exports = tdata_comm;
+module.exports.tdata_comm = tdata_comm;

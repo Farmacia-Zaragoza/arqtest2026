@@ -25,7 +25,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const	{ cache_save }     =   require(  path.join(global.JS_TYP7  , 'cache/c04_cache_save.es7'   )   )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'cache/c04_cache_save.es7'   ); const cache_save = _mod_safe_1.cache_save || _mod_safe_1;   )
 
 class cache_gen extends cache_save {
   constructor()
@@ -360,3 +360,6 @@ class cache_gen extends cache_save {
 
 exports.cache_gen = cache_gen
 
+
+module.exports = cache_gen;
+module.exports.cache_gen = cache_gen;

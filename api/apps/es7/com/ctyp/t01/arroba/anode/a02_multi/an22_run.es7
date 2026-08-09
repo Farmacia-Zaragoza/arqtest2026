@@ -31,7 +31,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { anode_multi_load }   =   require(  path.join(global.JS_TYP7  , 'arroba/anode/a02_multi/an24_multi_load.es7'   )   )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/anode/a02_multi/an24_multi_load.es7'   ); const anode_multi_load = _mod_safe_1.anode_multi_load || _mod_safe_1;   )
 
 class anode_run_multi extends anode_multi_load {
   constructor()
@@ -113,3 +113,6 @@ class anode_run_multi extends anode_multi_load {
 
 exports.anode_run_multi = anode_run_multi
 
+
+module.exports = anode_run_multi;
+module.exports.anode_run_multi = anode_run_multi;

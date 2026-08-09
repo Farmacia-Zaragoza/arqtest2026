@@ -145,3 +145,6 @@ module.exports.get_file_code              = get_file_code
 module.exports.set_file_array_no_comments = set_file_array_no_comments
 module.exports.set_file_array_full        = set_file_array_full
 
+
+module.exports = zero;
+module.exports.zero = zero;

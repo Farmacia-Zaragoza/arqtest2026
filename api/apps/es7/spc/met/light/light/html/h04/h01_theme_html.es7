@@ -20,8 +20,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { printlog }         =   require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
-       const { arroba_htype } = require(path.join(global.JS_MET7, 'light/light/html/h03/hcomm/h01_arroba_htype.es7'))
+const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_1.printlog || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_MET7, 'light/light/html/h03/hcomm/h01_arroba_htype.es7'); const arroba_htype = _mod_safe_2.arroba_htype || _mod_safe_2;)
 
 class theme_html extends printlog
 {
@@ -45,3 +45,6 @@ class theme_html extends printlog
 
 exports.theme_html = theme_html
 
+
+module.exports = theme_html;
+module.exports.theme_html = theme_html;

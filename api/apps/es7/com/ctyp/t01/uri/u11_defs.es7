@@ -16,7 +16,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { arroba_getarr }     =   require(  path.join(global.JS_TYP7  , 'array/a02_arroba_getarr.es7'     )   );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'array/a02_arroba_getarr.es7'     ); const arroba_getarr = _mod_safe_1.arroba_getarr || _mod_safe_1;   );
 
 class uri_defs extends arroba_getarr
 {
@@ -213,3 +213,6 @@ class uri_defs extends arroba_getarr
 
 exports.uri_defs = uri_defs
 
+
+module.exports = uri_defs;
+module.exports.uri_defs = uri_defs;

@@ -17,7 +17,7 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { site_common_sure_commands } =   require( path.join(global.JS_ACO7 , 'uri/n01/u04_sure_commands.es7' ))
+const _mod_safe_1 = require( path.join(global.JS_ACO7 , 'uri/n01/u04_sure_commands.es7' ); const site_common_sure_commands = _mod_safe_1.site_common_sure_commands || _mod_safe_1;)
 
 class common_post_process_commands extends site_common_sure_commands {
 
@@ -58,3 +58,6 @@ class common_post_process_commands extends site_common_sure_commands {
 
 exports.common_post_process_commands = common_post_process_commands
 
+
+module.exports = common_post_process_commands;
+module.exports.common_post_process_commands = common_post_process_commands;

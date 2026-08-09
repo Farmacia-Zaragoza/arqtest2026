@@ -24,9 +24,9 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { tjson_comm }      =   require(path.join(global.JS_SPC7, 'acomm/json/j04/j02_tjson_comm.es7'))
-        const { theme_html } = require(path.join(global.JS_MET7, 'light/light/html/h04/h01_theme_html.es7'))
-        const { arroba_jtype } = require(path.join(global.JS_MET7, 'light/light/json/j03/j01_arroba_type.es7'))
+const _mod_safe_1 = require(path.join(global.JS_SPC7, 'acomm/json/j04/j02_tjson_comm.es7'); const tjson_comm = _mod_safe_1.tjson_comm || _mod_safe_1;)
+        const _mod_safe_2 = require(path.join(global.JS_MET7, 'light/light/html/h04/h01_theme_html.es7'); const theme_html = _mod_safe_2.theme_html || _mod_safe_2;)
+        const _mod_safe_3 = require(path.join(global.JS_MET7, 'light/light/json/j03/j01_arroba_type.es7'); const arroba_jtype = _mod_safe_3.arroba_jtype || _mod_safe_3;)
 
 class theme_json extends tjson_comm
 {
@@ -53,3 +53,6 @@ class theme_json extends tjson_comm
 
 exports.theme_json = theme_json
 
+
+module.exports = theme_json;
+module.exports.theme_json = theme_json;

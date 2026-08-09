@@ -30,9 +30,9 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { common_html } 			= 	require(path.join(global.JS_ACO7, 'html/h01/main/common_html.es7'))
-		const { hea01_head_wedding } = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/main/hea01_wedding.es7'))
-		const { bdy01_body_wedding } = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/main/bdy01_wedding.es7'))
+const _mod_safe_1 = require(path.join(global.JS_ACO7, 'html/h01/main/common_html.es7'); const common_html = _mod_safe_1.common_html || _mod_safe_1;)
+		const _mod_safe_2 = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/main/hea01_wedding.es7'); const hea01_head_wedding = _mod_safe_2.hea01_head_wedding || _mod_safe_2;)
+		const _mod_safe_3 = require(path.join(global.JS_PER7, 'wedding/wedding/html/h01/main/bdy01_wedding.es7'); const bdy01_body_wedding = _mod_safe_3.bdy01_body_wedding || _mod_safe_3;)
 
 class htm01_html_wedding extends common_html  {
 
@@ -68,3 +68,6 @@ class htm01_html_wedding extends common_html  {
 
 exports.htm01_html_wedding = htm01_html_wedding
 
+
+module.exports = htm01_html_wedding;
+module.exports.htm01_html_wedding = htm01_html_wedding;

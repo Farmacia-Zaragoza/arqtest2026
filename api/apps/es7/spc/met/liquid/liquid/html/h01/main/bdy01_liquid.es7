@@ -22,10 +22,10 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const 	{ html_style } 					= 	require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'))
-		const { svg_style } = require(path.join(global.JS_BASE, 'com/objects/html/svg_style.es6'))
-		const { scr01_js_liquid } = require(path.join(global.JS_MET7, 'liquid/liquid/html/h01/main/scr01_js_liquid.es7'))
-		const { ifnojs } = require(path.join(global.JS_BASE, 'com/objects/html/ifnojs.es6'))
+const _mod_safe_1 = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'); const html_style = _mod_safe_1.html_style || _mod_safe_1;)
+		const _mod_safe_2 = require(path.join(global.JS_BASE, 'com/objects/html/svg_style.es6'); const svg_style = _mod_safe_2.svg_style || _mod_safe_2;)
+		const _mod_safe_3 = require(path.join(global.JS_MET7, 'liquid/liquid/html/h01/main/scr01_js_liquid.es7'); const scr01_js_liquid = _mod_safe_3.scr01_js_liquid || _mod_safe_3;)
+		const _mod_safe_4 = require(path.join(global.JS_BASE, 'com/objects/html/ifnojs.es6'); const ifnojs = _mod_safe_4.ifnojs || _mod_safe_4;)
 		const minify = require(	'html-minifier'									).minify;
 
 class bdy01_body_liquid extends html_style  {
@@ -201,3 +201,6 @@ class bdy01_body_liquid extends html_style  {
 
 exports.bdy01_body_liquid = bdy01_body_liquid
 
+
+module.exports = bdy01_body_liquid;
+module.exports.bdy01_body_liquid = bdy01_body_liquid;

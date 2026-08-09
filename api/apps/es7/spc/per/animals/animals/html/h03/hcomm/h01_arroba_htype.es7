@@ -19,8 +19,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { hcomm_struc }      =   require(path.join(global.JS_PER7, 'animals/animals/html/h03/hcomm/h02_struc.es7'))
-       const { cache_site } = require(path.join(global.JS_TYP7, 'site/s10_cache_site.es7'))
+const _mod_safe_1 = require(path.join(global.JS_PER7, 'animals/animals/html/h03/hcomm/h02_struc.es7'); const hcomm_struc = _mod_safe_1.hcomm_struc || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'site/s10_cache_site.es7'); const cache_site = _mod_safe_2.cache_site || _mod_safe_2;)
         const fs = require(	'fs'																						);
 		const scpf = require(path.join(global.JS_BASE, 'com/libs/file/full_path/level_02/save_code_properties_filename.es6'))
 
@@ -69,3 +69,6 @@ class arroba_htype extends hcomm_struc {
 
 exports.arroba_htype = arroba_htype
 
+
+module.exports = arroba_htype;
+module.exports.arroba_htype = arroba_htype;

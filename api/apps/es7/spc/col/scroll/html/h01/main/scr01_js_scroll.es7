@@ -27,12 +27,12 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const 	{ getset } 						= 	require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'))
-		const { html_style } = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'))
-		const { scr02_js_scripts_scroll } = require(path.join(global.JS_SPC7, 'scroll/html/h01/deep/scripts/scr02_js_scripts_scroll.es7'))
-		const { scr03_js_minimized_scroll } = require(path.join(global.JS_SPC7, 'scroll/html/h01/deep/scripts/scr03_js_minimized_scroll.es7'))
-		const { scr05_js_inline_scroll } = require(path.join(global.JS_SPC7, 'scroll/html/h01/deep/scripts/scr05_js_inline_scroll.es7'))
-		const { scr06_js_async_scroll } = require(path.join(global.JS_SPC7, 'scroll/html/h01/deep/scripts/scr06_js_async_scroll.es7'))
+const _mod_safe_1 = require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'); const getset = _mod_safe_1.getset || _mod_safe_1;)
+		const _mod_safe_2 = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'); const html_style = _mod_safe_2.html_style || _mod_safe_2;)
+		const _mod_safe_3 = require(path.join(global.JS_SPC7, 'scroll/html/h01/deep/scripts/scr02_js_scripts_scroll.es7'); const scr02_js_scripts_scroll = _mod_safe_3.scr02_js_scripts_scroll || _mod_safe_3;)
+		const _mod_safe_4 = require(path.join(global.JS_SPC7, 'scroll/html/h01/deep/scripts/scr03_js_minimized_scroll.es7'); const scr03_js_minimized_scroll = _mod_safe_4.scr03_js_minimized_scroll || _mod_safe_4;)
+		const _mod_safe_5 = require(path.join(global.JS_SPC7, 'scroll/html/h01/deep/scripts/scr05_js_inline_scroll.es7'); const scr05_js_inline_scroll = _mod_safe_5.scr05_js_inline_scroll || _mod_safe_5;)
+		const _mod_safe_6 = require(path.join(global.JS_SPC7, 'scroll/html/h01/deep/scripts/scr06_js_async_scroll.es7'); const scr06_js_async_scroll = _mod_safe_6.scr06_js_async_scroll || _mod_safe_6;)
 
 class scr01_js_scroll extends getset  {
 
@@ -93,3 +93,6 @@ class scr01_js_scroll extends getset  {
 
 exports.scr01_js_scroll = scr01_js_scroll
 
+
+module.exports = scr01_js_scroll;
+module.exports.scr01_js_scroll = scr01_js_scroll;

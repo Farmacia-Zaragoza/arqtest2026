@@ -21,7 +21,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { uri_sorts }     =   require(  path.join(global.JS_TYP7 , 'uri/u08_sorts.es7'  )  );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u08_sorts.es7'  ); const uri_sorts = _mod_safe_1.uri_sorts || _mod_safe_1;  );
 
 class uri_commands extends uri_sorts {
 
@@ -264,3 +264,6 @@ class uri_commands extends uri_sorts {
 
 exports.uri_commands = uri_commands
 
+
+module.exports = uri_commands;
+module.exports.uri_commands = uri_commands;

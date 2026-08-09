@@ -20,8 +20,8 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 const  fs                 =   require(  'fs'                                                    );
        const empty = require(  'is-empty'                              );
        const accents = require(  'remove-accents'                        );
-       const { idx_pointers } = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'))
-       const { jn00_comm_pf } = require(path.join(global.JS_TYP7, 'json/jnode/j00/jn00_comm_pf.es7'))
+       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j00/jn00_comm_pf.es7'); const jn00_comm_pf = _mod_safe_2.jn00_comm_pf || _mod_safe_2;)
 
 class jn07_comma_json_doble_call extends jn00_comm_pf {
 
@@ -37,3 +37,6 @@ class jn07_comma_json_doble_call extends jn00_comm_pf {
 
 exports.jn07_comma_json_doble_call = jn07_comma_json_doble_call
 
+
+module.exports = jn07_comma_json_doble_call;
+module.exports.jn07_comma_json_doble_call = jn07_comma_json_doble_call;

@@ -28,7 +28,7 @@ const  fs           =   require(  'fs'                                    );
        const empty = require(  'is-empty'                          );
        const trim = require(  'trim'                            );
        const mkdirp = require(  'mkdirp'                          );
-    const { printlog } = require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
+    const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_1.printlog || _mod_safe_1;)
 
 function save_array_to_file(full_file_name_int = '' , arr_data)
 {
@@ -74,3 +74,6 @@ function save_array_to_file(full_file_name_int = '' , arr_data)
 
 module.exports.save_array_to_file           = save_array_to_file
 
+
+module.exports = save_array_to_file;
+module.exports.save_array_to_file = save_array_to_file;

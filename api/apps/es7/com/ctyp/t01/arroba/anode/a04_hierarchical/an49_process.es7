@@ -28,8 +28,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { anode_run_search }  =   require(  path.join(global.JS_TYP7  , 'arroba/anode/a05_search/an52_run.es7'  ) );
-       const { idx_pointers } = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'                ) );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/anode/a05_search/an52_run.es7'  ); const anode_run_search = _mod_safe_1.anode_run_search || _mod_safe_1; );
+       const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'                ); const idx_pointers = _mod_safe_2.idx_pointers || _mod_safe_2; );
 
 class anode_hierarchical_process extends anode_run_search {
   constructor()
@@ -201,3 +201,6 @@ class anode_hierarchical_process extends anode_run_search {
 
 exports.anode_hierarchical_process = anode_hierarchical_process
 
+
+module.exports = anode_hierarchical_process;
+module.exports.anode_hierarchical_process = anode_hierarchical_process;

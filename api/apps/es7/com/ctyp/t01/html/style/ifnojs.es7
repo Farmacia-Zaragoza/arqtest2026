@@ -82,3 +82,6 @@ class ifnojs {
 
 exports.ifnojs = ifnojs
 
+
+module.exports = ifnojs;
+module.exports.ifnojs = ifnojs;

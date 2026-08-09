@@ -19,8 +19,8 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 const  fs                 =   require(  'fs'                                                                       );
        const empty = require(  'is-empty'                                                 );
        const accents = require(  'remove-accents'                                           );
-       const { idx_pointers } = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'))
-       const { jn04_comma_json_simple_list } = require(path.join(global.JS_TYP7, 'json/jnode/j01/arrays/jn04_simple_list.es7'))
+       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
+       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j01/arrays/jn04_simple_list.es7'); const jn04_comma_json_simple_list = _mod_safe_2.jn04_comma_json_simple_list || _mod_safe_2;)
 
 // Common Array
 class jn03_comma_json_recursive extends jn04_comma_json_simple_list {
@@ -35,3 +35,6 @@ class jn03_comma_json_recursive extends jn04_comma_json_simple_list {
 
 exports.jn03_comma_json_recursive = jn03_comma_json_recursive
 
+
+module.exports = jn03_comma_json_recursive;
+module.exports.jn03_comma_json_recursive = jn03_comma_json_recursive;

@@ -29,9 +29,9 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { arqdru_no_cache } =   require(  path.join(global.JS_AQD7  , 'arqdru/model/arqdru_nocache_launcher.es7'));
-        const { arqdru_cache } = require(  path.join(global.JS_AQD7  , 'arqdru/model/arqdru_cache_launcher.es7'  ));
-        const { printlog } = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                      ));
+const _mod_safe_1 = require(  path.join(global.JS_AQD7  , 'arqdru/model/arqdru_nocache_launcher.es7'); const arqdru_no_cache = _mod_safe_1.arqdru_no_cache || _mod_safe_1;);
+        const _mod_safe_2 = require(  path.join(global.JS_AQD7  , 'arqdru/model/arqdru_cache_launcher.es7'  ); const arqdru_cache = _mod_safe_2.arqdru_cache || _mod_safe_2;);
+        const _mod_safe_3 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                      ); const printlog = _mod_safe_3.printlog || _mod_safe_3;);
 
 class arqdru extends printlog
 {
@@ -49,3 +49,6 @@ class arqdru extends printlog
 
 exports.arqdru = arqdru
 
+
+module.exports = arqdru;
+module.exports.arqdru = arqdru;

@@ -16,7 +16,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { anode_page_process } =   require(  path.join(global.JS_TYP7  , 'arroba/anode/a06_page/an68_page_process.es7'     )   )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/anode/a06_page/an68_page_process.es7'     ); const anode_page_process = _mod_safe_1.anode_page_process || _mod_safe_1;   )
 
 
 class anode_page_load extends anode_page_process {
@@ -89,3 +89,6 @@ class anode_page_load extends anode_page_process {
 
 exports.anode_page_load = anode_page_load
 
+
+module.exports = anode_page_load;
+module.exports.anode_page_load = anode_page_load;

@@ -16,7 +16,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { ani01_arroba_recursive } =   require(  path.join(global.JS_TYP7  , 'arroba/aindex/a01/ani01_recursive.es7' ) )
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/aindex/a01/ani01_recursive.es7' ); const ani01_arroba_recursive = _mod_safe_1.ani01_arroba_recursive || _mod_safe_1; )
 
 class an03_general_index_arroba extends ani01_arroba_recursive {
 
@@ -60,3 +60,6 @@ class an03_general_index_arroba extends ani01_arroba_recursive {
 
 exports.an03_general_index_arroba = an03_general_index_arroba
 
+
+module.exports = an03_general_index_arroba;
+module.exports.an03_general_index_arroba = an03_general_index_arroba;

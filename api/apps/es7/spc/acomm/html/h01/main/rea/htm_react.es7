@@ -30,9 +30,9 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { common_html } 	= 	require(	path.join(global.JS_ACO7 , 'html/h01/main/comm/common_html.es7'		)	);
-	   const { head_react } = require(	path.join(global.JS_ACO7 , 'html/h01/main/rea/head_react.es7'	) );
-	   const { body_react } = require(	path.join(global.JS_ACO7 , 'html/h01/main/rea/body_react.es7'	) );
+const _mod_safe_1 = require(	path.join(global.JS_ACO7 , 'html/h01/main/comm/common_html.es7'		); const common_html = _mod_safe_1.common_html || _mod_safe_1;	);
+	   const _mod_safe_2 = require(	path.join(global.JS_ACO7 , 'html/h01/main/rea/head_react.es7'	); const head_react = _mod_safe_2.head_react || _mod_safe_2; );
+	   const _mod_safe_3 = require(	path.join(global.JS_ACO7 , 'html/h01/main/rea/body_react.es7'	); const body_react = _mod_safe_3.body_react || _mod_safe_3; );
 
 class htm_react extends common_html  {
 
@@ -69,3 +69,6 @@ class htm_react extends common_html  {
 
 exports.htm_react = htm_react
 
+
+module.exports = htm_react;
+module.exports.htm_react = htm_react;

@@ -16,7 +16,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { cache }             =   require(path.join(global.JS_TYP7, 'cache/c01_cache.es7'))
+const _mod_safe_1 = require(path.join(global.JS_TYP7, 'cache/c01_cache.es7'); const cache = _mod_safe_1.cache || _mod_safe_1;)
 
 
 // Pendiente de cambiar
@@ -106,3 +106,6 @@ class jn01_checking_search_words extends cache {
 
 exports.jn01_checking_search_words = jn01_checking_search_words
 
+
+module.exports = jn01_checking_search_words;
+module.exports.jn01_checking_search_words = jn01_checking_search_words;
