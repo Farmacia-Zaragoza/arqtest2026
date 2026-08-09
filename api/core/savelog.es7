@@ -1,0 +1,159 @@
+const path = require('path');
+const fs = require('fs');
+
+class savelog {
+  constructor() {
+    // Atributos de identificación de la clase/método
+    this.n = ''; // class name
+    this.m = ''; // method name
+    this.type = ''; // type name
+
+    this.lr = '\n\r';
+    this.br = '\n\r';
+    this.lf = ':</br>';
+
+    this.content = '';
+    this.code = '';
+
+    // Objetos comunes
+    this.thm = '';
+    this.fnode = '';
+    this.jnode = '';
+
+    // Indicador de posición y arrays de búsqueda
+    this.pos = 0;
+    this.arr = [];
+    this.terms = [];
+    this.mainterms = [];
+    this.allowedterms = [];
+
+    // Cadenas de términos
+    this.chain_terms = '';
+    this.chain_mainterms = '';
+
+    this.local_current_level = '';
+    this.local_current_breadcrumb = '';
+
+    // Inicialización del búfer global de trazabilidad
+    if (!global.GLOBALS) {
+      global.GLOBALS = { putcont: '' };
+    }
+  }
+
+  // --- MÉTODOS DE ARRAYS Y BÚSQUEDA ---
+
+  push_unique_array(term, name) {
+    if (typeof this.arr[name] !== 'undefined') {
+      if (!this.arr[name].includes(term)) {
+        this.arr[name].push(term);
+      }
+    } else {
+      this.p('savelog_NO DEFINIDO ' + name);
+    }
+  }
+
+  push_unique(term = '') {
+    if (!this.terms.includes(term)) {
+      this.terms.push(term);
+    }
+  }
+
+  push_unique_main(term = '') {
+    if (!this.mainterms.includes(term)) {
+      this.mainterms.push(term);
+    }
+  }
+
+  // --- MÉTODOS DE FORMATEO DE NIVELES ---
+
+  get_next_level(pos) {
+    let newpos = pos + '';
+    let lenpos = newpos.length;
+
+    if (lenpos === 1) return '00' + newpos;
+    if (lenpos === 2) return '0' + newpos;
+    return newpos;
+  }
+
+  get_next_level_four(pos) {
+    let newpos = pos + '';
+    let lenpos = newpos.length;
+
+    if (lenpos === 1) return '000' + newpos;
+    if (lenpos === 2) return '00' + newpos;
+    if (lenpos === 3) return '0' + newpos;
+    return newpos;
+  }
+
+  // --- ESTRUCTURAS DE DATOS ---
+
+  set_multi_arr_2d(arr, index1, index2) {
+    if (!Array.isArray(arr)) {
+      arr = [];
+    } else {
+      if (!Array.isArray(arr[index1])) {
+        arr[index1] = [];
+        arr[index1][index2] = [];
+      } else {
+        if (!Array.isArray(arr[index1][index2])) {
+          arr[index1][index2] = [];
+        }
+      }
+    }
+    return arr;
+  }
+
+  // Método auxiliar de log impreso
+  p(msg) {
+    console.log(`[${this.n || 'savelog'}]:`, msg);
+  }
+
+  // --- TRAZABILIDAD Y DEBUG (Apto para Vercel Serverless) ---
+
+  d(msg) {
+    const puting_contents = (this.n ? `${this.n}.` : '') + msg + '>';
+    if (!global.GLOBALS) global.GLOBALS = {};
+    global.GLOBALS['putcont'] = (global.GLOBALS['putcont'] || '') + puting_contents;
+  }
+
+  dd(msg) {
+    const puting_contents = (this.n ? `${this.n}.` : '') + msg + '>';
+    if (!global.GLOBALS) global.GLOBALS = {};
+    global.GLOBALS['putcont'] = (global.GLOBALS['putcont'] || '') + puting_contents;
+
+    const salida = global.GLOBALS['putcont'];
+
+    // Si estamos en Vercel/Serverless, registramos en la consola del sistema
+    if (process.env.VERCEL) {
+      console.log(`[DEBUG DD]: ${salida}`);
+    } else {
+      // Si estamos en un entorno local con permisos de escritura
+      try {
+        fs.appendFileSync('brqx_debug.ddt', salida);
+      } catch (err) {
+        console.log(`[DEBUG DD (Fallback)]: ${salida}`);
+      }
+    }
+
+    global.GLOBALS['putcont'] = '';
+  }
+
+  d_start(msg, letter = 't') {
+    const puting_contents = `${this.n}${this.m}-${msg}>`;
+    if (!global.GLOBALS) global.GLOBALS = {};
+    global.GLOBALS['putcont'] = puting_contents;
+
+    if (process.env.VERCEL) {
+      console.log(`[DEBUG START]: ${puting_contents}`);
+    } else {
+      try {
+        const file = 'brqx_debug.dd' + letter;
+        fs.appendFileSync(file, global.GLOBALS['putcont']);
+      } catch (err) {
+        console.log(`[DEBUG START (Fallback)]: ${puting_contents}`);
+      }
+    }
+  }
+}
+
+module.exports = savelog;
