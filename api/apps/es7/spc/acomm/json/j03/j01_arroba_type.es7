@@ -1,6 +1,8 @@
 const path = require('path');
+
 global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 
 // [DOCHANGED_ES7_SPACES]
 // Updated_Langs:NodeJs,Ruby,Php
@@ -29,87 +31,51 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 //- d-create_jnode_type_index-     : Genera el objeto Jnode Type
 //- d-create_jnode_type_content-   : Genera el objeto Jnode Type
 //- d-create_jnode_type_info-      : Genera el objeto Jnode Type
-
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
-
-const  { arroba_jtype_comm } =   require(  path.join(global.JS_ACO7  , 'json/j03/j01_arroba_jtype_comm.es7'   ) );
-       const { jnode_type_comm } = require(  path.join(global.JS_ACO7  , 'json/j02/jn01_jnode_type_comm.es7'    ) );
-       const { jnode_type_index } = require(  path.join(global.JS_ACO7  , 'json/j02/jn11_jnode_type_index.es7'   ) );
-       const { jnode_type_info } = require(  path.join(global.JS_ACO7  , 'json/j02/jn12_jnode_type_info.es7'    ) );
-	   const gfc = require(path.join(global.JS_LIB7, 'file/get_file_code.es7'))
+const { arroba_jtype_comm } = require( path.join(global.JS_ACO7, 'json/j03/j01_arroba_jtype_comm.es7') );
+const { jnode_type_comm }  = require( path.join(global.JS_ACO7, 'json/j02/jn01_jnode_type_comm.es7') );
+const { jnode_type_index } = require( path.join(global.JS_ACO7, 'json/j02/jn11_jnode_type_index.es7') );
+const { jnode_type_info }  = require( path.join(global.JS_ACO7, 'json/j02/jn12_jnode_type_info.es7') );
+const gfc                  = require( path.join(global.JS_LIB7, 'file/get_file_code.es7') );
 
 class arroba_jtype extends arroba_jtype_comm {
-  constructor(    arroba           ,
-                  passed_type = 'comm' )
+  constructor( arroba, passed_type = 'comm' )
   {
     super(arroba, passed_type)
-    this.n                  =   "arroba_jtype::"
+    this.n                   =   "arroba_jtype::"
   }
 
-  // Con conetent siempre debe generarse
   create_jnode_type_index()
   {
-    this.m                  =   "create_jnode_type_content"
-    // Generate Cache path
+    this.m                   =   "create_jnode_type_content"
     this.gen()
 
-    this.m                  =   "create_jnode_type_content"
-
-    // /brqx/pers/cache/arqdru/uritype/comm/policy/nohuman/nouser/nocode/notrans/nosync/
-    //  es_position_6_json.json
-    // this.p('j01_arroba_gencont ' + this.s.cs.cache_path )
-
-      // GENERAMOS JNODE
-      // this.p('j02_JnodeNotCAche')
-    // Con content se genera siempre
-
-    this.jtype            =   new jnode_type_index( this.arroba      )
-
+    this.m                   =   "create_jnode_type_content"
+    this.jtype             =   new jnode_type_index( this.arroba )
   }
 
   //---------------------------------------------------------------------------------------------
 
   create_jnode_type_info()
   {
-    this.m                  =   "create_jnode_type_content"
-    // Generate Cache path
+    this.m                   =   "create_jnode_type_content"
     this.gen()
 
-    this.m                  =   "create_jnode_type_content"
-
-    // /brqx/pers/cache/arqdru/uritype/comm/policy/nohuman/nouser/nocode/notrans/nosync/
-    //  es_position_6_json.json
-    // this.p('j01_arroba_gencont ' + this.s.cs.cache_path )
-
-      // GENERAMOS JNODE
-      // this.p('j02_JnodeNotCAche')
-    // Con content se genera siempre
-
-    this.jtype            =   new jnode_type_info( this.arroba      )
+    this.m                   =   "create_jnode_type_content"
+    this.jtype             =   new jnode_type_info( this.arroba )
   }
 
   //---------------------------------------------------------------------------------------------
 
-  // Con conetent siempre debe generarse
   create_jnode_type_content()
   {
-    this.m                  =   "create_jnode_type_content"
-    // Generate Cache path
+    this.m                   =   "create_jnode_type_content"
     this.gen()
 
-    this.m                  =   "create_jnode_type_content"
+    this.m                   =   "create_jnode_type_content"
 
-    // /brqx/pers/cache/arqdru/uritype/comm/policy/nohuman/nouser/nocode/notrans/nosync/
-    //  es_position_6_json.json
-    // this.p('j01_arroba_gencont ' + this.s.cs.cache_path )
-
-      // GENERAMOS JNODE
-      // this.p('j02_JnodeNotCAche')
-    // Con content se genera siempre
-
-    this.jtype            =   new jnode_type_comm( this.arroba      )
+    this.jtype             =   new jnode_type_comm( this.arroba )
     this.jtype.manage_switch_page_type()
   }
 
@@ -117,31 +83,17 @@ class arroba_jtype extends arroba_jtype_comm {
 
   create_jnode_type()
   {
-    this.m                  =   "create_jnode_type"
-    // Generate Cache path
+    this.m                   =   "create_jnode_type"
     this.gen()
 
-    this.m                  =   "create_jnode_type"
-
-    // /brqx/pers/cache/arqdru/uritype/comm/policy/nohuman/nouser/nocode/notrans/nosync/
-    //  es_position_6_json.json
-    // this.p('j01_arroba_gen ' + this.s.cs.cache_path )
-
-      // GENERAMOS JNODE
-      // this.p('j02_JnodeNotCAche')
-    // Se debe generar si no hay cache ( correcto)
-    // Se debe generar si no existe el fichero o tiene un size no adecuado o el directorio ( esta fallando )
+    this.m                   =   "create_jnode_type"
 
     if (!this.b.cache || gfc.zero(this.s.cs.cache_path) )
     {
-      // this.p('j01_arroba_type_Debe entrar aqui')
-
-      this.jtype            =   new jnode_type_comm( this.arroba      )
+      this.jtype             =   new jnode_type_comm( this.arroba )
       this.jtype.manage_switch_page_type()
-
     }
   }
 }
 
-exports.arroba_jtype = arroba_jtype
-
+exports.arroba_jtype = arroba_jtype;
