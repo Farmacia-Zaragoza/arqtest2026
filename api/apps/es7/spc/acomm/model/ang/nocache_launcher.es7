@@ -11,35 +11,35 @@
 const path = require('path');
 
 const root = global.ROOT || '';
-const js_aco7 = global.JS_ACO7 || path.join(root, 'api/apps/es7/spc/acomm/');
-const js_tyf7 = global.JS_TYF7 || path.join(root, 'api/apps/es7/com/ctyf/t01/');
-const js_typ7 = global.JS_TYP7 || path.join(root, 'api/apps/es7/com/ctyp/t01/');
+const js_aco7_path = global.JS_ACO7 || path.join(root, 'api/apps/es7/spc/acomm/');
+const js_tyf7_path = global.JS_TYF7 || path.join(root, 'api/apps/es7/com/ctyf/t01/');
+const js_typ7_path = global.JS_TYP7 || path.join(root, 'api/apps/es7/com/ctyp/t01/');
 
 let angular_model, site_uri, arroba_rest, rs01_object_search_main, r02_main, site_mcomm;
 
 try {
-  const mod_1 = require(path.join(js_aco7, 'model/ang/model.es7'));
+  const mod_1 = require(path.join(js_aco7_path, 'model/ang/model.es7'));
   angular_model = mod_1.angular_model || mod_1;
 
-  const mod_2 = require(path.join(js_aco7, 'uri/n02/u01_site_uri.es7'));
+  const mod_2 = require(path.join(js_aco7_path, 'uri/n02/u01_site_uri.es7'));
   site_uri = mod_2.site_uri || mod_2;
 
-  const mod_3 = require(path.join(js_tyf7, 'a01_load/lindex/i03_arroba_rest.es7'));
+  const mod_3 = require(path.join(js_tyf7_path, 'a01_load/lindex/i03_arroba_rest.es7'));
   arroba_rest = mod_3.arroba_rest || mod_3;
 
-  const mod_4 = require(path.join(js_typ7, 'arroba/rest/rs01_search_main.es7'));
+  const mod_4 = require(path.join(js_typ7_path, 'arroba/rest/rs01_search_main.es7'));
   rs01_object_search_main = mod_4.rs01_object_search_main || mod_4;
 
-  const mod_5 = require(path.join(js_typ7, 'rest/r01_main/r02_main.es7'));
+  const mod_5 = require(path.join(js_typ7_path, 'rest/r01_main/r02_main.es7'));
   r02_main = mod_5.r02_main || mod_5;
 
-  const mod_6 = require(path.join(js_tyf7, 'a01_load/mcomm/m02_site_comm.es7'));
+  const mod_6 = require(path.join(js_tyf7_path, 'a01_load/mcomm/m02_site_comm.es7'));
   site_mcomm = mod_6.site_mcomm || mod_6;
 } catch (err) {
   console.error("FATAL_NOCACHE_IMPORT_ERROR:", err.message);
-  console.error("FATAL_NOCACHE_PATH_ACO7:", js_aco7);
-  console.error("FATAL_NOCACHE_PATH_TYF7:", js_tyf7);
-  console.error("FATAL_NOCACHE_PATH_TYP7:", js_typ7);
+  console.error("FATAL_NOCACHE_PATH_ACO7:", js_aco7_path);
+  console.error("FATAL_NOCACHE_PATH_TYF7:", js_tyf7_path);
+  console.error("FATAL_NOCACHE_PATH_TYP7:", js_typ7_path);
   process.exit(1);
 }
 
@@ -84,7 +84,7 @@ class angular_no_cache extends angular_model
     this.arroba.arr        = this.acontent.a.arr
     this.arroba.s          = this.acontent.a.s
 
-    this.rest             = new r02_main(this.s.b.page_search)
+    this.rest              = new r02_main(this.s.b.page_search)
     this.restgen          = new rs01_object_search_main(this.arroba, this.rest)
 
     this.restgen.gen_rest_search_main()
@@ -95,7 +95,7 @@ class angular_no_cache extends angular_model
     this.parr(this.rest.arr[1])
     this.p('cache_arrlen  ' + longi)
 
-    this.rest             = this.restgen.rest
+    this.rest              = this.restgen.rest
     this.p('rest output  ' + this.rest.count)
   }
 
