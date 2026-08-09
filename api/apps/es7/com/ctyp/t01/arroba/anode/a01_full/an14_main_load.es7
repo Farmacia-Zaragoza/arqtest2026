@@ -24,9 +24,9 @@ const path = require('path');
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { anode_main_full_process } =   require( path.join(JS_TYP7  , 'arroba/anode/a01_full/an16_main_process.es7'  )  );
+const   { anode_main_full_process } =   require( path.join(global.JS_TYP7  , 'arroba/anode/a01_full/an16_main_process.es7'  )  );
 
 
 class anode_main_full_load extends anode_main_full_process {

@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 
 // [DOCHANGED_ES6_SPACES]
 // Updated_Langs:+NodeJs,Ruby,Php
@@ -30,10 +30,10 @@ define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 // -Afast
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { scomm_defs }      =   require(  path.join(JS_TYF7 , 'a01_load/scomm/s04_defs.es7'  ));
-       const { anode } = require(  path.join(JS_TYP7 , 'arroba/anode/a00_comm/an01_anode.es7' ));
+const  { scomm_defs }      =   require(  path.join(global.JS_TYF7 , 'a01_load/scomm/s04_defs.es7'  ));
+       const { anode } = require(  path.join(global.JS_TYP7 , 'arroba/anode/a00_comm/an01_anode.es7' ));
 
 // Simple Common - Will Load only common information
 class scomm_struc extends scomm_defs {

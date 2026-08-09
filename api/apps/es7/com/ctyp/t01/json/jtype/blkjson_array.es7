@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 // [DOCHANGED_ES6_NODE_SPACES]
 // Updated_Langs:NodeJs+,Ruby,Php
@@ -11,11 +11,11 @@ define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 //- d-save_header_array             : Add array header to json structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 const   echo              =   require(  'node-echo'                                         );
-        const sctf = require(path.join(JS_LIB7, 'file/save_code_to_file.es7'))
-		const { blkjson } = require(path.join(JS_TYP7, 'json/jtype/blkjson.es7'))
+        const sctf = require(path.join(global.JS_LIB7, 'file/save_code_to_file.es7'))
+		const { blkjson } = require(path.join(global.JS_TYP7, 'json/jtype/blkjson.es7'))
 
 class blkjson_array extends blkjson {
   constructor(file_name = '')

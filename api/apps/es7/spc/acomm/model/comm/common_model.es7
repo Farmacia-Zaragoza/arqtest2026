@@ -35,16 +35,16 @@
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 const path = require('path');
 
-define("JS_TYP7", path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
-define("JS_TYF7", path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
-define("JS_LIB7", path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
+global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
+global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
-const   { index_fast }    =   require(  path.join(JS_TYP7  , 'fire/index_fast.es7'               ) );
-        const { container } = require(  path.join(JS_TYP7  , 'container/c01_cont.es7'            ) );
-        const { arroba_mcomm } = require(  path.join(JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7') );
-        const { arroba_scomm } = require(  path.join(JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7') );
+const   { index_fast }    =   require(  path.join(global.JS_TYP7  , 'fire/index_fast.es7'               ) );
+        const { container } = require(  path.join(global.JS_TYP7  , 'container/c01_cont.es7'            ) );
+        const { arroba_mcomm } = require(  path.join(global.JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7') );
+        const { arroba_scomm } = require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7') );
         const fs = require(  'fs'                                                );
-     		const gfc = require(  path.join(JS_LIB7        , 'file/get_file_code.es7' 	         ) );
+     		const gfc = require(  path.join(global.JS_LIB7        , 'file/get_file_code.es7' 	         ) );
 
 class common_model extends index_fast
 {

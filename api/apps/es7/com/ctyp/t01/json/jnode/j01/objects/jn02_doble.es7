@@ -16,13 +16,13 @@ const path = require('path');
 // - d-review_childrens_doble_object-                   : 2nd level method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 const  fs                            =   require(  'fs'                                                       );
        const empty = require(  'is-empty'                                 );
        const accents = require(  'remove-accents'                           );
-       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
-       const { jn03_commo_json_recursive } = require(path.join(JS_TYP7, 'json/jnode/j01/objects/jn03_recursive.es7'))
+       const { idx_pointers } = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn03_commo_json_recursive } = require(path.join(global.JS_TYP7, 'json/jnode/j01/objects/jn03_recursive.es7'))
 
 // Common Objects
 class jn02_commo_json_doble extends jn03_commo_json_recursive {

@@ -19,7 +19,7 @@ const path = require(  'path'                                    );
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 const   fs           =   require(  'fs'                                    );
     
@@ -29,7 +29,7 @@ const   fs           =   require(  'fs'                                    );
     const trim = require(  'trim'                            );
     const mkdirp = require(  'mkdirp'                          );
 	const echo = require(	'node-echo'									);
-   const { printlog } = require(path.join(JS_TYP7, 'logs/printlog.es7'))
+   const { printlog } = require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
 
 // Ck [19-06-03]
 // Save Hash2d_to_file --> Guardamos el contenido del hash de 2dim en el fichero

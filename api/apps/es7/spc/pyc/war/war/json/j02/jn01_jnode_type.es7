@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // [DOCHANGED_NODE ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -27,12 +27,12 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 //- d-rungen_json-       : Generate Json
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { jnode_type_comm }       =   require(path.join(JS_ACO7, 'json/j02/jn01_jnode_type_comm.es7'))
-       const { jn01_common_json } = require(path.join(JS_ACO7, 'json/j01/n02_war/jn01_generate_common_json.es7'))
-       const { jn11_spec_json } = require(path.join(JS_ACO7, 'json/j01/n02_war/jn11_generate_spec_json.es7'))
-       const { jn03_product_war_json } = require(path.join(JS_ACO7, 'json/j01/n02_war/jn03_generate_product_json.es7'))
+const  { jnode_type_comm }       =   require(path.join(global.JS_ACO7, 'json/j02/jn01_jnode_type_comm.es7'))
+       const { jn01_common_json } = require(path.join(global.JS_ACO7, 'json/j01/n02_war/jn01_generate_common_json.es7'))
+       const { jn11_spec_json } = require(path.join(global.JS_ACO7, 'json/j01/n02_war/jn11_generate_spec_json.es7'))
+       const { jn03_product_war_json } = require(path.join(global.JS_ACO7, 'json/j01/n02_war/jn03_generate_product_json.es7'))
 
 class jnode_type extends jnode_type_comm {
 

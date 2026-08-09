@@ -34,9 +34,9 @@ const path = require('path');
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { struc_attrib }   =   require(  path.join(JS_TYP7  , 'struc/s07_struc_attrib.es7'    )  )
+const   { struc_attrib }   =   require(  path.join(global.JS_TYP7  , 'struc/s07_struc_attrib.es7'    )  )
 
 
 class struc_gen_mix extends struc_attrib {

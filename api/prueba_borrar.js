@@ -30,40 +30,40 @@ if (typeof global.define !== 'function') {
 // const { params }          =   require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
 
 //Constantes GLOBALES
-define("JS_MODEL", 	path.join(global.ROOT, 'api/apps/es7'										))
-define("JS_BASE" ,	path.join(global.ROOT, 'api/apps/es6/'						))
-define("JS_OBJ" , 	path.join(global.ROOT, 'api/apps/es6/com/objects/'			))
-define("JS_LIB" , 	path.join(global.ROOT, 'api/apps/es6/com/libs/'			))
+global.JS_MODEL = path.join(global.ROOT, 'api/apps/es7'										);
+global.JS_BASE = path.join(global.ROOT, 'api/apps/es6/'						);
+global.JS_OBJ = path.join(global.ROOT, 'api/apps/es6/com/objects/'			);
+global.JS_LIB = path.join(global.ROOT, 'api/apps/es6/com/libs/'			);
 
-define("JS_THM" , 	path.join(global.ROOT, 'api/apps/es6/spc/theme/'			))
-define("JS_THC" ,   path.join(global.ROOT, 'api/apps/es6/spc/theme/common/'	))
+global.JS_THM = path.join(global.ROOT, 'api/apps/es6/spc/theme/'			);
+global.JS_THC = path.join(global.ROOT, 'api/apps/es6/spc/theme/common/'	);
 
 // ES7 constants
-define("JS_BASE7" ,	path.join(global.ROOT, 'api/apps/es7/'						))
-define("JS_COM7" , 	path.join(global.ROOT, 'api/apps/es7/com/'			))
-define("JS_SPC7" , 	path.join(global.ROOT, 'api/apps/es7/spc/'			))
+global.JS_BASE7 = path.join(global.ROOT, 'api/apps/es7/'						);
+global.JS_COM7 = path.join(global.ROOT, 'api/apps/es7/com/'			);
+global.JS_SPC7 = path.join(global.ROOT, 'api/apps/es7/spc/'			);
 
-define("JS_ARQ7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/'			))
-define("JS_COL7" , 	path.join(global.ROOT, 'api/apps/es7/spc/col/'			))
-define("JS_EMP7" , 	path.join(global.ROOT, 'api/apps/es7/spc/emp/'			))
-define("JS_MET7" , 	path.join(global.ROOT, 'api/apps/es7/spc/met/'			))
-define("JS_PDT7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pdt/'			))
-define("JS_PER7" , 	path.join(global.ROOT, 'api/apps/es7/spc/per/'			))
-define("JS_PRO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pro/'			))
-define("JS_PYC7" , 	path.join(global.ROOT, 'api/apps/es7/spc/pyc/'			))
-define("JS_SRV7" , 	path.join(global.ROOT, 'api/apps/es7/spc/srv/'			))
-define("JS_TST7" , 	path.join(global.ROOT, 'api/apps/es7/spc/tst/'			))
+global.JS_ARQ7 = path.join(global.ROOT, 'api/apps/es7/spc/arq/'			);
+global.JS_COL7 = path.join(global.ROOT, 'api/apps/es7/spc/col/'			);
+global.JS_EMP7 = path.join(global.ROOT, 'api/apps/es7/spc/emp/'			);
+global.JS_MET7 = path.join(global.ROOT, 'api/apps/es7/spc/met/'			);
+global.JS_PDT7 = path.join(global.ROOT, 'api/apps/es7/spc/pdt/'			);
+global.JS_PER7 = path.join(global.ROOT, 'api/apps/es7/spc/per/'			);
+global.JS_PRO7 = path.join(global.ROOT, 'api/apps/es7/spc/pro/'			);
+global.JS_PYC7 = path.join(global.ROOT, 'api/apps/es7/spc/pyc/'			);
+global.JS_SRV7 = path.join(global.ROOT, 'api/apps/es7/spc/srv/'			);
+global.JS_TST7 = path.join(global.ROOT, 'api/apps/es7/spc/tst/'			);
 
-define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			))
-define("JS_AQD7" , 	path.join(global.ROOT, 'api/apps/es7/spc/arq/drupal/'   ))
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/'			);
+global.JS_AQD7 = path.join(global.ROOT, 'api/apps/es7/spc/arq/drupal/'   );
 
-define("JS_LIB7" , 	path.join(global.ROOT, 'api/apps/es7/com/blib/'			))
+global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/'			);
 
 // Structured Types
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 // Functional Types -
-define("JS_TYF7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'			))
+global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'			);
 
 // 2. Simulamos las variables de entorno que calculabas con path.split
 // En Vercel las rutas son fijas, así que forzamos los valores

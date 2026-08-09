@@ -18,9 +18,9 @@ const path = require('path');
 // - d-sort_url_manage_kb-     : Manage kb for hierarchical structures
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { uri_page_string } =   require(  path.join(JS_TYP7 , 'uri/u11_page_string.es7' ) );
+const { uri_page_string } =   require(  path.join(global.JS_TYP7 , 'uri/u11_page_string.es7' ) );
 
 
 class uri_sorts_kb extends uri_page_string {

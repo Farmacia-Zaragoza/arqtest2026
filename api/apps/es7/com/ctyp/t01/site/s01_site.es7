@@ -21,12 +21,12 @@ const path = require('path');
 // Site > PrintLog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { site_methods } =   require(  path.join(JS_TYP7  , 'site/s02_site_methods.es7'  ) );
-        const { main_site } = require(  path.join(JS_TYP7  , 'site/s12_main_site.es7'     ) );
-        const { cache_site } = require(  path.join(JS_TYP7  , 'site/s10_cache_site.es7'    ) );
-        const { old_site } = require(  path.join(JS_TYP7  , 'site/s11_old_site.es7'      ) );
+const   { site_methods } =   require(  path.join(global.JS_TYP7  , 'site/s02_site_methods.es7'  ) );
+        const { main_site } = require(  path.join(global.JS_TYP7  , 'site/s12_main_site.es7'     ) );
+        const { cache_site } = require(  path.join(global.JS_TYP7  , 'site/s10_cache_site.es7'    ) );
+        const { old_site } = require(  path.join(global.JS_TYP7  , 'site/s11_old_site.es7'      ) );
 
 class site extends site_methods {
   constructor(b = "" )

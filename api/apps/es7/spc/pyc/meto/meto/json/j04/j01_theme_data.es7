@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -19,12 +19,12 @@ define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 // Arroba_JType     : Generic type to create json files
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { tdata_asign }                =   require(path.join(JS_PYC7, 'meto/meto/json/j04/j11_tdata_asign.es7'))
-       const { arroba_mcomm } = require(path.join(JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7'))
-       const { jn01_checking_search_words } = require(path.join(JS_TYP7, 'json/jsearch/j02/jn01_check_words.es7'))
-       const { theme_json } = require(path.join(JS_PYC7, 'meto/meto/json/j04/j02_theme_json.es7'))
+const  { tdata_asign }                =   require(path.join(global.JS_PYC7, 'meto/meto/json/j04/j11_tdata_asign.es7'))
+       const { arroba_mcomm } = require(path.join(global.JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7'))
+       const { jn01_checking_search_words } = require(path.join(global.JS_TYP7, 'json/jsearch/j02/jn01_check_words.es7'))
+       const { theme_json } = require(path.join(global.JS_PYC7, 'meto/meto/json/j04/j02_theme_json.es7'))
 
 class theme_data extends tdata_asign
 {

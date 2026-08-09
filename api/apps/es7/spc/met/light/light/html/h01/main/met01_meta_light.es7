@@ -28,10 +28,10 @@ const path = require('path');
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
-	   const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
+const  { getset } 			= 	require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'))
+	   const { html_style } = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'))
 
 class met01_meta_light extends getset  {
 

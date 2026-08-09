@@ -25,11 +25,11 @@ const path = require('path');
 
 // cat package.json  | grep "\^" |cut -d '"' -f2 | tr "\n" " "
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { meto_no_cache } =   require(path.join(JS_PYC7, 'meto/meto/model/meto_nocache_launcher.es7'))
-        const { meto_cache } = require(path.join(JS_PYC7, 'meto/meto/model/meto_cache_launcher.es7'))
-        const { printlog } = require(path.join(JS_TYP7, 'logs/printlog.es7'))
+const   { meto_no_cache } =   require(path.join(global.JS_PYC7, 'meto/meto/model/meto_nocache_launcher.es7'))
+        const { meto_cache } = require(path.join(global.JS_PYC7, 'meto/meto/model/meto_cache_launcher.es7'))
+        const { printlog } = require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
 
 class meto extends printlog
 {

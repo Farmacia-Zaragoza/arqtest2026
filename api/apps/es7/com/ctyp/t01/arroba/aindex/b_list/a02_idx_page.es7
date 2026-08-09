@@ -18,10 +18,10 @@ const path = require('path');
 // - d-save_arroba_index_page_to_file-          : Generate Arroba Index Page
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { idx_pointers }                =   require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'       ));
-       const { a03_idx_manage } = require(  path.join(JS_TYP7 , 'arroba/aindex/b_list/a03_idx_manage.es7'  ));
+const  { idx_pointers }                =   require(  path.join(global.JS_TYP7 , 'logs/idx_pointers.es7'       ));
+       const { a03_idx_manage } = require(  path.join(global.JS_TYP7 , 'arroba/aindex/b_list/a03_idx_manage.es7'  ));
 
 // Common Array
 class a02_idx_page extends a03_idx_manage {

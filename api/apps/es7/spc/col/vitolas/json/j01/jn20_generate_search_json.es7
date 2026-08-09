@@ -1,4 +1,4 @@
-define('JS_SPC7', path.join(global.ROOT, 'api/apps/es7/spc/'));
+global.JS_SPC7 = path.join(global.ROOT, 'api/apps/es7/spc/');
 
 const path = require('path');
 
@@ -16,9 +16,9 @@ const path = require('path');
 // - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { jn03_search_site }   =   require(path.join(JS_SPC7, 'arqdru/json/j02/jn03_jnode_search_site.es7'))
+const   { jn03_search_site }   =   require(path.join(global.JS_SPC7, 'arqdru/json/j02/jn03_jnode_search_site.es7'))
 
 class jn20_search_json extends jn03_search_site {
 

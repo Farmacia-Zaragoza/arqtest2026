@@ -27,11 +27,11 @@ const path = require('path');
 
 // Must to be unique
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { funcs_no_cache } =   require(  path.join(JS_ARQ7  , 'funcs/funcs/model/funcs_nocache_launcher.es7' ));
-        const { funcs_cache } = require(  path.join(JS_ARQ7  ,'funcs/funcs/model/funcs_cache_launcher.es7'));
-        const { printlog } = require(  path.join(JS_TYP7  , 'logs/printlog.es7'                       ));
+const   { funcs_no_cache } =   require(  path.join(global.JS_ARQ7  , 'funcs/funcs/model/funcs_nocache_launcher.es7' ));
+        const { funcs_cache } = require(  path.join(global.JS_ARQ7  ,'funcs/funcs/model/funcs_cache_launcher.es7'));
+        const { printlog } = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                       ));
 
 class funcs extends printlog
 {

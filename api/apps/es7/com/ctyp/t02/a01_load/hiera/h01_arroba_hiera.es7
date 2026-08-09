@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 
 // [DOCHANGED_ES6_SPACES]
 // Updated_Langs:+NodeJs,Ruby,Php
@@ -18,9 +18,9 @@ define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 // Scomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { scomm_struc }        =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7'  ) )
+const  { scomm_struc }        =   require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s03_struc.es7'  ) )
 
 // Hierarchical strucure
 class arroba_hiera extends scomm_struc {

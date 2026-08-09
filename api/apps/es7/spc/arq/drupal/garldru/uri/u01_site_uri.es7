@@ -14,9 +14,9 @@ const path = require('path');
 // @Site_Uri_> @Common_Uri > @Uri > @Strings > @Printlog
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { site_uri_manage_commands } =   require( path.join(JS_AQD7 , 'arqdru/uri/u02_manage_commands.es7' ))
+const { site_uri_manage_commands } =   require( path.join(global.JS_AQD7 , 'arqdru/uri/u02_manage_commands.es7' ))
 
 class site_uri extends site_uri_manage_commands
 {

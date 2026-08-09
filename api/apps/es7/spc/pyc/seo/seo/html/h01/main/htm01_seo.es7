@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node JS Html Div Class  [V.0.0.1]  (2018-08-05)
@@ -28,11 +28,11 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { common_html } 			= 	require(path.join(JS_ACO7, 'html/h01/main/common_html.es7'))
-		const { hea01_head_seo } = require(path.join(JS_PYC7, 'seo/seo/html/h01/main/hea01_seo.es7'))
-		const { bdy01_body_seo } = require(path.join(JS_PYC7, 'seo/seo/html/h01/main/bdy01_seo.es7'))
+const  { common_html } 			= 	require(path.join(global.JS_ACO7, 'html/h01/main/common_html.es7'))
+		const { hea01_head_seo } = require(path.join(global.JS_PYC7, 'seo/seo/html/h01/main/hea01_seo.es7'))
+		const { bdy01_body_seo } = require(path.join(global.JS_PYC7, 'seo/seo/html/h01/main/bdy01_seo.es7'))
 
 class htm01_html_seo extends common_html  {
 

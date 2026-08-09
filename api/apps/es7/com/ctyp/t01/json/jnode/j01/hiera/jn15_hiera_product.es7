@@ -13,14 +13,14 @@ const path = require(  'path'                                                 );
 // - d-save_json_hiera_product_array_to_file-          : Generate Json Recursive
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 const  fs                       =   require(  'fs'                                                );
        const empty = require(  'is-empty'                          );
        const accents = require(  'remove-accents'                    );
        
-       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
-       const { jn16_hiera_json_list_base } = require(path.join(JS_TYP7, 'json/jnode/j01/hiera/jn16_hiera_list_base.es7'))
+       const { idx_pointers } = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn16_hiera_json_list_base } = require(path.join(global.JS_TYP7, 'json/jnode/j01/hiera/jn16_hiera_list_base.es7'))
 
 // Common Array
 class jn15_array_hiera_product extends jn16_hiera_json_list_base {

@@ -25,9 +25,9 @@
 const path = require('path');
 
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { anode_gindex_list_process } =   require(  path.join(JS_TYP7  , 'arroba/gindex/b_list/g02_idx_process.es7' )  )
+const   { anode_gindex_list_process } =   require(  path.join(global.JS_TYP7  , 'arroba/gindex/b_list/g02_idx_process.es7' )  )
 
 
 class anode_gindex_list_load extends anode_gindex_list_process {

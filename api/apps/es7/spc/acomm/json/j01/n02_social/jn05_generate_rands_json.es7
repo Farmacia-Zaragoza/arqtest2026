@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // [DOCHANGED_NODE ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -15,9 +15,9 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { jn02_process_site }   =   require(  path.join(JS_ACO7  , 'json/j02/jn02_jnode_process_site.es7'  ) );
+const   { jn02_process_site }   =   require(  path.join(global.JS_ACO7  , 'json/j02/jn02_jnode_process_site.es7'  ) );
 
 class jn05_rands_json extends jn02_process_site {
 

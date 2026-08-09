@@ -12,9 +12,9 @@ const path = require('path');
 // - d-manage_commands-            : Check command type based on uri && site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { post_process_commands } =   require(path.join(JS_PYC7, 'meto/meto/uri/u04_post_process_commands.es7'))
+const { post_process_commands } =   require(path.join(global.JS_PYC7, 'meto/meto/uri/u04_post_process_commands.es7'))
 
 
 class site_uri_manage_commands extends post_process_commands

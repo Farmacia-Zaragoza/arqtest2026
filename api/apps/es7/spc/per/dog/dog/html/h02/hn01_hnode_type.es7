@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // [DOCHANGED_NODE ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -21,11 +21,11 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // e-htm01_html_dog-     : html dynamic generation code class
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { printlog }          =   require(path.join(JS_TYP7, 'logs/printlog.es7'))
-	   const { common_hnode } = require(path.join(JS_ACO7, 'html/h01/main/common_hnode.es7'))
-       const { htm01_html_dog } = require(path.join(JS_PER7, 'dog/dog/html/h01/main/htm01_dog.es7'))
+const  { printlog }          =   require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
+	   const { common_hnode } = require(path.join(global.JS_ACO7, 'html/h01/main/common_hnode.es7'))
+       const { htm01_html_dog } = require(path.join(global.JS_PER7, 'dog/dog/html/h01/main/htm01_dog.es7'))
 
 class hnode_type extends printlog {
 

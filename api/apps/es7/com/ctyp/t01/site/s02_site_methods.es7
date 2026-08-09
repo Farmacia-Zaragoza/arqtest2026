@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 // [DOCHANGED_ES7_SPACES]
 // Updated Langs: +NodeJs,Ruby,Php
@@ -25,10 +25,10 @@ define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { site_defs }    =   require(  path.join(JS_TYP7  , 'site/s03_site_defs.es7' ) );
-        const sort = require(  path.join(JS_LIB7  , 'sort/sort_unique.es7'	) );
+const   { site_defs }    =   require(  path.join(global.JS_TYP7  , 'site/s03_site_defs.es7' ) );
+        const sort = require(  path.join(global.JS_LIB7  , 'sort/sort_unique.es7'	) );
 
 class site_methods extends site_defs {
   constructor() {

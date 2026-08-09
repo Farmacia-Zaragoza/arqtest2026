@@ -22,9 +22,9 @@ const path = require('path');
 // @String >
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { strings_defs }       =   require(  path.join(JS_TYP7  , 'string/s02_defs.es7'    )  )
+const   { strings_defs }       =   require(  path.join(global.JS_TYP7  , 'string/s02_defs.es7'    )  )
 
 
 class strings extends strings_defs

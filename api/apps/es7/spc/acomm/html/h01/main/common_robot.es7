@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Pharmacy Body Class  [V.0.0.4]  (2019-01-22)
@@ -21,10 +21,10 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // - build_data_ok   : build data for robot
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { common_body }     =   require(  path.join(JS_ACO7  , 'html/h01/main/common_body.es7'  ) );
-		const scpf = require(  path.join(JS_BASE , 'com/libs/file/full_path/level_02/save_code_properties_filename.es6 )'	);
+const   { common_body }     =   require(  path.join(global.JS_ACO7  , 'html/h01/main/common_body.es7'  ) );
+		const scpf = require(  path.join(global.JS_BASE , 'com/libs/file/full_path/level_02/save_code_properties_filename.es6 )'	);
 
 class common_robot extends common_body  {
 

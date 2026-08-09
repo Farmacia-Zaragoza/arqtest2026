@@ -17,9 +17,9 @@ const path = require('path');
 // - d-url_page_set_photo-            : Set urls to be managed as a photo
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { uri_sorts_uri }     =   require(  path.join(JS_TYP7 , 'uri/u09_sorts_uri.es7'  )  );
+const   { uri_sorts_uri }     =   require(  path.join(global.JS_TYP7 , 'uri/u09_sorts_uri.es7'  )  );
 
 class uri_commands_methods extends uri_sorts_uri {
 

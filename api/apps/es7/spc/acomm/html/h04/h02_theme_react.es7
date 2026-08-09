@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -19,10 +19,10 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // Arroba_HType     : Generic html type
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { printlog }           =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'                   ));
-      const { arroba_htype_react } = require(  path.join(JS_ACO7  , 'html/h03/h02_arroba_htype_react.es7' ));
+const { printlog }           =   require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                   ));
+      const { arroba_htype_react } = require(  path.join(global.JS_ACO7  , 'html/h03/h02_arroba_htype_react.es7' ));
 
 class theme_react extends printlog
 {

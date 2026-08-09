@@ -1,6 +1,6 @@
 const path = require('path');
-define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
-define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
+global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 // [DOCHANGED_ES7_SPACES]
 // Updated_Langs:NodeJs,Ruby,Php
@@ -25,11 +25,11 @@ define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 // - d-rungen_info-     : Generate Json structure to manage small infor for sites
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { jcomm_struc } =   require(  path.join(JS_TYF7  , 'b02_save/jcomm/j02_struc.es7' ));
-      const sctf = require(  path.join(JS_LIB7  , 'file/save_code_to_file.es7'   ));
-      const gfc = require(  path.join(JS_LIB7  , 'file/get_file_code.es7'       ));
+const { jcomm_struc } =   require(  path.join(global.JS_TYF7  , 'b02_save/jcomm/j02_struc.es7' ));
+      const sctf = require(  path.join(global.JS_LIB7  , 'file/save_code_to_file.es7'   ));
+      const gfc = require(  path.join(global.JS_LIB7  , 'file/get_file_code.es7'       ));
 
 class arroba_jtype_comm extends jcomm_struc {
   constructor(    arroba           ,

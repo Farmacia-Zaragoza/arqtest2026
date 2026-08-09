@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // [DOCHANGED_ES7_SPACES]
 // Updated Langs: +NodeJs,Ruby,Php
@@ -17,10 +17,10 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // - d-save_json_parragraph_from_file-   : Generate parragraphs
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-//const   { cache }             =   require(path.join(JS_TYP7, 'cache/c01_cache.es7')),
-const   { jn01_general_common_json } =   require(path.join(JS_ACO7, 'json/j01/n01/jn01_general_common_json.es7'))
+//const   { cache }             =   require(path.join(global.JS_TYP7, 'cache/c01_cache.es7')),
+const   { jn01_general_common_json } =   require(path.join(global.JS_ACO7, 'json/j01/n01/jn01_general_common_json.es7'))
         const empty = require(  'is_empty'                             );
 
 class jn00_search_pf extends jn01_general_common_json {

@@ -20,10 +20,10 @@ const path = require('path');
 //- d-main_page_process-           : Process from main file one position && one page
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { anode_page_load }   =   require(  path.join(JS_TYP7 , 'arroba/anode/a06_page/an64_page_load.es7' )  );
-       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'      )  );
+const  { anode_page_load }   =   require(  path.join(global.JS_TYP7 , 'arroba/anode/a06_page/an64_page_load.es7' )  );
+       const { idx_pointers } = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'      )  );
 
 class anode_main_page_process extends anode_page_load {
   constructor()

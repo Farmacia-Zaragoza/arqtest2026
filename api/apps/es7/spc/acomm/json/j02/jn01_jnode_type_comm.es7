@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // [DOCHANGED_ES7_SPACES]
 // Updated_Langs:NodeJs,Ruby,Php
@@ -22,20 +22,20 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // - d-rungen-          : Generate Arroba structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { jn01_common_json }  =   require(  path.join(JS_ACO7  , 'json/j01/n02/jn01_generate_common_json.es7'  ));
-       const { jn11_spec_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn11_generate_spec_json.es7'    ));
-       const { jn20_search_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn20_generate_search_json.es7'  ));
-       const { jn50_idx_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn50_generate_idx_json.es7'  ));
-       const { jn40_kb_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn40_generate_kb_json.es7'      ));
-       const { jn46_fs_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn46_generate_fs_json.es7'      ));
-       const { jn03_product_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn03_generate_product_json.es7' ));
-       const { jn13_photo_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn13_generate_photo_json.es7'   ));
-       const { jn04_teasers_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn04_generate_teasers_json.es7' ));
-       const { jn05_rands_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn05_generate_rands_json.es7'   ));
-       const { jn06_list_json } = require(  path.join(JS_ACO7  , 'json/j01/n02/jn06_generate_list_json.es7'    ));
-       const { printlog } = require(  path.join(JS_TYP7  , 'logs/printlog.es7'                           ));
+const  { jn01_common_json }  =   require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn01_generate_common_json.es7'  ));
+       const { jn11_spec_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn11_generate_spec_json.es7'    ));
+       const { jn20_search_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn20_generate_search_json.es7'  ));
+       const { jn50_idx_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn50_generate_idx_json.es7'  ));
+       const { jn40_kb_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn40_generate_kb_json.es7'      ));
+       const { jn46_fs_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn46_generate_fs_json.es7'      ));
+       const { jn03_product_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn03_generate_product_json.es7' ));
+       const { jn13_photo_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn13_generate_photo_json.es7'   ));
+       const { jn04_teasers_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn04_generate_teasers_json.es7' ));
+       const { jn05_rands_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn05_generate_rands_json.es7'   ));
+       const { jn06_list_json } = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn06_generate_list_json.es7'    ));
+       const { printlog } = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                           ));
 
 class jnode_type_comm extends printlog {
   constructor(    arroba           )

@@ -14,9 +14,9 @@ const path = require('path');
 // - d-sure_commands-            : Check command type based on uri && site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { uri_aliases } =   require(path.join(JS_MET7, 'cinco/cinco/uri/u06_aliases.es7'))
+const { uri_aliases } =   require(path.join(global.JS_MET7, 'cinco/cinco/uri/u06_aliases.es7'))
 
 class site_sure_commands extends uri_aliases {
 

@@ -35,9 +35,9 @@ const path = require('path');
 // FEATURE FEATURE-TEXT-INCLUDE
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { struc_gen_anchor }   =   require(  path.join(JS_TYP7  , 'struc/s05_struc_gen_anchor.es7'   )   )
+const   { struc_gen_anchor }   =   require(  path.join(global.JS_TYP7  , 'struc/s05_struc_gen_anchor.es7'   )   )
 
 class struc_gen_text extends struc_gen_anchor {
   constructor()

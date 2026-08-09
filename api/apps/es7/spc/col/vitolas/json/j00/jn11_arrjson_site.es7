@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //BlkJson  Block Json Style Class  [V.0.0.3]  (2019-02-09)
@@ -8,11 +8,11 @@ define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 //- event_create             : Create event jquery method
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 const 	echo 				= 	require(	'node-echo'										);
-		const sctf = require(path.join(JS_LIB7, 'file/save_code_to_file.es7'))
-		const { typejson_array } = require(path.join(JS_OBJ, 'json/typejson_array.es6'))
+		const sctf = require(path.join(global.JS_LIB7, 'file/save_code_to_file.es7'))
+		const { typejson_array } = require(path.join(global.JS_OBJ, 'json/typejson_array.es6'))
 
 class arrjson_site extends typejson_array {
 	constructor(file_name = '')

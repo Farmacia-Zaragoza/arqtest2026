@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -20,10 +20,10 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // @Common_Uri > @Uri > @Array > @Strings > @Printlog
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { site_common_commands } =   require( path.join(JS_ACO7  , 'uri/u02_site_commands.es7' ));
-       const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'     ));
+const  { site_common_commands } =   require( path.join(global.JS_ACO7  , 'uri/u02_site_commands.es7' ));
+       const { idx_pointers } = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'     ));
 
 class uri_lang_aliases extends site_common_commands
 {

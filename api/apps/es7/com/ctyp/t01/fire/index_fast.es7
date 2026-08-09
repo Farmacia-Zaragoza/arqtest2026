@@ -18,14 +18,14 @@ const path = require('path');
 // c-index_fast-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const   { index }      =   require(  path.join(JS_TYP7  , 'fire/index.es7'                 )  );
-        const { printlog } = require(  path.join(JS_TYP7  , 'logs/printlog.es7'            )  );
-        const { cbool } = require(  path.join(JS_TYP7  , 'bool/b01_bool.es7'          )  );
-        const { site } = require(  path.join(JS_TYP7  , 'site/s01_site.es7'          )  );
-        const { uri } = require(  path.join(JS_TYP7  , 'uri/u01_obj.es7'            )  );
-        const { index_req } = require(  path.join(JS_TYP7  , 'fire/index_req.es7'            )      );
+const   { index }      =   require(  path.join(global.JS_TYP7  , 'fire/index.es7'                 )  );
+        const { printlog } = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'            )  );
+        const { cbool } = require(  path.join(global.JS_TYP7  , 'bool/b01_bool.es7'          )  );
+        const { site } = require(  path.join(global.JS_TYP7  , 'site/s01_site.es7'          )  );
+        const { uri } = require(  path.join(global.JS_TYP7  , 'uri/u01_obj.es7'            )  );
+        const { index_req } = require(  path.join(global.JS_TYP7  , 'fire/index_req.es7'            )      );
 
 class index_fast extends index
 {

@@ -15,10 +15,10 @@ const path = require('path');
 // - d-save_arroba_index_list_to_file-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { idx_pointers }                =   require(   path.join(JS_TYP7 , 'logs/idx_pointers.es7'   ));
-       const { a02_idx_page } = require(   path.join(JS_TYP7 ,  'arroba/aindex/b_list/a02_idx_page.es7'  ));
+const  { idx_pointers }                =   require(   path.join(global.JS_TYP7 , 'logs/idx_pointers.es7'   ));
+       const { a02_idx_page } = require(   path.join(global.JS_TYP7 ,  'arroba/aindex/b_list/a02_idx_page.es7'  ));
 
 // Common Array
 class a01_idx_list extends a02_idx_page {

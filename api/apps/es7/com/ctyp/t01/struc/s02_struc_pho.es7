@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
+global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 // [DOCHANGED_ES7_SPACES]
 // Updated_Langs:NodeJs+,Ruby,Php
@@ -32,10 +32,10 @@ define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 // @Struc_pho > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const { struc_gen_arroba } =   require(  path.join(JS_TYP7  , 'struc/s03_struc_gen_arroba.es7'  ));
-	  const rand = require(  path.join(JS_LIB7 , 'rand/rand.es7' 	         )  );
+const { struc_gen_arroba } =   require(  path.join(global.JS_TYP7  , 'struc/s03_struc_gen_arroba.es7'  ));
+	  const rand = require(  path.join(global.JS_LIB7 , 'rand/rand.es7' 	         )  );
 
 class struc_pho extends struc_gen_arroba {
   constructor()

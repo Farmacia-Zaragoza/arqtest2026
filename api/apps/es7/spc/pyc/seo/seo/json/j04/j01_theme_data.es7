@@ -1,5 +1,5 @@
 const path = require('path');
-define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -19,10 +19,10 @@ define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 // Arroba_JType     : Generic type to create json files
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { tdata_comm }       =   require(path.join(JS_ACO7, 'json/j04/comm/j01_tdata_comm.es7'))
-       const { theme_json } = require(path.join(JS_PYC7, 'seo/seo/json/j04/j02_theme_json.es7'))
+const  { tdata_comm }       =   require(path.join(global.JS_ACO7, 'json/j04/comm/j01_tdata_comm.es7'))
+       const { theme_json } = require(path.join(global.JS_PYC7, 'seo/seo/json/j04/j02_theme_json.es7'))
 
 class theme_data extends tdata_comm
 {

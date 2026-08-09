@@ -18,10 +18,10 @@ const path = require('path');
 // Arroba_HType     : Generic html type
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { printlog }         =   require(path.join(JS_TYP7, 'logs/printlog.es7'))
-       const { arroba_htype } = require(path.join(JS_PER7, 'animals/animals/html/h03/hcomm/h01_arroba_htype.es7'))
+const  { printlog }         =   require(path.join(global.JS_TYP7, 'logs/printlog.es7'))
+       const { arroba_htype } = require(path.join(global.JS_PER7, 'animals/animals/html/h03/hcomm/h01_arroba_htype.es7'))
 
 class theme_html extends printlog
 {

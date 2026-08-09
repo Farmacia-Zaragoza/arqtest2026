@@ -14,13 +14,13 @@ const path = require('path');
 // - d-save_json_search_recursive_array_to_file-          : Generate Json Recursive
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
 const  fs                 =   require(  'fs'                                                                      );
        const empty = require(  'is-empty'                                                );
        const accents = require(  'remove-accents'                                          );
-       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
-       const { jni02_json_recursive_call } = require(path.join(JS_TYP7, 'json/jindex/j01/jni02_recursive_call.es7'))
+       const { idx_pointers } = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jni02_json_recursive_call } = require(path.join(global.JS_TYP7, 'json/jindex/j01/jni02_recursive_call.es7'))
 
 // Common Array
 class jni01_json_recursive extends jni02_json_recursive_call {

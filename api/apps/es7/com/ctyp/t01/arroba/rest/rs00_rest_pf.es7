@@ -15,13 +15,13 @@
 
 const path = require('path');
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const  { struc_attrib }         =   require(  path.join(JS_TYP7  , 'struc/s09_struc_attrib.es7'          )   );
-       const { r12_product_sheet_pf } = require(  path.join(JS_TYP7  , 'rest/r02_inner/r12_product_sheet_pf.es7') );
-       const { r02_product_sheet } = require(  path.join(JS_TYP7  , 'rest/r02_inner/r02_product_sheet.es7') );
-       const { r01_search_sheet } = require(  path.join(JS_TYP7  , 'rest/r02_inner/r01_search_sheet.es7' ) );
-       const { r00_simple_sheet } = require(  path.join(JS_TYP7  , 'rest/r02_inner/r00_simple_sheet.es7' ) );
+const  { struc_attrib }         =   require(  path.join(global.JS_TYP7  , 'struc/s09_struc_attrib.es7'          )   );
+       const { r12_product_sheet_pf } = require(  path.join(global.JS_TYP7  , 'rest/r02_inner/r12_product_sheet_pf.es7') );
+       const { r02_product_sheet } = require(  path.join(global.JS_TYP7  , 'rest/r02_inner/r02_product_sheet.es7') );
+       const { r01_search_sheet } = require(  path.join(global.JS_TYP7  , 'rest/r02_inner/r01_search_sheet.es7' ) );
+       const { r00_simple_sheet } = require(  path.join(global.JS_TYP7  , 'rest/r02_inner/r00_simple_sheet.es7' ) );
 
 class rs00_rest_pf extends struc_attrib {
 
