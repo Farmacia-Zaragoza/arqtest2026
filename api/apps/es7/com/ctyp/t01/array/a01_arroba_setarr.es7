@@ -29,7 +29,6 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 
 
 
-,'api/apps/paths.js'));
 const 	{ arroba_getarr } 		  =  require(path.join(global.JS_TYP7 , 'array/a02_arroba_getarr.es7'));
 
 console.log('arroba_setarr' . JS_TYP7);
