@@ -36,7 +36,6 @@ try {
   const mod_6 = require(path.join(js_tyf7, 'a01_load/mcomm/m02_site_comm.es7'));
   site_mcomm = mod_6.site_mcomm || mod_6;
 } catch (err) {
-  // Al usar console.error, Vercel/Lambda está obligado a volcarlo al log de inmediato
   console.error("FATAL_NOCACHE_IMPORT_ERROR:", err.message);
   console.error("FATAL_NOCACHE_PATH_ACO7:", js_aco7);
   console.error("FATAL_NOCACHE_PATH_TYF7:", js_tyf7);
