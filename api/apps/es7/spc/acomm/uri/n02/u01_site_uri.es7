@@ -14,7 +14,7 @@ const path = require('path');
 // @Site_Uri_> @Common_Uri > @Uri > @Strings > @Printlog
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const { site_uri_manage_commands } = require( path.join(JS_ACO7 , 'uri/n02/u02_manage_commands.es7' ) );
+const { site_uri_manage_commands } = require( path.join(global.JS_ACO7 , 'uri/n02/u02_manage_commands.es7' ) );
 
 class site_uri extends site_uri_manage_commands
 {
