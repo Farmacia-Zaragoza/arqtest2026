@@ -32,37 +32,28 @@
 
 const path = require('path');
 
-define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
-define("JS_ACO7" , 	path.join(global.ROOT, 'api/apps/es7/spc/acomm/')); 
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
-const   { common_model }  =   require(  path.join(JS_ACO7  , 'model/comm/common_model.es7'    )  );
-        const { site_uri } = require(  path.join(JS_ACO7  , 'uri/n02/u01_site_uri.es7'       )  );
-        const { arroba_jtype } = require(  path.join(JS_ACO7  , 'json/j03/j01_arroba_type.es7'   )  );
-        const { theme_data } = require(  path.join(JS_ACO7  , 'json/j04/ang/j01_theme_data.es7')  );
+const { common_model }  = require( path.join(global.JS_ACO7, 'model/comm/common_model.es7') );
+const { site_uri }      = require( path.join(global.JS_ACO7, 'uri/n02/u01_site_uri.es7') );
+const { arroba_jtype }  = require( path.join(global.JS_ACO7, 'json/j03/j01_arroba_type.es7') );
+const { theme_data }    = require( path.join(global.JS_ACO7, 'json/j04/ang/j01_theme_data.es7') );
 
 class angular_model extends common_model
 {
   constructor(pmt = '' )
   {
-    super(  pmt )
-    this.n                =  'angular_model::'
+    super( pmt )
+    this.n                 = 'angular_model::'
   }
 
   //---------------------------------------------------------------------------------------------
   run_site()
   {
-    // aqui esta llegando false, lo cual indica que hay un error
-    // this.p('site_model_robot  ' + this.acomm.s.b.robot_page )
-    // this.p('site_model_domain ' + this.acomm.s.cs.http_domainbar )
-
-    // this.p('rs_Slangs an22 ' + '  '  + this.uspc.s.cs.lang )
-
     // Generate common json file
     this.commjson         =   new arroba_jtype(this.acomm  ,'comm')
     this.run_comm_model()
-
-    // Hay que averiguar donde lo hemos puesto content
-    // this.p('model_ang ' + this.arroba.s.cs.page_type )
 
     this.arroba.s.cs.page_type = 'spec'
 
@@ -70,32 +61,13 @@ class angular_model extends common_model
     this.specjson         =   new arroba_jtype(this.arroba , 'spec')
     this.run_spec_model()
 
-    // Intenta el idiomja actual pero como no existe carga el ingles
-    // Necesitamos que se genere el idioma por defecto tambien
-    // this.p('ark_model_First Alias**JA ' + this.specjson.gethash_keylang( 'i000v005' , 1 ) )
-
-    // Aqui lo que hay que hacer es ver si es front page
-    // Solo en este caso tiene sentido mirar alias
-    // El problema va a venir con la cache
-
-    //this.p('ardru_tras_spec_antes ' + this.b.page_could_be_alias)
-
     if (this.b.page_could_be_alias)
     {
       this.uspc.manage_lang_aliases(this.arroba)
     }
 
-    // La conocemos
-    // this.p('Arq_tras_spec Old Uri ' + this.arroba.u.uri  )
-    // En este punto si es un alias conocido no del idioma actual
-    // se debera cargar dicho alias y generar la url correspondiente
-
-    // this.p('arq_model_page C ' + this.arroba.s.cs.page +  ' Lang ' + this.arroba.s.cs.lang )
-
     // Pasamos U a arroba
     this.arroba.u         =   this.uspc
-
-    // this.p('model_uri_test  HH ' + this.arroba.u.uri_args_sorted[0])
 
     this.thmdata          =   new theme_data(this.arroba)
 
@@ -105,4 +77,4 @@ class angular_model extends common_model
 
 } // end Class
 
-exports.angular_model = angular_model
+exports.angular_model = angular_model;
