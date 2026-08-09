@@ -5,7 +5,7 @@ const helmet = require('helmet')
 const useragent = require('express-useragent')
 
 // Importaciones
-const { obtenerContextoEstructura } = require('../utils/pathUtils')
+const { obtenerContextoEstructura } = require('../utils/pathUtils.es7')
 const printlog = require('../core/printlog.es7')
 
 // Instancia única de trazabilidad para el proceso de generación
