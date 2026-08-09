@@ -1,8 +1,13 @@
 process.on('uncaughtException', (err) => {
-  console.log('💥 ERRORES DETECTADOS EN SERVIDOR:');
-  console.log(err.message);
-  console.log(err.stack);
+  console.error('💥 ERRORES NO CONTROLADOS EN SERVIDOR:');
+  console.error(err.message);
+  console.error(err.stack);
 });
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('💥 RECHAZO DE PROMESA NO CONTROLADO:', reason);
+});
+
 // 1. Librerías básicas
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -60,27 +65,36 @@ global.define = function(name, value) {
   global[name] = value;
 };
 
-// Constructor del bloque de inyección para la cabecera de cada archivo
+// Cabecera compacta en una sola línea para no desfasar el número de línea original
 const injectedHeader = Object.keys(APP_PATHS)
   .map(key => `var ${key} = ${JSON.stringify(APP_PATHS[key])};`)
-  .join('\n') + '\n';
+  .join(' ');
 
-// 4. INTERCEPTOR INMUNIZADOR:
-// Inyecta las variables en la parte superior del archivo antes de compilarlo
+// 4. INTERCEPTOR DETECTOR DE ERRORES EN ARCHIVOS .ES7
 require.extensions['.es7'] = function(module, filename) {
   let content = fs.readFileSync(filename, 'utf8');
 
   // Solo inyectamos si no tiene ya la inyección añadida
   if (!content.includes('var JS_ACO7 =')) {
-    content = injectedHeader + content;
+    content = injectedHeader + '\n' + content;
   }
 
-  module._compile(content, filename);
+  try {
+    module._compile(content, filename);
+  } catch (err) {
+    console.error("\n====================================================");
+    console.error("💥 ERROR AL COMPILAR/CARGAR ARCHIVO .ES7");
+    console.error("📄 ARCHIVO AFECTADO:", filename);
+    console.error("❌ MENSAJE DE ERROR:", err.message);
+    console.error("📍 STACK TRACE:\n", err.stack);
+    console.error("====================================================\n");
+    throw err;
+  }
 };
 
 // 5. Variables de entorno y utilidades
 let run_path = path.resolve(".");
-let a_ruta   = run_path.split('/');
+let a_ruta    = run_path.split('/');
 let a_len    = a_ruta.length - 1;
 
 var branch = a_ruta[a_len - 2] || 'arq';
