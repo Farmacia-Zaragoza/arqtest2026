@@ -13,14 +13,14 @@ const path = require(  'path'                                                 );
 // - d-save_json_simple_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                 =   require(  'fs'                                                   );
        const empty = require(  'is-empty'                             );
        const accents = require(  'remove-accents'                       );
        
-       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
-       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j01/fs/jn14_fs_list.es7'); const jn14_fs_json_list = _mod_safe_2.jn14_fs_json_list || _mod_safe_2;)
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn14_fs_json_list } = require(path.join(JS_TYP7, 'json/jnode/j01/fs/jn14_fs_list.es7'))
 
 class jn10_fs_json_simple extends jn14_fs_json_list {
 
@@ -181,6 +181,3 @@ class jn10_fs_json_simple extends jn14_fs_json_list {
 
 exports.jn10_fs_json_simple = jn10_fs_json_simple
 
-
-module.exports = jn10_fs_json_simple;
-module.exports.jn10_fs_json_simple = jn10_fs_json_simple;

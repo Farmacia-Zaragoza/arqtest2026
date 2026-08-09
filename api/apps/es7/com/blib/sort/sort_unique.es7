@@ -20,13 +20,14 @@ const path = require('path');
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const	fs 					= 	require(	'fs'														);
 		const empty = require(	'is-empty'									);
 		const util = require(	'util'														);
 		const os = require(	'os'														);
-    const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7' ); const printlog = _mod_safe_1.printlog || _mod_safe_1);
+    const { printlog } = require(  path.join(JS_TYP7  , 'logs/printlog.es7' )  );
+
 // Ok [19-05-11]
 
 // Ordena terminos de forma unica
@@ -100,6 +101,3 @@ function sort_unique_min_len(passed_array,min_len = 3)
 module.exports.sort_unique 				= 	sort_unique
 module.exports.sort_unique_min_len		= 	sort_unique_min_len
 
-
-module.exports = sort_unique;
-module.exports.sort_unique = sort_unique;

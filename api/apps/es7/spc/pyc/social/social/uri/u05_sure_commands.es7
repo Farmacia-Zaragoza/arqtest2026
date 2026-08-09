@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_NODE_ES6_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -15,9 +15,9 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 // - d-sure_commands-            : Check command type based on uri && site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_ACO7, 'uri/u01_lang_aliases.es7'); const uri_lang_aliases = _mod_safe_1.uri_lang_aliases || _mod_safe_1;)
+const { uri_lang_aliases } =   require(path.join(JS_ACO7, 'uri/u01_lang_aliases.es7'))
 
 class site_sure_commands extends uri_lang_aliases {
 
@@ -59,6 +59,3 @@ class site_sure_commands extends uri_lang_aliases {
 
 exports.site_sure_commands = site_sure_commands
 
-
-module.exports = site_sure_commands;
-module.exports.site_sure_commands = site_sure_commands;

@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 
 // [DOCHANGED_ES6_SPACES]
 // Updated_Langs:NodeJs,Ruby,Php
@@ -21,10 +21,11 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 // - d-run_cache_to_generate_json-            : Call to Jnode
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s04_defs.es7'     ); const scomm_defs = _mod_safe_1.scomm_defs || _mod_safe_1);
-const _mod_safe_2 = require(    path.join(global.JS_TYP7  , 'json/jnode/j02/j01_jnode.es7'  ); const jnode = _mod_safe_2.jnode || _mod_safe_2);
+const  { scomm_defs }      =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s04_defs.es7'     ) );
+       const { jnode } = require(    path.join(JS_TYP7  , 'json/jnode/j02/j01_jnode.es7'  ) );
+
 // Simple Common - Will Load only common information
 class jcomm_struc extends scomm_defs {
   constructor()
@@ -59,6 +60,3 @@ class jcomm_struc extends scomm_defs {
 
 exports.jcomm_struc = jcomm_struc
 
-
-module.exports = jcomm_struc;
-module.exports.jcomm_struc = jcomm_struc;

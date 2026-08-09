@@ -15,9 +15,10 @@ const path = require('path');
 // - create               : Build html final code for dhtml object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7' ); const printlog = _mod_safe_1.printlog || _mod_safe_1);
+const   { printlog } =   require(  path.join(JS_TYP7  , 'logs/printlog.es7' )   );
+
 class html_style extends printlog {
 
   constructor(   tag_type       = ''  ,
@@ -686,6 +687,3 @@ class html_style extends printlog {
 //
 exports.html_style = html_style;
 
-
-module.exports = html_style;
-module.exports.html_style = html_style;

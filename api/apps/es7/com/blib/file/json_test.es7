@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // [DOCHANGED_ES7_SPACES]
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
@@ -22,9 +22,9 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const   gfc  			     =   require(path.join(global.JS_LIB7, 'file/get_file_code.es7'))
+const   gfc  			     =   require(path.join(JS_LIB7, 'file/get_file_code.es7'))
         const validator = require(  'is-my-json-valid'            );
         const syncrequest = require(  'sync-request'             );
         const fs = require(  'fs'                                                  );
@@ -118,6 +118,3 @@ module.exports.jsontest                       = jsontest
 module.exports.jsonuritest                    = jsonuritest
 module.exports.create_json_line               = create_json_line
 
-
-module.exports = jsontest;
-module.exports.jsontest = jsontest;

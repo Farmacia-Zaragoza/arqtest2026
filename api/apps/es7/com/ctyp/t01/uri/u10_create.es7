@@ -14,9 +14,9 @@ const path = require('path');
 // - d-create_cache_urls-               : Create cache urls
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'uri/u11_defs.es7'  ); const uri_defs = _mod_safe_1.uri_defs || _mod_safe_1;  )
+const   { uri_defs }     =   require(  path.join(JS_TYP7  , 'uri/u11_defs.es7'  )  )
 
 class uri_create extends uri_defs {
 
@@ -49,6 +49,3 @@ class uri_create extends uri_defs {
 
 exports.uri_create = uri_create
 
-
-module.exports = uri_create;
-module.exports.uri_create = uri_create;

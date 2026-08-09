@@ -27,11 +27,11 @@ const path = require('path');
 
 // Must to be unique
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_PYC7, 'meto/arqmet/model/arqmet_nocache_launcher.es7'); const arqmet_no_cache = _mod_safe_1.arqmet_no_cache || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_PYC7, 'meto/arqmet/model/arqmet_cache_launcher.es7'); const arqmet_cache = _mod_safe_2.arqmet_cache || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3;)
+const  { arqmet_no_cache } =  require(path.join(JS_PYC7, 'meto/arqmet/model/arqmet_nocache_launcher.es7'))
+        const { arqmet_cache } = require(path.join(JS_PYC7, 'meto/arqmet/model/arqmet_cache_launcher.es7'))
+        const { printlog } = require(path.join(JS_TYP7, 'logs/printlog.es7'))
 
 class arqmet extends printlog
 {
@@ -52,6 +52,3 @@ class arqmet extends printlog
 
 exports.arqmet = arqmet
 
-
-module.exports = arqmet;
-module.exports.arqmet = arqmet;

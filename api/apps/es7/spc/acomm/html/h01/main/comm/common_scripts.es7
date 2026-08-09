@@ -24,9 +24,9 @@ const path = require('path');
 // - d-create_marquee-    : Create marquee script
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(	path.join(global.JS_TYP7 , 'html/style/getset.es7' ); const getset = _mod_safe_1.getset || _mod_safe_1;	)
+const   { getset } 		= 	require(	path.join(JS_TYP7 , 'html/style/getset.es7' )	)
 
 
 
@@ -51,6 +51,3 @@ class common_scripts extends getset  {
 
 exports.common_scripts = common_scripts
 
-
-module.exports = common_scripts;
-module.exports.common_scripts = common_scripts;

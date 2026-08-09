@@ -43,10 +43,11 @@ const path = require('path');
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(	path.join(global.JS_BASE 	, 	'com/objects/html/html_style.es6'	); const html_style = _mod_safe_1.html_style || _mod_safe_1);
-const _mod_safe_2 = require(	path.join(global.JS_BASE 	, 	'com/objects/html/ifnojs.es6'			); const ifnojs = _mod_safe_2.ifnojs || _mod_safe_2);
+const 	{ html_style } 					= 	require(	path.join(JS_BASE 	, 	'com/objects/html/html_style.es6'	)			);
+		const { ifnojs } = require(	path.join(JS_BASE 	, 	'com/objects/html/ifnojs.es6'			)		);
+
 class common_body extends html_style  {
 
     constructor (     container						)
@@ -160,6 +161,3 @@ async function procesarHtml(htmlSucio) {
 
 exports.common_body = common_body
 
-
-module.exports = common_body;
-module.exports.common_body = common_body;

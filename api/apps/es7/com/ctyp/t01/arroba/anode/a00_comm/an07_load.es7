@@ -30,9 +30,9 @@ const path = require('path');
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/anode/a00_comm/an09_process.es7'    ); const anode_process = _mod_safe_1.anode_process || _mod_safe_1;    )
+const   { anode_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a00_comm/an09_process.es7'    )    )
 
 
 class anode_load extends anode_process {
@@ -134,6 +134,3 @@ class anode_load extends anode_process {
 
 exports.anode_load = anode_load
 
-
-module.exports = anode_load;
-module.exports.anode_load = anode_load;

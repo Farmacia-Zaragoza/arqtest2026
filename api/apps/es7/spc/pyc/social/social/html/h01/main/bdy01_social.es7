@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Node Js - Pharmacy Body Class  [V.0.0.4]  (2019-01-22)
@@ -21,10 +21,10 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 // - build_data  	 : Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_ACO7, 'html/h01/main/common_react.es7'); const common_react = _mod_safe_1.common_react || _mod_safe_1;)
-		const _mod_safe_2 = require(path.join(global.JS_PYC7, 'social/social/html/h01/main/scr01_js_social.es7'); const scr01_js_social = _mod_safe_2.scr01_js_social || _mod_safe_2;)
+const   { common_react }    =  require(path.join(JS_ACO7, 'html/h01/main/common_react.es7'))
+		const { scr01_js_social } = require(path.join(JS_PYC7, 'social/social/html/h01/main/scr01_js_social.es7'))
 
 class bdy01_body_social extends common_react  {
 
@@ -51,6 +51,3 @@ class bdy01_body_social extends common_react  {
 
 exports.bdy01_body_social = bdy01_body_social
 
-
-module.exports = bdy01_body_social;
-module.exports.bdy01_body_social = bdy01_body_social;

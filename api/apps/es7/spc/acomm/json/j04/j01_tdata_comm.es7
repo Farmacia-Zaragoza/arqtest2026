@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -23,12 +23,13 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 // - d-load_page_content-            : Check command type based on uri && site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                  ); const printlog = _mod_safe_1.printlog || _mod_safe_1);
-const _mod_safe_2 = require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7' ); const arroba_scomm = _mod_safe_2.arroba_scomm || _mod_safe_2);
-const _mod_safe_3 = require(  path.join(global.JS_TYF7  , 'a01_load/sprod/p01_arroba_prod.es7' ); const arroba_sprod = _mod_safe_3.arroba_sprod || _mod_safe_3);
-const _mod_safe_4 = require(  path.join(global.JS_TYF7  , 'a01_load/hiera/h01_arroba_hiera.es7' ); const arroba_hiera = _mod_safe_4.arroba_hiera || _mod_safe_4);
+const  { printlog }         =   require(  path.join(JS_TYP7  , 'logs/printlog.es7'                  ));
+       const { arroba_scomm } = require(  path.join(JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7' ));
+       const { arroba_sprod } = require(  path.join(JS_TYF7  , 'a01_load/sprod/p01_arroba_prod.es7' ));
+       const { arroba_hiera } = require(  path.join(JS_TYF7  , 'a01_load/hiera/h01_arroba_hiera.es7' ));
+
 class tdata_comm extends printlog
 {
   constructor(arroba = '')
@@ -115,6 +116,3 @@ class tdata_comm extends printlog
 
 exports.tdata_comm = tdata_comm
 
-
-module.exports = tdata_comm;
-module.exports.tdata_comm = tdata_comm;

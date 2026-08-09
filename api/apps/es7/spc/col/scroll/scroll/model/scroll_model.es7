@@ -1,7 +1,7 @@
-global.JS_SPC7 = path.join(global.ROOT, 'api/apps/es7/spc/');
+define('JS_SPC7', path.join(global.ROOT, 'api/apps/es7/spc/'));
 
 const path = require('path');
-global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 
 // [DOCHANGED_ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -18,13 +18,13 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 
 // Must to be unique
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_SPC7, 'acomm/model/common_model.es7'); const common_model = _mod_safe_1.common_model || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'); const site_mcomm = _mod_safe_2.site_mcomm || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_SPC7, 'scroll/json/j03/j01_arroba_type.es7'); const arroba_jtype = _mod_safe_3.arroba_jtype || _mod_safe_3;)
-        const _mod_safe_4 = require(path.join(global.JS_SPC7, 'scroll/uri/u01_site_uri.es7'); const site_uri = _mod_safe_4.site_uri || _mod_safe_4;)
-        const _mod_safe_5 = require(path.join(global.JS_SPC7, 'scroll/json/j04/j01_theme_data.es7'); const theme_data = _mod_safe_5.theme_data || _mod_safe_5;)
+const   { common_model }  =   require(path.join(JS_SPC7, 'acomm/model/common_model.es7'))
+        const { site_mcomm } = require(path.join(JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'))
+        const { arroba_jtype } = require(path.join(JS_SPC7, 'scroll/json/j03/j01_arroba_type.es7'))
+        const { site_uri } = require(path.join(JS_SPC7, 'scroll/uri/u01_site_uri.es7'))
+        const { theme_data } = require(path.join(JS_SPC7, 'scroll/json/j04/j01_theme_data.es7'))
 
 class scroll extends common_model
 {
@@ -62,6 +62,3 @@ class scroll extends common_model
 
 exports.scroll = scroll
 
-
-module.exports = scroll;
-module.exports.scroll = scroll;

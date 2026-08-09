@@ -16,9 +16,10 @@ const path = require('path');
 // - d-manage_uri_page_number-         : Generate right page number argument
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u13_normalize.es7'  ); const uri_normalize = _mod_safe_1.uri_normalize || _mod_safe_1);
+const   { uri_normalize }     =   require(  path.join(JS_TYP7 , 'uri/u13_normalize.es7'  )  );
+
 class uri_page_string extends uri_normalize {
 
   constructor()
@@ -109,6 +110,3 @@ class uri_page_string extends uri_normalize {
 
 exports.uri_page_string = uri_page_string
 
-
-module.exports = uri_page_string;
-module.exports.uri_page_string = uri_page_string;

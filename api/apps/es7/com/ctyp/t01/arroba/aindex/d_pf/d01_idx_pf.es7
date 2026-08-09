@@ -1,6 +1,6 @@
 const path = require('path');
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
-global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
+define('JS_TYP7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // [DOCHANGED_ES7_SPACES]
 // Updated Langs: +NodeJs,Ruby,Php
@@ -17,10 +17,11 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 // - d-index_arroba_parragraph_from_file-          : Get object or array method fro common management
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
+const { JS_TYP7 , JS_LIB7  } = require(path.join(process.cwd(),'api/apps/paths.js'));
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'arroba/aindex/d_pf/d02_idx_arr.es7' ); const d02_idx_arr = _mod_safe_1.d02_idx_arr || _mod_safe_1);
-const shtf = require(  path.join(global.JS_LIB7 , 'file/save_hash_to_file.es7' 	));
-	    const satf = require(  path.join(global.JS_LIB7 , 'file/save_hash1d_to_file.es7' 	));
+const   { d02_idx_arr }     =   require(  path.join(JS_TYP7 , 'arroba/aindex/d_pf/d02_idx_arr.es7' ));
+	    const shtf = require(  path.join(JS_LIB7 , 'file/save_hash_to_file.es7' 	));
+	    const satf = require(  path.join(JS_LIB7 , 'file/save_hash1d_to_file.es7' 	));
 
 class d01_idx_pf extends d02_idx_arr {
 
@@ -92,6 +93,3 @@ class d01_idx_pf extends d02_idx_arr {
 
 exports.d01_idx_pf = d01_idx_pf
 
-
-module.exports = d01_idx_pf;
-module.exports.d01_idx_pf = d01_idx_pf;

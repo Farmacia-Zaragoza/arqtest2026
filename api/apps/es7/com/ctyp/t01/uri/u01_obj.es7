@@ -32,9 +32,9 @@ const path = require('path');
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7   , 'uri/u02_ports.es7'        ); const uri_ports = _mod_safe_1.uri_ports || _mod_safe_1;   )
+const   { uri_ports }   =   require(  path.join(JS_TYP7   , 'uri/u02_ports.es7'        )   )
 
 
 class uri extends uri_ports {
@@ -198,6 +198,3 @@ class uri extends uri_ports {
 
 exports.uri = uri
 
-
-module.exports = uri;
-module.exports.uri = uri;

@@ -27,9 +27,9 @@ const path = require('path');
 // - d-generate_common_rands
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'json/jnode/j01/objects/jn01_simple.es7' ); const jn01_commo_json_simple = _mod_safe_1.jn01_commo_json_simple || _mod_safe_1; )
+const   { jn01_commo_json_simple }   =   require(  path.join(JS_TYP7  , 'json/jnode/j01/objects/jn01_simple.es7' ) )
 
 class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
 
@@ -580,6 +580,3 @@ class jn11_general_common_simple_methods_json extends jn01_commo_json_simple {
 
 exports.jn11_general_common_simple_methods_json = jn11_general_common_simple_methods_json
 
-
-module.exports = jn11_general_common_simple_methods_json;
-module.exports.jn11_general_common_simple_methods_json = jn11_general_common_simple_methods_json;

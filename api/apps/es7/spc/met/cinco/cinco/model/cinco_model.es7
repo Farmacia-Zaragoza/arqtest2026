@@ -27,11 +27,11 @@ const path = require('path');
 
 // Must to be unique
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_MET7, 'cinco/cinco/model/cinco_nocache_launcher.es7'); const cinco_no_cache = _mod_safe_1.cinco_no_cache || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_MET7, 'cinco/cinco/model/cinco_cache_launcher.es7'); const cinco_cache = _mod_safe_2.cinco_cache || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3;)
+const   { cinco_no_cache } =   require(path.join(JS_MET7, 'cinco/cinco/model/cinco_nocache_launcher.es7'))
+        const { cinco_cache } = require(path.join(JS_MET7, 'cinco/cinco/model/cinco_cache_launcher.es7'))
+        const { printlog } = require(path.join(JS_TYP7, 'logs/printlog.es7'))
 
 class cinco extends printlog
 {
@@ -50,6 +50,3 @@ class cinco extends printlog
 
 exports.cinco = cinco
 
-
-module.exports = cinco;
-module.exports.cinco = cinco;

@@ -7,9 +7,9 @@ const path = require('path');
 //- event_create             : Create event jquery method
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_OBJ, 'json/typejson_array.es6'); const typejson_array = _mod_safe_1.typejson_array || _mod_safe_1;)
+const 	{ typejson_array }	= 	require(path.join(JS_OBJ, 'json/typejson_array.es6'))
 
 class arrjson_site extends typejson_array {
 	constructor(file_name = '')
@@ -47,6 +47,3 @@ class arrjson_site extends typejson_array {
 
 exports.arrjson_site  = arrjson_site
 
-
-module.exports = arrjson_site;
-module.exports.arrjson_site = arrjson_site;

@@ -16,10 +16,11 @@ const path = require('path');
 //- d-main_page_process-           : Process from main file one position && one page
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/anode/a08_index_page/an87_page_load.es7' ); const anode_index_page_load = _mod_safe_1.anode_index_page_load || _mod_safe_1);
-const _mod_safe_2 = require(  path.join(global.JS_TYP7 , 'logs/idx_pointers.es7'    ); const idx_pointers = _mod_safe_2.idx_pointers || _mod_safe_2);
+const  { anode_index_page_load }   =   require(  path.join(JS_TYP7  , 'arroba/anode/a08_index_page/an87_page_load.es7' )   );
+       const { idx_pointers } = require(  path.join(JS_TYP7 , 'logs/idx_pointers.es7'    )     );
+
 class anode_main_index_page_process extends anode_index_page_load {
   constructor()
   {
@@ -59,6 +60,3 @@ class anode_main_index_page_process extends anode_index_page_load {
 
 exports.anode_main_index_page_process = anode_main_index_page_process
 
-
-module.exports = anode_main_index_page_process;
-module.exports.anode_main_index_page_process = anode_main_index_page_process;

@@ -14,10 +14,11 @@ const path = require('path');
 // - d-manage_anchor-       : Manage cache for sites
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u05_front.es7'   ); const uri_front = _mod_safe_1.uri_front || _mod_safe_1);
+const   { uri_front }     =   require(  path.join(JS_TYP7 , 'uri/u05_front.es7'   ) );
+
 class uri_anchor extends uri_front {
 
   constructor()
@@ -133,6 +134,3 @@ class uri_anchor extends uri_front {
 
 exports.uri_anchor = uri_anchor
 
-
-module.exports = uri_anchor;
-module.exports.uri_anchor = uri_anchor;

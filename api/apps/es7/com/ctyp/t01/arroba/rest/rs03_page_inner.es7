@@ -14,13 +14,13 @@ const path = require('path');
 // - d-gen_rest_search_inner-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                   =   require(  'fs'                                                    );
        const empty = require(  'is-empty'                              );
        const accents = require(  'remove-accents'                        );
-      const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'             ); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1);
-const _mod_safe_2 = require(path.join(global.JS_TYP7, 'arroba/rest/rs04_list_inner.es7'); const rs04_object_list_inner = _mod_safe_2.rs04_object_list_inner || _mod_safe_2;)
+      const { idx_pointers } = require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'             )    );
+      const { rs04_object_list_inner } = require(path.join(JS_TYP7, 'arroba/rest/rs04_list_inner.es7'))
 
 // Comm Object
 class rs03_object_page_inner extends rs04_object_list_inner {
@@ -111,6 +111,3 @@ class rs03_object_page_inner extends rs04_object_list_inner {
 
 exports.rs03_object_page_inner = rs03_object_page_inner
 
-
-module.exports = rs03_object_page_inner;
-module.exports.rs03_object_page_inner = rs03_object_page_inner;

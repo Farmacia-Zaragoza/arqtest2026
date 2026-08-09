@@ -16,13 +16,13 @@ const path = require('path');
 // FEATURES-SEARCH_QUERY_FEATURE
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                   =   require(  'fs'                                                   );
        const empty = require(  'is-empty'                             );
        const accents = require(  'remove-accents'                       );
-       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
-       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jsearch/j01/js03_search_lang.es7'); const jn03_search_lang = _mod_safe_2.jn03_search_lang || _mod_safe_2;)
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn03_search_lang } = require(path.join(JS_TYP7, 'json/jsearch/j01/js03_search_lang.es7'))
 
 // Comm Object
 class jn02_object_search_inner extends jn03_search_lang {
@@ -132,6 +132,3 @@ class jn02_object_search_inner extends jn03_search_lang {
 
 exports.jn02_object_search_inner = jn02_object_search_inner
 
-
-module.exports = jn02_object_search_inner;
-module.exports.jn02_object_search_inner = jn02_object_search_inner;

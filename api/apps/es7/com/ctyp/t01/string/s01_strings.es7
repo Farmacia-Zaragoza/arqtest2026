@@ -22,9 +22,9 @@ const path = require('path');
 // @String >
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'string/s02_defs.es7'    ); const strings_defs = _mod_safe_1.strings_defs || _mod_safe_1;  )
+const   { strings_defs }       =   require(  path.join(JS_TYP7  , 'string/s02_defs.es7'    )  )
 
 
 class strings extends strings_defs
@@ -304,6 +304,3 @@ class strings extends strings_defs
 
 exports.strings = strings
 
-
-module.exports = strings;
-module.exports.strings = strings;

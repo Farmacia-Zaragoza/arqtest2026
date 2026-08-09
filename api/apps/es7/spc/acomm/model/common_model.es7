@@ -1,8 +1,6 @@
 const path = require('path');
-
-global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
-global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // [DOCHANGED_ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -37,47 +35,57 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 // @CacheModel > @Launcher
 //-------------------------------------------------------------------------------------
 
-const _mod_safe_1 = require( path.join(global.JS_TYP7, 'fire/i02_index_fast.es7'); const index_fast = _mod_safe_1.index_fast || _mod_safe_1);
-const _mod_safe_2 = require( path.join(global.JS_TYP7, 'container/c01_cont.es7'); const container = _mod_safe_2.container || _mod_safe_2);
-const _mod_safe_3 = require( path.join(global.JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7'); const arroba_mcomm = _mod_safe_3.arroba_mcomm || _mod_safe_3);
-const _mod_safe_4 = require( path.join(global.JS_TYF7, 'a01_load/scomm/s01_arroba_comm.es7'); const arroba_scomm = _mod_safe_4.arroba_scomm || _mod_safe_4);
-const fs                = require('fs');
-const gfc               = require( path.join(global.JS_LIB7, 'file/get_file_code.es7') );
+//==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
+
+const   { index_fast }    =   require(  path.join(JS_TYP7  , 'fire/index_fast.es7'                ) );
+        const { container } = require(  path.join(JS_TYP7  , 'container/c01_cont.es7'             ) );
+        const { arroba_mcomm } = require(  path.join(JS_TYF7  , 'a01_load/mcomm/m01_arroba_comm.es7' ) );
+        const { arroba_scomm } = require(  path.join(JS_TYF7  , 'a01_load/scomm/s01_arroba_comm.es7' ) );
+        const fs = require(  'fs'                                                );
+	    	const gfc = require(  path.join(JS_LIB7  , 'file/get_file_code.es7' 	          ) );
 
 class common_model extends index_fast
 {
   constructor(pmt = '' )
   {
-    super( pmt )
 
-    this.arroba           = new container()
-    this.acomm            = new container()
+    super(  pmt )
+
+    this.arroba           =  new container()
+
+    this.acomm            =  new container()
 
     // Gestion de uris de robot
     this.robot_uri_management()
 
-    this.n                = 'common_model::'
+    // this.p('arqdru_noche_robot X ' + this.s.b.robot_page )
+
+    this.n                =  'common_model::'
   }
 
   check_logo_data()
   {
-    let logo_data_check = false
+  	let logo_data_check = false
 
-    let logo_file         = this.s.ms.images_path + this.s.ms.logo_mobile.substr(2)
-    if (!fs.existsSync(logo_file) )  logo_data_check = true
-    if (logo_data_check) this.p('CHECK_MOBILE_LOGO ' +  logo_file)
+    //site_path :  /mnt/ssd/brqx/run/react/arq/kb/arqkb
 
-    logo_file         = this.s.ms.images_path + this.s.ms.logo_tablet.substr(2)
+  	let logo_file         = this.s.ms.images_path + this.s.ms.logo_mobile.substr(2)
     if (!fs.existsSync(logo_file) )  logo_data_check = true
-    if (logo_data_check) this.p('CHECK_TABLET_LOGO ' +  logo_file)
+  	if (logo_data_check) this.p('CHECK_MOBILE_LOGO ' +  logo_file)
 
-    logo_file         = this.s.ms.images_path + this.s.ms.logo_desktop.substr(2)
+  	logo_file         = this.s.ms.images_path + this.s.ms.logo_tablet.substr(2)
     if (!fs.existsSync(logo_file) )  logo_data_check = true
-    if (logo_data_check) this.p('CHECK_DESKTOP_LOGO ' +  logo_file)
+  	if (logo_data_check) this.p('CHECK_TABLET_LOGO ' +  logo_file)
 
-    logo_file         = this.s.ms.images_path + this.s.ms.logo_4k.substr(2)
+  	logo_file         = this.s.ms.images_path + this.s.ms.logo_desktop.substr(2)
     if (!fs.existsSync(logo_file) )  logo_data_check = true
-    if (logo_data_check) this.p('CHECK_4k_LOGO ' +  logo_file)
+  	if (logo_data_check) this.p('CHECK_DESKTOP_LOGO ' +  logo_file)
+
+  	logo_file         = this.s.ms.images_path + this.s.ms.logo_4k.substr(2)
+    if (!fs.existsSync(logo_file) )  logo_data_check = true
+  	if (logo_data_check) this.p('CHECK_4k_LOGO ' +  logo_file)
 
   }
 
@@ -85,25 +93,36 @@ class common_model extends index_fast
 
   cache_model()
   {
+    // this.p('acache ali ' + this.uspc.c.s.cs.cache_alias)
+    // this.p('acache sum ' + this.uspc.c.s.cs.cache_sum)
+
+    // Si es robot cache sum si esta siendo generado solo con la fecha
+
     if (!this.b.cache)
     {
+       // Si no hay cache debe regenerarse todo
        this.no_cache_launcher_code()
     }
     else if (gfc.no_zero(this.uspc.c.s.cs.cache_sum))
     {
+       // Hay cache y existe el fichero de cache
        this.p('Getting-Cached-Code ' + this.uspc.c.s.cs.cache_path)
        this.code = gfc.get_file_code(this.uspc.c.s.cs.cache_path)
+       //this.p('ardrmod_getting_code ' + this.code.length)
     }
     else
     {
        this.p('Enter-In-No_Cache')
 
+       // Pueden existir aliases
       if (gfc.no_zero(this.uspc.c.s.cs.cache_alias))
       {
+        // this.p('acache_Hay alias')
         this.code = gfc.get_file_code(this.uspc.c.s.cs.cache_alias)
       }
       else
       {
+        // Hay cache y no existe el fichero
         this.no_cache_launcher_code()
       }
 
@@ -117,33 +136,77 @@ class common_model extends index_fast
   {
     this.arroba.copy( this.comm)
     this.acomm.copy(  this.comm)
+
+    // this.p('arqdru_main_cat' + this.comm.j.arr['en']['jmain'][0])
+    // this.p('arqdru ' + this.acomm.s.cs.cache_url )
   }
 
 //-------------------------------------------------------------------------------------
 
   run_comm_model()
   {
+
+    // this.arroba.u.gen_url_structure()
+    // this.acomm.u = this.arroba.u
+
+    // El problema es que aqui aun no sabemos el path
+    // ----------------------------------------------------------------------------------
+    // this.p('arqdru comm  NOLOSABEMOS Before RUNGEN ' + this.commjson.s.cs.cache_path )
+
     this.commjson.rungen()
+    // Call to process_array_and_generate_json_file ( Call to rungen && later to rungen_json)
+
+    // this.p('arqdru comm  YALOSABEMOS ' + this.commjson.s.cs.cache_path )
+    // this.p('arqdru Fa ' + this.commjson.s.cs.cache_url )
+    // this.p('comm_mod_LANG_A2  ' + this.uspc.s.ms.lang)
 
     this.arroba.copy_uri(this.uspc)
 
     this.check_logo_data()
 
+    // this.p('comm_mod_LANG_A3  ' + this.arroba.s.ms.lang)
+    // this.p('comm_model_URI ' + this.arroba.u.dash_uri + '   ' + this.arroba.u.uri )
+
+    // COMMON URL MANAGEMENT
     this.arroba.s.ms.j_comm_path           = this.commjson.s.cs.cache_path
     this.arroba.s.ms.j_comm_url            = this.uspc.s.cs.http_domainbar + this.commjson.s.cs.cache_url
 
-    this.gcomm    = new arroba_mcomm(this.arroba , this.s.ms.spec_positions)
+    // Recargamos estructura. No generamos Json
+    // Necesitamos recupèrar la estructura ya generada
+    // A PARTIR DE AQUI ES SPEC - habra que pasar las posiciones por parametro
+
+    // this.p('arqdru_Before_generate_gcomm')
+    // Aqui tenemos el problema. Lo perdemos todo
+
+    // this.p('comm_model_BEFORE_WRONG_LANG _Starting to manage langs ' + this.s.ms.spec_positions )
+    // Carga Multiples posiciones
+    this.gcomm    =  new arroba_mcomm(this.arroba , this.s.ms.spec_positions)
+
+    // Social Articles
+    // this.p('warmod_bef_For A ' + this.arroba.s.ms.lang +  '  '  +  this.gcomm.a.getkey( 'en' , 'i012v000' , 0 ) )
+
+    // this.p('comm_mod_LANG_A5  ' + this.gcomm.arroba.s.ms.lang)
 
     this.arroba.copy( this.gcomm)
+
+    // this.p('comm_mod_LANG_A6  ' + this.arroba.s.ms.lang)
+
+    // this.p('warmod_bef_For B ' + this.arroba.s.ms.lang +  '  '  +  this.arroba.a.getkey( 'en' , 'i012v000' , 0 ) )
   }
 
 //-------------------------------------------------------------------------------------
 
   run_spec_model()
   {
-    this.m                = 'run_spec_model'
 
+    this.m               = 'run_spec_model'
+
+    // this.p('Before_to_call To Specjson' )
     this.specjson.rungen()
+    // Create jnodetype - rungen_json
+
+    // Checking arroba content
+    // this.arroba.arr = this.specjson.a.arr
 
     this.arroba.s.ms.j_spec_path         = this.specjson.s.cs.cache_path
     this.arroba.s.ms.j_spec_url          = this.uspc.s.cs.http_domainbar + this.specjson.s.cs.cache_url
@@ -152,7 +215,5 @@ class common_model extends index_fast
 
 } // end Class
 
-exports.common_model = common_model;
+exports.common_model = common_model
 
-module.exports = common_model;
-module.exports.common_model = common_model;

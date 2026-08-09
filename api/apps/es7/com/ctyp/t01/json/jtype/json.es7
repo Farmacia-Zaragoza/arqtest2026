@@ -8,10 +8,10 @@ const path = require('path');
 // Inheritance Line : copy - def - printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   echo             =   require(  'node-echo' );
-       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'json/jtype/json_copy.es7'); const json_copy = _mod_safe_1.json_copy || _mod_safe_1;)
+       const { json_copy } = require(path.join(JS_TYP7, 'json/jtype/json_copy.es7'))
 
 class json  extends json_copy {
   constructor()
@@ -129,6 +129,3 @@ class json  extends json_copy {
 
 exports.json = json
 
-
-module.exports = json;
-module.exports.json = json;

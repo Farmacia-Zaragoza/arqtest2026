@@ -16,9 +16,10 @@ const path = require('path');
 // - d-process_word-            : Process word
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_TYP7 , 'cache/c01_cache.es7'     ); const cache = _mod_safe_1.cache || _mod_safe_1);
+const   { cache }             =   require(path.join(JS_TYP7 , 'cache/c01_cache.es7'     ));
+
 class an11_index_fn extends cache {
 
   constructor ()
@@ -116,6 +117,3 @@ class an11_index_fn extends cache {
 
 exports.an11_index_fn = an11_index_fn
 
-
-module.exports = an11_index_fn;
-module.exports.an11_index_fn = an11_index_fn;

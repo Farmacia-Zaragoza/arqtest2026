@@ -15,9 +15,9 @@ const path = require('path');
 // - d-process_commands-              : Call to process commands
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'uri/u07_manage_commands.es7'     ); const uri_manage_commands = _mod_safe_1.uri_manage_commands || _mod_safe_1;   )
+const   { uri_manage_commands }    =   require(  path.join(JS_TYP7  , 'uri/u07_manage_commands.es7'     )   )
 
 class uri_process_commands extends uri_manage_commands {
 
@@ -103,6 +103,3 @@ class uri_process_commands extends uri_manage_commands {
 
 exports.uri_process_commands = uri_process_commands
 
-
-module.exports = uri_process_commands;
-module.exports.uri_process_commands = uri_process_commands;

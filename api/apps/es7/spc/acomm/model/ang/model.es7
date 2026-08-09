@@ -32,19 +32,13 @@
 
 const path = require('path');
 
-// Aseguramos que la ruta base exista en global
-const js_aco7 = global.JS_ACO7 || path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
+global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
-// Cargas con fallback de seguridad para evitar destructuraciones fallidas
-const mod_comm   = require( path.join(js_aco7, 'model/comm/common_model.es7') );
-const mod_uri    = require( path.join(js_aco7, 'uri/n02/u01_site_uri.es7') );
-const mod_jtype  = require( path.join(js_aco7, 'json/j03/j01_arroba_type.es7') );
-const mod_theme  = require( path.join(js_aco7, 'json/j04/ang/j01_theme_data.es7') );
-
-const common_model = mod_comm.common_model || mod_comm;
-const site_uri     = mod_uri.site_uri || mod_uri;
-const arroba_jtype = mod_jtype.arroba_jtype || mod_jtype;
-const theme_data   = mod_theme.theme_data || mod_theme;
+const { common_model }  = require( path.join(global.JS_ACO7, 'model/comm/common_model.es7') );
+const { site_uri }      = require( path.join(global.JS_ACO7, 'uri/n02/u01_site_uri.es7') );
+const { arroba_jtype }  = require( path.join(global.JS_ACO7, 'json/j03/j01_arroba_type.es7') );
+const { theme_data }    = require( path.join(global.JS_ACO7, 'json/j04/ang/j01_theme_data.es7') );
 
 class angular_model extends common_model
 {
@@ -84,7 +78,3 @@ class angular_model extends common_model
 } // end Class
 
 exports.angular_model = angular_model;
-exports.model = angular_model;
-
-module.exports = angular_model;
-module.exports.angular_model = angular_model;

@@ -27,9 +27,9 @@ const path = require('path');
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/anode/a04_hierarchical/an49_process.es7'     ); const anode_hierarchical_process = _mod_safe_1.anode_hierarchical_process || _mod_safe_1;   )
+const   { anode_hierarchical_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a04_hierarchical/an49_process.es7'     )   )
 
 
 class anode_hierarchical_load extends anode_hierarchical_process {
@@ -250,6 +250,3 @@ class anode_hierarchical_load extends anode_hierarchical_process {
 
 exports.anode_hierarchical_load = anode_hierarchical_load
 
-
-module.exports = anode_hierarchical_load;
-module.exports.anode_hierarchical_load = anode_hierarchical_load;

@@ -1,8 +1,8 @@
-global.JS_SPC7 = path.join(global.ROOT, 'api/apps/es7/spc/');
+define('JS_SPC7', path.join(global.ROOT, 'api/apps/es7/spc/'));
 
 const path = require('path');
-global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
-global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // [DOCHANGED_ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -34,16 +34,16 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 //- d-no_cache_launcher_code-  : Ejecuta el codigo para sites sin cache
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_SPC7, 'acomm/model/common_model.es7'); const common_model = _mod_safe_1.common_model || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_MET7, 'light/arqlig/model/arqlig_nocache_launcher.es7'); const issues_no_cache = _mod_safe_2.issues_no_cache || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_MET7, 'light/arqlig/uri/u10_fast_uri.es7'); const fast_uri = _mod_safe_3.fast_uri || _mod_safe_3;)
-        const _mod_safe_4 = require(path.join(global.JS_AQD7, 'arqdru/json/j03/j01_arroba_type.es7'); const arroba_jtype = _mod_safe_4.arroba_jtype || _mod_safe_4;)
-        const _mod_safe_5 = require(path.join(global.JS_AQD7, 'arqdru/json/j04/j01_theme_data.es7'); const theme_data = _mod_safe_5.theme_data || _mod_safe_5;)
-        const _mod_safe_6 = require(path.join(global.JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'); const site_mcomm = _mod_safe_6.site_mcomm || _mod_safe_6;)
-        const _mod_safe_7 = require(path.join(global.JS_TYP7, 'params/p01_params.es7'); const params = _mod_safe_7.params || _mod_safe_7;)
-		const gfc = require(path.join(global.JS_LIB7, 'file/get_file_code.es7'))
+const   { common_model }    =   require(path.join(JS_SPC7, 'acomm/model/common_model.es7'))
+        const { issues_no_cache } = require(path.join(JS_MET7, 'light/arqlig/model/arqlig_nocache_launcher.es7'))
+        const { fast_uri } = require(path.join(JS_MET7, 'light/arqlig/uri/u10_fast_uri.es7'))
+        const { arroba_jtype } = require(path.join(JS_AQD7, 'arqdru/json/j03/j01_arroba_type.es7'))
+        const { theme_data } = require(path.join(JS_AQD7, 'arqdru/json/j04/j01_theme_data.es7'))
+        const { site_mcomm } = require(path.join(JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'))
+        const { params } = require(path.join(JS_TYP7, 'params/p01_params.es7'))
+		const gfc = require(path.join(JS_LIB7, 'file/get_file_code.es7'))
         const fs = require(  'fs'                                                  );
 
 class arqlig_cache extends common_model
@@ -131,6 +131,3 @@ class arqlig_cache extends common_model
 
 exports.arqlig_cache = arqlig_cache
 
-
-module.exports = arqlig_cache;
-module.exports.arqlig_cache = arqlig_cache;

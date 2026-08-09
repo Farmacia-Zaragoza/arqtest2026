@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_NODE ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -23,10 +23,11 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j01/n01/jn01_general_common_json.es7' ); const jn01_general_common_json = _mod_safe_1.jn01_general_common_json || _mod_safe_1);
-const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'robot/file_robot.es7'              ); const file_robot = _mod_safe_2.file_robot || _mod_safe_2);
+const   { jn01_general_common_json } =   require(  path.join(JS_ACO7  , 'json/j01/n01/jn01_general_common_json.es7' ));
+        const { file_robot } = require(  path.join(JS_TYP7  , 'robot/file_robot.es7'              ));
+
 class jn01_robot_process extends jn01_general_common_json {
 
   constructor (arroba = '' )
@@ -99,6 +100,3 @@ class jn01_robot_process extends jn01_general_common_json {
 
 exports.jn01_robot_process = jn01_robot_process
 
-
-module.exports = jn01_robot_process;
-module.exports.jn01_robot_process = jn01_robot_process;

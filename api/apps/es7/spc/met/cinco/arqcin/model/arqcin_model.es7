@@ -27,11 +27,11 @@ const path = require('path');
 
 // Must to be unique
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_MET7, 'cinco/arqcin/model/arqcin_nocache_launcher.es7'); const arqcin_no_cache = _mod_safe_1.arqcin_no_cache || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_MET7, 'cinco/arqcin/model/arqcin_cache_launcher.es7'); const arqcin_cache = _mod_safe_2.arqcin_cache || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3;)
+const  { arqcin_no_cache } =  require(path.join(JS_MET7, 'cinco/arqcin/model/arqcin_nocache_launcher.es7'))
+        const { arqcin_cache } = require(path.join(JS_MET7, 'cinco/arqcin/model/arqcin_cache_launcher.es7'))
+        const { printlog } = require(path.join(JS_TYP7, 'logs/printlog.es7'))
 
 class arqcin extends printlog
 {
@@ -52,6 +52,3 @@ class arqcin extends printlog
 
 exports.arqcin = arqcin
 
-
-module.exports = arqcin;
-module.exports.arqcin = arqcin;

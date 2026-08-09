@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
+define('JS_TYP7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
 
 // [DOCHANGED_ES6_SPACES]
 // Updated Langs: +NodeJs,Ruby,Php
@@ -24,7 +24,8 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const _mod_safe_1 = require(path.join(global.JS_TYP7, 'array/a03_arroba_mixarr.es7'); const arroba_mixarr = _mod_safe_1.arroba_mixarr || _mod_safe_1);
+const { arroba_mixarr } = require(path.join(JS_TYP7, 'array/a03_arroba_mixarr.es7'));
+
 class arroba_getarr extends arroba_mixarr {
   constructor() {
     super()
@@ -122,6 +123,3 @@ class arroba_getarr extends arroba_mixarr {
 }
 
 exports.arroba_getarr = arroba_getarr;
-
-module.exports = arroba_getarr;
-module.exports.arroba_getarr = arroba_getarr;

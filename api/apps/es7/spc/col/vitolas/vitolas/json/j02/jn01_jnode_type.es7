@@ -1,4 +1,4 @@
-global.JS_SPC7 = path.join(global.ROOT, 'api/apps/es7/spc/');
+define('JS_SPC7', path.join(global.ROOT, 'api/apps/es7/spc/'));
 
 const path = require('path');
 
@@ -26,15 +26,15 @@ const path = require('path');
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_1.printlog || _mod_safe_1;)
-       const _mod_safe_2 = require(path.join(global.JS_SPC7, 'vitolas/json/j01/jn01_generate_common_json.es7'); const jn01_common_json = _mod_safe_2.jn01_common_json || _mod_safe_2;)
-       const _mod_safe_3 = require(path.join(global.JS_SPC7, 'vitolas/json/j01/jn02_generate_policy_json.es7'); const jn02_policy_json = _mod_safe_3.jn02_policy_json || _mod_safe_3;)
-       const _mod_safe_4 = require(path.join(global.JS_SPC7, 'vitolas/json/j01/jn03_generate_product_json.es7'); const jn03_product_json = _mod_safe_4.jn03_product_json || _mod_safe_4;)
-       const _mod_safe_5 = require(path.join(global.JS_SPC7, 'vitolas/json/j01/jn04_generate_teasers_json.es7'); const jn04_teasers_json = _mod_safe_5.jn04_teasers_json || _mod_safe_5;)
-       const _mod_safe_6 = require(path.join(global.JS_SPC7, 'vitolas/json/j01/jn05_generate_rands_json.es7'); const jn05_rands_json = _mod_safe_6.jn05_rands_json || _mod_safe_6;)
-       const _mod_safe_7 = require(path.join(global.JS_SPC7, 'vitolas/json/j01/jn06_generate_list_json.es7'); const jn06_list_json = _mod_safe_7.jn06_list_json || _mod_safe_7;)
+const  { printlog }          =   require(path.join(JS_TYP7, 'logs/printlog.es7'))
+       const { jn01_common_json } = require(path.join(JS_SPC7, 'vitolas/json/j01/jn01_generate_common_json.es7'))
+       const { jn02_policy_json } = require(path.join(JS_SPC7, 'vitolas/json/j01/jn02_generate_policy_json.es7'))
+       const { jn03_product_json } = require(path.join(JS_SPC7, 'vitolas/json/j01/jn03_generate_product_json.es7'))
+       const { jn04_teasers_json } = require(path.join(JS_SPC7, 'vitolas/json/j01/jn04_generate_teasers_json.es7'))
+       const { jn05_rands_json } = require(path.join(JS_SPC7, 'vitolas/json/j01/jn05_generate_rands_json.es7'))
+       const { jn06_list_json } = require(path.join(JS_SPC7, 'vitolas/json/j01/jn06_generate_list_json.es7'))
 
 class jnode_type extends printlog {
 
@@ -134,6 +134,3 @@ class jnode_type extends printlog {
 
 exports.jnode_type = jnode_type
 
-
-module.exports = jnode_type;
-module.exports.jnode_type = jnode_type;

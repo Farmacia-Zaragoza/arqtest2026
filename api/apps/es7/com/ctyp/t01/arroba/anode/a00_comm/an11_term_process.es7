@@ -14,9 +14,10 @@ const path = require('path');
 //- d-current_process-       : Process current array information to generate site fields
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/anode/a01_full/an12_run.es7'  ); const anode_run_full = _mod_safe_1.anode_run_full || _mod_safe_1);
+const  { anode_run_full } =   require(  path.join(JS_TYP7  , 'arroba/anode/a01_full/an12_run.es7'  )  );
+
 class anode_term_process extends anode_run_full {
   constructor()
   {
@@ -223,6 +224,3 @@ class anode_term_process extends anode_run_full {
 
 exports.anode_term_process = anode_term_process
 
-
-module.exports = anode_term_process;
-module.exports.anode_term_process = anode_term_process;

@@ -19,7 +19,7 @@ const path = require('path');
 
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 class idx_pointers
 {
@@ -61,6 +61,3 @@ class idx_pointers
 
 exports.idx_pointers = idx_pointers
 
-
-module.exports = idx_pointers;
-module.exports.idx_pointers = idx_pointers;

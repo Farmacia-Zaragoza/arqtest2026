@@ -11,25 +11,25 @@ const path = require('path');
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 // Methods:
 //-------------------------------------------------------------------------------------
-//- d-current_index_page_load-                   : Load information for current page only
+//- d-current_index_page_load-                    : Load information for current page only
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_TYP7, 'arroba/anode/a07_index_page/an79_page_process.es7'); const anode_index_page_process = _mod_safe_1.anode_index_page_process || _mod_safe_1;))
+const   { anode_index_page_process } =   require(path.join(JS_TYP7, 'arroba/anode/a07_index_page/an79_page_process.es7'))
 
 
 class anode_index_page_load extends anode_index_page_process {
   constructor()
   {
     super()
-    this.n                        = "anode_index_page_load::"
+    this.n                         = "anode_index_page_load::"
   }
 
 
   //---------------------------------------------------------------------------------------------
-  current_index_page_load(  lang            = 'en' ,
-              current_subpath = ''   )
+  current_index_page_load(  lang             = 'en' ,
+                            current_subpath = ''   )
   {
     this.m               =   'page_load'
 
@@ -87,11 +87,6 @@ class anode_index_page_load extends anode_index_page_process {
     this.current_index_page_process( lang                        ,
                        current_subpath             )
   }
-
 }
 
 exports.anode_index_page_load = anode_index_page_load
-
-
-module.exports = anode_index_page_load;
-module.exports.anode_index_page_load = anode_index_page_load;

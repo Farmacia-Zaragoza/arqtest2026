@@ -1,6 +1,6 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
-global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // [DOCHANGED_ES7_SPACES]
 // Updated_Langs:NodeJs,Ruby,Php
@@ -28,11 +28,11 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 //- d-create_jnode_type-       : Genera el objeto Jonde Type
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_ACO7, 'json/j03/j01_arroba_jtype_comm.es7'); const arroba_jtype_comm = _mod_safe_1.arroba_jtype_comm || _mod_safe_1;)
-       const _mod_safe_2 = require(path.join(global.JS_PYC7, 'war/war/json/j02/jn01_jnode_type.es7'); const jnode_type = _mod_safe_2.jnode_type || _mod_safe_2;)
-	     const gfc = require(path.join(global.JS_LIB7, 'file/get_file_code.es7'))
+const  { arroba_jtype_comm } =   require(path.join(JS_ACO7, 'json/j03/j01_arroba_jtype_comm.es7'))
+       const { jnode_type } = require(path.join(JS_PYC7, 'war/war/json/j02/jn01_jnode_type.es7'))
+	     const gfc = require(path.join(JS_LIB7, 'file/get_file_code.es7'))
 
 class arroba_jtype_war extends arroba_jtype_comm {
   constructor(    arroba           ,
@@ -97,6 +97,3 @@ class arroba_jtype_war extends arroba_jtype_comm {
 
 exports.arroba_jtype_war = arroba_jtype_war
 
-
-module.exports = arroba_jtype_war;
-module.exports.arroba_jtype_war = arroba_jtype_war;

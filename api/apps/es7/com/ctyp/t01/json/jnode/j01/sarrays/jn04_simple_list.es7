@@ -14,13 +14,13 @@ const path = require('path');
 // - d-save_json_simple_array_to_file-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                        =   require(  'fs'                                                   );
        const empty = require(  'is-empty'                             );
        const accents = require(  'remove-accents'                       );
-       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
-       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j01/arrays/jn05_product_recursive.es7'); const jn05_array_product_recursive = _mod_safe_2.jn05_array_product_recursive || _mod_safe_2;)
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn05_array_product_recursive } = require(path.join(JS_TYP7, 'json/jnode/j01/arrays/jn05_product_recursive.es7'))
 
 // Pendiente de cambiar
 class jn04_comma_json_simple_list extends jn05_array_product_recursive {
@@ -35,6 +35,3 @@ class jn04_comma_json_simple_list extends jn05_array_product_recursive {
 
 exports.jn04_comma_json_simple_list = jn04_comma_json_simple_list
 
-
-module.exports = jn04_comma_json_simple_list;
-module.exports.jn04_comma_json_simple_list = jn04_comma_json_simple_list;

@@ -1,6 +1,6 @@
 const path = require('path');
-global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -29,11 +29,11 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 // Must to be unique
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_PYC7, 'meto/meto/model/site_model.es7'); const site_model = _mod_safe_1.site_model || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_ACO7, 'uri/n02/u01_site_uri.es7'); const site_uri = _mod_safe_2.site_uri || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'); const site_mcomm = _mod_safe_3.site_mcomm || _mod_safe_3;)
+const   { site_model }    =   require(path.join(JS_PYC7, 'meto/meto/model/site_model.es7'))
+        const { site_uri } = require(path.join(JS_ACO7, 'uri/n02/u01_site_uri.es7'))
+        const { site_mcomm } = require(path.join(JS_TYF7, 'a01_load/mcomm/m02_site_comm.es7'))
 
 class meto_no_cache extends site_model
 {
@@ -89,6 +89,3 @@ class meto_no_cache extends site_model
 
 exports.meto_no_cache = meto_no_cache
 
-
-module.exports = meto_no_cache;
-module.exports.meto_no_cache = meto_no_cache;

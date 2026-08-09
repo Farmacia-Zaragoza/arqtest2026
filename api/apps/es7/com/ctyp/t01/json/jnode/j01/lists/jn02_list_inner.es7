@@ -14,13 +14,13 @@ const path = require('path');
 // - d-save_json_array_list_inner-          : Generate Json Simple
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const  fs                        =   require(  'fs'                                                   );
        const empty = require(  'is-empty'                             );
        const accents = require(  'remove-accents'                       );
-       const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/idx_pointers.es7'); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;)
-       const _mod_safe_2 = require(path.join(global.JS_TYP7, 'json/jnode/j01/lists/jn11_allinone_main.es7'); const jn11_object_allinone_main = _mod_safe_2.jn11_object_allinone_main || _mod_safe_2;)
+       const { idx_pointers } = require(path.join(JS_TYP7, 'logs/idx_pointers.es7'))
+       const { jn11_object_allinone_main } = require(path.join(JS_TYP7, 'json/jnode/j01/lists/jn11_allinone_main.es7'))
 
 // Pendiente de cambiar
 class jn02_array_list_inner extends jn11_object_allinone_main {
@@ -87,6 +87,3 @@ class jn02_array_list_inner extends jn11_object_allinone_main {
 
 exports.jn02_array_list_inner = jn02_array_list_inner
 
-
-module.exports = jn02_array_list_inner;
-module.exports.jn02_array_list_inner = jn02_array_list_inner;

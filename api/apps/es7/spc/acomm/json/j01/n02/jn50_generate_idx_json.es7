@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_NODE ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -19,9 +19,10 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 // - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j02/jn10_jnode_index_site.es7'  ); const jn10_index_site = _mod_safe_1.jn10_index_site || _mod_safe_1);
+const   { jn10_index_site }   =   require(  path.join(JS_ACO7  , 'json/j02/jn10_jnode_index_site.es7'  )  );
+
 class jn50_idx_json extends jn10_index_site {
 
   constructor (arroba = '' )
@@ -55,6 +56,3 @@ class jn50_idx_json extends jn10_index_site {
 
 exports.jn50_idx_json = jn50_idx_json
 
-
-module.exports = jn50_idx_json;
-module.exports.jn50_idx_json = jn50_idx_json;

@@ -14,10 +14,11 @@ const path = require('path');
 // - d-gen_rest_list_inner-                   : Recursive method
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'         ); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1);
-const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'arroba/rest/rs00_rest_pf.es7'  ); const rs00_rest_pf = _mod_safe_2.rs00_rest_pf || _mod_safe_2);
+const  { idx_pointers }     =   require(  path.join(JS_TYP7  , 'logs/idx_pointers.es7'         )        );
+       const { rs00_rest_pf } = require(  path.join(JS_TYP7  , 'arroba/rest/rs00_rest_pf.es7'  )  );
+
 // List Object
 class rs04_object_list_inner extends rs00_rest_pf {
 
@@ -65,6 +66,3 @@ class rs04_object_list_inner extends rs00_rest_pf {
 
 exports.rs04_object_list_inner = rs04_object_list_inner
 
-
-module.exports = rs04_object_list_inner;
-module.exports.rs04_object_list_inner = rs04_object_list_inner;

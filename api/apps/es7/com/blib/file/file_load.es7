@@ -19,7 +19,7 @@ const path = require(  'path'                                                );
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   fs           =   require(  'fs'                                                  );
         
@@ -73,6 +73,3 @@ function properties_from_file (file_name)
 //---------------------------------------------------------------------------------------------
 module.exports.properties_from_file  = properties_from_file
 
-
-module.exports = properties_from_file;
-module.exports.properties_from_file = properties_from_file;

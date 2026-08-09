@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // [DOCHANGED_ES6_SPACES]
 // Updated_Langs:NodeJs,Ruby,Php
@@ -23,10 +23,10 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 // Anode > Cache > Struc
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(	path.join(global.JS_TYP7 , 'html/style/html_style.es7'			    ); const html_style = _mod_safe_1.html_style || _mod_safe_1);
-const sctf = require(  path.join(global.JS_LIB7 , 'file/save_code_to_file.es7' 	        )     );
+const { html_style } 	= 	require(	path.join(JS_TYP7 , 'html/style/html_style.es7'			    )  );
+		   const sctf = require(  path.join(JS_LIB7 , 'file/save_code_to_file.es7' 	        )     );
 
 class hnode extends html_style {
   constructor(    tag_type                )
@@ -70,6 +70,3 @@ class hnode extends html_style {
 
 exports.hnode = hnode
 
-
-module.exports = hnode;
-module.exports.hnode = hnode;

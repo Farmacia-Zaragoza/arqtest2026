@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_ES7_SPACES]
 // Updated_Langs:NodeJs,Ruby,Php
@@ -23,10 +23,11 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 // - d-rungen_json-          : Generate Arroba structure
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn50_generate_idx_json.es7'  ); const jn50_idx_json = _mod_safe_1.jn50_idx_json || _mod_safe_1);
-const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                        ); const printlog = _mod_safe_2.printlog || _mod_safe_2);
+const  { jn50_idx_json }     =   require(  path.join(JS_ACO7  , 'json/j01/n02/jn50_generate_idx_json.es7'  )   );
+       const { printlog } = require(  path.join(JS_TYP7  , 'logs/printlog.es7'                        )   );
+
 class jnode_type_index extends printlog {
   constructor(    arroba           )
   {
@@ -61,6 +62,3 @@ class jnode_type_index extends printlog {
 
 exports.jnode_type_index = jnode_type_index
 
-
-module.exports = jnode_type_index;
-module.exports.jnode_type_index = jnode_type_index;

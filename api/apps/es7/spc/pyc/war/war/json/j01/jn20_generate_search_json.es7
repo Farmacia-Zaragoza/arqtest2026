@@ -14,9 +14,9 @@ const path = require('path');
 // - d-process_array_and_generate_json_file-          : Prepare Json Path
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_PYC7, 'war/war/json/j02/jn03_jnode_search_site.es7'); const jn03_search_site = _mod_safe_1.jn03_search_site || _mod_safe_1;)
+const   { jn03_search_site }   =   require(path.join(JS_PYC7, 'war/war/json/j02/jn03_jnode_search_site.es7'))
 
 class jn20_search_json extends jn03_search_site {
 
@@ -49,6 +49,3 @@ class jn20_search_json extends jn03_search_site {
 
 exports.jn20_search_json = jn20_search_json
 
-
-module.exports = jn20_search_json;
-module.exports.jn20_search_json = jn20_search_json;

@@ -17,9 +17,9 @@ const path = require('path');
 // H_Type > S_Type > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_PYC7, 'meto/meto/html/h03/hcomm/h02_struc.es7'); const hcomm_struc = _mod_safe_1.hcomm_struc || _mod_safe_1;)
+const  { hcomm_struc }      =   require(path.join(JS_PYC7, 'meto/meto/html/h03/hcomm/h02_struc.es7'))
 
 class arroba_htype extends hcomm_struc {
   constructor(    container  )
@@ -65,6 +65,3 @@ class arroba_htype extends hcomm_struc {
 
 exports.arroba_htype = arroba_htype
 
-
-module.exports = arroba_htype;
-module.exports.arroba_htype = arroba_htype;

@@ -14,9 +14,9 @@ const path = require('path');
 //- d-current_index_page_load-                   : Load information for current page only
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'arroba/anode/a11_index_page/an119_page_process.es7'    ); const anode_index_page_process = _mod_safe_1.anode_index_page_process || _mod_safe_1;     )
+const   { anode_index_page_process } =   require(  path.join(JS_TYP7  , 'arroba/anode/a11_index_page/an119_page_process.es7'    )     )
 
 
 class anode_index_page_load extends anode_index_page_process {
@@ -92,6 +92,3 @@ class anode_index_page_load extends anode_index_page_process {
 
 exports.anode_index_page_load = anode_index_page_load
 
-
-module.exports = anode_index_page_load;
-module.exports.anode_index_page_load = anode_index_page_load;

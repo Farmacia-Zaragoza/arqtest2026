@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_ES6]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -28,9 +28,9 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 // - build_data  	 		: Build html final code for object
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(	path.join(global.JS_ACO7 , 'html/h01/deep/styles/deep_link_base.es7'  ); const deep_link_base = _mod_safe_1.deep_link_base || _mod_safe_1; )
+const  { deep_link_base } = require(	path.join(JS_ACO7 , 'html/h01/deep/styles/deep_link_base.es7'  ) )
 
 
 class deep_link_react extends deep_link_base {
@@ -109,6 +109,3 @@ class deep_link_react extends deep_link_base {
 
 exports.deep_link_react = deep_link_react
 
-
-module.exports = deep_link_react;
-module.exports.deep_link_react = deep_link_react;

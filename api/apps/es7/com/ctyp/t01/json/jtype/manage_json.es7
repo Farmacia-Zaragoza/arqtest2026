@@ -9,9 +9,9 @@ const path = require('path');
 
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_TYP7, 'json/jtype/json.es7'); const json = _mod_safe_1.json || _mod_safe_1;)
+const    { json }        =   require(path.join(JS_TYP7, 'json/jtype/json.es7'))
 
 
 class manage_json extends json {
@@ -506,6 +506,3 @@ class manage_json extends json {
 
 exports.manage_json = manage_json
 
-
-module.exports = manage_json;
-module.exports.manage_json = manage_json;

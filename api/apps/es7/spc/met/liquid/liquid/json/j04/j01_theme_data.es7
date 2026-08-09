@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -19,12 +19,12 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 // Arroba_JType     : Generic type to create json files
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_MET7, 'liquid/liquid/json/j04/j11_tdata_asign.es7'); const tdata_asign = _mod_safe_1.tdata_asign || _mod_safe_1;)
-       const _mod_safe_2 = require(path.join(global.JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7'); const arroba_mcomm = _mod_safe_2.arroba_mcomm || _mod_safe_2;)
-       const _mod_safe_3 = require(path.join(global.JS_TYP7, 'json/jsearch/j02/jn01_check_words.es7'); const jn01_checking_search_words = _mod_safe_3.jn01_checking_search_words || _mod_safe_3;)
-       const _mod_safe_4 = require(path.join(global.JS_MET7, 'liquid/liquid/json/j04/j02_theme_json.es7'); const theme_json = _mod_safe_4.theme_json || _mod_safe_4;)
+const  { tdata_asign }                =   require(path.join(JS_MET7, 'liquid/liquid/json/j04/j11_tdata_asign.es7'))
+       const { arroba_mcomm } = require(path.join(JS_TYF7, 'a01_load/mcomm/m01_arroba_comm.es7'))
+       const { jn01_checking_search_words } = require(path.join(JS_TYP7, 'json/jsearch/j02/jn01_check_words.es7'))
+       const { theme_json } = require(path.join(JS_MET7, 'liquid/liquid/json/j04/j02_theme_json.es7'))
 
 class theme_data extends tdata_asign
 {
@@ -127,6 +127,3 @@ class theme_data extends tdata_asign
 
 exports.theme_data = theme_data
 
-
-module.exports = theme_data;
-module.exports.theme_data = theme_data;

@@ -51,6 +51,3 @@ function shuffle(array) {
 
 module.exports.Rand           = Rand
 module.exports.shuffle        = shuffle
-
-module.exports = Rand;
-module.exports.Rand = Rand;

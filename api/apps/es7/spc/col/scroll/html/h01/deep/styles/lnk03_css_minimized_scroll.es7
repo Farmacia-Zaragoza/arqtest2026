@@ -23,10 +23,10 @@ const path = require('path');
 // - d-create_link_0N-
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_BASE, 'com/objects/html/getset.es6'); const getset = _mod_safe_1.getset || _mod_safe_1;)
-		const _mod_safe_2 = require(path.join(global.JS_BASE, 'com/objects/html/html_style.es6'); const html_style = _mod_safe_2.html_style || _mod_safe_2;)
+const 	{ getset } 			= 	require(path.join(JS_BASE, 'com/objects/html/getset.es6'))
+		const { html_style } = require(path.join(JS_BASE, 'com/objects/html/html_style.es6'))
 
 class lnk03_css_minimized_scroll extends getset  {
 
@@ -129,6 +129,3 @@ class lnk03_css_minimized_scroll extends getset  {
 
 exports.lnk03_css_minimized_scroll = lnk03_css_minimized_scroll
 
-
-module.exports = lnk03_css_minimized_scroll;
-module.exports.lnk03_css_minimized_scroll = lnk03_css_minimized_scroll;

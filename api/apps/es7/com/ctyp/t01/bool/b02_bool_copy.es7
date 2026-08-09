@@ -22,9 +22,9 @@ const path = require('path');
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'bool/b03_bool_defs.es7' ); const bool_defs = _mod_safe_1.bool_defs || _mod_safe_1;   )
+const   { bool_defs }         =   require(  path.join(JS_TYP7 , 'bool/b03_bool_defs.es7' )   )
 
 class bool_copy extends bool_defs {
   constructor()
@@ -149,6 +149,3 @@ class bool_copy extends bool_defs {
 
 exports.bool_copy = bool_copy
 
-
-module.exports = bool_copy;
-module.exports.bool_copy = bool_copy;

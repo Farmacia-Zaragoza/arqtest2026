@@ -3,8 +3,8 @@
 
 const   path                =   require('path'                                             );
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_TYP7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'));
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 const cons = require(path.join(process.cwd(), 'api/apps/es7/com/agen/constants.es7'));
 // const   cons                =   require('./es7_com_agen/constants.es7') ;
@@ -37,10 +37,11 @@ var cached_site             =  'garldru'
     const qs = require( 'querystring'    );
     const helmet = require( 'helmet'                       );
     const useragent = require( 'express-useragent'                 );
-    const _mod_safe_1 = require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7'); const params = _mod_safe_1.params || _mod_safe_1);
-const _mod_safe_2 = require(path.join(global.JS_ACO7 , 'model/ang/angular.es7'); const angular = _mod_safe_2.angular || _mod_safe_2);
-const _mod_safe_3 = require(path.join(global.JS_TYP7 , 'page/page_structure.es7'); const page_structure = _mod_safe_3.page_structure || _mod_safe_3);
-//    { params }          =   require(path.join(global.JS_TYP7 , 'params/p01_params.es7')  ),
+    const { params } = require(path.join(global.ROOT , 'api/apps/es7/com/ctyp/t01/params/p01_params.es7')  );
+    const { angular} = require(path.join(JS_ACO7 , 'model/ang/angular.es7')  );
+    const { page_structure } = require(path.join(JS_TYP7 , 'page/page_structure.es7') );
+
+//    { params }          =   require(path.join(JS_TYP7 , 'params/p01_params.es7')  ),
 
 // Create server
 var sureapp = express()

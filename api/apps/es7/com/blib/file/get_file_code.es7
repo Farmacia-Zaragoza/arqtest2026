@@ -20,7 +20,7 @@ const path = require(  'path'                                                );
 //--
 // --==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--=
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 const   fs           =   require(  'fs'                                                  );
         
@@ -145,6 +145,3 @@ module.exports.get_file_code              = get_file_code
 module.exports.set_file_array_no_comments = set_file_array_no_comments
 module.exports.set_file_array_full        = set_file_array_full
 
-
-module.exports = zero;
-module.exports.zero = zero;

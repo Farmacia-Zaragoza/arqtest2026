@@ -27,11 +27,11 @@ const path = require('path');
 
 // Must to be unique
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_PRO7, 'work/work/model/work_nocache_launcher.es7'); const work_no_cache = _mod_safe_1.work_no_cache || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_PRO7, 'work/work/model/work_cache_launcher.es7'); const work_cache = _mod_safe_2.work_cache || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3;)
+const   { work_no_cache }  =   require(path.join(JS_PRO7, 'work/work/model/work_nocache_launcher.es7'))
+        const { work_cache } = require(path.join(JS_PRO7, 'work/work/model/work_cache_launcher.es7'))
+        const { printlog } = require(path.join(JS_TYP7, 'logs/printlog.es7'))
 
 class work extends printlog
 {
@@ -50,6 +50,3 @@ class work extends printlog
 
 exports.work = work
 
-
-module.exports = work;
-module.exports.work = work;

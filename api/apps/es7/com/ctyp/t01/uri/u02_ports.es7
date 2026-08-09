@@ -20,9 +20,10 @@ const path = require('path');
 // - d-manage_ports-       : Manage ports && protocols in page
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u03_cache.es7'           ); const uri_cache = _mod_safe_1.uri_cache || _mod_safe_1);
+const   { uri_cache }    =   require(  path.join(JS_TYP7 , 'uri/u03_cache.es7'           )   );
+
 class uri_ports extends uri_cache {
 
   constructor()
@@ -90,6 +91,3 @@ class uri_ports extends uri_cache {
 
 exports.uri_ports = uri_ports
 
-
-module.exports = uri_ports;
-module.exports.uri_ports = uri_ports;

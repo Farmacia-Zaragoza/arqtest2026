@@ -14,10 +14,10 @@ const path = require('path');
 // - d-sort_url-       : Set urls to be cacheable for anonymous user
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_TYP7, 'uri/u08_page_string.es7'); const uri_page_string = _mod_safe_1.uri_page_string || _mod_safe_1;))
-		const sort = require(  path.join(global.JS_LIB  , 'sort/sort_unique.es6'	)	  );
+const   { uri_page_string }     =   require(path.join(JS_TYP7, 'uri/u08_page_string.es7'))
+		const sort = require(  path.join(JS_LIB  , 'sort/sort_unique.es6'	)	   );
 
 class uri_sorts extends uri_page_string {
 
@@ -131,18 +131,13 @@ class uri_sorts extends uri_page_string {
     this.slash_ideal_uri        =   slash_ideal_uri
     this.dash_ideal_uri         =   dash_ideal_uri
 
-    this.bar_slash_ideal_uri    =  "/" +  slash_ideal_uri
+    this.bar_slash_ideal_uri    =   "/" +  slash_ideal_uri
 
     // this.p('u05_idioma   : ' + this.s.lang )
     // this.p('u05_comando  : ' + this.page_command )
     // this.p('u06_sorts_ideal uri: ' + this.dash_sub_query )
 
   }
-
 }
 
 exports.uri_sorts = uri_sorts
-
-
-module.exports = uri_sorts;
-module.exports.uri_sorts = uri_sorts;

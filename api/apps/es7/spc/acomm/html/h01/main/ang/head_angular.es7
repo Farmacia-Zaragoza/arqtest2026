@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -23,11 +23,12 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 // - create_links     : Generate Link Information
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require( path.join(global.JS_ACO7 , 'html/h01/main/comm/common_head.es7'	 ); const common_head = _mod_safe_1.common_head || _mod_safe_1);
-const _mod_safe_2 = require( path.join(global.JS_ACO7 , 'html/h01/main/ang/links_angular.es7'  ); const links_angular = _mod_safe_2.links_angular || _mod_safe_2);
-const _mod_safe_3 = require( path.join(global.JS_ACO7 , 'html/h01/main/comm/common_meta.es7'   ); const common_meta = _mod_safe_3.common_meta || _mod_safe_3);
+const  { common_head } 	 = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_head.es7'	 )  );
+       const { links_angular } = require( path.join(JS_ACO7 , 'html/h01/main/ang/links_angular.es7'  )  );
+       const { common_meta } = require( path.join(JS_ACO7 , 'html/h01/main/comm/common_meta.es7'   )  );
+
 class head_angular extends common_head  {
 
   constructor (     arroba                )
@@ -61,6 +62,3 @@ class head_angular extends common_head  {
 
 exports.head_angular = head_angular
 
-
-module.exports = head_angular;
-module.exports.head_angular = head_angular;

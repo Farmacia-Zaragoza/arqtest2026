@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_ES6_SPACES]
 // Updated_Langs:NodeJs,Ruby,Php
@@ -24,10 +24,11 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 //-------------------------------------------------------------------------------------
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'html/h03/h03_struc_comm.es7'     ); const hcomm_struc = _mod_safe_1.hcomm_struc || _mod_safe_1);
-const _mod_safe_2 = require(  path.join(global.JS_ACO7  , 'html/h02/hn02_hnode_type_react.es7' ); const hnode_type_react = _mod_safe_2.hnode_type_react || _mod_safe_2);
+const  { hcomm_struc }      =   require(  path.join(JS_ACO7  , 'html/h03/h03_struc_comm.es7'     ) );
+       const { hnode_type_react } = require(  path.join(JS_ACO7  , 'html/h02/hn02_hnode_type_react.es7' ) );
+
 class arroba_htype_react extends hcomm_struc {
   constructor(    container  )
   {
@@ -59,6 +60,3 @@ class arroba_htype_react extends hcomm_struc {
 
 exports.arroba_htype_react = arroba_htype_react
 
-
-module.exports = arroba_htype_react;
-module.exports.arroba_htype_react = arroba_htype_react;

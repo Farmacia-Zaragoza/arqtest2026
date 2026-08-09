@@ -14,9 +14,9 @@ const path = require('path');
 // - d-sure_commands-            : Check command type based on uri && site
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_MET7, 'backup/arqbck/uri/u06_aliases.es7'); const uri_aliases = _mod_safe_1.uri_aliases || _mod_safe_1;)
+const { uri_aliases } =   require(path.join(JS_MET7, 'backup/arqbck/uri/u06_aliases.es7'))
 
 class site_sure_commands extends uri_aliases {
 
@@ -58,6 +58,3 @@ class site_sure_commands extends uri_aliases {
 
 exports.site_sure_commands = site_sure_commands
 
-
-module.exports = site_sure_commands;
-module.exports.site_sure_commands = site_sure_commands;

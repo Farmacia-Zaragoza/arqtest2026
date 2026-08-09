@@ -1,78 +1,45 @@
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 
-const targetDir = path.join(__dirname, 'api');
+const targetFiles = [
+  'api/apps/es7/com/ctyp/t01/arroba/anode/a07_index_page/an77_page_load.es7',
+  'api/apps/es7/com/ctyp/t01/arroba/anode/a11_index_page/an116_main_process.es7',
+  'api/apps/es7/com/ctyp/t01/uri/u07_sorts.es7',
+  'api/apps/es7/spc/acomm/html/h01/main/common_robot.es7',
+  'api/apps/es7/spc/col/vitolas/html/h01/main/hea01_vitolas.es7',
+  'api/apps/es7/spc/col/vitolas/json/j01/jn01_generate_common_json.es7',
+  'api/apps/es7/spc/col/vitolas/vitolas/json/j01/jn01_generate_common_json.es7'
+];
 
-let totalArchivos = 0;
-let archivosModificados = 0;
+targetFiles.forEach((relPath, index) => {
+  const fullPath = path.join(__dirname, relPath);
+  if (!fs.existsSync(fullPath)) return;
 
-function processDirectory(directory) {
-  let files = [];
+  const code = fs.readFileSync(fullPath, 'utf8');
+  const lines = code.split('\n');
+
   try {
-    files = fs.readdirSync(directory);
-  } catch (e) {
-    return;
-  }
+    new vm.Script(code, { filename: relPath });
+  } catch (err) {
+    const match = err.stack ? err.stack.match(/:(\d+):(\d+)/) : null;
+    const errLine = match ? parseInt(match[1], 10) : null;
 
-  for (const file of files) {
-    const fullPath = path.join(directory, file);
-    let stat;
+    console.log(`====================================================`);
+    console.log(`📄 [${index + 1}] ${relPath}`);
+    console.log(`❌ Error: ${err.message}`);
 
-    try {
-      stat = fs.lstatSync(fullPath);
-      if (stat.isSymbolicLink()) continue;
-    } catch (e) {
-      continue;
+    if (errLine) {
+      console.log(`📍 Error detectado cerca de la línea ${errLine}:`);
+      console.log(`----------------------------------------------------`);
+      const start = Math.max(0, errLine - 5);
+      const end = Math.min(lines.length, errLine + 3);
+
+      for (let i = start; i < end; i++) {
+        const marker = i === errLine - 1 ? '➡️ ' : '   ';
+        console.log(`${marker}${String(i + 1).padStart(4, ' ')} | ${lines[i]}`);
+      }
     }
-
-    if (stat.isDirectory()) {
-      processDirectory(fullPath);
-    } else if (file.endsWith('.es7') || file.endsWith('.js')) {
-      totalArchivos++;
-      try {
-        let content = fs.readFileSync(fullPath, 'utf8');
-        let originalContent = content;
-
-        // 1. Corregir cualquier residuo de sintaxis roto previo como '; );' o ', );'
-        content = content.replace(/;\s*\);\s*/g, ');\n');
-        content = content.replace(/,\s*\);\s*/g, ');\n');
-
-        // 2. Limpiar residuos viejos de paths.js
-        content = content.replace(/.*paths\.js.*\n?/g, '');
-
-        // 3. Convertir require desestructurados de forma 100% limpia sin tocar los paréntesis finales
-        let counter = 0;
-        content = content.replace(/(?:const|let|var)\s*\{\s*([a-zA-Z0-9_]+)\s*\}\s*=\s*require\(([\s\S]*?)\)\s*;?/g, (match, varName, reqPath) => {
-          counter++;
-          const modVar = `_mod_safe_${counter}`;
-          const cleanPath = reqPath.trim();
-          return `const ${modVar} = require(${cleanPath}); const ${varName} = ${modVar}.${varName} || ${modVar};`;
-        });
-
-        // 4. Asegurar exportaciones dobles limpias sin duplicar
-        const exportMatch = content.match(/exports\.([a-zA-Z0-9_]+)\s*=\s*\1;?/);
-        if (exportMatch) {
-          const className = exportMatch[1];
-          if (!content.includes(`module.exports = ${className}`)) {
-            content += `\nmodule.exports = ${className};\nmodule.exports.${className} = ${className};\n`;
-          }
-        }
-
-        if (content !== originalContent) {
-          fs.writeFileSync(fullPath, content, 'utf8');
-          archivosModificados++;
-        }
-      } catch (e) {}
-    }
+    console.log(`====================================================\n`);
   }
-}
-
-console.log("🚀 Iniciando reparación masiva y saneamiento de sintaxis...");
-if (fs.existsSync(targetDir)) {
-  processDirectory(targetDir);
-  console.log(`\n✅ ¡Saneamiento finalizado con éxito!`);
-  console.log(`📊 Archivos escaneados: ${totalArchivos}`);
-  console.log(`✨ Archivos reparados: ${archivosModificados}`);
-} else {
-  console.error(`❌ No se encontró la carpeta: ${targetDir}`);
-}
+});

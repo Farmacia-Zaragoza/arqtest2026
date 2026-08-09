@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_NODE ES7]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -11,11 +11,11 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 //-------------------------------------------------------------------------------------
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_ACO7, 'json/j01/jn02_general_search_json.es7'); const jn02_general_search_json = _mod_safe_1.jn02_general_search_json || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_PER7, 'wedding/wedding/json/j00/jn10_objjson_site.es7'); const objjson_site = _mod_safe_2.objjson_site || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_PER7, 'wedding/wedding/json/j00/jn11_arrjson_site.es7'); const arrjson_site = _mod_safe_3.arrjson_site || _mod_safe_3;)
+const  { jn02_general_search_json } =   require(path.join(JS_ACO7, 'json/j01/jn02_general_search_json.es7'))
+        const { objjson_site } = require(path.join(JS_PER7, 'wedding/wedding/json/j00/jn10_objjson_site.es7'))
+        const { arrjson_site } = require(path.join(JS_PER7, 'wedding/wedding/json/j00/jn11_arrjson_site.es7'))
 
 class jn03_search_site extends jn02_general_search_json {
 
@@ -52,6 +52,3 @@ class jn03_search_site extends jn02_general_search_json {
 
 exports.jn03_search_site = jn03_search_site
 
-
-module.exports = jn03_search_site;
-module.exports.jn03_search_site = jn03_search_site;

@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
+define('JS_TYF7', path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/'));
 
 // [DOCHANGED_ES6_SPACES]
 // Updated_Langs:+NodeJs,Ruby,Php
@@ -18,9 +18,9 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 // Scomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYF7  , 'a01_load/scomm/s03_struc.es7'  ); const scomm_struc = _mod_safe_1.scomm_struc || _mod_safe_1;  )
+const  { scomm_struc }        =   require(  path.join(JS_TYF7  , 'a01_load/scomm/s03_struc.es7'  )  )
 
 // File System Structure strucure
 class arroba_fs extends scomm_struc {
@@ -71,6 +71,3 @@ class arroba_fs extends scomm_struc {
 
 exports.arroba_fs = arroba_fs
 
-
-module.exports = arroba_fs;
-module.exports.arroba_fs = arroba_fs;

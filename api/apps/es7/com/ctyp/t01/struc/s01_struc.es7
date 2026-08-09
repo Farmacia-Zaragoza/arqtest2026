@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // [DOCHANGED_ES7_SPACES]
 // Updated_Langs:NodeJs+,Ruby,Php
@@ -34,10 +34,10 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 // @Struc > @String > @Cache > @log
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'struc/s02_struc_load_arroba.es7' ); const struc_load_arroba = _mod_safe_1.struc_load_arroba || _mod_safe_1);
-const ffi = require(path.join(global.JS_LIB7 , 'file/file_load.es7' ));
+const { struc_load_arroba } =   require(  path.join(JS_TYP7  , 'struc/s02_struc_load_arroba.es7' ));
+      const ffi = require(path.join(JS_LIB7 , 'file/file_load.es7' ));
 
 class struc extends struc_load_arroba {
   constructor()
@@ -195,6 +195,3 @@ class struc extends struc_load_arroba {
 
 exports.struc = struc
 
-
-module.exports = struc;
-module.exports.struc = struc;

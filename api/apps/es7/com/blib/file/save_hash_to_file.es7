@@ -27,9 +27,9 @@ const   fs           =   require(  'fs'                                    );
   	const echo = require(	'node-echo'									);
     const trim = require(  'trim'                            );
     const mkdirp = require(  'mkdirp'                          );
-    const _mod_safe_1 = require(path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_1.printlog || _mod_safe_1;)
+    const { printlog } = require(path.join(JS_TYP7, 'logs/printlog.es7'))
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
 
 // Ck [19-06-03]
@@ -138,6 +138,3 @@ function save_hash_to_file(full_file_name_int = ''   ,
 }
 
 module.exports.save_hash_to_file           = save_hash_to_file
-
-module.exports = save_hash_to_file;
-module.exports.save_hash_to_file = save_hash_to_file;

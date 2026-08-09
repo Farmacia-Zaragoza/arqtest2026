@@ -1,4 +1,4 @@
-global.JS_SPC7 = path.join(global.ROOT, 'api/apps/es7/spc/');
+define('JS_SPC7', path.join(global.ROOT, 'api/apps/es7/spc/'));
 
 const path = require('path');
 
@@ -27,10 +27,10 @@ const path = require('path');
 // Jtype    : Jnode Type
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_SPC7, 'acomm/json/j03/j01_arroba_jtype_comm.es7'); const arroba_jtype_comm = _mod_safe_1.arroba_jtype_comm || _mod_safe_1;)
-       const _mod_safe_2 = require(path.join(global.JS_SPC7, 'vitolas/json/j02/jn01_jnode_type.es7'); const jnode_type = _mod_safe_2.jnode_type || _mod_safe_2;)
+const  { arroba_jtype_comm } =   require(path.join(JS_SPC7, 'acomm/json/j03/j01_arroba_jtype_comm.es7'))
+       const { jnode_type } = require(path.join(JS_SPC7, 'vitolas/json/j02/jn01_jnode_type.es7'))
        const fs = require(  'fs'                                                      );
 
 class arroba_jtype extends arroba_jtype_comm {
@@ -80,6 +80,3 @@ class arroba_jtype extends arroba_jtype_comm {
 
 exports.arroba_jtype = arroba_jtype
 
-
-module.exports = arroba_jtype;
-module.exports.arroba_jtype = arroba_jtype;

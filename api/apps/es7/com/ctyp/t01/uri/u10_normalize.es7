@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
+define('JS_LIB7', path.join(global.ROOT, 'api/apps/es7/com/blib/'));
 
 // [DOCHANGED_NODE_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -15,10 +15,10 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 // - d-normalize_uris-        : Generate URI array normalizing parameters
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'uri/u11_create.es7'           ); const uri_create = _mod_safe_1.uri_create || _mod_safe_1);
-const numbers = require(  path.join(global.JS_LIB7  , 'number/numbers.es7'           )  );
+const   { uri_create } =   require(  path.join(JS_TYP7  , 'uri/u11_create.es7'           ) );
+        const numbers = require(  path.join(JS_LIB7  , 'number/numbers.es7'           )  );
 
 class uri_normalize extends uri_create {
 
@@ -205,6 +205,3 @@ class uri_normalize extends uri_create {
 
 exports.uri_normalize = uri_normalize
 
-
-module.exports = uri_normalize;
-module.exports.uri_normalize = uri_normalize;

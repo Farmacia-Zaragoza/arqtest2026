@@ -1,5 +1,5 @@
 const path = require('path');
-global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
+define('JS_ACO7', path.join(global.ROOT, 'api/apps/es7/spc/acomm/'));
 
 // [DOCHANGED_ES7_SPACES]
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
@@ -23,11 +23,11 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 // - create_links     : Generate Link Information
 // ==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
+define("JS_TYP7" , 	path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			))
 
-const _mod_safe_1 = require(path.join(global.JS_ACO7, 'html/h01/main/common_head.es7'); const common_head = _mod_safe_1.common_head || _mod_safe_1;)
-        const _mod_safe_2 = require(path.join(global.JS_PYC7, 'social/social/html/h01/main/lnk01_link_social.es7'); const lnk01_link_social = _mod_safe_2.lnk01_link_social || _mod_safe_2;)
-        const _mod_safe_3 = require(path.join(global.JS_PYC7, 'social/social/html/h01/main/met01_meta_social.es7'); const met01_meta_social = _mod_safe_3.met01_meta_social || _mod_safe_3;)
+const  { common_head } 			= 	require(path.join(JS_ACO7, 'html/h01/main/common_head.es7'))
+        const { lnk01_link_social } = require(path.join(JS_PYC7, 'social/social/html/h01/main/lnk01_link_social.es7'))
+        const { met01_meta_social } = require(path.join(JS_PYC7, 'social/social/html/h01/main/met01_meta_social.es7'))
 
 class hea01_head_social extends common_head  {
 
@@ -62,6 +62,3 @@ class hea01_head_social extends common_head  {
 
 exports.hea01_head_social = hea01_head_social
 
-
-module.exports = hea01_head_social;
-module.exports.hea01_head_social = hea01_head_social;
