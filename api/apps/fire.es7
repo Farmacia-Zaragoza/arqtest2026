@@ -5,7 +5,7 @@ const helmet = require('helmet');
 const useragent = require('express-useragent');
 
 // Importamos las utilidades externas
-const { obtenerContextoEstructura, analizarUrlPeticion } = require('../utils/pathUtils');
+const { obtenerContextoEstructura, analizarUrlPeticion } = require('../utils/pathUtils.es7');
 
 // Contexto
 const contexto = obtenerContextoEstructura(process.cwd());
