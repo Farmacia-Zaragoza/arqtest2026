@@ -1,13 +1,36 @@
-// Al final de fire.es7 necesitamos esto:
 const express = require('express');
+const cookieParser = require('cookie-parser');
+const compression = require('compression');
+const helmet = require('helmet');
+const useragent = require('express-useragent');
+
+// Importamos las utilidades externas
+const { obtenerContextoEstructura, analizarUrlPeticion } = require('../utils/pathUtils');
+
+// Contexto
+const contexto = obtenerContextoEstructura(process.cwd());
+const max_articles = '3890';
+const cached_site = 'garldru';
 
 const fireApp = express();
 
-// Dentro de tu lógica de Express/Node
-fireApp.get('/', (req, res) => {
-  // Aquí irá la lógica que recuperaremos de tu código original
-  res.json({ estado: "Lógica de fire.es7 recuperada" });
+// Middlewares
+fireApp.use(helmet({ contentSecurityPolicy: false }));
+fireApp.use(cookieParser());
+fireApp.use(compression());
+fireApp.use(useragent.express());
 
+// Handler principal
+fireApp.get('/', (req, res) => {
+  res.json({
+    estado: "Lógica de fire.es7 recuperada",
+    contexto: {
+      ...contexto,
+      cached_site,
+      max_articles
+    },
+    analisisPeticion: analizarUrlPeticion(req)
+  });
 });
 
 module.exports = fireApp;
