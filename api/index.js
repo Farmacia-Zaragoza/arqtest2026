@@ -1,11 +1,12 @@
-// 1. Cargamos las librerías básicas que usaba tu lanzador
+// 1. Librerías básicas
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
+const fs = require('fs');
 const Module = require('module');
 
-// 2. Garantizar ROOT en el proceso global desde el primer instante
+// 2. Garantizar ROOT en el proceso global
 const ROOT = process.cwd();
 global.ROOT = ROOT;
 global.path = path;
@@ -45,38 +46,33 @@ const APP_PATHS = {
   JS_TYF7:  path.join(ROOT, 'api/apps/es7/com/ctyp/t02/')
 };
 
-// Registrar de forma indestructible en global
+// Asignar al ámbito global
 Object.keys(APP_PATHS).forEach(key => {
   global[key] = APP_PATHS[key];
-  try {
-    Object.defineProperty(global, key, {
-      value: APP_PATHS[key],
-      writable: true,
-      enumerable: true,
-      configurable: true
-    });
-  } catch(e) {}
 });
 
 global.define = function(name, value) {
   global[name] = value;
 };
 
-// 4. INTERCEPTOR INTELIGENTE Y SEGURO:
-// Reemplaza SOLO la variable cuando está dentro de un path.join(...)
+// 4. INTERCEPTOR EN EL MANEJADOR DE EXTENSIONES (Bypassea a CoffeeScript)
 const pathKeysPattern = Object.keys(APP_PATHS).join('|');
 const joinRegex = new RegExp(`path\\.join\\(\\s*(${pathKeysPattern})\\b`, 'g');
 
-const originalCompile = Module.prototype._compile;
-Module.prototype._compile = function(content, filename) {
-  if (filename.endsWith('.es7') || filename.endsWith('.js')) {
-    // Transforma path.join(JS_TYP7, ...) -> path.join('/var/task/...', ...)
-    content = content.replace(joinRegex, (match, key) => {
-      const cleanPath = APP_PATHS[key].replace(/\\/g, '/');
-      return `path.join('${cleanPath}'`;
-    });
-  }
-  return originalCompile.call(this, content, filename);
+// Interceptamos la extensión .es7 directamente en el cargador de módulos de Node
+const originalExtensionHandler = require.extensions['.es7'] || require.extensions['.js'];
+
+require.extensions['.es7'] = function(module, filename) {
+  let content = fs.readFileSync(filename, 'utf8');
+
+  // Reemplazamos path.join(JS_ACO7, ...) por path.join('/var/task/api/...', ...)
+  content = content.replace(joinRegex, (match, key) => {
+    const cleanPath = APP_PATHS[key].replace(/\\/g, '/');
+    return `path.join('${cleanPath}'`;
+  });
+
+  // Compilamos directamente en el módulo
+  module._compile(content, filename);
 };
 
 // 5. Variables de entorno y utilidades
@@ -96,7 +92,7 @@ var application_root = __dirname,
     http2       = require('http2'),
     tls         = require('tls'),
     logger      = require('morgan'),
-    fs          = require('fs'),
+    fs_mod      = require('fs'),
     yargs       = require('yargs'),
     constants   = require('constants');
 
