@@ -23,11 +23,10 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'site/s02_site_methods.es7'  ); const site_methods = _mod_safe_1.site_methods || _mod_safe_1; );
-        const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'site/s12_main_site.es7'     ); const main_site = _mod_safe_2.main_site || _mod_safe_2; );
-        const _mod_safe_3 = require(  path.join(global.JS_TYP7  , 'site/s10_cache_site.es7'    ); const cache_site = _mod_safe_3.cache_site || _mod_safe_3; );
-        const _mod_safe_4 = require(  path.join(global.JS_TYP7  , 'site/s11_old_site.es7'      ); const old_site = _mod_safe_4.old_site || _mod_safe_4; );
-
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'site/s02_site_methods.es7'  ); const site_methods = _mod_safe_1.site_methods || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'site/s12_main_site.es7'     ); const main_site = _mod_safe_2.main_site || _mod_safe_2);
+const _mod_safe_3 = require(  path.join(global.JS_TYP7  , 'site/s10_cache_site.es7'    ); const cache_site = _mod_safe_3.cache_site || _mod_safe_3);
+const _mod_safe_4 = require(  path.join(global.JS_TYP7  , 'site/s11_old_site.es7'      ); const old_site = _mod_safe_4.old_site || _mod_safe_4);
 class site extends site_methods {
   constructor(b = "" )
   {

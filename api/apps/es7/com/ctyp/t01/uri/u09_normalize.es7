@@ -18,8 +18,8 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'uri/u10_create.es7'          ); const uri_create = _mod_safe_1.uri_create || _mod_safe_1;  );
-        const numbers = require(  path.join(global.JS_LIB7  , 'number/numbers.es7'          )   );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'uri/u10_create.es7'          ); const uri_create = _mod_safe_1.uri_create || _mod_safe_1);
+const numbers = require(  path.join(global.JS_LIB7  , 'number/numbers.es7'          )   );
 
 class uri_normalize extends uri_create {
 

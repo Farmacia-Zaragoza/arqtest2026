@@ -26,8 +26,7 @@ const	fs 					= 	require(	'fs'														);
 		const empty = require(	'is-empty'									);
 		const util = require(	'util'														);
 		const os = require(	'os'														);
-    const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7' ); const printlog = _mod_safe_1.printlog || _mod_safe_1;  );
-
+    const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7' ); const printlog = _mod_safe_1.printlog || _mod_safe_1);
 // Ok [19-05-11]
 
 // Ordena terminos de forma unica

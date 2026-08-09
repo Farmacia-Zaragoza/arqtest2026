@@ -18,8 +18,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u09_normalize.es7'   ); const uri_normalize = _mod_safe_1.uri_normalize || _mod_safe_1; );
-
+const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u09_normalize.es7'   ); const uri_normalize = _mod_safe_1.uri_normalize || _mod_safe_1);
 class uri_page_string extends uri_normalize {
 
   constructor()

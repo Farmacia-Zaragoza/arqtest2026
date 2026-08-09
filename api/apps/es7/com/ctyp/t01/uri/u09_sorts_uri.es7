@@ -20,8 +20,8 @@ global.JS_LIB7 = path.join(global.ROOT, 'api/apps/es7/com/blib/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u10_sorts_kb.es7' ); const uri_sorts_kb = _mod_safe_1.uri_sorts_kb || _mod_safe_1; );
-      const sort = require(  path.join(global.JS_LIB7   ,'sort/sort_unique.es7'	 ) );
+const _mod_safe_1 = require(  path.join(global.JS_TYP7 , 'uri/u10_sorts_kb.es7' ); const uri_sorts_kb = _mod_safe_1.uri_sorts_kb || _mod_safe_1);
+const sort = require(  path.join(global.JS_LIB7   ,'sort/sort_unique.es7'	 ) );
 
 class uri_sorts_uri extends uri_sorts_kb {
 

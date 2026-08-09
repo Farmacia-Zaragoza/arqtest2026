@@ -33,19 +33,23 @@ function processDirectory(directory) {
         let content = fs.readFileSync(fullPath, 'utf8');
         let originalContent = content;
 
-        // 1. Limpiar residuos de require paths.js viejos
+        // 1. Corregir cualquier residuo de sintaxis roto previo como '; );' o ', );'
+        content = content.replace(/;\s*\);\s*/g, ');\n');
+        content = content.replace(/,\s*\);\s*/g, ');\n');
+
+        // 2. Limpiar residuos viejos de paths.js
         content = content.replace(/.*paths\.js.*\n?/g, '');
 
-        // 2. Convertir require desestructurados propensos a fallo:
-        // Ejemplo: const { mi_clase } = require('...') -> const _m_0 = require('...'); const mi_clase = _m_0.mi_clase || _m_0;
+        // 3. Convertir require desestructurados de forma 100% limpia sin tocar los paréntesis finales
         let counter = 0;
-        content = content.replace(/(?:const|let|var)\s*\{\s*([a-zA-Z0-9_]+)\s*\}\s*=\s*require\(([^)]+)\);?/g, (match, varName, reqPath) => {
+        content = content.replace(/(?:const|let|var)\s*\{\s*([a-zA-Z0-9_]+)\s*\}\s*=\s*require\(([\s\S]*?)\)\s*;?/g, (match, varName, reqPath) => {
           counter++;
           const modVar = `_mod_safe_${counter}`;
-          return `const ${modVar} = require(${reqPath}); const ${varName} = ${modVar}.${varName} || ${modVar};`;
+          const cleanPath = reqPath.trim();
+          return `const ${modVar} = require(${cleanPath}); const ${varName} = ${modVar}.${varName} || ${modVar};`;
         });
 
-        // 3. Garantizar exportación doble al final si existe exports.nombre = nombre
+        // 4. Asegurar exportaciones dobles limpias sin duplicar
         const exportMatch = content.match(/exports\.([a-zA-Z0-9_]+)\s*=\s*\1;?/);
         if (exportMatch) {
           const className = exportMatch[1];
@@ -63,12 +67,12 @@ function processDirectory(directory) {
   }
 }
 
-console.log("🚀 Iniciando blindaje masivo de módulos y herencias en todo el proyecto...");
+console.log("🚀 Iniciando reparación masiva y saneamiento de sintaxis...");
 if (fs.existsSync(targetDir)) {
   processDirectory(targetDir);
-  console.log(`\n✅ ¡Proceso finalizado con éxito!`);
+  console.log(`\n✅ ¡Saneamiento finalizado con éxito!`);
   console.log(`📊 Archivos escaneados: ${totalArchivos}`);
-  console.log(`✨ Archivos blindados automáticamente: ${archivosModificados}`);
+  console.log(`✨ Archivos reparados: ${archivosModificados}`);
 } else {
   console.error(`❌ No se encontró la carpeta: ${targetDir}`);
 }

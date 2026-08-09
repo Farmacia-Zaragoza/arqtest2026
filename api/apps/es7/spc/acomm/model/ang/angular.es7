@@ -26,10 +26,9 @@
 
 const path = require('path');
 
-const _mod_safe_1 = require( path.join(global.JS_ACO7, 'model/ang/nocache_launcher.es7'); const angular_no_cache = _mod_safe_1.angular_no_cache || _mod_safe_1; );
-const _mod_safe_2 = require( path.join(global.JS_ACO7, 'model/ang/cache_launcher.es7'); const angular_cache = _mod_safe_2.angular_cache || _mod_safe_2; );
-const _mod_safe_3 = require( path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3; );
-
+const _mod_safe_1 = require( path.join(global.JS_ACO7, 'model/ang/nocache_launcher.es7'); const angular_no_cache = _mod_safe_1.angular_no_cache || _mod_safe_1);
+const _mod_safe_2 = require( path.join(global.JS_ACO7, 'model/ang/cache_launcher.es7'); const angular_cache = _mod_safe_2.angular_cache || _mod_safe_2);
+const _mod_safe_3 = require( path.join(global.JS_TYP7, 'logs/printlog.es7'); const printlog = _mod_safe_3.printlog || _mod_safe_3);
 class angular extends printlog
 {
   constructor(pmt = '' )

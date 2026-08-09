@@ -20,13 +20,12 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'fire/index.es7'                 ); const index = _mod_safe_1.index || _mod_safe_1;  );
-        const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'            ); const printlog = _mod_safe_2.printlog || _mod_safe_2;  );
-        const _mod_safe_3 = require(  path.join(global.JS_TYP7  , 'bool/b01_bool.es7'          ); const cbool = _mod_safe_3.cbool || _mod_safe_3;  );
-        const _mod_safe_4 = require(  path.join(global.JS_TYP7  , 'site/s01_site.es7'          ); const site = _mod_safe_4.site || _mod_safe_4;  );
-        const _mod_safe_5 = require(  path.join(global.JS_TYP7  , 'uri/u01_obj.es7'            ); const uri = _mod_safe_5.uri || _mod_safe_5;  );
-        const _mod_safe_6 = require(  path.join(global.JS_TYP7  , 'fire/index_req.es7'            ); const index_req = _mod_safe_6.index_req || _mod_safe_6;      );
-
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'fire/index.es7'                 ); const index = _mod_safe_1.index || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'            ); const printlog = _mod_safe_2.printlog || _mod_safe_2);
+const _mod_safe_3 = require(  path.join(global.JS_TYP7  , 'bool/b01_bool.es7'          ); const cbool = _mod_safe_3.cbool || _mod_safe_3);
+const _mod_safe_4 = require(  path.join(global.JS_TYP7  , 'site/s01_site.es7'          ); const site = _mod_safe_4.site || _mod_safe_4);
+const _mod_safe_5 = require(  path.join(global.JS_TYP7  , 'uri/u01_obj.es7'            ); const uri = _mod_safe_5.uri || _mod_safe_5);
+const _mod_safe_6 = require(  path.join(global.JS_TYP7  , 'fire/index_req.es7'            ); const index_req = _mod_safe_6.index_req || _mod_safe_6);
 class index_fast extends index
 {
 

@@ -23,10 +23,9 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                ); const printlog = _mod_safe_1.printlog || _mod_safe_1;          );
-	   const _mod_safe_2 = require(	path.join(global.JS_ACO7 , 'html/h01/main/common_hnode.es7'			); const common_hnode = _mod_safe_2.common_hnode || _mod_safe_2;	);
-       const _mod_safe_3 = require(  path.join(global.JS_AQD7  , 'arqdru/html/h01/main/htm01_arqdru.es7'  ); const htm01_html_arqdru = _mod_safe_3.htm01_html_arqdru || _mod_safe_3; );
-
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                ); const printlog = _mod_safe_1.printlog || _mod_safe_1);
+const _mod_safe_2 = require(	path.join(global.JS_ACO7 , 'html/h01/main/common_hnode.es7'			); const common_hnode = _mod_safe_2.common_hnode || _mod_safe_2);
+const _mod_safe_3 = require(  path.join(global.JS_AQD7  , 'arqdru/html/h01/main/htm01_arqdru.es7'  ); const htm01_html_arqdru = _mod_safe_3.htm01_html_arqdru || _mod_safe_3);
 class hnode_type extends printlog {
 
   constructor (container = '')

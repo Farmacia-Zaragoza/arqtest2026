@@ -16,9 +16,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'         ); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;        );
-       const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'arroba/rest/rs00_rest_pf.es7'  ); const rs00_rest_pf = _mod_safe_2.rs00_rest_pf || _mod_safe_2;  );
-
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'         ); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'arroba/rest/rs00_rest_pf.es7'  ); const rs00_rest_pf = _mod_safe_2.rs00_rest_pf || _mod_safe_2);
 // List Object
 class rs04_object_list_inner extends rs00_rest_pf {
 

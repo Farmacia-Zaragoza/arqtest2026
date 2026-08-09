@@ -17,9 +17,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(   path.join(global.JS_TYP7 , 'logs/idx_pointers.es7'   ); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1;);
-       const _mod_safe_2 = require(   path.join(global.JS_TYP7 ,  'arroba/aindex/b_list/a02_idx_page.es7'  ); const a02_idx_page = _mod_safe_2.a02_idx_page || _mod_safe_2;);
-
+const _mod_safe_1 = require(   path.join(global.JS_TYP7 , 'logs/idx_pointers.es7'   ); const idx_pointers = _mod_safe_1.idx_pointers || _mod_safe_1);
+const _mod_safe_2 = require(   path.join(global.JS_TYP7 ,  'arroba/aindex/b_list/a02_idx_page.es7'  ); const a02_idx_page = _mod_safe_2.a02_idx_page || _mod_safe_2);
 // Common Array
 class a01_idx_list extends a02_idx_page {
 

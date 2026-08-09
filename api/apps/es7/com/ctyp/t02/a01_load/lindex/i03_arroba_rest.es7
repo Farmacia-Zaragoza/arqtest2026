@@ -20,8 +20,7 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 // Scomm > Cache > Printlog
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const _mod_safe_1 = require( path.join(global.JS_TYF7, 'a01_load/scomm/s03_struc.es7'); const scomm_struc = _mod_safe_1.scomm_struc || _mod_safe_1; );
-
+const _mod_safe_1 = require( path.join(global.JS_TYF7, 'a01_load/scomm/s03_struc.es7'); const scomm_struc = _mod_safe_1.scomm_struc || _mod_safe_1);
 // Simple Common - Will Load only product information of article passed
 class arroba_rest extends scomm_struc {
   constructor(arroba)

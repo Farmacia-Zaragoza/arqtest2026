@@ -23,11 +23,10 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_BASE , 'com/objects/html/html_style.es6'       ); const html_style = _mod_safe_1.html_style || _mod_safe_1;   );
-        const _mod_safe_2 = require(  path.join(global.JS_BASE , 'com/objects/html/ifnojs.es6'          ); const ifnojs = _mod_safe_2.ifnojs || _mod_safe_2;  );
-        const _mod_safe_3 = require(  path.join(global.JS_AQD7 , 'arqdru/html/h01/main/lnk01_link_arqdru.es7'   ); const lnk01_link_arqdru = _mod_safe_3.lnk01_link_arqdru || _mod_safe_3; );
-        const _mod_safe_4 = require(  path.join(global.JS_AQD7 , 'arqdru/html/h01/main/met01_meta_arqdru.es7'   ); const met01_meta_arqdru = _mod_safe_4.met01_meta_arqdru || _mod_safe_4; );
-
+const _mod_safe_1 = require(  path.join(global.JS_BASE , 'com/objects/html/html_style.es6'       ); const html_style = _mod_safe_1.html_style || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_BASE , 'com/objects/html/ifnojs.es6'          ); const ifnojs = _mod_safe_2.ifnojs || _mod_safe_2);
+const _mod_safe_3 = require(  path.join(global.JS_AQD7 , 'arqdru/html/h01/main/lnk01_link_arqdru.es7'   ); const lnk01_link_arqdru = _mod_safe_3.lnk01_link_arqdru || _mod_safe_3);
+const _mod_safe_4 = require(  path.join(global.JS_AQD7 , 'arqdru/html/h01/main/met01_meta_arqdru.es7'   ); const met01_meta_arqdru = _mod_safe_4.met01_meta_arqdru || _mod_safe_4);
 class hea01_head_arqdru extends html_style  {
 
   constructor (     arroba                )

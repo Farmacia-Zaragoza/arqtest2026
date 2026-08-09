@@ -33,10 +33,10 @@ global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/');
 //- d-create_jnode_type_info-      : Genera el objeto Jnode Type
 //==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
 
-const _mod_safe_1 = require( path.join(global.JS_ACO7, 'json/j03/j01_arroba_jtype_comm.es7'); const arroba_jtype_comm = _mod_safe_1.arroba_jtype_comm || _mod_safe_1; );
-const _mod_safe_2 = require( path.join(global.JS_ACO7, 'json/j02/jn01_jnode_type_comm.es7'); const jnode_type_comm = _mod_safe_2.jnode_type_comm || _mod_safe_2; );
-const _mod_safe_3 = require( path.join(global.JS_ACO7, 'json/j02/jn11_jnode_type_index.es7'); const jnode_type_index = _mod_safe_3.jnode_type_index || _mod_safe_3; );
-const _mod_safe_4 = require( path.join(global.JS_ACO7, 'json/j02/jn12_jnode_type_info.es7'); const jnode_type_info = _mod_safe_4.jnode_type_info || _mod_safe_4; );
+const _mod_safe_1 = require( path.join(global.JS_ACO7, 'json/j03/j01_arroba_jtype_comm.es7'); const arroba_jtype_comm = _mod_safe_1.arroba_jtype_comm || _mod_safe_1);
+const _mod_safe_2 = require( path.join(global.JS_ACO7, 'json/j02/jn01_jnode_type_comm.es7'); const jnode_type_comm = _mod_safe_2.jnode_type_comm || _mod_safe_2);
+const _mod_safe_3 = require( path.join(global.JS_ACO7, 'json/j02/jn11_jnode_type_index.es7'); const jnode_type_index = _mod_safe_3.jnode_type_index || _mod_safe_3);
+const _mod_safe_4 = require( path.join(global.JS_ACO7, 'json/j02/jn12_jnode_type_info.es7'); const jnode_type_info = _mod_safe_4.jnode_type_info || _mod_safe_4);
 const gfc                  = require( path.join(global.JS_LIB7, 'file/get_file_code.es7') );
 
 class arroba_jtype extends arroba_jtype_comm {

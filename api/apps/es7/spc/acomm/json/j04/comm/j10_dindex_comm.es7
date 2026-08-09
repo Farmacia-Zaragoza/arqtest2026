@@ -27,10 +27,9 @@ global.JS_TYF7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t02/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                ); const printlog = _mod_safe_1.printlog || _mod_safe_1;  );
-      const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'                ); const idx_pointers = _mod_safe_2.idx_pointers || _mod_safe_2;);
-      const _mod_safe_3 = require(  path.join(global.JS_TYF7  , 'a01_load/lindex/i01_arroba_lindex.es7' ); const arroba_lindex = _mod_safe_3.arroba_lindex || _mod_safe_3;);
-
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                ); const printlog = _mod_safe_1.printlog || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_TYP7  , 'logs/idx_pointers.es7'                ); const idx_pointers = _mod_safe_2.idx_pointers || _mod_safe_2);
+const _mod_safe_3 = require(  path.join(global.JS_TYF7  , 'a01_load/lindex/i01_arroba_lindex.es7' ); const arroba_lindex = _mod_safe_3.arroba_lindex || _mod_safe_3);
 class tindex_comm extends printlog
 {
   constructor(arroba = '')

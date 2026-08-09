@@ -29,11 +29,10 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'model/common_model.es7'              ); const common_model = _mod_safe_1.common_model || _mod_safe_1;);
-        const _mod_safe_2 = require(  path.join(global.JS_ARQ7  , 'issues/issues/uri/u01_site_uri.es7'    ); const site_uri = _mod_safe_2.site_uri || _mod_safe_2;     );
-        const _mod_safe_3 = require(  path.join(global.JS_AQD7  , 'arqdru/json/j03/j01_arroba_type.es7' ); const arroba_jtype = _mod_safe_3.arroba_jtype || _mod_safe_3;);
-        const _mod_safe_4 = require(  path.join(global.JS_AQD7  , 'arqdru/json/j04/j01_theme_data.es7'  ); const theme_data = _mod_safe_4.theme_data || _mod_safe_4;);
-
+const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'model/common_model.es7'              ); const common_model = _mod_safe_1.common_model || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_ARQ7  , 'issues/issues/uri/u01_site_uri.es7'    ); const site_uri = _mod_safe_2.site_uri || _mod_safe_2);
+const _mod_safe_3 = require(  path.join(global.JS_AQD7  , 'arqdru/json/j03/j01_arroba_type.es7' ); const arroba_jtype = _mod_safe_3.arroba_jtype || _mod_safe_3);
+const _mod_safe_4 = require(  path.join(global.JS_AQD7  , 'arqdru/json/j04/j01_theme_data.es7'  ); const theme_data = _mod_safe_4.theme_data || _mod_safe_4);
 class site_model extends common_model
 {
   constructor(pmt = '' )

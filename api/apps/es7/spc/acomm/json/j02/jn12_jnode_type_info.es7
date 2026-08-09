@@ -28,9 +28,8 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn60_generate_info_json.es7'  ); const jn60_info_json = _mod_safe_1.jn60_info_json || _mod_safe_1;  );
-       const _mod_safe_2 = require(  path.join(global.JS_TYP7   , 'logs/printlog.es7'                         ); const printlog = _mod_safe_2.printlog || _mod_safe_2;  );
-
+const _mod_safe_1 = require(  path.join(global.JS_ACO7  , 'json/j01/n02/jn60_generate_info_json.es7'  ); const jn60_info_json = _mod_safe_1.jn60_info_json || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_TYP7   , 'logs/printlog.es7'                         ); const printlog = _mod_safe_2.printlog || _mod_safe_2);
 class jnode_type_info extends printlog {
   constructor(    arroba           )
   {

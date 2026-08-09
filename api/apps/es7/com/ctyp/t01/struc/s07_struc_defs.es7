@@ -20,8 +20,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'array/a01_arroba_setarr.es7'    ); const arroba_setarr = _mod_safe_1.arroba_setarr || _mod_safe_1;    );
-
+const _mod_safe_1 = require(  path.join(global.JS_TYP7  , 'array/a01_arroba_setarr.es7'    ); const arroba_setarr = _mod_safe_1.arroba_setarr || _mod_safe_1);
 class struc_defs extends arroba_setarr {
   constructor() {
     super()

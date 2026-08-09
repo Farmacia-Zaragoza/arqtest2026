@@ -17,8 +17,8 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_BASE , 'com/objects/drupal/uri/u08_paths.es6'  ); const uri_paths = _mod_safe_1.uri_paths || _mod_safe_1;  );
-        const match = require(  path.join(global.JS_BASE  , 'com/libs/string/match.es6'         ) );
+const _mod_safe_1 = require(  path.join(global.JS_BASE , 'com/objects/drupal/uri/u08_paths.es6'  ); const uri_paths = _mod_safe_1.uri_paths || _mod_safe_1);
+const match = require(  path.join(global.JS_BASE  , 'com/libs/string/match.es6'         ) );
         const starr = require(  path.join(global.JS_BASE  , 'com/libs/string/string_array.es6'  ) );
 
 class uri_fast extends uri_paths {

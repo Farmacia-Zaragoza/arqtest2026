@@ -21,9 +21,8 @@ global.JS_ACO7 = path.join(global.ROOT, 'api/apps/es7/spc/acomm/');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_ACO7 , 'html/h01/deep/scripts/deep_scripts_react.es7' ); const deep_scripts_react = _mod_safe_1.deep_scripts_react || _mod_safe_1;   );
-        const _mod_safe_2 = require(  path.join(global.JS_ACO7 , 'html/h01/main/comm/common_scripts.es7'   ); const common_scripts = _mod_safe_2.common_scripts || _mod_safe_2; );
-
+const _mod_safe_1 = require(  path.join(global.JS_ACO7 , 'html/h01/deep/scripts/deep_scripts_react.es7' ); const deep_scripts_react = _mod_safe_1.deep_scripts_react || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_ACO7 , 'html/h01/main/comm/common_scripts.es7'   ); const common_scripts = _mod_safe_2.common_scripts || _mod_safe_2);
 class scripts_react extends common_scripts  {
 
   constructor (     thm                            )

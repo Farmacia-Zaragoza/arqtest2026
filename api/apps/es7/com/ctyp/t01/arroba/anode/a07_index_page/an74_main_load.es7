@@ -18,9 +18,7 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require( path.join(global.JS_TYP7  , 'arroba/anode/a07_index_page/an76_main_process.es7' ); const anode_main_index_page_process = _mod_safe_1.anode_main_index_page_process || _mod_safe_1; );
-
-
+const _mod_safe_1 = require( path.join(global.JS_TYP7  , 'arroba/anode/a07_index_page/an76_main_process.es7' ); const anode_main_index_page_process = _mod_safe_1.anode_main_index_page_process || _mod_safe_1);
 class anode_main_index_page_load extends anode_main_index_page_process {
   constructor()
   {

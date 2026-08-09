@@ -29,10 +29,9 @@ const path = require('path');
 
 global.JS_TYP7 = path.join(global.ROOT, 'api/apps/es7/com/ctyp/t01/'			);
 
-const _mod_safe_1 = require(  path.join(global.JS_ARQ7  , 'funcs/funcs/model/funcs_nocache_launcher.es7' ); const funcs_no_cache = _mod_safe_1.funcs_no_cache || _mod_safe_1;);
-        const _mod_safe_2 = require(  path.join(global.JS_ARQ7  ,'funcs/funcs/model/funcs_cache_launcher.es7'); const funcs_cache = _mod_safe_2.funcs_cache || _mod_safe_2;);
-        const _mod_safe_3 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                       ); const printlog = _mod_safe_3.printlog || _mod_safe_3;);
-
+const _mod_safe_1 = require(  path.join(global.JS_ARQ7  , 'funcs/funcs/model/funcs_nocache_launcher.es7' ); const funcs_no_cache = _mod_safe_1.funcs_no_cache || _mod_safe_1);
+const _mod_safe_2 = require(  path.join(global.JS_ARQ7  ,'funcs/funcs/model/funcs_cache_launcher.es7'); const funcs_cache = _mod_safe_2.funcs_cache || _mod_safe_2);
+const _mod_safe_3 = require(  path.join(global.JS_TYP7  , 'logs/printlog.es7'                       ); const printlog = _mod_safe_3.printlog || _mod_safe_3);
 class funcs extends printlog
 {
   constructor(pmt = '' )
