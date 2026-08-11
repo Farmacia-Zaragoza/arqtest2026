@@ -1,3 +1,0 @@
-module.exports = (req, res) => {
-  res.json({ mensaje: "Node.js está listo para procesar tus .dat" });
-};

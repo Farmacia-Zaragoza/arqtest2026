@@ -1,0 +1,36 @@
+const express = require('express')
+const cookieParser = require('cookie-parser')
+const compression = require('compression')
+const helmet = require('helmet')
+const useragent = require('express-useragent')
+
+// Importaciones
+const { obtenerContextoEstructura } = require('../utils/pathUtils.es7')
+const printlog = require('../core/printlog.es7')
+
+// Instancia única de trazabilidad para el proceso de generación
+const l = new printlog()
+l.n = 'fire.es7'
+
+// Contexto base
+const contexto = obtenerContextoEstructura(process.cwd())
+const max_articles = '3890'
+const cached_site = 'garldru'
+
+const fireApp = express()
+
+// Middlewares
+fireApp.use(helmet({ contentSecurityPolicy: false }))
+fireApp.use(cookieParser())
+fireApp.use(compression())
+fireApp.use(useragent.express())
+
+// Handler de generación
+fireApp.get('/', (req, res) => {
+  l.m = 'GET /'
+  l.p('Procesando datos para Angular...')
+
+  res.json({ estado: "Lógica de fire.es7 recuperada" })
+})
+
+module.exports = fireApp

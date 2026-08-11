@@ -1,0 +1,96 @@
+const path = require('path');
+// Importación explícita y directa de la clase base savelog
+const savelog = require('./savelog.es7');
+
+class printlog extends savelog {
+  constructor() {
+    super();
+    this.n = 'printlog';
+  }
+
+  // Método de salida seguro para Node.js / Vercel
+  l(msg) {
+    if (typeof global.echo === 'function') {
+      global.echo(msg);
+    } else {
+      console.log(msg);
+    }
+  }
+
+  // Generación de niveles y breadcrumbs sanitizados
+  gen_current_level(pos, parent_index, current_index, breadcrumb) {
+    let next_level = this.get_next_level(pos);
+    this.local_current_level = parent_index + 'v' + next_level;
+
+    // Normalización nativa de caracteres/acentos si el paquete 'accents' no existe
+    const cleanIndex = current_index
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+
+    this.local_current_enbreadcrumb = breadcrumb + '/' + cleanIndex;
+  }
+
+  // Atributos de idioma principal
+  arroba_attribs_main_lang(idx, pos) {
+    this.item_en       = this.gethash_keymain ? this.gethash_keymain(idx.jindex, pos) : '';
+    this.value_en      = this.gethash_keymain ? this.gethash_keymain(idx.iindex, pos) : '';
+    this.breadcrumb_en = this.gethash_keymain ? this.gethash_keymain(idx.bindex, pos) : '';
+    this.photo_en      = this.gethash_keymain ? this.gethash_keymain(idx.pindex, pos) : '';
+    this.hover_en      = this.gethash_keymain ? this.gethash_keymain(idx.hindex, pos) : '';
+    this.link_en       = this.gethash_keymain ? this.gethash_keymain(idx.lindex, pos) : '';
+    this.id_en         = this.gethash_keymain ? this.gethash_keymain(idx.sindex, pos) : '';
+  }
+
+  // Atributos de categorías
+  arroba_attribs_cats(idx) {
+    if (this.s && this.s.ms && this.gethash_arr) {
+      this.cats         = this.gethash_arr(this.s.ms.main_lang, idx.jindex);
+      this.keys         = Object.keys(this.cats || {});
+      this.last_element = this.keys.length - 1;
+    }
+  }
+
+  // Atributos generales (J - C - D - I - B - T -- P - H - N - S - O - R)
+  arroba_attribs(idx, pos, index, subpath) {
+    this.item     = this.gethash_keymain ? this.gethash_keymain(idx.jindex, pos) : '';
+    this.level    = this.get_next_level(pos);
+    this.index    = index + 'v' + this.level;
+    this.subpath  = subpath + '/l' + this.level;
+
+    this.child    = this.gethash_keymain ? this.gethash_keymain(idx.cindex, pos) : '';
+    this.dhild    = this.gethash_keymain ? this.gethash_keymain(idx.dindex, pos) : '';
+    this.value    = this.gethash_keylang ? this.gethash_keylang(idx.iindex, pos) : '';
+    this.breadcrumb = this.gethash_keylang ? this.gethash_keylang(idx.bindex, pos) : '';
+    this.type     = this.gethash_keymain ? this.gethash_keymain(idx.tindex, pos) : '';
+    this.link     = this.gethash_keylang ? this.gethash_keylang(idx.lindex, pos) : '';
+    this.photo    = this.gethash_keylang ? this.gethash_keylang(idx.pindex, pos) : '';
+    this.hover    = this.gethash_keylang ? this.gethash_keylang(idx.hindex, pos) : '';
+    this.ntype    = this.gethash_keymain ? this.gethash_keymain(idx.nindex, pos) : '';
+    this.otype    = this.gethash_keymain ? this.gethash_keymain(idx.oindex, pos) : '';
+    this.id       = this.gethash_keylang ? this.gethash_keylang(idx.sindex, pos) : '';
+  }
+
+  // Método de log formateado
+  p(msg) {
+    let puting_contents = (this.n ? this.n + '.' : '') + (this.m ? this.m + ' - ' : '') + msg;
+    this.l(puting_contents);
+  }
+
+  // Recorrido de Arrays para debug
+  parr(a_passed) {
+    if (Array.isArray(a_passed)) {
+      a_passed.forEach((elem, index) => {
+        this.p(index + ' - ' + elem);
+      });
+    }
+  }
+
+  // Réplica de función strpos de PHP
+  strpos(haystack, needle, offset) {
+    let i = (haystack + '').indexOf(needle, offset || 0);
+    return i === -1 ? false : i;
+  }
+}
+
+module.exports = printlog;

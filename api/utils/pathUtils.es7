@@ -1,0 +1,49 @@
+const path = require('path');
+
+/**
+ * Analiza una ruta de archivo o directorio de forma segura
+ */
+function parsearRuta(rutaAbsoluta) {
+  const normalizada = path.normalize(rutaAbsoluta);
+  const info = path.parse(normalizada);
+
+  return {
+    directorio: info.dir,
+    nombreArchivo: info.base,
+    extension: info.ext,
+    nombreSinExt: info.name,
+    segmentos: normalizada.split(path.sep).filter(Boolean)
+  };
+}
+
+/**
+ * Extrae los segmentos de la arquitectura de carpetas
+ */
+function obtenerContextoEstructura(rutaCwd) {
+  const rutaAnalizada = parsearRuta(rutaCwd);
+  const seg = rutaAnalizada.segmentos;
+  const len = seg.length;
+
+  return {
+    branch: seg[len - 3] || 'arq',
+    prod: seg[len - 2] || 'garldru',
+    site: seg[len - 1] || 'garldru'
+  };
+}
+
+/**
+ * Analiza la URL y sus parámetros de consulta
+ */
+function analizarUrlPeticion(req) {
+  const urlAnalizada = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  return {
+    pathname: urlAnalizada.pathname,
+    parametrosQuery: Object.fromEntries(urlAnalizada.searchParams.entries())
+  };
+}
+
+module.exports = {
+  parsearRuta,
+  obtenerContextoEstructura,
+  analizarUrlPeticion
+};
